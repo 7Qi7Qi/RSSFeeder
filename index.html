@@ -84,6 +84,31 @@
           <section class="articles-per-source">
             <article>
               <details class="article-expander">
+                <summary class="article-expander__title">[程序员] 关于低（零）代码平台的看法</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.v2ex.com/t/778356#reply0">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>低代码甚至零代码平台，逐渐火了，在我看来，可能是下一个数据中台，炒了一波概念。
+其实成熟的低代码平台早已经有了：魔兽争霸 3 的地图制作（多少经典的游戏模式是源自魔兽 3 ）、我的世界地图制作
+这两款都是非常成熟的低代码平台</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">[iPhone] 小屏 iPhone 哪家强</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.v2ex.com/t/778353#reply10">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(1 min)</span>
+                    <span>马上就是 618 了，就目前这个时间点来说到底是选 SE2 还是 12mini 呢？
+欢迎各位来发言，最好带上你的理由。</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
                 <summary class="article-expander__title">[iPhone] 小屏 iPhone 哪家强</summary>
                 <a class="article-summary-link article-summary-box-outer" href="https://www.v2ex.com/t/778353#reply8">
                   <div class="article-summary-box-inner">
@@ -127,6 +152,27 @@ https://nutzwk.wizzer.cn V5 演示地址
             <article>
               <details class="article-expander">
                 <summary class="article-expander__title">[云计算] 加速国内 WordPress 站点官方后台服务访问（以腾讯轻量为例）</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.v2ex.com/t/778349#reply2">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>通过反代官方 API 加速位于国内的 WordPress 站点访问更新、主题等等服务的方法，最初国内 429 的时候 WP-ChinaYes 那个项目提出来的。那时候研究了下用一个域名完成整个反代，稳定使用了接近一年了，分享出来~
+WP-ChinaYes 后来走了劫持并二次处理官方 API 的路线，个人不是很喜欢；而且个人需求也没到他们规划的程度，自己搭建的安全性方面也更放心。
+在这里服务器推荐腾讯的轻量，香港或者硅谷到大陆链路都不错，我测试到国内腾讯云、华为云、UCloud 等等云厂都是走的 CN2 回国，24 一个月速度很棒也很划算，拿来搭建这样的服务非常合适。
+*注意鹅厂的轻量不能给你在阿里云国内机器上的用，两家不和绕的很感人很慢很慢。
+准备一个反代的域名，例如 proxy.example.com （文件中 20 处自行替换），SSL 自己配置好，反代的配置文件如下：
+#PROXY-API
+location /api/
+{
+    proxy_pass https://api.wordpress.org/;
+    proxy_set_header Host api.wordpress.org;
+   …</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">[云计算] 加速国内 WordPress 站点官方后台服务访问（以腾讯轻量为例）</summary>
                 <a class="article-summary-link article-summary-box-outer" href="https://www.v2ex.com/t/778349#reply1">
                   <div class="article-summary-box-inner">
                     <span class="article-reading-time">(2 min)</span>
@@ -141,6 +187,28 @@ location /api/
     proxy_pass https://api.wordpress.org/;
     proxy_set_header Host api.wordpress.org;
    …</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">[开源软件] 开源一套数据可视化平台</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.v2ex.com/t/778348#reply6">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>rt
+开源地址： https://gitee.com/1967988842/data_view_web
+前端应用技术：
+vue
+echarts
+element-ui
+后端应用技术：
+golang
+iris
+xorm
+可视化大屏模板见
+https://gitee.com/1967988842/data_view_web#%E7%A4%BA%E4%BE%8B%E5%9B%BE%E8%A1%A8</span>
                   </div>
                 </a>
               </details>
@@ -203,6 +271,19 @@ https://gitee.com/1967988842/data_view_web#%E7%A4%BA%E4%BE%8B%E5%9B%BE%E8%A1%A8<
             <article>
               <details class="article-expander">
                 <summary class="article-expander__title">[全球工单系统] 狗东售后维修经历</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.v2ex.com/t/778343#reply6">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(1 min)</span>
+                    <span>去年狗东买的 AOC 显示器，不到 2k，上周末移动了一下插座，重新给显示器插电结果碰火短路，差点把我给电到了，家里搞得跳闸，之后显示器可通电，接 HDMI 无信号。
+后台联系狗东售后，由于箱子早就扔了，快递来直接抱走的，取走两天后，售后维修部门联系我说显示器右上面板漏液损坏，他们不承认是中间的环节出问题，要我自费维修。
+送出去的时候是好好的，结果闹成这样，还在跟他们扯皮，真是无语，多年的老 VIP 用户了，就这待遇。</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">[全球工单系统] 狗东售后维修经历</summary>
                 <a class="article-summary-link article-summary-box-outer" href="https://www.v2ex.com/t/778343#reply5">
                   <div class="article-summary-box-inner">
                     <span class="article-reading-time">(1 min)</span>
@@ -220,6 +301,34 @@ https://gitee.com/1967988842/data_view_web#%E7%A4%BA%E4%BE%8B%E5%9B%BE%E8%A1%A8<
                   <div class="article-summary-box-inner">
                     <span class="article-reading-time">(0 min)</span>
                     <span>如题，只看外企，不想加班。中英文简历已备好，英语听说读写没问题，在两家外企工作过。</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">[酷工作] 高级运维工程师</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.v2ex.com/t/778340#reply1">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(1 min)</span>
+                    <span>base 广州，分布式远程办公，崇尚责任与自由的奈飞文化。
+联系方式（ base64 ）：d2VjaGF0OiBzemxvbmcxNjMK
+工作内容：
+1 、负责项目批量部署运维；
+2 、负责设备采购技术对接；
+3 、负责与机房人员协作完成服务器上架、升级等操作。
+职位要求：
+1 、本科及以上学历，5 年及以上 Linux 运维经验；
+2 、丰富的 Linux 系统、计算机网络等知识；
+3 、掌握 Linux 脚本编程，shell 、perl 、python 任一语言；
+4 、对批量部署 ansible 、puppet 等工具有实践经验，并能编写实施自动部署；
+5 、对服务器硬件了解并能做出技术选型；
+6 、能够适应工作需要的出差，支持日常远程办公。
+加分项：
+1 、对区块链行业认同并愿意在这个行业深耕；
+2 、认同硅谷奈飞文化。
+薪酬待遇：
+18K-22k</span>
                   </div>
                 </a>
               </details>
@@ -679,6 +788,17 @@ B 设备软路由, 到弱电箱大概 5 米, 直连光猫也是千兆
             <article>
               <details class="article-expander">
                 <summary class="article-expander__title">[问与答] 老婆怀孕三四个月了，我这个时候跳槽会影响我在新公司请陪产假吗？</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.v2ex.com/t/778300#reply10">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(1 min)</span>
+                    <span>还是说我在老婆生了之后请完陪产假之后再跳槽比较好？虚心求问</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">[问与答] 老婆怀孕三四个月了，我这个时候跳槽会影响我在新公司请陪产假吗？</summary>
                 <a class="article-summary-link article-summary-box-outer" href="https://www.v2ex.com/t/778300#reply9">
                   <div class="article-summary-box-inner">
                     <span class="article-reading-time">(1 min)</span>
@@ -719,6 +839,22 @@ ACM 1 金 2 银、蓝桥杯国家一等奖、Codeforces 1648 分
 5.具备良好的沟通能力，独立并积极主动，责任感强。
 面试流程：机试 + 面试
 简历投递链接： https://talents.mikecrm.com/gq7WyZ7</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">[问与答] 老职业倦怠了。。。</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.v2ex.com/t/778297#reply10">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(1 min)</span>
+                    <span>间歇性的不想上班，不想搬砖，感觉大多都是扯淡和自嗨，就算完成了也没有成就感，用户是公司内部人员，水平是我见过最低的。。。
+测试也是菜得一批，join 都不会写，我还能说什么？虽然人还不错，但感觉每天做的事都没有意义，都是浪费生命，还不如我每天跑几圈心里舒爽，只要一下班，立马神清气爽，活力满满！
+虽然薪资尚可，但这种感觉还是挥之不去，年纪大了，水平一般，又不敢跳槽。
+明明有任务，有时就是不想动，甚至想看着它延期。。。这是什么心理？
+现在撑着的唯一原因就是穷，有过来人能指导一下吗？怎么破？
+借同学号第一次发，有点乱，大家见谅！</span>
                   </div>
                 </a>
               </details>
@@ -776,6 +912,24 @@ driver: nvidia : 460.80
                     <span class="article-reading-time">(0 min)</span>
                     <span>如题问，按照网上说的透明塑料把手往上提椅子完全没有反应。。不坐人也不会往上升。。
 新到的椅子这是坏了吗</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">[问与答] 生活焦虑，人在深圳，高考还有 17 天，求建议？</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.v2ex.com/t/778291#reply100">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(3 min)</span>
+                    <span>感觉坚持不住了，每天实在是太累了。
+太早赚到了钱，却发现自己开始变懒了。
+这两年来，很喜欢互联网，也看 v2ex
+现如今，稳定月入 70k （美元和国内收入）,从事产品推广，自己写过网站，小型 niche 产品站，百度排名第一
+也在做社群产品推广，discord 为主线的社交圈
+基本上每周上六天课，剩下时间维护业务，不会享受生活，仍然单身。
+打工是不可能打工的，高考完准备进场跨境电商，每天都在加强英语，商务英语为主
+不是知乎吹水，真人真事，学习成绩一般般，高考真的难，不知道下一步怎么走,,,</span>
                   </div>
                 </a>
               </details>
@@ -1475,7 +1629,7 @@ Chore: Refactored parameter passing for enrich step.</span>
   </section>
 
   <footer>
-    <time id="build-timestamp" datetime="2021-05-21T05:53:42.848Z">2021-05-21T05:53:42.848Z</time>
+    <time id="build-timestamp" datetime="2021-05-21T06:01:57.106Z">2021-05-21T06:01:57.106Z</time>
     <span><a class="footer-link" href="https://github.com/osmoscraft/osmosfeed">osmosfeed 1.7.2</a></span>
   </footer>
   <script src="index.js"></script>
