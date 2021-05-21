@@ -10,144 +10,1015 @@
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
   <link rel="alternate" type="application/rss+xml" title="osmos::feed" href="feed.atom" />
   <link href="index.css" rel="stylesheet" />
-  <!-- %before-head-end.html% -->
+  <style>
+    :root {
+        /**
+         * Solarized Light
+         * Ethan Schoonover (modified by aramisgithub)
+         */
+        --base00: #fdf6e3;
+        --base01: #eee8d5;
+        --base02: #93a1a1;
+        --base03: #839496;
+        --base04: #657b83;
+        --base05: #586e75;
+        --base06: #073642;
+        --base07: #002b36;
+        --base08: #dc322f;
+        --base09: #cb4b16;
+        --base0A: #b58900;
+        --base0B: #859900;
+        --base0C: #2aa198;
+        --base0D: #268bd2;
+        --base0E: #6c71c4;
+        --base0F: #d33682;
+
+        /**
+        * Typograph
+        */
+        --font-size-m: 1.6rem;
+        --font-size-s: 1.4rem;
+
+        /**
+        * Components
+        */
+        --body-color: var(--base07);
+        --body-bg: var(--base01);
+
+        --source-name-color: var(--base0D);
+        --source-name-hover-color: var(--base0D);
+
+        --article-title-color: var(--base05);
+        --article-title-hover-color: var(--base0E);
+        --article-summary-hover-color: var(--base0D);
+
+        --accordion-content-rail-color: var(--base01);
+        --accordion-content-hover-rail-color: var(--base0D);
+        --accordion-title-marker-color: var(--base01);
+        --accordion-title-hover-marker-color: var(--base0E);
+
+        --card-bg: var(--base00);
+        --card-shadow: none;
+        --card-radius: 0;
+        --footer-link-hover-color: var(--base0D);
+    }
+
+    .daily-heading {
+        padding-left: 0;
+    }
+
+    .card {
+        border: 1px solid var(--base02);
+    }
+</style>
 </head>
 
 <body>
 <!-- %after-body-begin.html% -->
   <section class="daily-content">
+    <h2 class="daily-heading"><time datatime="2021-05-21">2021-05-21</time></h2>
+    <ul class="sources card">
+      <li class="source">
+        <section>
+          <h3 class="source-name"><a class="source-name__link" href="https://www.v2ex.com/">V2EX</a></h3>
+          <section class="articles-per-source">
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">[iPhone] 小屏 iPhone 哪家强</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.v2ex.com/t/778353#reply8">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>马上就是 618 了，就目前这个时间点来说到底是选 SE2 还是 12mini 呢？
+欢迎各位来发言，最好带上你的理由。</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">[开源软件] BudWk V7 开发框架 前后端分离 + Java 微服务网关 + 组件化 + API 接口化</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.v2ex.com/t/778352#reply0">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>BudWk V7 进行了大量重构，与之前版本结构大不相同，增加网关中心、认证中心、控制中心等，并且完全组件化、配置化，大大减轻开发工作量，提升开发效率的同时为产品升级迭代提供了极大便利。
+BudWk 原名 NutzWk，是基于国产框架 nutz 及 nutzboot 开发的开源 Web 基础项目，集权限体系、系统参数、数据字典、站内消息、定时任务、CMS 、微信等最常用功能，不庞杂、不面面俱到，使其具有上手容易、开发便捷、扩展灵活等特性，特别适合各类大中小型定制化项目需求。
+自 2012 年开源至今，以“在力所能及的情况下，最大限度的提高 Web 开发人员的生产力”为宗旨，紧跟时代技术发展，发布 V1-V7 多个版本，也尝试在开源和持续发展的道路上求索。
+https://budwk.com 官网
+https://demo.budwk.com V7 演示地址
+https://nutzwk.wizzer.cn V5 演示地址
+--
+源码地址 1:  https://gitee.com/budwk/budwk
+源码地址 2:  https://github.com/budwk/budwk</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">[问与答] google 浏览器无标题</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.v2ex.com/t/778351#reply0">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>搜索出现无标题,空白页面,设置无法打开,显示无标题</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">[云计算] 加速国内 WordPress 站点官方后台服务访问（以腾讯轻量为例）</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.v2ex.com/t/778349#reply1">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>通过反代官方 API 加速位于国内的 WordPress 站点访问更新、主题等等服务的方法，最初国内 429 的时候 WP-ChinaYes 那个项目提出来的。那时候研究了下用一个域名完成整个反代，稳定使用了接近一年了，分享出来~
+WP-ChinaYes 后来走了劫持并二次处理官方 API 的路线，个人不是很喜欢；而且个人需求也没到他们规划的程度，自己搭建的安全性方面也更放心。
+在这里服务器推荐腾讯的轻量，香港或者硅谷到大陆链路都不错，我测试到国内腾讯云、华为云、UCloud 等等云厂都是走的 CN2 回国，24 一个月速度很棒也很划算，拿来搭建这样的服务非常合适。
+*注意鹅厂的轻量不能给你在阿里云国内机器上的用，两家不和绕的很感人很慢很慢。
+准备一个反代的域名，例如 proxy.example.com （文件中 20 处自行替换），SSL 自己配置好，反代的配置文件如下：
+#PROXY-API
+location /api/
+{
+    proxy_pass https://api.wordpress.org/;
+    proxy_set_header Host api.wordpress.org;
+   …</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">[开源软件] 开源一套数据可视化平台</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.v2ex.com/t/778348#reply5">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>rt
+开源地址： https://gitee.com/1967988842/data_view_web
+前端应用技术：
+vue
+echarts
+element-ui
+后端应用技术：
+golang
+iris
+xorm
+可视化大屏模板见
+https://gitee.com/1967988842/data_view_web#%E7%A4%BA%E4%BE%8B%E5%9B%BE%E8%A1%A8</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">[编程] 请教 visual studio C#怎么生成单个免安装 exe</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.v2ex.com/t/778347#reply2">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>如题,网上找了很多方法,要么就是生成个安装文件或者需要拷几个文件到其它电脑.</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">[酷工作] [深圳-北京-上海-新加坡] 🔥 Shopee 虾皮 内推</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.v2ex.com/t/778346#reply0">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>详情可点击这里了解</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">[Nintendo Switch] 蹲一个健身环- -</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.v2ex.com/t/778344#reply0">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>Nintendo Switch - @hongch -</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">[全球工单系统] 狗东售后维修经历</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.v2ex.com/t/778343#reply5">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(1 min)</span>
+                    <span>去年狗东买的 AOC 显示器，不到 2k，上周末移动了一下插座，重新给显示器插电结果碰火短路，差点把我给电到了，家里搞得跳闸，之后显示器可通电，接 HDMI 无信号。
+后台联系狗东售后，由于箱子早就扔了，快递来直接抱走的，取走两天后，售后维修部门联系我说显示器右上面板漏液损坏，他们不承认是中间的环节出问题，要我自费维修。
+送出去的时候是好好的，结果闹成这样，还在跟他们扯皮，真是无语，多年的老 VIP 用户了，就这待遇。</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">[成都] 求个成都外企 Java 坑， 7 年经验</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.v2ex.com/t/778342#reply0">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>如题，只看外企，不想加班。中英文简历已备好，英语听说读写没问题，在两家外企工作过。</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">[酷工作] 高级运维工程师</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.v2ex.com/t/778340#reply0">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(1 min)</span>
+                    <span>base 广州，分布式远程办公，崇尚责任与自由的奈飞文化。
+联系方式（ base64 ）：d2VjaGF0OiBzemxvbmcxNjMK
+工作内容：
+1 、负责项目批量部署运维；
+2 、负责设备采购技术对接；
+3 、负责与机房人员协作完成服务器上架、升级等操作。
+职位要求：
+1 、本科及以上学历，5 年及以上 Linux 运维经验；
+2 、丰富的 Linux 系统、计算机网络等知识；
+3 、掌握 Linux 脚本编程，shell 、perl 、python 任一语言；
+4 、对批量部署 ansible 、puppet 等工具有实践经验，并能编写实施自动部署；
+5 、对服务器硬件了解并能做出技术选型；
+6 、能够适应工作需要的出差，支持日常远程办公。
+加分项：
+1 、对区块链行业认同并愿意在这个行业深耕；
+2 、认同硅谷奈飞文化。
+薪酬待遇：
+18K-22k</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">[求职] 求个成都外企 Java 坑， 7 年经验</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.v2ex.com/t/778339#reply0">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>如题，只看外企，不想加班。中英文简历已备好，英语听说读写没问题，在两家外企工作过。</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">[开源软件] 求大佬们推荐一款小型开源的进销存系统</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.v2ex.com/t/778338#reply1">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>最好是 PHP 的，功能有采购申请，入库出库，仓库管理就行。谢谢大佬们</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">[Java] spring 的 model 有可以通过数据库生成的插件吗？</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.v2ex.com/t/778337#reply1">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>Java - @lidashuang -</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">[Sublime Text] Sublime Text 4 正式版發布</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.v2ex.com/t/778336#reply9">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(1 min)</span>
+                    <span>https://www.sublimetext.com/blog/articles/sublime-text-4</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">[macOS] mac 创建的 dmg 镜像 破坏，还有救吗</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.v2ex.com/t/778335#reply0">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>由于 mac 系统突然崩溃，无法启动进入系统。然后在 macos 实用工具的磁盘工具里面，对磁盘的部分文件夹创建了镜像，生成了 dmg 格式的压缩包。然后 cp 到移动硬盘后，对原 mac 重装了系统。
+完成后，发现其中部分 dmg 可以正常打开，唯独这个 dmg 无法正常打开。
+注：每一个操作步骤都有有提示了 success 。
+寻求各位大佬这个数据还有得救么。。。</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">[Apple] 一年不到的 19 款 16 寸 mbp 爆音严重</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.v2ex.com/t/778334#reply8">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>各种组合键还原没用，硬件检测也没用，这是这款的传统艺能吗？送修了，但是天才说软件层面的问题概率大，而且爆音现象有时候是偶发事件，我预感修不好了。烦躁，前段时间都出问题直接换主板了</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">[反馈] 回复没有在自己的回复列表里展示</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.v2ex.com/t/778333#reply2">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>今天回复的一条评论没有展示在自己的个人列表回复列，不知道是因为设计如此，如对方设置可见策略影响。还是缓存同步影响。 @Livid 如果真是策略影响，感觉还挺奇怪的。</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">[推广] 深圳▪南山▪联想大厦 | 线下 IT 互联网专场招聘会▪第 2 期</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.v2ex.com/t/778330#reply0">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(1 min)</span>
+                    <span>深圳-南山-IT 极客嘉年华招聘会▪第 2 期
+[时间] ：5 月 22 日（本周六） 14:00-16:00
+[地点] ：深圳▪南山区▪联想大厦 7 层
+[报名请戳] 请发邮件至： szzhilianrpo@zhaopin.com.cn
+或添加微信：SZITzhaopin01 咨询（请备注：来自 V2EX+岗位）
+更多工作机会，请关注微信公众号 [深圳 IT 好职汇] 查看
+本次招聘会是智造进化论▪IT 极客嘉年华专场▪第 2 期，主招Java 、大数据、前端、测试等岗位，欢迎身在深圳或有意向在深圳工作的牛人到场参加，预祝各位拿到心仪 Offer 。
+##IT 极客嘉年华招聘会（第 2 期）活动相关信息
+（一）时间：2021 年 5 月 22 日（本周六） 14:00-16:00
+（二）地点：广东省▪深圳市▪南山区▪联想大厦 7 楼
+（三）参会企业：平安科技、顺丰、丰巢、赢时胜、房车宝等十余家名企
+（四）活动流程：篇幅所限，关于招聘会具体流程请移步公众号 [深圳 IT 好职汇] 查看
+（五）活动福利：
+1.活动设置了 3 个互动有礼环节，到场参与面试，参与互动即有机会带走大疆无人机、罗技竞技键盘、JBL 蓝…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">[程序员] Pycharm 怎么使用 Docker 镜像内的 Python 解释器？</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.v2ex.com/t/778329#reply3">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>Pycharm 环境在 MacOS , 镜像在 CentOs  服务器上， docker images  命令可以list出来镜像，想直接在 Pycharm 里边配置使用这个镜像里边的 Python 解释器怎么配置，我看 Pycharm的 Docker 配置的 Server 有 3 个选项的
+Docker executable: 
+Docker Machine executable:   # 这个 CentOS 上都没这个玩意儿，但 Pycharm 是必填项
+Docker Compose executable: 
+
+另外, 到底是选择哪一个 Docker Server 啊
+Docker for Mac 
+Docker Machine: 
+TCP socket 
+    Engine API URL: 
+    Certificates folder:</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">[酷工作] 快手， Android/iOS 商业化职位(北京)，部门直推</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.v2ex.com/t/778327#reply0">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(1 min)</span>
+                    <span>Android 开发工程师(北京)
+职位描述
+1 、负责快手商业化业务 Android 客户端相关设计与开发；
+2 、负责基础模块和组件的研发和维护；
+3 、关注性能，提升客户端用户体验。
+任职要求
+1 、良好的编程风格，扎实的编程和数据结构算法基础；深入理解面向对象编程思想，具有较强的设计能力；
+2 、深入理解 Android SDK NDK，熟悉 Android 平台体系结构；精通各种 UI 控件，能够实现复杂的界面交互；
+3 、熟练掌握 Android 平台下的高性能编程及性能调优；
+4 、具有较强的分析和解决问题的能力；热爱互联网新技术，了解并探索业界技术动向；
+5 、有强烈的责任心和团队精神，善于沟通和合作；
+6 、具有信息流广告相关开发经验者优先。
+iOS 开发工程师 (北京)
+职位描述
+1 、负责 iOS 客户端设计与开发；
+2 、负责基础模块和组件的研发和维护；
+3 、关注性能，提升客户端用户体验。
+任职要求
+1 、良好的编程风格，扎实的编程和数据结构算法基础；深入理解面向对象编程思想，具有较强的设计能力；
+2 、深入理解 iOS SDK，具有丰富的 Objective-C 及 C/C++ 开…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">[Cloudflare] Cloudflare 上已加站点被删除，不支持 cf 域名了吗？</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.v2ex.com/t/778325#reply4">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>我有个.cf 免费域名托管在 Cloudflare 上，本周突然访问不了了，打开 Cloudflare，我的域名已经不在了。
+我尝试重新添加 cf 域名，添加不了，用 ml，tk 等域名也不行，提示 “aaabbcc.cf is not a registered domain”
+Cloudflare 已经不支持免费域名了吗？有没有官方通知？我看邮件也没有收到我的域名被删除的通知。</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">[求职] 求一份实习内推 [ACM 1 银 2 铜 ...]</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.v2ex.com/t/778324#reply0">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>背景：
+ACM 1 银 2 铜、蓝桥杯国家一等奖、Codeforces 1648 分
+目前大四，暨南大学准研究生
+想找一份 C++/Go 后台实习工作，如果能帮忙内推的话可留下勾搭方式，感谢
+联系方式 VX：cTExMDY4MTE2ODk&#x3D;
+(帮人发帖，上个帖子 [https://www.v2ex.com/t/778299#reply5] 写错人家信息了，故重发</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">[酷工作] [南京] 趋势科技（外企/氛围好/WLB）大量社招职位内推 5 月 21 日 更新🔥🔥🔥</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.v2ex.com/t/778323#reply4">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(1 min)</span>
+                    <span>公司简介
+趋势科技（ Trend Micro ）在 1988 年创建于美国硅谷，目前在全球 50 多个国家和地区设有分公司，员工总人数超过 6000 人，是全球最大的独立安全整体解决方案提供商、是被客户公认的终端安全、云安全和服务器安全方面的世界领导者！ 中国研发中心位于南京软件谷，迄今为止，趋势科技中国研发中心已有 500 多名员工，已申请和获得多项美国专利技术。中国研发中心主要负责趋势科技的软件开发，主要研发方向在于防毒软件及网络安全产品或相关功能的研究与开发。
+福利待遇
+公司短期、长期奖励计划获益（包含但不限于现金奖金、专利奖、虚拟股票，将根据工作表现和公司激励计划予以分配）
+国家规定的社会保险（包括养老保险、失业保险、社会医疗保险、生育保险、工伤保险）及住房公积金
+补充商业保险计划：人身意外险、重疾补助险、个人及子女补充医疗险，全球商务旅行险，定期健康体检
+带薪假期：年假、福利假、带薪病假及住院假
+公司补充福利：旅游津贴、节假日礼品、员工慰问礼金
+员工活动：员工俱乐部、年会、家庭日、生日派对、工程师训练营等
+工作制度（划重点）：珍爱生命，远离 996，来趋势拥抱 965 吧! 超级人性化的管理制度让你…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">[酷工作] 西安腾讯云招聘前端工程师</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.v2ex.com/t/778320#reply0">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>负责腾讯云存储产品中心前端工作，包括 COS 、CI 、CHDFS 、CSG 等产品控制台开发和产品特性
+负责存储内部运营运维一体化的平台架构设计和开发（运营分析、运维管控、监控告警）
+负责前端架构建设和公共组件开发，以及新技术的落地实践
+联系微信：yangchao9086</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">[问与答] 有大佬帮我做下职业咨询吗</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.v2ex.com/t/778319#reply8">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>我现在很纠结,又到了瓶颈期了, 感觉难受啊</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">[Node.js] Introducing WebContainers: Run Node.js natively in your browser</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.v2ex.com/t/778318#reply1">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>原文链接： https://blog.stackblitz.com/posts/introducing-webcontainers/
+感觉技术融合越来越彻底了，Chrome 也新增了接口可访问系统文件，浏览器更像一个系统封装了。</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">[V2EX] 注销 Google 快捷登录账号</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.v2ex.com/t/778317#reply4">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(1 min)</span>
+                    <span>许久没登录，忘记自己曾经有过账号，然后用了 Sign with Google，登陆后发现不是自己之前的账号。
+这个时候再登陆之前的账号，想绑定 google 邮箱，发现无法绑定了，因为该邮箱已经被用来登陆。
+所以请问如何注销 Google 快捷登录的邮箱？该快捷登录账号没有任何信息，没有任何发帖 /回复等任何记录。</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">[分享创造] 又一个 Github 文件加速服务</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.v2ex.com/t/778316#reply2">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>如题，用业余时间搭建了一个 github 文件加速服务
+https://gh.argv.cc
+欢迎使用</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">[问与答] 有人需要咨询税收方面的问题吗？</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.v2ex.com/t/778315#reply0">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>最近工作闲下来了，随便问。比如你自己搞个副业，碰到需要对方（企业）要发票，该怎么操作？如果自己想创业搞个公司咨询税收优惠政策之类的以及个人个税都可以，但好像程序员使用 python 比我们使用 excel 快多了😀</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">[酷工作] 12306 前端&amp;后端&amp;设计招聘</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.v2ex.com/t/778313#reply0">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(1 min)</span>
+                    <span>前端要求：见 https://www.v2ex.com/t/771025
+设计要求：见 https://www.v2ex.com/t/773834
+后端要求：计算机相关专业全日制统招本科及以上，熟悉 java 基础类库(集合、io 、线程等)，掌握 java 常用框架和技术，如 Springboot 、Springcloud 、Mybatis 、Hibnater 、Maven 、SVN 、GIT 等，了解主流框架基本原理；有微服务治理，系统治理优化等经验者优先
+职责：负责 12306 相关业务线的前端&amp;后台研发
+薪水：15k-25k
+工作地点：北京，中国铁道科学研究院（西直门附近）
+工作性质：极其稳定，不受疫情、经济危机、中美关系等等影响
+工作时间: 8:30-18:00，不强制加班（看自己效率）
+有意者请加 QQ，备注 12306 内推: 41_33_027_65 （去掉下划线）</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">[宽带症候群] 2 个设备接光猫都是千兆, 用直通头连起来就协商到百兆了. 问题在哪里?</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.v2ex.com/t/778312#reply5">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>A 设备书房电脑, 到弱电箱光猫大概 15 米, 直连光猫是千兆
+B 设备软路由, 到弱电箱大概 5 米, 直连光猫也是千兆
+现在要把书房电脑连软路由上, 中间用直通头连接, 结果速度就协商到百兆了
+线是日线六类线, 所以不太可能是线的问题.换了几个牌子的直通头都是一样的. 难道是水晶头的问题?</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">[京东] 2021 了，京东联名 plus</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.v2ex.com/t/778310#reply0">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>如题，会员要到期了，今年有什么经济实惠的联名会员啊</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">[职场话题] 被测试甩脸色</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.v2ex.com/t/778309#reply11">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(1 min)</span>
+                    <span>入职两周，一个小程序的移植（百度-快手），这周这个项目进入测试阶段，能明显感受到测试的愤怒。。。
+首先小程序没有自动化测试方案，然后，因为是移植，单元测试也不需要，所以测试方法就是，点点点。
+自测到主体走通后，就交付测试
+测试的愤怒：
+为什么 android ios 不一致，需要测两次，之前百度不是这样的
+我也不清楚，我感觉很正常，小程序就这逼样，更何况快手小程序 今年一月份才公开
+为什么你这个二维码可以，我（测试）不行，
+事实上这是个偶发 bug，刚好我行他不行
+跨平台项目测试
+未来这个项目会采用 uin-app/taro 这种东西，我打包票，会更频繁出现同样的功能 a 平台可以 b 不可以，
+也不会有什么自动化测试方案，
+大家有没有什么好的测试 /开发流程
+猫猫叹气，测试的态度越来越差了。。。。</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">[酷工作] [上海][阿里巴巴本地生活 PaaS]🔥🔥🔥前端后端(golang/c++)内推</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.v2ex.com/t/778307#reply0">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>阿里巴巴本地生活 PaaS 平台团队招优秀人才
+目前还有充足 hc 。面试流程快，响应快，团队年轻，对云原生技术和方向感兴趣的都可以发简历至：Y2hhb2ZhbnlvdS55Y2ZAYWxpYmFiYS1pbmMuY29t
+前端职位描述：
+负责本地生活云原生 PAAS 整个产品前端开发设计；
+如果你聪明，皮实，自省，立志做一个云原生专家，加入我们吧。
+职位要求
+4-5 年以上前端开发的经验，对于 React 框架有深入了解，能自定义组件；
+对于产品审美有追求，有独立设计产品经验优先考虑；
+热爱技术研发，具有快速学习能力，注重代码质量，有良好的软件工程知识和编码规范意识；
+思路清晰, 善于思考，能够独立分析和解决问题, 责任心强；
+具有良好的沟通表达能力和团队协作能力。、
+后端职位描述：
+负责本地生活云原生应用相关系统的设计及研发工作
+推动云原生在阿里本地生活落地
+负责和集团进行相关云原生技术设计讨论和共建
+负责解决中间件相关问题
+如果致力于云原生，深入打磨技术并希望能够贡献给开源社区， 加入我们！
+职位要求
+4-5 年以上使用 C++/Golang 开发的经验，对于用过的开源框架，能了解到它的原理和机制, 有…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">[优惠信息] 迫于我也无聊，送 10 个微软 msdn e3 子账号，已稳定四年</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.v2ex.com/t/778305#reply20">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>office 365 onedrive 5t
+注册 v2 时间不少于 3 年且有有意义的回复
+羊毛党勿扰
+刚才在 xiadd 那个帖子领取到了建议留给后边需要的小伙伴
+需要的话在 https://emm.im/index.php/archives/1/ 文章下方评论想要的前缀
+记得邮箱要留真实可收到邮件的，因为密码会通过邮箱接收
+先到先得，以评论时间为准。</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">[问与答] Play Store 的微信不能用 x5 内核么？</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.v2ex.com/t/778302#reply0">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>想用调试微信里的网页，打开 debugtbs.qq.com 总是会自动跳到 https，导致没办法开启 x5 内核进行调试，这个有什么解决办法么？</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">[酷工作] 麦客 CRM 招聘- PHP 开发工程师 -成都 IFS-月薪 18-36K</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.v2ex.com/t/778301#reply1">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>岗位职责：
+1.负责麦客与麦客周边支持应用的后端开发，包括 WEB 、APP 及微信小程序等；
+2.参与产品技术架构的设计与讨论，配合团队其他角色完成功能模块的研发上线全过程工作；
+3.达成一定高度的任务目标，包括但不限于产品功能的完善度、易用度、效率等技术指标。
+岗位要求：
+1.精通：PHP+MySQL+Linux 以及数据结构、算法 ；
+2.熟悉：Web 开发相关技术（ HTML 、CSS 、JavaScript ） ；
+3.参加过 ACM 或类似 ACM 的其他竞赛（ NOIP 、NOI 等）加分 ；
+4.有.NET 、移动端（ iOS 、Android 、Symbian 、Windows Phone ）开发经验者加分；
+5.有产品意识，从产品以及用户需求的角度进行相对应的学习与开发。
+面试流程：机试 + 面试
+简历投递链接： https://talents.mikecrm.com/GQAtjO7</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">[问与答] 老婆怀孕三四个月了，我这个时候跳槽会影响我在新公司请陪产假吗？</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.v2ex.com/t/778300#reply9">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(1 min)</span>
+                    <span>还是说我在老婆生了之后请完陪产假之后再跳槽比较好？虚心求问</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">[求职] 求一份实习内推 [ACM 1 金 2 银 ...]</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.v2ex.com/t/778299#reply6">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(1 min)</span>
+                    <span>背景：
+ACM 1 金 2 银、蓝桥杯国家一等奖、Codeforces 1648 分
+目前大四，暨南大学准研究生
+想找一份 C++后台实习工作，如果能帮忙内推的话请留下勾搭方式，感谢</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">[酷工作] 麦客 CRM 招聘-Web 前端开发工程师 -成都 IFS-月薪 16-28K</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.v2ex.com/t/778298#reply1">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(1 min)</span>
+                    <span>岗位职责：
+1.利用 Html5 、JavaScript 和 CSS 相关技术开发跨平台的移动设备前端产品；
+2.优化前端体验和页面响应速度，优化代码并保持良好兼容性，提升易用性；创造并持续优化精致的交互体验；
+3.基于 Html5 标准编写可复用的用户界面和组件。
+岗位要求：
+1.计算机及相关专业，本科及以上学历；
+2.熟练掌握 HTML / CSS / JavaScript 相关技能，熟悉 Node.js ；
+3.熟悉 React 、Angular 、Vue 等前端框架，有其中一种框架的开发经验；
+4.具有前端工程、模块化、组件化经验，熟练使用 webpack / grunt / gulp 等一种以上的构建工具；
+5.具备良好的沟通能力，独立并积极主动，责任感强。
+面试流程：机试 + 面试
+简历投递链接： https://talents.mikecrm.com/gq7WyZ7</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">[问与答] 老职业倦怠了。。。</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.v2ex.com/t/778297#reply9">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>间歇性的不想上班，不想搬砖，感觉大多都是扯淡和自嗨，就算完成了也没有成就感，用户是公司内部人员，水平是我见过最低的。。。
+测试也是菜得一批，join 都不会写，我还能说什么？虽然人还不错，但感觉每天做的事都没有意义，都是浪费生命，还不如我每天跑几圈心里舒爽，只要一下班，立马神清气爽，活力满满！
+虽然薪资尚可，但这种感觉还是挥之不去，年纪大了，水平一般，又不敢跳槽。
+明明有任务，有时就是不想动，甚至想看着它延期。。。这是什么心理？
+现在撑着的唯一原因就是穷，有过来人能指导一下吗？怎么破？
+借同学号第一次发，有点乱，大家见谅！</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">[KDE] 求助， manjaro kde 唤醒登陆后卡死</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.v2ex.com/t/778296#reply0">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>有时候会出现唤醒登陆后卡死的情况，鼠标键盘无效，只能重启，这时候 xorg 进程的 cpu 占用率是 100%
+电脑的一些配置情况
+OS: Manjaro 21.0.5 Ornara
+CPU: AMD Ryzen 7 2700 Eight-Core @ 16x 3.2GHz
+GPU: GeForce GTX 1050 Ti
+driver: nvidia : 460.80
+系统刚升级到 21 的时候没这个情况，后续更新小版本的时候就开始出现了</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">[问与答] IPv6 是不是还没有普及开来？</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.v2ex.com/t/778295#reply7">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>IPv6 都出来这么多年了，快 30 年有了，为何现在还是没有普及的样子。
+ 很早就开始说 IPv4 地址要耗尽，在大面积推广 IPv6 。但随便解析一个域名，都看不到 IPv6 的影子。</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">[问与答] HM Embody 怎么调节座椅高度呀</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.v2ex.com/t/778292#reply7">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>如题问，按照网上说的透明塑料把手往上提椅子完全没有反应。。不坐人也不会往上升。。
+新到的椅子这是坏了吗</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">[问与答] 生活焦虑，人在深圳，高考还有 17 天，求建议？</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.v2ex.com/t/778291#reply97">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(3 min)</span>
+                    <span>感觉坚持不住了，每天实在是太累了。
+太早赚到了钱，却发现自己开始变懒了。
+这两年来，很喜欢互联网，也看 v2ex
+现如今，稳定月入 70k （美元和国内收入）,从事产品推广，自己写过网站，小型 niche 产品站，百度排名第一
+也在做社群产品推广，discord 为主线的社交圈
+基本上每周上六天课，剩下时间维护业务，不会享受生活，仍然单身。
+打工是不可能打工的，高考完准备进场跨境电商，每天都在加强英语，商务英语为主
+不是知乎吹水，真人真事，学习成绩一般般，高考真的难，不知道下一步怎么走,,,</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">[随想] 在随想里爬了 73 页的楼</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.v2ex.com/t/778290#reply0">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>No content preview</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">[酷工作] 西安 腾讯云 T8 V 社的大佬们有了解待遇能要到 22k 每月不</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.v2ex.com/t/778289#reply11">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(1 min)</span>
+                    <span>大佬们，面的腾讯云的前端，T8，我现在拿了 20，不知道能不能要到 22，还没开始 hr 面。想先咨询一下 看有没有大佬聊解的</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">[职场话题] 公司无故降薪，没有提前通知，可以劳动仲裁吗，需要准备哪些资料，注意哪些？谢谢。</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.v2ex.com/t/778288#reply6">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>如题，谢谢。</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">[PHP] 服从师傅安排工作，有没有师傅能带 PHP 的</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.v2ex.com/t/778287#reply11">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>还在学基础，一个人自学觉得进度比较慢，有时候一个小问题卡太久了，有没有师傅能带的</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+        </section>
+      </li>
+    </ul>
+  </section>
+  <section class="daily-content">
     <h2 class="daily-heading"><time datatime="2021-05-20">2021-05-20</time></h2>
     <ul class="sources card">
       <li class="source">
         <section>
-          <h3 class="source-name"><a class="source-name__link" href="https://css-tricks.com">CSS-Tricks</a></h3>
+          <h3 class="source-name"><a class="source-name__link" href="https://news-at.zhihu.com/api/4/stories/latest?client&#x3D;0">知乎日报</a></h3>
           <section class="articles-per-source">
             <article>
               <details class="article-expander">
-                <summary class="article-expander__title">JSON in CSS</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://css-tricks.com/json-in-css/">
+                <summary class="article-expander__title">「真爱」是人生标配吗？「凑合过日子」是不是才是人生真相？</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9736189">
                   <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(2 min)</span>
-                    <span>Jonathan Neal tweeted a heck of a little CSS trick the other day, putting JSON inside CSS and plucking it out with JavaScript. Valid values for custom properties are quite liberal! So this looks for a CSS rule (e.g. a …
-The post JSON in CSS appeared first on CSS-Tricks.
-You can support CSS-Tricks by being an MVP Supporter.</span>
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>梁鸿儒，叙事及系统取向的心理咨询师
+阅读原文
+
+我不知道怎么去定义“真爱”，但是按照题主的意思，“凑合过日子“是人生的”真相“，是”真爱“的相反状态，所以我基本上可以认为，题主你好像担心”真爱“和”真相“是矛盾的，那我就不明白了，”真爱“和”真相“那个更真？
+题主你不用担心，你并不孤独，我相信很多人会有这个怀疑，我也有，自古就有。
+在古典哲学时期，大家很喜欢探索所谓的真相，觉得有些很终极物质或者规律是恒久不变的，他们假设“本质先于存在”，就是说，有一个真相或者真理时普遍而且有形式特征的，就好像题主你问的“真爱”和“真相”里面的“真”，就是在假设，爱有一个普遍的正确样子，生活有一个普遍的正确样子，你活成怎么样，完全是在这个“真”的最高标准之下努力地接近“真”的状态。
+很显然，在这样的世界观里面，人是没有个性和自由的——错了，是只有一个维度的自由：你要么向上追求真爱，要么堕落接受真相。但是，这样看待人生真的好吗？想想都觉得很累是不是，要么努力向上爬，要么带着成为人生的失败者的恐惧往下掉。
+所以，后来有些人提出来，我不想这样看待自己，其中一派叫做存在主义。他们这群人主张：以人为中心、尊重人的个性和自由。人是在无意义…</span>
                   </div>
                 </a>
               </details>
             </article>
             <article>
               <details class="article-expander">
-                <summary class="article-expander__title">Learn CSS!</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://web.dev/learn/css/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(3 min)</span>
-                    <span>Ooo look at this mighty SEO flex from Google: Learn CSS! Well deserved — this is great content. Twenty-three chapters taking you through all the fundamentals of CSS with extra content, like relevant podcasts, interactive examples, and even quizzes to …
-The post Learn CSS! appeared first on CSS-Tricks.
-You can support CSS-Tricks by being an MVP Supporter.</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Can We Create a “Resize Hack” With Container Queries?</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://css-tricks.com/can-we-create-a-resize-hack-with-container-queries/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(6 min)</span>
-                    <span>If you follow new developments in CSS, you’ve likely heard of the impending arrival of container queries. We’re going to look at the basics here, but if you’d like another look, check out Una’s “Next Gen CSS: @container” article. …
-The post Can We Create a “Resize Hack” With Container Queries? appeared first on CSS-Tricks.
-You can support CSS-Tricks by being an MVP Supporter.</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">fit-content and fit-content()</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://www.quirksmode.org/blog/archives/2021/04/fitcontent_and.html">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(4 min)</span>
-                    <span>Here’s some hardcore deep-dive CSS nerdery from PPK. If you can wrap your mind around min-content (the smallest an element can be based on the content it contains) and max-content (the largest the content of an element can push it) …
-The post fit-content and fit-content() appeared first on CSS-Tricks.
-You can support CSS-Tricks by being an MVP Supporter.</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-        </section>
-      </li>
-      <li class="source">
-        <section>
-          <h3 class="source-name"><a class="source-name__link" href="https://www.freecodecamp.org/news">freeCodeCamp.org</a></h3>
-          <section class="articles-per-source">
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Angular 11 Tutorial: Code a Project from Scratch</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://www.freecodecamp.org/news/angular-11-tutorial-code-a-project-from-scratch/">
+                <summary class="article-expander__title">哪些科技的发展，解决了医疗上的大问题？</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9736224">
                   <div class="article-summary-box-inner">
                     <span class="article-reading-time">(1 min)</span>
-                    <span>Angular is one of the most popular web frameworks. We just released a course on the freeCodeCamp.org YouTube channel that will teach you how to create an Angular 11 project from scratch. It uses a public API to create a game database website. You will gain a great foundation</span>
+                    <span>菲利普医生，野生外科医生/美短饲养者
+阅读原文
+
+陈院士是海内外知名的肝胆胰脾外科专家，他的这个提问可谓是包罗万象、高屋建瓴的。在下不揣冒昧，在这里跟大家分享一些自己对这个问题的思考，回答可能比较片面，但愿能够抛砖引玉。
+从我第一次在父亲的实验室跟他学着使用显微镜，到后来进入大学开始系统性学习临床医学课程，一直到今天从事外科学博士后研究工作。几乎我所学到的每一个医学知识点、使用的每一种医疗或者科研技能，都是历史上科技进步解决的医疗上的大问题。
+我深刻的感觉到，在众多的科技进步中，直接或者间接的视觉科技是解决医疗大问题最多的，因为看见的力量就是如此伟大——西方有“seeing is believing”，中国有“眼见为实”的说法。科学的研究方法讲究实证，特点是可证伪，而最为直观最无可辩驳的实证往往就是看到。所以我说，视觉科技是解决医疗大问题最多的。
+在我的一个高赞同回答中，我用不同微观尺度划分了人类不同科技水平下所能使用的最细的针，并列举了这些不同尺度的针为医学带来了哪些进步：
+假设有一根足够细的针，这根针可以用来干什么？
+在这个回答中，我将仿照上面这个回答，用人类观察人体与自然的不同工具划分医学进步的不同时代…</span>
                   </div>
                 </a>
               </details>
             </article>
             <article>
               <details class="article-expander">
-                <summary class="article-expander__title">Learn Modern C++ by Building an Audio Plugin</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://www.freecodecamp.org/news/learn-modern-cpp-by-building-an-audio-plugin/">
+                <summary class="article-expander__title">把一张白纸拍到13.5亿像素是怎样一种体验？</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9736184">
                   <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(1 min)</span>
-                    <span>A lot of C++ courses teach you how to build toy projects with no real-world application. But it can often be more helpful to write programs people would actually use. We just released a 5-hour C++ course that will teach you how to write modern C++ code by building an</span>
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>Tianxi，公号 ：oktim
+
+近期做了一些超高分辨率的图像扫描实验，我为这个实验找到了一张纹理非常丰富的纸，对它进行了复杂的全景式景深覆盖扫描，共拍摄了 206 张图像。最终通过合成得到了一张 13.5 亿像素，消除景深的图像。
+
+ 
+这个实验的目的，在于帮助大家理解采样压缩对于图像造成的损失。
+ 
+这个实验的设计是这样的：
+拍摄对象是一张纹理非常丰富的纸，我对这张纸拍两张照片，这两张照片分别是：
+
+A. 普通拍摄，大约 5000 万像素。
+B. 极高分辨率的扫描，大约 13.5 亿像素。
+
+最终我把照片 B 缩到 5000 万像素，与照片 A 对比。
+按照常人的直觉，13.5 亿像素的照片缩到 5000 万像素，那应该与 5000 万像素的照片是同样清晰的。
+接下来是实验对比：
+A 5000 万像素原图 100%B 13.5 亿像素缩小至 5000 万像素 100%A 5000 万像素原图 200%B 13.5 亿像素缩小至 5000 万像素 200%图像大小
+这个实验证明，采样压缩在摄影中是广泛存在的。其结论不仅适用于分辨率，也可以推广到色深。
+无论是高分辨率，还是高色深，对于图像的处理和最终的显示…</span>
                   </div>
                 </a>
               </details>
             </article>
             <article>
               <details class="article-expander">
-                <summary class="article-expander__title">How to Get Started with Version Control Using Git</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://www.freecodecamp.org/news/get-started-with-version-control-and-git/">
+                <summary class="article-expander__title">如何让青少年对科学产生和保持好奇心？</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9736232">
                   <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(5 min)</span>
-                    <span>In this tutorial, you&#x27;ll learn what version control is and how you can contribute to open-source projects using Git.  We&#x27;ll get through the fundamentals of Git and I&#x27;ll give you the knowledge that is indispensable for any web developer. What is Git?Git is a version control software which lets</span>
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>谢寅，科学教育搬运工(._.)
+阅读原文
+
+我觉得我们在科普的“软件”建设上，还需要多下一些功夫。
+身处北京，曾任教于小学和幼儿园，是一名科学老师，工作的时候，我也多次带孩子们参观各种北京的科技场馆。其实如今的科普场馆，在“互动”和“体验”上其实已经做的很好了。在科技场馆中，丰富的展品、真实的情境都能带给小孩子很好的体验。
+但是在我看来，其实做的还不够。
+我有时候会观察这些孩子操作时的状态，在我看来，“好奇的体验”和“好玩的体验”并不能完全区别开，我的意思是：如果我们要想培养孩子的好奇心，那么我们带给他们的，一定是一份独特的感受和体验，这种体验和应该是同玩一个玩具带来的那种“好玩的体验”是完全不同的。
+培养好奇心，是一定要给孩子带来与众不同的感受和体验的。如果以这个标准来看待我们的科普活动的话，我觉得我们并没有做的很好。
+不可否认很多展品的确能激发孩子的好奇心，但是我们没有形成一个套路（缺少系统性），也没有把成功的经验总结、提炼出来，并且分享给更多的教育者发扬光大。
+而孩子们的好奇心，更像是泼在沙地上的水，很快就消失在生活的喧嚣中了（缺少稳定性）。
+我在工作中能够看到，随着孩子们年龄的增大，科普场馆中的“体验…</span>
                   </div>
                 </a>
               </details>
             </article>
             <article>
               <details class="article-expander">
-                <summary class="article-expander__title">Learn JavaScript - A Free 7-hour Interactive Tutorial</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://www.freecodecamp.org/news/learn-javascript-interactive-course/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(4 min)</span>
-                    <span>Over the last four months, I have recorded what is probably the most interactive JavaScript course that has ever been created. The reason I have done this is because I often see new coders fall into the same pitfalls again and again when trying to learn JavaScript, with the most</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-        </section>
-      </li>
-      <li class="source">
-        <section>
-          <h3 class="source-name"><a class="source-name__link" href="https://www.smashingmagazine.com/">Articles on Smashing Magazine — For Web Designers And Developers</a></h3>
-          <section class="articles-per-source">
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Boost Your Skills Online: Smashing Workshops On Front-End And Design</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://smashingmagazine.com/2021/05/new-online-workshops-front-end-ux/">
+                <summary class="article-expander__title">弓的起源与发展是怎样的？</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9736194">
                   <div class="article-summary-box-inner">
                     <span class="article-reading-time">(3 min)</span>
-                    <span>Front-end and design are remarkably complex these days. That’s why we invite kind, smart folks from the community to run online workshops for all of us to learn together. And we have new ones coming up, and we’d like to kindly welcome you to join in.</span>
+                    <span>大恶人，用共产主义的铁拳砸烂狭隘民族主义的狗头
+阅读原文
+
+ 
+前言——有关弓箭的传说
+“逮至尧之时，十日并出，焦禾稼，杀草木，而民无所食。猰貐、凿齿、九婴、大风、封豨、修蛇皆为民害。尧乃使羿诛凿齿于畴华之野，杀九婴于凶水之上，缴大风于青邱之泽，上射十日，而下杀猰貐，断修蛇于洞庭，擒封豨于桑林。
+——《淮南子（本经训）》
+后羿射日的传说
+在中国的神话传说中，弓箭的发明者有资料可查的主要有三位：盘、张挥、后羿。《山海经·海内经》说：“少皞生盘，盘是始为弓矢。”《世本》记载 “挥作弓，牟夷作矢”， 宋·欧阳修《新唐书·宰相世系表》曰： “张氏出姬姓，黄帝子少昊青阳氏第五子挥为弓正，始制弓矢，子孙赐姓张氏。”
+著名的“Achilles&#x27; Heel”
+不仅在中国，在世界各地均流传着有关弓箭的各类传说，比如古希腊神话中的英雄阿格硫斯就是被弓箭射中脚踝而死，还有英国著名弓箭手罗宾汉的传说以及日本名将那须与一的神射传说，由此可见，弓箭对世界各地的文明都有深远的影响，因为弓箭的发明，人类才能在相对安全的距离上狩猎动物、抵御猛兽。甚至可以说，弓箭是人类冷兵器史上的巅峰之作。
+
+一，弓箭何时起源
+一般考古学研究表明，人类使用弓箭…</span>
                   </div>
                 </a>
               </details>
             </article>
             <article>
               <details class="article-expander">
-                <summary class="article-expander__title">How To Implement Authentication In Next.js With Auth0</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://smashingmagazine.com/2021/05/implement-authentication-nextjs-auth0/">
+                <summary class="article-expander__title">瞎扯 · 如何正确地吐槽</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9736179">
                   <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(6 min)</span>
-                    <span>A step-by-step tutorial on adding authentication and authorization to your Next.js apps, with Auth0. We’ll be using a Next.js SDK to connect our application to the Auth0 API and will create the dynamic API route for React.</span>
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>0.999......8和1相等吗?
+
+秘小乐，混吃等死程序员
+阅读原文
+
+ 
+pdd 上 1 能提现，0.999.......8 你能提现吗？
+阅读原文
+
+如何看待太原女子假扮医生给情夫妻子注射氯化钾事后获谅解，被判6年？
+
+极萨学院冷哲，有时治愈，常常帮助，总是安慰
+阅读原文
+
+抱歉我第一眼看成氰化钾了，我还说都注射氰化钾了还能获得谅解…是给法官托梦了嘛。
+阅读原文
+
+年轻人会因为哪些原因对科研「望而却步」，如何帮助他们安心做研究？
+
+知乎用户
+阅读原文
+
+房子。
+阅读原文
+
+如何看待新垣结衣和星野源在一起的传闻？
+
+纶纶，stay young stay simple
+阅读原文
+
+
+
+
+阅读原文
+
+5月 19 日新垣结衣和星野源公布结婚消息，你有什么想说的？
+
+平昭·南宫司卿，きっとまた旅に出る。
+阅读原文
+
+星野源给任天堂唱了《创造》；
+
+新垣结衣给任天堂拍了《健身环》的广告；
+
+古川俊太郎微微一笑；
+
+妙，妙，妙。
+（注：古川俊太郎是任天堂的社长。）
+阅读原文</span>
                   </div>
                 </a>
               </details>
@@ -161,86 +1032,162 @@ You can support CSS-Tricks by being an MVP Supporter.</span>
     <ul class="sources card">
       <li class="source">
         <section>
-          <h3 class="source-name"><a class="source-name__link" href="https://css-tricks.com">CSS-Tricks</a></h3>
+          <h3 class="source-name"><a class="source-name__link" href="https://news-at.zhihu.com/api/4/stories/latest?client&#x3D;0">知乎日报</a></h3>
           <section class="articles-per-source">
             <article>
               <details class="article-expander">
-                <summary class="article-expander__title">Notion API</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://css-tricks.com/notion-api/">
+                <summary class="article-expander__title">公司严重缺人几乎要乱套了，老板却招聘条件非常苛刻，什么原因？</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9736166">
                   <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(3 min)</span>
-                    <span>The Public Beta of the Notion API dropped! Woot! Here’s their guide. I’ve been a Notion user and fan for a long time, for both personal and professional team use. They even sponsored a few videos around here a …
-The post Notion API appeared first on CSS-Tricks.
-You can support CSS-Tricks by being an MVP Supporter.</span>
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>小红拖拉机，专治「工作不快乐」
+阅读原文
+
+说白了，根本原因是老板太聪明了。
+太聪明的老板
+太聪明的老板还会有的特点：
+重视学历与出身。
+对本科学历是 985、211 的，对大厂来的都会高看一眼，横竖觉得你值更多钱。至于跟着自己踏实卖命干的普通人，都是没格局、没脑子，打心眼里觉得你次一等。
+抱怨员工责任心。
+为什么到点就下班了，交付总是 delay，也不知道多干点，都这样的责任心，还想要发展！
+抱怨员工只关注钱。
+我们公司是要颠覆未来的，你要看到跟着公司能实现人生价值。别只盯着现金，给你这么多钱还嫌不够，你知道多少人想进咱们公司吗，好多人都说咱们公司多牛逼，知不知道？
+超级自恋。
+觉得自己非常牛逼，自己的过往对其他人就是人生的巅峰，自己什么都懂，你们都是傻逼。不容你的挑战和质疑，如果争辩，必然得把你说道哑口无言为止。
+老板觉得公司很牛逼所以要保持良好形象，如某匿名用户回答：
+
+为啥老板太聪明了会导致这种结果呢？
+聪明人的达芬奇诅咒
+因此太聪明的兴趣广泛、爱好丰富，说啥都懂，没有不知道的。
+所以他们在有时限的竞赛中，往往能轻松拿高分，比如考试、面试、演讲等很多领域，他们不用特努力就能超过大多数人。
+所以在他们的…</span>
                   </div>
                 </a>
               </details>
             </article>
             <article>
               <details class="article-expander">
-                <summary class="article-expander__title">svg-loader: A Different Way to Work With External SVG</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://css-tricks.com/svg-loader-a-different-way-to-work-with-external-svg/">
+                <summary class="article-expander__title">未来 20 年，中国航天事业将会迎来哪些关键的技术节点？</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9736158">
                   <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(5 min)</span>
-                    <span>SVGs are awesome: they are small, look sharp on any scale, and can be customized without creating a separate file. However, there is something I feel is missing in web standards today: a way to include them as an external …
-The post svg-loader: A Different Way to Work With External SVG appeared first on CSS-Tricks.
-You can support CSS-Tricks by being an MVP Supporter.</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-        </section>
-      </li>
-      <li class="source">
-        <section>
-          <h3 class="source-name"><a class="source-name__link" href="https://www.freecodecamp.org/news">freeCodeCamp.org</a></h3>
-          <section class="articles-per-source">
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">How to Use CSS Selectors to Style Your Web Page</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://www.freecodecamp.org/news/use-css-selectors-to-style-webpage/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(9 min)</span>
-                    <span>CSS selectors are one of the most important parts of CSS. They give you the ability to target HTML elements on your web page that you want to style. Without CSS selectors, you wouldn&#x27;t be able to style your page to look how you want. Thankfully CSS selectors have been</span>
+                    <span class="article-reading-time">(1 min)</span>
+                    <span>知乎用户，材料砖工
+阅读原文
+
+要看今后 20 年将会有什么关键节点，得先看现在咱们都做出了什么才行。
+载人航天方面：11 艘神舟飞船、两个天宫空间实验室、一艘天舟货运飞船。从各个角度验证了我国载人航天各系统的可靠性和实用性，顺手也在天上搞了些科研项目，获得了一些成果。现在第三步也稳稳的迈了出去，天和核心舱成功发射，几天后天舟二号货运飞船也将发射升空，我们的空间站也将在不久的将来完全建成。
+厂房中的天和核心舱
+月球探测方面：嫦娥 1-5 号完成了从绕月到采样返回的各个步骤，其中嫦娥二号在完成月球观测任务后还成为了我国首个深空探测器，对地外小行星进行了飞掠观测。嫦娥五号更是完成了一次“阿波罗式”的登月任务，为后续进一步的月球探测任务做了一定准备。
+行星探测方面：全世界的火星探测项目中，第一次火星探测 + 环绕 + 落火 + 小车巡视，一个航天器把这些人物全部搞定的，就天问一号独一份，任务难度相当大，但咱们还是非常成功的把祝融送到了火星地面，就等过些天充满电之后开展任务了。
+运载火箭方面：这个可说的比较多。自从 2016 年长征七号首飞以来，我国新一代运载火箭体系已经初步建成，各个轨道的运载能力上限均得到了大幅提…</span>
                   </div>
                 </a>
               </details>
             </article>
             <article>
               <details class="article-expander">
-                <summary class="article-expander__title">What is Web3? The Decentralized Internet of the Future Explained</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://www.freecodecamp.org/news/what-is-web3/">
+                <summary class="article-expander__title">哪些科技的发展，解决了医疗上的大问题？</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9736160">
                   <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(7 min)</span>
-                    <span>The internet is going through a paradigm shift. Learn the differences between Web2 and Web3, and why many developers and companies are shifting their approach in building apps.</span>
+                    <span class="article-reading-time">(1 min)</span>
+                    <span>极萨学院冷哲，有时治愈，常常帮助，总是安慰
+阅读原文
+
+是时候祭出我这张课件图片了。
+
+时间轴上记载的是遗传学 / 分子生物学 / 基因组学以及生物信息学的在从 1865 到近代的一些标示性事件的时间点。
+虽然这些都是生命科学领域的进展，但是，正式这些进展，极大的推进了医学的进步，解决了非常多医学上的大问题。
+比如举一个最简单的例子，在时间轴上不起眼的 PCR 技术，成为了我们现在所不可或缺的新冠病毒检测的金标准的理论基石。同样这个技术在 1993 年获得了诺贝尔化学家。
+今天想跟大家的分享的，是这个时间轴里，我认为近代生命科学最重要的一个事件，同时也是对人类的近代医学有着非常非常大影响的事件——人类基因组计划。
+人类基因组计划（The Human Genome Project，HGP）是一个可以与曼哈顿原子弹计划和阿波罗登月计划并列的，人类在 20 世纪的三大科学计划之一。人类基因组计划其目的在于对一个人完成完整的序列测序，病绘制人类基因图谱，以达到破解人类遗传学信息的最终目标。
+人类基因组计划从提出到实现到最终结束，耗时十几年，几十亿美金，同时由中国、美国、英国、法国、德国、日本等多国科学家合力完成。这可…</span>
                   </div>
                 </a>
               </details>
             </article>
             <article>
               <details class="article-expander">
-                <summary class="article-expander__title">How to Optimize for Change in Software Development</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://www.freecodecamp.org/news/how-to-optimize-for-change-software-development/">
+                <summary class="article-expander__title">如何评价贾樟柯导演及其作品？</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9736173">
                   <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(7 min)</span>
-                    <span>Imagine that you work at Magic Money Corp, which runs on just three lines of JavaScript: let input &#x3D; { step1: &#x27;collect underpants&#x27; } doStuff(input)  profit(input) // $$$!!! Now imagine that something&#x27;s wrong with doStuff and you need to take it down for maintenance. What happens if you temporarily comment out the second</span>
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>小吕同学，日常厌学的研究僧，喜欢泡在电影与好奇中
+阅读原文
+
+贾樟柯导演是一个十分重视空间的电影从业者
+
+1997 年贾樟柯的第一部长篇《小武》问世，在国际上获得广泛赞誉，一路斩获八个大奖，自此一战成名，频频问鼎国际奖项，囊括三大国际电影节奖项。
+1998 年，《小武》在柏林电影节获奖，且斩获国际奖项多达几十项。
+2006 年，《三峡好人》在第 63 届威尼斯斩获电影节金狮奖；
+2013 年《天注定》荣获戛纳电影节最佳编剧奖；
+2015 年，戛纳电影节将终身成就奖颁于时值四十五岁的贾樟柯。
+此时，贾樟柯无可置疑的成为中国第六代导演的领军人物。
+贾樟柯与空间
+“你进入一个空间里面，要先沉浸十分钟，听这个空间跟你诉说，然后你跟他对话。[1]”
+这是他一直以来的创作信条，坚持与实景空间对话后再进行戏剧创作完成分镜。
+在学习与拍摄影片的过程中，贾导早期的创作风格受到了意大利新现实主义大师们的影响，后期逐渐发展出自己独特的艺术风格，显现在电影空间特性的创作中。
+科长模仿希区柯克
+一、 缓慢性
+总体而言，贾樟柯的电影中是一种心理感觉上很慢的电影。
+这种“慢”感并不是慢镜头，那是一种重塑生活浪漫化的方式。是现实生活的漫无目…</span>
                   </div>
                 </a>
               </details>
             </article>
-        </section>
-      </li>
-      <li class="source">
-        <section>
-          <h3 class="source-name"><a class="source-name__link" href="https://www.smashingmagazine.com/">Articles on Smashing Magazine — For Web Designers And Developers</a></h3>
-          <section class="articles-per-source">
             <article>
               <details class="article-expander">
-                <summary class="article-expander__title">Frustrating Design Patterns: Mega-Dropdown Hover Menus</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://smashingmagazine.com/2021/05/frustrating-design-patterns-mega-dropdown-hover-menus/">
+                <summary class="article-expander__title">14岁前安放一个定时炸弹，14岁后爆炸，构成犯罪吗？</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9736176">
                   <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(17 min)</span>
-                    <span>Do we need mega-dropdown hover menus in 2021? Probably not. Let’s explore things to keep in mind when designing and building a mega-dropdown, alternatives to hover menus and fine details for designing a better UX.</span>
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>曾杰律师，广强律所非法集资案件中心主任，合伙人。18617320573
+阅读原文
+
+谢邀，这种纯理论思考的问题，稍微想想是好玩，想多了就很累，我试着答一下，不会很严谨，见谅。
+我觉得这涉及一个问题，不作为犯。
+1.如果觉得定时炸弹这个例子不太好理解，那就换一个类比（当然在刑法学领域不鼓励类推，我们谨慎的用一下），即，如果一个人 14 岁以前，杀了人，要不要负责？比如满 14 周岁前一天故意把人捅了，那他要不要负责？
+结论是，如果被捅的人当场死亡，那这个小孩的确是不用承担刑事责任。
+但是，如果凶手是在一个荒郊野岭，在满 14 周岁前一天捅了人，但是被害人没有当场死亡，而是等到了第二天（此时凶手已经满了 14）才在挣扎中死亡，此时（第二天），凶手就有了救助的义务，比如马上打个电话，或者及时呼救，或者必要的，简单的止血等，如果死者最终是因为凶手的见死不救而延误治疗死亡， 那凶手在满 14 周岁的当天就可能构成不作为的故意杀人犯。
+此种不作为的义务来源是特定的，不是每个人都有的。因为此前死者被捅是因为这个凶手造成，这个事实不论凶手的年龄，都不会改变，因此，就构成了凶手在满 14 周岁以后的不作为义务。
+为何？因为凶手…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">瞎扯 · 如何正确地吐槽</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9736152">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>如何用一句话，到达自己所在圈子的鄙视链的最底端？
+
+Mon1st，small.cat/cow
+阅读原文
+
+&quot;人类大脑只开发了百分之十，其中左脑负责理智，右脑负责情感。&quot;
+阅读原文
+
+你是通过什么事情才知道自己丑的？
+
+别叫我陈赫，我妈超爱我这张脸
+阅读原文
+
+刚毕业那会去某股份制银行面试，面试是群面，面试官开场直接说，能揽储 2000 万和长得很标致的留下，其他的可以回去等通知了。我微微一笑，淡定留下。
+就这样我上了俩月的班，直到揽储任务下发后我才被赶走。
+尼玛走之前一同事还跟我说我开始以为你至少可以揽 5000 万以上。
+想哭。
+阅读原文
+
+男朋友一个晚上没有回来，他说在朋友家睡，但是内裤发现了一条长头发，该问还是不该问?
+
+乃义武，种植野生幽默，贩卖散装快落。
+阅读原文
+
+这事问也白问，得自己动手去发掘真相。我有一计，可解你疑惑。
+你去买一个智能电子秤，可以连接手机发送数据的那种，然后不动声色地塞到你男朋友内裤里。
+等他再去「朋友家」睡觉的时候，一脱裤子，电子秤就会应声落地，然后另一个人就会好奇地去称重。你等数据同步到手机里就好了！
+如果数据在 100 斤左右（±20 斤），那不用说了，你男朋友肯定出轨了…</span>
                   </div>
                 </a>
               </details>
@@ -254,98 +1201,86 @@ You can support CSS-Tricks by being an MVP Supporter.</span>
     <ul class="sources card">
       <li class="source">
         <section>
-          <h3 class="source-name"><a class="source-name__link" href="https://css-tricks.com">CSS-Tricks</a></h3>
+          <h3 class="source-name"><a class="source-name__link" href="https://news-at.zhihu.com/api/4/stories/latest?client&#x3D;0">知乎日报</a></h3>
           <section class="articles-per-source">
             <article>
               <details class="article-expander">
-                <summary class="article-expander__title">Pinned Audio WordPress Theme</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://css-tricks.com/pinned-audio-wordpress-theme/">
+                <summary class="article-expander__title">求问各位知乎大神，猫在古代的别称除了狸奴还有哪些？</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9736141">
                   <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(4 min)</span>
-                    <span>I’m afraid I have to start this with a whole backstory, as the journey here is the point, not so much the theme.
-A fella wrote to me a while back outlining a situation he was in. His company has …
-The post Pinned Audio WordPress Theme appeared first on CSS-Tricks.
-You can support CSS-Tricks by being an MVP Supporter.</span>
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>地平线HOA，简单、有趣、认真的科普。『公众号同名』
+阅读原文
+
+话说，古人都管猫叫什么？
+让我们一起学猫叫，一起喵喵喵喵~
+
+养猫，并不是现代人特有的休闲方式。宋代著名诗人陆游有云：
+“溪柴火软蛮毡暖，我与狸奴不出门。”——《十一月四日风雨大作（其一）》
+“狸奴”就是猫，给它翻译翻译就是：刮风下雨算个啥，烤个火，逗个猫，窗前枕下。
+
+陆游甚至专门为猫写了组诗，题为《赠猫》。我们看看第三首：
+执鼠无功元不劾，一箪鱼饭以时来。
+看君终日常安卧，何事纷纷去又回？——《赠猫（其三）》
+逮不到老鼠，我不追究；每天的饭菜，我按时送；我唯一的要求，就是你能趴在那里好好陪我……
+你丫的整天跑来跑去就不能理我一下？！
+
+陆游的这只小猫名叫“於菟”，“於菟”是啥意思呢？
+鼠穴功方列，鱼餐赏岂无。
+仍当立名字，唤作小於菟。——《赠猫（其一）》
+小猫横扫无胆鼠辈，大鱼大肉是大大滴有！照例应该给你起个名字，嗯，就叫你“小老虎”吧！
+《东京梦华录》提到，当时开封和杭州有专门卖猫食的店铺。如果这个说法属实，至少在宋代，与猫咪相关的行业就已经非常发达了。
+哦，顺便提一句，陆游的“小老虎”是一袋盐换来的...
+
+中国第一部关于猫的专著，是清…</span>
                   </div>
                 </a>
               </details>
             </article>
             <article>
               <details class="article-expander">
-                <summary class="article-expander__title">How to Create Neon Text With CSS</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://css-tricks.com/how-to-create-neon-text-with-css/">
+                <summary class="article-expander__title">目前为止，中国科技发展可提速的方向有哪些？</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9736137">
                   <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(8 min)</span>
-                    <span>Neon text can add a nice, futuristic touch to any website. I’ve always loved the magic of neon signs, and wanted to recreate them using CSS. I thought I’d share some tips on how to do it! In this article, …
-The post How to Create Neon Text With CSS appeared first on CSS-Tricks.
-You can support CSS-Tricks by being an MVP Supporter.</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-        </section>
-      </li>
-      <li class="source">
-        <section>
-          <h3 class="source-name"><a class="source-name__link" href="https://www.freecodecamp.org/news">freeCodeCamp.org</a></h3>
-          <section class="articles-per-source">
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">How to Break into Ethereum, Crypto, and Web3 as a Developer</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://www.freecodecamp.org/news/breaking-into-ethereum-crypto-web3-as-a-developer/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(8 min)</span>
-                    <span>Lately, I&#x27;ve been talking about my move into the Web3, Ethereum, and crypto space since making the switch from a traditional web, mobile, and cloud background. Since making that move, a shocking number of people have reached out to me who are also thinking about doing the same.  It&#x27;s really</span>
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>温戈，想当作家的数字IC设计工程师 公众号：OpenIC
+阅读原文
+
+泛半导体领域，包括：材料，EDA，制造，设备（光刻机，ATE 等）。
+近期，一股缺芯潮流席卷全球，很多行业都面临着无芯可用的情况。比如晶圆厂 8 英寸和 12 寸晶圆都处于全球性的紧张状态，芯片面临着供需失衡的局面。
+早在 2020 年 12 月，大众公司就曾警告称，由于半导体短缺，2021 年第一季度公司将遭遇大规模生产中断，届时将调整中国、北美和欧洲工厂的生产。虽然部分业内人士已经预料到芯片将面临短缺的状况，但显然缺芯潮已远远超出了行业预估，减产效应正在全球多个行业之间蔓延。再加上美国寒潮和日本地震的影响，让本来缺芯的状况雪上加霜。而近几年，从美国接连对中兴，华为，中芯国际等企业实施科技封锁，到日前美国拉拢欧盟、日韩成立半导体联盟针对中国，这一系列的动作导致国内的芯片行业陷入了困境。
+无论是半导体产业链的脆弱性，还是国内半导体的与国际先进水平存在一定差距的现状，都使得在芯片领域发展提速变得刻不容缓。
+就目前的现状，我们关注芯片领域以下几个问题：
+本轮的芯片危机，更多是暴露了中国芯片产业存在的短板，还是更多展示了中国芯片产业存在的机会？中…</span>
                   </div>
                 </a>
               </details>
             </article>
             <article>
               <details class="article-expander">
-                <summary class="article-expander__title">Freelance Development Pricing Guide – Should Freelancers Bill by the Hour?</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://www.freecodecamp.org/news/the-different-ways-to-charge-for-a-website/">
+                <summary class="article-expander__title">有哪些天文研究成果已经改变了我们的生活？还有哪些新方向值得期待？</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9736128">
                   <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(7 min)</span>
-                    <span>If you offer your services as a freelance developer, you have a major say in how you price your project.  But how do you go about charging for a website project? &quot;Well, I just bill by the hour and send an invoice every week or month.&quot; ...I hear you say.</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Coding Programs – 101 Ways to Learn to Code for Free</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://www.freecodecamp.org/news/coding-programs-101-ways-to-learn-to-code-for-free/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(11 min)</span>
-                    <span>Yes, you can learn to code for free, from the convenience of your own home, and at your own pace. I&#x27;m going to show you 101 courses where you can learn computer science and programming for free.  The freeCodeCamp courses are completely free and some of them include a free</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-        </section>
-      </li>
-      <li class="source">
-        <section>
-          <h3 class="source-name"><a class="source-name__link" href="https://www.smashingmagazine.com/">Articles on Smashing Magazine — For Web Designers And Developers</a></h3>
-          <section class="articles-per-source">
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">How To Create, Edit And Animate SVGs All In One Place With SVGator 3.0</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://smashingmagazine.com/2021/05/create-edit-animate-svg-svgator3/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(6 min)</span>
-                    <span>Today, we are taking a closer look at [SVGator 3.0](https://www.svgator.com/?utm_source&#x3D;article&amp;utm_medium&#x3D;smashingmag&amp;utm_campaign&#x3D;svgator3_smashing), a new major release of the popular SVG application that lets you create, edit and animate SVG files and make the best out of what SVG has to offer — from start to finish.</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Smashing Podcast Episode 37 With Adam Argyle: What Is VisBug?</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://smashingmagazine.com/2021/05/smashing-podcast-episode-37/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(31 min)</span>
-                    <span>In this episode, we’re talking about VisBug. What is it, and how is it different from the array of options already found in Chrome DevTools? Drew McLellan talks to its creator Adam Argyle to find out.</span>
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>Pjer，空间物理博士在读 - 好奇且饭量大·会修电脑·不会游泳
+阅读原文
+
+谢邀！而且这题我会！
+射电天文→医学成像
+直观上可能很难想象两个空间尺度区别如此巨大的研究对象会有任何联系。
+首先，来回顾一下 Leonard 和 Penny 婚礼上的经典对白。
+
+组成人体的原子来源于宇宙星云，所以，人类用观察宇宙的方式来观察人体。
+干涉成像
+射电天文中的相干成像（interferometry）技术被应用于核磁共振，让医生可以更快速准确获得人体内部层析结构，辅助诊断。
+观测是天文学研究的重要手段，对应诊断中的“望闻问切”，区别是在天文中只能“望闻问”，不能“切”，天文学研究的巨大空间尺度决定了所进行的观测都只能是非接触式测量。经过几十年的发展，天文观测从最初只能使用可见光望远镜观测到现在遍布从波长为 10^-12m 的伽马射线到 10^3m 的甚低频射电波。
+图源：Wikipedia
+射电天文观测中，考虑 Rayleigh 判据衍射极限给出的分辨率：
+
+其中 D 是望远镜口径，
+
+是波长。
+低频观测中波长较大，因此单口径望远镜分辨率有限，为了能在有限的成本下得到更高的空间分辨率，射电天文中提出了干涉成像（inter…</span>
                   </div>
                 </a>
               </details>
@@ -359,53 +1294,6 @@ You can support CSS-Tricks by being an MVP Supporter.</span>
     <ul class="sources card">
       <li class="source">
         <section>
-          <h3 class="source-name"><a class="source-name__link" href="https://css-tricks.com">CSS-Tricks</a></h3>
-          <section class="articles-per-source">
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">The Humble &#x60;img&#x60; Element And Core Web Vitals</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://www.smashingmagazine.com/2021/04/humble-img-element-core-web-vitals/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(18 min)</span>
-                    <span>Addy Osmani on images in HTML:
-The humble  element has gained some superpowers over the years. Given how central it is to image optimization on the web, let’s catch up on what it can do and how it can 
-…
-The post The Humble &#x60;img&#x60; Element And Core Web Vitals appeared first on CSS-Tricks.
-You can support CSS-Tricks by being an MVP Supporter.</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">A Love Letter to HTML &amp; CSS</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://css-tricks.com/a-love-letter-to-html-css/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(9 min)</span>
-                    <span>I see you. In the back there, behind JavaScript and React and PHP and all those “real” programming languages, I see you. And I appreciate you.
-The post A Love Letter to HTML &amp; CSS appeared first on CSS-Tricks.
-You can support CSS-Tricks by being an MVP Supporter.</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Euismod</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://www.euismod.dev/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(0 min)</span>
-                    <span>An interactive tool for learning grid syntax from Etesam Ansari. In the Learn section, it teaches you some concepts (involving multiple bits of the grid syntax) then gives you a task to complete by filling out the right syntax. I’m …
-The post Euismod appeared first on CSS-Tricks.
-You can support CSS-Tricks by being an MVP Supporter.</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-        </section>
-      </li>
-      <li class="source">
-        <section>
           <h3 class="source-name"><a class="source-name__link" href="https://github.com/osmoscraft/osmosfeed/releases">Release notes from osmosfeed</a></h3>
           <section class="articles-per-source">
             <article>
@@ -416,23 +1304,6 @@ You can support CSS-Tricks by being an MVP Supporter.</span>
                     <span class="article-reading-time">(1 min)</span>
                     <span>⚠ Deprecated: To accommodate the monorepo setup, the node version in all templates/demos/examples has changed from 14 to 16. This is not a breaking change as our compile target is still node 14, and node 16 is backward compatible. We still recommend you start using node-version: &quot;16&quot; in your .github/workflows/update-feed.yaml today to get the performance/security improvements from the newer node. See example
 Chore: Reorganize to monorepo with npm workspace.</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-        </section>
-      </li>
-      <li class="source">
-        <section>
-          <h3 class="source-name"><a class="source-name__link" href="https://www.smashingmagazine.com/">Articles on Smashing Magazine — For Web Designers And Developers</a></h3>
-          <section class="articles-per-source">
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">How We Improved Our Core Web Vitals (Case Study)</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://smashingmagazine.com/2021/05/core-web-vitals-case-study/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(10 min)</span>
-                    <span>Google’s “Page Experience Update” will start rolling out in June. At first, sites that meet Core Web Vitals thresholds will have a minor ranking advantage in mobile search for all browsers. Search is important to any business, and this is the story of how Beau Hartshorne and his team at Instant Domain Search improved their Core Web Vitals scores.</span>
                   </div>
                 </a>
               </details>
@@ -468,167 +1339,6 @@ Chore: Reorganize to monorepo with npm workspace.</span>
                     <span>Added: templating system. Demo | Source | Docs
 Chore: rendering logic refactoring. Adopting functional paradigm.
 Thank you @tianheg, @onnyyonn</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-        </section>
-      </li>
-    </ul>
-  </section>
-  <section class="daily-content">
-    <h2 class="daily-heading"><time datatime="2021-05-14">2021-05-14</time></h2>
-    <ul class="sources card">
-      <li class="source">
-        <section>
-          <h3 class="source-name"><a class="source-name__link" href="https://css-tricks.com">CSS-Tricks</a></h3>
-          <section class="articles-per-source">
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Auto-Generated Social Media Images</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://css-tricks.com/auto-generated-social-media-images/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(8 min)</span>
-                    <span>I’ve been thinking about social media images again. You know, the images that (can) show up when you share a link in places like Twitter, Facebook, or iMessage. You’re essentially leaving money on the table without them, because they …
-The post Auto-Generated Social Media Images appeared first on CSS-Tricks.
-You can support CSS-Tricks by being an MVP Supporter.</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Creating Stylesheet Feature Flags With Sass !default</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://css-tricks.com/creating-stylesheet-feature-flags-with-sass-default/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(4 min)</span>
-                    <span>!default is a Sass flag that indicates conditional assignment to a variable — it assigns a value only if the variable was previously undefined or null. Consider this code snippet:
-$variable: &#x27;test&#x27; !default;
-To the Sass compiler, this line …
-The post Creating Stylesheet Feature Flags With Sass !default appeared first on CSS-Tricks.
-You can support CSS-Tricks by being an MVP Supporter.</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">HTML Boilerplates</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://css-tricks.com/html-boilerplates/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(3 min)</span>
-                    <span>Manuel Matuzović goes line-by-line through a boilerplate HTML document. I like it. It’s a good reference and has a lot of the same type of stuff I tend to put in the main HTML template. It makes me think about …
-The post HTML Boilerplates appeared first on CSS-Tricks.
-You can support CSS-Tricks by being an MVP Supporter.</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-        </section>
-      </li>
-      <li class="source">
-        <section>
-          <h3 class="source-name"><a class="source-name__link" href="https://www.smashingmagazine.com/">Articles on Smashing Magazine — For Web Designers And Developers</a></h3>
-          <section class="articles-per-source">
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Tree-Shaking: A Reference Guide</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://smashingmagazine.com/2021/05/tree-shaking-reference-guide/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(8 min)</span>
-                    <span>“Tree-shaking” is a must-have performance optimization when bundling JavaScript. In this article, we dive deeper on how exactly it works and how specs and practice intertwine to make bundles leaner and more performant. Plus, you’ll get a tree-shaking checklist to use for your projects.</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-        </section>
-      </li>
-    </ul>
-  </section>
-  <section class="daily-content">
-    <h2 class="daily-heading"><time datatime="2021-05-13">2021-05-13</time></h2>
-    <ul class="sources card">
-      <li class="source">
-        <section>
-          <h3 class="source-name"><a class="source-name__link" href="https://css-tricks.com">CSS-Tricks</a></h3>
-          <section class="articles-per-source">
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">DevTools for CSS layouts 2021 edition</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://chenhuijing.com/blog/devtools-for-css-layouts-2021-edition/#%F0%9F%9A%B2">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(5 min)</span>
-                    <span>Chen Hui Jing covers some recent movement in DevTools:
-Firefox’s grid inspector was pretty full-featured from the get-to and released together with CSS grid in Firefox 52. It was constantly improved upon since. Chrome added a basic grid inspector 
-…
-The post DevTools for CSS layouts 2021 edition appeared first on CSS-Tricks.
-You can support CSS-Tricks by being an MVP Supporter.</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-        </section>
-      </li>
-    </ul>
-  </section>
-  <section class="daily-content">
-    <h2 class="daily-heading"><time datatime="2021-05-12">2021-05-12</time></h2>
-    <ul class="sources card">
-      <li class="source">
-        <section>
-          <h3 class="source-name"><a class="source-name__link" href="https://www.smashingmagazine.com/">Articles on Smashing Magazine — For Web Designers And Developers</a></h3>
-          <section class="articles-per-source">
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Frustrating Design Patterns That Need Fixing: Birthday Picker</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://smashingmagazine.com/2021/05/frustrating-design-patterns-birthday-picker/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(11 min)</span>
-                    <span>In this new series of articles on UX, we take a closer look at some frustrating design patterns and explore better alternatives, along with plenty of examples to keep in mind when building or designing one. Let’s start with an infamous birthday picker.</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Little Smashing Stories</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://smashingmagazine.com/2021/05/little-smashing-stories/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(7 min)</span>
-                    <span>Today marks the day we sent out our 300th edition of the Smashing Newsletter. This article is a little celebration in which we share little Smashing stories from people working behind the scenes.</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-        </section>
-      </li>
-    </ul>
-  </section>
-  <section class="daily-content">
-    <h2 class="daily-heading"><time datatime="2021-05-11">2021-05-11</time></h2>
-    <ul class="sources card">
-      <li class="source">
-        <section>
-          <h3 class="source-name"><a class="source-name__link" href="https://www.smashingmagazine.com/">Articles on Smashing Magazine — For Web Designers And Developers</a></h3>
-          <section class="articles-per-source">
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">A Primer On CSS Container Queries</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://smashingmagazine.com/2021/05/complete-guide-css-container-queries/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(16 min)</span>
-                    <span>A prototype of the long-awaited CSS container queries has landed in Chrome Canary and is available for experimentation. Let’s look at what problem is being solved, learn how container queries work, and see how they compare with and complement existing CSS features for layout.</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">The Conference Platform We Use For Our Online Events: Hopin</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://smashingmagazine.com/2021/05/smashingconf-conference-platform-hopin/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(7 min)</span>
-                    <span>At the beginning of 2020, the SmashingConf team was ready for a new year. We had so many things that excited us. New speakers, new workshops, new cities, new attendees, new experiences. And as we all know, 2020 had other ideas. With so many people working from home, we thought we would bring our [Smashing workshops](https://smashingconf.com/online-workshops/) from our home offices to yours — but how?</span>
                   </div>
                 </a>
               </details>
@@ -674,23 +1384,6 @@ Removed: href for each source in cache. The value was never used so it&#x27;s no
             </article>
         </section>
       </li>
-      <li class="source">
-        <section>
-          <h3 class="source-name"><a class="source-name__link" href="https://www.smashingmagazine.com/">Articles on Smashing Magazine — For Web Designers And Developers</a></h3>
-          <section class="articles-per-source">
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Get Started With React By Building A Whac-A-Mole Game</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://smashingmagazine.com/2021/05/get-started-whac-a-mole-react-game/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(21 min)</span>
-                    <span>Want to get started with React but struggling to find a good place to start? This article should have you covered. We’ll focus on some of the main concepts of React and then we’ll be building a game from scratch!</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-        </section>
-      </li>
     </ul>
   </section>
   <section class="daily-content">
@@ -711,50 +1404,6 @@ Added: Customizable site title
 Added: Copy all files from static directory to the root of the site.
 Changed: Favicon, css, and js assets now existing at site root level.
 Chore: Excluded testing files from repo.</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-        </section>
-      </li>
-    </ul>
-  </section>
-  <section class="daily-content">
-    <h2 class="daily-heading"><time datatime="2021-05-07">2021-05-07</time></h2>
-    <ul class="sources card">
-      <li class="source">
-        <section>
-          <h3 class="source-name"><a class="source-name__link" href="https://www.smashingmagazine.com/">Articles on Smashing Magazine — For Web Designers And Developers</a></h3>
-          <section class="articles-per-source">
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">How To Organize Product-Related Assets And Collaborate Better</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://smashingmagazine.com/2021/05/product-records-organization-collaboration-best-practices/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(14 min)</span>
-                    <span>How do you organize your Google Drive assets? How do you name your Dropbox Paper documents? How do you deal with comments? Let’s get it right.</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-        </section>
-      </li>
-    </ul>
-  </section>
-  <section class="daily-content">
-    <h2 class="daily-heading"><time datatime="2021-05-06">2021-05-06</time></h2>
-    <ul class="sources card">
-      <li class="source">
-        <section>
-          <h3 class="source-name"><a class="source-name__link" href="https://www.smashingmagazine.com/">Articles on Smashing Magazine — For Web Designers And Developers</a></h3>
-          <section class="articles-per-source">
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Improving The Performance Of Shopify Themes (Case Study)</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://smashingmagazine.com/2021/05/improving-performance-shopify-themes-case-study/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(9 min)</span>
-                    <span>When dealing with themes for large platforms and CMS, legacy issues often become a bottleneck. In this article, Carson Shold discusses how his team improved the performance and organization of their Shopify themes, and improved maintainability along the way.</span>
                   </div>
                 </a>
               </details>
@@ -822,237 +1471,11 @@ Chore: Refactored parameter passing for enrich step.</span>
             </article>
         </section>
       </li>
-      <li class="source">
-        <section>
-          <h3 class="source-name"><a class="source-name__link" href="https://www.smashingmagazine.com/">Articles on Smashing Magazine — For Web Designers And Developers</a></h3>
-          <section class="articles-per-source">
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Reducing HTML Payload With Next.js (Case Study)</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://smashingmagazine.com/2021/05/reduce-data-sent-client-nextjs/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(8 min)</span>
-                    <span>This article showcases a case study of Bookaway’s landing page performance. We’ll see how taking care of the props we send to Next.js pages can make loading times and Web Vitals better.</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-        </section>
-      </li>
-    </ul>
-  </section>
-  <section class="daily-content">
-    <h2 class="daily-heading"><time datatime="2021-05-04">2021-05-04</time></h2>
-    <ul class="sources card">
-      <li class="source">
-        <section>
-          <h3 class="source-name"><a class="source-name__link" href="https://www.smashingmagazine.com/">Articles on Smashing Magazine — For Web Designers And Developers</a></h3>
-          <section class="articles-per-source">
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">A Guide To Undoing Mistakes With Git</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://smashingmagazine.com/2021/05/undoing-mistakes-git-part1/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(6 min)</span>
-                    <span>No matter how experienced you are, mistakes are an inevitable part of software development. But we can learn to repair them! And this is what we&#x27;ll be looking at in this two-part series: how to undo mistakes using Git.</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Smashing Podcast Episode 36 With Miriam Suzanne: What Is The Future Of CSS?</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://smashingmagazine.com/2021/05/smashing-podcast-episode-36/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(23 min)</span>
-                    <span>In this episode, we’re starting our new season of the Smashing Podcast with a look at the future of CSS. What new specs will be landing in browsers soon? Drew McLellan talks to expert Miriam Suzanne to find out.</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-        </section>
-      </li>
-    </ul>
-  </section>
-  <section class="daily-content">
-    <h2 class="daily-heading"><time datatime="2021-05-03">2021-05-03</time></h2>
-    <ul class="sources card">
-      <li class="source">
-        <section>
-          <h3 class="source-name"><a class="source-name__link" href="https://www.smashingmagazine.com/">Articles on Smashing Magazine — For Web Designers And Developers</a></h3>
-          <section class="articles-per-source">
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">The Evolution Of Jamstack</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://smashingmagazine.com/2021/05/evolution-jamstack/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(7 min)</span>
-                    <span>Web-oriented databases, frameworks like Nuxt and Next.js, and even frameworkless approaches are evolving the Jamstack, but the core principles are more powerful than ever.</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-        </section>
-      </li>
-    </ul>
-  </section>
-  <section class="daily-content">
-    <h2 class="daily-heading"><time datatime="2021-04-30">2021-04-30</time></h2>
-    <ul class="sources card">
-      <li class="source">
-        <section>
-          <h3 class="source-name"><a class="source-name__link" href="https://www.smashingmagazine.com/">Articles on Smashing Magazine — For Web Designers And Developers</a></h3>
-          <section class="articles-per-source">
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">May Is In The Air (2021 Wallpapers Edition)</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://smashingmagazine.com/2021/04/desktop-wallpaper-calendars-may-2021/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(7 min)</span>
-                    <span>Do you need a little inspiration boost? Well, then our new collection of wallpapers is for you. Designed with love by the community for the community, the wallpapers are available with and without a calendar for May 2021.</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-        </section>
-      </li>
-    </ul>
-  </section>
-  <section class="daily-content">
-    <h2 class="daily-heading"><time datatime="2021-04-29">2021-04-29</time></h2>
-    <ul class="sources card">
-      <li class="source">
-        <section>
-          <h3 class="source-name"><a class="source-name__link" href="https://www.smashingmagazine.com/">Articles on Smashing Magazine — For Web Designers And Developers</a></h3>
-          <section class="articles-per-source">
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">The Humble &#x60;&#x60; Element And Core Web Vitals</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://smashingmagazine.com/2021/04/humble-img-element-core-web-vitals/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(18 min)</span>
-                    <span>Images have also been a key part of the web. They communicate ideas instantly, but they are also a lot heavier than text to load. This means that it’s essential to get loading and displaying them right, if you want to give your users a fantastic first impression. An excerpt from [Addy&#x27;s new book](https://www.smashingmagazine.com/2021/04/image-optimization-pre-release/) (also, check a [free PDF preview](http://provide.smashingmagazine.com/eBooks/image-optimization-sample-chapter.pdf)).</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-        </section>
-      </li>
-    </ul>
-  </section>
-  <section class="daily-content">
-    <h2 class="daily-heading"><time datatime="2021-04-28">2021-04-28</time></h2>
-    <ul class="sources card">
-      <li class="source">
-        <section>
-          <h3 class="source-name"><a class="source-name__link" href="https://www.smashingmagazine.com/">Articles on Smashing Magazine — For Web Designers And Developers</a></h3>
-          <section class="articles-per-source">
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Meet Image Optimization, A New Smashing Book By Addy Osmani</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://smashingmagazine.com/2021/04/image-optimization-pre-release/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(7 min)</span>
-                    <span>The cat is out! For the last year, we’ve been working with Addy Osmani on a new Smashing Book all around image optimization. And now it’s here. Meet “Image Optimization”, our practical modern guide to delivering high-quality images on the web with the best performance.</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-        </section>
-      </li>
-    </ul>
-  </section>
-  <section class="daily-content">
-    <h2 class="daily-heading"><time datatime="2021-04-27">2021-04-27</time></h2>
-    <ul class="sources card">
-      <li class="source">
-        <section>
-          <h3 class="source-name"><a class="source-name__link" href="https://www.smashingmagazine.com/">Articles on Smashing Magazine — For Web Designers And Developers</a></h3>
-          <section class="articles-per-source">
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Understanding Easing Functions For CSS Animations And Transitions</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://smashingmagazine.com/2021/04/easing-functions-css-animations-transitions/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(9 min)</span>
-                    <span>Easing functions can change the look and feel of an animation by affecting the rate, or speed, of an animation. In this article, we’re going to take a deep dive into easing functions and see how we can use them to create those natural and stunning animations.</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-        </section>
-      </li>
-    </ul>
-  </section>
-  <section class="daily-content">
-    <h2 class="daily-heading"><time datatime="2021-04-26">2021-04-26</time></h2>
-    <ul class="sources card">
-      <li class="source">
-        <section>
-          <h3 class="source-name"><a class="source-name__link" href="https://www.smashingmagazine.com/">Articles on Smashing Magazine — For Web Designers And Developers</a></h3>
-          <section class="articles-per-source">
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">How To Bake Layers Of Accessibility Testing Into Your Process</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://smashingmagazine.com/2021/04/bake-layers-accessibility-testing-process/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(11 min)</span>
-                    <span>Accessibility experts Kate Kalcevich and Mike Gifford introduce readers to &quot;layered accessibility testing”, a practice of using a variety of tools and approaches at different stages in the digital product lifecycle to catch accessibility issues early — when it’s easier and cheaper to fix them.</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-        </section>
-      </li>
-    </ul>
-  </section>
-  <section class="daily-content">
-    <h2 class="daily-heading"><time datatime="2021-04-23">2021-04-23</time></h2>
-    <ul class="sources card">
-      <li class="source">
-        <section>
-          <h3 class="source-name"><a class="source-name__link" href="https://www.smashingmagazine.com/">Articles on Smashing Magazine — For Web Designers And Developers</a></h3>
-          <section class="articles-per-source">
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">A Guide To Newly Supported, Modern CSS Pseudo-Class Selectors</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://smashingmagazine.com/2021/04/guide-supported-modern-css-pseudo-class-selectors/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(8 min)</span>
-                    <span>The CSS Working Group Editor’s Draft for [Selectors Level 4](https://drafts.csswg.org/selectors-4/) includes several pseudo-class selectors that already have proposal candidates in most modern browsers. This guide will cover ones that currently have the best support along with examples to demonstrate how you can start using them today!</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-        </section>
-      </li>
-    </ul>
-  </section>
-  <section class="daily-content">
-    <h2 class="daily-heading"><time datatime="2021-04-22">2021-04-22</time></h2>
-    <ul class="sources card">
-      <li class="source">
-        <section>
-          <h3 class="source-name"><a class="source-name__link" href="https://www.smashingmagazine.com/">Articles on Smashing Magazine — For Web Designers And Developers</a></h3>
-          <section class="articles-per-source">
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Web Design Done Well: The Ordinary Made Extraordinary (Part 1)</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://smashingmagazine.com/2021/04/web-design-done-well-part1/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(6 min)</span>
-                    <span>Sometimes it’s the little things in web life that make us look twice. From carousels to documentation to cookie disclaimers, here are some sites taking the mundane and sprinkling in a little magic.</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-        </section>
-      </li>
     </ul>
   </section>
 
   <footer>
-    <time id="build-timestamp" datetime="2021-05-21T03:42:16.033Z">2021-05-21T03:42:16.033Z</time>
+    <time id="build-timestamp" datetime="2021-05-21T05:53:42.848Z">2021-05-21T05:53:42.848Z</time>
     <span><a class="footer-link" href="https://github.com/osmoscraft/osmosfeed">osmosfeed 1.7.2</a></span>
   </footer>
   <script src="index.js"></script>
