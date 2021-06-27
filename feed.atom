@@ -2,10 +2,444 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://7qi7qi.github.io/RSSFeeder/index.html</id>
     <title>osmos::feed</title>
-    <updated>2021-06-26T00:20:52.808Z</updated>
+    <updated>2021-06-27T00:24:40.009Z</updated>
     <generator>osmosfeed 1.11.0</generator>
     <link rel="alternate" href="https://7qi7qi.github.io/RSSFeeder/index.html"/>
     <link rel="self" href="https://7qi7qi.github.io/RSSFeeder/feed.atom"/>
+    <entry>
+        <title type="html"><![CDATA[亿级流量架构的网关设计思路与常见网关对比]]></title>
+        <id>http://weekly.dockone.io/article/2434382</id>
+        <link href="http://weekly.dockone.io/article/2434382"/>
+        <updated>2021-06-27T00:24:37.456Z</updated>
+        <summary type="html"><![CDATA[【编者的话】本文围绕七个点来讲网关，分别是：网关的基本概念、网关设计思路、网关设计重点、流量网关、业务网关、常见网关对比，对基础概念熟悉的朋友可以根据目录查看自己感兴趣的部分。
+什么是网关
+网关，很多地方将网关比如成门，没什么问题，但是需要区分网关与网桥的区别。
+网桥工作在数据链路层，在不同或相同类型的LAN之间存储并转发数据帧，必要时进行链路层上的协议转换。可连接两个或多个网络，在其中传送信息包。
+网关是一个大概念，不具体特指一类产品，只要连接两个不同的网络都可以叫网关,网桥一般只转发信息，而网关可能进行包装。
+网关通俗理解
+根据网关的特性，举个例子：
+假如你要去找集团老板（这儿只是举个例子），大家都知道老板肯定不是谁想见就能见的，也怕坏人嘛，那么你去老板所在的办公楼，假如是集团总部，大楼这个门就充当了网关的角色，大门一般都有看门员，看门员会做哪些事情呢？
+首先所有想见老板的人肯定都得从这个门进（统一入口），这个门相当于将办公室和外界隔离了，主要为了保护里面的安全以及正常工作，来到这个门之后，门卫肯定会让你出示相关证件（鉴权检验），意思就是判断你要见老板这个请求是否合理，如果不合理直接就拒绝了，让你回家等消息，如果鉴权之后，发现你找老板其实只是为了和他谈谈两元店的生意，门卫会跟你说这个用不着找老板，你去集团投资部就行了（动态路由，将请求路由到不同的后端集群中），此时会对你进行一些包装，例如给你出具一个访问证类似的，然后告诉你路该怎么走，等等。
+你看看，网关的作用是不是就是这三个，最终目的就是减少你与集团的耦合，具体到计算机上就是减少客户端与服务端的耦合，如果没有网关意味着所有请求都会直接调用服务器上的资源，这样耦合太强了，服务器出了问题，客户端会直接报错，例如老板换工作的地方了，如果没有网关你直接去原来的地方找，肯定会被告知老板不在这儿。
+为什么需要网关
+当使用单体应用程…]]></summary>
+        <author>
+            <name>玻璃樽</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Kubernetes网络技术解析之Pod基于路由模式的通信实现]]></title>
+        <id>http://weekly.dockone.io/article/2434381</id>
+        <link href="http://weekly.dockone.io/article/2434381"/>
+        <updated>2021-06-27T00:24:37.441Z</updated>
+        <summary type="html"><![CDATA[前言
+Kubernetes集群内，Pod之间可以通信，是Kubernetes网络实现的重要场景之一。
+Kubernetes通过CNI提供统一的接口和协议，使得我们在使用中可以根据需求自行选择不同的网络组件以及模式。比较常见的选型，如Flannel的VXLAN或者HostGW、Calico的IPIP或者BGP等等。
+这些不同的网络组件究竟是怎么实现Pod的通信的，底层的技术原理是什么，本篇文章就带大家以Calico的BGP模式的通信模型（基于路由的纯三层模型）为例，解析其底层的实现原理。
+既然提到了容器网络，就肯定绕不开Network Namespace。Network Namespace是实现虚拟网络的核心技术（这里就不展开细说了，有兴趣的同学可以自行了解一下Linux Namespaces），已被广泛的运用在了容器相关的网络场景中。一个docker创建的容器会有一个独立的Network Namespace，一个Kubernetes的Pod里的N个容器也会共用一个独立的Network Namespace。
+那么Network Namespace之间是怎么实现通信的？
+今天就来自己动手实现基于路由模式，多个可以跨主机通信的Network Namespace（网络命名空间）。
+动手创建一个Network Namespace
+1、准备一台Linux主机（node03--100.100.198.250），检查ip命令是否有效（如果没有需要安装iproute2）
+2、执行以下命令创建一个新的net-ns demo01
+ip netns add demo01 #创建demo01
+
+3、查看demo01下的网卡资源并开启lo网卡
+ip netns exec demo01 ip addr #ip netns exec demo01 可以实现对demo01的相关操作，也可以通过`ip net…]]></summary>
+        <author>
+            <name>aoxiang</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[零信任实战架构总结]]></title>
+        <id>http://weekly.dockone.io/article/2434380</id>
+        <link href="http://weekly.dockone.io/article/2434380"/>
+        <updated>2021-06-27T00:24:37.272Z</updated>
+        <summary type="html"><![CDATA[此报告主要参考了《零信任实战白皮书》，结合自己对零信任的理解，做了一个精简的总结，做参考。
+零信任认识
+零信任解决的是由于传统边界模型过度信任造成的安全问题，重点是Trust Area内过度信任的问题，零信任打破了信任和网络位置默认的绑定关系，不像传统信任关系是静态不变的，而是动态持续监测各参与对象的安全状态、并对其重建信任评估，然后进行动态调整权限、降权、阻断等强管控手段。我自己认为，动态持续监控、根据对象安全状态进行调整权限。
+这个是零信任非常重要的功能，也是传统边界模型做不到的。
+零信任实现架构
+目前有零信任实践的公司，大多都是采用SDP架构（software define perimeter），SDP架构主要包括三大组件：SDP控制器（SDP Controler）、SDP发起客户端、 SDP服务提供者。
+控制层与数据层保持分离，以便实现完全可扩展。
+
+
+
+零信任实现方案
+有两种实现方案，一是用户对资源访问的方案，如办公网访问公司应用，大多数采用此种对零信任架构进行实践摸索；二是生产服务之间相互调用的方案，由于涉及生产、及各种复杂访问关系，很少有公司对此种进行实践。
+用户对资源访问模式方案
+此种方案涉及到的对象有：用户、终端、资源、链路。
+此方案，对架构进行抽象后的架构示意图如下：
+
+
+
+认证不再只是人的认证，授权、信任不再是静态不变，而是：人（双因素、OTP）+终端（是否符合安全基线，安全状态是否符合）+软件（是否有漏洞）=认证（持续动态认证）---->认证通过----->授权（基于对各对象动态安全监测和信任评估，动态授权、降权、阻断等）---->资源
+零信任在技术实现分类上，根据零信任网关的类型总结为两种：
+反向代理/应用层Web协议网关
+应用层代理模式指的是在零信任网关实现上，通过七层应用代理方式，将对后端应用的访问通过本地应用 ，层代理配置，将应用层请求发至应…]]></summary>
+        <author>
+            <name>老马</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[I spent 5 years writing my own operating system]]></title>
+        <id>https://github.com/halfer53/winix</id>
+        <link href="https://github.com/halfer53/winix"/>
+        <updated>2021-06-26T23:43:39.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[童年不够幸福的人，如何通过自己的努力获得前进的力量？]]></title>
+        <id>https://daily.zhihu.com/story/9737481</id>
+        <link href="https://daily.zhihu.com/story/9737481"/>
+        <updated>2021-06-26T23:07:31.000Z</updated>
+        <summary type="html"><![CDATA[深刻如此，二级心理咨询师，《非暴力沟通两性篇》《非暴力沟通情绪篇》译者
+阅读原文
+
+病了的原生家庭，自己才是解药！
+病了的原生家庭，畸形的亲子关系，往往不是我们有能力改变的，但是就像一句话说的那样：“你可以选择不原谅，但也可以选择放下”。
+这里的放下，既是一种对过去的谅解，也是一种对原生家庭造成伤口的自我疗愈。你首先要看见伤口的存在，才能试图去医治它，也才能避免让这种伤痛，继续反射到下一代身上。
+高晓松曾在《奇葩大会》上分享过自己年轻时与父亲不和谐的亲子关系，从而导致他年轻时的叛逆、爱较劲、不喜欢被干预的性格，但是中年时他靠自己的力量走了出来。
+对于自己的成长故事，他的感悟是“你靠自己的感觉，无论是对还是错，把它淋漓尽致地展现在这个世界上，在这个过程中你被看见了，经历过这么多斗争痛苦，最后走到这里来，这是英雄”。
+所以，逃开原生家庭的牢笼，成为你自己的关键是：
+
+1、看见你自己，然后爱并尊重你自己
+即使父母说他们那么爱你，行动上也的确是很爱很爱，但你的感受如果是伤害，是不被爱，那么你就要看见自己的这种感受和愤怒。
+举个例子，父母觉得他们好吃好喝的供养你，让你长大成人，为你结婚生子，但从始至终他们都只看到了他们的付出，却忽略你内心的所求，这个时候，你就要为自己争取和改变。
+因为当某种情绪一再压抑，那种力量就会反噬，要么是像明玉般与父母反目成仇，要么是如苏母般一味的宣泄在儿女身上。最可怕的情况是，我恨你却最终变成了你。
+所以“看见”自己的伤痛，理解自己的需求，做出自己的争取。当父母不断指责你，说你做的不对的时候，你遵从内心，保护那个你认为对的自我；当你试图证明自己，却被父母不断否定的时候，放弃证明，告诉自己就是最好的。
+要知道，在成为别人之前，你一定要成为你自己。
+2、看见他们的伤口，然后学会释然和放下
+有心理学家指出，80%儿童的心里想问题来源于他们的父母，而父母的问题又来源…]]></summary>
+        <author>
+            <name>知乎日报</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[经济学有逻辑基础吗？]]></title>
+        <id>https://daily.zhihu.com/story/9737486</id>
+        <link href="https://daily.zhihu.com/story/9737486"/>
+        <updated>2021-06-26T23:07:22.000Z</updated>
+        <summary type="html"><![CDATA[司马懿，三国英雄士，四朝经济臣
+阅读原文
+
+多谢 @倩文 邀请。
+其实『经济学的逻辑基础』和题主在补充说明里面说的，我感觉是两个问题。因为『逻辑基础』可能是想表达某种学科自洽的观念，而一般均衡和局部均衡的推导是另外一个事情。前者更像是一个科学哲学的问题，暂且放在一边，在这里简单的谈谈第二个问题，就是为什么从一般均衡推导出局部均衡是困难的。
+我认为最根本的原因，是因为『一般均衡』并不是『局部均衡』的一般形式，而是两种在不同假设下的均衡形式。两者的关系并不像牛顿力学和相对论力学那样，前者是后者的在某种状态下的近似。但是一般均衡和局部均衡无论是中英文，都似乎在暗示着这一点。
+举个例子，假设全世界有很多城市，每个城市里面有一个被高度规制的公司，也就是说这个公司是 price taker. 每家公司都生产同样的面包。然后呢，每个城市都有固定数量的人，每个人提供固定数量的劳动力。个人的劳动力供给无弹性，但是人可以在不同城市自由迁移。
+因为人是自由迁移的，每个城市的公司又是一样的，那么我们可以认为均衡的时候，每个城市的工资必然是一样的，假定这个工资是 W0。
+现在问题来了，如果其中突然有一个城市，增加了一点工资税 T，会造成什么影响?
+在局部均衡分析的时候，逻辑是这样的：因为人口是自由流动的，所以均衡的时候，人们的税后工资必然还是和其他地方的工资一样都是 W0，否则所有人都会迁移到其他的城市去。那么也就是说，这个税虽然表面上加在劳动者的工资上，但是其实是加在了公司的身上，公司会发给劳动者 W0+T 的税前工资。
+这个就跟之前讨论的美国对奖学金加税一样，因为奖学金其实基本上就是学生能够接受的底线了，所以如果加税的话，是学校会为每个学生多出一些钱来弥补因为税来的损失，表面上是学生的负担增加了，但是其实真正负担的是学校。
+但是在一般均衡的框架下，某一个城市的工资税，不仅仅对本城市有影响，还可能会对其他城市的工资有一个间接的影响。所以局部均衡的假设“其他城市还是 W0”就要被推翻掉。这里我就不写计算过程了，直观上，最终的结果就是所有城市的工资都下降了一点点，计算结果也确实如此。当城市很多的时候，下降的工资从绝对比例上几乎可以忽略不计。
+但是，就这么一点点对单个城市来说，看起来可以忽略不计的工资下降，加起来之后，恰恰就等于税收的总额！也就是说在这种情况下，公司的利润其实是不变的，反而是所有城市的劳动者共同承担了某一个城市的工资税（还记得假设吧，劳动力供给毫无弹性^_^）。
+上面这个小例子已经可以说明，在同样的一个设定下，用一般均衡和局部均衡的方法甚至可以得出完全相反的结果了。在经济学的框架下，一般并不是由很多个局部组成的，而是通过内生化局部均衡中某些的外生变量所产生的，双方的设定不同，互相推导有困难也是正常的。即便是将来通过数学技巧，可以找出在某些巧妙的假设下，双方能够互相推导，但是这样的一篇 ECMA 更多的是一种智力上的挑战，而非对经济学这两个概念的颠覆。
+阅读原文]]></summary>
+        <author>
+            <name>知乎日报</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[为什么科幻电影不受奥斯卡青睐？]]></title>
+        <id>https://daily.zhihu.com/story/9737494</id>
+        <link href="https://daily.zhihu.com/story/9737494"/>
+        <updated>2021-06-26T23:07:13.000Z</updated>
+        <summary type="html"><![CDATA[托比章，游戏制作人/科幻评论
+阅读原文
+
+奥斯卡，也就是学院奖，之所以叫学院奖是因为主办单位是美国电影艺术与科学学会，看这个名字就知道，艺术是在科学之前的。在 2014 年的时候洛杉矶时报做了一项调查， 6028 名学院奖评委中，94%是白人，76%是男性，评委的平均年龄是 63 岁。就是说这些评委大多是在 1940-1960 年代出生的, 这方面的因素可能对评委的意识形态还是有很大约束力的。
+科幻片第一次被提名最佳影片奖是 1978 年的星球大战，那是当年让全世界所有青年都激动不已的票房冠军，收 7 亿 7 千 5 百万美元，但是最后获奖的是票房只有三千八百万美元的生活片《安妮·霍尔》。捶胸顿足吧。 但是当时，科幻片已经成为美国票房的重要组成部分，不可忽视。但是学院是很不情愿把包括最佳影片，最佳导演，最佳摄影这些重要项目办法给这种小青年才喜欢看的东西，在那些老一辈艺术家眼里面这些东西都是不入流的。 但学院又要给资本家们有所交代，那还是要办事，但是最佳影片和最佳导演是老前辈的底线。
+【第三类接触就在星战同一届上得了最佳摄影奖。】
+在这之前，科幻片通常都是在最佳视觉效果这个奖项上，比如 1968 年的《2001：太空奥德赛》可以说是和星战一样属于科幻史上的里程碑作品，但不管你怎么觉得，对于奥斯卡评委来说这就算不上电影艺术，给一个视觉效果安慰一下， 。还不要提最佳视觉效果是 1964 年才独立出来成为一个单独的奖项的，之前是叫做最佳特效，这个奖项是包含了音效和特效两部分。1950 年的《目标月球》Destination Moon 以及 1953 年的《世界大战》都获得了这个奖项，不过很多都是以特别成就奖的形式办法，都还不算做正式奖项。
+科幻片这种电影想要在奥斯卡拿个奖真是很难，尽都是最佳特效， 偶尔一个最佳摄影，音效，还有就是像希斯莱杰，追认。不光是科幻， 奇幻片恐怖片， 都是属于这个区间里面，一直被提名，一个正规奖项没有。直到 04 年的指环王获得最佳影片奖，不光是奇幻粉丝喜极而泣，也让让那些在星战，ET，侏罗纪公园，黑客帝国一路臭骂学院奖的科幻迷感受到了莫大的安慰。2016 年的《降临》，独树一帜，可能是近十年以来最有深度的科幻片，包括最佳影片奖，最佳导演奖在内 8 项提名，最后就拿走一个视觉特效（勘误: 此处应是 89 界的最佳音效剪辑）。所以我觉得，指环王得奖是奇幻片一个安慰奖，在那之后应该还要给科幻片也颁发一个安慰奖。
+安德烈塔克夫斯基是苏联以及全世界电影历史上的一个殿堂级人物，在他拍摄的为数不多的几部影片中就有两部科幻片， 比起《追踪者》来说我更喜欢他的另一部科幻片《索拉里斯》。当年莫斯科也是把这部电影作为对抗西方资本主义科幻电影太空奥德赛的强有力反击。塔克夫斯基本人也不喜欢 Kubrik 的史诗科幻电影，他的评价是：“这是一部毫无生气，充满心机和虚荣做作的电影。” 。但塔克夫斯基也不喜欢自己拍的索拉里斯，其实他就不喜欢幻片，甚至类型电影的概念。 在 1970 年的一次采访中， 安德烈塔克夫斯基对记者谈到“出于某种原因，现在所有的科幻电影中，导演都想要强迫观众去仔细鉴赏未来的物质世界。更有一些，比如 Kubrik 之流，他们把自己的电影称作预言。这简直让人难以置信！ 2001 太空奥德赛在很多地方都太假了，对于真正的电影艺术，这些虚假的东西必须要被消灭。” 我认为这是非常有思考意义，我们今天的科幻片展现给观众的，就是各种应接不暇的特技，只求痛快，但是影片的意义却无从寻找，或者根本就没有人关心。在《雕刻时间》一书中，塔可夫斯基评价自己的科幻电影时这么写到 “不幸的是，索拉里斯中的科幻元素太强烈了，对于观众来说已经是一种干扰………… 史坦尼斯劳·莱姆（Stanisław Lem）笔下的那些空间站，火箭，制作展现出来确实都是非常有趣的东西；但是对于我来说，现在看来，我觉得如果我们能这些东西都去除掉，电影的本意和要传达的信息应该更加鲜明地凸现出来。”
+另外还有一个就是导演或者据本身的有会员属性。《指环王：王者归来》确实是非常罕见的组合了。这篇文章实际上是《水形物语》得奥斯卡奖之前写的，因为觉得 Arival 也没有得奥斯卡奖，你一个吃鸡蛋的橡皮怪，就算导演有路子………………
+阅读原文]]></summary>
+        <author>
+            <name>知乎日报</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[铁陨石的纹理真的无法人造吗？]]></title>
+        <id>https://daily.zhihu.com/story/9737492</id>
+        <link href="https://daily.zhihu.com/story/9737492"/>
+        <updated>2021-06-26T23:07:05.000Z</updated>
+        <summary type="html"><![CDATA[Nantan，天降陨石于斯人。
+阅读原文
+
+不完全是。
+按照常规的理解，铁陨石中能被称为“纹理”的结构有维斯台登构造（Widmanstätten pattern）和纽曼线（Neumann lines）。前者无法人工制造，但后者可以。
+找了一圈没找着同时拍到维斯台登纹和纽曼线的陨石照片，只能拿自己的开刀了，原谅我的渣渣拍照技术。。
+条带状的交错纹理是维斯台登构造。颜色稍亮的斑块是铁纹石，上面发丝般的纹理就是纽曼线。拍摄材料是南丹（Nantan）铁陨石。
+维斯台登构造的形成取决于铁陨石的化学成分和陨石母体中 Fe-Ni 熔体的冷却速率。是铁陨石母体在冷却过程中，铁纹石（α- 铁，铁的同素异形体之一，体心立方点阵）沿着镍纹石（γ- 铁）的特定晶面生长形成的。一般长这样：
+
+1- 铁纹石；2- 镍纹石；3- 合纹石（铁纹石和镍纹石的混合物）；4- 氧化物和其他陨石矿物。
+铁陨石那样厘米级尺寸的维斯台登构造确实无法在实验室制造，原因在于形成这种金相需要铁陨石的母体以极其缓慢的速率冷却。虽然不同铁陨石的冷却速率相差甚远，但通常在 1~100℃/ 百万年的区间内。人类发明时光机之前可没寿命在实验室里等这么一块玩意儿冷却。
+研究人员模拟铁陨石冷却时使用了 6.88wt%Ni 和 0.49wt%P 的铁合金，并以 5℃/ 天的冷却速率从 790℃降到 650℃，结果形成的维斯台登构造中的铁纹石晶体（下图的 K）只有几微米宽。远达不到铁陨石里肉眼可见的大尺寸铁纹石晶体的水平。[1]
+6.88wt%Ni 和 0.49wt%P 的模拟铁陨石以 5℃/ 天的速率冷却，透射电镜图。9.8wt%Ni-0.3wt%P 的铁合金冷却至 650℃的实验，形成的维斯台登构造。反射光显微图。
+下图为 Gibeon 铁陨石的维斯台登构造，可以对比一下晶体尺寸差距。
+（Gibeon 铁陨石在结构分类上属于细粒八面体铁陨石，维斯台登纹比刚才拍的粗粒八面体 Nantan 要细得多，铁纹石晶体很窄，不能直接肉眼观察纽曼线。）
+https://doi.org/10.1016/j.actamat.2005.11.008
+K：铁纹石；T：镍纹石；P：合纹石；N：纽曼线。
+也许你能在某购物平台上看到个别有怪异“维斯台登纹”的“铁陨石”，那些大多只是在铁块表面磨砂或者部分哑光处理的玩意，用砂纸磨去就没了，而且做工十分蹩脚，甚至不能称之为仿造。（铁陨石的维斯台登纹用砂纸磨去后，重新酸洗就能重现）
+图片来自某宝。
+至于纽曼线，它的形成条件就没有维斯台登纹那么苛刻了。纽曼线是铁纹石受到冲击形成的，代表了机械双晶的 Fe-Ni 微薄页理，体心铁纹石中双晶面为（112）。[2]而小行星之间偶尔也会“撞车”，冲击变质也是陨石中的常见现象。
+人为制造的纽曼线在夏比冲击试验就能做到。
+夏比冲击试验是用以测定金属材料抗缺口敏感性(韧性)的试验。制备有一定形状和尺寸的金属试样，使其具有 U 形缺口或 V 形缺口，在夏比冲击试验机上处于简支梁状态，以试验机举起的摆锤作一次冲击，使试样沿缺口冲断，用折断时摆锤重新升起高度差计算试样的吸收功。
+纽曼线只在样品与试验设备支架接触的区域产生，而此区域在冲击过程中压缩应力最高。
+所以铁陨石的纹理，无论是维斯台登纹还是纽曼线，都是可以人工制造的。但前提是有足够的寿命，所以要研究怎么制作假陨石，最好先研究如何长生不老。
+阅读原文]]></summary>
+        <author>
+            <name>知乎日报</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[国外为什么建筑绘图这么厉害？]]></title>
+        <id>https://daily.zhihu.com/story/9737476</id>
+        <link href="https://daily.zhihu.com/story/9737476"/>
+        <updated>2021-06-26T23:06:55.000Z</updated>
+        <summary type="html"><![CDATA[知乎用户，建筑 职场提升 设计留学 媒体合作｜咨询微信：hurmus
+阅读原文
+
+画那么好，给谁看？
+带国外的建筑绘图课题的老师，一般都是知名艺术家或是有独特风格的设计师；而不是理论博士或者熟练型绘图员，教学目标和配置不同也很难比较谁更厉害。
+刚好，2021 春季学期参加了 Syracuse 大三建筑系 Drawing Architecture Studio 的终期评图，是客座教授李涵和胡妍（绘造社）带的课题；下文从课题的出发点、方法论和最终成果实现这三个维度描述，希望对你有所启发。
+©2021 Beijing VC Studio/ 绘造社 DAS, Syracuse Architecture
+这次的建筑绘图课题结束，所有作业都被艺术机构展览并收藏了；不得不说，这确实有点厉害了。
+策展人是知名大佬崔灿灿，目前正在北京 798 展览中，一直到 9 月初结束，有兴趣的知友可以过去看看。（报李乐贤享受 200%票价）
+展览海报展览现场合影
+绘图教学出发点，是给专业顾问和施工队看？还是给公众和客户看？
+常规本土建筑院校里开设的绘图课题，是以培训技术图纸绘制为导向。比如说，在大一学会简单的画法几何、工程制图和阴影透视、大二跟着设计课题学绘制平立剖和大样等施工图技术、大三之后基本上不会有人来教绘图了。所以，从教学目的上是教学生画一套扎实的，并且可以拿来盖房子的专业技术图纸。
+画法几何
+而国外的绘图课题，走得是另外一条路线，在行业高度成熟细分的状态下，越是有名的院校，越会去追求“高级”的绘图表现技法。这些绘图作业大部分都会被“展”出来，在学院内部展览或公共艺术展览等场所；因此，作品完成度也需要达到相应的要求。从课题层面，也必须是根据特定和话题与主题进行创作，一方面是减少学生纠结于选择概念的时间，另一方面易于控制表现技法和出图深度；简而言之就是定向性绘图表达技法创作。
+©2021 Beij…]]></summary>
+        <author>
+            <name>知乎日报</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[YouTube takes down Xinjiang videos, forcing rights group to seek alternative]]></title>
+        <id>https://www.reuters.com/technology/exclusive-youtube-takes-down-xinjiang-videos-forces-rights-group-seek-2021-06-25/</id>
+        <link href="https://www.reuters.com/technology/exclusive-youtube-takes-down-xinjiang-videos-forces-rights-group-seek-2021-06-25/"/>
+        <updated>2021-06-26T22:43:41.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[The School for Sysadmins Who Can’t Timesync Good]]></title>
+        <id>https://libertysys.com.au/2016/09/the-school-for-sysadmins-who-cant-timesync-good-and-wanna-learn-to-do-other-stuff-good-too-part-1-the-problem-with-ntp/</id>
+        <link href="https://libertysys.com.au/2016/09/the-school-for-sysadmins-who-cant-timesync-good-and-wanna-learn-to-do-other-stuff-good-too-part-1-the-problem-with-ntp/"/>
+        <updated>2021-06-26T22:40:50.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[AMD Quietly Launches Recycled Xbox Series X APU as 4700S Desktop Kit]]></title>
+        <id>https://www.tomshardware.com/news/amd-launches-recycled-xbox-series-x-apu-4700s-desktop-kit</id>
+        <link href="https://www.tomshardware.com/news/amd-launches-recycled-xbox-series-x-apu-4700s-desktop-kit"/>
+        <updated>2021-06-26T22:16:03.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Detection Script to help identify why your PC isn't Windows 11 ready]]></title>
+        <id>https://github.com/rcmaehl/WhyNotWin11</id>
+        <link href="https://github.com/rcmaehl/WhyNotWin11"/>
+        <updated>2021-06-26T21:29:37.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Rescale (YC W12) Is Hiring Product Managers]]></title>
+        <id>https://jobs.lever.co/rescale/399a7fc1-8318-49fa-a73d-3a1eb7a50c3b?lever-origin=applied&amp;lever-source%5B%5D=Hacker%20News</id>
+        <link href="https://jobs.lever.co/rescale/399a7fc1-8318-49fa-a73d-3a1eb7a50c3b?lever-origin=applied&amp;lever-source%5B%5D=Hacker%20News"/>
+        <updated>2021-06-26T21:01:13.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Guerrilla guide to CNC machining, mold making, and resin casting (2015)]]></title>
+        <id>https://lcamtuf.coredump.cx/gcnc/</id>
+        <link href="https://lcamtuf.coredump.cx/gcnc/"/>
+        <updated>2021-06-26T20:36:28.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[The blackout Palestinians are facing on social media]]></title>
+        <id>https://restofworld.org/2021/palestine-social-media-silence/2</id>
+        <link href="https://restofworld.org/2021/palestine-social-media-silence/2"/>
+        <updated>2021-06-26T19:59:07.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[So you want to build a house more efficiently]]></title>
+        <id>https://austinvernon.eth.link/blog/construction.html</id>
+        <link href="https://austinvernon.eth.link/blog/construction.html"/>
+        <updated>2021-06-26T18:12:11.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[CRISPR gene-editing breakthrough opens door to treating broad array of diseases]]></title>
+        <id>https://www.npr.org/sections/health-shots/2021/06/26/1009817539/he-inherited-a-devastating-disease-a-crispr-gene-editing-breakthrough-stopped-it</id>
+        <link href="https://www.npr.org/sections/health-shots/2021/06/26/1009817539/he-inherited-a-devastating-disease-a-crispr-gene-editing-breakthrough-stopped-it"/>
+        <updated>2021-06-26T16:54:31.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Play online chess with a real chess board]]></title>
+        <id>https://github.com/karayaman/Play-online-chess-with-real-chess-board</id>
+        <link href="https://github.com/karayaman/Play-online-chess-with-real-chess-board"/>
+        <updated>2021-06-26T16:51:01.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Some biologists and ecologists think social media is a risk to humanity]]></title>
+        <id>https://www.vox.com/recode/2021/6/26/22550981/carl-bergstrom-joe-bak-coleman-biologists-ecologists-social-media-risk-humanity-research-academics</id>
+        <link href="https://www.vox.com/recode/2021/6/26/22550981/carl-bergstrom-joe-bak-coleman-biologists-ecologists-social-media-risk-humanity-research-academics"/>
+        <updated>2021-06-26T16:34:38.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Cwtch: Decentralized, privacy-preserving, multi-party messaging protocol]]></title>
+        <id>https://cwtch.im/</id>
+        <link href="https://cwtch.im/"/>
+        <updated>2021-06-26T16:19:03.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[When it comes to Git history, less is more]]></title>
+        <id>https://brennan.io/2021/06/15/git-less-is-more/</id>
+        <link href="https://brennan.io/2021/06/15/git-less-is-more/"/>
+        <updated>2021-06-26T16:09:20.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[The Book of Secret Knowledge]]></title>
+        <id>https://github.com/trimstray/the-book-of-secret-knowledge</id>
+        <link href="https://github.com/trimstray/the-book-of-secret-knowledge"/>
+        <updated>2021-06-26T16:09:10.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Show HN: I’m an introvert – made an app to help maintain connections with people]]></title>
+        <id>http://cq.mtc.dev</id>
+        <link href="http://cq.mtc.dev"/>
+        <updated>2021-06-26T16:01:27.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Information Theory: A Tutorial Introduction]]></title>
+        <id>https://arxiv.org/abs/1802.05968</id>
+        <link href="https://arxiv.org/abs/1802.05968"/>
+        <updated>2021-06-26T15:52:19.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Key witness in Assange case admits to lies in indictment]]></title>
+        <id>https://stundin.is/grein/13627/key-witness-in-assange-case-admits-to-lies-in-indictment/</id>
+        <link href="https://stundin.is/grein/13627/key-witness-in-assange-case-admits-to-lies-in-indictment/"/>
+        <updated>2021-06-26T15:22:48.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Run fewer, better A/B tests]]></title>
+        <id>https://edoconti.medium.com/offline-policy-evaluation-run-fewer-better-a-b-tests-60ce8f93fa15</id>
+        <link href="https://edoconti.medium.com/offline-policy-evaluation-run-fewer-better-a-b-tests-60ce8f93fa15"/>
+        <updated>2021-06-26T14:44:31.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Immutability is not enough (2016)]]></title>
+        <id>https://codewords.recurse.com/issues/six/immutability-is-not-enough</id>
+        <link href="https://codewords.recurse.com/issues/six/immutability-is-not-enough"/>
+        <updated>2021-06-26T14:40:02.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Reddit’s disrespectful design]]></title>
+        <id>https://ognjen.io/reddits-disrespectful-design/</id>
+        <link href="https://ognjen.io/reddits-disrespectful-design/"/>
+        <updated>2021-06-26T12:43:45.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Whatever Happened to UI Affordances?]]></title>
+        <id>https://shkspr.mobi/blog/2021/06/whatever-happened-to-ui-affordances/</id>
+        <link href="https://shkspr.mobi/blog/2021/06/whatever-happened-to-ui-affordances/"/>
+        <updated>2021-06-26T11:16:14.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Parse, Don't Validate (2019)]]></title>
+        <id>https://lexi-lambda.github.io/blog/2019/11/05/parse-don-t-validate/</id>
+        <link href="https://lexi-lambda.github.io/blog/2019/11/05/parse-don-t-validate/"/>
+        <updated>2021-06-26T07:23:24.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[DDD兴起的原因以及与微服务的关系]]></title>
         <id>http://weekly.dockone.io/article/2434379</id>
@@ -282,6 +716,16 @@
         </author>
     </entry>
     <entry>
+        <title type="html"><![CDATA[‘Problematic stuff’: death, memory and the interpretation of cached objects]]></title>
+        <id>https://www.cambridge.org/core/journals/antiquity/article/problematic-stuff-death-memory-and-the-interpretation-of-cached-objects/FEFB14E4C357F336710BA78CF27048AF</id>
+        <link href="https://www.cambridge.org/core/journals/antiquity/article/problematic-stuff-death-memory-and-the-interpretation-of-cached-objects/FEFB14E4C357F336710BA78CF27048AF"/>
+        <updated>2021-06-25T15:28:16.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[Where did my 256 GB go? Mobile storage Analysis [pdf]]]></title>
         <id>https://dl.acm.org/doi/pdf/10.1145/3460095</id>
         <link href="https://dl.acm.org/doi/pdf/10.1145/3460095"/>
@@ -332,10 +776,30 @@
         </author>
     </entry>
     <entry>
+        <title type="html"><![CDATA[Starting with Kafka]]></title>
+        <id>https://blog.tinybird.co/2021/06/25/starting-with-kafka/</id>
+        <link href="https://blog.tinybird.co/2021/06/25/starting-with-kafka/"/>
+        <updated>2021-06-25T11:49:19.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[I was let go for refusing to deploy a dark pattern]]></title>
         <id>https://www.peachesnstink.com/p/6pJoCuczOj8cxCUQDMlfQv</id>
         <link href="https://www.peachesnstink.com/p/6pJoCuczOj8cxCUQDMlfQv"/>
         <updated>2021-06-25T11:47:33.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Installing Windows 11 on Legacy BIOS Without Secure Boot]]></title>
+        <id>https://allthings.how/how-to-install-windows-11-on-legacy-bios-without-secure-boot-or-tpm-2-0/</id>
+        <link href="https://allthings.how/how-to-install-windows-11-on-legacy-bios-without-secure-boot-or-tpm-2-0/"/>
+        <updated>2021-06-25T11:22:47.000Z</updated>
         <summary type="html"><![CDATA[Comments]]></summary>
         <author>
             <name>Hacker News</name>
@@ -376,6 +840,26 @@
         <id>https://www.theguardian.com/society/2021/jun/25/blood-test-that-finds-50-types-of-cancer-is-accurate-enough-to-be-rolled-out</id>
         <link href="https://www.theguardian.com/society/2021/jun/25/blood-test-that-finds-50-types-of-cancer-is-accurate-enough-to-be-rolled-out"/>
         <updated>2021-06-25T09:35:52.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[ATM NFC Hack]]></title>
+        <id>https://www.wired.com/story/atm-hack-nfc-bugs-point-of-sale/</id>
+        <link href="https://www.wired.com/story/atm-hack-nfc-bugs-point-of-sale/"/>
+        <updated>2021-06-25T07:13:05.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[The Queen’s Latin or Who Were the Romans, Part II: Citizens and Allies]]></title>
+        <id>https://acoup.blog/2021/06/25/collections-the-queens-latin-or-who-were-the-romans-part-ii-citizens-and-allies/</id>
+        <link href="https://acoup.blog/2021/06/25/collections-the-queens-latin-or-who-were-the-romans-part-ii-citizens-and-allies/"/>
+        <updated>2021-06-25T05:18:04.000Z</updated>
         <summary type="html"><![CDATA[Comments]]></summary>
         <author>
             <name>Hacker News</name>
@@ -548,6 +1032,16 @@ just
         <id>http://www.theweatherprediction.com/habyhints2/424/</id>
         <link href="http://www.theweatherprediction.com/habyhints2/424/"/>
         <updated>2021-06-24T19:38:46.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Teaching open-source software in North Korea]]></title>
+        <id>https://izbicki.me/blog/teaching-open-source-in-north-korea.html</id>
+        <link href="https://izbicki.me/blog/teaching-open-source-in-north-korea.html"/>
+        <updated>2021-06-24T16:47:47.000Z</updated>
         <summary type="html"><![CDATA[Comments]]></summary>
         <author>
             <name>Hacker News</name>
@@ -932,6 +1426,16 @@ API 的定义是应用程序编程接口，而在服务化的场景中，API 是
         <id>https://www.poynter.org/ethics-trust/2021/us-ranks-last-among-46-countries-in-trust-in-media-reuters-institute-report-finds/</id>
         <link href="https://www.poynter.org/ethics-trust/2021/us-ranks-last-among-46-countries-in-trust-in-media-reuters-institute-report-finds/"/>
         <updated>2021-06-24T13:21:50.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[The Hills Are Alive with the Flows of Physics]]></title>
+        <id>https://www.nytimes.com/2021/06/24/science/hills-creep-lasers.html</id>
+        <link href="https://www.nytimes.com/2021/06/24/science/hills-creep-lasers.html"/>
+        <updated>2021-06-24T13:21:02.000Z</updated>
         <summary type="html"><![CDATA[Comments]]></summary>
         <author>
             <name>Hacker News</name>
