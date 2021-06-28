@@ -76,8 +76,622 @@
 <body>
 <!-- %after-body-begin.html% -->
   <section class="daily-content">
+    <h2 class="daily-heading"><time datatime="2021-06-28">2021-06-28</time></h2>
+    <ul class="sources card">
+      <li class="source">
+        <section>
+          <h3 class="source-name"><a class="source-name__link" href="http://weekly.dockone.io">DockOne.io</a></h3>
+          <section class="articles-per-source">
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">图文详解 23 种设计模式</summary>
+                <a class="article-summary-link article-summary-box-outer" href="http://weekly.dockone.io/article/2434385">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(9 min)</span>
+                    <span>一直想写一篇介绍设计模式的文章，让读者可以很快看完，而且一看就懂，看懂就会用，同时不会将各个模式搞混。自认为本文还是写得不错的，花了不少心思来写这文章和做图，力求让读者真的能看着简单同时有所收获。
+设计模式是对大家实际工作中写的各种代码进行高层次抽象的总结，其中最出名的当属 Gang of Four（GoF）的分类了，他们将设计模式分类为 23 种经典的模式，根据用途我们又可以分为三大类，分别为创建型模式、结构型模式和行为型模式。
+有一些重要的设计原则在开篇和大家分享下，这些原则将贯通全文：
+面向接口编程，而不是面向实现。这个很重要，也是优雅的、可扩展的代码的第一步，这就不需要多说了吧。
+职责单一原则。每个类都应该只有一个单一的功能，并且该功能应该由这个类完全封装起来。
+对修改关闭，对扩展开放。对修改关闭是说，我们辛辛苦苦加班写出来的代码，该实现的功能和该修复的 bug 都完成了，别人可不能说改就改；对扩展开放就比较好理解了，也就是说在我们写好的代码基础上，很容易实现扩展。
+
+创建型模式比较简单，但是会比较没有意思，结构型和行为型比较有意思。
+创建型模式
+创建型模式的作用就是创建对象，说到创建一个对象，最熟悉的就是 new 一个对象，然后 set 相关属性。但是，在很多场景下，我们需要给客户端提供更加友好的创建对象的方式，尤其是那种我们定义了类，但是需要提供给其他开发者用的时候。
+简单工厂模式
+和名字一样简单，非常简单，直接上代码吧：
+public class FoodFactory {
+
+其中，LanZhouNoodle 和 HuangMenChicken 都继承自 Food。
+简单地说，简单工厂模式通常就是这样，一个工厂类 XxxFactory，里面有一个静态方法，根据我们不同的参数，返回不同的派生自同一个父类（或实现同一接口）的实例对象。
+
+我们强调职责单一原则，一个…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">不止Docker：8款容器管理开源方案</summary>
+                <a class="article-summary-link article-summary-box-outer" href="http://weekly.dockone.io/article/2434384">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(1 min)</span>
+                    <span>Docker诞生于2013年，并普及了容器的概念，以至于大多数人仍然将容器的概念等同于“Docker容器”。
+作为第一个吃螃蟹的人，Docker设置了新加入者必须遵守的标准。例如，Docker有一个大型系统镜像库。所有的替代方案都必须使用相同的镜像格式，同时试图改变Docker所基于的整个堆栈的一个或多个部分。
+在此期间，出现了新的容器标准，容器生态系统朝着不同方向发展。现在除了Docker之外，还有很多方法可以使用容器。
+在本文中，我们将介绍以下内容：
+将Chroot、cgroups和命名空间作为容器的技术基础
+定义Docker所基于的软件堆栈
+说明Docker和Kubernetes需要坚持和遵守的标准
+介绍替代解决方案，这些解决方案尝试使用具有更好更安全的组件来替换原始Docker容器。
+
+容器的软件堆栈
+像Chroot 调用、 cgroups 和命名空间等 Linux 特性帮助容器在与所有其他进程隔离的情况下运行，从而保证运行时的安全性。
+Chroot
+所有类似Docker的技术都起源于类似Unix操作系统（OS）的根目录。在根目录上方是根文件系统和其他目录。
+从长远来看，这是很危险的，因为根目录中任何不需要的删除都会影响整个操作系统。这就是为什么存在一个系统调用chroot()。它创建了额外的根目录，例如一个用于运行遗留软件，另一个用于包含数据库等等。
+对于所有这些环境，chroot似乎是一个真正的根目录，而是实际上，它只是将路径名添加到任何以/开头的名字上。真正的根目录仍然存在，并且任何进程都可以引用指定根目录以外的任何位置。
+Linux cgroups
+自2008年2.6.24版本以来，Control groups（cgroups）一直是Linux内核的一项功能。Cgroup将同时限制、隔离和测量多个进程的系统资源（内存、CPU、网络和I/O）使用情况。
+假设我…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">小团队中微服务的可怕之处</summary>
+                <a class="article-summary-link article-summary-box-outer" href="http://weekly.dockone.io/article/2434383">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>微服务听起来很棒，每一个团队可以彼此独立工作而不影响其他团队。你可以轻松地维护和扩展微服务。你也可以在同一项目中使用不同的技术。它们如此稳定，所以，你的产品会有极好的扩展。在 2021 年，不应该把任何应用作为单体来构建，对吧？
+很遗憾，微服务并非在每一种环境下都可以发挥作用，在盲目使用之前，你必须确定它们提供了你所需要的价值。我见过几个典型的项目，有 4~6 名开发者，基本上是一个团队。客户想要构建微服务的应用程序，因为它们非常棒。IT 经理同意了，于是团队开始设计应用程序。
+用户管理？是的，这是一个微服务。访问权限管理？也是微服务。管理和预约？同样是微服务！通过连接到几个第三方 API 来管理和发送订单？这绝对是一个微服务。不错，现在每个人都可以得到一个微服务了！有时候你可能会违反物理学法则，每个人都有多个微服务。
+恐怖开始
+当你开始这个伟大的旅程时，你的团队需要确保每一个微服务都可以独立开发。每一个微服务都有它自己的 CI/CD 管道，自己的数据库和自己的版本化 API。
+现在，在启动一个新项目时，你可能只有一个团队。将在同一个团队中构建所有这些微服务。这种情况经常发生：一个人为了实现一个新功能而承担多个微服务。让我们就叫她 Ellie 吧。Ellie 需要在任何地方进行一些调整，同时进行测试。当她遇到问题时，她可以开始对两个微服务进行并行调试，以尝试了解它们之间的通信。如果它实际上是应用程序的一部分，那么 Ellie 就拥有一个更简单的工作环境，并且可以直接在应用程序中进行调试。此外，她还不需要为这些微服务之间的分布式、可能是异步通信编写大量定义和代码。
+之后，你的应用程序的第一个版本将提供给你的客户。当你更新应用程序并尝试开始滚动更新时，你将面临在某一时间内运行微服务的多个版本。要么它们都与其他版本兼容（这也需要在开发过程中进行一些工作），要么你需要以某种方式优雅…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+        </section>
+      </li>
+    </ul>
+  </section>
+  <section class="daily-content">
     <h2 class="daily-heading"><time datatime="2021-06-27">2021-06-27</time></h2>
     <ul class="sources card">
+      <li class="source">
+        <section>
+          <h3 class="source-name"><a class="source-name__link" href="https://news-at.zhihu.com/api/4/stories/latest?client&#x3D;0">知乎日报</a></h3>
+          <section class="articles-per-source">
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">那些早上起来做饭、跑步、冲澡后去上班的人都是几点起床、几点上班的？</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9737444">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>ASICS亚瑟士，Sound Mind, Sound Body
+阅读原文
+
+朝九晚五的上班族，能坚持晨跑、且不影响生活工作，几乎个个都是“时间管理大师”。他们确实有非常令人羡慕的自律能力和毅力。
+想把跑步安排在工作日的早晨——
+
+如何规划合理的工作日晨跑
+工作日晨跑常见的错误
+让晨跑更加「省时」的小贴士
+
+
+如何规划合理的工作日晨跑
+不管跑步的目的是什么，最适合工作日晨跑，都是低强度有氧慢跑 / 恢复跑。
+跑步的时间因人而异，从 15-60 分钟不等——虽然有氧慢跑是个相对讲究运动时长的跑步类别，即便是以提升马拉松成绩为目标的系统训练中，30-40 分钟的慢跑对有氧能力的巩固和提升依然是有帮助的。而对以健身锻炼和减脂为目标的人来说，20-30 分钟的有氧跑依然是很值得推崇的「日常项目」。
+运动前后的热身是必不可少的环节，哪怕只是强度很低的有氧慢跑。工作日的晨跑，热身可选择两种形式：
+
+在慢跑 3-10 分钟后，进行简单的放松和拉伸，而后开始匀速的慢跑；
+将开始的 3-10 分钟作为热身，在这个时段内让心率逐步从静息提升至有氧心率区间，而后维持。
+
+如果住在高层，也可选择楼梯、而非电梯下楼，来作为身体肌肉关节和心肺的初步“唤醒”。
+完成慢跑后，同样需要安排 3-10 分钟的冷身，逐渐让身体回到放松状态，并进行静态拉伸（3-5 个动作，每个动作持续 15-30 秒，循环 2-3 次）。
+晨跑强度需要的完整拉伸动作一般在 5-10 分钟时间。
+——这样算下来，一次完整且合理的工作日晨跑，需要 25-70 分钟不等。
+具体时长、距离和强度因人而异，但其中的热身、有氧慢跑、冷身 / 拉伸等关键词，都不可忽略。
+
+以有氧慢跑为强度的晨跑，并不需要在运动前的饮食中，对能量摄入有过高的要求。不过迄今很多关于晨跑的困扰里，依然常见低血糖、过饱、运动时肠胃不适……等问题。
+晨跑前饮食的几个要点…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">男生的胸部有什么作用？</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9737496">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>混乱博物馆，一档满足百科知识好奇心的短视频节目，都是些你不知道的。
+阅读原文
+
+让男人拥有乳头，是我们进化上的策略。
+
+这个问题最直接的答案是，人类拥有以 Y 染色体为中心的性别决定机制：我们都知道人有两条性染色体，女性带有两条 X 染色体，男性带有一条 X 染色体和一条 Y 染色体。经过减数分裂和受精作用，分别来自双亲的两条性染色体也将继续决定胎儿的性别。
+但是我们要明白，染色体本身说明不了什么问题，关键在于它们携带着的基因——Y 染色体的短臂上有一个 SRY 基因，就是我们唯一的性别决定基因，只要表达了这个基因，胚胎就会发育成雄性，否则就会发育成雌性。
+
+但是这个基因要到胚胎发育的第 6 到 8 周才从性腺开始逐渐表达，胚胎早已按照雌性的构造发育出了乳头和乳腺，再也无法撤销了。所以不妨说，在哺乳动物的 XY 性别决定机制里，雌性是默认性别，而 SRY 基因的功能就是将一部分雌性胚胎逆转成雄性。
+因此不难想象，由于相同的性别决定机制，所有后兽亚纲的雄性哺乳动物实际上都有乳头和乳腺。
+但是在其它动物身上，我们就会发现五花八门各式各样的性别决定机制。比如鸟类就与我们刚好相反，雄性有两条 Z 染色体，雌性有一条 Z 染色体和一条 W 染色体，那条 W 染色体上携带着决定雌性的 DMRT1 基因，所以鸟类的默认性别就是雄性。
+
+而鸭嘴兽有着介于两者之间的性别决定机制，它们有 10 条性染色体，其中雌性有 5 对 X 染色体，雄性有 5 条 X 染色体和 5 条 Y 染色体，但其中的某些 X 染色体与鸟类的 W 染色体关系很近，这给我们重建进化历程提供了重要线索。
+性染色体机制也以不同的方式出现在谱系更古老的脊椎动物身上，爬行动物更普遍地用温度决定性别，它们在某个温度范围之内孵出雄性，其余就都是雌性，只有蛇完全采 ZW 性染色体机制，这是一条性别分化越来越精确的进化之路。
+
+如果说鸭嘴兽和爬行动物揭示了性染色体的过去，节肢动物就可能暗示了性染色体的未来。比如大部分昆虫都有 XY 性染色体，果蝇是其中研究最充分的。但我们发现果蝇没有专门的性别基因，而是用 X 染色体相对于常染色体的倍数决定性别，1 倍就是雌性，1 半就是雄性，而 Y 染色体浓缩失活，没什么作用。甚至某些果蝇干脆就没有 Y 染色体，雌性有两条 X 染色体，雄性有一条 X 染色体，称为 X0 染色体机制——这在其它昆虫身上更加普遍，比如蜻蜓、蝗虫、螳螂、白蚁。
+我们对此有一个浅显的推测：有性生殖的一大意义，就是在减数分裂的联会过程中，同源染色体可以交换一部分片段，这提供了修复有害突变的宝贵机会。但是在 XY 染色体之中，那条 Y 染色体与 X 染色体差异太大，失去了这样的修复机会，因此在世代积累中变得脆弱，最终完全丢失了，它的功能则由其它染色体或者其它机制接替。
+由于昆虫繁殖更快，所以先我们一步实现了 X0 机制，某些繁殖迅速的啮齿动物也已经达到这种境地，比如琉球特产的几种裔属就已经没有了 Y 染色体——或许经过漫长的岁月，其它哺乳动物也会达到这一步吧。
+
+阅读原文</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">人类航天史是怎么开始的？</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9737508">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>作者无敌AA，KSP官方简中志愿者，ACGNV，IT也行，航空航天相关杂学
+阅读原文
+
+谢邀。
+航天史是怎么开始的！这个问题问得好，我们得倒转一下时间，去拜访三位伟大的先人。
+以下解答基于真正的“航天”概念出现，也就是在短时间内不再需要落回地面的情况，不包括连来源都很可疑的万户飞天这样的故事。部分引用资料来自 Wikipedia。
+
+牛顿的地球大炮
+
+说到第一个阐述扔出去的物体能不落回地面或者落到什么地方的人，那当然就是我们著名的艾萨克·牛顿爵士了。谁如果不认识下面这个人请自行去百度或者去翻初中物理书。
+
+虽然在此之前就有不少人阐述过天体的运动，但是牛顿是第一个用引力的观点去解释它们的人——当然了万有引力这玩意都是这位先生因为看到苹果落地发现的，之前哪里还来的先人呢。
+牛顿在 1686 年写成了足以让他名垂青史的《自然哲学的数学原理》一书，在书中的第三卷“论宇宙的系统”（英语：On the system of the world），他提出了这样的一个思想实验：
+设想有一门加农炮架在一座非常高的山的山顶上。如果在没有任何引力和空气阻力条件下，炮弹应该沿着发射的方向以一条直线的轨迹远离地球。如果有一个吸引力存在的话，炮弹会沿着一条不同的轨道运动，轨道的形状取决于炮弹的初始速度。如果速度低的话，炮弹就会直接掉在地球上。如下图所示的运行轨迹的初始水平速度分别在 0 到 7000 米 / 秒之间。
+0m/s 初速度6000m/s 初速度
+如果速度达到了所在海拔的第一宇宙速度，即约 7300 米 / 秒，炮弹将会沿着一个固定的环形轨道环绕地球，就像月球一样。（图片过大无法上传，下同）
+如果速度大于轨道速度，但小于第二宇宙速度的话，炮弹会沿着一个椭圆轨道环绕地球。如果速度非常快，炮弹将会沿着一个抛物线（当速度恰好为第二宇宙速度）或者双曲线（当速度大于第二宇宙速度）轨道逃离地球。
+牛顿大炮…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">水浒传中，高俅为何将大小船只钉住，铺板相连，难道他不知道火烧赤壁？</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9737501">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>娃娃鱼
+阅读原文
+
+二败高俅与鄱阳湖大战
+“二败高俅”火烧战船的故事，并非出自《水浒传》编写者的凭空想像，而是借鉴了元末明初一场真实的大型水战。
+相隔两百年的两次水战
+侯会先生在《从“山贼”到“水寇”：水浒传的前世今生》中，曾经全面地对比了水浒故事，与南宋初年钟相、杨幺起义的相同之处，认为是借宋江之名，写钟、杨之实。
+在书中，侯先生特别指出，《水浒传》第十九回晁盖、三阮在蓼儿洼大败官军，和第七十九、八十回三败高俅中的几次水战，都借鉴了杨幺起义中的阳武口之战[1]（南宋绍兴三年，1133 年）。
+
+但是，二败高俅时，吴用使用了火攻战术，却与阳武口大战有明显不同，对此，侯会先生没有论及，只是笼统地提到两处：
+
+小说中公孙胜祭风助火，是另从“三国”中借来的情节；
+高俅手下的两员水军将领刘梦龙、牛邦喜被李俊、张横捉住后，直接杀死的情节，与阳武口大捷中，朝廷的水军正副统帅崔曾、吴全皆死，极为相似。
+
+事实上，二败高俅一战，借鉴的不是南宋初年的钟、杨起义，而是 230 年后，元末明初的另一场水上大战：
+1363 年，陈友谅与朱元璋的鄱阳湖大战
+
+历史上的鄱阳湖之战
+这一战实在太有名了，关于它的评价是：
+鄱阳湖大战是中国历史上继赤壁之战后的又一个以少胜多的典型战例。
+这场战役有几个关键词：
+大船连锁、小船火攻、最终以弱胜强
+《明史》中对这一战的记载如下：
+友谅集巨舰，连锁为阵，太祖兵不能仰攻，连战三日，几殆。
+已，东北风起，乃纵火焚友谅舟，其弟友仁等皆烧死。
+1363 年的七月，陈友谅带领号称六十万的军队，与朱元璋在鄱阳湖的康郎山相遇。此时，陈军战舰巨大，气势非凡：
+友谅兵号六十万，联巨舟为阵，楼橹高十余丈，绵亘数十里，旌旗戈盾，望之如山。
+这些巨大的楼船涂着红色的漆，高三层，楼上楼下说话声音不相闻，橹箱都用铁裹住：
+楼船数百艘，皆高数丈，饰以丹漆，每船三重，置走马棚，上下人语声不相闻，舻箱皆裹以铁。
+而朱元璋的船太小，无法仰攻，兵力也差太多，接连三天都吃了败仗。
+图片来自网络
+这时，部将郭兴建议用“火攻”：
+陈友谅连巨舰以进，我师屡却，兴献计以火攻之。
+朱元璋采纳了这个建议。
+当天傍晚，恰好刮起了东北风，于是朱军一方派出七艘小船，装载火药柴薪，顺风放火，火势迅速蔓延，整个湖面都烧得通红：
+会日晡，大风起东北，乃命敢死士操七舟，实火药芦苇中，纵火焚友谅舟。风烈火炽，烟焰涨天，湖水尽赤。
+陈军一时大乱，陈友谅的兄弟陈友仁也战死。
+友谅兵大乱，诸将鼓噪乘之，斩首二千余级，焚溺死者无算，友谅气夺。
+《明史》后来总结这次胜利说：
+是战也，太祖舟虽小，然轻驶，友谅军俱艨艟巨舰，不利进退，以是败。
+（以上引文，均出自《明史》）
+
+与水浒故事的对比
+《水浒传》第七十九回《刘唐放火烧战船 宋江两败高太尉》中写到“火攻”的情景：
+刘梦龙急教棹船时，只见芦苇丛中，藕花深处，小港狭汊，都棹出小船来，钻入大船队里，鼓声响处，一齐点着火把。
+原来这小船上，都是吴用主意授计与刘唐，尽使水军头领，装载芦苇干柴硫黄焰硝，杂以油薪。霎时间大火竟起，烈焰飞天，四分五落，都穿在大船内，前后官船，一齐烧着。
+以小船穿梭在大船中间放火，是鄱阳湖之战的特点，是以小胜大的成功案例。
+而高俅这边，在船只上用板铺、用铁环锁定的做法，也是陈友谅军队的实际情况：
+（高俅）便传号令，教把船都放入阔港，每三只一排钉住，上用板铺，船尾用铁环锁定；尽数拨步军上船，其余马军，近水护送船只。
+
+这么做其实是有好处的。
+高大的楼船连缀起来，非常稳固，可以运送大量步兵甚至马军，同时也对小战船形成了大山压顶的气势。
+鄱阳湖一战中，朱元璋前几天的失败就是证明。
+当然，有利则必有弊，缺点就是容易被火攻。
+不过，火攻也需要条件，那就是风向。
+鄱阳湖之战中，傍晚时分突然刮起的东北风帮了朱元璋的大忙，而在《水浒传》中，则直接由大法师公孙胜施法祭风，想往哪里刮，就往哪里刮，取胜容易多了。
+小结：
+《水浒传》的成书时间，目前有两个说法，一是元末明初，洪武初年；二是明嘉靖年间，1533 年左右。
+关于编著者施耐庵的生平，流传较广的看法，是他曾担任过张士诚的谋士。《施耐庵墓志》上说他：“生于元贞丙申岁……殁于明洪武庚戌岁”，也就是 1296 年 -1370 年，享年 74 岁，是陈友谅、朱元璋的同时代人。
+不过，无论是哪一种说法，《水浒》的编著者对于大明开国皇帝用火攻的方式，以小船胜连锁大船，取得鄱阳湖水战决定性胜利的辉煌战绩肯定都了然于心，拿来作为写作素材自然也很顺手。
+如果你问，陈友谅知道赤壁之战的事吗？肯定是知道的。
+那他为什么还会把船钉起来呢？
+因为历史有时候就是会一再重演。
+2021.6.23
+阅读原文</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">如果为人父母也需要考试，应该有哪些科目？</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9737515">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>菜妈和钱爸，复旦大学营养学硕士，丁香妈妈签约作者，三年抱俩高知妈妈！
+阅读原文
+
+记得有句网评曾说：“一想到为人父母不经过考试就可以上岗，真的是太可怕了。”近年来国内外一些虐待儿童的事件频发，而很多虐童案件的施暴者就是孩子的亲生父母。
+本应该是孩子最亲近的人却给孩子带来了最大的伤害，而这种伤害不仅仅是肉体上的，更是伴随着孩子一生的成长，难以抚平。为人父母是一件看似简单而自然的事，但是成为合格的父母，并不容易，需要学习更需要在养育孩子的过程中不断和孩子一同成长。
+长城上面合个照
+育儿知识
+让新手爸妈崩溃，手足无措的，一定是娃的各种状况。夜醒、哭闹、生病……如果在娃出生前，能够系统的学习育儿知识，那么在孩子出生后就会轻松应很多，也会少走弯路，创造和谐的家庭氛围。
+比如，娃又哭了，是不是饿了？娃总醒，是不是母乳不够没吃饱？总觉得孩子的一举一动都是没吃饱，一哭就喂奶。其实很多小月零宝宝存在胀气问题，才会哭闹，如果一直喂奶，会造成更严重的胀气，这时候给宝宝做一下排气操，飞机抱，就会缓解很多。
+排气操
+这一点都不是危言耸听，因为无法安抚宝宝，妈妈一度自责抑郁，爸爸无所适从，加上婆婆妈妈各种错误的指导，可能会陷入一个恶性循环的怪圈。所以多学习科学育儿知识，对孩子进行健康正确的喂养护理，这是为人父母需要必修的第一课，也是至关重要的一课。对于孩子的健康长大，家庭的关系，还有产后妈妈的情绪恢复都是十分必要的。
+德育知识
+育儿先育己，那么为人父母一定要有良好的品德，担当起为人父母的职责，给孩子树立起正确的学习生活习惯。很多虐童事件的缘由都很很简单，父母因为生活压力，情绪失控，所以把心中怒火发在孩子身上。因为不想负责，只想自己快活，把孩子仍在一边不管不顾，造成孩子各种伤害甚至是死亡。
+比如，孩子出生后就丢给老人带，不管不问，周末偶尔来吃个饭就走。还像没结婚之前那般自由。在小区楼下散步，经常会听到一…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">瞎扯 · 如何正确地吐槽</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9737524">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>哪个瞬间你觉得自己很蠢？
+
+悟空，已多年不走路，靠丁丁曲伸前行，远看像一豆虫…
+阅读原文
+
+“老师，你忘了布置作业！”
+——来自诺基亚 560 客户端，北京市植物人医疗保障中心二楼重症监护室
+舌头打字不易，请您多一点关爱。
+阅读原文
+
+有没有人装逼正好撞到你擅长的领域上的？
+
+V-Hohenheim，交通工程
+阅读原文
+
+某次春节在家参加一个亲朋聚会，当时到晚了，就听见有个号称来自北京的专家（后面了解是长辈朋友）在解读近期刚出台的某个交通领域很火的政策文件。说到某个点的时候，专家分析了很多说国家应该是怎么怎么考虑的，下一步可能是什么意思。我顺口接了一局，应该不是吧。专家立马开始说教，意思说自己在行业内地位多高，多少多少朋友，年轻人不要乱说话...然后我弱弱的回了一句，这文件我起草的，当时确实没这么考虑....场面一度无比尴尬。
+阅读原文
+
+世界首款 AI 仿生猫 MarsCat 通过解析能做出类似真猫的动作，技术含量如何？你会选择仿生猫吗？
+
+财哥家铲屎官，9只猫的铲屎官
+阅读原文
+
+我觉得可以买一只回家逗猫。
+阅读原文
+
+有哪些让人眼前一亮的「老段子翻新」？
+
+孙凯三，在任何话题下均没有回答经验
+阅读原文
+
+在某快餐店正点餐呢，一大姐窜到我前面，就像没排过队一样对着服务员喊：两个红豆派，快点，我赶时间！
+服务员提醒道：不好意思，是这位先生先来的，请您排队！
+这位大姐很不情愿的排在了我后面。
+我怒从心中起，恶向胆边生，大声问了一句：红豆派还有几个？
+服务员：九十五个。
+我转过头：
+听见没有，急什么？
+
+
+
+阅读原文
+
+法学专业都有哪些梗？
+
+匿名用户
+阅读原文
+
+北大某教授，外号是中国民法。原因很简单，他爸是中国民法之父。
+阅读原文</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+        </section>
+      </li>
+      <li class="source">
+        <section>
+          <h3 class="source-name"><a class="source-name__link" href="https://news.ycombinator.com/">Hacker News</a></h3>
+          <section class="articles-per-source">
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Math Rendering Is Wrong</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://danilafe.com/blog/math_rendering_is_wrong/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(6 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Canada to Make Online Hate Speech a Crime Punishable by $16,000 Fine</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://gizmodo.com/canada-to-make-online-hate-speech-a-crime-punishable-by-1847163213">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Metformin trial reduces seizures and brain tumours in Tuberous Sclerosis</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.gosh.nhs.uk/news/gosh-led-metformin-trial-dramatically-reduces-seizures-people-tuberous-sclerosis/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(10 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Substack (YC W18) is hiring engineers to build the future of writing</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://jobs.lever.co/substackinc/5b1f2f5c-3809-4278-b93d-379433a34d81">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Reverse-engineering the Final Fantasy: Theatrhythm track format</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://gitlab.com/mpiroot/rideau/-/blob/master/re/re.md">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(1 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Typed Programs Don&#x27;t Leak Data</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dodisturb.me/posts/2021-06-27-Typed-Programs-Dont-Leak-Data.html">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(15 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Challenges in the diagnosis of magnesium status</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6163803/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(40 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">x86 Bare Metal Examples: Minimal operating systems, learn x86 system programming</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://github.com/cirosantilli/x86-bare-metal-examples">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(35 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Let&#x27;s code a TCP/IP stack</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.saminiir.com/lets-code-tcp-ip-stack-1-ethernet-arp/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(6 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Schools Are Spying on Students – But Students Can Fight Back</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.eff.org/press/releases/schools-are-spying-students-students-can-fight-back">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(6 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Cuba′s Covid vaccine rivals Pfizer, Moderna</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.dw.com/en/cubas-covid-vaccine-rivals-biontech-pfizer-moderna/a-58052365">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(6 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">The genius of William Shawn</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://lithub.com/the-genius-of-william-shawn-and-the-invention-of-the-new-yorker/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(11 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Ask HN: How to learn how to sell?</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://news.ycombinator.com/item?id&#x3D;27653357">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(13 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Unison Programming Language</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.unisonweb.org/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(1 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Citing a serious flight test incident, FAA slows Boeing 777X certification</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.seattletimes.com/business/boeing-aerospace/citing-a-serious-flight-test-incident-and-lack-of-design-maturity-faa-slows-boeing-777x-certification/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(8 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Why wood has gotten so dang expensive</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://constructionphysics.substack.com/p/lumber-price-faq">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(8 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Windows 11, Amazon, and Uncomfortable Questions</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://commonsware.com/blog/2021/06/26/windows-11-amazon-uncomfortable-questions.html">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(3 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Turbo Rascal Syntax Error</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://lemonspawn.com/turbo-rascal-syntax-error-expected-but-begin/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(3 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Classified Ministry of Defence documents found at bus stop</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.bbc.com/news/uk-57624942">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(7 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">The Sandia Cooler (2016)</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://ip.sandia.gov/technology.do/techID&#x3D;66">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(3 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Roblox on Linux with recent Wine 6.11</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://roblox.fandom.com/wiki/Roblox_on_Linux">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(13 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">A Pure HTTP/3 Alternative to MQTT-over-QUIC in Resource-Constrained IoT</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://arxiv.org/abs/2106.12684">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Ask HN: Good books/courses to learn networking essentials for web developers?</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://news.ycombinator.com/item?id&#x3D;27650775">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(6 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">The economics of dollar stores</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://thehustle.co/the-economics-of-dollar-stores">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(4 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+        </section>
+      </li>
       <li class="source">
         <section>
           <h3 class="source-name"><a class="source-name__link" href="http://weekly.dockone.io">DockOne.io</a></h3>
@@ -544,10 +1158,54 @@ K：铁纹石；T：镍纹石；P：合纹石；N：纽曼线。
             </article>
             <article>
               <details class="article-expander">
+                <summary class="article-expander__title">The wonderful world of Surreal numbers</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://ianopolous.peergos.me/maths/surreal">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(6 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">BLisp: A Statically Typed Lisp Like Language</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://ytakano.github.io/blisp/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(7 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
                 <summary class="article-expander__title">Whatever Happened to UI Affordances?</summary>
                 <a class="article-summary-link article-summary-box-outer" href="https://shkspr.mobi/blog/2021/06/whatever-happened-to-ui-affordances/">
                   <div class="article-summary-box-inner">
                     <span class="article-reading-time">(7 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Focus vs Coordination</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://camhashemi.com/posts/focus-vs-coordination/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(6 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">I made Ben Eater&#x27;s 8-bit breadboard computer Emulator in C++</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://github.com/0xhh/TinyE8">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(5 min)</span>
                     <span>Comments</span>
                   </div>
                 </a>
@@ -1005,6 +1663,17 @@ K：铁纹石；T：镍纹石；P：合纹石；N：纽曼线。
             </article>
             <article>
               <details class="article-expander">
+                <summary class="article-expander__title">Mathematically inspired typefaces</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.nytimes.com/2021/06/25/science/puzzles-fonts-math-demaine.html">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(7 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
                 <summary class="article-expander__title">Why the text terminal cursor is important for accessibility</summary>
                 <a class="article-summary-link article-summary-box-outer" href="https://blind.guru/blog/2021-06-25-brick.html">
                   <div class="article-summary-box-inner">
@@ -1042,6 +1711,17 @@ K：铁纹石；T：镍纹石；P：合纹石；N：纽曼线。
                 <a class="article-summary-link article-summary-box-outer" href="https://acoup.blog/2021/06/25/collections-the-queens-latin-or-who-were-the-romans-part-ii-citizens-and-allies/">
                   <div class="article-summary-box-inner">
                     <span class="article-reading-time">(57 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Onivim 2 is a retro-futuristic modal editor</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://v2.onivim.io">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(1 min)</span>
                     <span>Comments</span>
                   </div>
                 </a>
@@ -2549,7 +3229,7 @@ DNA 的二级结构就是大名鼎鼎的“双螺旋结构”。也就是有互�
   </section>
 
   <footer>
-    <time id="build-timestamp" datetime="2021-06-27T00:24:39.987Z">2021-06-27T00:24:39.987Z</time>
+    <time id="build-timestamp" datetime="2021-06-28T00:22:24.793Z">2021-06-28T00:22:24.793Z</time>
     <span><a class="footer-link" href="https://github.com/osmoscraft/osmosfeed">osmosfeed 1.11.0</a></span>
   </footer>
   <script src="index.js"></script>
