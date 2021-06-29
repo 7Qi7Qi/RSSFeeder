@@ -2,10 +2,555 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://7qi7qi.github.io/RSSFeeder/index.html</id>
     <title>osmos::feed</title>
-    <updated>2021-06-28T00:22:24.815Z</updated>
+    <updated>2021-06-29T00:22:07.879Z</updated>
     <generator>osmosfeed 1.11.0</generator>
     <link rel="alternate" href="https://7qi7qi.github.io/RSSFeeder/index.html"/>
     <link rel="self" href="https://7qi7qi.github.io/RSSFeeder/feed.atom"/>
+    <entry>
+        <title type="html"><![CDATA[一次有趣的 Docker 网络问题排查经历]]></title>
+        <id>http://weekly.dockone.io/article/2434386</id>
+        <link href="http://weekly.dockone.io/article/2434386"/>
+        <updated>2021-06-29T00:22:07.849Z</updated>
+        <summary type="html"><![CDATA[前段时间公司的安卓打包服务出现问题，现象是在上传 360 服务器进行加固的时候，非常大概率会卡在上传阶段，长时间重试最后失败。我对这个情况进行了一些排查分析，解决了这个问题，写了这篇长文复盘了排查的经历，会涉及到下面这些内容。
+Docker 桥接模式网络模型
+Netfilter 与 NAT 原理
+Systemtap 在内核探针中的用法
+
+现象描述
+打包服务的部署结构这样的：安卓打包环境被打包为一个 Docker 镜像，部署在某台物理机上，这镜像会完成代码编译打包、加固、签名、生成渠道包的功能，如下图所示：
+
+
+
+问题就出在上传 APK 这一步，传到一部分就卡住，360 的 SDK 提示超时等异常，如下图所示：
+
+
+
+通过在宿主机和容器内分别抓包，我们发现了这样一些现象。
+宿主机的抓包如下，序号为 881 的包是一个延迟的 ACK，它的 ACK 值为 530104，比这个 ACK 号更大的序列号在 875 的那个包已经确认过了（序列号为 532704，随后宿主机发送了一个 RST 包给远程的 360 加固服务器。
+再后面就是不停重试发送数据，上传卡住也就对应这个不断重试发送数据的阶段，如下图所示：
+
+
+
+在容器侧抓包，并没有出现这个 RST，其它的包一样，如下图所示：
+
+
+
+因为容器侧没有感知到连接的异常，容器内的服务就一直在不停的重试上传，经过多次重试以后依然是失败的。
+初步的排查分析
+一开始的疑虑是，是不是因为收到了延迟到达的 ACK，所以回复 RST 呢？
+这不应该，在 TCP 协议规范中，收到延迟到达的 ACK，忽略即可，不必回复 ACK，那到底为什么会发 RST 包呢？
+那是不是这个包本来就不合法呢？经过仔细分析这个包的信息，没有发现什么异常。从已有的 TCP 原理知识，已经没法推断这个现象了。
+黔驴技穷，没有什么思路，这个时候就该用上 systemtap，来看看 …]]></summary>
+        <author>
+            <name>翔宇</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Peloton Axes Free 'Just Run' Feature from Treadmill]]></title>
+        <id>https://www.pcmag.com/news/peloton-axes-free-just-run-feature-from-treadmill-bricking-it-for-non-subscribers</id>
+        <link href="https://www.pcmag.com/news/peloton-axes-free-just-run-feature-from-treadmill-bricking-it-for-non-subscribers"/>
+        <updated>2021-06-29T00:04:02.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[One of the largest owners of Bitcoin, reportedly held over 1B dead at 41]]></title>
+        <id>https://www.marketwatch.com/story/one-of-the-largest-owners-of-bitcoin-who-reportedly-held-as-much-as-1-billion-is-dead-at-41-reports-11624904721</id>
+        <link href="https://www.marketwatch.com/story/one-of-the-largest-owners-of-bitcoin-who-reportedly-held-as-much-as-1-billion-is-dead-at-41-reports-11624904721"/>
+        <updated>2021-06-28T23:15:49.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[熟牛肉切片后呈彩虹色是什么原因？有毒吗？]]></title>
+        <id>https://daily.zhihu.com/story/9737540</id>
+        <link href="https://daily.zhihu.com/story/9737540"/>
+        <updated>2021-06-28T23:08:00.000Z</updated>
+        <summary type="html"><![CDATA[菲利普医生，野生外科医生/美短饲养者
+阅读原文
+
+请务必珍惜那些整齐切面在一定角度下呈现金属光泽的肉类。
+因为这说明肉是超级新鲜的（无论是生肉还是熟肉），而不是加了什么不可告人的添加剂。
+这就得从肌肉结构说起了。
+脊椎动物的肌肉大多具有典型的肌节结构：
+
+最上方圆柱形的就是一根肌纤维，肌肉就是由无数个这样的纤维构成的，众多肌纤维的收缩在宏观上就体现为肌肉的收缩。当我们进一步放大肌纤维就会发现它呈现一节一节的典型构造，这个结构就叫肌节。
+这种肌节是由粗细两种肌丝构成的，当肌肉细胞中的钙离子水平发生改变时，在 ATP 提供的能量驱动下，肌肉中的肌动蛋白结构发生变化，从而拉动肌丝滑行，肌肉就动起来了。
+这一部分肌肉收缩的原理与本问题关联度不大，感兴趣的朋友欢迎移步：
+人的肌肉力量可以有多大？
+好的，说回肌节这个微观结构。当一把锋利的刀以某个角度（最好是几乎垂直于肌纤维走向）切割肌纤维的时候，那么断面上就会留下很多被切开的肌节。这些肌节形成阶梯状结构，就像：
+
+当可见光照射到这种平面上时，不同波长的可见光照射在这个平面上导致出射角发生改变，所以不同颜色的可见光就会被分开[1]：
+
+也就无怪乎我们在整齐的肌肉切面上看到彩虹色（muscle Iridescence）。我去年钓的一条鱼被我带回家的时候还活着，所以新鲜度非常高，我专门垂直于肌肉的长轴垂直线用快刀切开，果然发现了彩虹色。但是因为拍摄器材和光源的因素，导致成片中彩虹色不明显，倒是不同区域呈现出明显的粉红色金属光泽：
+
+如果肉不够新鲜，在腐败菌和细胞自溶酶的作用下，肌节结构可能会出现溶解，这样再切下去就很难看到彩虹光泽了。
+这种会引起光的干涉的结构被称为光栅
+自然界中还有很多此类现象，比如蝴蝶翅膀上闪耀着金属光泽的颜色也大多来自于细小鳞片对太阳光的干涉作用，而不是某种色素[2]。
+
+另一个例子就是翠鸟，它们背部的蓝色金属光泽羽毛也是得益于特殊的羽毛微观结构，对光造成了干涉作用，让蓝光进入我们的眼睛。
+
+然而这种造物主不大不小的奇迹却给翠鸟招来了灭顶之灾——点翠。一只凤冠要用上百只翠鸟的羽毛才能制成。
+圣旨博物馆藏清代凤冠
+
+
+阅读原文]]></summary>
+        <author>
+            <name>知乎日报</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[有哪些看起来不像地球生物，但又确实生在地球的动物？]]></title>
+        <id>https://daily.zhihu.com/story/9737526</id>
+        <link href="https://daily.zhihu.com/story/9737526"/>
+        <updated>2021-06-28T23:07:56.000Z</updated>
+        <summary type="html"><![CDATA[地平线HOA，简单、有趣、认真的科普。『公众号同名』
+阅读原文
+
+在深海，很少有生物的长相可以被人接受。
+吞噬鳗，就是典型。
+
+在深海，很少有生物完全没有发光器官。
+吞噬鳗，就是…
+诶？
+
+据说造物主设计吞噬鳗的时候多喝了几杯，给它整得过于特立独行了。
+事后一看，哎呀这个后悔呀！
+于是，吞噬鳗尾巴的最尖尖上，就多了一个“附赠的”发光器。
+
+它要“打个哈欠”，就像吹起来个乌漆嘛黑的气球一样...
+毫不夸张地说，吞噬鳗整个身体几乎只有两个部分：一张大嘴，一根尾巴。
+
+吞噬鳗的上半身就接在后面那根 1 米多长“管子”上。
+在俯视角下，吞噬鳗仿佛一枚梳了长辫子的贝壳。
+
+水下 2000 米，能在这个深度活下来的个个都是狠人……额，狠鱼。
+不说别的，光食物就是个大问题。
+说出来你可能不信，吞噬鳗长了个血盆大口，却主要小生物为食，比如浮游性甲壳类生物。偶尔运气好，也能吃到小鱼或一些无脊椎动物。
+血盆大口，难道白长了？
+
+当然不会，“吞噬”可不是白叫的！
+要说胃口，它甚至能吞下比自身更大的生物——相应的，它还配了一个很有“弹性”的胃，确保自己不会被吞下的东西给撑爆。
+但是，吞噬鳗的牙齿其实很小：这表示它们没法以大型动物为主食。
+
+事实上，吞噬鳗的大嘴更像一个“渔网”——想在深海活下去可不兴挑食，只要是能吞下的，统统不放过。
+对吞噬鳗来说，小鱼小虾显然是更好的选择。
+
+吞噬鳗游泳的技巧只能用惨不忍睹来形容...它的胸鳍小到几乎不存在。
+因此，吞噬鳗平时只会直直地立在深水中，有东西靠近就把下颌骨张开，水流产生的吸力就会把猎物吸进去。
+
+最后，如果你想知道，
+没有人吃过它，它也不能做宠物（doge
+拓展阅读：
+1.吞噬鳗，
+http://www.seasky.org/deep-sea/gulper-eel.html
+2.Deep-sea gulper eel，http://bioweb.uwlax.edu/bio203/s2007/rattray_mari/3.Gulper eels look like real-life sea monsters (and here’s why you should love them)，https://oceanconservancy.org/blog/2019/12/09/gulper-eels/
+©版权所有，转载请后台留言申请
+阅读原文]]></summary>
+        <author>
+            <name>知乎日报</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[进入大厂之后，领导不怎么愿意带我，只希望我立马创造价值，该怎么办？]]></title>
+        <id>https://daily.zhihu.com/story/9737550</id>
+        <link href="https://daily.zhihu.com/story/9737550"/>
+        <updated>2021-06-28T23:07:47.000Z</updated>
+        <summary type="html"><![CDATA[空白白白白，可以去公众号：空白女侠 认识我 不接商业广告&amp;付费咨询勿扰
+阅读原文
+
+这个问题很有趣，看到大家都在“教育”这位刚入职的校招生：“没人教你，就自学。不要奢望领导教你，你还处于学生思维。”这些话都没有错，但这位校招生的问题刚好反映了一个社会职场问题，一个深层的，未被我们思考过的问题。那就是我们这一代人正在遗失一种职场文化：传承。
+现在的就业市场越来越激烈，不管是刚刚踏出校园的职场小白，还是已经工作多年职场老鸟，很多人内心都产生各种不安、浮躁、甚至焦虑。已经找不到一块心灵的净土。表面原因是商业社会竞争激烈，导致企业招聘的时候“只拣现成的”、招立马创造价值的人员。而”打工人“也有一种感受，企业只想压榨自己，却没有想过好好培养自己。这种不对等的预期效果，让企业和工作者产生了严重隔阂。
+以上我让认为表面原因，我认为更深层的思考其实是 .......（卖个关子，我花了一周时间专门思考这个问题才动笔，欢迎大家耐心阅读）
+去年年底述职，我团队内一名 19 年入职的校招生在述职材料里写了这样一段话：“……在这半年的工作里，我努力让自己成为一名合格的‘工具人’……”。结合述职材料的上下文，他可能只是想用一种诙谐的语言来表达自己努力工作的态度。然而即便如此，“工具人”三个字还是深深刺动了我的神经，一种莫名的“悲伤”开始旋绕在我的脑海之中。
+我是从外企开启自己职业生涯的。还记得自己刚刚加入公司时，就深深感受到公司对企业文化的重视。在为期一年的时间里，我参加了大量针对校招生的培训，学习这家公司的历史、文化和价值观。
+其余时间，公司为我分配了一名有着 10+ 年工作经验的“纯红”经理。所谓“纯红”（pure red ）是这家外企对于校招生（ campus hire）的昵称，也就是说这名经理自毕业后一直在这家公司工作了 10 多年。我一直跟随自己的 Mentor 工作、出差，就连平时…]]></summary>
+        <author>
+            <name>知乎日报</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[如果为人父母也需要考试，应该有哪些科目？]]></title>
+        <id>https://daily.zhihu.com/story/9737560</id>
+        <link href="https://daily.zhihu.com/story/9737560"/>
+        <updated>2021-06-28T23:07:42.000Z</updated>
+        <summary type="html"><![CDATA[禾果妈妈暖心说，英国曼大硕士|原外企MKT|90后二胎宝妈|育儿自媒体
+阅读原文
+
+ 2021 年全国父亲执业资格证考试
+ 笔试部分
+姓名： 考号：
+一、判断题
+1. 你是自愿想要并且喜欢孩子的吗？
+是 否
+2. 陪产假期间你会悉心照顾老婆吗？
+是 否
+3. 你的工资水平目前能满足全家开销吗？
+是 否
+4. 你是否支持老婆进行“无痛分娩“？
+是 否
+5. 你是否会干预老婆对宝宝的喂养方式？
+是 否
+6. 你能每天抽出至少 1 小时陪伴孩子吗？
+是 否
+7. 你和老婆就带娃、做家务方面有明确分工吗？
+是 否
+8. 老婆和亲妈之间因为育儿问题产生矛盾你会维护老婆的立场吗？
+是 否
+9. 有娃后和老婆之间有难以调和的矛盾时，你会寻求专业心理机构的帮助吗？
+是 否
+10. 你是否为家庭做了理财计划（保险、投资、储蓄等）？
+是 否
+二、单项选择题
+1. 以下哪一项为老婆孕期非常规体检项目？
+A. 超声波检查 B. 糖耐 C. 唐筛 D. 羊水穿刺
+2. 以下哪种情况不是老婆实施剖宫产的绝对指标？
+A. 骨盆畸形 B. 子宫破裂
+C. 绒毛膜羊膜炎 D. 脐绕颈
+3. 以下哪一项为老婆哺乳期堵奶时的正确做法？
+A. 停止哺乳 B. 马上热敷
+C. 大力按摩乳房 D. 吃布洛芬镇痛
+4. 针对有母乳性黄疸的宝宝，以下哪一项为正确做法？
+A. 长时间晒太阳褪黄 B. 停止接种疫苗
+C. 喂葡萄糖水 D. 坚持母乳喂养
+5. 以下哪种物品不可以给 1 岁以下宝宝使用？
+A. 安抚奶嘴 B. 腰凳
+C. 糖皮质激素软膏 D. 定型枕
+6. 关于婴幼儿早期教育，以下哪种说法是错误的？
+A. 0-3 岁是宝宝大脑发育黄金期
+B. 2 岁左右是宝宝的秩序敏感期
+C. 幼儿以自我为中心、不愿意分享是正常的
+D. 阅读对于 0-3 岁宝宝来说不重要
+7. 以下哪种行为对于孩子来说是不安全的？
+A. 0-…]]></summary>
+        <author>
+            <name>知乎日报</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[瞎扯 · 如何正确地吐槽]]></title>
+        <id>https://daily.zhihu.com/story/9737563</id>
+        <link href="https://daily.zhihu.com/story/9737563"/>
+        <updated>2021-06-28T23:07:33.000Z</updated>
+        <summary type="html"><![CDATA[如何激怒一位文学爱好者？
+
+秋起舜华，怀抱炽热的梦想，赴拥温柔的灼烧。
+阅读原文
+
+「你那么喜欢文学为啥作文分那么低。」
+阅读原文
+
+如何以「驸马，公主已被杖毙，她身上掉下一块玉，是您找了十年的那块」为开头，写一篇小说？
+
+像少年拉菲迟，万茜给我点过赞
+阅读原文
+
+「驸马，公主已被杖毙，她身上掉下一块玉，是您找了十年的那块」
+驸马捡起来一看，喊了一句
+「打这么半天，就打出了个这装备」
+驸马踏上了前往奎尔丹纳斯岛的路上。
+阅读原文
+
+为什么老球迷普遍认为，20 多年前的足球比现在好看？
+
+卞卡，一个保守的人，一个怕麻烦的人。
+阅读原文
+
+因为当时没有别的东西看
+阅读原文
+
+第一次养猫闹过笑话吗？
+
+般遮丽妈妈
+阅读原文
+
+猫嘴巴上长了黑斑，连忙送到医院，结果医生说她三花的花色恰好长到了嘴巴上
+阅读原文
+
+养一只很丑的布偶猫是种什么样的体验？
+
+玩味的口红
+阅读原文
+
+我觉得我最有发言权！你们怕是对丑有什么误解
+
+丑出天际！当初被猫贩子骗了……
+
+这还是只猫迈？
+
+
+
+
+绝育后
+
+
+
+
+
+
+
+
+
+
+
+各种躺尸，你说丑就算了脾气还不好，摸也不能摸！观赏吗？ 
+
+
+
+
+
+躺！！！
+https://www.zhihu.com/video/1174080062671548416
+我妈心血来潮给它买了件衣，穿上走路都不会了………笑死我
+
+
+
+
+
+
+
+
+
+
+
+
+今天才看到大家的评论我也要被笑死了哈哈哈哈哈哈……丑是真的…不过我都看习惯了哈…
+https://www.zhihu.com/video/1174822273763315712
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2020 更新 肥成猪了
+
+
+
+
+丑家伙
+更新……真丑长胖了
+https://www.zhihu.com/video/1190411482624647168
+2020 祝大家新年快乐哦
+我妈发给我的视频，和猪一样了，真想快点回家揉揉它嘻嘻
+https://www.zhihu.com/video/1204081551988043776
+更新2020年3月
+
+
+
+
+
+每天在阳台摸爬滚打脏脏的～
+
+
+
+2021打卡
+
+还是很丑
+
+
+
+
+
+阅读原文]]></summary>
+        <author>
+            <name>知乎日报</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Simple Test Reveals If Your Mental Images Are More Vivid Than Other People's]]></title>
+        <id>https://www.sciencealert.com/this-simple-test-reveals-if-your-mental-images-are-more-vivid-than-other-people-s</id>
+        <link href="https://www.sciencealert.com/this-simple-test-reveals-if-your-mental-images-are-more-vivid-than-other-people-s"/>
+        <updated>2021-06-28T22:39:15.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[YouTube reinstates Right Wing Watch]]></title>
+        <id>https://www.nbcnews.com/tech/tech-news/youtube-reinstates-channel-devoted-exposing-conservative-extremism-rcna1286</id>
+        <link href="https://www.nbcnews.com/tech/tech-news/youtube-reinstates-channel-devoted-exposing-conservative-extremism-rcna1286"/>
+        <updated>2021-06-28T22:14:23.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[SIRUM (YC W15) is hiring to make access to medicine more equitable]]></title>
+        <id>https://news.ycombinator.com/item?id=27668040</id>
+        <link href="https://news.ycombinator.com/item?id=27668040"/>
+        <updated>2021-06-28T21:00:02.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Nvidia Vid2vid-Cameo Demo]]></title>
+        <id>http://nvidia-research-mingyuliu.com/vid2vid-cameo/</id>
+        <link href="http://nvidia-research-mingyuliu.com/vid2vid-cameo/"/>
+        <updated>2021-06-28T19:20:55.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[The 'Fuck You' Pattern]]></title>
+        <id>https://cedwards.xyz/the-fuck-you-pattern/</id>
+        <link href="https://cedwards.xyz/the-fuck-you-pattern/"/>
+        <updated>2021-06-28T19:18:44.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Judge dismisses FTC antitrust complaint against Facebook]]></title>
+        <id>https://www.cnbc.com/2021/06/28/judge-dismisses-ftc-antitrust-complaint-against-facebook.html</id>
+        <link href="https://www.cnbc.com/2021/06/28/judge-dismisses-ftc-antitrust-complaint-against-facebook.html"/>
+        <updated>2021-06-28T19:17:43.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Show HN: Art Generator Neoplasticism]]></title>
+        <id>https://github.com/andronov04/mondrian-art</id>
+        <link href="https://github.com/andronov04/mondrian-art"/>
+        <updated>2021-06-28T18:23:30.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[An announcement about the comment section]]></title>
+        <id>https://blogs.sciencemag.org/pipeline/archives/2021/06/28/an-announcement-about-the-comment-section</id>
+        <link href="https://blogs.sciencemag.org/pipeline/archives/2021/06/28/an-announcement-about-the-comment-section"/>
+        <updated>2021-06-28T18:22:50.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Amazon is using algorithms with little human intervention to fire Flex workers]]></title>
+        <id>https://arstechnica.com/tech-policy/2021/06/amazon-is-firing-flex-workers-using-algorithms-with-little-human-intervention/</id>
+        <link href="https://arstechnica.com/tech-policy/2021/06/amazon-is-firing-flex-workers-using-algorithms-with-little-human-intervention/"/>
+        <updated>2021-06-28T17:06:51.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Show HN: The Sample – newsletters curated for you with machine learning]]></title>
+        <id>https://sample.findka.com/?ref=showhn</id>
+        <link href="https://sample.findka.com/?ref=showhn"/>
+        <updated>2021-06-28T16:32:44.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[This Chemical Does Not Exist]]></title>
+        <id>https://www.thischemicaldoesnotexist.com/</id>
+        <link href="https://www.thischemicaldoesnotexist.com/"/>
+        <updated>2021-06-28T15:32:24.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Show HN: Optery – See the private info data brokers are posting about you online]]></title>
+        <id>https://www.optery.com/introducing-optery-remove-yourself-from-150-people-search-sites-like-truthfinder-mylife-radaris-socialcatfish-spokeo-whitepages/</id>
+        <link href="https://www.optery.com/introducing-optery-remove-yourself-from-150-people-search-sites-like-truthfinder-mylife-radaris-socialcatfish-spokeo-whitepages/"/>
+        <updated>2021-06-28T14:04:08.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Temporal: Getting started with JavaScript's new date time API]]></title>
+        <id>https://2ality.com/2021/06/temporal-api.html</id>
+        <link href="https://2ality.com/2021/06/temporal-api.html"/>
+        <updated>2021-06-28T13:26:59.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Biohackers take aim at big pharma’s stranglehold on insulin]]></title>
+        <id>https://www.freethink.com/shows/just-might-work/how-to-make-insulin</id>
+        <link href="https://www.freethink.com/shows/just-might-work/how-to-make-insulin"/>
+        <updated>2021-06-28T13:25:03.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Subdomains for IPFS]]></title>
+        <id>https://ipds.io/</id>
+        <link href="https://ipds.io/"/>
+        <updated>2021-06-28T10:59:31.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[China releases videos of its Zhurong Mars rover]]></title>
+        <id>https://www.bbc.com/news/science-environment-57628653</id>
+        <link href="https://www.bbc.com/news/science-environment-57628653"/>
+        <updated>2021-06-28T10:39:54.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Dear Google: Public domain compositions exist]]></title>
+        <id>https://blog.dbmiller.org/2021-06-28-dear-google-public-domain-compositions-exist</id>
+        <link href="https://blog.dbmiller.org/2021-06-28-dear-google-public-domain-compositions-exist"/>
+        <updated>2021-06-28T09:31:54.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Show HN: Minimal versioned log structured relational DB in Common Lisp]]></title>
+        <id>https://github.com/codr7/whirlog</id>
+        <link href="https://github.com/codr7/whirlog"/>
+        <updated>2021-06-28T01:28:59.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[图文详解 23 种设计模式]]></title>
         <id>http://weekly.dockone.io/article/2434385</id>
@@ -74,6 +619,16 @@ Linux cgroups
 之后，你的应用程序的第一个版本将提供给你的客户。当你更新应用程序并尝试开始滚动更新时，你将面临在某一时间内运行微服务的多个版本。要么它们都与其他版本兼容（这也需要在开发过程中进行一些工作），要么你需要以某种方式优雅…]]></summary>
         <author>
             <name>大卫</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Re-counting the cognitive history of numerals]]></title>
+        <id>https://thereader.mitpress.mit.edu/recounting-cognitive-history-of-numerals/</id>
+        <link href="https://thereader.mitpress.mit.edu/recounting-cognitive-history-of-numerals/"/>
+        <updated>2021-06-28T00:10:30.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
         </author>
     </entry>
     <entry>
@@ -565,6 +1120,46 @@ V-Hohenheim，交通工程
         </author>
     </entry>
     <entry>
+        <title type="html"><![CDATA[Prefix Sums and Their Applications (1990) [pdf]]]></title>
+        <id>https://www.cs.cmu.edu/~guyb/papers/Ble93.pdf</id>
+        <link href="https://www.cs.cmu.edu/~guyb/papers/Ble93.pdf"/>
+        <updated>2021-06-27T10:19:43.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Groundbreaking new bridge design could transform rail crossings across the UK]]></title>
+        <id>https://www.railadvent.co.uk/2021/06/groundbreaking-new-bridge-design-could-transform-rail-crossings-across-the-uk.html</id>
+        <link href="https://www.railadvent.co.uk/2021/06/groundbreaking-new-bridge-design-could-transform-rail-crossings-across-the-uk.html"/>
+        <updated>2021-06-27T07:57:04.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Lambda Calculus Examples (2009) [pdf]]]></title>
+        <id>https://www.ics.uci.edu/~lopes/teaching/inf212W12/readings/lambda-calculus-handout.pdf</id>
+        <link href="https://www.ics.uci.edu/~lopes/teaching/inf212W12/readings/lambda-calculus-handout.pdf"/>
+        <updated>2021-06-27T05:32:24.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Computer Security and the Internet: Tools and Jewels]]></title>
+        <id>https://people.scs.carleton.ca/~paulv/toolsjewels.html</id>
+        <link href="https://people.scs.carleton.ca/~paulv/toolsjewels.html"/>
+        <updated>2021-06-27T05:06:45.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[亿级流量架构的网关设计思路与常见网关对比]]></title>
         <id>http://weekly.dockone.io/article/2434382</id>
         <link href="http://weekly.dockone.io/article/2434382"/>
@@ -779,6 +1374,16 @@ K：铁纹石；T：镍纹石；P：合纹石；N：纽曼线。
         </author>
     </entry>
     <entry>
+        <title type="html"><![CDATA[The Sears Tele-Games Pinball Breakaway]]></title>
+        <id>https://nicole.express/2021/pinball-in-your-house.html</id>
+        <link href="https://nicole.express/2021/pinball-in-your-house.html"/>
+        <updated>2021-06-26T22:48:12.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[YouTube takes down Xinjiang videos, forcing rights group to seek alternative]]></title>
         <id>https://www.reuters.com/technology/exclusive-youtube-takes-down-xinjiang-videos-forces-rights-group-seek-2021-06-25/</id>
         <link href="https://www.reuters.com/technology/exclusive-youtube-takes-down-xinjiang-videos-forces-rights-group-seek-2021-06-25/"/>
@@ -979,6 +1584,16 @@ K：铁纹石；T：镍纹石；P：合纹石；N：纽曼线。
         </author>
     </entry>
     <entry>
+        <title type="html"><![CDATA[Nullfs: A virtual black hole file system that behaves like /dev/null]]></title>
+        <id>https://github.com/abbbi/nullfsvfs</id>
+        <link href="https://github.com/abbbi/nullfsvfs"/>
+        <updated>2021-06-26T11:34:42.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[The wonderful world of Surreal numbers]]></title>
         <id>https://ianopolous.peergos.me/maths/surreal</id>
         <link href="https://ianopolous.peergos.me/maths/surreal"/>
@@ -1003,6 +1618,16 @@ K：铁纹石；T：镍纹石；P：合纹石；N：纽曼线。
         <id>https://shkspr.mobi/blog/2021/06/whatever-happened-to-ui-affordances/</id>
         <link href="https://shkspr.mobi/blog/2021/06/whatever-happened-to-ui-affordances/"/>
         <updated>2021-06-26T11:16:14.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[The slow rise of robots in the data center]]></title>
+        <id>https://www.datacenterdynamics.com/en/analysis/caves-of-steel/</id>
+        <link href="https://www.datacenterdynamics.com/en/analysis/caves-of-steel/"/>
+        <updated>2021-06-26T11:08:57.000Z</updated>
         <summary type="html"><![CDATA[Comments]]></summary>
         <author>
             <name>Hacker News</name>
@@ -1039,6 +1664,16 @@ K：铁纹石；T：镍纹石；P：合纹石；N：纽曼线。
         </author>
     </entry>
     <entry>
+        <title type="html"><![CDATA[A little-known Soviet mission to rescue a dead space station (2014)]]></title>
+        <id>https://arstechnica.com/science/2014/09/the-little-known-soviet-mission-to-rescue-a-dead-space-station/</id>
+        <link href="https://arstechnica.com/science/2014/09/the-little-known-soviet-mission-to-rescue-a-dead-space-station/"/>
+        <updated>2021-06-26T05:49:45.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[DDD兴起的原因以及与微服务的关系]]></title>
         <id>http://weekly.dockone.io/article/2434379</id>
         <link href="http://weekly.dockone.io/article/2434379"/>
@@ -1058,6 +1693,16 @@ K：铁纹石；T：镍纹石；P：合纹石；N：纽曼线。
 甚至在很长的时间里人们对微服务拆分产生了一些误解，有人认为：“微服务很…]]></summary>
         <author>
             <name>JetLee</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Watermark: Along the California Aqueduct (2015)]]></title>
+        <id>https://placesjournal.org/article/watermark-along-the-california-aqueduct/</id>
+        <link href="https://placesjournal.org/article/watermark-along-the-california-aqueduct/"/>
+        <updated>2021-06-25T23:18:42.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
         </author>
     </entry>
     <entry>
