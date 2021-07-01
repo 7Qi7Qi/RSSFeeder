@@ -76,12 +76,1028 @@
 <body>
 <!-- %after-body-begin.html% -->
   <section class="daily-content">
-    <h2 class="daily-heading"><time datatime="2021-06-29">2021-06-29</time></h2>
+    <h2 class="daily-heading"><time datatime="2021-07-01">2021-07-01</time></h2>
     <ul class="sources card">
+      <li class="source">
+        <section>
+          <h3 class="source-name"><a class="source-name__link" href="http://weekly.dockone.io">DockOne.io</a></h3>
+          <section class="articles-per-source">
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">深度解读畅捷通云原生架构转型实战历程</summary>
+                <a class="article-summary-link article-summary-box-outer" href="http://weekly.dockone.io/article/2434387">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>畅捷通公司是用友集团旗下的成员企业，专注于服务国内小微企业的财务和管理服务。一方面，畅捷通将自己的产品、业务、技术架构互联网化；另一方面，畅捷通推出了畅捷通一站式云服务平台，面向小微企业提供以数智财税、数智商业为核心的平台服务、应用服务、业务服务及数据增值服务，致力于建立“小微企业服务生态体系”。
+根据易观国际的报告，目前畅捷通在国内小微企业云服务市场的覆盖率保持第一。有超过 130 万家企业与机构通过使用畅捷通的软件及服务，实现降本提效、持续创新、数智化转型。
+早期，畅捷通的业务应用都是构建在公司自主研发的 CSP 平台之上，包括客户管家、易代账、好会计和好生意等，每个企业分配一个独立的虚机，资源完全隔离，初期该平台方案极大简化了开发的复杂度，提高了开发效率，满足公司向云服务发展的最初需求。
+新的需求
+​
+随着用户规模的增多，现有为每个用户分配一个独立虚机的方案产生的问题很突出。首先体现在虚机的数量日益庞大，在客户转换率不高的情况下，容易造成资源的浪费，同时运维成本也偏高；其次，不同的用户软件迭代的版本不尽相同，还需要专门设计维护多套版本的补丁更新系统；第三，产品需要停服上线，业务会出现短暂不可用的情况；最后，如果若干用户的业务出现高峰期，不能快速弹性扩容，资源的利用率不高。
+在此背景下，畅捷通研发团队决定尝试当前业界比较通用的云原生架构设计方案，利用云上的基础设施，共享计算资源和存储资源，采用容器化方案，快速弹性扩容，利用微服务架构，按应用更新产品，彻底解决当前运维成本偏高、弹性不足、资源利用不均衡的问题。
+小微企业的特点是数量多、单个企业业务量相对较小、企业 IT 能力有限。以畅捷通好生意产品为例，采用现有的云原生架构，能够方便畅捷通快速开发出一款应对大规模小型用户，支持弹性可扩展的 SaaS 应用。同时通过服务的编排，又能快速搭建出其他产品线，如智+。目前已经有超过…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">云原生时代，为什么基础设施即代码（IaC）是开发者体验的核心？</summary>
+                <a class="article-summary-link article-summary-box-outer" href="http://weekly.dockone.io/article/2434388">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(1 min)</span>
+                    <span>从一个小故事开始
+你是一个高级开发工程师。
+某天，你自信地写好了 自动煮咖啡  功能的代码，并在本地调试通过。代码合并入主干分支后，你准备把服务发布到测试环境，进入提测流程。
+你熟练地打开项目协同，新建了一个发布工单给运维同学，详细备注了需要发布的代码分支，并特别强调这次需要专门新增一个开关 AUTO_MAKE_COFFIE_&#x60;&#x60;ENABLED&#x60;&#x60;&#x3D;true。
+过了一段时间，工单处理完成，测试同学开始测试。
+突然，噩耗传来：你的项目协同里出现了几个 Bug。
+你很疑惑，为什么本地完美运行的代码，在测试环境被提了这么多 Bug ？
+你开始怀疑代码中某个地方的逻辑有问题。可仔细排查后却仍然定位不到问题。
+最后，你终于发现，是运维同学复制环境变量时少复制了一个字母：
+关 AUTO_MAKE_COFFIE_&#x60;&#x60;ENABLE&#x60;&#x60;&#x3D;true，ENABLED 少了一个 D。
+上面这种情况是不是很熟悉？虽然不是你的锅，却拖慢了你成为十倍程序员的进度。
+那么，该怎么避免呢？  
+你一定在想：要是没有手工复制操作就好了。那就要有个地方来保存你的配置，但是你没有权限、也不想登录到运维操作平台自己粘贴配置。
+你灵光一现：要是和运维同学约定好一个配置文件，把部署配置也提交进代码里，运维同学从文件里读取应用环境配置，问题就迎刃而解了。
+IaC 是什么
+在上面的故事里，这个特殊约定好的配置文件就是这个应用基础设施的一部分（IaC 中的 I）。
+我们该怎么理解基础设施呢？一个稍微复杂点的应用，只有代码是无法运行起来的，因为它还有很多环境依赖需要被准确描述，比如需要运行环境有 make、git 等指定的命令行工具，依赖了哪些中间件等。
+因此，产品团队在实施持续交付的过程中，必须考虑将基础设施的维护纳入进来，作为支持产品运行的一部分。
+同时，技术的快速进步和演化，也使得基础设施的配置不得不频繁变化。在这种快速…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">从安全的角度谈谈etcd</summary>
+                <a class="article-summary-link article-summary-box-outer" href="http://weekly.dockone.io/article/2434389">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>背景
+随着CoreOS 、Kubernetes 、CoreDNS、Vulcand等项目在开源社区日益火热，它们所用到KV存储中间件etcd，渐渐为开发人员所关注，etcd采用Go语言开发，作为一个高可用强一致性的服务发现存储仓库，深受Gopher的喜爱。越来越多的团队使用etcd进行配置管理以及服务发现，随之而来的是安全问题，etcd中敏感配置信息，如数据库密码、PrivateKey、SecretKey、Kubernetes集群数据等，如果被攻击者窃取会造成严重影响。
+本篇文章起源于一次公司内网渗透，探测到某部门的服务器开启了etcd服务，使用etcd作为应用的配置中心，随即利用etcd配置不当的未授权安全问题，获取到库中某关系数据库地址、帐号密码，进而入侵到该关系型数据库。为什么安全漏洞、安全事件频出由此足见端倪，一小部分的开发或者运维同学，还停留在“能用”的想法，只关注可用、可运维，并没有进一步了解其安全问题，甚至官方文档中安全部分的介绍可能也都是跳过。本篇文章前半部分会以“安全开发”的视角，详细描述etcd的安全实践。后半部分会切换到“安全工程师”的视角，探究etcd安全风险检测。
+
+etcd简介
+etcd诞生于CoreOS公司，它最初是用于解决集群管理系统中OS升级的分布式并发控制以及配置文件的存储与分发等问题。基于此，etcd被设计为提供高可用、强一致的小型key value数据存储服务。项目当前隶属于CNCF基金会，被AWS、Google、Microsoft、Alibaba等大型互联网公司广泛使用。
+etcd项目地址：https://github.com/etcd-io/etcd
+
+
+
+图1 etcd架构解析
+项目历程：
+2015年2月份，etcd发布了第一个正式的稳定版本2.0。在2.0版本中，etcd重新设计了Raft一致性算法，并为用户提供了一个简单的树形…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">从源头解决 Service Mesh 问题最彻底！</summary>
+                <a class="article-summary-link article-summary-box-outer" href="http://weekly.dockone.io/article/2434390">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(1 min)</span>
+                    <span>我在 Shopee 维护一个 Service Mesh 系统，大部分的 RPC 调用要经过这个系统，这个系统每分钟要处理上千万的请求。我们在本文中就把它叫做 Oitsi 系统吧，方便描述一些。干的事情其实和 Istio 是差不多的。
+Oitsi 将对 RPC 调用设置了很多错误码，类似于 HTTP 协议的 404, 502 等等。Application 报出来的错误码在一个区间，Oitsi 内部产生的错误在另一个区间，比如 0-1000，类似于 System Internal Error，监控这些错误码可以让我们知道这个系统的运行情况。
+这个系统自从接手之后就有一个问题，就是它每时每刻都在报出来很多内部错误，比如发生内部超时，路由信息找不到，等等，每分钟有上万个错误。然而，系统的运行是完全正常的。
+
+
+
+Oitsi 系统在正常情况下的错误
+从这个脱敏之后的监控可以看到，经常有一些错误一下子动辄上万，除了图中几 K 的那些错误，在 1K 以下有更多密集的错误，只不过它们都被其他巨量的错误给拉平了，在这张图不明显。
+这就给我们造成了很多问题：到底是 Oitsi 真出了问题，还是属于“正常的错误”？很难判断，每次发生这种情况都费时费力。大部分情况都是排查一番，然后发现是用户“滥用”造成的问题，不需要关心。而它又掩盖了很多真实的问题，比如一个新的版本发布之后偶尔会有一些内部的错误，是不应该发生的，却被真实的问题掩盖住了。基于这样的监控数据我们也无法设置告警，因为这些噪音太多了，即使有告警，也和没有一样。
+这让我想起之前在蚂蚁的工作，我们有类似的问题。我有一年多的时间都在一个叫做“故障定位”的项目上。在蚂蚁我们也有很多告警（99%的）都是无效的，给 On Call 的同事带来很多噪音和打扰。在蚂蚁的思路是：开发一个“智能系统”（AI Ops），当告警发生的时候，自动地判断这个告警是不…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">软件设计的目标和途径</summary>
+                <a class="article-summary-link article-summary-box-outer" href="http://weekly.dockone.io/article/2434394">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(1 min)</span>
+                    <span>记录一下笔者关于软件设计的一些相关认知。在开始之前，先引入两个概念目标和途径（这里可能会有些咬文嚼字，不过主要是为了区分主观和客观的一些细微差异）。
+目标和途径
+我们在做某一件事情的时候，总是会带有一定的目的性的：比如说一日三餐，是为了给身体补充所需的能量。那么这三餐具体如何落实呢，则会有多种多样的方式。比如你可以选择吃碳水食物、蔬菜、肉类、牛奶或者蛋类等等；也可以选择通过静脉注射一些所需的葡萄糖或者蛋白质。总之，能够为身体补充能量就可以了。
+目标
+那么在上述的小例子中，我们的目的就是给身体补充能量，用以维持正常的生命活动所需。当然也可以说是我们的目标，不过目标侧重于过程，目的则更强调结果。
+途径
+从上面的例子中可以看出有多种方式可以达成我们的上述目的。其中每一种方式都是一条达成目的的途径，当然我们为了补充均衡的能量，通常会搭配组合几种不同的食物，我把这个称之为手段或者方法。手段和方法带有一定的主观性；而途径则是在描述客观的可供选择的一种方式。
+2 软件的目的
+在开始讨论软件设计之前先问自己一个最基本的问题：我们为什么需要软件？
+笔者认为是为了解决现实中某个领域的相关问题而存在的。就好比最初的计算机是用来计算导弹的弹道的。生活中常用的QQ和微信是为了满足人们的社交通信需求的，淘宝京东等是满足了人们的买买买的需求。
+所以，软件存在的目的就是它能解决一些领域的相关问题，这是它存在的唯一理由。
+
+比如在黑客帝国这部电影中，不再被使用的程序只有一个下场，那就是被删除掉。
+3 软件设计的目标
+假如一开始就有了软件，其实要不要软件设计都不重要了。但是问题在于软件不是凭空产生的，不是从0到1没有中间过程就直接得到了想要的软件的。在软件从0到1的过程，就是软件设计的作用范围（所以在这里我用软件设计的目标这个概念）。因为软件存在的目的在于它能解决一些领域的相关问题，那么首先对软件的最低要求就…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Docker基本使用命令</summary>
+                <a class="article-summary-link article-summary-box-outer" href="http://weekly.dockone.io/article/2434392">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(1 min)</span>
+                    <span>前言
+刚看别人使用Docker的时候有很多不解，为什么要用Docker，Docker怎么用？Docker配置为什么这么难？为什么网络访问不通？等等因素阻碍了笔者学习Docker？其实笔者也很笨，有很多思考不清晰的点。顺便也分享下。
+学时疑惑：
+Q：我一套服务为什么不放在一个容器里面（Java、MySQL、Nginx、Redis等）？
+Q：Docker能放到生产环境吗？
+基本命令
+下载镜像
+# 以Redis为例子
+
+运行镜像
+docker run \
+
+进入容器
+第一种（不推荐，当退出容器使用exit命令时，会停止这个容器）：
+docker attach 容器id
+
+第二种：
+docker exec -it 容器id /bin/bash
+
+暂停容器
+docker stop 容器id
+
+启动容器
+docker start 容器id
+
+查询容器列表
+docker ps -a # 查看所有容器
+
+run和start的区别：
+run是创建一个新的容器
+start是把已经创建好的容器启动
+
+查看容器信息
+docker inspect 容器id
+
+挂载
+挂载介绍
+容器里面的文件都是在容器内部，而跟你当前电脑是没有关系的，如果删除了容器怎么办？但是资料又想保存就像MySQL一样，我只是换一台电脑就要把整个容器复制过去，太麻烦了！所以需要把容器的文件跟当前主机文件作为一个映射。
+命令教程
+参数-v宿主机路径:容器路径
+# 以MySQL为例子
+
+为什么要知道这么多路径或者参数
+每个中间件或者一个数据库容器，他可能需要有很多配置，例如密码，持久化文件的路径等等。那我们怎么知道路径是什么：
+可以进hub.docker.com找到自己需要的容器然后看文档
+进容器找了（这个方法有点笨，笔者一开始就是这么找到的。）
+
+网络
+容器之间怎么进行通讯
+容器虽然是能相互通讯的，但是容器每次重启ip都跟上一次不一样，所以这样通讯会很复杂。
+示范
+# 先拉个CentOS镜像下来
+
+截取一些容器信息下来：
+[
+{
+
+docker inspect centos2_id
+
+[
+
+
+以上centos1 ip为172.17.0.4
+以上centos2 ip为172.17.0.5
+
+解决问题
+docker network create centos-network
+
+这样就可以解决每次容器重启后ip不一致问题。
+小结
+其实在刚使用容器的时候会很麻烦：
+不知道Docker的命令和容器需要的参数
+每次都要上官网找下有什么参数或者百度，但相比每次下载文件下来，进去配置省很多力气，并且配置一次保存好用过的命令，以后都可以用了，不需要再重复去改很多东西  
+其实在一些小型公司，没有专业的运维的话尽量不要在生产环境上使用Docker，不然真的出现问题的话会很头疼，不仅仅要维护项目，还要维护Docker
+
+原文链接：https://juejin.cn/post/6974427129748389902，作者：Kakki</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">最佳实践丨使用Rancher轻松管理上万资源不是梦！</summary>
+                <a class="article-summary-link article-summary-box-outer" href="http://weekly.dockone.io/article/2434393">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(1 min)</span>
+                    <span>前  言
+Rancher 作为一个开源的企业级 Kubernetes 集群管理平台。你可以导入现有集群，如 ACK、TKE、EKS、GKE，或者使用 RKE、RKE2、K3s 自定义部署集群。
+作为业界领先的多集群管理平台，Rancher 可以同时纳管上千个集群和上万个节点。同时，大家也不必担心运维管理大规模集群和节点会增加额外的负担，社交通讯软件LINE 5 个人就足以管理 130 个集群的 2000 个节点。
+如何在 Rancher 中管理大规模的集群和节点这次暂且不谈，之前已经介绍过很多次了。今天我们只聊如何在单个集群中管理大规模的项目、命名空间等资源。
+如何在单个集群中管理大规模的项目和命名空间
+
+命名空间：命名空间是 Kubernetes 的一个概念，它允许在一个集群中建立一个虚拟集群，这对于将集群划分为单独的“虚拟集群”很有用，每个虚拟集群都有自己的访问控制和资源配额。
+
+项目：一个项目就是一组命名空间，它是 Rancher 引入的一个概念。项目允许您将多个命名空间作为一个组进行管理并在其中执行 Kubernetes 操作。您可以使用项目来支持多租户，例如设置团队可以访问集群中的某个项目，但不能访问同一集群中的其他项目。
+
+从层次上来说，集群包含项目，项目包含命名空间。如果把公司理解成是一个集群，那么项目对应的就是部门或者团队，我们可以给某个部门或者团队针对不同的项目去划分权限来管理多个命名空间。
+每个项目内具有不同目的的环境使用命名空间去隔离，例如：生产环境和测试的环境
+为了验证在 Rancher 单集群中具有管理大规模项目和命名空间的能力，我们在一个集群中创建了 500 个项目，并且在每个项目中创建了 10 个命名空间，最后，在每个命名空间创建：1 个 Deployment、2 个 Secret、1 个 Service、2 个 ConfigMap 来模拟真实…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">为什么从微服务退回单体架构？</summary>
+                <a class="article-summary-link article-summary-box-outer" href="http://weekly.dockone.io/article/2434391">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(1 min)</span>
+                    <span>【编者的话】兄弟姐妹们，一定要找好自己赖以生存的老窝。南橘北枳，根正才能苗红，否则你看起来一些主流的技术，可能就会成为毒药。
+接下来我就给你讲一个技术降级的故事。怎么样由牛 x 的技术，换成老掉牙的单体应用。故事内容真实可靠，因为它来自一次真实的咨询。
+
+集中式互联网特点
+这个年头，Service Mesh 都已经在大厂开始铺开，弱一点的也已经是 Kubernetes 驱动的微服务。  
+这些花架子，全都比 Spring Cloud 这样的一代微服务框架，高了不止一个档次。  
+这很好，新技术踩在旧技术身上，不停的向前蠕动，最终成为一个有机的整体，也成为技术革新的根本。  
+注意，我这里使用了蠕动两个字，而不是前进。蠕动意味着丑陋且缓慢，而前进意味着革新和勇往直前。  
+整个基础设施，就像一条巨大的毛毛虫，升级升级边边角角，最终破茧成为新的物种。它的升级过程是缓慢的，系统关系是复杂多变的。  
+说是微服务，但它们仍然有以下特点：
+微指的是服务粒度，而不是模块独立性。缺了大部分模块中的某一个，系统就不能正常运行。
+脱离了自己公司的环境，就无法运行。
+几乎无法重建。
+
+你会发现，即使部分业务上云；或者你被某个信仰云搞怕了，想要迁云---都会花费较大的力气。  
+这么来说吧。即使把你公司里的所有代码，都给偷了出来，你还是不能把项目在你的开发机器上跑起来。  
+大家默认了这个线上环境是稳定的，各种接口和数据以及 DevOps 工具是完备的。想要数据，直接调其他部门的接口就可以了。
+
+某些公司的痛
+但是但是但是，你默认的这个前提，正是某些公司的需求！某些公司的软肋！  
+因为，除了大部分 toC 的互联网公司，除了能够集中跑在一个地方的类 SaaS 服务，还有很大比重的实施性项目，在闷头发大财。  
+不要误解，我说的发财，是说老板和销售，而不是程序员。程序员还没这个资格，因为这种公司…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+        </section>
+      </li>
+    </ul>
+  </section>
+  <section class="daily-content">
+    <h2 class="daily-heading"><time datatime="2021-06-30">2021-06-30</time></h2>
+    <ul class="sources card">
+      <li class="source">
+        <section>
+          <h3 class="source-name"><a class="source-name__link" href="https://news-at.zhihu.com/api/4/stories/latest?client&#x3D;0">知乎日报</a></h3>
+          <section class="articles-per-source">
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">新研究称喝咖啡有助保护肝脏，是真的吗？</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9737623">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>浩浩耗，我有屠龙之术，欲翻流云起舞；我有苍茫之志，欲煎七海成田；
+阅读原文
+
+好吧，我只不过就是简单的解读了一下这篇论文的内容，而且还写了个人觉得，对结论参考值得思考的地方。还是有朋友觉得我是在卖咖啡，我一小渣渣有能力帮一个产业带货？太看得起我了 哈哈
+那我就把核心部分放在最前面吧，并且提醒大家：平时不怎么喝咖啡的，千万不要因为这个结论改变自己的习惯，因为 没有用，没有用，没有用！！！
+原因我原文写在最后，那就先提上来吧
+当然，这项研究的结论因为其样本人群数量很大，所以还是有相当的可信度和说服力的。但对于我们中国人来说，也只能作为一个参考，并不能完全照搬结论。原因如下：
+首先，因为中国人与欧洲人群存在着很大的遗传背景差异，同时生活环境和饮食习惯也有很大的差异，而这项研究的人群主要都是英国人，因此是否同样的结论能够在中国人群数据上重复，还是一个未知数。
+其次，所谓“抛开计量谈效果，就是耍流氓”，虽然近年来，我国的咖啡饮用量正在逐步上升，但相对而言还是远远低于欧美人群的。比如这项研究里，喝咖啡的人群，其每天饮用量的中位数是 2 杯，而我国人群对咖啡的平均饮用量明显是要低于这个量的。因此，是否摄入咖啡需要满足一定的量，才会起到保护肝脏的作用，仍然是一个值得进一步研究的问题。
+原回答：——————————————————————————
+慢性肝病，近些年来在全球范围内的死亡率和发病率，都一直在持续增长。而之前有一些研究结果发现，咖啡消耗较多的地区，患慢性肝病的比例相对偏低，但具体原因，是否与咖啡的类型相关，都还没有具体的结论。
+近期，一项基于英国人群大数据的研究结果发表，对这些疑问有了进一步的解答。那关于这项研究，这些核心知识点值得了解：
+
+I. 首先，整个研究项目的入组人群数接近 50 万人（其中约 39 万人有喝咖啡的习惯，另外 11 万人是不喝咖啡的），入组的人群不仅有平常饮用咖啡量的数据，也有其电子病例等临床数据。因此，这样数量的研究人群，几乎可以说是史无前例的。
+II. 研究同时分析了不同类型的咖啡，包括研磨咖啡，速溶咖啡和不含咖啡因的咖啡（decaffeinated）。
+III. 整个研究结果跟踪的时长中位数为 10.7 年，在这个过程中，有接近 1 万人，出现了慢性肝病相关的症状。
+IV. 研究结果发现，无论是喝哪一种咖啡，患慢性肝病的比例都显著低于不喝咖啡的人群。同时，相对而言，喝研磨咖啡的人患慢性肝病的风险（Hazard ratios&#x3D;0.65）比其它两种类型的咖啡更小。
+
+当然，这项研究的结论因为其样本人群数量很大，所以还是有相当的可信度和说服力的。但对于我们中国人来说，也只能作为一个参考，并不能完全照搬结论。原因如下：
+首先，因为中国人与欧洲人群存在着很大的遗传背景差异，同时生活环境和饮食习惯也有很大的差异，而这项研究的人群主要都是英国人，因此是否同样的结论能够在中国人群数据上重复，还是一个未知数。
+其次，所谓“抛开计量谈效果，就是耍流氓”，虽然近年来，我国的咖啡饮用量正在逐步上升，但相对而言还是远远低于欧美人群的。比如这项研究里，喝咖啡的人群，其每天饮用量的中位数是 2 杯，而我国人群对咖啡的平均饮用量明显是要低于这个量的。因此，是否摄入咖啡需要满足一定的量，才会起到保护肝脏的作用，仍然是一个值得进一步研究的问题。
+
+
+
+阅读原文</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">食用冰镇西瓜或引发胃损伤，你怎么看待？夏天有哪些东西推荐食用？</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9737627">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>魏玮，丁香诊所内科医生
+阅读原文
+
+可能得先去定义什么叫做「损伤」。
+吃冷的东西有可能让你不舒服。接触到冷食的口腔、胃肠会发出信号告诉大脑：「我们冷了」。负责感知冷的温度感受器，大约在 25℃ 之下就开始启动了，10 几度的时候会更欢实。冷信号被传递给大脑，你先会感觉到这种「冷痛」。然后后续可能还有其他，有的来自于人体感知到冷后的天然保护动作：胃食管痉挛减少产热、更多的消化液分泌提高局部温度。有的更复杂些，跟脑肠轴有关，后天事件能影响到，比如如果你从小就被灌输建立了冷会让我不舒服，口腔一接触到冷，胃肠就会做出一系列敏感度的变化，让你更快有便意有腹痛。
+这些可能都会存在，具体呈现到什么程度，取决于到底有多冷，你是不是有建立这样跟冷的反应关系，以及吃冷食给你带来的快乐（更甜更冰爽）是不是足够掩盖这些不舒服。如果把这些可能的不舒服，也叫做损伤的话。那确实吃低温的东西「损伤」了胃。但我们要知道，冷痛，真的很表面。除了传递出去冷信号之外，直接跟冷接触的黏膜并不会因此受到实际伤害。黏膜的样子、功能都是正常的，也不会有未来出现的麻烦。过去也就过去了，不留下一丝痕迹。可能随着你越吃越多，而越能耐受跟身体不太一样的温度，对冷热变化都不会那么的敏感。
+吃冷在这一点上跟吃热食是不一样的。也许你（主要是你的上一辈们）也可以适应更热的食物而不会有当时的不舒服，但这些热暗中是一点点累积伤害黏膜的。食物超过 65℃，食管癌的风险就会慢慢增加。
+所以年轻人爱吃冷就让他们吃去嘛。对冷热食物的选择，我们不应该给出不必要的限制，而是直接一点儿说，吃的冷点儿热点儿确实可能让你有些不舒服，但你就是你，你可以根据自己的情况选择适合自己的温度，快乐就好。如果你喜欢吃点儿热的，那也尽量注意不要超过 65℃。
+冷食就没有要注意的下限了，反正我们平时能耐受的冷藏冰镇温度，都不至于出现真实身体伤害。要做什么健康科普，就更应该告诉别人注意冷藏保存的卫生，冰箱储存直接食用的食物一定要是密封的，不要切开西瓜随便就放进冰箱里，这样有可能导致李斯特菌等感染，更不要拿出来之后放置很久再吃，那样的话患上感染性疾病的风险更高。
+当然，严格说，确实也有罕见的例子，人真的被吃进去的东西冻伤了。还真是特例。最近，BMJ 刊登过一篇个案报道。有人吸食笑气的时候太着急，压缩气体释放局部大量吸收热量造成了极冷环境，嘴巴就被冻伤了。这算是正儿八经的「吃冷」损伤了……
+
+图片来源及参考文献：Nabben T, Weijs J, van Amsterdam J. Problematic Use of Nitrous Oxide by Young Moroccan–Dutch Adults[J]. International journal of environmental research and public health, 2021, 18(11): 5574.
+阅读原文</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">第一次被家暴后应该怎么处理？</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9737618">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>从八品盛京游牧副尉，略懂法术
+阅读原文
+
+实施家庭暴力是可以判离婚的具体情形之一，从最大程度的保护自身来讲，遭遇家暴时留存证据，对于争取离婚、财产分割、争取孩子抚养权都非常有利。下面说说家暴取证。
+最常用的证据就是伤情照片，挨打了第一时间要把伤情照片拍下来，不然有些淤青啊肿胀的地方过一段时间就恢复了，注意不能仅仅拍局部，到时候法官怎么知道是不是你呀。所以要尽量拍露脸的全景照片。比如蒋劲夫家暴，受害者拍的照片就很有说服力。
+一定要在伤势看起来最严重的时候拍
+再有就是要保存好就诊证据，就诊后务必把医疗本啊、诊断证明啊、医疗报告、住院病历等保存好。因为这些材料都是在你向医生陈述伤情时形成的，相当于医生给你做的笔录。还有的打骨折的，拍了片子也要留好。这些都是法庭可以采纳的有力证据。
+
+最重要的就是报警问题，如果觉得事态很严重一定要报警，情绪再失控的人听到警察俩字也会注入一丝理性，这对保护自身安全很有利。如果当时没机会报警，那么事后也不能心软，也要第一时间报警，原不原谅是以后的事，先让警察看看伤再说。有的小区里为了便民会留下所属派出所电话，因为出警时间会缩短，但注意了，报警时一定要打 110 报警，而不要打什么派出所电话，因为 110 报警会有报警记录留存，他们有个接警系统，接电话就需要往系统里输入时间地点什么事，而派出所电话往往没有报警记录。
+警察来了后一看是两口子打架，肯定先调解，这时候你就得要求警察做笔录，为的就是怕打人的以后不认账，照片、医疗证明都可以证明你受了伤，但并不能直接证明是谁打伤你的啊，现在警察现场白纸黑字给你记下来，以后想不认账都难。
+警察一般不会因为两口子打架拘留，因为拘完了自己麻烦事也多，所以一般都会极力调解结案，不能就让警察叔叔就这么走了，调解结案行，得给出具个告诫书，告诫书啥意思？这是《反家暴法》立法者考虑到家暴取证难的问题，特意安排给公安机关的一项法定文书。就是告诉打人的，告你奥以后老实点不许再动手了，再动手收拾你奥。就这么个东西。告诫书有啥用呢？跟笔录一样，相当于警察给你出的他打你了的证明。
+警察看大面上如果伤的不是很严重，一般不会主动提伤情鉴定的事，多一事不如少一事。但如果你自己觉得被打的挺严重，那也不能委屈了自己，可以当着警察的面要求做伤情鉴定，万一是轻微伤或是轻伤呢？那你就牢牢的掌握了主动权。
+
+最后记得要民警的联系方式，你生成了这么些证据，又报警记录，又笔录告诫书的，以后上哪找去啊，公安局忙法官更忙，如果法官以后调取证据的时候知道找谁，他也乐意帮你去找。
+有的人面子薄，不好意思将家丑暴露在公权力下，或者干脆不忍心报警，怎么办呢？也不是一点办法没有，让打人的写保证书，写完了签名，留好。保证书大家都知道吧，小时候都写过，其关键用语是“我以后再也不.....”。保证书有啥用呢？跟笔录一样，还是证明人家打你了。
+还有一种常用证据就是证人证言，有时候家暴发生的地方不在那么私密的空间里，被亲戚、街坊邻里看到了，那么他们的证言就可以证明家暴的发生。如果被打的时候谁也没看到，但是你跑到亲戚朋友家里了，哭诉这个挨削了啊，你瞅瞅啊，亲戚朋友听你这么一说，再一看你这青一块紫一块的，那么他把这个过程在法庭上复述一遍，仍然可以构成间接证据。
+如果挨削已经形成常态了，那不妨提前准备好摄像头之类的设备，或者整个录音笔提前开开，这玩意比上边说的那些个可都好使，可以直接证明家暴的发生。如果没有事先准备，也需要有个意识，挨削了尽量往有摄像头的地方跑。
+还有的经常挨削的，街坊邻里都知道了，居委会村委会可能还到家里做过调解工作，如果调解过，就说明知道这事，可以让当时介入过你们家事的这些机构（街道、妇联、村委会居委会）出具个书面证明，也不用让机构证明有家庭暴力，你就把当时调解的情况写明白，就足够了，而且证据能力很强，作用还是证明人家打你了。
+家庭暴力的特点是多次发生，第一次没处理明白很可能就有第二次，有的平时像个人似的，打人时候控制不住自己，等打完了也清醒了，咣咣磕头道歉，然后心一软原谅了，在寄希望于对方改过的时候再次挨削。
+
+这种人渣，能离了最好，实在离不了，也要构建均势力量，均势是地缘政治学中的一个词，是指国际体系中的国家试图保持力量的平衡，以防止任何国家占据优势地位。在家里也是一样，不能总让一方占据打人的绝对优势地位，比如一个会空手道的妻子挨打的几率会比其他女性小。如果一方优势地位已经确立，你很弱小根本打不过对方，那就要想办法限制对方发挥这种优势，或者让对方知道发挥这种优势的代价很大，比如有一个强壮的哥哥，比如争得当地警方同情，比如去对方单位领导那里把对方批判一番，以实现另一种形态的制衡。最后，防止家暴最重要的手段还是选对人，过滤了人渣，也就远离了家暴。
+阅读原文</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">旅行中的哪一刻令你感到「祖国的山河美如画」？</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9737601">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>在远方的阿伦，自驾旅行作者，独立纪录片导演，星球研究所/天空之城特约摄影师
+阅读原文
+
+2021 年，我在新疆从冬天跨越到了春天，终于等到了新疆最美的春天
+这次的旅途包括博州的赛里木湖、木特塔尔沙漠胡杨，古尔班通古特沙漠，伊犁河谷的那拉提山、库尔德宁雪岭云杉森林、 那拉提草原、昭苏草原、特克斯，昌吉 101 省道、硫磺沟和棉田等地，依旧由我独立拍摄和后期完成。
+“在时冻若严寒，归来恍如盛夏”是这次旅行给我的最深印象。因为接连几场的暴风雪不仅打乱了我的拍摄计划，还冻结了天山南北以及伊犁河谷地区的所有农牧生产活动。可以说，这场来自西方的寒冷空气对我和其他游客而言，是何其的不幸；而且对于当时当地的农民和牧民来说，也是影响深远。 但是当我返回上海重新开始拼接整个旅途的记忆碎片时才发现我又是何其幸运的从新疆的冬季，穿越到了新疆的春季；并且在这过程里，见证了天山以北包括伊犁地区万物开始苏醒的蓬勃生机。
+
+我在昌吉偶遇了的这家普通农户家的棉田，正赶上他们 2021 年的第一天播种，通过北斗定位、播种、安放滴灌带、覆膜一次完成，我也帮着一起干了一天的农活。
+关于这次天山环线的旅行详情，我会在接下来的文字版里再述，而至于新疆，我想当你看完这段文字时，新疆基本就已经处在最适合旅行的时节里了。
+我记得甘南这部片子的弹幕和评论里最多的就是，这不是欧洲吗？这不是阿尔卑斯山吗？不，这是中国甘肃省甘南藏族自治州的江迭公路“洛克之路”，冰川造就的远古巨兽
+这条路，自驾去过的人不算少，但从全国自驾游的尺度来看，就算是到了如今，那也算是小众中的极小众。其中风景最为精华，最为无敌的路段，集中在光盖山的囊黑卡（也叫那黑卡，纪录片里有注解）到与“车巴沟”汇合的路段。
+自从 2020 年 12 月纪录片发布以来，很多朋友先后前往了，尤其在今年的五一长假大家都给我发来了“远方回声”，可惜那时囊黑卡以西积雪覆盖无法通行。…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">运动大量出汗对身体好吗？</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9737608">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>ASICS亚瑟士，Sound Mind, Sound Body
+阅读原文
+
+只要非病理性的出汗，那运动中的大量出汗是一种正常的生理现象。
+并没有“好”与“坏”的说法。
+附上 30 条关于运动出汗和补水的真相。相信看完这些，对运动中的出汗就能有一定认知：
+
+关于运动中的出汗
+运动中大量出汗意味着什么
+畅快流汗同时的补水策略
+
+2019 年多哈世锦赛马拉松决赛，尽管比赛放在夜间，起跑时的气温高达 31℃，对所有选手都是很严峻的考验，完赛率不到 60%。一场马拉松下来选手的体重降低都达到 2 公斤以上多哈世锦赛马拉松，川内优辉以 2 小时 17 分 59 秒的成绩完赛
+
+关于运动中的出汗
+1.除非是病理性的原因导致出汗不正常，不必过于紧张运动时大量出汗；
+2.运动中的出汗，本质上是人体调节体温的一种方式。在运动过程中，人会不断产生大量热量，而出汗能让身体维持在一个适合的体温中，继续运动下去；
+3.人平均有 200-400 万个汗腺，每个腺体释放多少汗水取决于许多因素，包括遗传、年龄、健康水平等。体重增加，出汗率也会明显提升。通常情况下，男性的出汗量往往比女性更大；
+4.随着汗液一起排出的，还有钠、钾、钙、氯以及少量尿素氮等，不过最大量的还是水分；
+5.成年人的最大出汗量，每小时有人是 2 升，有人能达到 4 升，个体差异极大；
+6.需要辟谣的是，很多裹着保鲜膜、刻意焐热增加出汗等方式，非但没有宣传效果，还容易增加虚脱、皮肤炎症等的附带问题；
+7.迄今没有任何医学研究表明，出汗有所谓的“排毒”效果；
+8.人类在某种程度上具备如今的运动能力，尤其是有氧运动（耐力）能力，很大程度上就是拜强大的出汗能力所赐 ^^
+9.2014 年的一个实验数据，对照 16 名长跑选手和 20 名办公室久坐选手，即便是日常情况下，长跑选手的出汗量、活跃汗腺数量、单位汗腺汗液输出量等都远高于久坐的人，他们的…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">瞎扯 · 如何正确地吐槽</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9737633">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>为什么说「21 世纪是生物的世纪」，但生物工程专业却被称为「天坑」？
+
+知乎用户，温和的沙文主义者
+阅读原文
+
+为什么说 21 世纪是生物的世纪？
+因为学生物的转行到了各行各业。
+阅读原文
+
+飞行生物为什么没有演化出像暴龙狮子老虎那样的顶级掠食者？
+
+婷婷，二次元大龄剩女，前来给宁看脸来了@！@
+阅读原文
+
+
+
+
+阅读原文
+
+为什么上海人那么好辨认?
+
+Harriet
+阅读原文
+
+因为宿舍里面只有上海人桌上会有卡西欧 991
+阅读原文
+
+如何看待Steam开始遣返国人阿根廷区账户回到国区？
+
+冬马要努力变强，克莱登大学阴阳怪气学研究生在读
+阅读原文
+
+我是一个来自浙江杭州的玩家，前几天我在西溪湿地边上发现一个很深很深的洞，于是我跳了进去，没想到这个洞是穿过地心直通地球另一端的洞，那个国家的国旗是蓝白的中间还有个太阳。我觉得很神奇，于是我找了个网吧注册了一个 Steam 账号，过了几天又顺着洞跳了回来。
+我不知道什么阿根廷，也不知道什么低价区，就是希望 G 胖你别封我的号，这一切都是误会。
+阅读原文
+
+长得太美是一种什么样的感觉？
+
+Scarlett，靡不有初 鲜克有终
+阅读原文
+
+其实也没有特别的感受
+长得美也是平平淡淡的普通人生活而已
+那些纸醉金迷烈火烹油
+也只存在于别人的臆想
+非常感谢爸爸妈妈给我这样的基因
+可以靠一张嘴在这叭叭叭叭
+阅读原文</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+        </section>
+      </li>
       <li class="source">
         <section>
           <h3 class="source-name"><a class="source-name__link" href="https://news.ycombinator.com/">Hacker News</a></h3>
           <section class="articles-per-source">
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">SparkFun Hooks a Patent Troll</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.sparkfun.com/news/3917">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Microsoft exec: Targeting of Americans’ records ‘routine’</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.seattletimes.com/business/federal-targeting-of-americans-records-is-routine-microsoft-exec-testifies/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(4 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Tesorio (YC S15) Is Hiring – Join Our 100% Distributed Fintech Team</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.tesorio.com/careers#job-openings">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(1 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Asking developers to do QA is broken – why anyone should own QA</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.rainforestqa.com/blog/accessible-quality">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(13 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Apple Makes Mac OS X Lion and Mountain Lion Free to Download</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.macrumors.com/2021/06/30/os-x-lion-mountain-lion-free-to-download/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(7 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">IBM&#x27;s 18-month company-wide email system migration has been a disaster: sources</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.theregister.com/2021/06/30/ibm_email_outage/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(9 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Move fast, but understand the problem first</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://jacobobryant.com/blog/understand/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Globally Distributed Postgres</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://fly.io/blog/globally-distributed-postgres/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(8 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Intuit sabotages the Child Tax Credit</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://pluralistic.net/2021/06/29/three-times-is-enemy-action/#ctc">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(8 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Robinhood to pay $70M for &#x27;systemic supervisory failures&#x27;</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.reuters.com/technology/broker-robinhood-pay-70-mln-systemic-supervisory-failures-2021-06-30/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(4 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">1970s mainframe RPGs we can no longer play</summary>
+                <a class="article-summary-link article-summary-box-outer" href="http://crpgaddict.blogspot.com/2021/06/brief-everything-we-know-about-1970s.html">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(20 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Show HN: An interactive visual history of Git development</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://git-history.jpalmer.dev/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Software Engineering principles to make teams better</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://principles.dev/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(1 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Treat Kubernetes clusters as cattle, not pets</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://zitadel.ch/blog/treat-clusters-as-cattle/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(7 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Link rot and content drift are endemic to the web</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.theatlantic.com/technology/archive/2021/06/the-internet-is-a-collective-hallucination/619320/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(21 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Lessons from Building a Static Site Generator (2020)</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://nicholasreese.com/lessons-from-building-a-static-site-generator/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(19 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Black Hat Exploits of the Stupid-Easy 80s</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://madned.substack.com/p/black-hat-exploits-of-the-stupid">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(12 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">‘Great Resignation’ gains steam as return-to-work plans take effect</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.cnbc.com/2021/06/29/more-people-plan-to-quit-as-return-to-work-plans-go-into-effect-.html">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(3 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">GitHub co-pilot as open source code laundering?</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://twitter.com/eevee/status/1410037309848752128">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(1 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Software estimation is hard – do it anyway</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://jacobian.org/2021/may/20/estimation/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(3 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Book Review: A Philosophy of Software Design (2020)</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://johz.bearblog.dev/book-review-philosophy-software-design/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(6 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Flowers of Fire: Illustrations from Japanese Fireworks Catalogues (ca. 1880s)</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://publicdomainreview.org/collection/japanese-fireworks-catalogues">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(6 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">A foreign seller has hijacked my Amazon Klein bottle listing</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://kleinbottle.com/#AMAZON%20BRAND%20HIJACKING">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+        </section>
+      </li>
+    </ul>
+  </section>
+  <section class="daily-content">
+    <h2 class="daily-heading"><time datatime="2021-06-29">2021-06-29</time></h2>
+    <ul class="sources card">
+      <li class="source">
+        <section>
+          <h3 class="source-name"><a class="source-name__link" href="https://news-at.zhihu.com/api/4/stories/latest?client&#x3D;0">知乎日报</a></h3>
+          <section class="articles-per-source">
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">为什么中国运动员运动寿命短？</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9737588">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>运动分子，体育科普/运动知识/装备测评/赛事报道/选手故事/
+阅读原文
+
+题目里，姚明、刘翔和李娜放整个中国体育史上，都是各自领域独一无二、甚至完全没有接近者的存在。
+放更大的范围，他们也都是世界级（world-class）的选手，全世界、整个人类历史上都不多见——用这一类运动员作为分析样本，其实意义并不大。
+不过还是以其中的一位，刘翔为例，稍微展开说说。
+
+伤病伴随了刘翔的整个职业生涯，最主要两个部位，大腿和跟腱 / 脚跟。其中跟腱 / 脚跟部位的伤堪称是他生涯的“阿基里斯之踵”，因为本身脚跟骨比别人更突出，只要有高强度训练，就一定会出状况，没法根治，只能缓解。
+——可能很多人不知道，刘翔后跟 / 跟腱部位的伤病在 2004 年雅典奥运会前就已经出现，也被确诊会反反复复、困扰其整个职业生涯。
+
+即便如此，刘翔在自己职业生涯依然创造了两次巅峰，且这两次巅峰持续的时间都非常之长——几乎抛开两次严重受伤（都有各自代表性的赛事，2008 北京奥运会和 2012 伦敦奥运会），刘翔都很快恢复到曾经的水准。
+2004 年刘翔雅典夺冠，也带乱了杜库雷的节奏2012 年伦敦奥运会，刘翔跟腱断裂，在第一个栏架意外摔倒，以这样一种未完成的方式结束了自己的最后一场比赛
+刘翔生涯中段大家都很了解了，回顾一下他的起点与终点——
+刘翔 1999 年、不到 16 岁正式跟着孙海平练跨栏，3 年后（2002 年）就创造了 110 米栏世界青年纪录 + 亚洲纪录（13 秒 12），同年釜山亚运会（13 秒 27）摘金。
+——所以从 19 岁开始，刘翔就已经是全世界最顶级的 110 米栏选手。第二年圣但尼田径世锦赛 13 秒 23 摘铜，也是含金量极高的一块奖牌。
+2003 圣但尼世锦赛，20 岁的刘翔 13 秒 23 仅次于特拉梅尔和偶像阿兰约翰逊，拿到含金量极高的铜牌
+刘翔最后一场正式比赛完赛，是 20…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">父母的内疚式教育，对孩子影响有多大？</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9737564">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>常爸-黄任，传播科学育儿理念，提供优质教育资源。公号：常青藤爸爸
+阅读原文
+
+先提醒一下大家：
+■ 用内疚来控制孩子的父母真的很多，甚至可以说绝大多数中国父母都在孩子身上实践过这一招，只是或轻或重，自己意识得到意识不到了。
+■ 内疚是一种负性情绪，但让孩子内疚并不全然是坏事，反之适合的内疚是一个人道德水平最好的检验官，但是过度内疚就是妥妥的有害情绪。
+接下来，详细说一下什么是“内疚式教育”以及这种教育方式对孩子的影响。
+01内疚，是道德的“晴雨表”
+先来看看什么是内疚？
+它是一个人真的做错了事情，或者想象中做错了事情，因为违背良心而对他人产生的一种惭愧、不安的心情，它是道德情绪中的一种。
+为了不受到道德惩罚，消除内疚感，人们往往会积极努力地做出弥补，比如道歉、关心别人，或者满足别人的愿望等。
+就像一个小孩子推倒了另一个小孩子，看到对方哇哇大哭，这个小孩就会觉得很内疚，进而安慰对方、把对方扶起来。
+
+所以，有适当内疚感，就证明这个人有道德要求，是一个心理健康的人，在这个层面上，内疚可以和“自省”划等号。反之，没有内疚感或内疚感比较低的人，则更可能做出不道德的事情。
+曾经有一个研究显示：
+低内疚感的人更容易撒谎或做出不诚实的行为，比如不买门票就进入电影院、公园等。而高内疚感的人，则更少撒谎或做出不道德的事情，在商务谈判、做出决策时也会表现得更诚实。
+试想，你身边有这样两个人：
+A、诚实友善，关注别人的感受
+B、撒谎投机，只考虑自己的感受
+你会选择和谁做朋友呢？
+毫无疑问，一定是 A 更受欢迎。
+因此，有高内疚感的人，也更容易交到朋友，融入集体，团队合作和协作能力也更强，人生幸福度也更高。
+一般情况下，很多父母认为让一个孩子产生“内疚感”，是为了让他成为一个更好的人。
+比如说爸妈挣钱不容易，让孩子知道勤俭节约；
+说爸妈为了孩子上学付出很多，让孩子知道奋发向上；
+说爸妈工作的辛酸，…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">哪些中国文化对科技发展有促进作用？</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9737574">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>ag獭，好奇而无用的獭獭
+阅读原文
+
+回答这个问题之前，先要明确一下，什么是科学技术？中国文化有哪些独到特色？
+科学，是人类认识世界的一种实践方法。英语中的科学 Science，来源于拉丁文中的 Scientia，意思是“知识””学问“，而在中文里，科学又可以理解成“分科的学术研究”。归根结底，科学是我们认识世界的一种方式，但不是唯一的认识方式，随着社会的发展，在不同时代、不同领域，科学的范畴自然也有所不同。
+汉代刘歆编著的《七略》，是中国最古老的藏书目录之一，现代意义上的科学书籍，在七略中，大约属于术数、方技、诸子等略，和今日之学科分类大不相同。（中国大百科全书，图书馆学情报学档案学卷）
+现代意义上的科学，大约形成于文艺复兴后的西欧，此前，古希腊人发展出了公理体系，但没有形成现代科学，中国古人重视实践和记录，也没有形成现代科学。在现代科学形成的过程中，古希腊人和中国古人都贡献出了自己的一份力量，但古人自有其认识世界的方法，也自有其对学术体系、自然世界的分类方式。在不同社会背景之下，每一种分类和认识方式，只要适合，就是合理的。
+与之相似，所谓文化，自然也是不断变化的。清末的相片上，许多人看起来都麻木呆滞、死气沉沉，几十年后的新中国，人们的精神面貌却与之大不相同。不过几十年工夫，孕育中国国民的文化却发生了巨大改变。西汉的中国文化、南宋的中国文化以及 21 世纪的中国文化，显然是不同的。但总有一些藏在深处的文化基因，能够历经时间的筛选，世代流传。这大概也是中华文明能历经数千年而不断的原因所在。
+那么有哪些中国文化，能够历经千年，并对科技发展产生促进作用呢？
+重视教育
+中国是世界第一个以考试作为官僚选拔机制的国家。科举制度的诞生，为国家选拔了大批文化水准过关的可靠官员，促进了阶层流动，打破了世家大族对高层职位的垄断。日积月累，社会上形成了重视教育和学历的文化氛围。大多数中国人相信…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Steam 上有哪些必买游戏？</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9737582">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>汪靖豪，专心做一个点赞的知乎用户。
+阅读原文
+
+摸着良心说话，以下每款游戏玩个几十小时上百小时都不过分，对于一些特殊类型的游戏上千小时也是很正常的。
+我想最早关注这个问题应该很多都是喜欢打游戏，比如玩玩动视暴雪、腾讯、网易这三家的游戏，但是对 steam 接触不深的玩家，或者说以前玩了些盗版，毕竟现在 steam 上有几万款游戏，从茫茫多的游戏中找到自己所爱还是要花费些许时间的，
+没错我就是那个 steam 萌新，在一群骨灰级单机玩家朋友的安利下带着慢慢成为新司机。
+既然是必买，就推荐几个贴吧&amp;黑盒&amp;NGA&amp;知乎呼声都比较高的游戏，萝卜青菜各有所爱，喜欢玩的人多的游戏你不一定喜欢，但不代表是游戏不好，可能某一天你再去回味回味就会有另一番风味。
+其实大家买东西看哪家公司出的，玩游戏也看是哪个公司开发，哪个公司发行，下面以各大公司为主题安利。比较厉害的公司主要有
+V 社(steam 创立)、ubi(旅游模拟公司)、CDPR(不赚钱的公司)、R 星(永远在新建文件夹)、
+B 社(捡垃圾废土开放世界)、P 社(如何看待 P 社玩家群体)、Capcom(动作天尊冷饭王)、
+SE(游戏是好游戏但公司要不得)、SEGA(街机年代老公司)、KOEI(活在情怀里的公司)、
+EA(美国腾讯)、万代南梦宫(你喜欢的动漫他都能给你做成游戏)、WB(IP 游戏)
+2020 年 3 月 14 日 update 精品篇
+2020 年 4 月 4 日 update 主播学习篇
+为什么想更这个呢，一来是方便大家玩的时候卡关了可以找视频看看，二来是一些游戏真的很难可以看视频攻略来学习，三来我自己也是看视频学习来的，吃水不忘挖井人既然有这么多 hxd 在看就当流量入口推荐给大家，第四就是大家如果没有打主意买可以云一会，再决定买不买
+游戏都买了，为什么还要我花时间玩。什么，还要我废脑袋去学习，你肯定是疯了。
+20…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">为什么涂了防晒还会晒黑？「皮肤越黑越容易晒黑」是真的吗？</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9737587">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>知乎用户，化妆品配方师；美妆科普人；公众号：凡可美肤实验室
+阅读原文
+
+一、先说结论吧
+题主的两个问题跨度其实都挺大，但是可以肯定的告诉大家，皮肤越黑的人确实的越容易晒黑，尤其是天生黑或者从小皮肤比较偏黑的；皮肤白的通常更容易晒红晒伤。
+至于涂了防晒还会晒黑这个问题，大概率是实际操作方法有问题：例如防晒产品的选择，防晒产品的使用场景，也就是所处的环境紫外线有多强，防晒霜的量有没有涂足够，防晒霜时间长失效后没有及时的补涂，就是操作上的细节都会影响实际使用效果。
+我以前回答的内容里，写过关于防晒品的选用
+真的需要每天涂防晒吗，防晒霜对皮肤有害处吗？
+还有防晒霜指数的问题，量涂得不够，效果会很打折扣的
+防晒霜涂不够量，是没有防晒作用？还是防晒作用比起其标注指数会打折扣？
+二、基因决定了你肤色最白的“天花板”
+我们皮肤的肤色受很多因素的影响，我们先来了解一下你最白的肤色是怎么构成的，也就是你皮肤最白的天花板。
+这点可能大家都知道，都是基因决定的，目前已知超过有 125 种基因可以调节肤色。皮肤黑的人和皮肤白的人在黑色素细胞（也就是黑色素的生产工厂）的数量上并没有太大的区别。但是却造就了形形色色的肤色，就是因为有很多基因以及后天的因素在影响着肤色的组成。
+
+三、皮肤越黑意味着黑色素的“生产能力”更强
+黑色素的合成是非常复杂的反应，从皮肤受到紫外线以及损伤的刺激，启动相应的黑色素合成流产，把黑色素生产出来并逐步转运到皮肤的表面，呈现更深的肤色，中间的反应环节，涉及的信号路径、调控等很复杂。
+不过总的来说，皮肤越黑也就意味着你本身皮肤的黑色素生产和转运的能力更强，而且黑色素的代谢速度更慢。
+
+这一点我自己深有体会，小时候有长时间的暴晒史，肤色天生也比较黑。虽然自己很长时间在研究美白淡斑化妆品，在防晒方面也注意的很到位，还经常使用美白产品。不过一旦出去无防护地晒一圈回来，不是很快就黑好几个度，而且后期需要很长时间的维护才能逐渐的白下来。
+有些朋友是肤色天生比较白的，尽管大家的生活环境和防晒习惯差不多。一起出去玩一圈，接受相近的紫外线暴露，晒一圈回来后，皮肤发红几天，不过很快又会白下来。
+四、哪些坑可能导致涂了防晒还会晒黑？
+防晒，对于皮肤保养，抗衰老和美白都是很重要的措施，要做好防晒需要注意的细节还真不少。但是防晒没注意好的话，足够可以让你养了一个秋冬季节才白下来的肤色，晒半天时间可以毁于一旦。
+为什么涂了防晒还会晒黑？不排除有很多极端案例，我认为原因有以下方面：
+第一，防晒指数选的不够。这个非常好理解，例如大中午的非常强的紫外线，去沙滩游玩什么的，却选个 spf35 的防晒，不黑才怪。
+第二，防晒指数选择没问题，但是没涂够。防晒产品的数值是在标准用量（2.00±0.05）mg/ 平方厘米的情况下测试出来的，如果你的用量低于标准用量，也就是没用够，那可能是涂了个寂寞。
+第三，可能是错误的使用场景。例如去海边游玩，却选择了抗水性非常差的防晒产品。大多数的防晒都是油包水或者硅油包水的体系，肤感会相对油腻，水包油的防晒优点是清爽，但是抗水性很差。天气热出汗很多，或者漂流玩水等等都会冲掉水包油的防晒，这种场景当然也会晒黑。
+第四，没有及时的补涂。这种场景其实不多，假如你是在户外长时间（4 小时以上）的暴露，才需要多次的涂抹防晒产品。化学防晒剂吸收紫外线会不停损耗，越来越少甚至失效；在玩耍过程中会不停的碰擦，也会蹭掉皮肤的防晒成分。所以长时间在户外的话，需要注意及时的补涂。
+最后要补充的一点是，防晒不能仅仅指望防晒霜，有时候加一件品质不错的防晒衣，帽子、墨镜、遮阳伞等，或者能够尽量避开在强紫外线时候外出，往往能够实现更好的防晒效果。
+要知道，紫外线带来的不仅仅是肤色变黑，也会加速皮肤的衰老，以及引发起来更多的皮肤问题。皮肤受到紫外线的刺激，合成出更多的黑色素，其实是人体免疫系统自我保护的一种行为。我觉得晒黑背后的问题还更值得引起注意的。
+阅读原文</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">瞎扯 · 如何正确地吐槽</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9737597">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>第一次带女朋友回家让她做饭结果她大发雷霆，我真错了吗？
+
+粥六，只接玫瑰的梗
+阅读原文
+
+这是厨子应聘？交面试作品？
+下面是我的建议：
+高情商：考试之前你不一定要划重点，但请务必给考生自主报名的权利。
+低情商：在你通知她去你家做饭挣表现分之前，你先问问她要不要挣这个分，愿不愿意去你家做饭。
+阅读原文
+
+恋爱时给女朋友钱让她给我代买了70元的物品，分手后物品还没给我，我能够提起民事诉讼吗？
+
+方舟，触不到的总是最好的，如风，如你。wechat：law_fz
+阅读原文
+
+可以的，但是得先交诉讼费 50……
+
+ 
+
+
+阅读原文
+
+假如在古代你当御厨给皇帝泡一碗方便面会发生什么？
+
+阿撒托斯乐队总指，从来没有什么天经地义，只有习以为常！
+阅读原文
+
+面还好说
+估计你放调料包的时候，会被大内侍卫一刀捅死。
+毕竟太像下毒了。
+ 
+阅读原文
+
+你对空姐提出过最奇怪的要求是什么?
+
+背离，碰到傻子会预防性拉黑的。
+阅读原文
+
+并不是对空姐提出的奇奇怪怪的要求，就是坐飞机的一个比较好玩的事。
+有一次出差，头一天晚上打了半宿的麻将，第二天感觉要升仙了。
+上飞机的时候，空姐可能看我一脸迷茫觉得我找不到自己的位置，于是——
+“先生您好，请问您是哪个座？”
+我可能也是没睡醒，愣了一下，“射手座……？”
+我明显看到空姐脸部肌肉不自然的抽动了一下……
+阅读原文
+
+为什么平常穿汉服就会让路人觉得很奇怪？
+
+痴情蛊灬DOM，一个发言都要谨小慎微的平台，退了
+阅读原文
+
+你穿的汉服，放古代出门路人也看你
+阅读原文</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+        </section>
+      </li>
+      <li class="source">
+        <section>
+          <h3 class="source-name"><a class="source-name__link" href="https://news.ycombinator.com/">Hacker News</a></h3>
+          <section class="articles-per-source">
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Metaphors in Games (2016)</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://medium.com/@fserb/metaphors-in-games-21ee033ad260">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(6 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Funazushi: The fermented predecessor of modern sushi</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.bbc.com/travel/article/20210616-funazushi-the-fermented-predecessor-of-modern-sushi?utm_source&#x3D;bengtan&amp;utm_medium&#x3D;email">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(6 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Changing how I review code</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://itnext.io/im-changing-how-i-review-code-dbf212507e5f">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(6 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">What’s an Intellivision Amico? Console’s leaky dev portal offers hints</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://arstechnica.com/gaming/2021/06/what-the-hecks-an-intellivision-amico-consoles-leaky-dev-portal-offers-hints/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(5 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Families of Choice: On the Shakers and Catholics in Early America</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.laphamsquarterly.org/roundtable/families-choice">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(7 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
             <article>
               <details class="article-expander">
                 <summary class="article-expander__title">Peloton Axes Free &#x27;Just Run&#x27; Feature from Treadmill</summary>
@@ -590,6 +1606,17 @@ https://www.zhihu.com/video/1204081551988043776
             </article>
             <article>
               <details class="article-expander">
+                <summary class="article-expander__title">“The Martian” + Starship</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://caseyhandmer.wordpress.com/2021/04/09/the-martian-starship/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(14 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
                 <summary class="article-expander__title">This Chemical Does Not Exist</summary>
                 <a class="article-summary-link article-summary-box-outer" href="https://www.thischemicaldoesnotexist.com/">
                   <div class="article-summary-box-inner">
@@ -627,6 +1654,17 @@ https://www.zhihu.com/video/1204081551988043776
                 <a class="article-summary-link article-summary-box-outer" href="https://www.freethink.com/shows/just-might-work/how-to-make-insulin">
                   <div class="article-summary-box-inner">
                     <span class="article-reading-time">(5 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">The Method of Loci: Build Your Memory Palace</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://fs.blog/2021/06/memory-palace/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(10 min)</span>
                     <span>Comments</span>
                   </div>
                 </a>
@@ -3939,7 +4977,7 @@ DNA 的二级结构就是大名鼎鼎的“双螺旋结构”。也就是有互�
   </section>
 
   <footer>
-    <time id="build-timestamp" datetime="2021-06-29T00:22:07.852Z">2021-06-29T00:22:07.852Z</time>
+    <time id="build-timestamp" datetime="2021-07-01T00:23:43.422Z">2021-07-01T00:23:43.422Z</time>
     <span><a class="footer-link" href="https://github.com/osmoscraft/osmosfeed">osmosfeed 1.11.0</a></span>
   </footer>
   <script src="index.js"></script>
