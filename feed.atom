@@ -2,10 +2,780 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://7qi7qi.github.io/RSSFeeder/index.html</id>
     <title>osmos::feed</title>
-    <updated>2021-07-03T00:20:57.605Z</updated>
+    <updated>2021-07-05T00:20:17.356Z</updated>
     <generator>osmosfeed 1.11.0</generator>
     <link rel="alternate" href="https://7qi7qi.github.io/RSSFeeder/index.html"/>
     <link rel="self" href="https://7qi7qi.github.io/RSSFeeder/feed.atom"/>
+    <entry>
+        <title type="html"><![CDATA[常用的几款工具让 Kubernetes 集群上的工作更容易]]></title>
+        <id>http://weekly.dockone.io/article/2434397</id>
+        <link href="http://weekly.dockone.io/article/2434397"/>
+        <updated>2021-07-05T00:20:17.319Z</updated>
+        <summary type="html"><![CDATA[日常工作中在集群上的操作非常多，今天就来介绍我所使用的工具。
+kubectl-alias
+使用频率最高的工具，我自己稍微修改了一下，加入了 StatefulSet 的支持。
+这个是我的 https://github.com/addozhang/kubectl-aliases，基于 https://github.com/ahmetb/kubectl-aliases。
+比如输出某个 Pod 的 json，kgpoojson xxx 等同于 kubectl get pod xxx -o json。
+结合 jq 使用效果更好。
+语法解读：
+
+k=kubectl
+sys=--namespace kube-system
+
+
+commands：
+g=get
+d=describe
+rm=delete
+a：apply -f
+ak：apply -k
+k：kustomize
+ex：exec -i -t
+lo：logs -f
+
+
+resources：
+
+po=pod，dep=deployment，ing=ingress，svc=service，cm=configmap，sec=secret*，ns=namespace，no**=node
+flags：
+
+
+output format：oyaml，ojson，owide
+all：--all or --all-namespaces depending on the command
+sl：--show-labels
+
+w=-w/--watch
+value flags（should be at the end）：
+
+
+•n=-n/--namespace
+f=-f/--filename
+l=-l/--selector
+
+kubectx + kubens
+安装看这里：
+kubectx 用于在不同的集群间进行快速切换。假如用 kubectl，你需要：
+# context 列表
+
+
+
+
+
+kubectx-demo
+kubens 就是在不同 namespace 间快速切换的工具。用 kubectl 的话，需要：
+# namespace 列表
+
+
+
+
+
+kubens-demo
+k9s
+没错，只比 k8s 多了个 1 。
+k9s 提供了终端 UI 与 Kubernetes 集群进行编辑交互。本人常用的比如：
+F 配置端口转发
+l 输出 Pod 日志
+e 修改资源对象
+s Pod 终端交互模式
+y yaml 方式输出资源对象
+d describe 资源对象
+ctrl+d 删除 Pod
+
+启动方式：
+# 指定 namespace 运行
+
+
+
+
+
+k9s-pod
+键入问号“?” 就可以打开快捷操作指引。
+
+
+
+help
+stern
+stern 可以用来 tail 集群上的多个 Pod 和 Pod 中多个容器的日志。不同的 Pod 和容器以不同的颜色区分，方便 debug。
+比如使用命令 stern -l tier=control-plane -n kube-system 可以输出 kube-system 命名空间下控制平面（label 为 tier=control-plane） Pod 的日志。
+
+
+
+stern-control-plane
+命令行选项：
+Tail multiple pods and containers from Kubernetes
+
+Lens
+Lens 是用来控制 Kubernetes 的 IDE，开源且免费。
+消除了集群操作的复杂性、提供了实时的可观察性、方便故障排查、支持多系统的桌面客户端、兼容多种集群。
+
+
+
+Lens
+Infra App
+Infra App 跟 Lens 差不多，UI 较 Lens 好些，但是功能就弱很多，类似 Lens 的只读模式。
+免费版比收费版的区别只在于支持的集群数量，免费版只支持一个集群。
+
+
+
+Infra
+kubefwd
+kubefwd，这个一直有安装但是使用次数寥寥，因为应用之间的访问没有走 service，不过偶尔做些实验的时候会用的上。
+
+kubefwd 是一个用于端口转发Kubernetes中指定namespace下的全部或者部分pod的命令行工具。kubefwd 使用本地的环回IP地址转发需要访问的service，并且使用与service相同的端口。kubefwd 会临时将service的域条目添加到 /etc/hosts 文件中。
+启动kubefwd后，在本地就能像在Kubernetes集群中一样使用service名字与端口访问对应的应用程序。
+
+
+
+
+kubefwd_ani
+
+
+
+
+总结
+善用工具可以提升效率，但并不是不可或缺的。
+如果你有其他的工具，欢迎留言提出。
+原文链接：https://mp.weixin.qq.com/s/uU2zmT5yyVcKZ5XmLSRqtg]]></summary>
+        <author>
+            <name>阿娇</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Stockfish 14 Released]]></title>
+        <id>https://stockfishchess.org/blog/2021/stockfish-14/</id>
+        <link href="https://stockfishchess.org/blog/2021/stockfish-14/"/>
+        <updated>2021-07-04T23:29:14.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[人在逆境的时候该怎么调整自己状态？]]></title>
+        <id>https://daily.zhihu.com/story/9737651</id>
+        <link href="https://daily.zhihu.com/story/9737651"/>
+        <updated>2021-07-04T23:08:17.000Z</updated>
+        <summary type="html"><![CDATA[墨子连山，干货在这不受待见，我把他们放在同名公众号了……
+阅读原文
+
+当年去 ASML 面试，对，就是荷兰生产光刻机的，现在还卡着我们脖子那个，总部在埃因霍温。
+当时的课题是解决激光头移动最优路径的问题，这是个背包问题，特点是复杂度随着路径的增加呈几何级数增加……说叉了，装 13 装习惯了，抱歉。总之就是各种测试之后，最后的面谈中，那个项目负责人结束前问了我一个问题：如果你手上的工作遇到困难，进展不下去了，你怎么办？
+我看他那个样子，显然就是例行公事，赶紧随便问完最后一个问题，恨不得我嘴皮子一停，他就马上起来握手了。因为之前已经经历了一周的测试，我的表现还是比较突出的，因为毕设项目就是演化算法相关，我的导师还是这个领域最权威杂志的主编，所以……抱歉，又说叉了，我今后要改掉这个恶习。
+总之我那时有点飘了，于是就打算给他来点有意思的。我说：我永远不会让自己手里只有一项工作，所以，如果一项工作遇到困难进展不下去，我会开始另一项工作，直到这项工作出现转机。
+当时那大哥脸就变了，荷兰人这点很好，什么情绪都写在脸上，眼睛都放光。总之，他说这是他听到过的最让人印象深刻的回答，当然我也被顺利录取了。后来因为种种原因我选择了回国，走之前还跟大哥通了个电话，他还记着这事。
+当时我只是突发奇想，秀了一下，但是事后我还真的仔细回味了一下这个回答，才发现为什么他有那么大的魅力，甚至自己当时都没想这么深。
+你们应该猜出来我想说什么了吧？人在逆境的时候应该怎么调节自己？答案应该是，人就不应该陷入逆境，永远不应该把你的希望只寄托在一件事物上，大白话就是，鸡蛋永远不能放在一个篮子里。
+试想，一个人至少有父母、有爱人、有子女、有工作、有学业、有个人爱好、可能还有副业……这些不大可能在同一时间都陷入逆境吧？工作逆境了可以转移到家庭、与父母相处逆境了可以转移到子女、学业逆境了可以转移到爱好，等等等等。一般人，一辈子都不会遇到同时在所有方面都遇到逆境的情况。
+为什么这个答案让那位大哥印象深刻呢？因为人都有认知盲区，走到死胡同里就会认为那是唯一一条路，哪怕两边根本没有墙你的眼睛都看不到，因为你的认知里面有墙，你根本就不会去看。
+最后，再次明确一下我的回答，人在逆境中怎么办？答，不要一棵树上吊死，抬头看看，树有的是，我们生活在森林里。
+ 
+补充 0:我当年是做建模的，光刻机的核心是工艺，材料工艺、运输工艺、装配工艺、生产工艺等等，什么叫工艺？就是一堆一堆的小细节，根本不是几个人的问题，人家就算告诉你标准，你都做不到。为什么 ASML 能做到？因为那就不是一个公司，那几乎是世界上所有最高工艺的集合体，他不属于荷兰，他只是生产线设在了荷兰而已。里面工作的有好多德国人、美国人、当然中国人也不少，但基本都是在做算法建模这些，听着高大上，但实际上都是边角余料，真正牛的是车间里那批技术人员，那里面好像一个中国人都没有，他们应该是不敢放我们的人。我参观的时候，他们介绍的核心部件是那个透镜，就是把激光束汇聚到芯片上做烧结用的。外观看起来就是个大圆桶，里面不让看，是德国卡尔蔡司生产的，据说只有他和日本一家能生产。这东西从德国运到荷兰，用的运输车也是特制的，我没见过车什么样，说是只有那个车能运，为什么？因为这玩意太精密，稍微晃一晃就完蛋，所以这个车有各种变态参数，但即便是特制的运输车，仍然不能轻易加速、不能轻易刹车、转弯都得慢慢来，如果我国自己搞，别说车，连司机都得从头培养，这就是工艺。所以，不是我不想，但研究光刻机这事确实我连边都沾不上。大家就别围观这事了，洗洗睡吧。
+阅读原文]]></summary>
+        <author>
+            <name>知乎日报</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[你们在判决书上用过或看过哪些神来之笔？]]></title>
+        <id>https://daily.zhihu.com/story/9737779</id>
+        <link href="https://daily.zhihu.com/story/9737779"/>
+        <updated>2021-07-04T23:08:13.000Z</updated>
+        <summary type="html"><![CDATA[Three诗睿，法律人，摄影痴，书籍癖。
+阅读原文
+
+关于司法实践难题”著作权合理使用“的：张海峡与于建嵘侵害著作权纠纷相关判决书。
+我们知道，著作权中的合理使用制度一直是司法实践中的难题，法律规定滞后于科技的发展，如何界定和调节权利的边界，在作品的创作者、传播者和社会公众之间落实利益平衡是理论界和实务界不断讨论的话题，本文仅以张海峡与于建嵘著作权纠纷相关判决书来聊一下著作权合理使用，虽则为一家之言，然而判决书再一次证明了一件事宜：科技倒逼法律前行。
+
+北京市第二中级人民法院（2012）二中民初字第 611 号民事判决
+北京市高级人民法院（2012）高民终字第 3452 号民事判决
+
+该案原告张海峡，当年是国内司考辅导专家。被告于建嵘则是社科院学者，微博大 V。2011 年 8 月 23 日，微博用户“巴黎观察”上传了张海峡关于评价留法女大学生言论的教学视频（视频名为：2011 张海峡·商经），在该视频中张海峡声称“凡是中国大陆的女孩子到法国留学的，回来之后都烂得一塌糊涂，都是超级潘金莲”。该微博经过于建嵘转发并评论后被众多的网友追捧。
+后张海峡向北京二中院起诉，称上述于建嵘在微博转载其讲课内容视频的行为侵犯了张海峡对涉案作品享有的发表权和信息网络传播权，要求于建嵘赔礼道歉并赔偿损失。
+该案历经一审判定于建嵘转发视频的行为构成合理使用，驳回张海峡全部诉讼请求，到北京高院驳回上诉，维持原判。笔者截取（2012）二中民初字第 611 号和（2012）高民终字第 3452 号民事判决之部分，个人认为北京二中院和高院对合理使用部分的说理颇为惊艳：
+
+北京二中院（2012）二中民初字第 611 号民事判决部分：
+本案中，涉案口述作品已经发表，于建嵘的涉案转发行为的目的在于评论“巴黎观察”及张海峡的观点，属于以其言论表达其观点的行为，但表达个人观点不得侵害他人的合法权利；同时，法律允许…]]></summary>
+        <author>
+            <name>知乎日报</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[评价香水好坏的标准是什么？]]></title>
+        <id>https://daily.zhihu.com/story/9737687</id>
+        <link href="https://daily.zhihu.com/story/9737687"/>
+        <updated>2021-07-04T23:08:05.000Z</updated>
+        <summary type="html"><![CDATA[ChubbyPillow，肥宅快乐枕
+阅读原文
+
+这是一个好复杂好复杂的问题……而且涉及到很多没有办法量化出来的玄学……
+这样吧，我能想到的方式就只有一种，就是搬出我的主观客观香水评价坐标图：
+
+我在这里面总共画了九个圈，每个圈都有对应的一部分香水
+我一直坚信在闻香经验足够丰富的香友眼里，对于香水的评价可以分为主观和客观两种
+主观其实讲起来很简单，就是好不好闻的问题，好闻就正值难闻就负值
+客观就是艺术价值和层次感怎么样，价值高就正值，毫无价值或者层次感极差就负值
+对于香水的“客观评价”就涉及到一个标准的问题了，但是很遗憾我没有一个完全客观的定义
+反正我个人的定义里面基本就只牵扯到这几个，原创性、层次感和原料……
+那么我一个圈一个圈来解释吧。
+①是我觉得巨难闻但是竟然还挺独特的玩意儿，常见于 Zoologist 或者 BeauFort 这种掉 san 品牌，尤其是诸如 Panda 或者 1805 Tonnerre 这种要么绿得抽筋要么黑得发晕的诡异产品
+②是一大堆传奇老香，由于老香经常有奇奇怪怪的康乃馨 note，香辛调，还有我不太喜欢的异丁基喹啉，所以有一部分是在坐标系左边的，但是总的来说艺术价值基本都还挺高
+③是最最最常见的各种现代主流商业香（包括男女），各种千篇一律的广藿花果香，千篇一律的现代馥奇，但是你也不能说人家完全没有艺术价值，毕竟配方还是要略微修改的
+④是某些良心的商业香以及还算不错的入门 niche 所在的区域，典型如 Guerlain 和 Hermes/Chanel 等等，不论是用料上还是调香水平都还算不错。入门 niche 大概就是 SL 和 AG 这种。
+⑤是恰好戳中我口味的某些普通的 designer 和 niche，由于我本人特别喜欢柑橘和清新花香，所以基本上类似于 Acqua di Parma 或者 Diptyque 的小清新我都闻着很开心
+⑥是整个坐标系中的佼佼者，用料和调香都是史诗级别，我能想到的唯一几个牌子就是旧版的 Frederic Malle 以及 Serge Lutens 吊钟，其他的就零散分布在各种 designer 纯香精和 niche 里
+⑦是大部分极其廉价的名人香以及不知来路的香水，基本处于不仅抄袭还抄得很垃圾那种
+⑧是由于用料实在太差了或者太诡异了足以引起人不适的香水，但至少还稍稍努了点力去抄
+⑨是彻彻底底弃疗的香水，随便扔进去几个闻着还行的合成原料完事儿，抄都懒得抄
+（肯定有人会问第四象限的点是什么？那是所谓的 clone，没有艺术价值但好闻）
+
+然后再次正面回答题主的问题，决定了香水价值的最主要因素是什么？
+这个价值究竟是哪方面的价值？艺术价值还是金钱上的价值？后者的话那就是成本了，香水成本一般确实挺低的，但是也要看一个品牌够不够良心，AG 和 SL 最初定价都不贵，但还是天然玫瑰天然晚香玉唰唰往里加，所以即使平均下来成本不高，这个用料分还是得打高一点。
+艺术价值这个玩意儿就见仁见智了，但是这么多年过来大部分香水爱好者会有一套趋同的评分体系，大家都不太能说明白是什么，但是一个香水差大家就都同意它差。典型的就如 Gabrielle，F 网有成堆的 dislike 不是没理由的，平时多体面的一个牌子（选料也认真）搞出来这种糊成一团的玩意儿，就前调能看，中后调乱七八糟，这不失望才怪了。还有那个 Dip 的 Essences Insensees Tiare，这连清新都算不上清新的破玩意儿……
+香精怎么评价好坏？不好意思这事儿你可能要找 @吃菜事魔者 ，我对这玩意儿一无所知，能闻出来天然跟合成的区别就了不得了，还得评价天然的究竟哪种最好……那得买好多精油净油，还得是不同产区不同网站的才区别得出吧。这事儿除了 @吃菜事魔者 以及我不认识的一些博主，好像也就只有 Steffen Arctander 能帮你了哈哈哈哈哈哈【苦笑
+总之我能够解释的差不多就只有这些了，本篇回答仅代表我个人看法不代表客观规律。
+阅读原文]]></summary>
+        <author>
+            <name>知乎日报</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[电影《教父》中有哪些易被忽略却令人深思的小细节？]]></title>
+        <id>https://daily.zhihu.com/story/9737740</id>
+        <link href="https://daily.zhihu.com/story/9737740"/>
+        <updated>2021-07-04T23:08:00.000Z</updated>
+        <summary type="html"><![CDATA[扎维耶小丑，喜欢历史的摄影爱好者
+阅读原文
+
+教父系列之所以称之为经典，有一部分原因就是导演科波拉对细节的构思和表现做到了极致，让观众每次重看都会有新的发现。原片限于时长，没法交代出所有的分支剧情，但很多答案就隐藏在分镜头中，观众可以细心观察，自己就能推理出来。
+比如下面几个初次观看会迷惑不解的问题。
+细节 1：迈克尔为何要牺牲大将罗可去刺杀一个活不了几天的海门罗斯？(《教父 2》)
+先科普一下罗可：
+罗可兰坡是迈克尔时代的两位家族角头之一。第一部里他为克莱门扎刺杀了出卖老教父的保利，因此得到了迈克尔的信任。在影片最后的大清洗中，罗可带着士兵成功刺杀了塔塔利亚，晋升为柯里昂家族的角头。
+如果只看影片，观众可能会觉得罗可的晋升之路看起来太轻松了。普佐在小说中则对此进行了详细的解释。
+早在成功刺杀保利之后，迈克尔就将罗可收为己用，命令他私下招募没有案底的士兵，作为自己的直属军团备用，泰西欧和克莱门扎都不知道这支秘密军队的存在。后来正是这支军队扑灭了五大家族的反击，为迈克尔彻底拿下了纽约战争的胜利。
+到了教父二，罗可不但担任了角头，而且还成为了迈克尔的安全主管，职责类似于以前的克莱门扎。但正是这个职责最终让他丢掉了性命。
+黑手党讲究的是高风险高回报。位子坐得越高，责任就越重，出了岔子就要负责到底。教父 2 里柯里昂家族一共出了三个背锅侠，他们每个都为自己的错误付出了代价。
+第一个是二哥弗雷多，这个最明显的了。当了叛徒就 GG 吧，亲哥也没用。
+第二个是汤姆哈根。他的错误是主事期间让凯溜出了庄园，导致迈克尔的孩子被流产。这个事对意大利人来说很严重，因此迈克尔当面羞辱了汤姆，并威胁将他踢出决策层。
+最后一个就是罗可了。罗可身为安全主管，却让迈克尔险些遭到刺杀，这是重大失职。第一部里老教父遭到刺杀，结果克莱门扎从头到尾被自己人怀疑，哪怕桑尼通过调查确认了克莱门扎没有嫌疑，但他依然被汤姆…]]></summary>
+        <author>
+            <name>知乎日报</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[有哪些设定上非常吸引人的桌游推荐？]]></title>
+        <id>https://daily.zhihu.com/story/9737788</id>
+        <link href="https://daily.zhihu.com/story/9737788"/>
+        <updated>2021-07-04T23:07:55.000Z</updated>
+        <summary type="html"><![CDATA[Tuttiii，HKU艺术史系，NYU艺术管理。电子+桌面游戏爱好者。
+阅读原文
+
+设定很酷的桌游不胜枚举，这里详细介绍两款个人非常喜欢、玩家也好评不断的桌游，再简单推荐一些我玩过的很有创意的游戏，希望能有价值。
+《深海谍影 Captain Sonar》,2-8 人
+一款很像小时候玩的海战棋的游戏，配件华丽丽升级，加入了多种元素、角色。规则不算复杂，玩起来趣味十足，既有个人策略又充满了互动和沟通。
+玩法简介：玩家根据游戏人数分为两队，每个队控制一艘潜水艇，每个队伍有四个角色分别负责不同的任务——船长、大副、工程师、监听员。两艘潜水艇的初始位置是不告诉对方的，在游戏过程中，玩家们需要通过监听员听到的情报，判断出对方潜水艇的位置，再通过大副准备的武器来攻击对方。船长负责己方潜艇的行进路线，工程师负责修复船体的损伤。
+游戏分为回合制和即时制两种模式，新手推荐先玩回合制熟悉游戏流程和技能，玩熟后再尝试即时制，更加紧张刺激。
+吸引人的特点：
+l 两块超长的挡板：用来遮挡两方玩家视线以防作弊，上面有精致的插画，横置在桌上很吸睛
+l 慷慨激昂的游戏过程：玩家在游戏过程中会扮演各种角色，说出各种口令，非常有代入感
+l 紧张刺激的游戏体验：玩家需要不断猜测对方的位置，又要时刻担心自己是否暴露，当己方的鱼雷炸到对方潜艇时的快感简直棒极了
+l 有趣的侦测系统：双方潜艇都有两个特别的侦测系统，十分考验玩家的推理能力，还有一点点尔虞我诈的成分
+
+《时间守望 TIME Stories》，2-4 人
+一款集优秀的美工、机制、剧情为一体的解谜探险游戏，极简、未来风格的封面和版图非常符合它的游戏背景：未来世界的时间穿越特工，乘坐时间穿梭机回到过去完成组织的任务。
+游戏模式是合作类，每个扩都是一个新剧本，有不同的主题（甚至画风都会跟着主题变化），玩家要通过探索剧情、步步解谜，做出各种各样的选择，与 NPC 和…]]></summary>
+        <author>
+            <name>知乎日报</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[瞎扯 · 如何正确地吐槽]]></title>
+        <id>https://daily.zhihu.com/story/9737789</id>
+        <link href="https://daily.zhihu.com/story/9737789"/>
+        <updated>2021-07-04T23:07:51.000Z</updated>
+        <summary type="html"><![CDATA[每次开车直接从 P 挡到 D 挡给油就走，这样会伤车吗？
+
+知乎用户，有意愿，有能力享受生活。
+阅读原文
+
+那不然你还打算档杆上下上下左右左右再再油门油门刹车刹车这么搓一遍解锁个马力加二百匹的隐藏性能再走？
+阅读原文
+
+你有哪些匿名才敢发出来的照片？
+
+葵神，又黑又瘦成熟且贫穷的男人
+阅读原文
+
+
+00后的舍友
+
+匿名用户
+阅读原文
+
+匿名用户：
+这是一个女生……
+
+
+
+阅读原文
+
+你是通过什么事情才知道自己丑的？
+
+千峰月，作家、登山客、金融业者、恋旧的凡人
+阅读原文
+
+见到朋友介绍的“跟你很般配的”相亲对象。
+阅读原文
+
+有什么类似「尼古拉斯·赵四」的名字？
+
+Turing，教书匠/播音主持/前乌云白帽/各种烧钱爱好
+阅读原文
+
+端木 桶
+阅读原文
+
+怎么给小孩起小名？
+
+格林喂养着野兽
+阅读原文
+
+我一朋友，大名贼好听，他还有一妹妹。
+他叫苏寞，他妹叫苏茉。
+我问他 他妈在家里叫 su mo 叫的谁
+他大手一挥，不是有小名嘛。
+所以。。。。他小名 狗哥
+他妹小名 茉茉
+阅读原文]]></summary>
+        <author>
+            <name>知乎日报</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Reverse engineering SARS-CoV-2]]></title>
+        <id>https://github.com/geohot/corona</id>
+        <link href="https://github.com/geohot/corona"/>
+        <updated>2021-07-04T22:35:40.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Condo Wreckage Hints at Less Steel in Columns Than Design Drawings]]></title>
+        <id>https://www.nytimes.com/2021/07/03/us/florida-condo-collapse-steel-rebar.html</id>
+        <link href="https://www.nytimes.com/2021/07/03/us/florida-condo-collapse-steel-rebar.html"/>
+        <updated>2021-07-04T21:40:29.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[PID Controller for controlling the number of servers in a data-center]]></title>
+        <id>https://gist.github.com/pushpendre/359706010c20bc1d18123510749f5da5</id>
+        <link href="https://gist.github.com/pushpendre/359706010c20bc1d18123510749f5da5"/>
+        <updated>2021-07-04T20:07:51.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Speeding Up the Webcola Graph Viz Library with Rust and WebAssembly]]></title>
+        <id>https://cprimozic.net/blog/speeding-up-webcola-with-webassembly/</id>
+        <link href="https://cprimozic.net/blog/speeding-up-webcola-with-webassembly/"/>
+        <updated>2021-07-04T19:53:02.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Writing a SQLite clone from scratch in C (2017)]]></title>
+        <id>https://cstack.github.io/db_tutorial/</id>
+        <link href="https://cstack.github.io/db_tutorial/"/>
+        <updated>2021-07-04T19:22:47.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Archive and genealogy of all Quake 1 bots]]></title>
+        <id>https://github.com/Jason2Brownlee/QuakeBotArchive</id>
+        <link href="https://github.com/Jason2Brownlee/QuakeBotArchive"/>
+        <updated>2021-07-04T19:14:24.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Show HN: Open-Source Chrome Extension for auto-grouping tabs by URL patterns]]></title>
+        <id>https://github.com/jdhayford/acid-tabs-extension</id>
+        <link href="https://github.com/jdhayford/acid-tabs-extension"/>
+        <updated>2021-07-04T18:54:58.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Devlog – converting this WordPress site to Bedrock itself]]></title>
+        <id>https://bedrockapp.org/2021/07/04/devlog-converting-this-wordpress-site-to-bedrock-itself/</id>
+        <link href="https://bedrockapp.org/2021/07/04/devlog-converting-this-wordpress-site-to-bedrock-itself/"/>
+        <updated>2021-07-04T18:54:25.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Bypassing macOS TCC user privacy protections by accident and design]]></title>
+        <id>https://labs.sentinelone.com/bypassing-macos-tcc-user-privacy-protections-by-accident-and-design/</id>
+        <link href="https://labs.sentinelone.com/bypassing-macos-tcc-user-privacy-protections-by-accident-and-design/"/>
+        <updated>2021-07-04T18:39:02.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[EU antitrust: Apple shouldn't use privacy and security to stave off competition]]></title>
+        <id>https://appleinsider.com/articles/21/07/02/eu-antitrust-head-warns-against-apple-using-privacy-security-to-stave-off-competition</id>
+        <link href="https://appleinsider.com/articles/21/07/02/eu-antitrust-head-warns-against-apple-using-privacy-security-to-stave-off-competition"/>
+        <updated>2021-07-04T18:32:43.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Flexport (YC W14) Is Hiring]]></title>
+        <id>https://techcrunch.com/2016/06/07/flexport/</id>
+        <link href="https://techcrunch.com/2016/06/07/flexport/"/>
+        <updated>2021-07-04T17:00:16.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Write a time-series database engine from scratch]]></title>
+        <id>https://nakabonne.dev/posts/write-tsdb-from-scratch/</id>
+        <link href="https://nakabonne.dev/posts/write-tsdb-from-scratch/"/>
+        <updated>2021-07-04T16:31:43.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Is Alexandra Elbakyan in real trouble this time?]]></title>
+        <id>https://www.chronicle.com/article/is-the-pirate-queen-of-scientific-publishing-in-real-trouble-this-time</id>
+        <link href="https://www.chronicle.com/article/is-the-pirate-queen-of-scientific-publishing-in-real-trouble-this-time"/>
+        <updated>2021-07-04T16:29:33.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Ray: A Distributed Framework for Emerging AI Applications]]></title>
+        <id>https://www.micahlerner.com/2021/06/27/ray-a-distributed-framework-for-emerging-ai-applications.html</id>
+        <link href="https://www.micahlerner.com/2021/06/27/ray-a-distributed-framework-for-emerging-ai-applications.html"/>
+        <updated>2021-07-04T16:24:32.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Lessons from 20 years of hype cycles (2016)]]></title>
+        <id>https://www.linkedin.com/pulse/8-lessons-from-20-years-hype-cycles-michael-mullany</id>
+        <link href="https://www.linkedin.com/pulse/8-lessons-from-20-years-hype-cycles-michael-mullany"/>
+        <updated>2021-07-04T16:06:13.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[The future is in symmetrical, high-speed internet speeds]]></title>
+        <id>https://www.eff.org/deeplinks/2021/07/future-symmetrical-high-speed-internet-speeds</id>
+        <link href="https://www.eff.org/deeplinks/2021/07/future-symmetrical-high-speed-internet-speeds"/>
+        <updated>2021-07-04T15:51:58.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[The Idempotency-Key HTTP header field]]></title>
+        <id>https://datatracker.ietf.org/doc/html/draft-ietf-httpapi-idempotency-key-header-00</id>
+        <link href="https://datatracker.ietf.org/doc/html/draft-ietf-httpapi-idempotency-key-header-00"/>
+        <updated>2021-07-04T13:49:49.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Dynamic Linking Best Practices]]></title>
+        <id>https://begriffs.com/posts/2021-07-04-shared-libraries.html?hn=2</id>
+        <link href="https://begriffs.com/posts/2021-07-04-shared-libraries.html?hn=2"/>
+        <updated>2021-07-04T13:19:48.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Underground fiber optics spy on humans moving above]]></title>
+        <id>https://www.wired.com/story/how-underground-fiber-optics-spy-on-humans-moving-above/</id>
+        <link href="https://www.wired.com/story/how-underground-fiber-optics-spy-on-humans-moving-above/"/>
+        <updated>2021-07-04T13:16:42.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[When static makes your C code 10 times faster]]></title>
+        <id>https://mazzo.li/posts/c-performance-anecdote.html</id>
+        <link href="https://mazzo.li/posts/c-performance-anecdote.html"/>
+        <updated>2021-07-04T13:12:39.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Blender and the Rabbids]]></title>
+        <id>https://www.blender.org/user-stories/blender-and-the-rabbids/</id>
+        <link href="https://www.blender.org/user-stories/blender-and-the-rabbids/"/>
+        <updated>2021-07-04T13:04:55.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Stop mocking your system]]></title>
+        <id>https://blog.bitgloss.ro/2020/10/stop-mocking-your-system/</id>
+        <link href="https://blog.bitgloss.ro/2020/10/stop-mocking-your-system/"/>
+        <updated>2021-07-04T12:36:17.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[The Powder Toy]]></title>
+        <id>https://github.com/The-Powder-Toy/The-Powder-Toy</id>
+        <link href="https://github.com/The-Powder-Toy/The-Powder-Toy"/>
+        <updated>2021-07-04T11:42:58.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Electron tube New Automatic Computer]]></title>
+        <id>https://ena.computer/</id>
+        <link href="https://ena.computer/"/>
+        <updated>2021-07-04T09:56:39.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Single random bit flip causes error in certificate transparency log]]></title>
+        <id>https://groups.google.com/a/chromium.org/g/ct-policy/c/PCkKU357M2Q/</id>
+        <link href="https://groups.google.com/a/chromium.org/g/ct-policy/c/PCkKU357M2Q/"/>
+        <updated>2021-07-04T09:13:12.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[‘Highly Irregular’ Review: An Eloquent Confusion]]></title>
+        <id>https://www.wsj.com/articles/highly-irregular-review-an-eloquent-confusion-11625177826</id>
+        <link href="https://www.wsj.com/articles/highly-irregular-review-an-eloquent-confusion-11625177826"/>
+        <updated>2021-07-04T04:31:14.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[哪些好看的电影可以帮助提高审美？]]></title>
+        <id>https://daily.zhihu.com/story/9737723</id>
+        <link href="https://daily.zhihu.com/story/9737723"/>
+        <updated>2021-07-03T23:06:32.000Z</updated>
+        <summary type="html"><![CDATA[segelas，电影学硕士已毕业，但仍旧略懂皮毛
+阅读原文
+
+谢在类似问题下的邀请 @魅影缝匠 。谈一谈个人的看法。
+于个人对电影的理解而言，直观触发观者感情反应的高潮瞬间与多元丰富的主题表达系统的结合，且能让这种感情反应融入整体系统、甚至引导观者把握整体表意系统，便构成了电影艺术基于“感官作用”之情绪层面、“立意表达”之逻辑层面的双重性。对电影艺术独特——区别于绘画等独立画面，以及文学等文本倾向——之美的审视，电影的审美，莫过于此。
+艺术的重要价值，在于对人更直接的震撼效果，它直接作用于人的内心，而伟大的艺术，则可以让这种效果亘久而永恒。而电影艺术，作为视觉、听觉共同作用的形式，对观者的感观作用更为丰富，也自然就具备了直接对接观者感受性的能力。因此，电影作为视听艺术之美的重中之重，一定在于“对观者情绪的直接效果”。
+并且，它与电影的好懂或晦涩无关。当然，这并不是否认电影表达手法与主题系统的重要性，它同样是决定电影质量不可或缺的一环。但是，如果仅有这一点，电影的观赏门槛未免会有点过高，一般观众对于艺术之美的感受未免过于艰难。因此，在节寸点上“直击心灵”的灵感时刻，让观众产生直观触动的高潮瞬间，对于一部优秀的电影而言，非常重要。
+并且，作为同样是优秀作品一部分标准，高潮瞬间的局部，理应是与整体表达高度贴合统一的。它理应构成作品主题表达系统的画龙点睛之处，让调动起的情绪成为对主题的最强力映射，甚至在很大程度上起到引领、推动观众更好地进入系统、理解表意、降低观影门槛的作用——毕竟，比起那些前后对应、明叙暗喻、符号象征，直接从感情上的信息接收，终究是要容易多了。
+这一切，或许就像某位电影人在观看《2001 太空漫游》后、以及网上风靡的李安表情包所共同感概的那样——“我不知道我在看什么，但我知道我看了一些了不得的东西”、“我看不懂，但我大受震撼”。
+事实上，前者的感慨，恰恰就构成了第…]]></summary>
+        <author>
+            <name>知乎日报</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[《Legal High》呈现的是怎样的三观？]]></title>
+        <id>https://daily.zhihu.com/story/9737696</id>
+        <link href="https://daily.zhihu.com/story/9737696"/>
+        <updated>2021-07-03T23:06:24.000Z</updated>
+        <summary type="html"><![CDATA[刘洞宇，在做教育 / 想写一本奇妙的书
+阅读原文
+
+反对所有简单认为古美门的三观就是强者通吃，就是「胜者正义论」的回答。这样的理解显然不得要义。
+要把握《Legal High》真正的三观表达，我们应该意识到：
+古美门展露变态好胜心、不择手段维护其连胜纪录的人格，从头至尾都没有作为编剧的「第一呈现」。他贪婪好色，爱慕虚荣，嘴炮毒辣，对豪车游艇念念不忘，以及，最重要的，对不败金身有种狂热的偏执。但要注意：他的法律人格，或者说他作为法律人的基本信仰，是在情节中刻意和这些私德分离的。流氓痞子也好，拜金主义也罢，当这个人西装革履坐上原告或被告代理律师席的时候，我们才看到了藏在香车美女崇拜背后真正古美门式的三观。 
+
+诚然，持续的胜仗，对古美门有着极其重要的意义。抛开「谋求委托人利益最大化」这一职业属性和他本身越养越大的身价需要，这份重要性的形成，至少还有其他来源。
+比如家庭。从天才童星案我们得知，古美门父亲奉行家长独大的严苛教育，对儿子的异见进行过污蔑性的刁难。父子关系不和，以及随之而来同父辈权威的决裂，伴随了古美门的成长。后来的离经叛道，追求认可，偏执求胜，种种不过是这种挑战和自证的延续。
+
+比如职场。三流大学毕业，律考一次通过，青云直上很快来到了号称日本第一的三木律所。在这里，急待施展拳脚的古美门遇到了老道的三木，也遇到了女强人圭子，前者亲口教导他为了赢要不惜一切，后者更是同他并肩实践并捍卫了这一守则。于是在第一季决战中三木对古美门父亲说出了下面的话：
+「古美门研介这位法律家，是您赋予了他生命，由我培养出来的怪物。我们是共犯。」
+
+比如仓鼠纱织。小黛在健身房也向古美门挑明了这一点：
+我好像明白了，为什么您执着于胜诉，是因为纱织吧。（古美门愣住。）您为了胜诉，夺取了无辜孩子的性命。若是放弃对胜诉的执着，就等于是否定了自己做的事。您通过不断胜诉，在拼命摆脱自己的罪恶感。这过程，想必很…]]></summary>
+        <author>
+            <name>知乎日报</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[如何评价宫崎骏的动画《天空之城》？]]></title>
+        <id>https://daily.zhihu.com/story/9737716</id>
+        <link href="https://daily.zhihu.com/story/9737716"/>
+        <updated>2021-07-03T23:06:15.000Z</updated>
+        <summary type="html"><![CDATA[叶佳桐，怪物总渴望着遇见同类 那么 你是我的同类么？
+阅读原文
+
+1985 年，吉卜力工作室成立。在《风之谷》获得成功后，整个日本的动画观众都在期待宫崎骏监督的下一部作品究竟会是什么。还会是和自然有关的主题么？这次会走的更深更远么？还会出现和娜乌西卡一样可爱的主角么？倍受期待的宫崎骏监督交出了一份出人意料的答卷——《天空之城》一部专门为孩子们制作的复古漫画般的电影。
+古老帝国拉比达是一座漂浮在空中的巨大的机器岛，传说那里已经无人居住，蕴藏着巨大的财富。因此，无论军方还是海盗，都在找寻着这座传说中的飞行岛。
+矿工帕克这天偶遇拉比达继承人希达，两人一见如故。因为希达身上有找寻拉比达帝国的重要物件飞行石，军方和海盗两帮人马都在追杀希达。帕克带着希达一起逃亡，最终都没有逃出军方的手中，希达被军队掳走了。
+为救朋友，帕克只能选择与海盗合作。帕克与海盗成功救出了希达，同时，他们也发现了军方的邪恶计划。为了阻止军方邪恶计划的实施，他们和海盗一起踏上了寻找拉比达之旅。
+在上映之时，《天空之城》并没有获得日本本土观众们的青睐。在 SF 动画风潮席卷日本的 80 年代中期，《天空之城》被看做是过时的作品。因此票房也并不理想，分账收入只有 5.83 亿。算得上吉卜力工作室出品的动画中数一数二的低票房。到了 80 年代末，随着宫崎骏监督个人地位的提升和复古未来主义风潮的影响，《天空之城》的口碑才得以扭转。不过根据发行商东宝那边的数据来看，上映之时《天空之城》的观众满意度高达 97.7% ，观影人群覆盖了各个年龄层。这在当时的动画市场还是比较少见的。作为吉卜力工作室成立后的第一部动画，《天空之城》开启了吉卜力老少咸宜合家欢的路线。
+1984 年，宫崎骏监督的《风之谷》获得了巨大的成功，关于现代工业文明破坏自然这一问题的讨论一时层出不穷。《风之谷》赚来的钱原本计划用在高畑勋监督预备筹拍的纪录片《柳川堀…]]></summary>
+        <author>
+            <name>知乎日报</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[狼人杀逻辑性真的很强吗？]]></title>
+        <id>https://daily.zhihu.com/story/9737763</id>
+        <link href="https://daily.zhihu.com/story/9737763"/>
+        <updated>2021-07-03T23:06:09.000Z</updated>
+        <summary type="html"><![CDATA[知乎用户，生如蝼蚁当立鸿鹄之志，命薄如纸应有不屈之心！
+阅读原文
+
+比大部分游戏逻辑性要强一些。
+因为这个游戏的规则就是你死我活、非输即赢的游戏。
+这个游戏除了几个基本的游戏规则是硬逻辑，100%成立，比如一局网杀 12 个人，有 4 个平民、四个狼，4 个神，每个神都有各自的技能，狼可以每晚刀一人。
+除此之外其他的都是概率逻辑，比如上警必有对跳，要是没狼出来对跳，怂狼局神职们除了守卫肯定是要摆名身份裸打的，加上预言家 3 轮验人，狼根本没有生存空间。所以上警出现对跳的概率是 95%以上。那么当首跳预言家后，一个比较硬的逻辑就是至少还会有一个对跳。但也有可能这局就是怂狼局，那我们能说一般上警开对跳是没有逻辑的吗？当然不能。
+再比如女巫首晚不被首刀，大概率会捞人。因为捞人的收益最大，毕竟狼自刀的概率比狼杀好人的概率低多了。所以女巫大概率会捞起一个好人，如果捞起个神职就更好了。但如果不捞人，狼再刀走一个神职基本这局狼的赢面就奠定了。但是偏偏有女巫不仅首夜不救人，还要盲毒一个走。那认定女巫会首夜捞人能不能作为一个逻辑，当然可以。
+毕竟除了游戏硬规则几个铁逻辑，没有其他逻辑是 100%成立的。但是团队还是要在这个规则下为了胜利而努力。而赢得游戏的基本方式，就是通过发言。
+而有些说法正反都成立，几乎是 55 开。比如大家都认定对跳发言好的预言家的概率高，实际一个人发言能力跟他摸的是预言家还是狼没有任何关系，一个发言能力差的预言家很可能被认定为狼首推出局。这个时候狼队可以根据发言来把焦点引到真的预言家发言差，没视角、爆点多上面来，从而煽动平民和其他神职把真的预言家抗推出局。
+这个时候一个优秀的选手就能在众多的逻辑中选择出最有利于自己团队胜利的一些来重点表述，带节奏。比如，如果是狼大概率是要抗推其他非狼的平民，这应该是个主逻辑，但是不是疯狂点狼坑的人（找抗推）就是狼呢？
+还是要区分考虑，这时候你就要参考场上形势来具体判断了，这个人到底是个尽职的强神、还是个想挡刀的平民，还是打坑位抗推的冲锋狼？
+狼人杀常用的逻辑未必都是 100%成立，但是根据情形选用哪些信息，哪些逻辑为己所用，则是一个十分考验人的事情。
+至于题主说的狼可以反其道而行之，就我狼人杀的经验而言，其实难度还是很大的。因为狼人在取胜目标和假穿身份时，需要有意的吃掉一些信息，然后找出有利于自己的逻辑来表述，这中间大部分人会出现停顿、拖时间、底气不足、拿一些概率非常小的逻辑在抗推人，即使在狼王区也是如此。
+你就想想，为什么极少有人能骗过测谎仪。
+所以，我觉得狼人杀是一项逻辑性比较强的游戏。这个逻辑性，不仅仅指游戏规律有 100%成立的，有大概率成立的，有 55 开的，有概率较小的，还包括通过发言判断目的、判断共边关系、判断身份、通过形式改变策略进而相互言语间不动声色的沟通的辨识能力、判断能力、沟通能力在内。
+但每个游戏者如何运用这些规则为己所用，尤其对于狼人而言，有时发言多达 10 轮，每轮都要吃信息，又要故意隐瞒信息，还不能言语前后矛盾，还要达成保护同伴抗推好人的目的，本身就是一个逻辑性很强的事情。
+狼人杀的游戏规则设定就是 55 开的游戏，压倒性获胜是小概率事件，大部分胜败都在一推或一刀之间。
+激励的游戏规则，每个不同参与者的不同表现，使得该游戏被越来越多的人喜欢。
+说狼人杀逻辑性不强的，可能还没有真正玩透这个游戏。
+反问一句，如果这个游戏不是靠逻辑判断来支撑，难道是靠胡言乱语取胜吗？
+阅读原文]]></summary>
+        <author>
+            <name>知乎日报</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[火影忍者中有哪些忍者有历史原型？]]></title>
+        <id>https://daily.zhihu.com/story/9737704</id>
+        <link href="https://daily.zhihu.com/story/9737704"/>
+        <updated>2021-07-03T23:06:06.000Z</updated>
+        <summary type="html"><![CDATA[许多的小兵器，石田龙弦、甚平、漩涡鸣人.jpg
+阅读原文
+
+《火影忍者》里确实有很多人物会让人联想起历史上著名的忍者，但是远远达不到“历史原型”的程度。
+因为大多数情况下，岸本只是借用了一个名字（甚至是不是有意借用的都不一定）。至于性格特征、招式技能、人生经历等等基本上和历史上的忍者都相差甚远。
+关于忍者
+先得梳理一下现实中的日本忍者的体系。
+基本上，历史上有名的忍者大多数都活跃于日本战国时期（《火影忍者》的角色名字也大多数取材于这个时期的忍者）。
+战国时期诸国并立，各个大名都会雇佣忍者来扩充自己的军事力量。其中最有名的两家就是甲贺忍者（先后服侍织田家和丰臣家）和伊贺忍者（主要服侍德川家）。
+除了和战国三杰关系密切的甲贺与伊贺之外，其他大名麾下也有各自专属的忍者军团。比如北条家的风魔忍者、毛利家的座头众以及虽然历史上可能不存在但民间传说非常盛行的真田十勇士。
+一个一个说吧
+甲贺忍者
+据说甲贺忍者起源于日本本土的山岳信仰·修验道。什么是修验道我就不展开讲了，看我之前的回答：
+哪些日本动漫融入了很强的神道教的世界观？
+
+猿飞佐助
+
+毫无疑问是最有名的忍者之一。
+比起“甲贺忍者”这个身份，“真田十勇士”领头人的头衔更为人所熟知。
+出自战国无双真田丸
+这个人物的名和姓被岸本拆开，分别赐给了男二号宇智波佐助和三代火影猿飞日斩。
+
+不仅如此，岸本还设定三代火影的爸爸就叫“猿飞佐助”，隐晦地玩了个梗。
+
+望月千代
+
+也叫望月千代女，历史上是否真实存在不详。据说是武田信玄下属的巫女头领。
+望月家是甲贺流忍者中的一家，除了望月千代，还出了一个英雄人物叫望月六郎，和上面的猿飞佐助都是真田十勇士的一员。
+出自信长的野望
+那么风之国的千代婆婆名字是不是取材自这位传奇女忍者呢？
+考虑到“千代”也并不是多么罕见的名字，我只能说存在这个可能性。
+
+伊贺忍者
+和号称发源于本土的甲贺忍者相比，伊贺忍者着实来…]]></summary>
+        <author>
+            <name>知乎日报</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[A Mindful Mobile OS]]></title>
+        <id>https://thistooshallgrow.com/blog/mindful-mobile-os</id>
+        <link href="https://thistooshallgrow.com/blog/mindful-mobile-os"/>
+        <updated>2021-07-03T20:40:05.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[How not to break a search engine]]></title>
+        <id>https://about.sourcegraph.com/blog/how-not-to-break-a-search-engine-unglamorous-engineering/</id>
+        <link href="https://about.sourcegraph.com/blog/how-not-to-break-a-search-engine-unglamorous-engineering/"/>
+        <updated>2021-07-03T19:43:38.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Ways to ship software]]></title>
+        <id>https://review.firstround.com/the-right-way-to-ship-software</id>
+        <link href="https://review.firstround.com/the-right-way-to-ship-software"/>
+        <updated>2021-07-03T11:01:42.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[2021值得考虑的一类新型微服务架构：ServiceMesh]]></title>
         <id>http://weekly.dockone.io/article/2434396</id>
