@@ -2,10 +2,452 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://7qi7qi.github.io/RSSFeeder/index.html</id>
     <title>osmos::feed</title>
-    <updated>2021-08-21T00:21:44.658Z</updated>
+    <updated>2021-08-22T00:22:34.795Z</updated>
     <generator>osmosfeed 1.11.0</generator>
     <link rel="alternate" href="https://7qi7qi.github.io/RSSFeeder/index.html"/>
     <link rel="self" href="https://7qi7qi.github.io/RSSFeeder/feed.atom"/>
+    <entry>
+        <title type="html"><![CDATA[我白天把光装进袋子里，为什么晚上打开袋子里面的光就不见了？]]></title>
+        <id>https://daily.zhihu.com/story/9739429</id>
+        <link href="https://daily.zhihu.com/story/9739429"/>
+        <updated>2021-08-21T23:07:59.000Z</updated>
+        <summary type="html"><![CDATA[Phosphates，北京大学 化学+物理+围棋+毽球; UCSD Ph.D.
+阅读原文
+
+太长不看版：
+
+选用特定的材质——长余辉材料（夜明珠），可以使得夜晚照样能发光；还记得本科时，这就是我们无机化学实验中的一节。无机化学实验是分批做的，我和一个室友先做，而另外两个室友下周才做。当我们做完这个实验时，老师让每人留下一些给他们做光谱测试，剩下的可以自己带回宿舍。于是我们就将样品装在透明的样品袋里，然后晚上睡觉前我们就扔在桌上后，上床睡觉了。结果有个还没做这个实验的室友，半夜起来上厕所时，被我们桌上的绿光给吓到了。
+但是上述方法并不是直接储存的光子，而是电子被激发到了 trapped state，之后再逐渐发光释放能量。——相当于是将现货转化为了期货。
+实际上，光子是粒子数不守恒的，会实时与容器壁发生相互作用，所以单纯的光子是没法被储存的。但是，可以储存含有光子成分的准粒子——比如 Polariton；或者像 1.中所说的方法，转化成电子的能量。关于 3. 的具体讨论可见下面这个回答。
+
+光子无法被储存，因为光子数不守恒
+光子这玩意儿，在统计力学中有个与其他物质非常不同的性质——光子的化学势为 0，所以光子数不守恒！
+这是因为光子会和容器壁发生相互作用，下面举一个例子。比如容器壁中肯定会有电子，光子可以激发电子到一个更高的能级从而被吸收；出于高能级的电子也可以跃迁回来从而释放出光子。另外，一个较高能量的光子可以激发电子从基态 0 到激发态 3，但是从激发态 3 跃迁回来时，可能释放 1 个光子（直接 3->0），也可能释放 2 个光子（3->2->0），也可能是 3 个或者 4 个。所以显然光子数是不会守恒的。因此，绝对 100%反射率的容器壁是不可能存在的，因为一定会与光子发生相互作用的。
+对于粒子数守恒并且存在粒子间作用力的物质，你总能通过各种方式试图获得凝聚态——你可以通过加压以减小粒子间距离，并且降温以降低粒子的热运动使得吸引力呈主导，最终你能获得凝聚态。但是对于光子这种粒子数不守恒的，如果你加压的话，容器壁就吸收了光子，从而不会剩下多少了。
+可能有些人会希望通过磁约束来避免容器壁与光子的直接接触。但是很遗憾，光子不带电，所以无法使用磁约束。
+什么是长余辉材料？夜明珠是如何发光的？
+长余辉属于一种光致发光。我们一般听说的光致发光包括荧光和磷光。
+所谓荧光，当分子吸收入射光的能量后，其中的电子从基态
+
+（假设是单线态，绝大多数情况）被激发到了单线态激发态
+
+，随后经由非常快的（短于
+
+秒）内转换过程无辐射跃迁至能量稍低的单线态激发态
+
+，最后再释放光子回到基态
+
+。通常荧光的持续时间很短，因为每一个过程都是瞬间完成的。一旦光源停止，几乎瞬间停止发光[1]。
+
+所谓磷光，如果当激发到单线态激发态
+
+，并内转换到
+
+后，如果此时发生系间跨越（intersystem crossing）过程无辐射跃迁至能量较低且具有不同自旋多重度（一般为三线态）的激发态
+
+，随后内转换到
+
+，最后释放光子回到基态
+
+。随后从
+
+回到
+
+在热力学上是有利的，但是由于这是从三线态到单线态的转变，在跃迁选择规则上是禁戒的，所以需要较长的时间来完成——一般可以长至数小时。所以如果你有磷光材料的话，也是可以用来延迟发光的[2]。
+
+（在以上的讨论中，
+
+和
+
+的存在不是必需的，如果不方便理解的话可以自行略去）
+而长余辉材料与上述两种都不太相同——夜明珠就是用的这种发光方式。根据维基百科介绍，目前长余辉材料的发光机理尚未完全研究透彻，但是我们知道的是，它其中涉及到电子的 trapped state，类似于 energy trap。最后发光的方式类似于荧光过程，但是延迟时间又类似于磷光过程[3]
+
+比如在一种长余辉材料
+
+中[4]，就是
+
+的电子先被激发，然后能量被转移给
+
+使得其电子处于 trapped state。之后就会逐渐释放能量从而发光——在黑夜之中能清晰可见。但是此时你并不是将光子直接储存在了容器之中，而是将其转化成了电子的能量，之后再缓慢释放出来——相当于是将现货转化成了期货。
+
+还记得这就是北京大学化学学院无机化学实验课上的一门实验，当年我们也制备了这个材料。无机化学实验是分批做的，我和一个室友先做，而另外两个室友下一周才做。我们做完这个实验，老师让每人留下一些给他们做光谱测试，剩下的可以自己带回去。于是我们的样品就装在样品袋里，然后睡觉前我们就扔在桌上，然后上床睡觉了。结果有个还没做这个实验的室友，半夜起来上厕所时，被我们桌上的绿光给吓到了。
+阅读原文]]></summary>
+        <author>
+            <name>知乎日报</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[为什么人们愿意沉浸在负面情绪中？]]></title>
+        <id>https://daily.zhihu.com/story/9739416</id>
+        <link href="https://daily.zhihu.com/story/9739416"/>
+        <updated>2021-08-21T23:07:53.000Z</updated>
+        <summary type="html"><![CDATA[耗子领袖
+阅读原文
+
+我觉得这个问题不能单纯地从心理学的角度出发去解读，既然这个现象是较为普遍存在的[1]，而不是因人而异，那必然是存在进化和神经上的基础。
+（为了保持阅读的流畅性，我认为比较基础性的知识我不再详细解释，而是会放到注释里。）
+我个人认为，应该是负面心境导致脑内五羟色胺水平紊乱（一般是降低）[2]，引发强迫样思维 / 回忆[3]，忍不住一遍又一遍体验当初那不开心的感觉。
+
+最最极端的例子就是PTSD（创伤后应激障碍）了，它最典型症状就是创伤性再体验症状[4]。
+所以这个问题就被我狡猾地升级成“为什么经历应激创伤事件后会出现创伤性再体验症状”，就好像做人就要喝最烈的酒，做研究，当然就要上最猛的范式（手动狗头）。
+例如，PTSD 患者伴随着杏仁核五羟色胺受体可利用性降低，这可能导致放大对负面情绪的反应[5][6]。
+HC 是健康人对照组，就是上面蓝色柱子
+而另一个研究发现，降低PTSD 患者的五羟色胺水平会加重患者面对创伤相关刺激的负面情绪反应，而用五羟色胺再摄取抑制剂（SSRIs，提高五羟色胺水平）可以抑制PTSD 症状[7]。
+写到这里，我发现用 PTSD 来回答这个问题还是不够贴切（但我也舍不得删...），一个更好的模型是抑郁症，临床上发现抑郁症和强迫症经常出现共病的情况[8][9][10][11]，即得了一个也容易得另一个，例如抑郁症患者经常伴随着强迫性思维（obsessional thinking），而导致他们共病的基础也被认为是五羟色胺系统紊乱。
+所以我的结论就是，人们面对负性事件时，大脑的情绪系统做出反应，使我们体内的五羟色胺水平发生了变化，这种变化有可能引发强迫性回忆和负性情绪放大。
+尽管论证的过程不是特别严谨，但我觉得说得通，但注意上述只是我个人整理现有文献的综合看法，并非学界下的结论。
+为什么要进化出这种生理机制呢？我猜可能是为了让动物更好地记住教训和负面刺激，让你回避危险并思考解决方案，并预演下次再碰到这种事时的情景（所以会不断回放），以提高动物的生存率吧。
+阅读原文]]></summary>
+        <author>
+            <name>知乎日报</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[动物能通过观看影视作品获得乐趣吗？动物喜爱观看的影视作品可能是什么样的？]]></title>
+        <id>https://daily.zhihu.com/story/9739383</id>
+        <link href="https://daily.zhihu.com/story/9739383"/>
+        <updated>2021-08-21T23:07:46.000Z</updated>
+        <summary type="html"><![CDATA[赵泠，遗迹是曾经讴歌繁荣的生命留下的缺页的梦。
+阅读原文
+
+在播放的内容波长、亮度、刷新率适当的时候，视力不太差的动物可以观看影视作品；在播放的声音频率、响度适当的时候，听力不太差的动物可以听到音频。“能不能理解”“有无乐趣可言”在子非鱼的层面上无法判断，不深究这个的话，看起来动物可以根据互动视频做出人们预期的部分反应，至少能对视频达到和对周围的事物相似的理解程度——原本就看不懂的东西，例如偏微分方程，写在纸上和显示在屏幕上都不懂。
+看起来，黑猩猩、猫狗之类可以从看视频和 / 或听音频中获得一定的乐趣。人们并没有给海豚和章鱼看过什么正经玩意，但章鱼跟水族馆里的摆设玩得看起来不错，这包括而不限于砸水箱、喷水来短路水箱上方的灯。
+2013 年的一项研究表明，狗可以根据视觉线索选出屏幕上的狗的图像并将它们分组，狗辨认屏幕上的狗的能力高于辨认非狗之物[1]——这可能是长期演化的繁殖相关识别能力。在音频方面，狗对电视发出的狗的声音、友好的人声、玩具的响声做出的反应多于一般杂音。狗的品种可能会影响它对电视的反应：嗅觉敏锐的猎犬对视觉效果不那么感兴趣，而牧羊犬喜欢看到移动的物体。
+历史上，低帧率的显像管电视的图像被狗当做简单的运动或光线闪烁。二十一世纪初，在 HDTV 上出现了针对狗的电视频道，称为 DogTV[2]，播放面向狗的高帧率视频信号（狗眼适合的帧率约 75 赫兹），按照狗能识别的色彩（黄色、蓝色及其组合）着色，包含狗耳能听到的高频声音，节目内容有放松（例如狗在草地上伸懒腰）、刺激（例如狗在南加州冲浪）、生活（狗对响起的门铃做出反应并服从主人的命令）等，每段节目长 3~6 分钟以适应狗的观看习惯。
+猫也经常在人家里看电视，表现出可以识别电视屏幕上的不同轮廓和动作并对电视发出的声音做出反应。猫眼适合的频率约 70~80 赫兹，并对红色识别能力较弱。猫有时会试图攻击电视上的虫子和老鼠。
+你可以预期黑猩猩喜欢看黑猩猩生活相关的节目，其余动物大抵也是关注同物种胜过对它们来说“不知所云”的人类肥皂剧。
+
+大猩猩 Koko 能对人类影视节目做出一定的反应。
+
+大猩猩 Koko 用手语解释看到的电影https://www.zhihu.com/video/1409966164039131136
+
+在斯图加特动物园进行的实验证明，播放倭黑猩猩打架的视频会让观看视频的倭黑猩猩感到紧张，播放倭黑猩猩进食、玩耍、交配的视频则无此影响。
+
+他人如何获得乐趣、有无乐趣可言，在子非鱼的层面上同样无法判断。不深究这个的话，人们通常会对看到的东西进行模式识别、匹配、预测并以镜像神经元等触发共情，在看到符合预期的内容时触发奖励机制，在看到严重不符合预期的内容时触发战斗反应和 / 或镇痛机制（并随后因并无真正的危险而出现回调），诸如此类。视频·音频在你那极度复杂的大脑皮层神经连接网络里激起的更多反应是目前不能精确解析的。
+节肢动物基于逐行扫描的复眼在观看显像管电视时获得的图像，根据帧率的差异，可能跟节目内容出现极大的偏差。
+阅读原文]]></summary>
+        <author>
+            <name>知乎日报</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[为何面试时都会问你的职业规划呢？该如何回答呢？]]></title>
+        <id>https://daily.zhihu.com/story/9739393</id>
+        <link href="https://daily.zhihu.com/story/9739393"/>
+        <updated>2021-08-21T23:07:42.000Z</updated>
+        <summary type="html"><![CDATA[Calvin，一枚聪明又傲娇的硬件工程师！
+阅读原文
+
+前面有几位职场专家讲的都已经很全面了， 我从个人真实经历和在职员工的角度提供点看法。
+我在秋招面试时，真的被主管老板问过这个问题！
+我是 16 年硕士毕业参加的思科中国研发中心硬件设计工程师的秋招，不像互联网、华为这种大厂一年招几百个人，思科在华研发中心不大，一年应届生也就招几十个人。 具体到某一个组可能就招一两个。
+主管老板面试是最后一轮，之前已经经历了简历海选、基础笔试、英语口语面试。因为我是跨行业找工作，当时硬件笔试效果一般，英语口语尚可。主管老板进来时我都不知道这个是经理，只是以为面试官的另外一个同事，所以没有太在意。
+当时他看了看我简历，特意问了我同学毕业后的求学情况。 我如实回答，本科同学大概 1/3 出国，1/3 读研， 1/3 工作， 而研究生同学大部分就业了，继续升学的很少。 然后我发现他特意问了下我同学中出国的去了什么地方，当时感觉只是闲聊。 完了最后一个问题就是问我职业规划。
+我之前准备过这个问题， 就直接说了一个五年规划，大概是第一年尽快适应公司业务逻辑，掌握工作必备的基础知识。 三年之内把工作具体内容都摸过一遍，能够独立承担小型项目，并且在前三年内都加强自我学习。 五年之内有自己精通的项目，能够独立承担中高难度项目。
+主管不置可否，只是点点头， 然后问我有没有出国计划？ 我当时很纳闷，只是笑着摇摇头说没有。 
+... 
+后来入职两三年后聊起这个事情我才知道个中原因：硬件设计这个行业，培养周期长，可能一个优秀的工程师培养好就需要 5 年， 且成熟行业需求和供给都低。 如果招一个心性不定的人可能没过两三年人就跳槽走了，那样培养的精力就白费了。 另一方面，我们主管之前培养过几个应届生，但是最后总感觉软实力方面差点意思，所以这次校招想招一个学校好点，综合素质不错的人培养一下，而是不是专业非常对口对他来…]]></summary>
+        <author>
+            <name>知乎日报</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[在我的世界中一直沿着海岸线走，能否走回原地？]]></title>
+        <id>https://daily.zhihu.com/story/9739438</id>
+        <link href="https://daily.zhihu.com/story/9739438"/>
+        <updated>2021-08-21T23:07:38.000Z</updated>
+        <summary type="html"><![CDATA[Alexandria，THU生物狗
+阅读原文
+
+先说结论，可以，而且一定可以
+实际上，这个问题的本质是一个拓扑学问题，而 MC 的地图生成机制决定了这个问题的答案
+这个问题用更抽象的概念来总结，可以提炼为一个更明确的问题：
+一个欧氏平面上有且只有两种颜色，任意一个完整颜色边界所对应的曲线是否封闭？
+奶牛的黑白花纹这是该问题环境下的一个经典情景——在我们忽略掉那只左下角奶牛和她的牛奶的前提下
+对应到 MC 上，首先我们知道，一个自然生成的 MC 地图中的实体方块有固体方块和液体方块两种；因此地表方块也只有两种形态，固体和液体。
+显然，在传统意义上固体方块为陆地，液体方块为海洋。至于河流，湖泊和水洼，它和海洋在拓扑学上没有本质上的区别，除了大小和形状。比如连通海洋的河流可以看作海洋的延伸，两个海洋被一条跨越陆地的河流所联通则可以看作一个海洋，湖泊和水洼则可以看作微型的海洋。还有一个特例是岩浆池，将其算作液体看待
+但是地下暗河不行，作为一个三维概念它不在地表，因此在这个二维问题中不参与讨论
+此外，尽管 MC 的地图有高山和峡谷，但总体而言是一张无限大的平面，也就是欧氏平面，而不是像地球一样的球面或者带洞的甜甜圈形状
+因此我们将一张 MC 地图的所有地表方块投影到欧氏平面上。至于水边的树冠和伸出水面的悬崖，可以在这个过程中忽略。（尽管算上它们也不会对结果产生本质影响）
+于是就产生了上面这种奶牛图。唯一的问题在于，我们需要用哪种颜色代表陆地？哪种颜色代表海洋？
+其实都可以，因为我们研究的是色块的边界而不是色块本身，陆地和海洋的填色不会改变边界的形状，因此不会影响到问题的实质
+那么，如果是色块边界必是闭合曲线，则一定可以环游海洋回到原点。如果存在不是闭合曲线的情况，则未必可以返回。
+显然，边界的意义是区分两个色块。那么当边界两侧的两种色块的面积均有限的时候，这个边界必然是封闭曲线
+比如…]]></summary>
+        <author>
+            <name>知乎日报</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Tikz.net – Graphics with TikZ in LaTeX]]></title>
+        <id>https://tikz.net/</id>
+        <link href="https://tikz.net/"/>
+        <updated>2021-08-21T21:49:43.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[DeepfakeHTTP – Your 100% static dynamic back end]]></title>
+        <id>https://github.com/xnbox/DeepfakeHTTP</id>
+        <link href="https://github.com/xnbox/DeepfakeHTTP"/>
+        <updated>2021-08-21T21:19:45.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Schema on write is better to live by]]></title>
+        <id>https://hrishioa.github.io/schema-on-write-is-better-to-live-by/</id>
+        <link href="https://hrishioa.github.io/schema-on-write-is-better-to-live-by/"/>
+        <updated>2021-08-21T20:31:38.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Cyber Attack, Possible Serious Breach, at U.S. State Department]]></title>
+        <id>https://twitter.com/JacquiHeinrich/status/1429173367643516936</id>
+        <link href="https://twitter.com/JacquiHeinrich/status/1429173367643516936"/>
+        <updated>2021-08-21T20:29:37.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Don’t starve, Diablo – Parallax 7 (2016)]]></title>
+        <id>http://simonschreibt.de/gat/dont-starve-diablo-parallax-7/</id>
+        <link href="http://simonschreibt.de/gat/dont-starve-diablo-parallax-7/"/>
+        <updated>2021-08-21T20:15:53.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Project Jupyter Celebrates 20 Years, Fernando Pérez Reflects on How It Started]]></title>
+        <id>https://data.berkeley.edu/news/project-jupyter-celebrates-20-years-fernando-perez-reflects-how-it-started-open-sciences</id>
+        <link href="https://data.berkeley.edu/news/project-jupyter-celebrates-20-years-fernando-perez-reflects-how-it-started-open-sciences"/>
+        <updated>2021-08-21T19:54:42.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[EFF Joins Global Coalition Asking Apple CEO Tim Cook to Stop Phone-Scanning]]></title>
+        <id>https://www.eff.org/deeplinks/2021/08/eff-joins-global-coalition-asking-apple-ceo-tim-cook-stop-phone-scanning</id>
+        <link href="https://www.eff.org/deeplinks/2021/08/eff-joins-global-coalition-asking-apple-ceo-tim-cook-stop-phone-scanning"/>
+        <updated>2021-08-21T18:23:57.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Strict Tables – Column type constraints in SQLite - Draft]]></title>
+        <id>https://www.sqlite.org/draft/stricttables.html</id>
+        <link href="https://www.sqlite.org/draft/stricttables.html"/>
+        <updated>2021-08-21T18:03:08.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Parser generators vs. handwritten parsers: surveying major languages in 2021]]></title>
+        <id>https://notes.eatonphil.com/parser-generators-vs-handwritten-parsers-survey-2021.html</id>
+        <link href="https://notes.eatonphil.com/parser-generators-vs-handwritten-parsers-survey-2021.html"/>
+        <updated>2021-08-21T17:45:45.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Beware state surveillance of your lives – governments can change for the worse]]></title>
+        <id>https://www.theguardian.com/commentisfree/2021/aug/21/beware-state-surveillance-of-your-lives-governments-can-change-afghanistan</id>
+        <link href="https://www.theguardian.com/commentisfree/2021/aug/21/beware-state-surveillance-of-your-lives-governments-can-change-afghanistan"/>
+        <updated>2021-08-21T17:22:19.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[GitHub Issues-only project management]]></title>
+        <id>https://blog.placemark.io/2021/07/19/issues-only-management.html</id>
+        <link href="https://blog.placemark.io/2021/07/19/issues-only-management.html"/>
+        <updated>2021-08-21T16:56:50.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[An Opinionated Guide to Xargs]]></title>
+        <id>https://www.oilshell.org/blog/2021/08/xargs.html</id>
+        <link href="https://www.oilshell.org/blog/2021/08/xargs.html"/>
+        <updated>2021-08-21T16:21:58.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Facebook suppressed report that made it look bad]]></title>
+        <id>https://www.theverge.com/2021/8/20/22634841/facebook-most-viewed-content-report-look-bad</id>
+        <link href="https://www.theverge.com/2021/8/20/22634841/facebook-most-viewed-content-report-look-bad"/>
+        <updated>2021-08-21T15:51:02.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[The /bin/true Command and Copyright (2009)]]></title>
+        <id>http://trillian.mit.edu/~jc/humor/ATT_Copyright_true.html</id>
+        <link href="http://trillian.mit.edu/~jc/humor/ATT_Copyright_true.html"/>
+        <updated>2021-08-21T15:18:13.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Launch HN: Fella (YC W20) – Tackling men's obesity using medication and coaching]]></title>
+        <id>https://news.ycombinator.com/item?id=28257352</id>
+        <link href="https://news.ycombinator.com/item?id=28257352"/>
+        <updated>2021-08-21T14:36:36.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[IceFireDB: Distributed disk storage database based on Raft and Redis protocol]]></title>
+        <id>https://github.com/gitsrc/IceFireDB</id>
+        <link href="https://github.com/gitsrc/IceFireDB"/>
+        <updated>2021-08-21T14:23:16.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Thoughts of work invaded my life until I learned how to unplug]]></title>
+        <id>https://www.sciencemag.org/careers/2021/08/thoughts-work-invaded-my-life-until-i-learned-how-unplug</id>
+        <link href="https://www.sciencemag.org/careers/2021/08/thoughts-work-invaded-my-life-until-i-learned-how-unplug"/>
+        <updated>2021-08-21T14:18:52.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Snap: A microkernel approach to host networking (2019)]]></title>
+        <id>https://research.google/pubs/pub48630/</id>
+        <link href="https://research.google/pubs/pub48630/"/>
+        <updated>2021-08-21T14:03:20.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[An Introduction to AI Story Generation]]></title>
+        <id>https://thegradient.pub/an-introduction-to-ai-story-generation/</id>
+        <link href="https://thegradient.pub/an-introduction-to-ai-story-generation/"/>
+        <updated>2021-08-21T11:25:06.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[We don't 'do' learning. It does us]]></title>
+        <id>https://danielbmarkham.com/we-dont-do-learning-we-direct-it/</id>
+        <link href="https://danielbmarkham.com/we-dont-do-learning-we-direct-it/"/>
+        <updated>2021-08-21T10:52:49.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[A Simple Interpreter in Python]]></title>
+        <id>https://ruslanspivak.com/lsbasi-part1/</id>
+        <link href="https://ruslanspivak.com/lsbasi-part1/"/>
+        <updated>2021-08-21T10:29:34.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[DNA→RNA: What Do Students Think the Arrow Means? (2014)]]></title>
+        <id>https://europepmc.org/backend/ptpmcrender.fcgi?accid=PMC4041510&amp;blobtype=pdf</id>
+        <link href="https://europepmc.org/backend/ptpmcrender.fcgi?accid=PMC4041510&amp;blobtype=pdf"/>
+        <updated>2021-08-21T10:25:34.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Working in One Bit]]></title>
+        <id>https://dukope.itch.io/mars-after-midnight/devlog/285964/working-in-one-bit</id>
+        <link href="https://dukope.itch.io/mars-after-midnight/devlog/285964/working-in-one-bit"/>
+        <updated>2021-08-21T10:10:48.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Why do the children pretend play? [pdf]]]></title>
+        <id>https://ctheory.sitehost.iu.edu/img/Lillard,%20Why%20Do%20the%20Children%20(Pretend)%20Play.pdf</id>
+        <link href="https://ctheory.sitehost.iu.edu/img/Lillard,%20Why%20Do%20the%20Children%20(Pretend)%20Play.pdf"/>
+        <updated>2021-08-21T06:38:02.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Patterns in Confusing Explanations]]></title>
+        <id>https://jvns.ca/blog/confusing-explanations/</id>
+        <link href="https://jvns.ca/blog/confusing-explanations/"/>
+        <updated>2021-08-21T06:05:38.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[How to Remember What You Read]]></title>
+        <id>https://fs.blog/2021/08/remember-books/</id>
+        <link href="https://fs.blog/2021/08/remember-books/"/>
+        <updated>2021-08-21T05:07:18.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[New phone can make calls and send texts, but it cannot access social media]]></title>
+        <id>https://www.wsj.com/articles/minimalist-phones-try-to-give-users-what-they-neednot-always-what-they-want-11629370801</id>
+        <link href="https://www.wsj.com/articles/minimalist-phones-try-to-give-users-what-they-neednot-always-what-they-want-11629370801"/>
+        <updated>2021-08-21T04:06:23.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[14M ton of carbon offset forest is burning in California]]></title>
         <id>https://twitter.com/BodieCabiyo/status/1427683107788845056</id>
@@ -305,6 +747,16 @@ Dr. Denim 这个品牌比较小众冷门，它是来自于瑞典的一个牛仔�
         <id>https://blog.malwarebytes.com/mac/2021/08/macos-11s-hidden-security-improvements/</id>
         <link href="https://blog.malwarebytes.com/mac/2021/08/macos-11s-hidden-security-improvements/"/>
         <updated>2021-08-20T19:28:34.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Intel Brings Chiplets to Data Center CPUs]]></title>
+        <id>https://www.eetimes.com/intel-brings-chiplets-to-data-center-cpus/#</id>
+        <link href="https://www.eetimes.com/intel-brings-chiplets-to-data-center-cpus/#"/>
+        <updated>2021-08-20T19:04:54.000Z</updated>
         <summary type="html"><![CDATA[Comments]]></summary>
         <author>
             <name>Hacker News</name>
@@ -752,6 +1204,16 @@ momo是只球，留学狗 人文＆女性＆个人＆存在＆AR主义 文学 LG
         <id>https://jchyip.medium.com/why-its-difficult-to-build-teams-in-high-growth-organisations-e1aee8446337</id>
         <link href="https://jchyip.medium.com/why-its-difficult-to-build-teams-in-high-growth-organisations-e1aee8446337"/>
         <updated>2021-08-19T20:12:56.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Google’s ‘Project Hug’ paid out huge sums to keep game devs in the Play Store]]></title>
+        <id>https://www.theverge.com/2021/8/19/22632818/google-project-hug-game-developers-play-store-millions-epic-lawsuit-complaint</id>
+        <link href="https://www.theverge.com/2021/8/19/22632818/google-project-hug-game-developers-play-store-millions-epic-lawsuit-complaint"/>
+        <updated>2021-08-19T19:36:31.000Z</updated>
         <summary type="html"><![CDATA[Comments]]></summary>
         <author>
             <name>Hacker News</name>
@@ -14438,525 +14900,6 @@ The Early Ediacaran Caveasphaera Foreshadows the Evolutionary Origin of Animal-l
         <id>https://www.economist.com/science-and-technology/2021/07/21/floating-wind-turbines-could-rise-to-great-heights</id>
         <link href="https://www.economist.com/science-and-technology/2021/07/21/floating-wind-turbines-could-rise-to-great-heights"/>
         <updated>2021-07-23T12:33:16.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[The value of doing a little]]></title>
-        <id>https://trms.me/the-value-of-doing-a-little/</id>
-        <link href="https://trms.me/the-value-of-doing-a-little/"/>
-        <updated>2021-07-23T11:49:57.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Beating the L1 cache with value speculation]]></title>
-        <id>https://mazzo.li/posts/value-speculation.html</id>
-        <link href="https://mazzo.li/posts/value-speculation.html"/>
-        <updated>2021-07-23T11:44:55.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Show HN: Website changes design each time you blink]]></title>
-        <id>https://realless.glitch.me/</id>
-        <link href="https://realless.glitch.me/"/>
-        <updated>2021-07-23T10:50:52.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Privacy is an afterthought. Here's how devs can easily make it better.]]></title>
-        <id>https://stackoverflow.blog/2021/07/19/privacy-is-an-afterthought-in-the-software-lifecycle-that-needs-to-change/</id>
-        <link href="https://stackoverflow.blog/2021/07/19/privacy-is-an-afterthought-in-the-software-lifecycle-that-needs-to-change/"/>
-        <updated>2021-07-23T10:45:17.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Syncthing: Syncing All the Things]]></title>
-        <id>https://lwn.net/Articles/861978/</id>
-        <link href="https://lwn.net/Articles/861978/"/>
-        <updated>2021-07-23T10:40:24.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[BirdNet – Identify Birds by Sound]]></title>
-        <id>https://birdnet.cornell.edu</id>
-        <link href="https://birdnet.cornell.edu"/>
-        <updated>2021-07-23T10:32:31.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Inside TikTok’s Algorithm [video]]]></title>
-        <id>https://www.wsj.com/video/series/inside-tiktoks-highly-secretive-algorithm/investigation-how-tiktok-algorithm-figures-out-your-deepest-desires/6C0C2040-FF25-4827-8528-2BD6612E3796</id>
-        <link href="https://www.wsj.com/video/series/inside-tiktoks-highly-secretive-algorithm/investigation-how-tiktok-algorithm-figures-out-your-deepest-desires/6C0C2040-FF25-4827-8528-2BD6612E3796"/>
-        <updated>2021-07-23T09:25:31.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[“I would buy a Mac today if I was not working at Microsoft” (2004)]]></title>
-        <id>https://twitter.com/TechEmails/status/1418248256937775105</id>
-        <link href="https://twitter.com/TechEmails/status/1418248256937775105"/>
-        <updated>2021-07-23T08:25:59.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Cats N Wires]]></title>
-        <id>https://kultisti.itch.io/cats-n-wires</id>
-        <link href="https://kultisti.itch.io/cats-n-wires"/>
-        <updated>2021-07-23T05:17:30.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[The Framework Laptop is now shipping]]></title>
-        <id>https://frame.work/blog/the-framework-laptop-is-now-shipping-and-press-reviews</id>
-        <link href="https://frame.work/blog/the-framework-laptop-is-now-shipping-and-press-reviews"/>
-        <updated>2021-07-23T01:56:08.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Hacker News in the Style of Teletext]]></title>
-        <id>https://glynnbird.github.io/teletext/</id>
-        <link href="https://glynnbird.github.io/teletext/"/>
-        <updated>2021-07-22T23:47:31.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Eric Clapton refuses to play venues requiring vaccines for concertgoers]]></title>
-        <id>https://www.bbc.com/news/world-us-canada-57934379</id>
-        <link href="https://www.bbc.com/news/world-us-canada-57934379"/>
-        <updated>2021-07-22T23:37:15.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[如何判断「双方自愿」中弱势一方是真的自愿，而不是因为社会结构层级更低，信息差距导致的自以为自愿？]]></title>
-        <id>https://daily.zhihu.com/story/9738392</id>
-        <link href="https://daily.zhihu.com/story/9738392"/>
-        <updated>2021-07-22T23:06:52.000Z</updated>
-        <summary type="html"><![CDATA[许标-心理咨询师，提供当面和网络咨询，预约公众号psyche-space
-阅读原文
-
-这是个好问题。我的回答依问题本身展开，不涉明星睡粉事件。
-我认为这个问题，要看从何种程度谈论。往深了，“自愿”涉及到“自由意志”，可上升到哲学、神经科学高度都存在极大分歧。
-如果按照某些哲学、神经科学观点，否定人的自由意志，也就不存在“自愿”一说——不论何种情形，双方关系是否存在强弱势，都不存在“自愿”。
-如果抛开这种“自由意志”的高度，降低些高度，从心理学角度看，也存在“斯德哥尔摩综合征（人质情结）”——指被害者对于犯罪者产生情感，甚至反过来帮助犯罪者，这个情感造成被害者对加害者产生好感、依赖性、甚至协助加害者。
-产生“斯德哥尔摩综合征”的人质，因好感、依赖性等帮助犯罪者的行为，并非来自犯罪者直接胁迫，可以说是人质的“自愿行为”。
-可这种被挟持、面临生命危险的特殊情境下，人的身心状态显著异于常态。平时决策、计划等维持日常生活的偏理智系统，这时候让位于求生存的本能系统。
-看似自愿行为，实际已经被本能求生系统主导，不够“自愿”——自主性，已经被情境极大过滤，受情境影响，这时候的自主性，远低于平时的自主性。
-看似自愿，实非自愿。
-简单来说，意识已经被潜意识极大左右。
-被潜意识左右的意识，算“自愿”吗？
-这又回到“自愿”的定义了。
-如果把“自觉”——自己觉得是——定义自愿，被情境影响，被潜意识左右的意识，也算自愿；
-如果认为潜意识左右的意识，失去自由选择，则不算自愿。
-可人的心理，必然包含情境影响的部分，无法撇开情境单独谈论。
-当双方关系在权力、地位、信息等方面，存在强弱势差别，强弱势身份差异带来的情境影响，已经无形渗透在双方关系、心理中，无法剥离这层影响，谈论所谓的“纯粹自愿”。
-譬如像医患、师生、咨访（心理咨询师 - 来访者）等关系中，为何避免亲密关系为宜？
-因为这类关系中，先验存在内置的不平等——不论如何避免，都必然存在。
-这种内置的不平等，无形中影响关系的建立，自愿一说，无从谈起。
-不少这类关系的强奸行为，法律上用“诱奸”区分，表明受害者存在一定程度自愿。按照如上自愿理解，就像产生“斯德哥尔摩综合征”的人质，在不平等关系情境中的弱势方，“此自愿非彼自愿”，自主程度远低于平时，不算真正的自愿。
-大家如果接触一些社会心理学知识，便会知道，情境对人影响的重要性，被极大低估。
-如同许多人觉得，如果回到二战时期，自己不会像德国或日本士兵，做出惨无人道的事情。可是近几十年内的斯坦福监狱实验、从众实验、旁观者效应实验等，被试均是受过高等教育者，却做出自认为不会做的残忍、冷漠、不理智等行为。
-不要低估情境影响，不要高估意志作用。
-强弱势身份差异本身，能够带来足够多的无形影响，造成不存在“纯粹自愿”。
-阅读原文]]></summary>
-        <author>
-            <name>知乎日报</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[有哪些对你影响很深的书籍？]]></title>
-        <id>https://daily.zhihu.com/story/9738371</id>
-        <link href="https://daily.zhihu.com/story/9738371"/>
-        <updated>2021-07-22T23:06:43.000Z</updated>
-        <summary type="html"><![CDATA[綾音Ayane，三坑少女/妆娘/中国古代史/汉语言文学/女性向消费数码
-阅读原文
-
-日常跑题系列。
-我想说的是托尔金三部曲。
-很早很早之前，我被《指环王》电影的小叶子深深地吸引。又过了几年，被小叶子他爸爸深深吸引。
-这就让我在之后的好几年里，一个是开始追星，追的是李佩斯。
-一个就是，开始喜欢托尔金，开始去补关于托尔金笔下的这个世界的一切。
-因为对托尔金体系的热爱，还有对于 wow 的历史的热爱——大家都知道，它们的许多设定起源是北欧神话。
-也因此，前两年我写了一篇关于北欧神话的文章。
-北欧神话如今只有留下的几个残篇，流传下来的故事甚至不能成为一个体系。
-但是，因为种种原因，北欧神话的设定，在现代的各种文学影视游戏等等作品里面是如此的常见。就如同北欧神话本身所说的，世界会毁灭并且重生。
-世界会不会毁灭还是未知，但是北欧神话本身真的毁灭，并且重生了。
-
-《魔戒》是著名英国作家、语言学家、牛津大学教授约翰·罗纳德·瑞尔·托尔金创作的小说。它另一个更广为人知的名字是《指环王》。也许是因为《指环王》和《霍比特人》系列电影的大火，这一系列的故事都非常脍炙人口。
-这个系列的作品除了《魔戒》以外，还有《霍比特人》，《精灵宝钻》
-（《精灵宝钻》之前因为版权问题未能出版，但是随着作者逝世 70 周年，这本书也终于得以出版了）
-很多人都说，托尔金为我们展现了一个新的世界，他开创了奇幻小说的先河，现如今许许多多的小说，游戏，动漫，影视作品都来源于托尔金的设定。
-那么，大家可知道这些设定起源于哪里呢。矮人，侏儒与精灵，世界树和人类的起源。
-这一切的一切，其实来自于一段失落的神话，它很早之前就已经被毁掉了，典籍被烧掉，神像被推入深渊，连那些故事也都变得残破，不再有人口口相传。
-可是，它竟然如同它自己预言的那般，在现代以另一种形式深入人心，它的故事和精神被我们所熟知，只是我们并不知道她的名字。
-这便是北…]]></summary>
-        <author>
-            <name>知乎日报</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[为什么八大菜系中除了鲁菜之外都在中国的南方？]]></title>
-        <id>https://daily.zhihu.com/story/9738362</id>
-        <link href="https://daily.zhihu.com/story/9738362"/>
-        <updated>2021-07-22T23:06:38.000Z</updated>
-        <summary type="html"><![CDATA[ag獭，好奇而无用的獭獭
-阅读原文
-
-八大菜系这一说法，历史不会超过 50 年，至于各菜系本身的口味、烹饪手法区别，也只是在近几百年来才出现的。比如中餐中常见的炒菜，要等到宋代才开始普及，流行于各地的辣味菜肴，也要等到美洲辣椒传入并广泛种植后才能普及。
-“菜系”的出现
-菜系一词的前身，是清末民国时所说的“帮口”。当时，由于餐饮业的发展，加之各地菜式、口味的区别，人们借鉴帮口的概念，以本帮菜、杭帮菜、盐帮菜、苏帮菜等称呼，区分不同的饮食流派。新中国成立后，为了消除帮口称呼中的封建色彩，将其改称为菜系。据说菜系一词，是来自五六十年代分管财贸活动的姚依林同志。
-90 年代初的菜系分类，陈光新，《菜系的认定》，《四川烹饪》1992 年第 1 期
-1980 年 6 月 20 日，《人民日报》第四版“小常识”栏目刊登了由汪绍铨撰写的《我国的八大菜系》，这可能是文献中关于八大菜系的最早记录。不过当时，菜系一词才刚开始流行，所以四大菜系、五大菜系、八大菜系、十大菜系等等说法并存。甚至八大菜系本身包含哪些菜系，都没有形成定论。至于哪个菜系排第一，更是无从考证，大抵只是人们的口水仗罢了。
-*.类似的还有某某方言差点成为普通话之类的流言。
-为何八大菜系大多都在中国南方？
-目前比较公认的八大菜系，只有鲁菜是纯粹的北方菜系，其余菜系中，淮扬菜诞生于长江以北，介于南北之间，大多数菜系，确实都在中国南方，这是为什么呢？
-口味的形成，和族群、方言、文化的形成过程类似。古时交通不便，人口流动比较少见，受气候、地理、物产、历史、宗教和技术发展的影响，各地逐渐发展出了不同的烹饪传统，按现在常见的说法，就可以称之为菜系。
-鲁菜善用爆、烧、炸、炒，口味偏重，图为鲁菜之九转大肠
-举例来说，中国西南地区气候温暖潮湿，远离海洋，盐比较昂贵，因此当辣椒传入中国后，很快就爱上了吃辣。辛辣的辣椒可以排解湿气，也可增加风味，弥补…]]></summary>
-        <author>
-            <name>知乎日报</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[大袋猫粮如何储存？]]></title>
-        <id>https://daily.zhihu.com/story/9738381</id>
-        <link href="https://daily.zhihu.com/story/9738381"/>
-        <updated>2021-07-22T23:06:33.000Z</updated>
-        <summary type="html"><![CDATA[八只包子，有只猫，日系家居爱好者，猫叫伊吹你懂的，很高兴遇见你呀✨
-阅读原文
-
-猫粮越大包性价比越高！可是...
-
-大包猫粮要怎么储存？
-怎么判断猫粮受潮变质？
-猫吃坏肚子得不偿失？
-
-先说简单粗暴的结论，最直接看猫粮有没有受潮的方法，是直接放嘴里嚼看脆不脆。
-包子翻了豆瓣，小红书大量铲屎官的经验，以及自身实际情况，按照储粮工具的成本从低到高，吐血整理了几个靠谱储存办法！
-一、大夹子和干燥剂
-图：自家已经吃完的 GO 猫粮，大袋子本身有密封条，这样保存了 5 个月没有坏。
-存啥：已开封的一整包猫粮。
-优点：简单粗暴 0 成本，猫粮袋子本身设计的就是符合保存的标准的，直接把干燥剂丢进去，大夹子夹稳密封好就 ok。
-缺点：仅限于南方地区非潮湿季节、非混粮喂养家庭暂时性保存。到后期我在猫粮袋附近看见了米虫，好在里面没有影响，所以这法子不适用于长期保存哦！
- 二、发酵桶
-图：豆瓣网友把一整袋猫粮，连带着包装塞进了 25L 的酵素桶里
-存啥：已开封（未开封）的一整包猫粮
-优势：食品级塑料，防潮性最佳。发酵要求的就是完全密封环境，所以酵素桶的密封性超好！而且猫粮直接整包塞进去，网友血泪教训是宁愿买大也别买小，买 20L 的 5kg 粮连包装塞进去拿出来都很困难~
-劣势：取的时候有点麻烦，有点占地方，样子有点点点一言难尽，但我也准备入手了～
-三、真空袋
-图：小红书网友的拆包储粮方式图：我自己的爱肯拿猫粮，爱肯拿包装没有密封条，必须要想办法存放好。 图：我自己的渴望猫粮，大包装也没有密封条，又整包塞进了真空袋子里，但我发现确实会漏气..
-存啥：已开封，没吃完的猫粮
-优势：简单粗暴，密封性 ok，不占地方。我采用的是一整袋猫粮塞进去去，买的是平常装被子衣服的小号真空袋，再用吸尘机一抽就完事了。
-劣势：运气不好会漏气，要挑质量好的！但我整包放进去，所以还能再继续抽真空补救，感觉比第一种办法安心。
- 四、真空机
-图：小红书网友
-存啥：所有猫粮
-优点：防潮性是最好的，看起来就很靠谱。真空防潮，分装好后开一袋吃一袋，真空袋什么尺寸都有，网上很多心灵手巧的小仙女都是这样保存哒。
-缺点：太麻烦，不适用于懒癌，要反复购买真空袋分装，金钱和时间成本比较高。看下来...非常不适合我....
- But 不推荐：简单密封袋
-
-存啥：不买就没有保存对象
-优点：每家每户都有，随手即取
-缺点：分装过程中容易二次污染，加上不密封也不牢固，不小心一碰就开，小动物一啃就坏，真心不推荐嗷！
- 五、储粮密封（米）桶
-图：小红书网友 
-存啥：日常要吃的、或分装后的猫粮
-优点：用途广，方便好看，开盖即取。极其适合北方干燥地区，放在这种桶里就足够了，甚至根本用不上酵素桶或者真空机。
-缺点：市面花样太多，容易踩雷买到质量不好不密封的，所以要铲屎官用心去挑选，网评日本爱丽思、华元宠具还算是不错的～
- 补充：随时要吃的猫粮如何储存？一、矿泉水瓶 | 玻璃罐 | 小号储粮桶
-
-存啥：采用每日定量自由采食方法的，用一个小盒子放日常随时要吃的~
-优点：矿泉水瓶 0 成本，玻璃密封罐循环利用，小号储量桶自带量杯！
-缺点：矿泉水瓶密封性一般，可能存在风险。坐标南方沿海地区，我亲身试用了 7 个月吧，目前还没有出现发霉生虫变脆的情况~其他的当然会安心一点，总比老打开猫粮袋取粮要好，降低了二次污染的风险~~
-二、豪华自动喂食器
-存啥：采用定时定量方法的，就需要买一个自动喂食器啦~
-优点：可以控制好猫咪的食量，避免猫咪一下吃过多软便的肠胃问题（亲身经历...）
-缺点：我本人没有用过。据网友经验，有几率会导致卡粮问题，自动喂食器成本比较高，我也还在观望中，希望用过的朋友积极在评论区补充意见哦！
-阅读原文]]></summary>
-        <author>
-            <name>知乎日报</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[全球建筑规模最大的上海天文馆于2021年7月17日正式开馆，对此你有哪些期待？]]></title>
-        <id>https://daily.zhihu.com/story/9738377</id>
-        <link href="https://daily.zhihu.com/story/9738377"/>
-        <updated>2021-07-22T23:06:30.000Z</updated>
-        <summary type="html"><![CDATA[知乎用户，建筑 职场提升 设计留学 媒体合作｜咨询微信：hurmus
-阅读原文
-
-没有期待了，上海喜提全球最佳的天文馆！
-今天是上海天文馆开馆的第三天。三天前的那周，大量的媒体朋友来找我这位“ennead 老熟人”约稿获取最“独家”的信息和报导。但我全部回绝了，并不是不给面子，只是这项目太漫长，一时之间不知从何写起……
-世界最大天文馆开幕，上海离外太空更近一步
-上海天文馆概念动画 - enneadhttps://www.zhihu.com/video/1400838781403090944
-一位建筑师，能有多少个八年？
-2014 年上海天文馆中标时，我还是纽约的小顾问；之前在国际事务所工作的时候，也参与过不少这类文化地标项目的竞赛和深化。但了解这个方案后，还是被设计逻辑性和形式语言的美感契合度震撼到了。一年后，因为这个项目扩展与主创 Thomas&Grace 的人格魅力加持下，我加入 ennead 事务所。
-实景拍摄 © ennead/ 存在
-自项目 2013 年竞赛启动，2014 年中标到 2021 年开馆，一晃过去八年。作为最初参与竞标的建筑师团队，与这座“地标”建筑长达八年的磨砺。翻看过往文本不经感叹，做建筑师是重大的人生承诺，人生能有多少个八年去完成一座重大项目？
-上海天文馆最后一次概念竞标方案汇报文本
-为什么建在离市区那么远的临港新城？
-世界上最大的天文馆——上海天文馆，坐落于临港新城滴水湖畔；作为上海科技馆分馆，总规划用地面积 5.86h㎡，占地约 3.8 万㎡（相当于 5.5 个标准足球场大小）。
-实景拍摄 © ennead/ 存在
-当时选址考虑到两个较为重要的问题：
-
-寸土寸金的上海市中心，难以整块拨出如此巨大的用地来支持全世界最大的天文馆建设。因此考虑正在建设开发的临港新城；
-市中心的办公与商业建设量密集，人造光较强，对天文观测有一定的影响。因此需要选择类…]]></summary>
-        <author>
-            <name>知乎日报</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[瞎扯 · 如何正确地吐槽]]></title>
-        <id>https://daily.zhihu.com/story/9738402</id>
-        <link href="https://daily.zhihu.com/story/9738402"/>
-        <updated>2021-07-22T23:06:20.000Z</updated>
-        <summary type="html"><![CDATA[哪个瞬间你突然觉得读书真没用？
-
-Conway Young，知乎不是庸者的百度。
-阅读原文
-
-阅读原文
-
-郭德纲在台上被泼水会怎么样？
-
-TraHeart，一场竹节虫的美梦。
-阅读原文
-
-谢谢您呐，我家里头热得快炸了
-_(:_」∠)_
-阅读原文
-
-你见过最丑的猫是怎样的？
-
-一只小牌九，这位姑娘，可否与小生共推牌九啊？( •̀∀•́ )
-阅读原文
-
-这个回头，谁遭得住？
-
-
-
-阅读原文
-
-女生不会接吻怎么办呢？
-
-匿名用户
-阅读原文
-
-买一桶的星球杯，丢掉勺子。
-阅读原文
-
-如何看待警方通报吴亦凡事件：一男子冒充涉事双方对吴与都二人进行诈骗？有哪些信息值得关注？
-
-编辑部小李，知乎第一大号背后的难人
-阅读原文
-
-朝阳警方提醒您：一切以转账为目的的聊天都是诈骗。
-阅读原文]]></summary>
-        <author>
-            <name>知乎日报</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[CIA director says he is escalating efforts to solve 'Havana Syndrome']]></title>
-        <id>https://www.npr.org/2021/07/22/1013402176/cia-director-says-he-is-escalating-efforts-to-solve-havana-syndrome-mystery</id>
-        <link href="https://www.npr.org/2021/07/22/1013402176/cia-director-says-he-is-escalating-efforts-to-solve-havana-syndrome-mystery"/>
-        <updated>2021-07-22T22:38:58.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[The engineer preserving the last analog motion graphics machine (2017) [video]]]></title>
-        <id>https://www.youtube.com/watch?v=0wxc3mKqKTk</id>
-        <link href="https://www.youtube.com/watch?v=0wxc3mKqKTk"/>
-        <updated>2021-07-22T21:31:49.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Mitchell Hashimoto takes on a new individual contributor role at HashiCorp]]></title>
-        <id>https://www.hashicorp.com/blog/mitchell-s-new-role-at-hashicorp</id>
-        <link href="https://www.hashicorp.com/blog/mitchell-s-new-role-at-hashicorp"/>
-        <updated>2021-07-22T21:03:54.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[EasyPost (YC S13) is hiring to build the logistics platform for ecommerce]]></title>
-        <id>https://www.easypost.com/careers</id>
-        <link href="https://www.easypost.com/careers"/>
-        <updated>2021-07-22T21:00:09.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[iDOS 2 will be gone soon]]></title>
-        <id>https://litchie.com/2021/07/idos2-will-be-gone</id>
-        <link href="https://litchie.com/2021/07/idos2-will-be-gone"/>
-        <updated>2021-07-22T20:55:58.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Translating Jabberwocky into Japanese]]></title>
-        <id>https://j-entranslations.com/two-japanese-jabberwocky-poems/</id>
-        <link href="https://j-entranslations.com/two-japanese-jabberwocky-poems/"/>
-        <updated>2021-07-22T20:45:04.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[The Tyranny of Spreadsheets]]></title>
-        <id>https://timharford.com/2021/07/the-tyranny-of-spreadsheets/</id>
-        <link href="https://timharford.com/2021/07/the-tyranny-of-spreadsheets/"/>
-        <updated>2021-07-22T20:38:28.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[California sues Activision Blizzard over unequal pay, sexual harassment]]></title>
-        <id>https://www.npr.org/2021/07/22/1019293032/activision-blizzard-lawsuit-unequal-pay-sexual-harassment-video-games</id>
-        <link href="https://www.npr.org/2021/07/22/1019293032/activision-blizzard-lawsuit-unequal-pay-sexual-harassment-video-games"/>
-        <updated>2021-07-22T19:01:35.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Google broke a conditional statement that verifies passwords on Chrome OS]]></title>
-        <id>https://arstechnica.com/gadgets/2021/07/google-pushed-a-one-character-typo-to-production-bricking-chrome-os-devices/</id>
-        <link href="https://arstechnica.com/gadgets/2021/07/google-pushed-a-one-character-typo-to-production-bricking-chrome-os-devices/"/>
-        <updated>2021-07-22T18:32:58.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Migrating Facebook to MySQL 8.0]]></title>
-        <id>https://engineering.fb.com/2021/07/22/data-infrastructure/mysql/</id>
-        <link href="https://engineering.fb.com/2021/07/22/data-infrastructure/mysql/"/>
-        <updated>2021-07-22T17:54:39.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Show HN: Alias – Google Alerts for your favorite people]]></title>
-        <id>http://alias.co?ref=hn</id>
-        <link href="http://alias.co?ref=hn"/>
-        <updated>2021-07-22T17:38:17.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Autonomy founder Mike Lynch can be extradited to US]]></title>
-        <id>https://www.bbc.com/news/business-57933718</id>
-        <link href="https://www.bbc.com/news/business-57933718"/>
-        <updated>2021-07-22T16:25:48.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[AlphaFold Protein Structure Database]]></title>
-        <id>https://alphafold.ebi.ac.uk/</id>
-        <link href="https://alphafold.ebi.ac.uk/"/>
-        <updated>2021-07-22T15:15:10.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Starlink review, four months in]]></title>
-        <id>https://www.jeffgeerling.com/blog/2021/spacexs-starlink-review-four-months</id>
-        <link href="https://www.jeffgeerling.com/blog/2021/spacexs-starlink-review-four-months"/>
-        <updated>2021-07-22T14:05:16.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Launch HN: hotglue (YC S21) – Easy user-facing SaaS integrations]]></title>
-        <id>https://news.ycombinator.com/item?id=27918900</id>
-        <link href="https://news.ycombinator.com/item?id=27918900"/>
-        <updated>2021-07-22T13:57:00.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[RVVM – RISC-V Virtual Machine]]></title>
-        <id>https://github.com/lekkit/rvvm</id>
-        <link href="https://github.com/lekkit/rvvm"/>
-        <updated>2021-07-22T13:44:16.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Show HN: Sell.app – A simple way to sell digital goods]]></title>
-        <id>https://sell.app</id>
-        <link href="https://sell.app"/>
-        <updated>2021-07-22T12:49:02.000Z</updated>
         <summary type="html"><![CDATA[Comments]]></summary>
         <author>
             <name>Hacker News</name>

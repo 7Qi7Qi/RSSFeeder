@@ -6,6 +6,56 @@
       "siteUrl": "https://news-at.zhihu.com/api/4/stories/latest?client=0",
       "articles": [
         {
+          "id": "https://daily.zhihu.com/story/9739429",
+          "author": null,
+          "description": "Phosphates，北京大学 化学+物理+围棋+毽球; UCSD Ph.D.\n阅读原文\n\n太长不看版：\n\n选用特定的材质——长余辉材料（夜明珠），可以使得夜晚照样能发光；还记得本科时，这就是我们无机化学实验中的一节。无机化学实验是分批做的，我和一个室友先做，而另外两个室友下周才做。当我们做完这个实验时，老师让每人留下一些给他们做光谱测试，剩下的可以自己带回宿舍。于是我们就将样品装在透明的样品袋里，然后晚上睡觉前我们就扔在桌上后，上床睡觉了。结果有个还没做这个实验的室友，半夜起来上厕所时，被我们桌上的绿光给吓到了。\n但是上述方法并不是直接储存的光子，而是电子被激发到了 trapped state，之后再逐渐发光释放能量。——相当于是将现货转化为了期货。\n实际上，光子是粒子数不守恒的，会实时与容器壁发生相互作用，所以单纯的光子是没法被储存的。但是，可以储存含有光子成分的准粒子——比如 Polariton；或者像 1.中所说的方法，转化成电子的能量。关于 3. 的具体讨论可见下面这个回答。\n\n光子无法被储存，因为光子数不守恒\n光子这玩意儿，在统计力学中有个与其他物质非常不同的性质——光子的化学势为 0，所以光子数不守恒！\n这是因为光子会和容器壁发生相互作用，下面举一个例子。比如容器壁中肯定会有电子，光子可以激发电子到一个更高的能级从而被吸收；出于高能级的电子也可以跃迁回来从而释放出光子。另外，一个较高能量的光子可以激发电子从基态 0 到激发态 3，但是从激发态 3 跃迁回来时，可能释放 1 个光子（直接 3->0），也可能释放 2 个光子（3->2->0），也可能是 3 个或者 4 个。所以显然光子数是不会守恒的。因此，绝对 100%反射率的容器壁是不可能存在的，因为一定会与光子发生相互作用的。\n对于粒子数守恒并且存在粒子间作用力的物质，你总能通过各种方式试图获得凝聚态——你可以通过加压以减小粒子间距离，并且降温以降低粒子的热运动使得吸引力呈主导，最终你能获得凝聚态。但是对于光子这种粒子数不守恒的，如果你加压的话，容器壁就吸收了光子，从而不会剩下多少了。\n可能有些人会希望通过磁约束来避免容器壁与光子的直接接触。但是很遗憾，光子不带电，所以无法使用磁约束。\n什么是长余辉材料？夜明珠是如何发光的？\n长余辉属于一种光致发光。我们一般听说的光致发光包括荧光和磷光。\n所谓荧光，当分子吸收入射光的能量后，其中的电子从基态\n\n（假设是单线态，绝大多数情况）被激发到了单线态激发态\n\n，随后经由非常快的（短于\n\n秒）内转换过程无辐射跃迁至能量稍低的单线态激发态\n\n，最后再释放光子回到基态\n\n。通常荧光的持续时间很短，因为每一个过程都是瞬间完成的。一旦光源停止，几乎瞬间停止发光[1]。\n\n所谓磷光，如果当激发到单线态激发态\n\n，并内转换到\n\n后，如果此时发生系间跨越（intersystem crossing）过程无辐射跃迁至能量较低且具有不同自旋多重度（一般为三线态）的激发态\n\n，随后内转换到\n\n，最后释放光子回到基态\n\n。随后从\n\n回到\n\n在热力学上是有利的，但是由于这是从三线态到单线态的转变，在跃迁选择规则上是禁戒的，所以需要较长的时间来完成——一般可以长至数小时。所以如果你有磷光材料的话，也是可以用来延迟发光的[2]。\n\n（在以上的讨论中，\n\n和\n\n的存在不是必需的，如果不方便理解的话可以自行略去）\n而长余辉材料与上述两种都不太相同——夜明珠就是用的这种发光方式。根据维基百科介绍，目前长余辉材料的发光机理尚未完全研究透彻，但是我们知道的是，它其中涉及到电子的 trapped state，类似于 energy trap。最后发光的方式类似于荧光过程，但是延迟时间又类似于磷光过程[3]\n\n比如在一种长余辉材料\n\n中[4]，就是\n\n的电子先被激发，然后能量被转移给\n\n使得其电子处于 trapped state。之后就会逐渐释放能量从而发光——在黑夜之中能清晰可见。但是此时你并不是将光子直接储存在了容器之中，而是将其转化成了电子的能量，之后再缓慢释放出来——相当于是将现货转化成了期货。\n\n还记得这就是北京大学化学学院无机化学实验课上的一门实验，当年我们也制备了这个材料。无机化学实验是分批做的，我和一个室友先做，而另外两个室友下一周才做。我们做完这个实验，老师让每人留下一些给他们做光谱测试，剩下的可以自己带回去。于是我们的样品就装在样品袋里，然后睡觉前我们就扔在桌上，然后上床睡觉了。结果有个还没做这个实验的室友，半夜起来上厕所时，被我们桌上的绿光给吓到了。\n阅读原文",
+          "link": "https://daily.zhihu.com/story/9739429",
+          "publishedOn": "2021-08-21T23:07:59.000Z",
+          "wordCount": null,
+          "title": "我白天把光装进袋子里，为什么晚上打开袋子里面的光就不见了？",
+          "itunes": {}
+        },
+        {
+          "id": "https://daily.zhihu.com/story/9739416",
+          "author": null,
+          "description": "耗子领袖\n阅读原文\n\n我觉得这个问题不能单纯地从心理学的角度出发去解读，既然这个现象是较为普遍存在的[1]，而不是因人而异，那必然是存在进化和神经上的基础。\n（为了保持阅读的流畅性，我认为比较基础性的知识我不再详细解释，而是会放到注释里。）\n我个人认为，应该是负面心境导致脑内五羟色胺水平紊乱（一般是降低）[2]，引发强迫样思维 / 回忆[3]，忍不住一遍又一遍体验当初那不开心的感觉。\n\n最最极端的例子就是PTSD（创伤后应激障碍）了，它最典型症状就是创伤性再体验症状[4]。\n所以这个问题就被我狡猾地升级成“为什么经历应激创伤事件后会出现创伤性再体验症状”，就好像做人就要喝最烈的酒，做研究，当然就要上最猛的范式（手动狗头）。\n例如，PTSD 患者伴随着杏仁核五羟色胺受体可利用性降低，这可能导致放大对负面情绪的反应[5][6]。\nHC 是健康人对照组，就是上面蓝色柱子\n而另一个研究发现，降低PTSD 患者的五羟色胺水平会加重患者面对创伤相关刺激的负面情绪反应，而用五羟色胺再摄取抑制剂（SSRIs，提高五羟色胺水平）可以抑制PTSD 症状[7]。\n写到这里，我发现用 PTSD 来回答这个问题还是不够贴切（但我也舍不得删...），一个更好的模型是抑郁症，临床上发现抑郁症和强迫症经常出现共病的情况[8][9][10][11]，即得了一个也容易得另一个，例如抑郁症患者经常伴随着强迫性思维（obsessional thinking），而导致他们共病的基础也被认为是五羟色胺系统紊乱。\n所以我的结论就是，人们面对负性事件时，大脑的情绪系统做出反应，使我们体内的五羟色胺水平发生了变化，这种变化有可能引发强迫性回忆和负性情绪放大。\n尽管论证的过程不是特别严谨，但我觉得说得通，但注意上述只是我个人整理现有文献的综合看法，并非学界下的结论。\n为什么要进化出这种生理机制呢？我猜可能是为了让动物更好地记住教训和负面刺激，让你回避危险并思考解决方案，并预演下次再碰到这种事时的情景（所以会不断回放），以提高动物的生存率吧。\n阅读原文",
+          "link": "https://daily.zhihu.com/story/9739416",
+          "publishedOn": "2021-08-21T23:07:53.000Z",
+          "wordCount": null,
+          "title": "为什么人们愿意沉浸在负面情绪中？",
+          "itunes": {}
+        },
+        {
+          "id": "https://daily.zhihu.com/story/9739383",
+          "author": null,
+          "description": "赵泠，遗迹是曾经讴歌繁荣的生命留下的缺页的梦。\n阅读原文\n\n在播放的内容波长、亮度、刷新率适当的时候，视力不太差的动物可以观看影视作品；在播放的声音频率、响度适当的时候，听力不太差的动物可以听到音频。“能不能理解”“有无乐趣可言”在子非鱼的层面上无法判断，不深究这个的话，看起来动物可以根据互动视频做出人们预期的部分反应，至少能对视频达到和对周围的事物相似的理解程度——原本就看不懂的东西，例如偏微分方程，写在纸上和显示在屏幕上都不懂。\n看起来，黑猩猩、猫狗之类可以从看视频和 / 或听音频中获得一定的乐趣。人们并没有给海豚和章鱼看过什么正经玩意，但章鱼跟水族馆里的摆设玩得看起来不错，这包括而不限于砸水箱、喷水来短路水箱上方的灯。\n2013 年的一项研究表明，狗可以根据视觉线索选出屏幕上的狗的图像并将它们分组，狗辨认屏幕上的狗的能力高于辨认非狗之物[1]——这可能是长期演化的繁殖相关识别能力。在音频方面，狗对电视发出的狗的声音、友好的人声、玩具的响声做出的反应多于一般杂音。狗的品种可能会影响它对电视的反应：嗅觉敏锐的猎犬对视觉效果不那么感兴趣，而牧羊犬喜欢看到移动的物体。\n历史上，低帧率的显像管电视的图像被狗当做简单的运动或光线闪烁。二十一世纪初，在 HDTV 上出现了针对狗的电视频道，称为 DogTV[2]，播放面向狗的高帧率视频信号（狗眼适合的帧率约 75 赫兹），按照狗能识别的色彩（黄色、蓝色及其组合）着色，包含狗耳能听到的高频声音，节目内容有放松（例如狗在草地上伸懒腰）、刺激（例如狗在南加州冲浪）、生活（狗对响起的门铃做出反应并服从主人的命令）等，每段节目长 3~6 分钟以适应狗的观看习惯。\n猫也经常在人家里看电视，表现出可以识别电视屏幕上的不同轮廓和动作并对电视发出的声音做出反应。猫眼适合的频率约 70~80 赫兹，并对红色识别能力较弱。猫有时会试图攻击电视上的虫子和老鼠。\n你可以预期黑猩猩喜欢看黑猩猩生活相关的节目，其余动物大抵也是关注同物种胜过对它们来说“不知所云”的人类肥皂剧。\n\n大猩猩 Koko 能对人类影视节目做出一定的反应。\n\n大猩猩 Koko 用手语解释看到的电影https://www.zhihu.com/video/1409966164039131136\n\n在斯图加特动物园进行的实验证明，播放倭黑猩猩打架的视频会让观看视频的倭黑猩猩感到紧张，播放倭黑猩猩进食、玩耍、交配的视频则无此影响。\n\n他人如何获得乐趣、有无乐趣可言，在子非鱼的层面上同样无法判断。不深究这个的话，人们通常会对看到的东西进行模式识别、匹配、预测并以镜像神经元等触发共情，在看到符合预期的内容时触发奖励机制，在看到严重不符合预期的内容时触发战斗反应和 / 或镇痛机制（并随后因并无真正的危险而出现回调），诸如此类。视频·音频在你那极度复杂的大脑皮层神经连接网络里激起的更多反应是目前不能精确解析的。\n节肢动物基于逐行扫描的复眼在观看显像管电视时获得的图像，根据帧率的差异，可能跟节目内容出现极大的偏差。\n阅读原文",
+          "link": "https://daily.zhihu.com/story/9739383",
+          "publishedOn": "2021-08-21T23:07:46.000Z",
+          "wordCount": null,
+          "title": "动物能通过观看影视作品获得乐趣吗？动物喜爱观看的影视作品可能是什么样的？",
+          "itunes": {}
+        },
+        {
+          "id": "https://daily.zhihu.com/story/9739393",
+          "author": null,
+          "description": "Calvin，一枚聪明又傲娇的硬件工程师！\n阅读原文\n\n前面有几位职场专家讲的都已经很全面了， 我从个人真实经历和在职员工的角度提供点看法。\n我在秋招面试时，真的被主管老板问过这个问题！\n我是 16 年硕士毕业参加的思科中国研发中心硬件设计工程师的秋招，不像互联网、华为这种大厂一年招几百个人，思科在华研发中心不大，一年应届生也就招几十个人。 具体到某一个组可能就招一两个。\n主管老板面试是最后一轮，之前已经经历了简历海选、基础笔试、英语口语面试。因为我是跨行业找工作，当时硬件笔试效果一般，英语口语尚可。主管老板进来时我都不知道这个是经理，只是以为面试官的另外一个同事，所以没有太在意。\n当时他看了看我简历，特意问了我同学毕业后的求学情况。 我如实回答，本科同学大概 1/3 出国，1/3 读研， 1/3 工作， 而研究生同学大部分就业了，继续升学的很少。 然后我发现他特意问了下我同学中出国的去了什么地方，当时感觉只是闲聊。 完了最后一个问题就是问我职业规划。\n我之前准备过这个问题， 就直接说了一个五年规划，大概是第一年尽快适应公司业务逻辑，掌握工作必备的基础知识。 三年之内把工作具体内容都摸过一遍，能够独立承担小型项目，并且在前三年内都加强自我学习。 五年之内有自己精通的项目，能够独立承担中高难度项目。\n主管不置可否，只是点点头， 然后问我有没有出国计划？ 我当时很纳闷，只是笑着摇摇头说没有。 \n... \n后来入职两三年后聊起这个事情我才知道个中原因：硬件设计这个行业，培养周期长，可能一个优秀的工程师培养好就需要 5 年， 且成熟行业需求和供给都低。 如果招一个心性不定的人可能没过两三年人就跳槽走了，那样培养的精力就白费了。 另一方面，我们主管之前培养过几个应届生，但是最后总感觉软实力方面差点意思，所以这次校招想招一个学校好点，综合素质不错的人培养一下，而是不是专业非常对口对他来…",
+          "link": "https://daily.zhihu.com/story/9739393",
+          "publishedOn": "2021-08-21T23:07:42.000Z",
+          "wordCount": null,
+          "title": "为何面试时都会问你的职业规划呢？该如何回答呢？",
+          "itunes": {}
+        },
+        {
+          "id": "https://daily.zhihu.com/story/9739438",
+          "author": null,
+          "description": "Alexandria，THU生物狗\n阅读原文\n\n先说结论，可以，而且一定可以\n实际上，这个问题的本质是一个拓扑学问题，而 MC 的地图生成机制决定了这个问题的答案\n这个问题用更抽象的概念来总结，可以提炼为一个更明确的问题：\n一个欧氏平面上有且只有两种颜色，任意一个完整颜色边界所对应的曲线是否封闭？\n奶牛的黑白花纹这是该问题环境下的一个经典情景——在我们忽略掉那只左下角奶牛和她的牛奶的前提下\n对应到 MC 上，首先我们知道，一个自然生成的 MC 地图中的实体方块有固体方块和液体方块两种；因此地表方块也只有两种形态，固体和液体。\n显然，在传统意义上固体方块为陆地，液体方块为海洋。至于河流，湖泊和水洼，它和海洋在拓扑学上没有本质上的区别，除了大小和形状。比如连通海洋的河流可以看作海洋的延伸，两个海洋被一条跨越陆地的河流所联通则可以看作一个海洋，湖泊和水洼则可以看作微型的海洋。还有一个特例是岩浆池，将其算作液体看待\n但是地下暗河不行，作为一个三维概念它不在地表，因此在这个二维问题中不参与讨论\n此外，尽管 MC 的地图有高山和峡谷，但总体而言是一张无限大的平面，也就是欧氏平面，而不是像地球一样的球面或者带洞的甜甜圈形状\n因此我们将一张 MC 地图的所有地表方块投影到欧氏平面上。至于水边的树冠和伸出水面的悬崖，可以在这个过程中忽略。（尽管算上它们也不会对结果产生本质影响）\n于是就产生了上面这种奶牛图。唯一的问题在于，我们需要用哪种颜色代表陆地？哪种颜色代表海洋？\n其实都可以，因为我们研究的是色块的边界而不是色块本身，陆地和海洋的填色不会改变边界的形状，因此不会影响到问题的实质\n那么，如果是色块边界必是闭合曲线，则一定可以环游海洋回到原点。如果存在不是闭合曲线的情况，则未必可以返回。\n显然，边界的意义是区分两个色块。那么当边界两侧的两种色块的面积均有限的时候，这个边界必然是封闭曲线\n比如…",
+          "link": "https://daily.zhihu.com/story/9739438",
+          "publishedOn": "2021-08-21T23:07:38.000Z",
+          "wordCount": null,
+          "title": "在我的世界中一直沿着海岸线走，能否走回原地？",
+          "itunes": {}
+        },
+        {
           "id": "https://daily.zhihu.com/story/9739425",
           "author": null,
           "description": "瞻云，科普人，公众号「瞻云」\n阅读原文\n\n大脑的演化就是一部波澜壮阔的史诗。\n你这颗头颅有多发达，祖先就有多辛酸。\n5.4 亿年前，当我们的祖先还是冠状皱囊动物这种原始后口动物时。\n\n节肢动物在链状神经系统的基础上，率先发展出了较为复杂的大脑。\n不仅缔造了寒武纪泛甲壳类动物的繁荣，也诞生了海洋的第一任霸主——奇虾。\n\n作为节肢动物，相对于环节动物（蚯蚓等）的链状神经系统，奇虾头部的 3 对神经节，愈合成了前脑、中脑，以及后脑。\n\n早先研究以为奇虾是叶足动物，后来发现它与真节肢动物的关系更近。\n发达的前脑控制着奇虾的行为，以及一对发达的眼睛。它们的眼睛已经非常接近现代昆虫的复眼，单个眼睛拥有 16000 个晶状体，比苍蝇的 5 倍还多一些。\n\n非凡的视力，助力它们俯视一切猎物。\n\n中脑掌管奇虾的触觉，两根触角上布满了倒钩。\n后脑发出的神经控制着下唇和消化管。\n\n寒武纪时期节肢动物的神经系统，和现代甲壳类动物只是大同小异：\n5.2 亿年前的延长抚仙湖虫（左）；现代甲壳类神经系统（右）\n虽然后来的研究证明奇虾的猎物可能并不是三叶虫，但他们吃的微生物，以及泥里的虫状生物，可能正是我们的远祖近亲。\n节肢动物空前发达的大脑，相对于前寒武纪的生物，无异于降维打击。\n前寒武纪时代的大量水母类生物，仅仅只是网状神经系统，甚至连大脑都没有。刺激某一个点，全身都会出现神经反射。\n\n随着神经系统的集中，扁形虫有了中枢神经，出现了原始大脑，但仅仅只有两根神经索。具有的眼点，也只有最基本的感光能力。\n虽然环节动物率先有了链状神经系统，但相比节肢动物也原始很多，没有足够发达的运动器官和眼睛。\n演化出节肢动物时，发达的大脑才足以支持足够发达的运动器官和感觉器官。\n人类的远祖冠状皱囊动物，神经系统应该比扁形虫神经更复杂，但又比蚯蚓神经更简单。或许和线虫神经系统复杂度相当，由几条神经索构成。\n随着不断演化，神…",
@@ -1584,66 +1634,6 @@
           "wordCount": null,
           "title": "在中国都发现过哪些「独特的古生物」?",
           "itunes": {}
-        },
-        {
-          "id": "https://daily.zhihu.com/story/9738392",
-          "author": null,
-          "description": "许标-心理咨询师，提供当面和网络咨询，预约公众号psyche-space\n阅读原文\n\n这是个好问题。我的回答依问题本身展开，不涉明星睡粉事件。\n我认为这个问题，要看从何种程度谈论。往深了，“自愿”涉及到“自由意志”，可上升到哲学、神经科学高度都存在极大分歧。\n如果按照某些哲学、神经科学观点，否定人的自由意志，也就不存在“自愿”一说——不论何种情形，双方关系是否存在强弱势，都不存在“自愿”。\n如果抛开这种“自由意志”的高度，降低些高度，从心理学角度看，也存在“斯德哥尔摩综合征（人质情结）”——指被害者对于犯罪者产生情感，甚至反过来帮助犯罪者，这个情感造成被害者对加害者产生好感、依赖性、甚至协助加害者。\n产生“斯德哥尔摩综合征”的人质，因好感、依赖性等帮助犯罪者的行为，并非来自犯罪者直接胁迫，可以说是人质的“自愿行为”。\n可这种被挟持、面临生命危险的特殊情境下，人的身心状态显著异于常态。平时决策、计划等维持日常生活的偏理智系统，这时候让位于求生存的本能系统。\n看似自愿行为，实际已经被本能求生系统主导，不够“自愿”——自主性，已经被情境极大过滤，受情境影响，这时候的自主性，远低于平时的自主性。\n看似自愿，实非自愿。\n简单来说，意识已经被潜意识极大左右。\n被潜意识左右的意识，算“自愿”吗？\n这又回到“自愿”的定义了。\n如果把“自觉”——自己觉得是——定义自愿，被情境影响，被潜意识左右的意识，也算自愿；\n如果认为潜意识左右的意识，失去自由选择，则不算自愿。\n可人的心理，必然包含情境影响的部分，无法撇开情境单独谈论。\n当双方关系在权力、地位、信息等方面，存在强弱势差别，强弱势身份差异带来的情境影响，已经无形渗透在双方关系、心理中，无法剥离这层影响，谈论所谓的“纯粹自愿”。\n譬如像医患、师生、咨访（心理咨询师 - 来访者）等关系中，为何避免亲密关系为宜？\n因为这类关系中，先验存在内置的不平等——不论如何避免，都必然存在。\n这种内置的不平等，无形中影响关系的建立，自愿一说，无从谈起。\n不少这类关系的强奸行为，法律上用“诱奸”区分，表明受害者存在一定程度自愿。按照如上自愿理解，就像产生“斯德哥尔摩综合征”的人质，在不平等关系情境中的弱势方，“此自愿非彼自愿”，自主程度远低于平时，不算真正的自愿。\n大家如果接触一些社会心理学知识，便会知道，情境对人影响的重要性，被极大低估。\n如同许多人觉得，如果回到二战时期，自己不会像德国或日本士兵，做出惨无人道的事情。可是近几十年内的斯坦福监狱实验、从众实验、旁观者效应实验等，被试均是受过高等教育者，却做出自认为不会做的残忍、冷漠、不理智等行为。\n不要低估情境影响，不要高估意志作用。\n强弱势身份差异本身，能够带来足够多的无形影响，造成不存在“纯粹自愿”。\n阅读原文",
-          "link": "https://daily.zhihu.com/story/9738392",
-          "publishedOn": "2021-07-22T23:06:52.000Z",
-          "wordCount": null,
-          "title": "如何判断「双方自愿」中弱势一方是真的自愿，而不是因为社会结构层级更低，信息差距导致的自以为自愿？",
-          "itunes": {}
-        },
-        {
-          "id": "https://daily.zhihu.com/story/9738371",
-          "author": null,
-          "description": "綾音Ayane，三坑少女/妆娘/中国古代史/汉语言文学/女性向消费数码\n阅读原文\n\n日常跑题系列。\n我想说的是托尔金三部曲。\n很早很早之前，我被《指环王》电影的小叶子深深地吸引。又过了几年，被小叶子他爸爸深深吸引。\n这就让我在之后的好几年里，一个是开始追星，追的是李佩斯。\n一个就是，开始喜欢托尔金，开始去补关于托尔金笔下的这个世界的一切。\n因为对托尔金体系的热爱，还有对于 wow 的历史的热爱——大家都知道，它们的许多设定起源是北欧神话。\n也因此，前两年我写了一篇关于北欧神话的文章。\n北欧神话如今只有留下的几个残篇，流传下来的故事甚至不能成为一个体系。\n但是，因为种种原因，北欧神话的设定，在现代的各种文学影视游戏等等作品里面是如此的常见。就如同北欧神话本身所说的，世界会毁灭并且重生。\n世界会不会毁灭还是未知，但是北欧神话本身真的毁灭，并且重生了。\n\n《魔戒》是著名英国作家、语言学家、牛津大学教授约翰·罗纳德·瑞尔·托尔金创作的小说。它另一个更广为人知的名字是《指环王》。也许是因为《指环王》和《霍比特人》系列电影的大火，这一系列的故事都非常脍炙人口。\n这个系列的作品除了《魔戒》以外，还有《霍比特人》，《精灵宝钻》\n（《精灵宝钻》之前因为版权问题未能出版，但是随着作者逝世 70 周年，这本书也终于得以出版了）\n很多人都说，托尔金为我们展现了一个新的世界，他开创了奇幻小说的先河，现如今许许多多的小说，游戏，动漫，影视作品都来源于托尔金的设定。\n那么，大家可知道这些设定起源于哪里呢。矮人，侏儒与精灵，世界树和人类的起源。\n这一切的一切，其实来自于一段失落的神话，它很早之前就已经被毁掉了，典籍被烧掉，神像被推入深渊，连那些故事也都变得残破，不再有人口口相传。\n可是，它竟然如同它自己预言的那般，在现代以另一种形式深入人心，它的故事和精神被我们所熟知，只是我们并不知道她的名字。\n这便是北…",
-          "link": "https://daily.zhihu.com/story/9738371",
-          "publishedOn": "2021-07-22T23:06:43.000Z",
-          "wordCount": null,
-          "title": "有哪些对你影响很深的书籍？",
-          "itunes": {}
-        },
-        {
-          "id": "https://daily.zhihu.com/story/9738362",
-          "author": null,
-          "description": "ag獭，好奇而无用的獭獭\n阅读原文\n\n八大菜系这一说法，历史不会超过 50 年，至于各菜系本身的口味、烹饪手法区别，也只是在近几百年来才出现的。比如中餐中常见的炒菜，要等到宋代才开始普及，流行于各地的辣味菜肴，也要等到美洲辣椒传入并广泛种植后才能普及。\n“菜系”的出现\n菜系一词的前身，是清末民国时所说的“帮口”。当时，由于餐饮业的发展，加之各地菜式、口味的区别，人们借鉴帮口的概念，以本帮菜、杭帮菜、盐帮菜、苏帮菜等称呼，区分不同的饮食流派。新中国成立后，为了消除帮口称呼中的封建色彩，将其改称为菜系。据说菜系一词，是来自五六十年代分管财贸活动的姚依林同志。\n90 年代初的菜系分类，陈光新，《菜系的认定》，《四川烹饪》1992 年第 1 期\n1980 年 6 月 20 日，《人民日报》第四版“小常识”栏目刊登了由汪绍铨撰写的《我国的八大菜系》，这可能是文献中关于八大菜系的最早记录。不过当时，菜系一词才刚开始流行，所以四大菜系、五大菜系、八大菜系、十大菜系等等说法并存。甚至八大菜系本身包含哪些菜系，都没有形成定论。至于哪个菜系排第一，更是无从考证，大抵只是人们的口水仗罢了。\n*.类似的还有某某方言差点成为普通话之类的流言。\n为何八大菜系大多都在中国南方？\n目前比较公认的八大菜系，只有鲁菜是纯粹的北方菜系，其余菜系中，淮扬菜诞生于长江以北，介于南北之间，大多数菜系，确实都在中国南方，这是为什么呢？\n口味的形成，和族群、方言、文化的形成过程类似。古时交通不便，人口流动比较少见，受气候、地理、物产、历史、宗教和技术发展的影响，各地逐渐发展出了不同的烹饪传统，按现在常见的说法，就可以称之为菜系。\n鲁菜善用爆、烧、炸、炒，口味偏重，图为鲁菜之九转大肠\n举例来说，中国西南地区气候温暖潮湿，远离海洋，盐比较昂贵，因此当辣椒传入中国后，很快就爱上了吃辣。辛辣的辣椒可以排解湿气，也可增加风味，弥补…",
-          "link": "https://daily.zhihu.com/story/9738362",
-          "publishedOn": "2021-07-22T23:06:38.000Z",
-          "wordCount": null,
-          "title": "为什么八大菜系中除了鲁菜之外都在中国的南方？",
-          "itunes": {}
-        },
-        {
-          "id": "https://daily.zhihu.com/story/9738381",
-          "author": null,
-          "description": "八只包子，有只猫，日系家居爱好者，猫叫伊吹你懂的，很高兴遇见你呀✨\n阅读原文\n\n猫粮越大包性价比越高！可是...\n\n大包猫粮要怎么储存？\n怎么判断猫粮受潮变质？\n猫吃坏肚子得不偿失？\n\n先说简单粗暴的结论，最直接看猫粮有没有受潮的方法，是直接放嘴里嚼看脆不脆。\n包子翻了豆瓣，小红书大量铲屎官的经验，以及自身实际情况，按照储粮工具的成本从低到高，吐血整理了几个靠谱储存办法！\n一、大夹子和干燥剂\n图：自家已经吃完的 GO 猫粮，大袋子本身有密封条，这样保存了 5 个月没有坏。\n存啥：已开封的一整包猫粮。\n优点：简单粗暴 0 成本，猫粮袋子本身设计的就是符合保存的标准的，直接把干燥剂丢进去，大夹子夹稳密封好就 ok。\n缺点：仅限于南方地区非潮湿季节、非混粮喂养家庭暂时性保存。到后期我在猫粮袋附近看见了米虫，好在里面没有影响，所以这法子不适用于长期保存哦！\n 二、发酵桶\n图：豆瓣网友把一整袋猫粮，连带着包装塞进了 25L 的酵素桶里\n存啥：已开封（未开封）的一整包猫粮\n优势：食品级塑料，防潮性最佳。发酵要求的就是完全密封环境，所以酵素桶的密封性超好！而且猫粮直接整包塞进去，网友血泪教训是宁愿买大也别买小，买 20L 的 5kg 粮连包装塞进去拿出来都很困难~\n劣势：取的时候有点麻烦，有点占地方，样子有点点点一言难尽，但我也准备入手了～\n三、真空袋\n图：小红书网友的拆包储粮方式图：我自己的爱肯拿猫粮，爱肯拿包装没有密封条，必须要想办法存放好。 图：我自己的渴望猫粮，大包装也没有密封条，又整包塞进了真空袋子里，但我发现确实会漏气..\n存啥：已开封，没吃完的猫粮\n优势：简单粗暴，密封性 ok，不占地方。我采用的是一整袋猫粮塞进去去，买的是平常装被子衣服的小号真空袋，再用吸尘机一抽就完事了。\n劣势：运气不好会漏气，要挑质量好的！但我整包放进去，所以还能再继续抽真空补救，感觉比第一种办法安心。\n 四、真空机\n图：小红书网友\n存啥：所有猫粮\n优点：防潮性是最好的，看起来就很靠谱。真空防潮，分装好后开一袋吃一袋，真空袋什么尺寸都有，网上很多心灵手巧的小仙女都是这样保存哒。\n缺点：太麻烦，不适用于懒癌，要反复购买真空袋分装，金钱和时间成本比较高。看下来...非常不适合我....\n But 不推荐：简单密封袋\n\n存啥：不买就没有保存对象\n优点：每家每户都有，随手即取\n缺点：分装过程中容易二次污染，加上不密封也不牢固，不小心一碰就开，小动物一啃就坏，真心不推荐嗷！\n 五、储粮密封（米）桶\n图：小红书网友 \n存啥：日常要吃的、或分装后的猫粮\n优点：用途广，方便好看，开盖即取。极其适合北方干燥地区，放在这种桶里就足够了，甚至根本用不上酵素桶或者真空机。\n缺点：市面花样太多，容易踩雷买到质量不好不密封的，所以要铲屎官用心去挑选，网评日本爱丽思、华元宠具还算是不错的～\n 补充：随时要吃的猫粮如何储存？一、矿泉水瓶 | 玻璃罐 | 小号储粮桶\n\n存啥：采用每日定量自由采食方法的，用一个小盒子放日常随时要吃的~\n优点：矿泉水瓶 0 成本，玻璃密封罐循环利用，小号储量桶自带量杯！\n缺点：矿泉水瓶密封性一般，可能存在风险。坐标南方沿海地区，我亲身试用了 7 个月吧，目前还没有出现发霉生虫变脆的情况~其他的当然会安心一点，总比老打开猫粮袋取粮要好，降低了二次污染的风险~~\n二、豪华自动喂食器\n存啥：采用定时定量方法的，就需要买一个自动喂食器啦~\n优点：可以控制好猫咪的食量，避免猫咪一下吃过多软便的肠胃问题（亲身经历...）\n缺点：我本人没有用过。据网友经验，有几率会导致卡粮问题，自动喂食器成本比较高，我也还在观望中，希望用过的朋友积极在评论区补充意见哦！\n阅读原文",
-          "link": "https://daily.zhihu.com/story/9738381",
-          "publishedOn": "2021-07-22T23:06:33.000Z",
-          "wordCount": null,
-          "title": "大袋猫粮如何储存？",
-          "itunes": {}
-        },
-        {
-          "id": "https://daily.zhihu.com/story/9738377",
-          "author": null,
-          "description": "知乎用户，建筑 职场提升 设计留学 媒体合作｜咨询微信：hurmus\n阅读原文\n\n没有期待了，上海喜提全球最佳的天文馆！\n今天是上海天文馆开馆的第三天。三天前的那周，大量的媒体朋友来找我这位“ennead 老熟人”约稿获取最“独家”的信息和报导。但我全部回绝了，并不是不给面子，只是这项目太漫长，一时之间不知从何写起……\n世界最大天文馆开幕，上海离外太空更近一步\n上海天文馆概念动画 - enneadhttps://www.zhihu.com/video/1400838781403090944\n一位建筑师，能有多少个八年？\n2014 年上海天文馆中标时，我还是纽约的小顾问；之前在国际事务所工作的时候，也参与过不少这类文化地标项目的竞赛和深化。但了解这个方案后，还是被设计逻辑性和形式语言的美感契合度震撼到了。一年后，因为这个项目扩展与主创 Thomas&Grace 的人格魅力加持下，我加入 ennead 事务所。\n实景拍摄 © ennead/ 存在\n自项目 2013 年竞赛启动，2014 年中标到 2021 年开馆，一晃过去八年。作为最初参与竞标的建筑师团队，与这座“地标”建筑长达八年的磨砺。翻看过往文本不经感叹，做建筑师是重大的人生承诺，人生能有多少个八年去完成一座重大项目？\n上海天文馆最后一次概念竞标方案汇报文本\n为什么建在离市区那么远的临港新城？\n世界上最大的天文馆——上海天文馆，坐落于临港新城滴水湖畔；作为上海科技馆分馆，总规划用地面积 5.86h㎡，占地约 3.8 万㎡（相当于 5.5 个标准足球场大小）。\n实景拍摄 © ennead/ 存在\n当时选址考虑到两个较为重要的问题：\n\n寸土寸金的上海市中心，难以整块拨出如此巨大的用地来支持全世界最大的天文馆建设。因此考虑正在建设开发的临港新城；\n市中心的办公与商业建设量密集，人造光较强，对天文观测有一定的影响。因此需要选择类…",
-          "link": "https://daily.zhihu.com/story/9738377",
-          "publishedOn": "2021-07-22T23:06:30.000Z",
-          "wordCount": null,
-          "title": "全球建筑规模最大的上海天文馆于2021年7月17日正式开馆，对此你有哪些期待？",
-          "itunes": {}
-        },
-        {
-          "id": "https://daily.zhihu.com/story/9738402",
-          "author": null,
-          "description": "哪个瞬间你突然觉得读书真没用？\n\nConway Young，知乎不是庸者的百度。\n阅读原文\n\n阅读原文\n\n郭德纲在台上被泼水会怎么样？\n\nTraHeart，一场竹节虫的美梦。\n阅读原文\n\n谢谢您呐，我家里头热得快炸了\n_(:_」∠)_\n阅读原文\n\n你见过最丑的猫是怎样的？\n\n一只小牌九，这位姑娘，可否与小生共推牌九啊？( •̀∀•́ )\n阅读原文\n\n这个回头，谁遭得住？\n\n\n\n阅读原文\n\n女生不会接吻怎么办呢？\n\n匿名用户\n阅读原文\n\n买一桶的星球杯，丢掉勺子。\n阅读原文\n\n如何看待警方通报吴亦凡事件：一男子冒充涉事双方对吴与都二人进行诈骗？有哪些信息值得关注？\n\n编辑部小李，知乎第一大号背后的难人\n阅读原文\n\n朝阳警方提醒您：一切以转账为目的的聊天都是诈骗。\n阅读原文",
-          "link": "https://daily.zhihu.com/story/9738402",
-          "publishedOn": "2021-07-22T23:06:20.000Z",
-          "wordCount": null,
-          "title": "瞎扯 · 如何正确地吐槽",
-          "itunes": {}
         }
       ]
     },
@@ -1652,6 +1642,249 @@
       "feedUrl": "https://news.ycombinator.com/rss",
       "siteUrl": "https://news.ycombinator.com/",
       "articles": [
+        {
+          "id": "https://tikz.net/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://tikz.net/",
+          "publishedOn": "2021-08-21T21:49:43.000Z",
+          "wordCount": 170,
+          "title": "Tikz.net – Graphics with TikZ in LaTeX"
+        },
+        {
+          "id": "https://github.com/xnbox/DeepfakeHTTP",
+          "author": null,
+          "description": "Comments",
+          "link": "https://github.com/xnbox/DeepfakeHTTP",
+          "publishedOn": "2021-08-21T21:19:45.000Z",
+          "wordCount": 1399,
+          "title": "DeepfakeHTTP – Your 100% static dynamic back end"
+        },
+        {
+          "id": "https://hrishioa.github.io/schema-on-write-is-better-to-live-by/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://hrishioa.github.io/schema-on-write-is-better-to-live-by/",
+          "publishedOn": "2021-08-21T20:31:38.000Z",
+          "wordCount": 1844,
+          "title": "Schema on write is better to live by"
+        },
+        {
+          "id": "https://twitter.com/JacquiHeinrich/status/1429173367643516936",
+          "author": null,
+          "description": "Comments",
+          "link": "https://twitter.com/JacquiHeinrich/status/1429173367643516936",
+          "publishedOn": "2021-08-21T20:29:37.000Z",
+          "wordCount": 196,
+          "title": "Cyber Attack, Possible Serious Breach, at U.S. State Department"
+        },
+        {
+          "id": "http://simonschreibt.de/gat/dont-starve-diablo-parallax-7/",
+          "author": null,
+          "description": "Comments",
+          "link": "http://simonschreibt.de/gat/dont-starve-diablo-parallax-7/",
+          "publishedOn": "2021-08-21T20:15:53.000Z",
+          "wordCount": 2169,
+          "title": "Don’t starve, Diablo – Parallax 7 (2016)"
+        },
+        {
+          "id": "https://data.berkeley.edu/news/project-jupyter-celebrates-20-years-fernando-perez-reflects-how-it-started-open-sciences",
+          "author": null,
+          "description": "Comments",
+          "link": "https://data.berkeley.edu/news/project-jupyter-celebrates-20-years-fernando-perez-reflects-how-it-started-open-sciences",
+          "publishedOn": "2021-08-21T19:54:42.000Z",
+          "wordCount": 3859,
+          "title": "Project Jupyter Celebrates 20 Years, Fernando Pérez Reflects on How It Started"
+        },
+        {
+          "id": "https://www.eff.org/deeplinks/2021/08/eff-joins-global-coalition-asking-apple-ceo-tim-cook-stop-phone-scanning",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.eff.org/deeplinks/2021/08/eff-joins-global-coalition-asking-apple-ceo-tim-cook-stop-phone-scanning",
+          "publishedOn": "2021-08-21T18:23:57.000Z",
+          "wordCount": 1393,
+          "title": "EFF Joins Global Coalition Asking Apple CEO Tim Cook to Stop Phone-Scanning"
+        },
+        {
+          "id": "https://www.sqlite.org/draft/stricttables.html",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.sqlite.org/draft/stricttables.html",
+          "publishedOn": "2021-08-21T18:03:08.000Z",
+          "wordCount": 317,
+          "title": "Strict Tables – Column type constraints in SQLite - Draft"
+        },
+        {
+          "id": "https://notes.eatonphil.com/parser-generators-vs-handwritten-parsers-survey-2021.html",
+          "author": null,
+          "description": "Comments",
+          "link": "https://notes.eatonphil.com/parser-generators-vs-handwritten-parsers-survey-2021.html",
+          "publishedOn": "2021-08-21T17:45:45.000Z",
+          "wordCount": 610,
+          "title": "Parser generators vs. handwritten parsers: surveying major languages in 2021"
+        },
+        {
+          "id": "https://www.theguardian.com/commentisfree/2021/aug/21/beware-state-surveillance-of-your-lives-governments-can-change-afghanistan",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.theguardian.com/commentisfree/2021/aug/21/beware-state-surveillance-of-your-lives-governments-can-change-afghanistan",
+          "publishedOn": "2021-08-21T17:22:19.000Z",
+          "wordCount": 1097,
+          "title": "Beware state surveillance of your lives – governments can change for the worse"
+        },
+        {
+          "id": "https://blog.placemark.io/2021/07/19/issues-only-management.html",
+          "author": null,
+          "description": "Comments",
+          "link": "https://blog.placemark.io/2021/07/19/issues-only-management.html",
+          "publishedOn": "2021-08-21T16:56:50.000Z",
+          "wordCount": 568,
+          "title": "GitHub Issues-only project management"
+        },
+        {
+          "id": "https://www.oilshell.org/blog/2021/08/xargs.html",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.oilshell.org/blog/2021/08/xargs.html",
+          "publishedOn": "2021-08-21T16:21:58.000Z",
+          "wordCount": 1992,
+          "title": "An Opinionated Guide to Xargs"
+        },
+        {
+          "id": "https://www.theverge.com/2021/8/20/22634841/facebook-most-viewed-content-report-look-bad",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.theverge.com/2021/8/20/22634841/facebook-most-viewed-content-report-look-bad",
+          "publishedOn": "2021-08-21T15:51:02.000Z",
+          "wordCount": 684,
+          "title": "Facebook suppressed report that made it look bad"
+        },
+        {
+          "id": "http://trillian.mit.edu/~jc/humor/ATT_Copyright_true.html",
+          "author": null,
+          "description": "Comments",
+          "link": "http://trillian.mit.edu/~jc/humor/ATT_Copyright_true.html",
+          "publishedOn": "2021-08-21T15:18:13.000Z",
+          "wordCount": 975,
+          "title": "The /bin/true Command and Copyright (2009)"
+        },
+        {
+          "id": "https://news.ycombinator.com/item?id=28257352",
+          "author": null,
+          "description": "Comments",
+          "link": "https://news.ycombinator.com/item?id=28257352",
+          "publishedOn": "2021-08-21T14:36:36.000Z",
+          "wordCount": 13342,
+          "title": "Launch HN: Fella (YC W20) – Tackling men's obesity using medication and coaching"
+        },
+        {
+          "id": "https://github.com/gitsrc/IceFireDB",
+          "author": null,
+          "description": "Comments",
+          "link": "https://github.com/gitsrc/IceFireDB",
+          "publishedOn": "2021-08-21T14:23:16.000Z",
+          "wordCount": 791,
+          "title": "IceFireDB: Distributed disk storage database based on Raft and Redis protocol"
+        },
+        {
+          "id": "https://www.sciencemag.org/careers/2021/08/thoughts-work-invaded-my-life-until-i-learned-how-unplug",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.sciencemag.org/careers/2021/08/thoughts-work-invaded-my-life-until-i-learned-how-unplug",
+          "publishedOn": "2021-08-21T14:18:52.000Z",
+          "wordCount": 1147,
+          "title": "Thoughts of work invaded my life until I learned how to unplug"
+        },
+        {
+          "id": "https://research.google/pubs/pub48630/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://research.google/pubs/pub48630/",
+          "publishedOn": "2021-08-21T14:03:20.000Z",
+          "wordCount": 361,
+          "title": "Snap: A microkernel approach to host networking (2019)"
+        },
+        {
+          "id": "https://thegradient.pub/an-introduction-to-ai-story-generation/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://thegradient.pub/an-introduction-to-ai-story-generation/",
+          "publishedOn": "2021-08-21T11:25:06.000Z",
+          "wordCount": 6577,
+          "title": "An Introduction to AI Story Generation"
+        },
+        {
+          "id": "https://danielbmarkham.com/we-dont-do-learning-we-direct-it/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://danielbmarkham.com/we-dont-do-learning-we-direct-it/",
+          "publishedOn": "2021-08-21T10:52:49.000Z",
+          "wordCount": 1361,
+          "title": "We don't 'do' learning. It does us"
+        },
+        {
+          "id": "https://ruslanspivak.com/lsbasi-part1/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://ruslanspivak.com/lsbasi-part1/",
+          "publishedOn": "2021-08-21T10:29:34.000Z",
+          "wordCount": 2972,
+          "title": "A Simple Interpreter in Python"
+        },
+        {
+          "id": "https://europepmc.org/backend/ptpmcrender.fcgi?accid=PMC4041510&blobtype=pdf",
+          "author": null,
+          "description": "Comments",
+          "link": "https://europepmc.org/backend/ptpmcrender.fcgi?accid=PMC4041510&blobtype=pdf",
+          "publishedOn": "2021-08-21T10:25:34.000Z",
+          "wordCount": 4903,
+          "title": "DNA→RNA: What Do Students Think the Arrow Means? (2014)"
+        },
+        {
+          "id": "https://dukope.itch.io/mars-after-midnight/devlog/285964/working-in-one-bit",
+          "author": null,
+          "description": "Comments",
+          "link": "https://dukope.itch.io/mars-after-midnight/devlog/285964/working-in-one-bit",
+          "publishedOn": "2021-08-21T10:10:48.000Z",
+          "wordCount": null,
+          "title": "Working in One Bit"
+        },
+        {
+          "id": "https://ctheory.sitehost.iu.edu/img/Lillard,%20Why%20Do%20the%20Children%20(Pretend)%20Play.pdf",
+          "author": null,
+          "description": "Comments",
+          "link": "https://ctheory.sitehost.iu.edu/img/Lillard,%20Why%20Do%20the%20Children%20(Pretend)%20Play.pdf",
+          "publishedOn": "2021-08-21T06:38:02.000Z",
+          "wordCount": 17281,
+          "title": "Why do the children pretend play? [pdf]"
+        },
+        {
+          "id": "https://jvns.ca/blog/confusing-explanations/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://jvns.ca/blog/confusing-explanations/",
+          "publishedOn": "2021-08-21T06:05:38.000Z",
+          "wordCount": 4328,
+          "title": "Patterns in Confusing Explanations"
+        },
+        {
+          "id": "https://fs.blog/2021/08/remember-books/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://fs.blog/2021/08/remember-books/",
+          "publishedOn": "2021-08-21T05:07:18.000Z",
+          "wordCount": 4690,
+          "title": "How to Remember What You Read"
+        },
+        {
+          "id": "https://www.wsj.com/articles/minimalist-phones-try-to-give-users-what-they-neednot-always-what-they-want-11629370801",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.wsj.com/articles/minimalist-phones-try-to-give-users-what-they-neednot-always-what-they-want-11629370801",
+          "publishedOn": "2021-08-21T04:06:23.000Z",
+          "wordCount": 1875,
+          "title": "New phone can make calls and send texts, but it cannot access social media"
+        },
         {
           "id": "https://twitter.com/BodieCabiyo/status/1427683107788845056",
           "author": null,
@@ -1741,6 +1974,15 @@
           "publishedOn": "2021-08-20T19:28:34.000Z",
           "wordCount": 5133,
           "title": "macOS 11’s hidden security improvements"
+        },
+        {
+          "id": "https://www.eetimes.com/intel-brings-chiplets-to-data-center-cpus/#",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.eetimes.com/intel-brings-chiplets-to-data-center-cpus/#",
+          "publishedOn": "2021-08-20T19:04:54.000Z",
+          "wordCount": 2806,
+          "title": "Intel Brings Chiplets to Data Center CPUs"
         },
         {
           "id": "https://codewriteplay.com/2021/08/20/a-facebook-hacker-beat-my-2fa-bricked-my-oculus-quest-and-hit-the-company-credit-card/",
@@ -1939,6 +2181,15 @@
           "publishedOn": "2021-08-19T20:12:56.000Z",
           "wordCount": 1097,
           "title": "Why it’s difficult to build teams in high growth organisations"
+        },
+        {
+          "id": "https://www.theverge.com/2021/8/19/22632818/google-project-hug-game-developers-play-store-millions-epic-lawsuit-complaint",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.theverge.com/2021/8/19/22632818/google-project-hug-game-developers-play-store-millions-epic-lawsuit-complaint",
+          "publishedOn": "2021-08-19T19:36:31.000Z",
+          "wordCount": 923,
+          "title": "Google’s ‘Project Hug’ paid out huge sums to keep game devs in the Play Store"
         },
         {
           "id": "https://about.sourcegraph.com/blog/zoekt-memory-optimizations-for-sourcegraph-cloud",
@@ -9292,267 +9543,6 @@
           "publishedOn": "2021-07-23T12:33:16.000Z",
           "wordCount": 2002,
           "title": "Floating wind turbines could rise to great heights"
-        },
-        {
-          "id": "https://trms.me/the-value-of-doing-a-little/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://trms.me/the-value-of-doing-a-little/",
-          "publishedOn": "2021-07-23T11:49:57.000Z",
-          "wordCount": 900,
-          "title": "The value of doing a little"
-        },
-        {
-          "id": "https://mazzo.li/posts/value-speculation.html",
-          "author": null,
-          "description": "Comments",
-          "link": "https://mazzo.li/posts/value-speculation.html",
-          "publishedOn": "2021-07-23T11:44:55.000Z",
-          "wordCount": 3075,
-          "title": "Beating the L1 cache with value speculation"
-        },
-        {
-          "id": "https://realless.glitch.me/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://realless.glitch.me/",
-          "publishedOn": "2021-07-23T10:50:52.000Z",
-          "wordCount": 943,
-          "title": "Show HN: Website changes design each time you blink"
-        },
-        {
-          "id": "https://stackoverflow.blog/2021/07/19/privacy-is-an-afterthought-in-the-software-lifecycle-that-needs-to-change/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://stackoverflow.blog/2021/07/19/privacy-is-an-afterthought-in-the-software-lifecycle-that-needs-to-change/",
-          "publishedOn": "2021-07-23T10:45:17.000Z",
-          "wordCount": 4297,
-          "title": "Privacy is an afterthought. Here's how devs can easily make it better."
-        },
-        {
-          "id": "https://lwn.net/Articles/861978/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://lwn.net/Articles/861978/",
-          "publishedOn": "2021-07-23T10:40:24.000Z",
-          "wordCount": 3357,
-          "title": "Syncthing: Syncing All the Things"
-        },
-        {
-          "id": "https://birdnet.cornell.edu",
-          "author": null,
-          "description": "Comments",
-          "link": "https://birdnet.cornell.edu",
-          "publishedOn": "2021-07-23T10:32:31.000Z",
-          "wordCount": 2139,
-          "title": "BirdNet – Identify Birds by Sound"
-        },
-        {
-          "id": "https://www.wsj.com/video/series/inside-tiktoks-highly-secretive-algorithm/investigation-how-tiktok-algorithm-figures-out-your-deepest-desires/6C0C2040-FF25-4827-8528-2BD6612E3796",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.wsj.com/video/series/inside-tiktoks-highly-secretive-algorithm/investigation-how-tiktok-algorithm-figures-out-your-deepest-desires/6C0C2040-FF25-4827-8528-2BD6612E3796",
-          "publishedOn": "2021-07-23T09:25:31.000Z",
-          "wordCount": 158,
-          "title": "Inside TikTok’s Algorithm [video]"
-        },
-        {
-          "id": "https://twitter.com/TechEmails/status/1418248256937775105",
-          "author": null,
-          "description": "Comments",
-          "link": "https://twitter.com/TechEmails/status/1418248256937775105",
-          "publishedOn": "2021-07-23T08:25:59.000Z",
-          "wordCount": 196,
-          "title": "“I would buy a Mac today if I was not working at Microsoft” (2004)"
-        },
-        {
-          "id": "https://kultisti.itch.io/cats-n-wires",
-          "author": null,
-          "description": "Comments",
-          "link": "https://kultisti.itch.io/cats-n-wires",
-          "publishedOn": "2021-07-23T05:17:30.000Z",
-          "wordCount": 1219,
-          "title": "Cats N Wires"
-        },
-        {
-          "id": "https://frame.work/blog/the-framework-laptop-is-now-shipping-and-press-reviews",
-          "author": null,
-          "description": "Comments",
-          "link": "https://frame.work/blog/the-framework-laptop-is-now-shipping-and-press-reviews",
-          "publishedOn": "2021-07-23T01:56:08.000Z",
-          "wordCount": 598,
-          "title": "The Framework Laptop is now shipping"
-        },
-        {
-          "id": "https://glynnbird.github.io/teletext/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://glynnbird.github.io/teletext/",
-          "publishedOn": "2021-07-22T23:47:31.000Z",
-          "wordCount": 117,
-          "title": "Hacker News in the Style of Teletext"
-        },
-        {
-          "id": "https://www.bbc.com/news/world-us-canada-57934379",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.bbc.com/news/world-us-canada-57934379",
-          "publishedOn": "2021-07-22T23:37:15.000Z",
-          "wordCount": 864,
-          "title": "Eric Clapton refuses to play venues requiring vaccines for concertgoers"
-        },
-        {
-          "id": "https://www.npr.org/2021/07/22/1013402176/cia-director-says-he-is-escalating-efforts-to-solve-havana-syndrome-mystery",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.npr.org/2021/07/22/1013402176/cia-director-says-he-is-escalating-efforts-to-solve-havana-syndrome-mystery",
-          "publishedOn": "2021-07-22T22:38:58.000Z",
-          "wordCount": 1861,
-          "title": "CIA director says he is escalating efforts to solve 'Havana Syndrome'"
-        },
-        {
-          "id": "https://www.youtube.com/watch?v=0wxc3mKqKTk",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.youtube.com/watch?v=0wxc3mKqKTk",
-          "publishedOn": "2021-07-22T21:31:49.000Z",
-          "wordCount": null,
-          "title": "The engineer preserving the last analog motion graphics machine (2017) [video]"
-        },
-        {
-          "id": "https://www.hashicorp.com/blog/mitchell-s-new-role-at-hashicorp",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.hashicorp.com/blog/mitchell-s-new-role-at-hashicorp",
-          "publishedOn": "2021-07-22T21:03:54.000Z",
-          "wordCount": 1115,
-          "title": "Mitchell Hashimoto takes on a new individual contributor role at HashiCorp"
-        },
-        {
-          "id": "https://www.easypost.com/careers",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.easypost.com/careers",
-          "publishedOn": "2021-07-22T21:00:09.000Z",
-          "wordCount": 381,
-          "title": "EasyPost (YC S13) is hiring to build the logistics platform for ecommerce"
-        },
-        {
-          "id": "https://litchie.com/2021/07/idos2-will-be-gone",
-          "author": null,
-          "description": "Comments",
-          "link": "https://litchie.com/2021/07/idos2-will-be-gone",
-          "publishedOn": "2021-07-22T20:55:58.000Z",
-          "wordCount": 943,
-          "title": "iDOS 2 will be gone soon"
-        },
-        {
-          "id": "https://j-entranslations.com/two-japanese-jabberwocky-poems/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://j-entranslations.com/two-japanese-jabberwocky-poems/",
-          "publishedOn": "2021-07-22T20:45:04.000Z",
-          "wordCount": 3222,
-          "title": "Translating Jabberwocky into Japanese"
-        },
-        {
-          "id": "https://timharford.com/2021/07/the-tyranny-of-spreadsheets/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://timharford.com/2021/07/the-tyranny-of-spreadsheets/",
-          "publishedOn": "2021-07-22T20:38:28.000Z",
-          "wordCount": 4020,
-          "title": "The Tyranny of Spreadsheets"
-        },
-        {
-          "id": "https://www.npr.org/2021/07/22/1019293032/activision-blizzard-lawsuit-unequal-pay-sexual-harassment-video-games",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.npr.org/2021/07/22/1019293032/activision-blizzard-lawsuit-unequal-pay-sexual-harassment-video-games",
-          "publishedOn": "2021-07-22T19:01:35.000Z",
-          "wordCount": 1091,
-          "title": "California sues Activision Blizzard over unequal pay, sexual harassment"
-        },
-        {
-          "id": "https://arstechnica.com/gadgets/2021/07/google-pushed-a-one-character-typo-to-production-bricking-chrome-os-devices/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://arstechnica.com/gadgets/2021/07/google-pushed-a-one-character-typo-to-production-bricking-chrome-os-devices/",
-          "publishedOn": "2021-07-22T18:32:58.000Z",
-          "wordCount": 836,
-          "title": "Google broke a conditional statement that verifies passwords on Chrome OS"
-        },
-        {
-          "id": "https://engineering.fb.com/2021/07/22/data-infrastructure/mysql/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://engineering.fb.com/2021/07/22/data-infrastructure/mysql/",
-          "publishedOn": "2021-07-22T17:54:39.000Z",
-          "wordCount": 2867,
-          "title": "Migrating Facebook to MySQL 8.0"
-        },
-        {
-          "id": "http://alias.co?ref=hn",
-          "author": null,
-          "description": "Comments",
-          "link": "http://alias.co?ref=hn",
-          "publishedOn": "2021-07-22T17:38:17.000Z",
-          "wordCount": 176,
-          "title": "Show HN: Alias – Google Alerts for your favorite people"
-        },
-        {
-          "id": "https://www.bbc.com/news/business-57933718",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.bbc.com/news/business-57933718",
-          "publishedOn": "2021-07-22T16:25:48.000Z",
-          "wordCount": 1186,
-          "title": "Autonomy founder Mike Lynch can be extradited to US"
-        },
-        {
-          "id": "https://alphafold.ebi.ac.uk/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://alphafold.ebi.ac.uk/",
-          "publishedOn": "2021-07-22T15:15:10.000Z",
-          "wordCount": 16,
-          "title": "AlphaFold Protein Structure Database"
-        },
-        {
-          "id": "https://www.jeffgeerling.com/blog/2021/spacexs-starlink-review-four-months",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.jeffgeerling.com/blog/2021/spacexs-starlink-review-four-months",
-          "publishedOn": "2021-07-22T14:05:16.000Z",
-          "wordCount": 3570,
-          "title": "Starlink review, four months in"
-        },
-        {
-          "id": "https://news.ycombinator.com/item?id=27918900",
-          "author": null,
-          "description": "Comments",
-          "link": "https://news.ycombinator.com/item?id=27918900",
-          "publishedOn": "2021-07-22T13:57:00.000Z",
-          "wordCount": 3171,
-          "title": "Launch HN: hotglue (YC S21) – Easy user-facing SaaS integrations"
-        },
-        {
-          "id": "https://github.com/lekkit/rvvm",
-          "author": null,
-          "description": "Comments",
-          "link": "https://github.com/lekkit/rvvm",
-          "publishedOn": "2021-07-22T13:44:16.000Z",
-          "wordCount": 825,
-          "title": "RVVM – RISC-V Virtual Machine"
-        },
-        {
-          "id": "https://sell.app",
-          "author": null,
-          "description": "Comments",
-          "link": "https://sell.app",
-          "publishedOn": "2021-07-22T12:49:02.000Z",
-          "wordCount": 353,
-          "title": "Show HN: Sell.app – A simple way to sell digital goods"
         }
       ]
     }
