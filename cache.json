@@ -6,6 +6,66 @@
       "siteUrl": "https://news-at.zhihu.com/api/4/stories/latest?client=0",
       "articles": [
         {
+          "id": "https://daily.zhihu.com/story/9741456",
+          "author": null,
+          "description": "小小日月之心，精品影评强迫控+多元宇宙漫游者\n阅读原文\n\n非常冷门的问题。这个提问其实与所问本身有着异曲同工之感，任何事物但凡人们的关注度不够，也就随着岁月慢慢湮灭于时间的淘洗之中了。与一般的固有认知不同，很多这类冷门问题中不仅往往蕴含了丰富的知识，并且也可以出人意料地兼具趣味娱乐性，只是可惜关注者甚少，创作者们写出来通常也没有热度，阅读者寥寥，辛苦收集资料和笔耕科普的热情也就慢慢冷却了。如此一来，冷门问题也就更加缺乏关注和无人问津，进而形成了一个不利的循环。这个原本承载很多的问题已经提出十年，却鲜有人答，即使回答也仅是寥寥几笔，颇为可惜。\n不过，作为一个经常回答冷门问题的人，我并不介意对这样一个被束之高阁近十年的好问题进行一答。而至于最终有没有人能够看到这篇回答，就全凭缘分了。\n既是如此冷门的问题，按照以往经验，相信看到的人不会太多，就简单聊一聊吧。\n\n本文已进行版权确权，并已授权委托维权骑士进行版权监控并维权，未经授权不得转载。创作不易，请勿抄袭、洗稿，违者必究。\n毫无疑问，电影是会失传的。\n而且如果将时间拉长，把视角放宽，从整个百年影史的角度来看待，失传的电影作品甚至比留存下来的更多。根据马丁·斯科塞斯的电影基金会统计，1894 年至 1930 年间，单在好莱坞，就有超过 80%的电影胶片永远消逝在了影史的长河之中。在 1930 年后，还有更多的好莱坞影片湮没在了时光荏苒中...... \n实际上，最初引发我关注这个问题是因为一部阮玲玉主演的影片。几年前，机缘巧合下想观看阮玲玉的影片《三个摩登女性》，后来经过了解才得知，阮玲玉一生 29 部影片，流传至今的仅剩 9 部，而我想看的那部《三个摩登女性》也早已失传，只剩下寥寥几张剧照和两个极短的残片片段。事实上阮玲玉大量电影的遗失只是中国电影失传的一个缩影。根据程季华先生、李少白先生、邢祖文先生编撰的《中国电影发展史》的考证…",
+          "link": "https://daily.zhihu.com/story/9741456",
+          "publishedOn": "2021-10-20T23:07:57.000Z",
+          "wordCount": null,
+          "title": "一部电影会失传吗？",
+          "itunes": {}
+        },
+        {
+          "id": "https://daily.zhihu.com/story/9741462",
+          "author": null,
+          "description": "YY硕，机器人工程师\n阅读原文\n\nM1 系列芯片这个性能完全不是单单为了笔记本电脑而设计的。\n苹果的思路很清晰，开发这样的性能怪兽需要天价的投入，需要首先在消费级产品上应用来收回开发成本。但是芯片开发完成以后，苹果就可以把这一系列天生基于嵌入式系统的芯片做定制化的嵌入式操作系统和 SDK，然后一波操作给包括但不限于以下的嵌入式应用场景带来革命：\n\n无人驾驶、无人机和机器人。这个领域吵吵着搞异构计算好多年了，没有什么大玩家真的能做出来把车体实时控制、海量传感器数据处理、流畅用户交互都把握得很好的异构芯片。M1 Max 400Gbps 内存带宽吞吐，打游戏并用不上，但是同时处理起 6 路激光雷达和 6 路高清相机传感器给无人驾驶系统和机器人提供周围感知这就随随便便体现出性能优势了。隔壁英伟达和地平线应该正在瑟瑟发抖。M1 新的两个系列刚出，并没有实用的案例，但是我在华盛顿大学搞足式机器人的朋友说一个基于 M1 芯片的 Mac Mini 直接怼上机器人，全套每秒 500 次的实时控制和非线性优化解算跑起来完全没有问题，最妖的是这些算法是跑在 Mac 里的 Linux 虚拟机上，众所周知虚拟机会拖慢很多性能，但就算如此一台 M1 跑整台四足机器人的控制器都没有问题。M1 尚且如此，M1 Max 要是装上机器人说不定能实时跑波士顿动力人形机器人 Atlas 上的控制器（目前强如波士顿动力有一部分算法也是离线跑的）。\n虚拟现实。VR/AR 设备多年来最大的问题就是没办法在小空间里怼进足够的计算量处理高清视频流和空间姿态解算。一台让人不产生眩晕感的眼镜，必须能够以 120FPS 以上刷新 1080P 的图像，同时提供延迟小于 10ms 的空间姿态解算，所以需要极快地收到图像、用 GPU 处理图像、用 CPU 处理图像和其他传感器获得空间姿态、然后再用 GPU 渲染图像。因此在 GPU 和 CPU 之间来回花式倒腾图像是不行的，GPU 和 CPU 共用内存正是为这个事情而生。据我所知 Apple 内部有好几个做虚拟现实的组，目测基于 M1 或者其他变种芯片的眼镜产品已经在路上了。\n任何需要低能耗的嵌入式系统，如投影仪、电视、商场广告牌、特种监控设备等等。Intel 多年来把芯片板级的接口和手册开放下游系统集成公司，无数的公司通过把 Intel 芯片魔改到形态各异的板子来支持广大的制造业、物流业等一切需要嵌入式显示和计算的商业场景。我们不知道 Apple 会在多大程度上开放 M1 的板级生态，但是一旦开放的话这些行业必然是洪水滔天人人投入 Apple 怀抱，毕竟低功耗对普通用户来说就是电脑热一点而已，但是对于行业客户而言，低功耗代表着嵌入式系统在供电方面的元器件选型、板子散热、电源稳定性都可以低一档，板子成本大幅降低，用户使用的能耗成本更是降低四五倍。\n\n总地来说，M1 如果也开始把软件生态做起来能够支持整个嵌入式行业的话，对世界的贡献不亚于 iPhone 的诞生。\n\n\n\n阅读原文",
+          "link": "https://daily.zhihu.com/story/9741462",
+          "publishedOn": "2021-10-20T23:07:52.000Z",
+          "wordCount": null,
+          "title": "如何评价Apple新发布的M1 Max芯片？",
+          "itunes": {}
+        },
+        {
+          "id": "https://daily.zhihu.com/story/9741471",
+          "author": null,
+          "description": "Jacob贾超，专治职场不开心\n阅读原文\n\n目前情况怎么样，不在字节内，咱也不清楚。\n不过确实看这新闻看的心里怪难受的。真真是“时代的一粒沙，落在每个人头上就是一座山。”\n一个巨厂的战略和业务调整，影响的就是几百上千的职场人以及职场人背后的家庭的职业发展。\n对于有丰富职场经验的候选人，虽然也会有压力骂一句自己运气不好，但相对来讲通过猎头或者人际网络重新求个职可能还没有那么困难（控制好收入期望的情况下毕竟字节薪酬水平还是相当高）。\n对于应届生和毕业三年以内的职场新鲜人们，这突如其来的职场挑战还是挺大的。\n当然我们可以夸字节遵守劳动法，给了补偿，未休完年假按照两倍薪资给予。\n但这并不改变这些被裁员的职场人成为失业者流入求职大军的事实。\n在这里我还是重点给被裁员被失业的职场新鲜人们和应届生们几点我的建议吧。\n1、只要你已经进入职场，就不要再拿自己当年还在读书参加校招的那份求职简历来糊弄你未来会遇到的招聘 HR 们。而要认真重新写一份求职简历。\n校园招聘，相当比例的行业领先公司，都更多强调个人能力和综合素质，而相对更加淡化专业对口这件事。有的人实习经验丰富，有的人社会实践丰富，有的人校园履历优秀，还有的人学习成绩不错。只要有任何一点或者几点亮点，都可以帮助你通过校园招聘简历筛选，进入到后边的面试环节。\n而社会招聘，当你有工作经验后，就要重点在简历中多写一些你本人毕业后的全职工作经历、产出和内容体现你的职场经验和职场素质。\n毕竟我们都知道实习工作和全职工作的工作要求、工作强度和被信任程度是完全不同的。\n2、校招和社招不同，没有所谓大规模的秋招和春招，大家要学会主动搜索和投递。\n或者是企业官网，或者是类似智联招聘、前程无忧、Boss 直聘、拉勾招聘类似的招聘网站。但要干等着就不知道等到猴年马月了。\n校招的时候，绝大多数同学是迷茫的，可能会海投，各类行业各类方向都可能试试。但社招投递还是不要忘记自己的毕业之后曾经待过不错的大厂和积累的工作经验，这还是很好的背书。\n互联网相比起 K12，现在境遇还是会好一些。聚焦方向，不要浪费过往的经验和积累。\n3、再次强调，海投简历几乎没有用处，重要的是朋友帮忙招呼内部推荐。\n内部推荐面试几率最高成功概率也最高。这个时候如果自己有大学同学或者职场中认识的朋友、哥哥姐姐可以帮忙做下内推，那无疑是最好的。\n家庭经济压力和自己生存压力面前，面子不值钱。该找朋友和前同事们帮忙就找。要面子的最后都没了面子，不要面子的才最终留下了面子。\n4、人生不如意这个阶段，找到理想的适合的工作一般需要 2-3 个月，中间的大块时间可以学个车可以发展下第二产业兼职可以健身。不是只能干等。\n5、待业期间，尽量保持正常作息。保持好的精神状态。少懒床。少暴饮暴食。\n6、做好一个情绪稳定的中青年。身边的人和家人承受的心理压力不见得比失业的你小。不要肆意发火让身边人承受更多。\n7、既然没法开源，尽量节流。用旅行和大额消费来排解压力，对家庭对自己都不负责任。\n8、不是所有人都适合创业，为了就业而创业只会让家庭损失更多。\n9、虽然不要挑三拣四，但也别啥都行为了尽快就业不顾一切。草率再就业不如等待谨慎选择。不然就职再离职，职业生涯也不好看。\n10、如果你有钱又规划好准备 Gap 主动休息一段时间而不着急马上找下家，以上当我都没说。\n希望以上内容能帮助到有需要的弟弟妹妹们，祝大家一切顺利！\n阅读原文",
+          "link": "https://daily.zhihu.com/story/9741471",
+          "publishedOn": "2021-10-20T23:07:43.000Z",
+          "wordCount": null,
+          "title": "字节跳动被曝商业化部门大量裁员，字节回应属实，目前情况怎么样？对被裁应届生有什么建议？",
+          "itunes": {}
+        },
+        {
+          "id": "https://daily.zhihu.com/story/9741453",
+          "author": null,
+          "description": "柴斯卡，人间观察家\n阅读原文\n\n香港已经上映一个多月了，才找到时间去看。我对这部电影感情复杂，推荐去看，但也有不喜欢的层面。先分析几点推荐的。首先，顾名思义，《沙丘》要看沙丘。宏大的沙丘场景就值回票价了，非常非常养眼。\n其次，在这个漫威时代，导演能拉来这些投资，让电影院从主题公园时代，变回古典大片时代——是特别大的本领，维伦纽瓦好莱坞第一融资大师诚不我欺。能够在电影院里看到任何情感细腻，主题恢弘，美学统一的大制作，都值得我们去贡献票房，因为在互联网与饭圈文化盛行的今天，这种属于电影、尊重电影的大制作电影，越来越难以得见了。（和它形成鲜明对比的电影：https://www.zhihu.com/question/392098990/answer/2142981333）\n\n第三，《沙丘》有足够严肃的内核。《沙丘》原著的小说，有很强的二十世纪几次世界大战与冷战背景，其内核是英美法苏帝国对中东地区的虎视眈眈，与当地原住民深不可测的神秘力量——丰富的资源，恶劣的环境。\n理解《沙丘》，就要理解《阿拉伯的劳伦斯》。二十世纪初，英国人劳伦斯进入沙漠，以高超的政治眼光和如簧巧舌，团结起了当时一盘散沙的阿拉伯部落，推翻了奥斯曼帝国。他的历程被记者写成传记后，成了传奇的“阿拉伯的劳伦斯”。\n1962 年，大卫·里恩拍摄了四个多小时的史诗巨作《阿拉伯的劳伦斯》，再现了劳伦斯的阿拉伯旅程。《阿拉伯的劳伦斯》的主体，是英国 - 奥斯曼围绕苏伊士运河展开的利益冲突。其中很多对话，是英国人和阿拉伯部落之间发生的。英国人说：“我们大英帝国面积小却强盛，是因为有 discipline。”\n但是阿拉伯人说：“不，是因为你们有枪炮和海军。”寥寥几句，点明了二者观念上的巨大差异。\n《阿拉伯的劳伦斯》中蔓延着对阿拉伯部落能否现代化的担忧，与现代中东比对十分唏嘘。影片最后，劳伦斯终于抵达了大马士革，但他闷闷不乐；这部电影上映时，英国终究丢掉了苏伊士运河。再也没有那个大英帝国。\n《阿拉伯的劳伦斯》\n《第一滴血》是后越战电影，《阿拉伯的劳伦斯》则是后苏伊士运河危机电影。以苏伊士运河危机为转折点，大英帝国落幕，美苏争霸开启。大卫里恩历时五年的打造，贯穿全片的落寞气质，其实是站在那个特殊时刻，在世界大战元气大伤后，对大英帝国怅惘的追忆。劳伦斯在当时已经知道，穆斯林部落是很难现代化的。\n看过了《阿拉伯的劳伦斯》，再回看《沙丘》，电影中看似纷乱反复的派别也就十分好理解了；甚至连影片中的机械设定，也充满苏联式重工的气息。2021 年的《沙丘》，似乎可以被理解为是一部后阿富汗战争电影或者后伊拉克战争电影。\n《沙丘》\n最后，若说电影有什么让我受不了的，就是它作为视觉大制作，卡头怼脸景别、仪式感走位、POV 镜头多到有点离奇了。维伦纽瓦通过辽阔的景色与人的大头混合剪辑，在大头和 POV 之间不断切换，辅以迷离的独白，营造一种内心呓语的感觉。\n但是这么多大头在大银幕上，尤其是讲求视觉效果的大制作大银幕上，看着有点难受。而且《沙丘》的剧情架构是“王子复仇记”，说直白点就是“狮子王”，和维伦纽瓦此前的《银翼杀手 2049》还不太一样，主角呓语的目的是劝自己直面恐惧，文学性还是不够深入。\n\n但是，这是一部在电影院变成主题公园的时代，仍然是真正的电影的大制作电影；是一部剧情巨婴化的时代，仍然很有武德的电影。\n那么就值得去电影院贡献票房。\n维伦纽瓦真是令人羡慕，试问口味 classical 的影迷谁没梦想过拍一部史诗气氛浓郁，背景宏大，每个出场人物都能因耳熟能详的故事等等让人尖叫的作品呢？《银河英雄传说》也是这方面气氛太正了。\n宏大的沙丘，浩瀚的太空，苏联式的重工，配上电影庄严的节奏，仪式感之强，令人叹为观止。我觉得就算啥也不演我也能盯着看好几个小时，imax 上动起来的效果绝对是妙不可言——\n\n\n\n阅读原文",
+          "link": "https://daily.zhihu.com/story/9741453",
+          "publishedOn": "2021-10-20T23:07:35.000Z",
+          "wordCount": null,
+          "title": "如何评价丹尼斯·维伦纽瓦执导的电影《沙丘》？",
+          "itunes": {}
+        },
+        {
+          "id": "https://daily.zhihu.com/story/9741479",
+          "author": null,
+          "description": "大导球事，实战灵魂段子手 球场行为艺术家 公号【\n阅读原文\n\n自古名将如美人，不许人间见白头。在中国的篮球史上，孙悦是个极其特殊的球员，甚至在他身上你可以看到中国篮球这十余年的缩影，从意气飞扬到风华正茂，从桀骜孤行到几经沉沦。\n如今回头看，现仍在打球的 08 奥运黄金一代，去年还剩彪哥和大圣，今只剩易建联一人。\n\n下面放上我刚来知乎时写的孙悦吧，那时大导还只是一个小透明，还愿意用一周的时间写一篇自己喜欢的球星。也想用这篇文激励现在的自己，可以永远的笔耕不辍，永保存心。\n\n如果要我选一个中国篮球手拍一部电影的话，我首选孙悦。惊世骇俗的天赋，极具争议的个性，以及他扑朔迷离的篮球命运。\n\n2004 年，初出茅庐 1999 年，奥神开始组建后备梯队，网罗了一批天才少年，其中就包括来自河北沧州 13 岁身高一米八七的孙悦。\n小时候的孙悦：我早就知道，总有刁民想害朕\n当时在那个年代，对于培养年轻球员的投入力度，奥神远超其他 CBA 球队的。当时每个小球员每月有两三千块的工资，为了提高他们的身体素质，奥神常年采购进口牛肉和营养品。训练体系则参照美国的职业队标准，每个球员配一个美国球员做陪练，这也为孙悦打下了良好的基本功。\n其实现在 CBA 可以多几个奥神\n正是因为在非常推崇国际先进理念的奥神队，孙悦没有被强行打造成内线球员，而是根据其特点从控卫的基本功开始抓起，孙悦这才成为了一位拥有前锋身高但却拥有后卫技巧的超级摇摆人。\n\n2003 年，18 岁的孙悦代表奥神出战 CBA,在助攻和防守端展现出过人的潜力。而他的身高打法更是让所有人都吃了一惊，因为中国篮球历史上从来没有一个身高超过 2 米的后卫，国家青年队立刻向孙悦抛出了橄榄枝。\n\n2004 年，孙悦被国家 U19 青年队征召，而奥神队拒绝放人，被 CBA 联赛处罚禁赛一年。这直接为奥神次年主动放弃了 CBA 的准入资格评估埋下伏笔。20…",
+          "link": "https://daily.zhihu.com/story/9741479",
+          "publishedOn": "2021-10-20T23:07:30.000Z",
+          "wordCount": null,
+          "title": "孙悦正式退役，如何评价他的职业生涯？",
+          "itunes": {}
+        },
+        {
+          "id": "https://daily.zhihu.com/story/9741484",
+          "author": null,
+          "description": "给孩子取名沐兮很傻吗?\n\n方舟，触不到的总是最好的，如风，如你。wechat：law_fz\n阅读原文\n\n你是不是姓『安』，\n而且很喜欢喝酸奶……\n阅读原文\n\n你见过最蠢的婚礼司仪说过什么话？\n\n故林，互联网老潜水员\n阅读原文\n\n夫妻对拜：\n这腰弯得要拜到土里去了\n \n婚礼上对 98 岁的老人说：\n祝您长命百岁！\n阅读原文\n\n摇滚，朋克，金属，后摇，后朋的定义分别是什么样的？\n\nevan ning，学生\n阅读原文\n\n听了半天没人唱歌的那叫后摇，贝斯弹的贼响又不好听的叫后朋，贝斯贼响又挺好听的叫新浪潮，听完后觉得你上你也行的那叫朋克，听完上都不敢上的叫金属。听着像金属，但有布鲁斯味儿的叫硬摇。剩下的不知道该分那边儿的统称摇滚，不知道分哪还不好听的叫 indie 摇滚。\n阅读原文\n\n快递小哥会好奇包裹内是什么吗？\n\n一只阿离丶，每天掉粉的B站主播，直播间ID：77456。谢谢你的喜欢和关\n阅读原文\n\n有一次，我买了五十包姨妈巾 (๑‾ ꇴ ‾๑)\n然后店家不知道怎么想的，给我了一个超大的电器箱子装\n小哥给我拿快递的时候，吸了一口气准备搬给我\n哎~嘿！！\n一秒之后，抱起来起来晃了晃\n「哎，你这到底买的啥」\n（=´口｀=）\nemmmmm…\n阅读原文\n\n交友软件到底有多乱？\n\n曾子峰，我不知道怎么说好\n阅读原文\n\n感觉所有软件到我手上就变成单机版了\n阅读原文",
+          "link": "https://daily.zhihu.com/story/9741484",
+          "publishedOn": "2021-10-20T23:07:21.000Z",
+          "wordCount": null,
+          "title": "瞎扯 · 如何正确地吐槽",
+          "itunes": {}
+        },
+        {
           "id": "https://daily.zhihu.com/story/9741443",
           "author": null,
           "description": "项校长，公众号：规划科学说\n阅读原文\n\n动画电影《冰河世纪》讲的是第四纪大冰期。大冰期是指地球上气候寒冷，中、低纬度地区有时也有强烈冰川作用的地质时期。\n第四纪大冰期约从 200 万年前开始。其结束时间还存在争议，有人认为我们目前还生活在第四纪大冰期中，有人认为第四纪大冰期已结束。在寒冷的第四纪冰期时，南极大陆与格陵兰岛形成了永久性的冰盖，欧洲、北美与西伯利亚西北部存在大型大陆冰盖。北极地区的冰盖向中纬度地区大幅度扩张，最强盛的时候到达过北纬 57 度，某些地方冰盖的厚度达 2 千米。在距今 1.8 万年前的第四纪冰川最盛时期，年平均气温大约比现在低 15℃。那时，可真的是“千里冰封，万里雪飘”了，望天地之间，惟余莽莽。第四纪大冰期有几次冰期。冰期之间的间冰期时，气候转暖，冰川融化，甚至整个极地冰盖都会融化，海平面上升，大地又恢复了生机。\n\n第四纪大冰期不是地球历史上唯一的一次大冰期。地球形成以来，全球至少出现过 5 次大冰期，分别出现在距今 24 亿年前到 21 亿年前、8.5 亿年前到 6.3 亿年前、4.6 亿年前到 4.3 亿年前、3.6 亿年前到 2.6 亿年前以及第四纪大冰期。\n6.3 亿年前地球变成“雪国”，冰雪阻断了海水与大气的接触，二氧化碳很少被溶解。同时，由于当时强烈的火山爆发，喷发出了大量的二氧化碳气体，使得大气中二氧化碳浓度越来越高，温室效应越来越明显。最终地球这个大雪球仅仅用了数百年的时间就融化了，当时的气温可能飙升到 40℃以上，甚至可能达到 50℃。\n\n地球为什么会进入冰期？塞尔维亚有一位天才的地球物理学家、天文学家米卢廷·米兰科维奇（Milutin Milankovich）。他从小就表现出出众的数学天赋，他大学学习的是土木工程，他在贝尔格莱德大学担任应用数学、古典力学、天体力学、理论物理学的教师。米卢廷·米兰科维奇因为有扎实的数学、天文学功底，便从全球尺度上研究了日射量与地球气候之间的关系。地球绕太阳运转的轨道受到木星、土星的影响，形状从接近圆形到轻度的椭圆，变化周期约为 10 万年。地球的转轴是倾斜的，倾角最小为 22.1°，最大为 24.5°，一个变化周期为 4.1 万年。地球岁差周期约为 1.9 万年~2.3 万年。过去 70 万年的冰期、间冰期变化周期恰好与上述几个周期相符合。这难道仅仅是巧合吗？于是，米卢廷·米兰科维奇提出了米兰科维奇循环（Milankovich cycles），认为地球冰期开始、结束的原因与地球轨道的变化有关。\n\n也有人认为冰期是由板块运动造成的。我们都知道，北风呼呼的吹，雪花飘飘洒洒；而南风一来，则是春风吹又生。高山影响了季风，进而影响了气候。比如板块运动造成的青藏高原，是一个巨大的挡风墙，它挡住了北方大陆的寒流南下，也挡住了南亚温暖潮湿空气的北进，使得青藏高原以北地区气温降低。北美洲的科罗拉多高原和青藏高原具有类似的作用。同时，板块运动还会导致大量的火山爆发。火山喷出的火山灰进入大气层会遮挡阳光，降低地球温度。\n上述两种理论都是围绕地球本身来解释冰期形成的原因。有科学家不满足于此，从银河系的角度来看待地球冰期的问题。他们发现，太阳系在银河系旋转，当地球的磁场与银河旋臂磁场极性相同时，正是地球的大冰期。因此，他们认为地球进入冰期与太阳系在银河系中的位置有关。\n\n关于地球冰期的成因，除了上述三种理论外，还有其它的很多理论。目前，有越来越多的科学家认同米兰科维奇循环理论，因为该理论有越来越多的证据支持。\n从上述来看，地球理论上会再次进入冰河世纪，只是时间问题。「你见，或者不见我，我就在那里」。\n阅读原文",
@@ -1624,66 +1684,6 @@
           "wordCount": null,
           "title": "瞎扯 · 如何正确地吐槽",
           "itunes": {}
-        },
-        {
-          "id": "https://daily.zhihu.com/story/9740492",
-          "author": null,
-          "description": "史秀雄Steve，心理咨询师、2019苹果最佳播客Steve说主播\n阅读原文\n\n人终究会死，那么活着的意义是什么？\n会问这个问题的人，应该是以下的两个群体之一：\n第一，你是个好奇和爱思考的人\n第二，你遭遇了挫败、创伤、痛苦或者颓废，进而对自己的人生产生了疑惑\n而大家给出的答案，大多也是以下两类之一：\n第一，人生有很多值得享受的细节，活着就是为了去体验它们\n第二，人生存在着一些伟大的境界，活着就是为了去发现它们\n\n很不幸的是，这两类答案往往是第一群人写给第二群人的，而这当中的问题在于：写答案的人往往在假设看答案的人没有发现过生活中的美妙细节，也不相信人生的确存在伟大的境界。诚然，有的人可能的确没有想过这些事情，尤其是生活阅历尚浅的人，那么对未来可能性的描绘是会有启示的作用。\n可是如果看答案的人已经经历过了很多呢？如果他体验过了美妙的时刻，也相信伟大境界存在的可能性，但是依然质疑活着的意义呢？如果你解答这个问题的方式，是去重述和强调对方已经知道的事情，这实际上是在进一步确认他现有的信念体系是无效的，无法证明人生意义的。结果会不会反而让对方更加绝望呢？\n这也是心理咨询当中的一大挑战：咨询师会遇到许多对生活感到绝望和无意义的来访者，而在这样的情况下许多新手咨询师会忍不住用“画饼”的方式去鼓励来访者，让他意识到你只要把当下扛过去了，未来会有好事情等着你。\n这样的方式从来都不管用，还会起反作用。\n你的来访者可能会觉得你并不理解他，也不愿意站在他的角度看待问题。他可能表面认同，但心里觉得站着说话不腰疼。他还可能觉得你不敢面对他所感受到的这种绝望感和虚无感，在用自欺欺人的方式逃避这个问题。总之，对来访者提出这样的问题时，我从不会试图安慰对方，因为没有什么好安慰的。\n你可能会惊讶，“没有什么好安慰的？”，这听上去好冷血，怎么可能是心理咨询师说出来的话呢？\n\n这就要引出我的核心观点了：人的存在…",
-          "link": "https://daily.zhihu.com/story/9740492",
-          "publishedOn": "2021-09-20T23:07:14.000Z",
-          "wordCount": null,
-          "title": "人终有一死，那么人生有何意义？为什么要继续活着？",
-          "itunes": {}
-        },
-        {
-          "id": "https://daily.zhihu.com/story/9740490",
-          "author": null,
-          "description": "segelas，电影学硕士已毕业，但仍旧略懂皮毛\n阅读原文\n\n谈一谈个人的看法。\n武侠片这个名词，或许更接近于类型片的概念。如果从这一点出发，那么武侠片的“死亡”，或许要从其在片中元素、主题上的“丰富化”说起。当武侠不再是我们惯常认知中的那种“套路”与“模式”，而拥有了导演的更多独特性表达，便有了更强的作者性，而武侠也就变成了导演构建自我表达的平台和工具。\n在这个层面上讲，当武侠电影展示出了更多的作者性时，那个大众习惯性认为的“武侠片”，或许就是“死”了。比起一次次的套路化复制，它更多地成为了走向与主题完全个人化的东西，难以做完全统一的严谨归类 ---- 我们显然不能将《东邪西毒》《英雄》《武侠》视作同一类作品，而他们也与更早期的张彻的那些电影完全迥异。\n因此，武侠片是否“死了”？由于它的作者化、个性化，对于传统模板的愈发打破，或许“是”。但是，从另一个角度上说，新时代的武侠电影，导演依然以武林中人为表现对象，依然围绕着侠客们的内心世界，依然表达着武侠于自己眼中最值得赞扬的部分。\n\n武侠片，依然是武侠唱主角，甚至比原来的类型化武侠片更深入、更本质、更关乎于武侠的精神层面内容。曾经的金庸改编作品，多以核心人物的情感线索与微观矛盾为主，而较少侧重金庸原作中的“家国”与“自由”之精神内核，而《英雄》《卧虎藏龙》这样的作者性电影里，我们却可以看到这样的涉及。那么，从这个意义上，武侠片又没有真正地死，反而“活”得更丰富、更内涵了。\n如果以“传统认知武侠片的死亡“为标准，那么作者性程度最高的作品，其实就可以看作是”死亡“的标志。但与此同时，它却又是武侠片挖掘深度之新篇章的生之标志。\n\n王家卫的《一代宗师》，或许就是这样一个标志。\n相对于《东邪西毒》等片的艰深晦涩，《一代宗师》应该算是王家卫最为平易近人的一部作品了。均匀分布的动作戏，最大限度保证了观众的情绪。但非常明显的是，《一代宗师》…",
-          "link": "https://daily.zhihu.com/story/9740490",
-          "publishedOn": "2021-09-20T23:07:06.000Z",
-          "wordCount": null,
-          "title": "武侠片是不是死了？武侠片死于哪部电影？",
-          "itunes": {}
-        },
-        {
-          "id": "https://daily.zhihu.com/story/9740482",
-          "author": null,
-          "description": "猫研所，猫咪知识精准科普平台\n阅读原文\n\n这是因为猫咪有很强的障碍记忆能力！\n所以，像这样的障碍↓\n图自：youtube\n这样的↓\n图自：Gifer\n还有这样↓\n图自：Gifer\n猫咪都可以轻松躲避。\n为什么猫咪走路不会被绊倒？\n猫咪在走路时，眼睛会提前确认障碍物，当走到障碍物前时，不用再确认障碍物位置和高度，会直接前后脚跨过：\n图自：引文 1\n而人是不同的，我们在走路时会低下头看着障碍往前走。\n当人遇到楼梯会低下头确定位置\n为什么猫咪不需要低头走路呢？这是因为猫咪在抬起前脚后，会记住前脚抬起的高度，再把后脚抬到同样的高度，就能轻松跨过障碍物了。\n而猫咪表现出来的的这种记忆能力，实际上是有正经名称的，叫“障碍记忆”，它能保护猫咪的后脚在行走过程中不被撞到。\n图自:引文 1\n在猫咪正常行走过程中，前后脚抬起的时间间隔只有 0.8 秒，所以“障碍记忆”通常也只需维持 0.8 秒。\n可如果在猫咪前腿刚跨过障碍物时，突然打断猫咪的行走，TA 的后腿还能“记得”障碍物吗？\n猫咪是否会忘掉障碍存在？\n早在 2006 年，加拿大阿尔伯塔大学心理学系的一个团队，就对猫咪进行了这方面的实验研究。\n实验 1\n▌验证猫咪障碍记忆的持久度\n通过喂食打断猫咪的行走，在猫咪恢复行走后，观察猫咪后腿是否会抬起跨过障碍物。\n\n实验过程\n\n➤ 在猫咪行走的路中央放置一个障碍物（障碍物的高度为 7.2cm）。\n\n1.虚线:没有障碍物的轨迹\n2.实线:遇到障碍物后的轨迹\n\n➤ 在猫咪前腿跨过障碍物时，通过给猫咪喂食，中断猫咪行走(几秒钟到几分钟)。\n图自：引文 1\n➤ 然后悄悄挪走障碍物。\n➤ 通过移动食物鼓励猫咪向前行走。观察猫咪能否会在原先障碍物的位置抬起后腿。\n图自：引文 1\n实验结果\n\n猫咪在行走过程被打断 10 到 200 秒后，后腿依旧会在原障碍物的位置抬高到与前腿相同的高度，并且做出跨过障碍物的姿势。\n甚至在少数的情况下，猫咪保留了长达 10 分钟的障碍记忆。\n实验 2\n▌验证猫咪障碍记忆的精确度\n在猫咪行走的道路上再添加一个障碍物，验证猫咪在行走被打断以后，能否准确地记得两个障碍物的位置。\n\n实验过程\n\n➤ 在上个实验猫咪行走的道路上，再加入另一个障碍物。\n图自：引文 1\n➤ 在猫咪的两只前脚越过两个障碍物后，通过给猫咪喂食来中断猫咪行走（几秒钟到几分钟）。\n猫咪分开跨过两个障碍物(虚线) 猫咪直接跨过两个障碍物(实线)\n➤ 再用食物引诱猫咪向前走，观察猫咪在行走被打断以后，后腿能否准确跨过两个障碍物。\n\n实验结果\n\n猫咪依然记得两个障碍物的位置以及两个障碍物之间的间隔距离，并顺利跨过了两个障碍物。\n所以，实验表明猫咪对障碍物位置、大小和高度的记忆不受短暂停顿的影响。\n这种避障记忆有什么作用？\n➤ 躲避天敌\n猫咪是非常谨慎的动物，任何动静都会引起 TA 们的注意，而 TA 们也会尽量去隐藏自己，不出现声响，避免暴露自己的行踪而受到袭击。\n➤ 抓捕猎物\n猫咪的障碍记忆能在一定程度上降低行走时产生的动静，避免在伏击其他动物时，因为后腿不小心踩到障碍物发出声响，而惊跑自己的猎物。\n家养猫咪也保留下这种避障记忆的能力，让 TA 们在平时的生活中，不会因为眼睛观察不到后腿而撞到障碍物。\n图自:youtube\n既然猫咪拥有如此强的避障能力，为什么还会经常“不小心”将东西碰倒碰掉呢？\n图自:youtube\n这就可能是因为猫咪的好奇心，或是太无聊而——\n故意为之！\n图自:youtube\n资料来源：\n[1] McVea, D. A. (2006). Long-Lasting Memories of Obstacles Guide Leg Movements in the Walking Cat. Journal of Neuroscience, 26(4), 1175–1178.\n[2] McVea, D. A., Taylor, A. J., & Pearson, K. G. (2009). Long-Lasting Working Memories of Obstacles Established by Foreleg Stepping in Walking Cats Require Area 5 of the Posterior Parietal Cortex. Journal of Neuroscience, 29(29), 9396–9404.\n[3] https://www.petful.com/behaviors/cats-memories/\n\n责任编辑：LNS\n本文为猫研所原创，谢绝任意转载\n阅读原文",
-          "link": "https://daily.zhihu.com/story/9740482",
-          "publishedOn": "2021-09-20T23:07:00.000Z",
-          "wordCount": null,
-          "title": "猫为什么能够精确躲避障碍物？尤其是后腿?",
-          "itunes": {}
-        },
-        {
-          "id": "https://daily.zhihu.com/story/9740486",
-          "author": null,
-          "description": "简单心理Uni，学心理咨询，到简单心理Uni\n阅读原文\n\n题主你好，这个得看是在什么场合下遇到的什么关系的人了。但是别担心，大部分情况下不会让人觉得反感。\n一是因为现在大部分人都更关注于自己，如果和社恐的人做不来朋友会及时止损，远远到不了反感的程度；\n二是因为现在大家对于“社恐”不再陌生，如果不理解也至少能保持礼貌相处。\n拥有社交焦虑和恐怖的人不表示没有亲密的朋友，题主如果你自己本身就是一个社恐，评判和责备自己只会让你的痛苦更深一步。\n尝试去接受自己对于社交的焦虑，接受自己本来的样子吧。\n\n我是一个有社交焦虑的人，很害怕在公众场合得到过度的关注。\n有一年过生日，我和朋友们在餐厅吃饭。突然，我的一个朋友拿出了为我准备的生日蛋糕，点燃了蜡烛，高声祝我生日快乐。\n结果餐厅的服务员们看到了，就纷纷聚集过来，他们本着提供优质服务的态度，准备为我合唱生日歌。\n看着朋友和服务员热情的笑脸，我的心跳直线飙升，手心开始出汗。我无法拒绝他们，却也无法坦然地接受这样大张旗鼓的祝福。\n这个场景一直深深地留在我的脑海里，因为对于社恐来说这太可怕了，就像是被公开处刑。\n\n01、社恐怕的到底是什么？\n社交焦虑，也称为社交恐惧 / 社恐。它与单纯的“内向”并不一样，具有社交焦虑的人会过分监控和关注自己在社交时的行为，并且会对自己的言行做出负面的评价。\n比如和同事在电梯里相遇时，我的内心便会上演几万字的小剧场：\n“我要不要打招呼，我觉得我应该打个招呼吧，如果不打招呼会显得很冷漠，但是同事已经进来半天了，现在再突然打招呼会不会显得很奇怪？……还是打个招呼吧。\n我靠，怎么已经到了，我为什么最后也没有打招呼。完了，同事一定觉得我很没有礼貌……”\n还有就是，我经常在和朋友聊得热火朝天时，突然心里一凉，暗暗琢磨自己刚才某句话的措辞可能不太合适，天哪，我蠢死了，我为什么要说那句话。\n@Relatable Doodles…",
-          "link": "https://daily.zhihu.com/story/9740486",
-          "publishedOn": "2021-09-20T23:06:54.000Z",
-          "wordCount": null,
-          "title": "社恐的人会让人觉得很反感吗？",
-          "itunes": {}
-        },
-        {
-          "id": "https://daily.zhihu.com/story/9740481",
-          "author": null,
-          "description": "伯益，期期艾艾，行迈靡靡\n阅读原文\n\n可以符合，也可以不符合。这看你买不买账。\n漫威漫画本质上是幻想作品，故不符合现实科技理论是可以理解并在一定范围内容忍的。\n由于很多科技阿宅喜欢漫威，他们会努力地用尽可能符合哲学逻辑的方式帮助编剧去让“设定”看起来更“合理”（符合科学理论）一些。“维度”论就是其中之一，这一粉丝理论在 80 年代后被官方手册采纳并认可。\n90 年代《奇异博士：至上尊者》Vol.1 第 21 期增页的手册类故事“黑暗维度传奇”，奇异博士以科学角度解释无限光谱中的多元维度。\n不同于通常理解上的按照时间线进行解构的分法，漫威的多元宇宙结构中还有一种观察方式是“无限光谱论”Infinite Spectrum，即按照现实世界的三维空间结构进行解析，在任一维度的数轴上，都存在着 0-∞的刻度，现实物质世界的三维之下的有限无界的世界常被称为“口袋维度”pocket-dimension，三维以上的特异性异维度空间常被称为“额外维度”extra-dimension，多元宇宙也可以视为这无穷多的维度中存在的世界之和（不过很多情况下额外维度与口袋维度经常混用）。而诸多不符合我们认知中的超能力现象，都可以是认为相关人物借用了其余维度的力量。\n通常所说的“能量守恒定律”/ 热力学第一定律，前提是观察对象是宏观状态并处于物理定义中的“封闭系统”。如果某个人物可以源源不断地从额外维度或者某个口袋维度获取能量 / 物质，这样在形式上就不违背热力学第一（守恒）及第二（熵增）定律了。\n比如蚁人等皮姆粒子使用者，其变大或变小的质量来源，就源于“微宇宙”Microverse 中的一个口袋维度 Kosmos；镭射眼 Cyclops 的冲击射线其实是一种特殊的非现实粒子束，来自于某个与他的眼睛相连的未知口袋维度。夜行者 Nightcrawler 等变种人的传送超能力也与口袋维度相关。\n多玛姆 Dommarmu、梦魇 Nightmare 等威胁着多个世界的恶魔 / 邪神，其领域通常都是位于高于现实的额外维度中；起源于地球的诸神，则大多居住于与地球相连的口袋维度，比如阿斯加德 Asgard、奥林匹斯 Olympus、大罗天 Ta-Lo 等。魔法师们通常做出的那些无法用科技解释的表现，多半都是靠借用这些神魔及其领域的能量实现的，索尔这种神魔的力量也可以以此解释。\n当然，以上都是不怎么硬的伪科学，大部分编剧直接是以纯粹唯心的角度塑造魔法与超能力的，他们根本不在乎上面的解释。\n阅读原文",
-          "link": "https://daily.zhihu.com/story/9740481",
-          "publishedOn": "2021-09-20T23:06:46.000Z",
-          "wordCount": null,
-          "title": "超级英雄符合能量守恒定律吗?",
-          "itunes": {}
-        },
-        {
-          "id": "https://daily.zhihu.com/story/9740528",
-          "author": null,
-          "description": "你见过哪些搞笑的新闻报道?\n\n乔殿夏，擅长做梦 擅长幻想 想让你开心\n阅读原文\n\n记者：这位大妈您好。请问一下雾霾对您的生活有没有造成什么影响呢？\n老人：影响可大喽。首先你得看清楚，我是你大爷……\n\n\n阅读原文\n\n王者荣耀中有没有你是因为技术而被别人称为外挂？\n\n夏虫不可语冰\n阅读原文\n\n因为太菜被怀疑是电脑算吗\n阅读原文\n\n在国内的星巴克跟店员说英语以练习口语，会被人投以白眼吗？\n\ndodo，注册建筑师/装比的逗比/专利权人/闲人\n阅读原文\n\n\n\nSalut！\n\n\n阅读原文\n\n为什么一个编程论坛会起名叫Stack Overflow，多么不吉利的名字?\n\ndhchen，Ph.D. in Mathematics\n阅读原文\n\n我猜题主是炼丹的，否则不会在意吉利与否\n阅读原文\n\n有个广东男朋友是什么体验？\n\n寒江雪，热爱生活的姑娘\n阅读原文\n\n我东北的，在“街”这个字上找到了共鸣\n阅读原文",
-          "link": "https://daily.zhihu.com/story/9740528",
-          "publishedOn": "2021-09-20T23:06:40.000Z",
-          "wordCount": null,
-          "title": "瞎扯 · 如何正确地吐槽",
-          "itunes": {}
         }
       ]
     },
@@ -1692,6 +1692,231 @@
       "feedUrl": "https://news.ycombinator.com/rss",
       "siteUrl": "https://news.ycombinator.com/",
       "articles": [
+        {
+          "id": "https://www.science.org/content/article/machu-picchu-was-built-over-major-fault-zones-now-researchers-think-they-know-why",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.science.org/content/article/machu-picchu-was-built-over-major-fault-zones-now-researchers-think-they-know-why",
+          "publishedOn": "2021-10-21T00:07:54.000Z",
+          "wordCount": 267,
+          "title": "Machu Picchu was built over major fault zones. Researchers think they know why"
+        },
+        {
+          "id": "https://public.flourish.studio/visualisation/7574790/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://public.flourish.studio/visualisation/7574790/",
+          "publishedOn": "2021-10-21T00:01:26.000Z",
+          "wordCount": 68,
+          "title": "OWASP top 10 change visualization from 2004 to now"
+        },
+        {
+          "id": "https://github.com/ruby/ruby/pull/4992",
+          "author": null,
+          "description": "Comments",
+          "link": "https://github.com/ruby/ruby/pull/4992",
+          "publishedOn": "2021-10-20T23:53:45.000Z",
+          "wordCount": 3179,
+          "title": "Merge YJIT: an in-process JIT compiler"
+        },
+        {
+          "id": "https://www.nature.com/articles/s41586-021-04103-z",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.nature.com/articles/s41586-021-04103-z",
+          "publishedOn": "2021-10-20T23:47:18.000Z",
+          "wordCount": 1894,
+          "title": "Discovery of hundreds of genes that contribute to different traits and diseases"
+        },
+        {
+          "id": "https://duckduckgo.com/tty/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://duckduckgo.com/tty/",
+          "publishedOn": "2021-10-20T23:34:45.000Z",
+          "wordCount": 6,
+          "title": "DuckDuckGo as a TTY"
+        },
+        {
+          "id": "https://calbryant.uk/blog/10-ways-to-get-the-best-out-of-openscad/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://calbryant.uk/blog/10-ways-to-get-the-best-out-of-openscad/",
+          "publishedOn": "2021-10-20T22:13:20.000Z",
+          "wordCount": 2193,
+          "title": "Getting the best out of OpenSCAD"
+        },
+        {
+          "id": "https://arstechnica.com/tech-policy/2021/10/theranos-devices-ran-demo-apps-that-blocked-error-messages-during-investor-pitches/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://arstechnica.com/tech-policy/2021/10/theranos-devices-ran-demo-apps-that-blocked-error-messages-during-investor-pitches/",
+          "publishedOn": "2021-10-20T21:17:27.000Z",
+          "wordCount": 979,
+          "title": "Theranos devices ran “null protocol” to skip actual demo for investors"
+        },
+        {
+          "id": "https://jobs.lever.co/buildzoom",
+          "author": null,
+          "description": "Comments",
+          "link": "https://jobs.lever.co/buildzoom",
+          "publishedOn": "2021-10-20T21:00:24.000Z",
+          "wordCount": 115,
+          "title": "BuildZoom (better way to build custom homes) Is hiring a Principal Engineer"
+        },
+        {
+          "id": "https://ai.googleblog.com/2021/10/predicting-spreadsheet-formulas-from.html",
+          "author": null,
+          "description": "Comments",
+          "link": "https://ai.googleblog.com/2021/10/predicting-spreadsheet-formulas-from.html",
+          "publishedOn": "2021-10-20T20:50:51.000Z",
+          "wordCount": 1646,
+          "title": "Predicting spreadsheet formulas from semi-structured contexts"
+        },
+        {
+          "id": "https://www.science.org/doi/10.1126/scisignal.abc4764",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.science.org/doi/10.1126/scisignal.abc4764",
+          "publishedOn": "2021-10-20T20:48:40.000Z",
+          "wordCount": 17939,
+          "title": "Injury response to DNA damage in live tumor cells promotes antitumor immunity"
+        },
+        {
+          "id": "https://www.qsrmagazine.com/news/aw-turns-its-worst-marketing-fail-new-burger",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.qsrmagazine.com/news/aw-turns-its-worst-marketing-fail-new-burger",
+          "publishedOn": "2021-10-20T20:19:07.000Z",
+          "wordCount": 1286,
+          "title": "A&W Turns its 'Worst Marketing Fail' Into a New Burger, Launches 3/9lb sandwich"
+        },
+        {
+          "id": "https://plato.stanford.edu/entries/platonism-mathematics/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://plato.stanford.edu/entries/platonism-mathematics/",
+          "publishedOn": "2021-10-20T20:08:59.000Z",
+          "wordCount": 8289,
+          "title": "Platonism in the Philosophy of Mathematics"
+        },
+        {
+          "id": "https://tesla-cdn.thron.com/static/TWPKBV_TSLA_Q3_2021_Quarterly_Update_SI1AKE.pdf?xseo=&response-content-disposition=inline%3Bfilename%3D%22TSLA-Q3-2021-Quarterly-Update.pdf%22",
+          "author": null,
+          "description": "Comments",
+          "link": "https://tesla-cdn.thron.com/static/TWPKBV_TSLA_Q3_2021_Quarterly_Update_SI1AKE.pdf?xseo=&response-content-disposition=inline%3Bfilename%3D%22TSLA-Q3-2021-Quarterly-Update.pdf%22",
+          "publishedOn": "2021-10-20T20:05:47.000Z",
+          "wordCount": 112422,
+          "title": "Tesla Q3 2021 Earnings"
+        },
+        {
+          "id": "https://www.youtube.com/watch?v=NjrYk546uBA",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.youtube.com/watch?v=NjrYk546uBA",
+          "publishedOn": "2021-10-20T19:11:59.000Z",
+          "wordCount": null,
+          "title": "Bioelektryczność – Polish Robotics (1968) [video]"
+        },
+        {
+          "id": "https://www.copetti.org/writings/consoles/playstation-3/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.copetti.org/writings/consoles/playstation-3/",
+          "publishedOn": "2021-10-20T18:56:53.000Z",
+          "wordCount": 20567,
+          "title": "Playstation 3 Architecture"
+        },
+        {
+          "id": "https://www.nature.com/articles/s41586-021-03972-8",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.nature.com/articles/s41586-021-03972-8",
+          "publishedOn": "2021-10-20T18:50:23.000Z",
+          "wordCount": 6148,
+          "title": "Evidence for European presence in the Americas in AD 1021"
+        },
+        {
+          "id": "https://www.commerce.gov/news/press-releases/2021/10/commerce-tightens-export-controls-items-used-surveillance-private",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.commerce.gov/news/press-releases/2021/10/commerce-tightens-export-controls-items-used-surveillance-private",
+          "publishedOn": "2021-10-20T18:14:33.000Z",
+          "wordCount": 1163,
+          "title": "U.S. tightens export controls on items used in surveillance of private citizens"
+        },
+        {
+          "id": "https://browser.geekbench.com/v5/cpu/10496766",
+          "author": null,
+          "description": "Comments",
+          "link": "https://browser.geekbench.com/v5/cpu/10496766",
+          "publishedOn": "2021-10-20T17:50:17.000Z",
+          "wordCount": 426,
+          "title": "Apple M1 Max Geekbench Score"
+        },
+        {
+          "id": "https://iconmap.io/blog",
+          "author": null,
+          "description": "Comments",
+          "link": "https://iconmap.io/blog",
+          "publishedOn": "2021-10-20T17:29:03.000Z",
+          "wordCount": 1294,
+          "title": "We analyzed 425k favicons"
+        },
+        {
+          "id": "https://code.visualstudio.com/blogs/2021/10/20/vscode-dev",
+          "author": null,
+          "description": "Comments",
+          "link": "https://code.visualstudio.com/blogs/2021/10/20/vscode-dev",
+          "publishedOn": "2021-10-20T15:52:21.000Z",
+          "wordCount": 1916,
+          "title": "Vscode.dev"
+        },
+        {
+          "id": "https://blogs.windows.com/windows-insider/2021/10/20/introducing-android-apps-on-windows-11-to-windows-insiders/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://blogs.windows.com/windows-insider/2021/10/20/introducing-android-apps-on-windows-11-to-windows-insiders/",
+          "publishedOn": "2021-10-20T15:10:36.000Z",
+          "wordCount": 1302,
+          "title": "Android Apps on Windows 11"
+        },
+        {
+          "id": "https://voxodyssey.com/atari-2600",
+          "author": null,
+          "description": "Comments",
+          "link": "https://voxodyssey.com/atari-2600",
+          "publishedOn": "2021-10-20T14:41:08.000Z",
+          "wordCount": 874,
+          "title": "All Atari Games"
+        },
+        {
+          "id": "https://madned.substack.com/p/a-talk-with-computer-gaming-pioneer",
+          "author": null,
+          "description": "Comments",
+          "link": "https://madned.substack.com/p/a-talk-with-computer-gaming-pioneer",
+          "publishedOn": "2021-10-20T12:29:16.000Z",
+          "wordCount": 2830,
+          "title": "A talk with Walter Bright about Empire"
+        },
+        {
+          "id": "https://owlpal.substack.com/p/about-that-time-i-had-an-outburst",
+          "author": null,
+          "description": "Comments",
+          "link": "https://owlpal.substack.com/p/about-that-time-i-had-an-outburst",
+          "publishedOn": "2021-10-20T12:03:25.000Z",
+          "wordCount": 1199,
+          "title": "About that time I had an outburst during the Y Combinator Interview"
+        },
+        {
+          "id": "https://github.com/dsaltares/glapse",
+          "author": null,
+          "description": "Comments",
+          "link": "https://github.com/dsaltares/glapse",
+          "publishedOn": "2021-10-20T05:17:34.000Z",
+          "wordCount": 647,
+          "title": "GLapse: Create a Time Lapse Video"
+        },
         {
           "id": "https://knowingless.com/2021/10/19/becoming-a-whorelord-the-overly-analytical-guide-to-escorting/",
           "author": null,
@@ -1909,6 +2134,15 @@
           "title": "The day my script killed 10k phones in South America"
         },
         {
+          "id": "https://www.foonathan.net/2021/02/column/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.foonathan.net/2021/02/column/",
+          "publishedOn": "2021-10-19T11:41:43.000Z",
+          "wordCount": 2325,
+          "title": "What is the unit of a text column number?"
+        },
+        {
           "id": "https://news.mit.edu/2021/how-brain-navigates-cities-1018",
           "author": null,
           "description": "Comments",
@@ -1934,6 +2168,15 @@
           "publishedOn": "2021-10-19T10:57:00.000Z",
           "wordCount": 5179,
           "title": "A proposal for adding a pipe operator to JavaScript"
+        },
+        {
+          "id": "https://www.bloomberg.com/opinion/articles/2021-10-05/urban-design-why-can-t-we-build-nice-neighborhoods-anymore",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.bloomberg.com/opinion/articles/2021-10-05/urban-design-why-can-t-we-build-nice-neighborhoods-anymore",
+          "publishedOn": "2021-10-19T04:42:07.000Z",
+          "wordCount": 93,
+          "title": "Why can't we build nice neighborhoods anymore?"
         },
         {
           "id": "https://www.sec.gov/Archives/edgar/data/1462056/000119312521301141/d62601ds1.htm",
@@ -2114,6 +2357,24 @@
           "publishedOn": "2021-10-18T10:28:32.000Z",
           "wordCount": 1666,
           "title": "AWS is playing chess, Cloudflare is playing Go"
+        },
+        {
+          "id": "https://fibery.io/blog/hypertext-tools-from-the-80s/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://fibery.io/blog/hypertext-tools-from-the-80s/",
+          "publishedOn": "2021-10-18T08:57:51.000Z",
+          "wordCount": 2110,
+          "title": "Hypertext Tools from the 80s"
+        },
+        {
+          "id": "https://mikolaj-kaminski.com/jetbrains-rider-docker-compose-unicodedecodeerror-issue-fix/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://mikolaj-kaminski.com/jetbrains-rider-docker-compose-unicodedecodeerror-issue-fix/",
+          "publishedOn": "2021-10-18T08:40:39.000Z",
+          "wordCount": 730,
+          "title": "I couldn't debug the code because of my name"
         },
         {
           "id": "https://therecord.media/sinclair-tv-stations-disrupted-across-the-us-in-apparent-ransomware-attack/",
@@ -2366,6 +2627,15 @@
           "publishedOn": "2021-10-17T09:35:18.000Z",
           "wordCount": 2120,
           "title": "Why Mathematics is Boring (2007) [pdf]"
+        },
+        {
+          "id": "https://www.baldurbjarnason.com/2021/100-things-every-web-developer-should-know/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.baldurbjarnason.com/2021/100-things-every-web-developer-should-know/",
+          "publishedOn": "2021-10-17T09:32:54.000Z",
+          "wordCount": 8703,
+          "title": "Facts every web dev should know before they burn out and turn to painting"
         },
         {
           "id": "https://grinfeld.org/books/An-Introduction-To-Tensor-Calculus/",
@@ -9332,267 +9602,6 @@
           "publishedOn": "2021-09-21T13:11:16.000Z",
           "wordCount": 1036,
           "title": "More Casio Watch Mods (2017)"
-        },
-        {
-          "id": "https://www.wsj.com/articles/google-to-buy-new-york-city-office-building-for-2-1-billion-11632225600",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.wsj.com/articles/google-to-buy-new-york-city-office-building-for-2-1-billion-11632225600",
-          "publishedOn": "2021-09-21T12:19:33.000Z",
-          "wordCount": 1060,
-          "title": "Google to Buy New York City Office Building for $2.1B"
-        },
-        {
-          "id": "https://susam.in/blog/fd-100.html",
-          "author": null,
-          "description": "Comments",
-          "link": "https://susam.in/blog/fd-100.html",
-          "publishedOn": "2021-09-21T12:08:15.000Z",
-          "wordCount": 846,
-          "title": "FD 100"
-        },
-        {
-          "id": "https://belkadan.com/blog/2021/09/Swift-Regrets/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://belkadan.com/blog/2021/09/Swift-Regrets/",
-          "publishedOn": "2021-09-21T11:03:47.000Z",
-          "wordCount": 316,
-          "title": "Swift Regrets"
-        },
-        {
-          "id": "https://twitter.com/foone/status/1440014690831126528",
-          "author": null,
-          "description": "Comments",
-          "link": "https://twitter.com/foone/status/1440014690831126528",
-          "publishedOn": "2021-09-21T03:05:20.000Z",
-          "wordCount": 196,
-          "title": "While posting to Tumblr, E and W keys just stopped working"
-        },
-        {
-          "id": "https://github.com/snoack/python-goto",
-          "author": null,
-          "description": "Comments",
-          "link": "https://github.com/snoack/python-goto",
-          "publishedOn": "2021-09-21T00:16:25.000Z",
-          "wordCount": 915,
-          "title": "A function decorator that rewrites the bytecode to enable goto in Python"
-        },
-        {
-          "id": "https://benhoyt.com/writings/python-pattern-matching/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://benhoyt.com/writings/python-pattern-matching/",
-          "publishedOn": "2021-09-21T00:07:01.000Z",
-          "wordCount": 6466,
-          "title": "Structural pattern matching in Python 3.10"
-        },
-        {
-          "id": "https://drewdevault.com/2020/11/01/What-is-Gemini-anyway.html",
-          "author": null,
-          "description": "Comments",
-          "link": "https://drewdevault.com/2020/11/01/What-is-Gemini-anyway.html",
-          "publishedOn": "2021-09-20T23:41:20.000Z",
-          "wordCount": 1326,
-          "title": "What is this Gemini thing, and why am I excited about it? (2020)"
-        },
-        {
-          "id": "https://www.ryanliptak.com/blog/fuzzing-zig-code/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.ryanliptak.com/blog/fuzzing-zig-code/",
-          "publishedOn": "2021-09-20T22:49:51.000Z",
-          "wordCount": 1654,
-          "title": "Fuzzing Zig Code Using AFL++"
-        },
-        {
-          "id": "https://lwn.net/Articles/868536/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://lwn.net/Articles/868536/",
-          "publishedOn": "2021-09-20T21:46:18.000Z",
-          "wordCount": 1286,
-          "title": "OpenSSL 3.0 released; relicensed to Apache-2.0"
-        },
-        {
-          "id": "https://jobs.ashbyhq.com/cortex/c26bd57b-97d3-41fc-accd-fbf24c4e917a",
-          "author": null,
-          "description": "Comments",
-          "link": "https://jobs.ashbyhq.com/cortex/c26bd57b-97d3-41fc-accd-fbf24c4e917a",
-          "publishedOn": "2021-09-20T21:00:27.000Z",
-          "wordCount": 16,
-          "title": "Cortex (YC W20) Is Hiring Senior Engineers to Solve Microservice Complexity"
-        },
-        {
-          "id": "https://puri.sm/posts/microsoft-ruined-passwords-now-aims-for-a-passwordless-future/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://puri.sm/posts/microsoft-ruined-passwords-now-aims-for-a-passwordless-future/",
-          "publishedOn": "2021-09-20T20:55:41.000Z",
-          "wordCount": 1822,
-          "title": "Microsoft ruined passwords, now aims for a passwordless future"
-        },
-        {
-          "id": "https://trishagee.com/2020/09/07/reading-code-is-a-skill/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://trishagee.com/2020/09/07/reading-code-is-a-skill/",
-          "publishedOn": "2021-09-20T20:25:48.000Z",
-          "wordCount": 3255,
-          "title": "Reading code is a skill (2020)"
-        },
-        {
-          "id": "https://twitter.com/netresec/status/1440036446291693574",
-          "author": null,
-          "description": "Comments",
-          "link": "https://twitter.com/netresec/status/1440036446291693574",
-          "publishedOn": "2021-09-20T20:20:53.000Z",
-          "wordCount": 196,
-          "title": "Text entered into Windows' Run dialogue gets sent to Microsoft's telemetry"
-        },
-        {
-          "id": "https://www.freethink.com/technology/a-microchip-may-revolutionize-how-we-treat-diseases",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.freethink.com/technology/a-microchip-may-revolutionize-how-we-treat-diseases",
-          "publishedOn": "2021-09-20T19:46:50.000Z",
-          "wordCount": 1231,
-          "title": "This implanted microchip may one day control your sleep"
-        },
-        {
-          "id": "https://connorberry.com/2021/08/20/emacs-typing-tutor/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://connorberry.com/2021/08/20/emacs-typing-tutor/",
-          "publishedOn": "2021-09-20T19:46:24.000Z",
-          "wordCount": 437,
-          "title": "Emacs Typing Tutor"
-        },
-        {
-          "id": "https://www.quantamagazine.org/a-mathematicians-guided-tour-through-high-dimensions-20210913/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.quantamagazine.org/a-mathematicians-guided-tour-through-high-dimensions-20210913/",
-          "publishedOn": "2021-09-20T19:42:29.000Z",
-          "wordCount": 2110,
-          "title": "A mathematician's guided tour through higher dimensions"
-        },
-        {
-          "id": "https://chicagoreader.com/news-politics/reasonable-doubt-james-allen-murder-credibility/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://chicagoreader.com/news-politics/reasonable-doubt-james-allen-murder-credibility/",
-          "publishedOn": "2021-09-20T19:21:40.000Z",
-          "wordCount": 25211,
-          "title": "Reasonable Doubt"
-        },
-        {
-          "id": "https://nixos.mayflower.consulting/blog/2021/09/06/coredumpctl/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://nixos.mayflower.consulting/blog/2021/09/06/coredumpctl/",
-          "publishedOn": "2021-09-20T18:17:35.000Z",
-          "wordCount": 1860,
-          "title": "Inspecting coredumps like it's 2021"
-        },
-        {
-          "id": "https://github.com/mmozeiko/wcap",
-          "author": null,
-          "description": "Comments",
-          "link": "https://github.com/mmozeiko/wcap",
-          "publishedOn": "2021-09-20T17:37:20.000Z",
-          "wordCount": 977,
-          "title": "Wcap: Simple and efficient screen recording utility for Windows"
-        },
-        {
-          "id": "https://scotthelme.co.uk/lets-encrypt-old-root-expiration/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://scotthelme.co.uk/lets-encrypt-old-root-expiration/",
-          "publishedOn": "2021-09-20T17:29:31.000Z",
-          "wordCount": 1999,
-          "title": "Let's Encrypt's old Root Certificate is expiring"
-        },
-        {
-          "id": "https://hacker-recommended-books.vercel.app/category/0/all-time/page/0/0",
-          "author": null,
-          "description": "Comments",
-          "link": "https://hacker-recommended-books.vercel.app/category/0/all-time/page/0/0",
-          "publishedOn": "2021-09-20T16:58:45.000Z",
-          "wordCount": 51462,
-          "title": "Show HN: 40k HN comments mentioning books, extracted using deep learning"
-        },
-        {
-          "id": "https://thereader.mitpress.mit.edu/the-truth-by-stanislaw-lem/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://thereader.mitpress.mit.edu/the-truth-by-stanislaw-lem/",
-          "publishedOn": "2021-09-20T16:42:52.000Z",
-          "wordCount": 9767,
-          "title": "The Truth, by Stanisław Lem (1964)"
-        },
-        {
-          "id": "https://github.com/ClickHouse/ClickHouse/blob/master/website/blog/en/2021/clickhouse-inc.md",
-          "author": null,
-          "description": "Comments",
-          "link": "https://github.com/ClickHouse/ClickHouse/blob/master/website/blog/en/2021/clickhouse-inc.md",
-          "publishedOn": "2021-09-20T16:13:48.000Z",
-          "wordCount": 1651,
-          "title": "ClickHouse, Inc."
-        },
-        {
-          "id": "https://github.com/GavinMendelGleason/excel_as_code",
-          "author": null,
-          "description": "Comments",
-          "link": "https://github.com/GavinMendelGleason/excel_as_code",
-          "publishedOn": "2021-09-20T15:51:01.000Z",
-          "wordCount": 1719,
-          "title": "Excel as Code"
-        },
-        {
-          "id": "https://nts.strzibny.name/ruby-for-ebook-publishing/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://nts.strzibny.name/ruby-for-ebook-publishing/",
-          "publishedOn": "2021-09-20T15:29:24.000Z",
-          "wordCount": 1814,
-          "title": "Ruby for eBook Publishing"
-        },
-        {
-          "id": "http://plumshell.com/2017/11/30/as-a-solo-app-developer-i-decided-to-offer-phone-support-and-this-is-what-happened/",
-          "author": null,
-          "description": "Comments",
-          "link": "http://plumshell.com/2017/11/30/as-a-solo-app-developer-i-decided-to-offer-phone-support-and-this-is-what-happened/",
-          "publishedOn": "2021-09-20T14:42:42.000Z",
-          "wordCount": 1703,
-          "title": "As a solo developer, I decided to offer phone support (2017)"
-        },
-        {
-          "id": "https://www.longtermtrends.net/home-price-median-annual-income-ratio/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.longtermtrends.net/home-price-median-annual-income-ratio/",
-          "publishedOn": "2021-09-20T14:32:09.000Z",
-          "wordCount": 651,
-          "title": "Home Price to Income Ratio"
-        },
-        {
-          "id": "https://virtuallyfun.com/wordpress/2021/09/19/so-what-is-the-deal-with-a-ux-anyways/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://virtuallyfun.com/wordpress/2021/09/19/so-what-is-the-deal-with-a-ux-anyways/",
-          "publishedOn": "2021-09-20T13:28:19.000Z",
-          "wordCount": 1607,
-          "title": "So what is the deal with A/UX anyways?"
-        },
-        {
-          "id": "https://scienceandtechnology.jpl.nasa.gov/sites/default/files/documents/DefendingCivilizationFromSupervolcanos20151015.pdf",
-          "author": null,
-          "description": "Comments",
-          "link": "https://scienceandtechnology.jpl.nasa.gov/sites/default/files/documents/DefendingCivilizationFromSupervolcanos20151015.pdf",
-          "publishedOn": "2021-09-20T13:16:23.000Z",
-          "wordCount": 12082,
-          "title": "Defending human civilization from supervolcanic eruptions (2015) [pdf]"
         }
       ]
     }
