@@ -76,6 +76,560 @@
 <body>
 <!-- %after-body-begin.html% -->
   <section class="daily-content">
+    <h2 class="daily-heading"><time datatime="2021-12-05">2021-12-05</time></h2>
+    <ul class="sources card">
+      <li class="source">
+        <section>
+          <h3 class="source-name"><a class="source-name__link" href="https://news-at.zhihu.com/api/4/stories/latest?client&#x3D;0">知乎日报</a></h3>
+          <section class="articles-per-source">
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">如果人类的耳朵是通过耳膜接收声音，为什么可以听到不同音色的声音，按道理来说耳膜的振动只有一种音色？</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9743001">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>张越，Brain and Hearing
+阅读原文
+
+谢邀！这个问题需要解释一下两个概念～
+
+声波在碰到耳朵之前已经包含了能产生不同音色(timbre)的各类物理特征：
+
+世界上所有的声音都来自空气分子／其它介质的震动。大家都知道，声音／震动有音量的大小之分，有频率的高低之分，但这两点并不足以解释我们所听到的声音的丰富性。比如，一个吉他和一个钢琴，弹同一个音用一样的强度，或者两个人用一样的音量发同一个声音，闭着眼睛还是能分得清哪个是哪个。
+这是因为其实声音是个多方面的东西，大家就简单粗暴地把音色定义为声音除了音高和音量以外其它影响人类听觉的特征（我并没有开玩笑）～
+但是不管有多少种音色，所有的变化都来自于三个维度：频率，强度和时间。
+下面，就请来玩大家来找茬～
+
+这是借用一个 demo（地址于文下）里录的六种乐器弹奏的声音频谱(spectrogram)。看起来似乎很复杂，但是使用一般的录音分析软件就可以生成，是使用不同的时间窗(time window)和过滤器(filter)分析出来的声波，也就是声音的&#x27;原形&#x27;～
+先从从静态的角度来看，如果在上图中‘截取’一个时间点(x 轴)，会发现每一‘帧’的声音包含了多个频率段（y 轴）并且每个频率段都有不同的强度（从蓝色到黄色）。这种频率段的能量分布（Spectral center of gravity，spectral tilt）常会引起音色上&#x27;浑浊&#x27;到‘亮’的变化，高频的能量多会让人觉得声音比较亮。一般让人感觉‘自然’的声音都会在高频逐渐能量减弱(rolloff)，所以如果人工制造的声音没有这个特征，会让人感觉有些 buzzy。
+此外，图上方的三个声音都是有谐波的(harmonic)，在基频的整数倍的频率段都会出现共振峰(formants)（乐理上叫泛音）。比如，左上的小提琴的声音大概在 500Hz, 1000Hz,1500Hz 等等的位置都有很集中的能量(黄色条条)。这些共振峰的位置和宽度（formants structure）会影响到感觉上声音的音高(pitch)和音质。左上的小提琴更中上的喇叭比共振峰较窄，可能对应了听感上小提琴‘细致’的感觉。右上的吉他共振峰较多，可能对应了声音比较‘自然’的感觉。机器制造声音时也同样会注意控制共振峰的宽度，不然不过于窄的共振峰会有一种不自然的感觉。
+那么图下方的三个声音都是没有谐波的，在能量分布上就更为复杂。不同的组合会影响到声音不同的音色，不详述（不然这个回答就写不完了～）.
+再从动态的角度来看，也就是看每一‘帧’在不同的时间点的变化。那这个可能的组合就更多了。比如，声音能量的从零到开始需要的时间(attack)，从结束到完全没有震动需要的时间(decay)，共振峰的移动(formants dynamics)，从谐波到非谐波的转变等，都会影响到对音色的感觉。
+总结一下，看起来单纯的声音震动其实千变万化可以有很多组合。但是并不是所有的物理上组合都会造成音色的不同，因为音色最终还是主观的感觉。所以就说到第二点：
+2. 声波在碰到耳朵之后，外耳和中耳能够（比较）不失真地传递这些震动给内耳，让耳蜗可以从时间，频率和强度三个维度分析声音并传输给听觉神经再传给大脑。
+从空气分子的震动到大脑感知，需要经过很多步骤，不光是位于外耳的耳膜。
+震动从外耳到中耳一步步被‘接力’，最后到达内耳的时候虽然已经被转换成了动能并且有了点改变(比如耳廓和耳道都对声波有频谱能量的改变)，但是震动的‘内容’没有本质的改变。内耳耳蜗在中耳小骨的震动‘捶打’下有点像声音分析软件，分析出震动在频率，能量和时间上的特征。只是，这个分析的过程不是用傅立叶函数，而是依赖基底膜(basilar membrane)在不同位置有着不同的宽度和厚度，因此共振的频率也不一样这一点来‘分解’声音（对耳蜗机制感兴趣的同学可以先看我的另一篇回答我们如何区分高频声音的响度？ - 张越的回答 - 知乎 https://www.zhihu.com/question/37325702/answer/74234049，等着我以后配图详聊～ ）。
+这样，会产生音色变化的物理特征就这样被传递到听觉神经和大脑，让人能从微小的空气分子的震动中听到美妙的世界～这样想来，还有一点一花一世界的禅意～
+图源：
+http://www.biostat.jhsph.edu/~ririzarr/Demo/demo.html
+阅读原文</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">总听大家说 318 国道，那么 219 国道怎么样？</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9743019">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>星球研究所，解构世间万物，探索极致世界
+阅读原文
+
+它是「地球上最雄壮」的 1 万公里——
+
+根据最新版国家公路网命名编号，219 国道在原新藏线基础上扩展至约 10065km，北达新疆喀纳斯、南达广西东兴，在中国西部边境蜿蜒，成为中国目前最长国道。
+它从群山奔向大海，横跨了中国西部无数雪峰、无数峡谷、无数湖泊，连接起中国西部无数村镇、无数风情、无数岁月，堪称「地球上最雄壮」的 1 万公里。
+▼请横屏观看
+219 国道超长景观全图；为了能在手机固定宽幅内，完整不中断地展示呈弧形的 219 国道，我们决定用特殊方法将其「拉直」，让大家一览到底，制图@陈志浩&amp;王申雯 / 星球研究所
+穿越 219 国道，便会发现这 1 万公里承载了太多太多。
+它是一条通天之路，是万水之路、是生灵之路，更是边防之路。
+
+I 通天之路
+中国地理格局自西向东呈阶梯状逐级下降，而西部便占据着中国最雄伟的身躯，219 国道盘旋于此，翻过数条积雪千年的庞大山系，几乎串起了我国西部所有的重要山脉。
+包括海拔多在 4000m 以上的天山，
+▼请横屏观看
+与天相接的天山，摄影师@文兴华
+平均海拔高达 5500m 以上的喀喇昆仑山，
+▼请横屏观看
+威武雄壮的喀喇昆仑山，摄影师@杨柳松
+以及主脊平均海拔直冲 6000m 的山界之王喜马拉雅山，
+▼请横屏观看
+直刺苍穹的喜马拉雅群峰，图中标注均为 7000m 级以上山峰，摄影师@行影不离；标注@行影不离&amp;王申雯&amp;陈志浩
+还有横断山、阿尔泰山、昆仑山等，均如横亘西部的巨墙，成为沿途的屏障。
+于是，219 国道不得不在高山上盘旋，
+▼
+219 国道沿途山口；山口是山间的低凹处，也被称为「达坂」或「垭口」，摄影师@陈建平
+在冻土上蜿蜒，
+▼
+219 国道上的黑卡子达坂海拔 4909m，摄影师@小强先森
+在冰雪里穿梭，
+▼
+219 国道上的麻扎达坂海拔 4969m，摄影师@小强…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">冬季衣服厚又多，衣柜如何做收纳？</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9743013">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>Zolo，Takumikou.com，日居理念研究，日本建材观察
+阅读原文
+
+冬天一来，家里的衣柜难免成为收纳的“重灾区”。明明前几天才刚看到的毛衣又找不到了，手套帽子又不知道放到哪里了.....对于冬季的衣物，应该如何收纳呢？
+01 断舍离
+首先在冬季快到来之前，可以进行一次衣物整理 / 断舍离
+对收纳来讲，相比「按照衣物量来增加收纳空间或收纳品」，「按照衣柜的收纳空间精简衣物量」更加有效。
+我们可以根据衣柜收纳能力，预先设定一个大致的冬季衣物量，衣物过多的话，找起来很麻烦，还会占用更多的空间。
+02 冬季衣物收纳
+冬天时会用到的衣物：
+大衣、羽绒服
+挂在衣柜或衣帽间，因为是外套，挂着可以方便穿脱。
+图片来自 Pinterest
+毛衣、针织类
+针织类衣物尽量不使用衣服挂，因为衣架会导致针织物肩部变形，并且衣物本身的重量会使衣服拉伸变松垮。
+可以使用挂架叠好后收纳，拉开衣柜就可以一目了然看到所有的针织衣物，再也不用翻来找去了。
+
+手套、围巾、冬帽等
+可以放在衣柜的置物处，也可以利用收纳盒、收纳箱进行收纳。
+03 擅用收纳用品
+收纳用品的选择标准：
+1、方便拿取
+常用物品选择抽屉式的收纳，非当季的物品使用收纳箱。
+以想拿一件毛衣时的动线对比，就可以很明显感受到区别了。
+使用抽屉收纳的动线：拉开抽屉→找到毛衣→拿出毛衣→关上抽屉
+
+而使用收纳箱的动线则是：拿出箱子→打开箱子→翻出毛衣→再合上箱子→把箱子放回原位
+所以收纳箱可以放在不常用的上层，用来收纳一些春夏的衣物，分类并用标签标号。
+
+2、能看到所有收纳物品
+这一点非常重要！比如抽屉式收纳，不要像毛巾那样一件叠一件摆放！因为衣物是需要“挑选”的。
+这样叠放的坏处是，首先不容易看到下层衣服的款式和样式，其次我要是想穿最下面的那件怎么办，下层真的很难拿！
+
+如果这样竖着叠放收纳，就能一目了然的看到所有衣服，想拿哪件拿哪件，轻松加愉快。
+
+挂架也是同理，收纳时要保证视线能看到所有的衣物，并可以随意拿取！
+
+最后，希望大家都能收获心仪的冬季衣物收纳方法，打造整齐有序的衣柜~
+阅读原文</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">比起其它形式，游戏是呈现科幻题材的更好载体吗？</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9743007">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>Drache
+阅读原文
+
+回答此问题前，我们可以先看看，其他传统形式是呈现科幻题材的好载体么？
+郭帆的影视团队对中国科幻的工业化影视改编做了拓荒性质的探索，团队选取了刘慈欣《流浪地球》这篇 2.2 万字中篇的其中一段进行了改编。从电影工业化来看，它的置景、服化道和特效真正做到了对叙事的辅助和增强（甚至还在半途成立了 UI 部门来解决呈现问题），他们的努力使得电影的世界可信、幻想合理，作为当代科幻电影可以说是合格了，但不少观众会批判其人物和剧情过于套路，而另一些观众则认为其格局过小、背离原著精神。
+《爱，死亡与机器人》是以动画短篇形式对科幻呈现的探索，第一季 18 集中的 16 集背后都有科幻小说原著支撑，包括广受好评的《齐马蓝》。不少观众喜欢其恢弘浪漫的视觉表达和返璞归真的禅意，但原著中作者阿拉斯泰尔·雷诺兹还有一层探讨，是关于记忆的载体，由肉体记录的不稳定记忆和由机器记录的精确记忆，究竟哪一个才是人之为人的关键。有些科幻读者与学者惋惜于这部分探讨被完全抹去，但也有影评人认为这一取舍令此作品封神。
+对于最近刚刚上映的《沙丘》意见分化更是严重，路人观众对于一群掌握空间旅行技术的人用冷兵器打群架十分困惑，认为其节奏缓慢、剧情拖沓。但也不乏喜欢其美术风格者，和包括我在内的对其精准还原了原著风貌与精神的科幻爱好者。
+而最近火热的“元宇宙”概念，最早来自尼尔·史蒂文森的《雪崩》，这一科幻概念的落地已不再局限于单一载体，而是涵盖了多样载体与技术的现实社会。当然，有人认为这是人类发展的未来，也有人认为这个概念被过度解读，变成了什么都能装的口袋概念。
+除此之外，《诗云》的广播剧、《三体》的舞台剧、《闭环》改编的剧本杀《星落五丈原》、综艺节目《火星情报局》等，都是对科幻题材落地形式的探索，但孰优孰劣，相信每一个欣赏体验过的人都有不同的看法。
+SPACE X 的火箭回收平台可能是科幻最成功的落…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">宝可梦有粪便吗？</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9743016">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>疯癫的A兵者，B站空间：https://space.bilibili.com/84785878
+阅读原文
+
+（多图预警～）
+勉强回答一下：
+宝可梦肯定是有粪便的，这一点多次在 Pokemon 主系列游戏中的图鉴信息中出现，不只是一种宝可梦，而且目前在 Pokemon 世界中也有“粪便化石”出土，意味着“排泄行为”是宝可梦很早之前便演化出来的，我们有理由推测，粪便应该是 Pokemon 世界中普遍存在的。
+
+先说游戏，再说动画和漫画中的内容：
+
+图鉴中提及的“粪便”相关信息：五世代 - 火红不倒翁
+
+Pokemon 主系列游戏中，至少在五世代（正作《黑 / 白》）之后的图鉴“火红不倒翁”的条目中，记载了关于它的“粪便”相关内容，如上图和下图所示，由于五世代没有官方中文，基本都是日文和英文记载，翻译一下：
+
+五世代正作《宝可梦：白》中，描述是：
+
+火红不倒翁的粪便是热的，因此过去的人们会放入怀中取暖。
+
+六世代正作《宝可梦：X》中，描述一样：
+
+火红不倒翁的粪便是热的，因此过去的人们会放入怀中取暖。
+
+六世代重制版《宝可梦：欧米伽红宝石》中，描述一样：
+
+火红不倒翁的粪便是热的，因此过去的人们会放入怀中取暖。
+
+可以看出，至少火红不倒翁的“粪便”一直存在，而且是过去的人“取暖工具”（然而把这些玩意儿放在怀里取暖，我还是觉得有点……）无论用途和方式如何，粪便确实是客观存在的，而且温度很高（似乎比热也不低就是了）……
+
+图鉴中提及的“粪便”相关信息：七世代 - 爆焰龟兽
+
+同理，七世代游戏之后，爆焰龟兽的图鉴条目中，一直也都有关于“粪便”相关的描述，这个时候已经有官方中文了，大致描述如下：
+
+七世代正作《宝可梦：月亮》中，描述如下：
+
+从鼻孔里喷出火焰和毒瓦斯。粪便是爆炸物，有各式各样的用途。
+
+八世代正作《宝可梦：盾》中，描述如下：
+
+在火山上生活，吃下的硫磺就是甲壳上炸药的原料。连粪便也会爆炸，十分危险。
+两者描述上差别不大，核心都是说爆焰龟兽的粪便很“危险”，是爆炸物，说明粪便本身是客观存在的，就是粪便的利弊上还有讨论的空间……
+
+图鉴中提及的“粪便”相关信息：七世代 - 地鼠
+
+七世代增加许多生态上的描述，除了爆焰龟兽之外，还有地鼠，图鉴描述中也有关于“粪便”相关内容：
+
+七世代正作《宝可梦：月亮》中，对地鼠的粪便描述如下：
+
+地鼠会疏松栖息的土地，其粪便也会让土壤肥沃，所以很多农户会精心培育它们。
+地鼠的“下半身”一直都是一个“谜”，但是“粪便”应该是比较常见的，而且可以用作肥料，简直是松土和施肥一条龙服务……
+
+Pokemon 世界的“宝可梦粪便化石”
+
+宝可梦的“排泄行为”可以用“自古以来”这个词来形容，至少很早的时候，宝可梦应该已经“演化”出排泄这个功能了，而且粪便的形状，我们可以通过出土的化石中看到，其实形状上与一般的动物粪便也没有太大差异……
+
+在“大峡谷”中，小茂曾经挖出过一个化石，经过专家鉴定，这就是宝可梦的粪便化石，至少很早之前，宝可梦的粪便就一直存在了……
+
+宝可梦漫画中的“粪便”：《特别篇》&amp;《皮皮传》
+
+虽然，Pokemon 漫画属于“内容授权”形式，而且因为创作自由度高，所以不太适合用于世界观设定。然而，实际上，在“宝可梦有无粪便”情况中，两个最“长寿”的漫画均采取了与官方游戏、官方动画设定一致的情况：
+
+《特别篇》中，莎菲雅就会通过宝可梦的“排泄物”的味道，判断宝可梦是否生病，以及身体情况如何，漫画中有充分的表现……
+而《皮皮传》（一译为《宝可梦：欢乐祭》），以“屎尿屁”梗和无厘头搞笑充斥全篇，主角皮卡丘和皮皮“活宝二人组”，一直都是“排泄王”，可以参见以下回答：
+疯癫的 A 兵者：【宝可梦黑历史】宝可梦欢乐祭：第一部 Pokemon 漫画竟是下流漫画
+所以，综上所述，可以看出宝可梦的粪便一直存在。而且不同媒体产品都“认可”（至少不排斥）这个设定，十分可贵，基本可以定论，宝可梦的排泄行为，一直都有，只是很多时候，不“正面描写”这些内容罢了。
+其他推荐阅读：
+小智上厕所会带皮卡丘吗？求问电影捆绑营销的成功案例?精灵宝可梦系列的旁白是由谁配音的？
+如有不妥之处，求轻喷，欢迎爱好者们一同讨论～
+阅读原文</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">瞎扯 · 如何正确地吐槽</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9743028">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>如何用一句话证明你学过Python？
+
+gashero，Overflow Engineer
+阅读原文
+
+我热爱编程，并且头发很茂盛。
+ 
+阅读原文
+
+有哪些音译词让你察觉不到是音译的？
+
+康员外，无书不看，无话不谈
+阅读原文
+
+普罗大众。
+小时候一直以为是那种“在普世罗网之下笼罩着的大众“的意味。到初中读了共产党宣言，才发觉普罗是 Proletarius 的意思。
+阅读原文
+
+深夜食堂在中国的可行性如何？
+
+南宫老仙，头戴紫金冠体挂百花袍身披兽面连环铠腰系玲珑狮蛮带手执方天画戟
+阅读原文
+
+在我天朝，他们被称为“午夜大排档”
+阅读原文
+
+中国人都有什么有意思的特色 Buff？
+
+知乎用户，我的博客 https://feater.top
+阅读原文
+
+张三：你相信世界上有鬼吗？
+李四：不信
+张三：那晚上去坟圈子溜一圈
+李四：不去，我怕遇到鬼
+张三：溜一圈给你一百万
+李四：去坟堆就好像回家一样，超喜欢这里
+阅读原文
+
+如何在六个字以内营造出画面感？
+
+袁小天，公众号：袁小天的成长进化论
+阅读原文
+
+大郎，该吃药了。
+——《水浒传》
+
+
+
+阅读原文</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+        </section>
+      </li>
+      <li class="source">
+        <section>
+          <h3 class="source-name"><a class="source-name__link" href="https://news.ycombinator.com/">Hacker News</a></h3>
+          <section class="articles-per-source">
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">C++ Compile Time Parser Generator</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://github.com/peter-winter/ctpg">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(19 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">You click a link to a news site, to read an article that seems interesting</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://mastodon.technology/@rysiek/107390725207653910">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(6 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Analog Devices Expands over 1000 Linux Device Drivers to Support Development</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.analog.com/en/about-adi/news-room/press-releases/2021/11-30-2021-analog-devices-expands-linux-distribution.html">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(4 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">All Placebos are not created equal</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://atis.substack.com/p/all-placebos-are-not-created-equal">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(4 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Correlation between the advent of refrigeration and the rise of Crohn&#x27;s disease</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://academic.oup.com/ecco-jcc/article/15/4/678/5908865">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(35 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Automated Time Series Processing and Forecasting</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://github.com/Nixtla/nixtla">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(6 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Snake in a block – how I ran snake on Ethereum</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://medium.com/@inner.space/snake-in-a-block-how-i-ran-snake-on-ethereum-f46f9812abb1">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(10 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Gordian Software (YC W19) Is Hiring Back End Engineers</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://jobs.ashbyhq.com/GordianSoftware/0ea0a67e-3621-4b28-ab56-3f27a956af22">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Library for creating terminal applications with text-based widgets</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://github.com/gansm/finalcut">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(6 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">How to make any immutable data structure distributed</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.unison-lang.org/articles/distributed-datasets/core-idea/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(5 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Optimal Strategies for Exploring Nearby Stars</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.centauri-dreams.org/2021/12/03/optimal-strategies-for-exploring-nearby-stars/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(43 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Nvidia EditGAN: Image Editing with Full Control from Sketches</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.louisbouchard.ai/editgan/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(5 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">War Starts</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://backstory.substack.com/p/war-starts">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(7 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Hacking the planet with Notcurses: a guide to TUIs (2020) [pdf]</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://nick-black.com/htp-notcurses.pdf">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(1364 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Fakelish – Fake English word generator</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://fakelish.nwtgck.org/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">2049 and the dreams of Philip K. Dick</summary>
+                <a class="article-summary-link article-summary-box-outer" href="http://strangehorizons.com/non-fiction/articles/it-will-prove-invincible-blade-runner-2049-and-the-dreams-of-philip-k-dick/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(25 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Amazon is bypassing supply chain chaos with chartered ships and long-haul planes</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.cnbc.com/2021/12/04/how-amazon-beats-supply-chain-chaos-with-ships-and-long-haul-planes.html">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(4 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">NoiseCraft: Browser-Based Visual Programming Language for Sound and Music</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://pointersgonewild.com/2021/12/05/noisecraft-a-browser-based-visual-programming-language-for-sound-music/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(4 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Zrythm: A highly automated and intuitive digital audio workstation</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.zrythm.org/en/index.html">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(1 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Simple Raspberry Pi Powered SMS Gateway</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://blog.haschek.at/2021/raspberry-pi-sms-gateway.html">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(6 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Widdler is a single binary that serves up TiddlyWikis</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://github.com/qbit/widdler">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">The sea people: Alexander the Great trod in the footsteps of forgotten Greeks</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://nemets.substack.com/p/the-sea-people">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(14 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Stephen Wolfram – re:Clojure Keynote [video]</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.youtube.com/watch?v&#x3D;3C1QQXEg_F8&amp;t&#x3D;34811s">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+        </section>
+      </li>
+    </ul>
+  </section>
+  <section class="daily-content">
     <h2 class="daily-heading"><time datatime="2021-12-04">2021-12-04</time></h2>
     <ul class="sources card">
       <li class="source">
@@ -516,10 +1070,43 @@ No.1 壹
             </article>
             <article>
               <details class="article-expander">
+                <summary class="article-expander__title">Show HN: Code Hike – More than syntax highlighting</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://codehike.org/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(5 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
                 <summary class="article-expander__title">Is the big tech era ending?</summary>
                 <a class="article-summary-link article-summary-box-outer" href="https://wyclif.substack.com/p/is-the-big-tech-era-ending">
                   <div class="article-summary-box-inner">
                     <span class="article-reading-time">(4 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Electrodynamic Tether</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://en.wikipedia.org/wiki/Electrodynamic_tether">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(35 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Tracing Octavia Butler’s footsteps</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://lareviewofbooks.org/article/tracing-octavia-butlers-footsteps-interview-rochell-d-thomas/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(9 min)</span>
                     <span>Comments</span>
                   </div>
                 </a>
@@ -758,6 +1345,17 @@ No.1 壹
             </article>
             <article>
               <details class="article-expander">
+                <summary class="article-expander__title">Tips on adding JSON output to your CLI app</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://blog.kellybrazil.com/2021/12/03/tips-on-adding-json-output-to-your-cli-app/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(9 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
                 <summary class="article-expander__title">Rclone: Rsync for cloud storage – CLI to sync between cloud storage providers</summary>
                 <a class="article-summary-link article-summary-box-outer" href="https://github.com/rclone/rclone">
                   <div class="article-summary-box-inner">
@@ -989,6 +1587,17 @@ No.1 壹
             </article>
             <article>
               <details class="article-expander">
+                <summary class="article-expander__title">Supercharged high-resolution ocean simulation with Jax</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dionhaefner.github.io/2021/12/supercharged-high-resolution-ocean-simulation-with-jax/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(9 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
                 <summary class="article-expander__title">Reality has a surprising amount of detail (2017)</summary>
                 <a class="article-summary-link article-summary-box-outer" href="http://johnsalvatier.org/blog/2017/reality-has-a-surprising-amount-of-detail">
                   <div class="article-summary-box-inner">
@@ -1004,6 +1613,17 @@ No.1 壹
                 <a class="article-summary-link article-summary-box-outer" href="https://commoncog.com/blog/believability-in-practice/">
                   <div class="article-summary-box-inner">
                     <span class="article-reading-time">(13 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Too many species have been lumped together into Homo sapiens</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.sapiens.org/biology/human-fossil-record/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(8 min)</span>
                     <span>Comments</span>
                   </div>
                 </a>
@@ -2098,6 +2718,17 @@ No.1 壹
                 <a class="article-summary-link article-summary-box-outer" href="https://www.thedrive.com/the-war-zone/43328/u-s-satellites-are-being-attacked-everyday-according-to-space-force-general">
                   <div class="article-summary-box-inner">
                     <span class="article-reading-time">(8 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Dumping the NEC PC Engine YUV Table</summary>
+                <a class="article-summary-link article-summary-box-outer" href="http://furrtek.free.fr/?a&#x3D;pceyuv">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(7 min)</span>
                     <span>Comments</span>
                   </div>
                 </a>
@@ -15881,441 +16512,13 @@ https://b23.tv/PVeBXG
                 </a>
               </details>
             </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">UV light and mildew: why physical objects degrade over time</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://tedium.co/2021/11/05/why-physical-objects-decay/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(10 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Elite Underproduction</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://troynikov.io/elite-underproduction/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(4 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-        </section>
-      </li>
-    </ul>
-  </section>
-  <section class="daily-content">
-    <h2 class="daily-heading"><time datatime="2021-11-05">2021-11-05</time></h2>
-    <ul class="sources card">
-      <li class="source">
-        <section>
-          <h3 class="source-name"><a class="source-name__link" href="https://news-at.zhihu.com/api/4/stories/latest?client&#x3D;0">知乎日报</a></h3>
-          <section class="articles-per-source">
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">科学研究的最终目标和目的是什么？</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9741994">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(0 min)</span>
-                    <span>田轩，“科创中国”青年百人会成员
-阅读原文
-
-这个问题，让我想起了多年前看过的一本书：《世界上最糟糕的旅行》。此书中，描写了 100 多年前一段伟大悲壮的南极探险旅行。在暴风雪中，五名探险家结束了自己的生命。许多人因此发问：这真的值得吗？我想，在这个问题的答案中，隐藏的正是科学研究的真谛。这一场以生命代价终结的探险旅程，不是极点竞赛，也不是证明人类突破极限的能力，更重要的是对南极进行科学研究，以填补人类对极地认知的空白。
-在我看来，科学研究的终极目的，在于拓展人类知识的边界，不断发现暗藏在表象之下的客观规律，并进一步考虑这些规律是否可以被我们有计划地应用，将具体科学的“理”最终淬炼为哲学普世的“道”，从而达到造福人类的目的。
-在这个过程中，很重要的是要摆正目的和意义的关系。有意义，并不意味着要达到什么目的。这就是为什么我们强调科学研究要做真正的原始性创新，不要想着通过科研达到什么目的、获得什么利益。
-既然科学研究侧重于意义，那么怎样的科学研究能算得上是有“有意义”的呢？对此，我倾向于将其形容为一个“打开黑盒子”的过程。所谓“黑盒子”，是指我们只能看见一个理论或者实证的结果。但是，即使用眩目的技术证实了因果关系，却也无法了解这个理论或者实证结果的内在逻辑和推导形成的过程。而“打开黑盒子”，更侧重于“打开”的这个动作过程，是一种建立再推翻，从迷雾中寻找真理的思考方式；是寻找内在底层逻辑的机理，对事件进行深入剖析的能力。“黑盒子”里世间万物的运行机制，是学者解构和探索的对象。
-一个有品位、有意义的科学研究，是对于事物“化繁为简”的逻辑解构，以及反哺于现实的意义建构。不是为了发表而在浩如烟海的学术文献中硬找“missing links”，而是立足实践寻找有价值有意义的“真问题”。
-以我所从事的经济学研究领域为例，要达到研究的“无为却有为”的境界，研究过程中价值判断是很重要的方面。以著书立论为例，如果某人写一本书，首先想到的是能在履历上增加一个亮点，可以满足了某个课题的考核，然后拿着这些去换一个职称，那就不再是原来意义上科学研究的目标了。按照这种不同的目标指向，做事的方式和做事的结果，肯定很不一样的。
-为什么现在这么多人说自己的研究是在搬砖？因为当今学术界，不少所谓研究“成果”，其实就是为了发文章而生产出来的东西，是完全的屠龙之术，对现实生活可能意义不大。
-为了发 paper 而写 paper 的行为，虽然在规则上是行得通的，也是众多学术新人谋生立足的根本，是完全可以理解的。但是，当一个学者已经在学术界立足后，再为发 paper 而写 paper，那就是学术品味不足的体现。
-那么，如何判断自己是不是在做真正有品位，或者更准确地说是有意义的科学研究？这个问题，还得向自己发问。当你回首看自己的研究成果，如果你仍然能够自信地说：我还是为我研究的领域做出了贡献的，也许贡献不大，也可能会被更新的理论和数据推翻，但是我做的事情是有意义的。最怕的是一项研究，论证过程无比严密，结论也无懈可击，但全篇读完后，留给读者脑子里的只有“so what”两字。
-因此，科学研究赋予学者的，其实是一种有使命的特权。从科学的进程看，一个真正有品味的科研工作者应该是：走自己的路，让人类有更好的路可走。
-阅读原文</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">为什么现在喜欢穿皮衣的年轻男生越来越少了？</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9741987">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(0 min)</span>
-                    <span>折原临也，没有感情的时尚穿搭干货输出机，收藏比赞数多肯定是我人设有问题
-阅读原文
-
-这篇回答可能会颠覆原本你们对于皮衣的理解！！！
-改变皮衣在你们心里的形象，让你们了解到
-真正属于一个男人的“皮衣”应该是什么样子的
-统计了一下在这个问题底下的评论和留言
-总结了喜欢穿皮衣的年轻男生为什么越来越少的几点关键原因：
-1、贵、越好的皮衣越贵
-2、环保人士的抵制
-3、不懂款式不懂搭配，穿出来很显老、油腻
-4、保养难，不实用，特别是在南方，气温高不适合穿，冷了也不会想穿皮衣
-原因都说完了，如果想要穿的更加原汁原味，自然是 vintage 的更好，但抛开昂贵的价格，其实像款式和搭配还是很值得学习，所以接下来折原哥就以自己的理解和大家聊一下这种单品款式和搭配。喜欢的小伙伴麻烦点个▲，让这个回答能够被更多男同胞看见。
-
-一、不完统计：一些皮衣的历史
-其实为什么现在喜欢穿皮衣的年轻男生越来越少，除了上面说到 4 点原因以外，还和一个效应有关，这个效应叫做“沉锚效应”，在中国服饰的发展历史里面没有丰富的“机车运动史”以及对于军事服饰的大量借鉴，导致一提到皮衣，我们脑海里就会先入为主的将皮衣和油腻、老气、土气联想在一起，觉得穿皮衣的都是中年男士或者那种暴发户式的土鳖。▼
-图来源：网络
-所以要想将皮衣穿好，多少要了解一些这种单品的历史，了解历史以后才能够将固化的思维演变成开放性的思维，并且也能避免一些某橙色软件首页推荐的一些爆款和奇怪的款式。
-·1938
-在伦敦街头有一个叫做 Ace Cafe 的咖啡店开业，这个咖啡店是 24 小时营业，所以吸引了很多当时的年轻人聚集在这里，音乐、咖啡还有机车是他们乐此不疲的话题，你可以看成这是最早的机车俱乐部：那帮年轻人喜欢穿着黑色的皮衣，将硬币丢进咖啡店的点唱机，然后点上一杯咖啡，机车轰鸣响彻黑夜，和几个朋友在路上狂飙一番以后回来听着音乐再细细品尝一杯温热的咖啡…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">如何培养三岁小孩的专注力？</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9741986">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(0 min)</span>
-                    <span>玫瑶老师
-阅读原文
-
-其实不管孩子几岁，他的专注力都是关于注意力的大型心理工程，这个工程要求的是孩子各项能力的配合。
-所以要让孩子达到专注，我们就要了解孩子专注力构成的因素，这样才能真正帮助孩子达到专注。
-一、构成孩子专注力的四个重要因素
-米哈里·契克森米哈（积极心理学的奠基人）曾通过研究发现心流（专注力的最高状态）有八个要素，分别为：一份可完成的工作、全神贯注于这件事情、明确的目标、即时的反馈、自由控制自己的行动、进入“忘我”的状态、时间感的改变[1]。
-而个人认为如果将这八大要素代入到孩子的专注力中，则可以进一步概括形成孩子专注力的重要因素为：可完成性、完成的技巧、简单的环境、即时的反馈。
-1.可完成性
-就是孩子即将完成的必须是他努力后可以完成的事情，例如我们教一个握笔还不熟练的孩子练字，会发现孩子对写字非常的难以专注，其中的原因在于他还没掌握书写的基础（握笔），写字这个事情对他来说并不是具备可完成性，因此也就无法达到专注的可能。
-如果孩子做的事情难度太高，孩子就容易产生畏难心理，不愿意尝试；而如果太简单，孩子也容易失去兴趣。这就是研究社会互动的大师、社会学家欧文·戈夫曼所说的「远离」（away）。[2]
-所以我们要求孩子专注之前，必须要衡量这件事情是不是具备可完成性，如果不是，就应该将任务分解，依次进行。
-
-2.拥有完成的技巧
-熟悉蒙氏的家长都知道，在蒙氏教室里孩子都能专注于自己的工作，而这其实离不开孩子在开启每项工作之前老师的演示。
-老师的演示其实就是交与孩子完成的技巧，熟知完成的技巧后孩子就能明白整个工作的步骤，能更容易的将注意力集中工作本身，也更容易获得专注的喜悦。
-而在生活中，这种例子也不少，例如孩子第一次玩颜料时，由于担心孩子弄的到处都是，所以我将怎么挤颜料、混合颜料都给孩子演示了一遍，同时还告诉了孩子如果蹭到颜料应该要怎么处理。
-由于事先的演示，孩子在过程…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">攀岩对于你意味着什么？又带给你了什么？</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9741982">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(0 min)</span>
-                    <span>折木奉太郎
-阅读原文
-
-今年三四月份的时候重新认识了一位故人，顿时体会到一种“世上所有的相遇都是久别重逢”的人生滋味。看到她朋友圈里发的攀岩照片与一些日常，七月末我也第一次走进岩馆。不出意外的话，应该是这个问题目前所有回答里攀岩时间最短，水平最差的那一位，完全新手。
-只用了一次，我就爱上这项运动了。岩馆距离家很近，我经常骑着自行车过去，约莫也就十几分钟。教练和保护员很好，一开始教了我很多技巧，譬如尽可能用脚尖去才岩点、用大腿发力不要过分使用手臂的力量等等。
-有一天黑练，看着岩馆里的人们，这些人里有公务员、国企员工、外企职员、幼儿园老师，还有去国外参加抱石比赛为国争光各位大哥。一直处于低社交需求并且也很难和这些人热络起来的我，突然有一种看别人家过年的感觉，其乐融融、好不愉快。好的岩馆像家一样，是我日常工作之后忙碌之余可以跑去的地方，我不太喜欢身边的人跑到岩馆去，因为那对我而言就是一片自己的小天地，像是内心深处能允许我自己喘息的一处角落在现实生活中被具象化的存在。
-攀岩的时候，我时长会有一种恍惚间的踏实感，明明我的手皮从未好过、踩得点也经常不够稳，dyno 的时候经常失败而摔下来，时不时就会蹭到岩点而蹭出血。磕线的时候没踩稳、没抓牢，这些都是家常便饭，失败之于我习以为常，而攀岩时的失败全然不会令我有挫败感。那些沾满镁粉，被鞋子的橡胶蹭出黑印，还在墙上沾染下的弥留在空气中的旁人留下的脚臭味，这些都在包容我失败、一次又一次的鲁莽、摔倒之后再重试。
-你说这是一门艺术吗？我不知道。但攀岩是打拳和长跑之外令我可以做到“见自己”、“见天地”、“见众生”的事，我可以通过磕线和抱石知道自己的斤两与极限，一条 5.8+ 的线一开始爬了一周都没有上，成功之后一口气爬了 15 遍，直到一点力气都没有。我知道，这是我体力和当前水平的极限了；下一次我会爬 5.10，5.11，如法炮制，“还不能停！”在岩馆看各位大哥各种骚动作各种引体一把过、吃午饭的时候看着 YouTube 和 B 站上各路大神表演，心中暗叹这可能是我一辈子都达不到的水平，但又如何呢，天地见到了，足够了。“见众生”这件事，我找不到岩馆之外能够完全隐去“身份”、“职业”、“年龄”，和陌生人其乐融融的地方；可能有，但是我做不到，只有在岩馆里才能这样，没有人在乎你是谁，也没有人关心你做什么工作，大家都是最好的陌生人。众生如此美好，令我满心欢喜。
-以上是攀岩带给我的。要说攀岩意味着什么，在我心里会有一种追赶好学生的那种错觉。我想要登顶，想要赶上那些攀岩了好久的前辈，想要这项运动能令我与他人的人生产生犹如绳索与挂钩一般牢固而可靠的关系。这是我现在、当下，这个人生阶段里遇到烦恼、遇到那些想要独处、想要静一静却又不想把自己关在房间时第一个会想到要去做的事。酸痛的小臂，破皮的手指，脚上蜷起的一个个小泡，手上的镁粉，想要一同攀爬与一起成长的人，所有的意义都在这些上，是的，是全部的意义了。
-阅读原文</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">如果 Netflix 打算拍摄一部中国武侠电视剧，那么你会向网飞推荐翻拍哪一部已有作品？为什么？</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9741973">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(0 min)</span>
-                    <span>為夢而生，哦，耶~
-阅读原文
-
-1.NF 不是优爱腾，他们是纯买家，不参与创制过程，所以他们的管理层和员工不会构想拍摄中国武侠剧或武侠电影这个事情，而是制作人作为供应商拿出一个武侠题材的项目推给他们上会，没开始制作的项目就是上会要钱，拍好了的就是发行买断。
-也就是说，NF 无论是《怪奇物语》，《鱿鱼游戏》或者《纸钞屋》这些全球爆款剧，还是渣导《僵尸军团》，阿耶《光灵》这些三流烂片，还有《虎王》这种现象级纪录片，只要是原创内容，都不是他们的管理团队主动想要这样的项目，而是制片人们向他们推销的点子。当然那些被他们买了改编权的项目，因为一开始买 IP 就涉及到了内容，所以情况会稍微不同一些。起码买的 IP 是啥他们还是会关心的。
-倒是他们的单口喜剧特辑算是他们主动找到艺人来做的，但艺人实际想在演出中讲什么话题他们也总体上不干预，但最近戴夫·查普尔惹怒 TS 人群的情况不知道会不会影响他们在这方面的控制力度。
-2.那么有没有人向 NF 推销过武侠式的点子，或者 NF 买过有武侠属性的 IP 吗？
-答案是当然有。美国最著名的带有东方武侠或者仙侠文化属性的现象级影视产品当属尼克卡通频道的动画剧集《降世神通：最后的气宗》了。本系列 2018 年被 NF 买入了真人剧集的改编权，并最初邀请了动画剧集的原创制片人掌舵，后来二人虽然和 NF 在项目规划上分道扬镳并回归尼克卡通重建《降世神通》动画宇宙，但真人版的项目一直在推进制作，并在今年夏天公布了主要的角色的选角。
-当然本剧没准播出之后还是会被中国的观众像 NF 的《马可·波罗》剧集还有迪士尼的真人《花木兰》电影一样，吐槽荒腔走板。但仅就 IP 本来的文化属性来看，《降世神通》系列要远比目前国内流行的仙侠剧更接近武侠小说的热血气质。
-3.另外一个比较接近武侠设定的 NF 剧是《五行刺客》，是一部时装功夫剧，主演是印尼的动作片明星伊科·乌艾斯，就演《突袭》系列那小子。总体调性还是中国观众会无力吐槽的北美亚裔黑社会故事。哦对这个项目是冯德伦和吴彦祖那个公司做的。他俩的公司之前还做过一个 CW 剧叫《荒原》，包装成了后启示录时代的西游故事，其实和西游记没啥大关系。
-4.至于如果是类似冯德伦这样的华语区的创作制片团队再向 NF 推项目，那大概率还是不会首选古装武侠题材的，目前台湾的几个 NF 或者 HBO 买的标了他们原创 logo 的项目已经证明了这种客观情况。原因还是挺好解释的我就不废话了。但这不代表 NF 完全拒绝购买华语古装内容，实际上近年很多古装片和古装剧都有做海外发行，比如郭敬明版《阴阳师》电影，陈坤、倪妮的烂剧《天盛长歌》等都在 Netflix 上线了，这些华语内容对于海外华人和港澳台东南亚的华语受众还是很有吸引力的。
-但如果要让他们买一个原创项目，那武侠题材是否能在韩国，北美等其他大洲取得一定的数据就是他们要在乎的事情了，虽然我前面说了他们的管理团队不做任何研发制作创意的事情，但反过来也就是完全的互联网的数据化的思维，加上中国内地目前制作项目的预算体量已经追平甚至超过了 NF 的北美大热剧集项目，比如投资是《鱿鱼游戏》的十倍拍一个《天龙八部》，还只能在东南亚有数据，那这种不划算的 deal 你觉得他们会不会做？
-阅读原文</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-        </section>
-      </li>
-      <li class="source">
-        <section>
-          <h3 class="source-name"><a class="source-name__link" href="https://news.ycombinator.com/">Hacker News</a></h3>
-          <section class="articles-per-source">
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Why SQLite Does Not Use Git</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://sqlite.org/whynotgit.html">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(8 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Upgrading an Amiga 500 for Today</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://benjamin.computer/posts/2021-09-30-amiga-upgrade.html">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(9 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Nuclear Power Is the Best Climate-Change Solution by Far</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://www.wsj.com/articles/nuclear-power-best-climate-change-solution-by-far-global-warming-emissions-cop26-11636056581">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(4 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Pdfsandwich</summary>
-                <a class="article-summary-link article-summary-box-outer" href="http://www.tobias-elze.de/pdfsandwich/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(8 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">The Biodegradable Battery</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://www.empa.ch/web/s604/papierbatterie">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(4 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">ZeroCater (YC W11) Is Hiring Python Engineers</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://news.ycombinator.com/item?id&#x3D;29124696">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(0 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">The secret lives of cells – as never seen before</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://www.nature.com/articles/d41586-021-02904-w">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(12 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">An Incremental Approach to Compiler Construction (2006) [pdf]</summary>
-                <a class="article-summary-link article-summary-box-outer" href="http://scheme2006.cs.uchicago.edu/11-ghuloum.pdf">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(59 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">In C, how do you know if the dynamic allocation succeeded?</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://lemire.me/blog/2021/10/27/in-c-how-do-you-know-if-the-dynamic-allocation-succeeded/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(8 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Trading cards are cool again</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://www.tradingcardsarecoolagain.com">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(70 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">RFC: Make NPM install scripts opt-in</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://github.com/npm/rfcs/pull/488">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(19 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Orca – esoteric programming language, designed to create procedural sequencers</summary>
-                <a class="article-summary-link article-summary-box-outer" href="http://100r.co/site/orca.html">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(6 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Embedded malware in RC (NPM package)</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://github.com/advisories/GHSA-g2q5-5433-rhrf">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(1 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">IAB Europe cookie consent pop-ups to be found in breach of GDPR</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://techcrunch.com/2021/11/05/iab-europe-tcf-gdpr-breach-belgium/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(5 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Show HN: WebFrame: F# framework for rapid prototyping with ASP.NET Core</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://github.com/RussBaz/WebFrame">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(9 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">The promise and paradox of decentralization</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://www.thediff.co/p/the-promise-and-paradox-of-decentralization">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(11 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">How credit cards make money</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://bam.kalzumeus.com/archive/how-credit-cards-make-money/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(8 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Lessons Learned: A severe vulnerability in the OWASP ModSecurity Core Rule Set</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://portswigger.net/daily-swig/lessons-learned-how-a-severe-vulnerability-in-the-owasp-modsecurity-core-rule-set-sparked-much-needed-change">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(5 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Does having prime neighbors make you more composite?</summary>
-                <a class="article-summary-link article-summary-box-outer" href="http://bit-player.org/2021/does-having-prime-neighbors-make-you-more-composite">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(14 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Why Co–Star Uses Haskell</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://www.costarastrology.com/why-haskell">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(0 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Helion</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://blog.samaltman.com/helion">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(1 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Show HN: My wife is pregnant; naturally I made a baby-name app to prepare</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://nomdebebe.app/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(0 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Pfizer&#x27;s oral Covid-19 antiviral cuts hospitalization, death by 85%</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://www.fiercebiotech.com/biotech/pfizer-s-oral-covid-19-antiviral-cuts-hospitalization-death-by-85-sending-team-barreling-to">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(3 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Launch HN: Terra (YC W21) – API to easily connect wearables to apps</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://tryterra.co">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(1 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
         </section>
       </li>
     </ul>
   </section>
 
   <footer>
-    <time id="build-timestamp" datetime="2021-12-05T00:50:14.878Z">2021-12-05T00:50:14.878Z</time>
+    <time id="build-timestamp" datetime="2021-12-06T00:48:37.661Z">2021-12-06T00:48:37.661Z</time>
     <span><a class="footer-link" href="https://github.com/osmoscraft/osmosfeed">osmosfeed 1.11.3</a></span>
   </footer>
   <script src="index.js"></script>
