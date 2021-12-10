@@ -2,15 +2,535 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://7qi7qi.github.io/RSSFeeder/index.html</id>
     <title>osmos::feed</title>
-    <updated>2021-12-09T00:47:17.061Z</updated>
+    <updated>2021-12-10T00:49:05.870Z</updated>
     <generator>osmosfeed 1.11.3</generator>
     <link rel="alternate" href="https://7qi7qi.github.io/RSSFeeder/index.html"/>
     <link rel="self" href="https://7qi7qi.github.io/RSSFeeder/feed.atom"/>
+    <entry>
+        <title type="html"><![CDATA[Log4j RCE Found]]></title>
+        <id>https://github.com/apache/logging-log4j2/pull/608</id>
+        <link href="https://github.com/apache/logging-log4j2/pull/608"/>
+        <updated>2021-12-09T23:48:20.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[在攀岩/抱石中, 如何读线?]]></title>
+        <id>https://daily.zhihu.com/story/9743165</id>
+        <link href="https://daily.zhihu.com/story/9743165"/>
+        <updated>2021-12-09T23:07:08.000Z</updated>
+        <summary type="html"><![CDATA[AlbertA，Climb Now，Work Lattttttttter
+阅读原文
+
+之前只是占了个坑，没能好好回答，但是心里一直记着这么个好问题。
+以抱石为例，将个人的一些总结码一下，希望对题主和爱攀岩的小伙伴能有所帮助。
+在抱石的过程中，我们首先会观察线路，查看线路所有的起步点、手点、脚点、结束点的位置，线路上抓点（或脚点）的位置与方向、抓点的难度设定方式，并尝试去揣测定线员的意图。
+揣测意图是一个很主观的事情，因为攀爬者的身高、臂展、柔韧、力量等均有很大差别，所以我们在攀爬的过程中就要努力寻找最适合自己的解决思路，来解决这个 problem
+想要读懂一条线路，我个人觉得有三点非常重要的基础
+I、多爬线
+很容易理解，爬线多了，自然会熟悉岩壁，熟悉人与岩壁之间的联系方式，如何利用各个岩点和身体的支点关系，与重力形成对抗，并且用相对省力的方式，保持身体在岩壁上的平衡和移动（攀岩的核心问题）。
+平衡通常涉及到两个要素：1、身体的重心 2、支撑面
+身体重心可以简单的理解为站立状态下的肚脐下方一点，随着身体姿态的变化，中心也会发生变化。
+支撑面是我自定义的一个概念，简单说是身体在岩壁上攀爬的时候，各个支撑自己保持在岩壁上平衡的支点之间的联系。
+而如果想要保持在岩壁上身体姿态的平衡，支撑面的重心与身体重心重合度越高，则越省力（个人的总结结论，欢迎指正）
+II、丰富自己的动作库
+动作库的丰富，是为了在平衡的身体状态下，达成更好的移动效率。毕竟没有谁会希望自己在岩壁上像个企鹅一样行走（虽然也是萌萌哒），也没有谁不希望自己在攀岩的时候想跳舞一样优雅。
+通常情况下，岩壁上的动作库主要有三个身体部分的动作组合而成：
+1、手：手点的抓握方式有很多，但是作为一个岩棍，我认为最最最重要的动作是选择用哪一只手抓点，重视这一点能决定你未来是一个细腻的技术流还是一个暴力爬线机器。
+2、脚：踩、挂、勾、蹭
+正确的踩点姿势是利用脚尖内侧位置，下压脚跟，从而起到更加稳固的效果；
+挂脚通常是指用脚跟勾住岩点，利用脚尖方向的调整，利用脚踝进行发力；
+勾脚属于相对高阶的技能，通常在比较难的破坏平衡动作的线路中出现
+蹭是比较常见的坡面岩点踩点方式，通过更多的接触面积增大脚点摩擦力（理解是和岩点不同位置的摩擦系数有关，也可能面积增大，脚点发力更充分压力变大，所以摩擦力变大，总之此处不接受杠精）
+3、膝盖：膝盖动作比较常见的就是折膝 / 拧膝、Knee Bar
+plus：身体核心 + 脑子
+III、多看别人爬线
+观察别人爬线或者看比赛视频有时候会给自己短路的大脑打开新的大门，还能这样操作的感受，不仅仅鼓舞你尝试新的动作，也让你知道一切皆有可能
+说了那么多，题主说最好有线路演示，所以就把昨晚爬的一条线路拿过来，分享一下：
+
+V 字起步，T 字结束，圈圈代表手脚点
+线路起步：两点四肢
+根据线路岩点标号，观察岩点方向，明显 4 号点更适合右手，5、6 号点更适合左手，所以规划动作：
+Step1：并手、并脚起步；出左手抓 5 号，左脚 3 号，右手 4 号，左手 6 号
+
+左右手压力都比较大，需要先通过移动左膝盖方向的方式，将身体重心移动向左边，再出左手
+
+Step2：观察下一步岩点红色 7 号点的方向，更适合右手。
+想法 1：调整右脚到 3 号，侧身小动态出右手
+想法 2：考虑身高和臂展，如果距离不远，直接出右手（此刻左手、左脚支点，单步动作难度会比较大）
+想法 3：出右脚到起步手点，折膝静态出右手
+Step3：实验阶段，侧身抓，失败；失败原因：手脚点距离近，蹿
+同侧出手，失败；左手压力大，发力不充分，很勉强能摸到 7 号
+上右脚第一次，失败。失败原因：韧带不好，没控制好身体摆荡出去，再次尝试后，成功
+
+Step4：明显需要并手，同侧发力，但是观察右手 8 号点，发现右手点抓握手形需要反肩动作，立刻想到也许需要左手由抓变撑。
+实验：成功，距离较远，需要身体控制
+
+Step5：8 号蓝色点比较大，并手上左脚至 7 号红色，可以直接出手结束，身体借助三角造型，利用腰作为支点，保持平衡结束攀爬。
+
+
+
+阅读原文]]></summary>
+        <author>
+            <name>知乎日报</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[哪些很出名的艺术作品让你感觉极度不舒服?]]></title>
+        <id>https://daily.zhihu.com/story/9743125</id>
+        <link href="https://daily.zhihu.com/story/9743125"/>
+        <updated>2021-12-09T23:07:03.000Z</updated>
+        <summary type="html"><![CDATA[spRachel雷切爾，OneDayStand，看艺术不只站一天。想成为艺术爽文大大
+阅读原文
+
+毛里奇奥·安切利 Maurizio Anzeri 1969 年生于意大利 Loano，目前在英国伦敦生活和工作。
+他是被 Charles Saatchi 相中的男人。目前在伦敦 Saatch Gallery 举行的群展 ICONOCLASTS: ART OUT OF THE MAINSTREAM 中，他的名字排第一，展览海报用的是他的作品，以下这幅。
+
+Giovanni，2009
+用彩色刺绣在黑白照片上创作出惊艳或惊悚的照片，是他的看家本领。
+在雨中，老照片被洗去，这是它最诗意的瞬间
+Anzeri 爱去跳蚤市场和小车摊位，淘回来的二战前的旧照片，在上面进行刺绣再创作。
+有人问，捣鼓旧人的照片是否不妥？Anzeri 确实为此犹豫过 5 秒。而第一次在巴黎的跳蚤市场买旧照时，他就坚定了想法。
+
+Profile Pink ，2012
+
+Profile Yellow，2012
+那天，他和卖家为老照片讨价还价。5 分钟后，两人成交，天下起了雨。Anzery 离去时，转身看见没被他挑中的旧照片被扔进了垃圾桶。
+他觉得这一瞬间充满了诗意：一张可能被挂在厅堂、被某人珍藏了一辈子的照片，最后被雨洗去。
+所以，Anzery 觉得他的作品让老照片重生。
+
+Nicola，2011
+有些照片上写着名字，作品就用回这个名字。于是，从未走出村门的黄翠花，可能被儿子带着照片越洋到旧金山淘金，百年后，她的照片出现在伦敦最顶级的画廊中，备受赞叹。
+
+Mia，2011
+
+Mio, 2014
+旧时，一张照片的质量比现在高，且更重要 
+旧时，拍一张照片可不容易，一般都为重要的纪念。
+而旧照片的质感也和现在不一样，更像是一幅水彩画或者铅笔画，这是 Anzeri 把其视作艺术创作素材的重要原因。
+
+彩色的线立体又精致，浮现…]]></summary>
+        <author>
+            <name>知乎日报</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[如何看待&quot;小明的妹妹长得很漂亮&quot;缩句为&quot;妹妹长&quot;?]]></title>
+        <id>https://daily.zhihu.com/story/9743174</id>
+        <link href="https://daily.zhihu.com/story/9743174"/>
+        <updated>2021-12-09T23:06:57.000Z</updated>
+        <summary type="html"><![CDATA[陈喑，斯文败类
+阅读原文
+
+今天有朋友跟我讨论，说抖音上一位语文老师讲「小明的妹妹长得很漂亮」将缩成了「妹妹长」。
+我朋友的观点是，按照语法结构好像是没问题的，主语妹妹，谓语「长」，补语「漂亮」。类似「飞机飞得很快」，「漂亮」与「快」都是状语，但是与大家的感受不一致，评论里主要都是在说应该缩写成「妹妹漂亮」。
+那为什么「天气冷得像冰柜」缩成「天气冷」又合情合理呢？而「小明跑得快」缩成「小明跑」又介于合理跟奇怪之间了。这里面涉及到一丢丢语法跟音节的问题。
+首先说我的看法，省略句套公式肯定会出现问题的，然后「妹妹长」的语法也是没有问题的，再就是这句话不能缩成这样。
+我看很多人为了反驳不能缩成这样，各种奇怪的解释都出来了，「表语」还能接受，但是说「漂亮」是宾语就很不合适了，漂亮当然不是宾语啊，宾语是什么，宾语是动作的接受者啊。「吃饭」，「饭」是宾语，「长得漂亮」？？「漂亮」就是补语啊。
+首先说「得」字这里的一般是用在动词或者形容词后，表示结果或者程度的补语，一般在缩句中形容词后的补语是可以直接省略的。这也只是一般情况。比如「天气冷得像冰柜」，缩句成「天气冷」，「我难过得心都碎了」缩句成「我难过」。「他高兴得手舞足蹈」缩成「他高兴」。
+但是动词谓语后面的补语就不能直接生搬公式了，先就题论题。
+①「得」作为虚词有很多含义，比如「说得出」「办得到」「搞得定」这种用在动词和补语中间，但是只是表示可能，所以缩句时就不能直接去掉补语。「这个事情我做得到」难道缩成「这个事情我做」？
+②「得」还可以表示主语动作的完成。比如「人家两岸柳阴边，出得门来便入船」，这个在现代汉语规范中用的比较少，，表示「出门后」，也不能去掉补语。
+③「得」在表示程度或者结果时有时可以去掉，比如「他哭得哇哇叫」缩成「他哭」，但也要看具体语境来判断能不能去掉。首先看句子，当我们说「妹妹长得漂亮」时，是在说妹妹好看，而不是妹…]]></summary>
+        <author>
+            <name>知乎日报</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[鹅怎样做好吃？]]></title>
+        <id>https://daily.zhihu.com/story/9743186</id>
+        <link href="https://daily.zhihu.com/story/9743186"/>
+        <updated>2021-12-09T23:06:53.000Z</updated>
+        <summary type="html"><![CDATA[福桃九分饱，微信公众号：福桃九分饱，ID：futaojiufenbao
+阅读原文
+
+不知道从什么时候开始，朋友圈流行起了一句话，叫“智者不入爱河，铁锅只炖大鹅”。
+我不理解。
+搜了半天，才发现这个打油诗还有下半段：智者不入爱河，铁锅只炖大鹅，爱河伤心又难过，大鹅暖心又抗饿。
+不评价别的，单说最后一句，我觉得他说的对，对极了。
+没有人会不爱铁锅炖大鹅。
+
+比如我的欢乐源泉雷佳音，就在各种采访中频繁提到铁锅炖大鹅。
+和葛大爷在铁岭吃铁锅炖大鹅被老板送白酒：
+
+在横店李光洁请雷佳音吃铁锅炖大鹅，两个人吃了 6 人份：
+
+而同样是东北人的徐冬冬，在写给未来老公的信里畅想，未来的婚礼要在国际化大都市哈尔滨举办，席上就吃铁锅炖大鹅：
+
+在众多东北人的概念里，初雪早已不是炸鸡配啤酒，而是一顿铁锅炖大鹅。你想想，外面飘着大雪，寒风在外面呼啸，而屋内铁锅里的汤汁咕嘟咕嘟，热气升腾，一口接一口，从胃暖到心。
+
+任凭他东西南北风，吃了这一锅铁锅炖大鹅，冬天的寒冷，感情的坎坷，事业的不顺，都不是个事儿。
+
+其实如果要分类，铁锅炖大鹅是属于铁锅炖的一种的。但为什么唯独大鹅这么特殊，总是被单独提到呢？
+这就要从鹅说起。
+在东北，鹅是一个神奇的生物。
+
+首先，它有自己独特的名字，叫né，这个是东北方言的特色发音，跟肉叫 yòu 同理。
+其次，虽然都是禽类，在农村家家养鸡鸭，但不是所有人家里都养鹅。因为鹅这个生物，很难搞。
+在赚钱养家这件事上，相比鸡鸭，鹅产蛋少，一年只抱三次窝，每窝十来个蛋，不划算。
+然后在听话上，鸡基本只在窝里活动，鸭就算外出也会认路自己回家，而养鹅则要人照顾看管，否则不仅不回家，还会毁坏田地。
+最后，抓鹅是一件需要功夫的事情。前一阵子有一个新闻，说辽宁大连一名网友家里想做铁锅炖大鹅，用白酒灌鹅后，醉酒的大鹅晕头转向直接“起飞”，飞出了一里地远。几人拔腿追不上，最后骑上摩托车才将大鹅捉回。
+而且如此费心费力养的鹅，不像肉鸡肉鸭几个月就能吃到，一个好吃的鹅，一定是越老越好吃的。
+
+而鹅老不老，就要看这只鹅的“ber lò”，就是脑门，“ber lò”越大，鹅越老，肉越紧，油越香，越耐炖。
+
+这也是为什么在铁锅炖的菜系里，人人偏爱炖大鹅的原因。
+鹅稀少，所以舍得给你吃鹅的人，是真的愿意付出的爱你。鹅好吃，所以跟坐一桌吃鹅的人，是真的想跟你拥有一顿快乐的回忆。鹅耐炖，所以跟你吃鹅的人，也是真的想跟你呆的再久一点，再久一点。
+
+说起铁锅炖大鹅到底哪里好，其实我也说不太清楚。
+反正我只觉得跟朋友在一起吃的时候是幸福的。
+等待开锅的时间是满心的焦急与期待，木盖子掀开的那一瞬间是满眼的欣喜，随后就是拿起筷子不顾形象的疯抢，想抢到那仅有两只的大鹅腿。这时快乐很原始，有点像大学一人凑十几元偷偷在寝室煮的火锅，肉不多，稍晚一点就只剩下面条，所以要紧盯锅盖，争分夺秒。
+
+但好在鹅大，一只少说也有七八斤，并不会真正地饿到谁，加上配菜至少要四五个人分，等到饱尝完了第一口，再看着那大铁锅，心里就只感觉踏实，这时候天塌下来也无所谓，有这锅大鹅至少能挺十天半个月。
+
+而且在铁锅炖万物皆可炖的加持下，吃大鹅又是自在的。主食你可以选择贴饼子，玉米面团贴在锅两边，厚的一边浸在汤汁里咸香入味，薄的一边大火烤得焦香酥脆。
+
+也可以选择烀花卷，花卷铺在大鹅上，一半在汤里煮，一半在上面蒸，暄软入味。
+
+加配菜也随心，土豆、蘑菇、白菜都是基础，真正的炖菜爱好者只爱干土豆、干豆角和干蘑菇，一方面是耐炖，另一方面则是晒干的食物真的更好吃。
+偶尔还有在上面蒸鸡蛋焖子的，蒸好了可以拌饭或者拌土豆茄子。总之就是一口锅可以承载你想到想不到的一切。
+
+平心而论，铁锅炖大鹅真的不算是什么高深精致的菜。它只是单纯的菜好，料足，给你热气腾腾的菜，给你热热闹闹的气氛，给你实实在在的食物。
+所以我又想到那句看似无厘头的流行语“智者不入爱河，铁锅只炖大鹅”，好像也不是单纯的傻押韵。
+真诚的爱，就要像一锅铁锅炖大鹅。
+伪装的再好的敷衍，一段时间也是能看出来的。无论是穿衣还是吃法，花钱，就是图个开心。
+如果一万的加拿大鹅给不了你开心，不如就吃一顿几百的铁锅炖大鹅。
+本文图片部分来自网络
+阅读原文]]></summary>
+        <author>
+            <name>知乎日报</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[什么是人择原理？]]></title>
+        <id>https://daily.zhihu.com/story/9743176</id>
+        <link href="https://daily.zhihu.com/story/9743176"/>
+        <updated>2021-12-09T23:06:48.000Z</updated>
+        <summary type="html"><![CDATA[yang元祐，物理码工 无序系统 人文历史
+
+
+ 宇宙是为我们而造的吗？
+似乎存在一组基本的物理常数，如果它们稍有不同，宇宙将不会有智慧生命的存在。这就像我们在刀刃上保持平衡。
+根据物理学家 Victor Stenger 的说法，当你将电磁力与引力进行比较时，我们发现电磁力要强 10 的 36 次方倍。这很友好，如果引力稍大一点的话，行星上的生命还未出现时，恒星就已燃烧殆尽。
+斯汀格的另一个例子：宇宙中真空的密度比我们以前认为的要低得多（大约低 139 倍）。这很重要，如果最初的估计是正确的，那么宇宙早已崩溃。
+如果我们宇宙中的某些条件稍有不同，生命将永远不会进化。我们如此幸运，到底是怎么回事？在所有可能的宇宙中，为什么我们的宇宙如此？
+
+人择原理的由来
+“人择原理”一词最早是由澳大利亚物理学家布兰登·卡特于 1973 年提出的。他在哥白尼诞辰 500 周年之际提出了这一设想，这与哥白尼的观点相反，哥白尼原理认为人类在宇宙中并不占有特权位置。
+现在，不是卡特认为人类在宇宙中处于中心地位。哥白尼原则仍然基本完好。正如他说的那样，“尽管我们的处境不一定是中心的，但不可避免地在某种程度上享有特权。”
+在哥白尼之前，标准观念是地球处在一个特殊位置，遵守与宇宙其它所有部分不同的物理定律。反之，宇宙的所有区域都是相同的，这是很自然的。
+当然，我们可以想象，很多具有不容许人类存在的物理特性的宇宙。例如，也许宇宙可能已经形成，使得电磁斥力比强相互作用更强。在这种情况下，质子会彼此推开，而不是结合在一起形成原子核。我们熟知的原子永远不会形成，因此也就不会有生命！
+根据卡特所说，我们可以提出问题的事实意味着，我们显然不可能处在这个宇宙……或任何其它使我们无法生存的宇宙中。那些其他宇宙可能已经形成，但我们不会在那里提出问题。
+
+弱人择原理：在宇宙中观察到的现象必须允许观察者存在。
+强人择原理：宇…]]></summary>
+        <author>
+            <name>知乎日报</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[瞎扯 · 如何正确地吐槽]]></title>
+        <id>https://daily.zhihu.com/story/9743195</id>
+        <link href="https://daily.zhihu.com/story/9743195"/>
+        <updated>2021-12-09T23:06:43.000Z</updated>
+        <summary type="html"><![CDATA[有七个国，秦国为什么只灭了六个国 ?
+
+太岁当头坐
+阅读原文
+
+先看问题成不成立…
+明显不成立嘛
+大秦明明灭了秦国嘛
+族秦者，秦也，非天下也
+阅读原文
+
+有人问：婆婆66岁大寿，要求儿媳自己一人做66道菜，儿媳妇怎么办？
+
+王慧侦，怕黑怕鬼吃的多
+阅读原文
+
+什么婆婆？
+叫阿姨
+阅读原文
+
+大屏冰箱的使用体验感如何?有哪些功能让你觉得买值了?
+
+唐家源，逗比的姿势分子，有问必答，关注必回
+阅读原文
+
+未来的大屏冰箱的想法：
+1、开冰箱门前请先看 5 分钟广告，不然不能开门
+2、通过屏幕下单购买任一一件商品可以立刻跳过当前广告，但其他广告依旧
+3、充 vip 会员可以跳过当前广告，并享受会员专属广告
+4、购买超级会员可以跳过 vip 会员广告，并享受超级会员专属广告
+6、冰箱影视 vip 会员与手机、电视、电脑同款会员不互通，需要单独购买
+7、热门影视需要单独付费购买
+8、超前点播需要单独付费购买
+9、观看烹饪教程时，等菜一下锅便提示需要充会员才能继续观看
+10、烹饪会员和影视会员不互通，且有各自独立广告
+11、烹饪失败，自动帮你下单点同款外卖
+12、存放食物超过三天没有吃的，已经自动帮你下单购买新的同款，保证你每天吃的都是新鲜产品
+阅读原文
+
+女朋友生气心烦的时候爱爬树怎么办？
+
+笑多了会怀孕
+阅读原文
+
+她这是要给你生猴子啊
+阅读原文
+
+家长说考到985奖1w，我考到了，却不给我钱，说用来交学费，我可以告家长吗？
+
+南糯，公众号：南糯小筑。
+阅读原文
+
+大明王朝可以回答一切疑惑。。。
+
+
+
+阅读原文]]></summary>
+        <author>
+            <name>知乎日报</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Faster Gitlab CI/CD pipelines]]></title>
+        <id>https://blog.nimbleways.com/let-s-make-faster-gitlab-ci-cd-pipelines/</id>
+        <link href="https://blog.nimbleways.com/let-s-make-faster-gitlab-ci-cd-pipelines/"/>
+        <updated>2021-12-09T21:11:53.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Replit (YC W18) Is Hiring]]></title>
+        <id>https://replit.com/site/careers</id>
+        <link href="https://replit.com/site/careers"/>
+        <updated>2021-12-09T21:00:33.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[PDM: A Modern Python Package Manager]]></title>
+        <id>https://pdm.fming.dev/</id>
+        <link href="https://pdm.fming.dev/"/>
+        <updated>2021-12-09T20:47:46.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Chrome users beware: Manifest v3 is deceitful and threatening]]></title>
+        <id>https://www.eff.org/deeplinks/2021/12/chrome-users-beware-manifest-v3-deceitful-and-threatening</id>
+        <link href="https://www.eff.org/deeplinks/2021/12/chrome-users-beware-manifest-v3-deceitful-and-threatening"/>
+        <updated>2021-12-09T20:22:37.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Radical Polish books to add to your reading list]]></title>
+        <id>https://www.calvertjournal.com/features/show/12858/queer-feminist-sci-fi-books-polish-literature</id>
+        <link href="https://www.calvertjournal.com/features/show/12858/queer-feminist-sci-fi-books-polish-literature"/>
+        <updated>2021-12-09T20:18:38.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[IPv4 Waiting List]]></title>
+        <id>https://www.ripe.net/manage-ips-and-asns/ipv4/ipv4-waiting-list</id>
+        <link href="https://www.ripe.net/manage-ips-and-asns/ipv4/ipv4-waiting-list"/>
+        <updated>2021-12-09T19:58:33.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[A molten salt storage solution using sodium hydroxide]]></title>
+        <id>https://sifted.eu/articles/salt-energy-storage-seaborg-hyme/</id>
+        <link href="https://sifted.eu/articles/salt-energy-storage-seaborg-hyme/"/>
+        <updated>2021-12-09T19:58:14.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Using deep learning to predict the olfactory properties of molecules (2019)]]></title>
+        <id>https://ai.googleblog.com/2019/10/learning-to-smell-using-deep-learning.html</id>
+        <link href="https://ai.googleblog.com/2019/10/learning-to-smell-using-deep-learning.html"/>
+        <updated>2021-12-09T19:23:14.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Replit.com (YC W18) raises $80M Series B]]></title>
+        <id>https://blog.replit.com/b</id>
+        <link href="https://blog.replit.com/b"/>
+        <updated>2021-12-09T19:04:48.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Tailwind CSS v3.0]]></title>
+        <id>https://tailwindcss.com/blog/tailwindcss-v3</id>
+        <link href="https://tailwindcss.com/blog/tailwindcss-v3"/>
+        <updated>2021-12-09T18:33:39.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Haystack 1.0 – open-source NLP framework to build NLProc back end applications]]></title>
+        <id>https://github.com/deepset-ai/haystack</id>
+        <link href="https://github.com/deepset-ai/haystack"/>
+        <updated>2021-12-09T18:27:24.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[HashiCorp IPO today]]></title>
+        <id>https://www.hashicorp.com/blog/a-new-chapter-for-hashicorp</id>
+        <link href="https://www.hashicorp.com/blog/a-new-chapter-for-hashicorp"/>
+        <updated>2021-12-09T17:55:34.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Stack Graphs]]></title>
+        <id>https://github.blog/2021-12-09-introducing-stack-graphs/</id>
+        <link href="https://github.blog/2021-12-09-introducing-stack-graphs/"/>
+        <updated>2021-12-09T17:51:46.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Avoiding Internet Centralization]]></title>
+        <id>https://mnot.github.io/avoiding-internet-centralization/draft-nottingham-avoiding-internet-centralization.html</id>
+        <link href="https://mnot.github.io/avoiding-internet-centralization/draft-nottingham-avoiding-internet-centralization.html"/>
+        <updated>2021-12-09T17:10:04.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[“Free PACER” bill advances through Senate judiciary unanimously]]></title>
+        <id>https://fixthecourt.com/2021/12/free-pacer-bill-advances-senate-judiciary-unanimously/</id>
+        <link href="https://fixthecourt.com/2021/12/free-pacer-bill-advances-senate-judiciary-unanimously/"/>
+        <updated>2021-12-09T16:56:46.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Parallel Logic Programming: A Sequel]]></title>
+        <id>https://arxiv.org/abs/2111.11218</id>
+        <link href="https://arxiv.org/abs/2111.11218"/>
+        <updated>2021-12-09T16:08:47.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Mathematicians Transcend Geometric Theory of Motion]]></title>
+        <id>https://www.quantamagazine.org/mathematicians-transcend-geometric-theory-of-motion-20211209/</id>
+        <link href="https://www.quantamagazine.org/mathematicians-transcend-geometric-theory-of-motion-20211209/"/>
+        <updated>2021-12-09T15:28:58.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Show HN: Minimalist offline journal app with a chat interface]]></title>
+        <id>https://thezenjournal.com</id>
+        <link href="https://thezenjournal.com"/>
+        <updated>2021-12-09T15:23:27.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[The CIA and the Media (1977)]]></title>
+        <id>http://www.carlbernstein.com/magazine_cia_and_media.php</id>
+        <link href="http://www.carlbernstein.com/magazine_cia_and_media.php"/>
+        <updated>2021-12-09T14:27:07.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Masayuki Uemura has died]]></title>
+        <id>https://www.thegamer.com/masayuki-uemura-creator-nes-snes-dies/</id>
+        <link href="https://www.thegamer.com/masayuki-uemura-creator-nes-snes-dies/"/>
+        <updated>2021-12-09T14:25:24.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[eBPF will help solve service mesh by getting rid of sidecars]]></title>
+        <id>https://isovalent.com/blog/post/2021-12-08-ebpf-servicemesh</id>
+        <link href="https://isovalent.com/blog/post/2021-12-08-ebpf-servicemesh"/>
+        <updated>2021-12-09T13:02:12.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Revisiting the “Tsar Bomba” nuclear test]]></title>
+        <id>https://arstechnica.com/science/2021/12/revisiting-the-tsar-bomba-nuclear-test/</id>
+        <link href="https://arstechnica.com/science/2021/12/revisiting-the-tsar-bomba-nuclear-test/"/>
+        <updated>2021-12-09T12:37:27.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Writing a register based VM in less than 125 lines of C code]]></title>
         <id>https://www.andreinc.net/2021/12/01/writing-a-simple-vm-in-less-than-125-lines-of-c</id>
         <link href="https://www.andreinc.net/2021/12/01/writing-a-simple-vm-in-less-than-125-lines-of-c"/>
         <updated>2021-12-08T23:55:17.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Show HN: Deeplinks.js – Simple deep links to selections of text on your website]]></title>
+        <id>https://github.com/WesleyAC/deeplinks</id>
+        <link href="https://github.com/WesleyAC/deeplinks"/>
+        <updated>2021-12-08T23:51:07.000Z</updated>
         <summary type="html"><![CDATA[Comments]]></summary>
         <author>
             <name>Hacker News</name>
@@ -480,6 +1000,26 @@ Spam 不仅满足了美国人的蛋白质需要，而且在二战中填饱了美
         </author>
     </entry>
     <entry>
+        <title type="html"><![CDATA[Microsoft’s Halo Infinite Went from Disaster to Triumph]]></title>
+        <id>https://www.bloomberg.com/news/articles/2021-12-08/how-microsoft-s-halo-infinite-went-from-disaster-to-triumph</id>
+        <link href="https://www.bloomberg.com/news/articles/2021-12-08/how-microsoft-s-halo-infinite-went-from-disaster-to-triumph"/>
+        <updated>2021-12-08T14:53:59.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[The Economics of Pinball (2009)]]></title>
+        <id>https://cheaptalk.org/2009/11/17/the-economics-of-pinball/</id>
+        <link href="https://cheaptalk.org/2009/11/17/the-economics-of-pinball/"/>
+        <updated>2021-12-08T13:31:44.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[Fibers under the magnifying glass [pdf]]]></title>
         <id>http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2018/p1364r0.pdf</id>
         <link href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2018/p1364r0.pdf"/>
@@ -490,10 +1030,40 @@ Spam 不仅满足了美国人的蛋白质需要，而且在二战中填饱了美
         </author>
     </entry>
     <entry>
+        <title type="html"><![CDATA[More information about proposed amateur TV experiments [video]]]></title>
+        <id>https://ei7gl.blogspot.com/2021/12/more-information-about-proposed-amateur.html</id>
+        <link href="https://ei7gl.blogspot.com/2021/12/more-information-about-proposed-amateur.html"/>
+        <updated>2021-12-08T12:46:39.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Show HN: Play Zork with your friends via SSH]]></title>
+        <id>https://sayitwith.ink/boyd.html</id>
+        <link href="https://sayitwith.ink/boyd.html"/>
+        <updated>2021-12-08T11:59:58.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[Intel updates mysterious ‘software-defined silicon’ code in the Linux kernel]]></title>
         <id>https://www.theregister.com/2021/12/08/intel_software_defined_silicon_update/</id>
         <link href="https://www.theregister.com/2021/12/08/intel_software_defined_silicon_update/"/>
         <updated>2021-12-08T11:49:02.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Apple Neural Engine Internal: From ML Algorithm to HW Registers]]></title>
+        <id>https://www.blackhat.com/asia-21/briefings/schedule/index.html#apple-neural-engine-internal-from-ml-algorithm-to-hw-registers-22039</id>
+        <link href="https://www.blackhat.com/asia-21/briefings/schedule/index.html#apple-neural-engine-internal-from-ml-algorithm-to-hw-registers-22039"/>
+        <updated>2021-12-08T11:02:43.000Z</updated>
         <summary type="html"><![CDATA[Comments]]></summary>
         <author>
             <name>Hacker News</name>
@@ -514,6 +1084,16 @@ Spam 不仅满足了美国人的蛋白质需要，而且在二战中填饱了美
         <id>https://www.macrumors.com/2021/12/07/apple-ceo-tim-cook-secret-deal-with-china/</id>
         <link href="https://www.macrumors.com/2021/12/07/apple-ceo-tim-cook-secret-deal-with-china/"/>
         <updated>2021-12-08T08:21:21.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[The business of extracting knowledge from academic publications]]></title>
+        <id>https://markusstrasser.org/extracting-knowledge-from-literature/</id>
+        <link href="https://markusstrasser.org/extracting-knowledge-from-literature/"/>
+        <updated>2021-12-08T03:49:53.000Z</updated>
         <summary type="html"><![CDATA[Comments]]></summary>
         <author>
             <name>Hacker News</name>
@@ -14774,569 +15354,6 @@ Hydrophilic trails.
         <id>https://paperwebsite.com/</id>
         <link href="https://paperwebsite.com/"/>
         <updated>2021-11-10T13:39:36.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[How to get users to talk to you]]></title>
-        <id>https://www.tella.tv/blog/how-to-talk-to-users</id>
-        <link href="https://www.tella.tv/blog/how-to-talk-to-users"/>
-        <updated>2021-11-10T09:57:33.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Scroll: Extensible Alternative to Markdown]]></title>
-        <id>https://scroll.pub/</id>
-        <link href="https://scroll.pub/"/>
-        <updated>2021-11-10T05:42:22.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Experiencing History in Assassin’s Creed]]></title>
-        <id>https://www.laphamsquarterly.org/roundtable/its-time-some-game-theory</id>
-        <link href="https://www.laphamsquarterly.org/roundtable/its-time-some-game-theory"/>
-        <updated>2021-11-10T03:00:07.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Covid vaxx efficacy after 8 months]]></title>
-        <id>https://www.science.org/doi/10.1126/science.abm0620</id>
-        <link href="https://www.science.org/doi/10.1126/science.abm0620"/>
-        <updated>2021-11-10T00:18:32.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Compass Pathways' Phase IIb psilocybin trial shows reduced depression symptoms]]></title>
-        <id>https://endpts.com/compass-pathways-phase-iib-psilocybin-trial-shows-reduced-depression-symptoms/</id>
-        <link href="https://endpts.com/compass-pathways-phase-iib-psilocybin-trial-shows-reduced-depression-symptoms/"/>
-        <updated>2021-11-09T23:50:48.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[离职的征兆有哪些？]]></title>
-        <id>https://daily.zhihu.com/story/9742148</id>
-        <link href="https://daily.zhihu.com/story/9742148"/>
-        <updated>2021-11-09T23:38:38.000Z</updated>
-        <summary type="html"><![CDATA[Jacob贾超，专治职场不开心
-阅读原文
-
-这个问题挺重要的，但经常被管理者忽视。
-作为管理者而不是个人贡献者的很大区别是需要通过整个团队来共同达成团队目标，而不只是靠自己来完成所有工作。一个好汉三个帮，底下的人都跑路了作为老板光杆司令还干个啥啊。
-这儿我们不讨论管理者的水平怎么样以及管理者自己情商智商水平会不会做人有没有领导力。
-单纯来就问题答问题，从管理者视角，你的员工有哪些迹象，说明这人大概率要考虑离职甚至已经决定离职了。
-1、注意行为上的变化。
-例如比平常来得更晚、走得更早，避开他人休息，单独吃午餐，比以往穿着更正式，或者在情绪上有显著的变化。
-尤其是对于一些对着装要求不是特别正式的公司，突然这人穿的一本正经，还不是准备或者刚刚去完面试嘛！
-2、警惕工作表现突然下滑。
-如果整体大环境不好，整个团队包括领导者自己的业绩都在下滑，这个还算是常态。如果本身一个一直工作产出不错的人，突然自己的业绩表现下滑。那这是个很重要的预警信号。
-3、注意通常不爱抱怨的员工突然表示不满。
-一个人的性格和行为表现相对是稳定的。如果一直隐忍的员工突然不忍了。那基本也就是破罐子破摔不准备干了。
-4、留心员工经常羡慕地提到其他公司（比如“我听说 XX 公司的 XX 人得到了 20000 块的项目奖金！”），或者提起已经离开的其他员工（“小李微信跟我说，她现在在新公司混的非常好，老板非常看重她，给了她很重要的客户负责......”）
-5、留意渐渐与他人疏远的团队成员。例如，有的人原来经常参加会议或者主动承担额外的项目，现在却是能混则混。
-6、谈起“工作倦怠”、缺乏动力、未来迷茫等话题特别起劲。
-如果团队成员有以上主动离职征兆和迹象，建议作为领导者还是不要回避，坦率真诚的与下属进行一对一的交流互动，看是否有从领导者的角度能够给予的支持和帮助。
-天下没有不散的宴席，但毕竟缘分一场，还是争取多一起走一段路吧。哪怕要散，也祝福好聚好散。硬要撕破脸皮拉黑绝交，既没格局也没必要。
-阅读原文]]></summary>
-        <author>
-            <name>知乎日报</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[有哪些任性且有趣的地铁站名?]]></title>
-        <id>https://daily.zhihu.com/story/9742141</id>
-        <link href="https://daily.zhihu.com/story/9742141"/>
-        <updated>2021-11-09T23:38:30.000Z</updated>
-        <summary type="html"><![CDATA[潮水岩，规划中看未来城市。
-阅读原文
-
-以还没建成的人工湖命名地铁站，可以说是一种任性的体现。
-没错，说的就是 2021 年 11 月 6 日热评的 17 号线“嘉会湖”站。
-但其实，国内以人工湖命名的地铁站，不下六十个。比如南京的仙林湖，郑州的龙子湖，重庆的彩云湖，成都的升仙湖，佛山的千灯湖，洛阳的开元湖……
-而作为地铁始发站的，就有上海美兰湖站（7 号线）、上海滴水湖站（16 号线）、沈阳丁香湖（10 号线）、南京金牛湖（S8 线）、长沙梅溪湖西（2 号线）等等。
-人工湖——从偶然为之到新城标配
-其实国内以人工湖命名的地铁站并不在少数，而人工湖的历史也比想象的久远。
-从十三世纪的积水潭，到 1958 年建成的团结湖，再到如今大部分新区新城都会有的人工湖。人工湖也经历了从漕运、调蓄到城市景观为主的重要功能转变。
-90 年代之前的人工湖大多通过义务劳动建成，比如团结湖、郑州西流湖等。
-
-而自从各地新城逐步开工，新城整体规划追求形式布局，人工湖已经逐步形成标配。
-
-而由于对水资源产生浪费，近年人工湖的建设（尤其是湖面规模）开始限制，一些城市更是经历了人工湖回填的惨痛教训。
-盘点那些人工湖命名的地铁站
-由于不少城市的人工湖成为了新区的景观核心，采用人工湖命名地铁站也是典型的实用主义目的，希望通过人工湖地铁站命名带动片区知名度，吸引人群聚集，打响片区知名度。
-而将地铁始发站命名为人工湖则更加强化了这个目的，因为沿线每个站在报站“前往 XX 湖方向”时，无意就在给这个片区做广告推广。
-01 上海滴水湖站（16 号线始发站）
-上海 16 号线终点站滴水湖可能是最有争议的人工湖之一，现场感受的体验是除了经常的大风之外，很难感受到湖作为一个完整圆形的存在。
-滴水湖作为临港新城的标志景观而存在。2002 年 6 月 26 日，滴水湖正式开工。2003 年 10 月 6 日，滴水湖的建设基本…]]></summary>
-        <author>
-            <name>知乎日报</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[只用烤箱可以做出什么逆天的菜？]]></title>
-        <id>https://daily.zhihu.com/story/9742144</id>
-        <link href="https://daily.zhihu.com/story/9742144"/>
-        <updated>2021-11-09T23:38:19.000Z</updated>
-        <summary type="html"><![CDATA[陈大仙儿，做美食，拍美食，分享美食，这是我的爱好
-阅读原文
-
-烤箱可以做出什么逆天的菜？
-我的答案是：无物不可烤
-很多人认为，买了烤箱只偶尔用来烘焙饼干？
-其实，一个烤箱能做的多了去了，饼干、面包、小吃、烤箱菜等等。
-先上图，看着好吃，吃着更好吃，是不是流口水了？
-香烤猪蹄牙签牛肉孜然烤翅
-今天我更新30 个烤箱烧烤食谱，一个月不重样，让大家再次认识到烤箱的逆天！
-没看过瘾？满足你，我在另外一个回答里面又更新了 30 个烤箱烧烤食谱。没看过瘾的去看看吧：
-用烤箱可以做什么好吃简单便宜的美食？
-30 道烤箱烧烤食谱目录
-对烤箱烧烤食谱不感兴趣的，可以去看看烤箱烘焙食谱（面包点心甜品蛋糕之类）：
-买烤箱后你是否常用？
-30 道烤箱烘焙食谱目录
-想买烤箱，还不知道应该怎么选的，可以去看看下面这篇文章，对烤箱选购做了一个详细的科普：
-烤箱怎么选？家用烤箱什么牌子好？2021 年烤箱选购推荐全攻略
-
-一、锡纸烤豆腐
-鲜嫩无比又超级下饭的烤豆腐，记得做这道菜之前一定要多准备一点米饭。
-
-食材表：
-香葱、肉末、料酒、蒜末一勺、小米辣一勺、白芝麻一勺、辣椒粉一勺、花椒粉半勺、食盐、豆瓣酱、老抽、生抽、蚝油、内酯豆腐一盒、洋葱
-制作方法：
-1、起锅先炒香葱末，倒入肉末，来一点料酒去除腥味，肉末炒熟以后备用
-
-2、碗里面放一勺蒜末、一勺小米辣、一勺白芝麻、一勺辣椒粉、半勺花椒粉，用热油往上面一浇，搅拌均匀
-
-3、放入食盐、豆瓣酱、老抽、生抽、蚝油，再来一点清水搅拌均匀
-
-4、内酯豆腐底部剪去四个角
-
-5、倒扣到锡纸盒里面，直接划上几刀
-
-6、放入肉沫。记住，肉末是这道菜的灵魂，建议一定要多放一点
-
-7、撒上洋葱碎，浇上刚才调好的料汁
-
-8、放入预热好的烤箱，230 度烤 20 分钟
-
-9、趁热撒上葱花就可以啦
-
-烹饪建议：
-1、这道菜一定要趁热吃，搭配上米饭真的是拌饭一绝
-2、一定要用内酯豆腐…]]></summary>
-        <author>
-            <name>知乎日报</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[蜘蛛会飞吗？]]></title>
-        <id>https://daily.zhihu.com/story/9742151</id>
-        <link href="https://daily.zhihu.com/story/9742151"/>
-        <updated>2021-11-09T23:38:12.000Z</updated>
-        <summary type="html"><![CDATA[苏澄宇，动物科学 / 冷门问题收割者/看心情更新
-阅读原文
-
-为保证阅读的流畅性，参考文献已在富文本链接中，点击可阅。 
-在维基百科里，是这么定义飞行的：
-飞的方法有许多种，例如利用与空气动力学原理产生升力（如飞机或鸟类）；
-也可以经由比空气更轻的重量来达成目的（如热气球）；
-还有一种飞行方式并不在空气当中，而是在太空里，称为太空飞行。
-在虚构作品中，也有人假想能利用魔法或超自然力量、超能力来飞行。
-飞行不一定需要翅膀，它的方式多种多样。如此来说，蜘蛛是会飞行的，只是它们飞行的方式有些奇特。
-
-早在 17 世纪，科学家就发现了蜘蛛可以通过一种叫 ballooning 的方式飞行，和词面的意思一样，像气球一样飞行。这是蜘蛛通过喷出蛛丝来御风而行的过程，在飞行中它们可以很好地驾驭气流的方向。
-蜘蛛先爬到高处，然后屁股朝天仰起，从它的吐丝器中 biubiubiu 射出细丝，随着蛛丝升天，它们也能借着风力升上天空。飞行的距离从几米到数百公里不等。
-在旧金山半岛的圣克鲁斯山，蜘蛛正借着蛛丝御风而行
-一般来说，只有小型蜘蛛会这么做，但有时候也可以观察到大蜘蛛借此飞行。
-比如穹蛛属（Stegodyphus）这种大蜘蛛，它们的体重超过了 100 毫克，体长达 14 毫米。
-穹蛛属（Stegodyphus）
-科学家观察到雌性穹蛛会在炎热的无风天气里，和热气球一样，通过上升的热气流进行升空飞行。它们通常会一次性射出数十到数百缕蛛丝，制成一个三角形风筝。
-蜘蛛飞行的足迹，有时候可达 5 公里高空上的气象气球上，有时候在大洋远航的船只上，这是它们最喜欢的一种旅行方式。蜘蛛在没有食物的情况下，可以“乘气球”的方式飞行 25 天甚至更长的时间。
-但这种飞行方式也是死亡率极高，这也是为什么通常只有小型蜘蛛会选择这种飞行方式。
-蜘蛛降落的地方
-蜘蛛的飞行有时并不只是单体飞行，有时成群结队的一起 ”乘气球“ ，其壮观程度是你想象不到的。
-在 2012 年 3 月，澳大利亚的 Wagga Wagga 附近，天上下起了“蜘蛛雨”，地面上成片的蛛网像丝绸一样连在一起，不明真相的人还以为下雪了。
-PHOTOGRAPH BY LUKAS COCH, EPA
-数百万的蜘蛛当时正御风而行，刚好降落的地点都集中在了澳大利亚南部高原地区，才出现了这般奇景。
-
-尽管这种现象并不罕见，科学家此前尚不明确蜘蛛究竟是如何上天的。
-在 6 月 14 日发表于 PLOS Biology 的一项最新研究中，柏林工业大学的空气动力学的科学家研究了蟹蛛是如何飞行的。蟹蛛（学名：Thomisidae；英文：Crab spider）形状像蟹，体长约 3 毫米，也能像蟹那样横行或倒退，因而得名。
-蟹蛛
-他们将 14 只蟹蛛放在柏林公园的圆顶结构上，然后观察它们是如何在自然风中飞行的。
-
-之后，科学家在实验室的风洞中重复他们的实验。
-他们发现这些蟹蛛起飞非常谨慎，研究表明，这些条件必须恰到好处，才能让这些蜘蛛起飞。
-在起飞之前，蜘蛛为了安全起见，会放下一段丝线作锚。接着它们会伸出一只前腿测试风速和风向。
-如果风力正合适的话（3.3m/s），它们会扳直身体，撅起屁股对着天，射出 50 到 60 根蛛丝将自己托上天。这些丝线平均有 2~4 米长，最终形成一个三角形风筝。当丝绸受风阻力足够大时，蜘蛛可以使用这些薄而柔滑的风筝起飞。
-大多数有翅膀的昆虫会通过振翅来制造涡流，以托起自己的身体，浮在空中。但这种纳米级的蛛丝是如此轻薄，它们借助空气的黏稠度就能滞空。
-不用担心蜘蛛会朝着你的脸飞过来，因为它们还不想死，所以会闪避的。
-阅读原文]]></summary>
-        <author>
-            <name>知乎日报</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[冬天怎么穿才能不让自己显得臃肿?]]></title>
-        <id>https://daily.zhihu.com/story/9742155</id>
-        <link href="https://daily.zhihu.com/story/9742155"/>
-        <updated>2021-11-09T23:38:03.000Z</updated>
-        <summary type="html"><![CDATA[折原临也，没有感情的时尚穿搭干货输出机，收藏比赞数多肯定是我人设有问题
-阅读原文
-
-题主的诉求我单独摘出来了：
-1、最低气温 7-8 度，冬季最冷大概在零下（保暖性）
-2、职业是公务员，在冬天的穿着显得有精神一些（好看、有精神、不臃肿）
-所以关键点就在于：需要能够穿起来好看且风格统一的单品+保暖性单品叠穿=搭配出一套好看的穿搭
-说清楚逻辑以后开始整活了▼
-
-一、保暖的单品
-为了不让整个人看起来是臃肿的，我们需要在保暖的基础上选择到合适的单品，以及足够的叠穿层次来达到这个效果，而精神和好看折原哥觉得最关键点就在于：风格的统一，公务员冬天穿着保暖而且精神好看的话，最合适的风格莫过于阿美咔叽军事风格；
-也就是说单品和外套都以风格统一的阿美咔叽的方式去选择，比如说下面的这种穿搭方式，一件贴肤的打底半高领毛衣加上一件叠穿的卫衣，再加上一件御寒效果好但又不会让你整个人很臃肿的外套：MA-1 空军夹克，穿起来好看且风格统一的单品+保暖性单品叠穿这就是折原哥接下来会讲到的所有单品叠穿的逻辑。▼
-
-●上装
-1、毛衣
-如果是零下的地方，普通的长袖打底衫已经满足不了保暖性，打底的单品如果不够保暖我们就必须选择厚实的外套去穿，这样子一来就会导致整体看起来很臃肿，所以一开始就要选对打底的单品，这很重要也很关键，毛衣的话最基本的款式必备的有：半高领、圆领两种，半高领毛衣相比起高领毛衣会更加好看容易搭配，特别是脖子比较短的同学，圆领毛衣不要选择那种很韩系或者日系的，可以选择下面这种粗毛线纺织的华夫纹毛衣更加显气质。
-另外还要注意：
-·半高领是叠穿在最里面的所以尽可能选择薄一点的，
-·而圆领毛衣是拿来叠穿在外面的，可以选择厚一点的。
-
-走阿美咔叽军事风格的话毛衣的图案选择也很重要，尽可能选择无图案的为主，像下面这些什么小熊、格子、条纹的就不太合适。
-
-面料以羊绒或者棉质的为主，涤纶或者其他人工合成的面料在…]]></summary>
-        <author>
-            <name>知乎日报</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[瞎扯 · 如何正确地吐槽]]></title>
-        <id>https://daily.zhihu.com/story/9742164</id>
-        <link href="https://daily.zhihu.com/story/9742164"/>
-        <updated>2021-11-09T23:37:56.000Z</updated>
-        <summary type="html"><![CDATA[你做过最机智的事情是什么？
-
-这个玲玲不太冷，跟着姐姐走姐姐是杀手
-阅读原文
-
-好好学习
-阅读原文
-
-室友哪些不该看的东西被你无意之间看到了？
-
-知乎用户5XiYgH
-阅读原文
-
-确认室友是不是又偷我洗衣液洗内裤了，正在闻的时候，他回来了。
-阅读原文
-
-伍佰在台湾是什么地位？
-
-知乎用户，化学工业，原料药项目经理
-阅读原文
-
-
-名字都印在钞票（新台币）上了，你说他牛不牛逼？而且名字的字还那么大…
-阅读原文
-
-五粮液“永不分梨”酒，梨到底是如何放进去的？
-
-白马布衣
-阅读原文
-
-这不是正好说明——所谓的永不分离，其实都是被套路进去难以逃脱吗？
-阅读原文
-
-为什么日本音译就是搞笑的，中国音译就是可以被接受的？
-
-蛙年，无业
-阅读原文
-
-Charles Leroux（夏尔·勒卢），1851-1926，作曲家、法国陆军大尉，为明治时代的日本写了多首军歌，对日本近代音乐发展有重要贡献。他写的《拔刀队》、《扶桑歌》至今还是日本陆上自卫队和日本警察的标准进行曲。
-日语里他的名字叫：瞎撸撸·撸撸（シャルルルル－）。
-阅读原文]]></summary>
-        <author>
-            <name>知乎日报</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Unity is buying Peter Jackson’s Weta Digital for $1.6B]]></title>
-        <id>https://techcrunch.com/2021/11/09/unity-is-buying-peter-jacksons-weta-digital-for-over-1-6b/</id>
-        <link href="https://techcrunch.com/2021/11/09/unity-is-buying-peter-jacksons-weta-digital-for-over-1-6b/"/>
-        <updated>2021-11-09T21:20:04.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Show HN: I'm 48 and finally learning how to be a game developer]]></title>
-        <id>https://apps.apple.com/us/app/slingshot-effect/id1537916631</id>
-        <link href="https://apps.apple.com/us/app/slingshot-effect/id1537916631"/>
-        <updated>2021-11-09T21:14:47.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[The Surreal Horror of Pam]]></title>
-        <id>https://christine.website/talks/surreal-horror-pam-2021-11-09</id>
-        <link href="https://christine.website/talks/surreal-horror-pam-2021-11-09"/>
-        <updated>2021-11-09T21:13:37.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Relationship Hero (YC S17) Is Hiring Sales Associates – Full Time Remote]]></title>
-        <id>https://relationshiphero.com/careers?role=salesAssociate</id>
-        <link href="https://relationshiphero.com/careers?role=salesAssociate"/>
-        <updated>2021-11-09T21:00:14.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Macron says France will build new nuclear energy reactors]]></title>
-        <id>https://www.reuters.com/business/energy/macron-says-france-will-build-more-nuclear-energy-reactors-2021-11-09/</id>
-        <link href="https://www.reuters.com/business/energy/macron-says-france-will-build-more-nuclear-energy-reactors-2021-11-09/"/>
-        <updated>2021-11-09T20:26:22.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Write thin to write fast]]></title>
-        <id>https://breckyunits.com/write-thin-to-write-fast.html</id>
-        <link href="https://breckyunits.com/write-thin-to-write-fast.html"/>
-        <updated>2021-11-09T19:58:37.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Intel Hardware allows activation of test or debug logic at runtime]]></title>
-        <id>https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00528.html</id>
-        <link href="https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00528.html"/>
-        <updated>2021-11-09T19:20:39.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Tor Browser 11.0]]></title>
-        <id>https://blog.torproject.org/new-release-tor-browser-11-0</id>
-        <link href="https://blog.torproject.org/new-release-tor-browser-11-0"/>
-        <updated>2021-11-09T18:52:16.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Show HN: You.com, private search engine that summarizes the web – built for devs]]></title>
-        <id>https://you.com/search?q=you.com&amp;fromSearchBar=true</id>
-        <link href="https://you.com/search?q=you.com&amp;fromSearchBar=true"/>
-        <updated>2021-11-09T18:43:19.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[The U.S. Treasury is buying private app data to target and investigate people]]></title>
-        <id>https://theintercept.com/2021/11/04/treasury-surveillance-location-data-babel-street/</id>
-        <link href="https://theintercept.com/2021/11/04/treasury-surveillance-location-data-babel-street/"/>
-        <updated>2021-11-09T18:41:20.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[A Canadian opens up about her secret wartime work, eavesdropping on Japan]]></title>
-        <id>https://www.cbc.ca/news/politics/second-world-war-marjorie-stetson-japan-1.6239427</id>
-        <link href="https://www.cbc.ca/news/politics/second-world-war-marjorie-stetson-japan-1.6239427"/>
-        <updated>2021-11-09T18:28:22.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Concurrency in Julia]]></title>
-        <id>https://lwn.net/SubscriberLink/875367/bd24fc983affbed4/</id>
-        <link href="https://lwn.net/SubscriberLink/875367/bd24fc983affbed4/"/>
-        <updated>2021-11-09T18:09:18.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[We saved millions in SSD costs by upgrading our filesystem]]></title>
-        <id>https://heap.io/blog/how-we-saved-millions-in-ssd-costs-by-upgrading-our-filesystem</id>
-        <link href="https://heap.io/blog/how-we-saved-millions-in-ssd-costs-by-upgrading-our-filesystem"/>
-        <updated>2021-11-09T17:41:04.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Launch HN: Gallery (YC S21) – On-demand environments on any cloud provider]]></title>
-        <id>https://news.ycombinator.com/item?id=29164556</id>
-        <link href="https://news.ycombinator.com/item?id=29164556"/>
-        <updated>2021-11-09T17:28:24.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Grafana OnCall: an easy-to-use on-call management tool]]></title>
-        <id>https://grafana.com/blog/2021/11/09/announcing-grafana-oncall/</id>
-        <link href="https://grafana.com/blog/2021/11/09/announcing-grafana-oncall/"/>
-        <updated>2021-11-09T17:16:32.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Efficient Distance Querying in MySQL]]></title>
-        <id>https://aaronfrancis.com/2021/efficient-distance-querying-in-my-sql</id>
-        <link href="https://aaronfrancis.com/2021/efficient-distance-querying-in-my-sql"/>
-        <updated>2021-11-09T17:04:47.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Node-RED: How an open-source tool is establishing itself in Industrial IoT]]></title>
-        <id>https://docs.umh.app/docs/concepts/node-red-in-industrial-iot/</id>
-        <link href="https://docs.umh.app/docs/concepts/node-red-in-industrial-iot/"/>
-        <updated>2021-11-09T16:32:55.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Twitter Blue is now available in the US and NZ]]></title>
-        <id>https://blog.twitter.com/en_us/topics/product/2021/twitter-smarter--twitter-harder-with-twitter-blue</id>
-        <link href="https://blog.twitter.com/en_us/topics/product/2021/twitter-smarter--twitter-harder-with-twitter-blue"/>
-        <updated>2021-11-09T16:32:00.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Were the 1970's the Golden Age of Audio?]]></title>
-        <id>https://www.audioholics.com/editorials/70s-stereo-gear</id>
-        <link href="https://www.audioholics.com/editorials/70s-stereo-gear"/>
-        <updated>2021-11-09T16:16:53.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[L-Arginine potentiates radiation therapy for cancer]]></title>
-        <id>https://news.cornell.edu/stories/2021/11/oral-drug-enhances-radiation-therapy-cancer</id>
-        <link href="https://news.cornell.edu/stories/2021/11/oral-drug-enhances-radiation-therapy-cancer"/>
-        <updated>2021-11-09T15:59:52.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Lesser-known Postgres features]]></title>
-        <id>https://hakibenita.com/postgresql-unknown-features</id>
-        <link href="https://hakibenita.com/postgresql-unknown-features"/>
-        <updated>2021-11-09T15:50:35.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Opening this article voids warranty]]></title>
-        <id>https://magazine.scienceforthepeople.org/vol24-2-dont-be-evil/opening-this-article-voids-warranty/</id>
-        <link href="https://magazine.scienceforthepeople.org/vol24-2-dont-be-evil/opening-this-article-voids-warranty/"/>
-        <updated>2021-11-09T15:50:16.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Ancient secrets of computer vision]]></title>
-        <id>https://pjreddie.com/courses/computer-vision/</id>
-        <link href="https://pjreddie.com/courses/computer-vision/"/>
-        <updated>2021-11-09T15:04:36.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Used car market gets even more bizarre]]></title>
-        <id>https://www.axios.com/used-car-market-prices-dbea46f6-f8b3-42fe-b972-ece6c0f96de1.html</id>
-        <link href="https://www.axios.com/used-car-market-prices-dbea46f6-f8b3-42fe-b972-ece6c0f96de1.html"/>
-        <updated>2021-11-09T14:57:12.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[AnimeGANv2: Convert Face Portraits into Anime]]></title>
-        <id>https://huggingface.co/spaces/akhaliq/AnimeGANv2</id>
-        <link href="https://huggingface.co/spaces/akhaliq/AnimeGANv2"/>
-        <updated>2021-11-09T14:34:56.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Show HN: I built a no-BS recipe search engine]]></title>
-        <id>https://stovetop.app</id>
-        <link href="https://stovetop.app"/>
-        <updated>2021-11-09T13:41:59.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Review of Open Source Color Blindness Simulations]]></title>
-        <id>https://daltonlens.org/opensource-cvd-simulation/</id>
-        <link href="https://daltonlens.org/opensource-cvd-simulation/"/>
-        <updated>2021-11-09T13:12:50.000Z</updated>
         <summary type="html"><![CDATA[Comments]]></summary>
         <author>
             <name>Hacker News</name>
