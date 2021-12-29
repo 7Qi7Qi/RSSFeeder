@@ -2,10 +2,428 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://7qi7qi.github.io/RSSFeeder/index.html</id>
     <title>osmos::feed</title>
-    <updated>2021-12-29T00:48:22.151Z</updated>
+    <updated>2021-12-29T12:52:30.154Z</updated>
     <generator>osmosfeed 1.11.3</generator>
     <link rel="alternate" href="https://7qi7qi.github.io/RSSFeeder/index.html"/>
     <link rel="self" href="https://7qi7qi.github.io/RSSFeeder/feed.atom"/>
+    <entry>
+        <title type="html"><![CDATA[Netflix系统架构设计方案]]></title>
+        <id>http://weekly.dockone.io/article/2434766</id>
+        <link href="http://weekly.dockone.io/article/2434766"/>
+        <updated>2021-12-29T12:52:24.924Z</updated>
+        <summary type="html"><![CDATA[【编者的话】Netflix是全球最大的在线视频网站之一，它是怎么设计的呢？这篇文章介绍了Netflix系统架构的设计方案。原文：Netflix System Architecture。
+我们来讨论一下如何设计Netflix。
+
+
+
+相信每个人都会通过某些网站或应用在线追剧或者看电影，而Netflix是我最喜欢的在线视频网站，不过今天我不推荐任何电影，相反，我想展示的是Netflix背后令人惊艳的系统逻辑。
+需求
+功能性需求
+
+创建帐户、登录、删除帐户
+订阅或取消订阅不同的计划
+允许用户拥有和处理多个帐户
+允许用户观看视频
+允许用户下载视频并离线观看
+允许用户通过视频标题搜索和发现视频
+Netflix制作人可以从后台上传视频并在平台上展示
+平台可以显示趋势、最受欢迎的视频和分类，以方便用户选择
+可以选择不同语言的字幕，这样用户即使听不懂这些语言，也可以观看视频
+视频分组（剧集、娱乐节目、电影，单独处理每个视频）
+根据用户行为进行分析，为用户推荐类似的视频
+在同一账号下的不同设备之间进行同步，用户可以使用不同的设备继续观看同一视频而无需重播
+支持全天候（24/7）回放
+支持回退
+
+非功能性需求
+
+用户可以观看实时视频流，没有任何卡顿或延迟问题
+系统是高度可靠的
+高可用
+可扩展
+视频数据持久化且易于访问
+
+容量预估
+
+
+
+
+我们可以基于一些数学计算来估计所需的带宽和存储空间。
+
+
+
+
+
+
+
+假设
+
+日活用户总数 = 1亿
+日活峰值用户：1亿 * 3 = 3亿
+3个月最大日活峰值用户：3亿 * 2 = 6亿
+每个用户每天平均观看的视频数 = 5
+视频平均大小 = 500 MB
+后台平均每天上传的视频数 = 1000
+每天观看的总视频数 = 1亿*5 = 5亿
+每天观看的总视频峰值 = 15亿
+每天观看的最大视频峰值 = 30亿
+每天总出口流量 = 5亿* 500 MB = 250 …]]></summary>
+        <author>
+            <name>Andy_Lee</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[万字长文带你彻底搞懂什么是 DevOps]]></title>
+        <id>http://weekly.dockone.io/article/2434765</id>
+        <link href="http://weekly.dockone.io/article/2434765"/>
+        <updated>2021-12-29T12:52:24.722Z</updated>
+        <summary type="html"><![CDATA[DevOps 日渐成为研发人员耳熟能详的一个组合词，但什么是 DevOps，为什么 DevOps 对于互联网企业如此重要，真正将其思考透彻的人却不多，带着这些困惑，本文将带你一探 DevOps 的起源、原则和实践，让你搞清楚到底何为 DevOps。
+DevOps 的起源可以追溯到 2008 年，在一次敏捷大会的敏捷基础设施话题组被提及，从起源我们可以了解到 DevOps 的发展跟敏捷软件开发是密不可分的。
+DevOps 定义
+DevOps 经过这些年的发展，其定义也在不断变化，先来看三段 DevOps 的 wiki 定义。
+1、DevOps 2017 - 2020 年英文 wiki 定义（直译）
+
+DevOps是一种软件工程文化和实践（Practices），旨在整合软件开发和软件运维。DevOps运动的主要特点是强烈倡导对构建软件的所有环节（从集成、测试、发布到部署和基础架构管理）进行全面的自动化和监控 DevOps 的目标是缩短开发周期，提高部署频率和更可靠地发布，与业务目标保持一致。
+2、DevOps 2021 年英文 wiki 定义（直译）
+
+DevOps 是一系列整合软件开发和软件运维活动的实践（Practices）。目标是缩短软件开发生命周期并使用持续交付提供高质量的软件。
+另：
+
+DevOps 与敏捷软件开发是互补关系，DevOps 的许多方面来自于敏捷方法论。
+3、DevOps 中文 wiki 定义
+
+DevOps（Development和Operations的组合词）是一种重视“软件开发人员（Dev）”和“IT运维技术人员（Ops）”之间沟通合作的文化、运动或惯例。透过自动化“软件交付”和“架构变更”的流程，来使得构建、测试、发布软件能够更加地快捷、频繁和可靠。
+提取这三段的共同点，可以看到不论定义如何变化，DevOps 所要实现的目标都是一致的——缩短软件…]]></summary>
+        <author>
+            <name>阿娇</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[DevOps流水线CI成倍提速方案]]></title>
+        <id>http://weekly.dockone.io/article/2434771</id>
+        <link href="http://weekly.dockone.io/article/2434771"/>
+        <updated>2021-12-29T12:52:24.672Z</updated>
+        <summary type="html"><![CDATA[背景介绍
+我们的同学在之前发布的《猪八戒网CICD最佳实践之路》一文中，介绍了猪八戒网的主流研发语言从PHP到Java的更替以及架构到Dubbo为核心的SOA微服务框架Nodejs提供前端Web能力的演进。随着业务的增加和架构的演进，项目工程数量的快速增⻓，交付开始变得频繁。相比PHP，Nodejs和Java对CI有更高的要求，DevOps 流水线的引入已然迫在眉睫。
+文章详细的介绍了猪八戒网DevOps流水线的架构，介绍了流水线从无到“通路”再到“通⻋”的变化。而业务的增加对“通⻋”后的体验提出了“乘坐时间要短”、“乘坐环境要舒适平稳”、“个性化的乘坐体验”等新的要求，本文重点讨论“通⻋”后的“提速”。
+上个世纪50年代，新中国第一条铁路，全⻓共505公里的成渝铁路全线通⻋，全程需要13个小时左右。90年代，部分绿皮⻋换成了红皮⻋，乘坐时间大幅缩短，但最快也要10小时。那个时候成渝之间主要的通勤方式还是比铁路快几个小时的高速大巴，除了大巴，当时还有⻜机。成渝高铁通⻋后，高铁已经成了成渝之间首选交通工具，成渝大巴也逐渐淡出了人们的视线。
+“提速”对用户体验的提升最为有感知，也是让用户最容易认可的。对于互联网行业来说，速度慢会导致用户会抱怨和流失，相关统计数据显示，每增加0.1秒的加载延迟，将会导致客户活跃度下降1%。DevOps流水线“通⻋”后的“提速”策略便是化解频繁交付需求和承载能力之间矛盾的良药。
+了解现状
+
+
+
+
+
+
+
+
+
+
+
+
+我们使用最多语言是Java，第二是Nodejs，占比超过20%。
+
+分析数据
+有了以上的数据，我们就可以根据不同的语言在DevOps流水线的各环节的耗时数据来分析可能存在的问题。
+
+
+
+
+
+按我们的主流开发语言项目的发布耗时来看，其中耗时最⻓的是Nodejs，占比达到了70%，按照2/8原则来看， 我们只需要花少量的精力来优化成体速度的提升…]]></summary>
+        <author>
+            <name>aoxiang</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[深入解析Apache Pulsar系列（一）：客户端消息确认]]></title>
+        <id>http://weekly.dockone.io/article/2434764</id>
+        <link href="http://weekly.dockone.io/article/2434764"/>
+        <updated>2021-12-29T12:52:24.641Z</updated>
+        <summary type="html"><![CDATA[导语
+在 Apache Pulsar 中，为了避免消息的重复投递，消费者进行消息确认是非常重要的一步。当一条消息被消费者消费后，需要消费者发送一个ack请求给Broker，Broker才会认为这条消息被真正消费掉。被标记为已经消费的消息，后续不会再次重复投递给消费者。在这篇文章中，我们会介绍Pulsar中消息确认的模式，以及正常消息确认在Broker侧是如何实现的。
+确认消息的模式
+在了解Pulsar消息确认模式之前，我们需要先了解一些前置知识 —— Pulsar中的订阅以及游标（Cursor）。Pulsar中有多种消费模式，如：share、key_share、failover等等，无论用户使用哪种消费模式都会创建一个订阅。订阅分为持久订阅和非持久订阅，对于持久订阅，Broker上会有一个持久化的Cursor，即Cursor的元数据被记录在ZooKeeper。Cursor以订阅（或称为消费组）为单位，保存了当前订阅已经消费到哪个位置了。因为不同消费者使用的订阅模式不同，可以进行的ack行为也不一样。总体来说可以分为以下几种ack场景：
+单条消息确认（acknowledge）
+和其他的一些消息系统不同，Pulsar支持一个Partition被多个消费者消费。假设消息1、2、3发送给了Consumer-A，消息4、5、6发送给了Consumer-B，而Consumer-B又消费的比较快，先ack了消息4，此时Cursor中会单独记录消息4为已ack状态。如果其他消息都被消费，但没有被ack，并且两个消费者都下线或ack超时，则Broker会只推送消息1、2、3、5、6，已经被ack的消息4不会被再次推送。
+累积消息确认（acknowledgeCumulative）
+假设Consumer接受到了消息1、2、3、4、5，为了提升ack的性能，Consumer可以不分别ack 5条消…]]></summary>
+        <author>
+            <name>guoaaaad</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Rainbond通过插件整合ELK/EFK，实现日志收集]]></title>
+        <id>http://weekly.dockone.io/article/2434769</id>
+        <link href="http://weekly.dockone.io/article/2434769"/>
+        <updated>2021-12-29T12:52:24.610Z</updated>
+        <summary type="html"><![CDATA[前言
+ELK 是三个开源项目的首字母缩写：Elasticsearch、Logstash 和 Kibana。但后来出现的 FileBeat 可以完全替代 Logstash的数据收集功能，也比较轻量级。本文将介绍 EFK: Elasticsearch、Filebeat 和 Kibana
+Elasticsearch：分布式搜索和分析引擎，具有高可伸缩、高可靠和易管理等特点。基于 Apache Lucene 构建，能对大容量的数据进行接近实时的存储、搜索和分析操作。通常被用作某些应用的基础搜索引擎，使其具有复杂的搜索功能；
+Kibana：数据分析和可视化平台。与 Elasticsearch 配合使用，对其中数据进行搜索、分析和以统计图表的方式展示；
+Filebeat：Filebeat 是一个轻量级的传送器，用于转发和集中日志数据。Filebeat 作为代理安装在您的服务器上，监控您指定的日志文件或位置，收集日志事件，并将它们转发到 Elasticsearch 或 Logstash 以进行索引。
+通过本文了解如何将运行在 Rainbond 上的应用，通过开启 FileBeat 插件的方式收集应用日志并发送到 Elasticsearch 中。
+整合架构
+在收集日志时，需要在应用中启用 FileBeat 插件进行收集，FileBeat收集日志有三种方式：
+指定日志路径
+收集所有容器日志
+指定 Label 自动发现
+
+本文使用 指定日志路径进行收集，这种方式我们可以自定义收集日志的规则等。
+我们将 FileBeat 制作成 Rainbond 的 一般类型插件 ，在应用启动之后，插件也随之启动并自动收集日志发送至 Elasticsearch,整个过程对应用容器无侵入，且拓展性强。对接其他日志收集也可以用类似方式，用户通过替换插件实现对接不同的日志收集工具。
+下图展示了在Rainbond使用F…]]></summary>
+        <author>
+            <name>goodrain</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[初识 eBPF，你应该知道的知识]]></title>
+        <id>http://weekly.dockone.io/article/2434763</id>
+        <link href="http://weekly.dockone.io/article/2434763"/>
+        <updated>2021-12-29T12:52:24.602Z</updated>
+        <summary type="html"><![CDATA[eBPF 作为一颗在基础软件领域冉冉上升的新星，可谓前途大好，越来越多的基于 eBPF 的应用如雨后春笋般蓬勃涌现，这是 eBPF 展现出的惊人力量。本文就将带着大家了解 eBPF。
+什么是 eBPF  与 eBPF 基金会？
+简单来说，eBPF 是 Linux 内核中一个非常灵活与高效的类虚拟机（virtual machine-like）组件， 能够在许多内核 hook 点安全地执行字节码（bytecode）。很多内核子系统都已经使用了 BPF，例如常见的网络、跟踪与安全。
+eBPF 基金会（https://ebpf.io）是一个为 eBPF 技术而创建的非盈利性组织，隶属于 Linux 基金会，其意在推动 eBPF 更好地发展，使其得到更加广泛的运用。eBPF 基金会每年都会举办 eBPF 峰会，来自社会和各个企业的 eBPF 爱好、技术专家齐聚一堂，深度交流 eBPF 技术热点，分享创新成果。当前，eBPF 技术得到了企业的广泛应用。
+eBPF 技术给云原生和现代化应用带来了一些全新的解决方案和巨大的技术红利，包括可观的性能提升、CPU 开销降低。
+eBPF 如何变化演进？
+
+
+
+
+此图展示在过去的 Linux 内核版本中，引入的几个 eBPF 代表性能力，截止 Linux5.14 内核版本，已经拥有了 32 种 eBPF 程序类型。
+eBPF 的全称是 extended Berkeley Packet Filter，eBPF 技术的前身称为 BPF（Berkeley Packet Filter），或者 cBPF（classic BPF），在 1992 年 Steven McCanne 和 Van Jacobson 的一篇论文 《The BSD Packet Filter: A New Architecture for User-level Packet Captur…]]></summary>
+        <author>
+            <name>JetLee</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[网易有道Redis云原生实战]]></title>
+        <id>http://weekly.dockone.io/article/2434770</id>
+        <link href="http://weekly.dockone.io/article/2434770"/>
+        <updated>2021-12-29T12:52:24.581Z</updated>
+        <summary type="html"><![CDATA[【编者的话】本次以Redis为范例，阐述了有道基础架构团队在基础设施容器化道路上的实践，主要将从声明式管理，Operator工作原理，容器编排，主从模式，集群模式，高可用策略，集群扩缩容等方面展开。
+背景
+Redis是业务系统中较为常用的缓存服务，常用于流量高峰、数据分析、积分排序等场景，并且通过中间件可以实现系统之间的解耦，提升系统的可扩展性。
+传统物理机部署中间件，需要运维人员手动搭建，启动时间较长，也不利于后期维护，无法满足业务快速发展的需求。
+云原生相较于传统IT，可以助力业务平滑迁移、快速开发、稳定运维，大幅降低技术成本，节约硬件资源。
+云原生中间件是指依托容器化、服务网格、微服务、Serverless等技术，构建可扩展的基础设施，持续交付用于生产系统的基础软件，在功能不变的前提下，提高了应用的可用性与稳定性。
+在这种大趋势下，有道基础架构团队开始了云原生中间件的实践，除了本文介绍的Redis，还包括Elasticsearch、ZooKeeper等。
+面临的挑战
+利用云原生技术可以解决当前Redis部署缓慢，资源利用率低等问题，同时容器化Redis集群也面临着一些挑战：
+Kubernetes如何部署Redis有状态服务；
+容器Crash后如何不影响服务可用性；
+容器重启后如何保证Redis内存中的数据不丢；
+节点水平扩容时如何做到Slots迁移时不影响业务；
+Pod IP变化后集群的状态如何处理。
+
+声明式管理
+对于一个Redis集群，我们的期望是能够7x24小时无间断提供服务，遇故障可自行修复。这与Kubernetes API的声明式特点如出一辙。
+所谓“声明式”，指的就是我们只需要提交一个定义好的API对象来“声明”我所期望的状态是什么样子，Kubernetes中的资源对象可在无外界干扰的情况下，完成当前状态到期望状态的转换，这个过程就是Reconcile过程…]]></summary>
+        <author>
+            <name>翔宇</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[使用Nginx Ingress实现灰度发布和蓝绿发布]]></title>
+        <id>http://weekly.dockone.io/article/2434773</id>
+        <link href="http://weekly.dockone.io/article/2434773"/>
+        <updated>2021-12-29T12:52:24.549Z</updated>
+        <summary type="html"><![CDATA[Ingress基于七层的HTTP和HTTPS协议进行转发，可以通过域名和路径对访问做到更细粒度的划分。Ingress作为kubernetes集群中一种独立的资源，需要通过创建它来制定外部访问流量的转发规则，并通过Ingress Controller将其分配到一个或多个Service中。Ingress Controller在不同厂商之间有着不同的实现方式，Kubernetes官方维护的Controller为Nginx Ingress。Nginx Ingress支持通过配置注解（Annotations）来实现不同场景下的发布和测试，可以满足灰度发布、蓝绿发布、A/B测试等业务场景。本文将介绍使用Nginx Ingress实现灰度发布和蓝绿发布的应用场景、用法详解及实践步骤。
+应用场景
+使用Nginx Ingress实现灰度发布适用场景主要取决于业务流量切分的策略，目前Nginx Ingress支持基于Header、Cookie和服务权重三种流量切分的策略，基于这三种策略可实现以下两种发布场景：
+场景一：切分部分用户流量到新版本
+假设线上已运行了一套对外提供七层服务的Service A，此时开发了一些新的特性，需要发布上线一个新的版本Service A'，但又不想直接替换原有的Service A，而是期望将Header中包含foo=bar或者Cookie中包含foo=bar的用户请求转发到新版本Service A'中。待运行一段时间稳定后，再逐步全量上线新版本，平滑下线旧版本。示意图如下：
+
+
+
+场景二：切分一定比例的流量到新版本
+假设线上已运行了一套对外提供七层服务的Service B，此时修复了一些问题，需要发布上线一个新的版本Service B'，但又不想直接替换原有的Service B，而是期望将20%的流量切换到新版本Service B'中。待运行一段时间稳定后，再将所…]]></summary>
+        <author>
+            <name>老马</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Spring Native初探]]></title>
+        <id>http://weekly.dockone.io/article/2434774</id>
+        <link href="http://weekly.dockone.io/article/2434774"/>
+        <updated>2021-12-29T12:52:24.533Z</updated>
+        <summary type="html"><![CDATA[近几年“原生”一词一直泛滥在云计算、边缘计算等领域中，而原生宠幸的语言也一直都是Golang，Rust等脱离Sandbox运行的开发语言。Java得益于上世纪流行的一次编译，到处执行的理念，流行至今，但也因为这个原因，导致Java程序脱离不了JVM运行环境，使得不那么受原生程序的青睐。在云原生泛滥的今天，臃肿的JVM使Java应用程序对比其他语言显得无比的庞大，各路大神也想了很多方式让Java变的更“原生”。最近Spring推出了Spring Native概念，并参考了其他大牛的文章后，今天我们就一探如何让用Spring Boot编写原生应用。  
+Spring Native借助GraalVM native-image编译器来编译Spring应用，所以我们需要先来了解一下GraalVM。大部分脚本语言或者有动态特效的语言都需要一个语言虚拟机运行，比如CPython，Lua，Erlang，Java，Ruby，R，JS，PHP，Perl，APL等等，但是这些语言的虚拟机水平参差不齐，例如JVM的HotSpotVM、JS的V8都是“艺术”级别的，但CPython的VM就不忍直视。那能不能用一个“艺术”级别的虚拟机跑所有的语言呢？GraalVM就是这么一个高性能的救世主，它使用运行在JVM上的Truffle语言框架，将AST节点编译为机器代码，使用户只需要实现具体语言AST解释器，就能实现性能足够好的虚拟机，而实现这个编译器也是一个Java写的即时编译器Graal，GraalVM也因此得名。  
+也许有同学会问了怎么用Java语言编译Java代码呢，而且还是这么高性能？这我们就要说说JEP 243的JVMCI。众所周知，HotSpot JVM内置了两个C++写的即时编译器（JIT）C1和C2，一般频繁的代码先用C1编译，如果热点继续，那么会使用C2编译。JVMCI相当于把本该交给C…]]></summary>
+        <author>
+            <name>大卫</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[灰度发布与蓝绿发布的原理及实现方式]]></title>
+        <id>http://weekly.dockone.io/article/2434772</id>
+        <link href="http://weekly.dockone.io/article/2434772"/>
+        <updated>2021-12-29T12:52:24.347Z</updated>
+        <summary type="html"><![CDATA[通常产品优化迭代，直接将某版本上线发布给全部用户，若遇到线上事故（或BUG），解决周期较长，则不得不回滚到前一版本，会严重影响用户体验。使用灰度发布或蓝绿发布，能够有效避免因发布导致的流量丢失或服务不可用问题。究竟什么是灰度发布和蓝绿发布，怎么实现，让我们一探究竟。
+应用现状
+应用程序升级面临最大挑战是新旧业务切换，将软件从测试的最后阶段带到生产环境，同时要保证系统不间断提供服务。如果直接将某版本上线发布给全部用户，一旦遇到线上事故（或BUG），对用户的影响极大，解决问题周期较长，甚至有时不得不回滚到前一版本，严重影响了用户体验。
+
+解决方案
+长期以来，业务升级逐渐形成了几个发布策略：灰度发布、蓝绿发布、A/B测试、滚动升级以及分批暂停发布，尽可能避免因发布导致的流量丢失或服务不可用问题。本文着重介绍灰度发布和蓝绿发布的原理及实践。
+灰度发布，又称金丝雀发布，是版本升级平滑过渡的一种方式，当版本升级时，使部分用户使用新版本，其他用户继续使用老版本，待新版本稳定后，逐步扩大范围把所有用户流量都迁移到新版本上面来。
+这样可以最大限度地控制新版本发布带来的业务风险，降低故障带来的影响面，同时支持快速回滚。
+以下示意图可描述灰度发布的大致流程：先切分20%的流量到新版本，若表现正常，逐步增加流量占比，继续测试新版本表现。若新版本一直很稳定，那么将所有流量都切分到新版本，并下线老版本。
+
+
+
+切分20%的流量到新版本后，新版本出现异常，则快速将流量切回老版本。
+
+
+
+蓝绿发布提供了一种零宕机的部署方式，是一种以可预测的方式发布应用的技术，目的是减少发布过程中服务停止的时间。
+在保留老版本的同时部署新版本，将两个版本同时在线，新版本和老版本相互热备，通过切换路由权重的方式（非0即100）实现应用的不同版本上线或者下线，如果有问题可以快速地回滚到老版本。
+
+
+
+灰度发布或蓝绿发布实现方式
+利用Kubernetes原生的特性可以实现简单的灰度发布或蓝绿发布，比如：通过修改Service的selector中决定服务版本的label的值来改变Service后端对应的Pod，实现让服务从一个版本直接切换到另一个版本，从而实现蓝绿发布。
+如果您的灰度或蓝绿发布需求较复杂，可以向集群额外部署其他开源工具，例如Nginx Ingress、Traefik，或将业务部署至应用服务网格（Application Service Mesh，简称ASM），利用开源工具和服务网格的能力实现。  
+三种实现方式对比：
+
+
+
+这三种方式是如何实现灰度发布和蓝绿发布的，我们将在后续文章解答，敬请期待！
+原文链接：https://mp.weixin.qq.com/s/V8Y8fHBOUgLtPb0YPuaqXg]]></summary>
+        <author>
+            <name>玻璃樽</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Ask HN: Has remote work made you move to a new location or consider it?]]></title>
+        <id>https://news.ycombinator.com/item?id=29724108</id>
+        <link href="https://news.ycombinator.com/item?id=29724108"/>
+        <updated>2021-12-29T12:12:54.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Clerky is hiring senior full-stack software engineers (Ruby on Rails)]]></title>
+        <id>https://jobs.lever.co/clerky/295375d9-c3d9-4ec8-99e0-bc5ac6232a64</id>
+        <link href="https://jobs.lever.co/clerky/295375d9-c3d9-4ec8-99e0-bc5ac6232a64"/>
+        <updated>2021-12-29T12:00:04.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Hong Kong pro-democracy Stand News shuts down after police raid, arrests]]></title>
+        <id>https://www.reuters.com/business/media-telecom/hong-kong-police-arrest-6-current-or-former-staff-online-media-outlet-2021-12-28/</id>
+        <link href="https://www.reuters.com/business/media-telecom/hong-kong-police-arrest-6-current-or-former-staff-online-media-outlet-2021-12-28/"/>
+        <updated>2021-12-29T11:30:35.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Ask HN: What are some good rust code to read to learn the language?]]></title>
+        <id>https://news.ycombinator.com/item?id=29723455</id>
+        <link href="https://news.ycombinator.com/item?id=29723455"/>
+        <updated>2021-12-29T10:08:43.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[When WikiLeaks bumped into the CIA: Operation Kudo exposed [0:19:27]]]></title>
+        <id>https://streaming.media.ccc.de/rc3/relive/409</id>
+        <link href="https://streaming.media.ccc.de/rc3/relive/409"/>
+        <updated>2021-12-29T10:03:29.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[This Year in Embedded Rust: 2021 edition]]></title>
+        <id>https://blog.rust-embedded.org/this-year-in-embedded-rust-2021/</id>
+        <link href="https://blog.rust-embedded.org/this-year-in-embedded-rust-2021/"/>
+        <updated>2021-12-29T08:07:03.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[A Big Picture, Thesaurus, and Taxonomy of Modern JavaScript Web Development]]></title>
+        <id>https://github.com/dexteryy/spellbook-of-modern-webdev</id>
+        <link href="https://github.com/dexteryy/spellbook-of-modern-webdev"/>
+        <updated>2021-12-29T07:31:50.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[A realization of why email is critical infrastructure for the Internet]]></title>
+        <id>https://utcc.utoronto.ca/~cks/space/blog/tech/EmailCriticalInfrastructure</id>
+        <link href="https://utcc.utoronto.ca/~cks/space/blog/tech/EmailCriticalInfrastructure"/>
+        <updated>2021-12-29T06:40:49.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Bass – Lisp dialect for scripting the infrastructure beneath your project]]></title>
+        <id>https://bass-lang.org/index.html</id>
+        <link href="https://bass-lang.org/index.html"/>
+        <updated>2021-12-29T06:15:49.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[glibc is still not Y2038 compliant by default]]></title>
+        <id>https://ariadne.space/2021/12/29/glibc-is-still-not-y2038-compliant-by-default/</id>
+        <link href="https://ariadne.space/2021/12/29/glibc-is-still-not-y2038-compliant-by-default/"/>
+        <updated>2021-12-29T06:05:16.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[LaTeX Finite Automata and State Diagrams with Tikz]]></title>
+        <id>https://hayesall.com/blog/latex-automata/</id>
+        <link href="https://hayesall.com/blog/latex-automata/"/>
+        <updated>2021-12-29T04:15:27.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[The year in math and computer science]]></title>
+        <id>https://www.quantamagazine.org/the-year-in-math-and-computer-science-20211223/</id>
+        <link href="https://www.quantamagazine.org/the-year-in-math-and-computer-science-20211223/"/>
+        <updated>2021-12-29T02:32:14.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Oven Stoves and Heat Walls (2008)]]></title>
+        <id>https://www.lowtechmagazine.com/2008/12/tile-stoves.html</id>
+        <link href="https://www.lowtechmagazine.com/2008/12/tile-stoves.html"/>
+        <updated>2021-12-29T00:37:07.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Engineers Should Invest in Decision-Making Skills Early]]></title>
         <id>https://www.reforge.com/blog/technical-decision-making</id>
@@ -334,10 +752,30 @@
         </author>
     </entry>
     <entry>
+        <title type="html"><![CDATA[Oldest family tree created using DNA]]></title>
+        <id>https://www.bbc.co.uk/news/science-environment-59774315</id>
+        <link href="https://www.bbc.co.uk/news/science-environment-59774315"/>
+        <updated>2021-12-28T18:53:18.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[First Dual-Channel IDE?]]></title>
         <id>https://www.os2museum.com/wp/first-dual-channel-ide/</id>
         <link href="https://www.os2museum.com/wp/first-dual-channel-ide/"/>
         <updated>2021-12-28T18:46:58.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Making sounds using SDL and visualizing them on a simulated oscilloscope]]></title>
+        <id>http://nicktasios.nl/posts/making-sounds-using-sdl-and-visualizing-them-on-a-simulated-oscilloscope.html</id>
+        <link href="http://nicktasios.nl/posts/making-sounds-using-sdl-and-visualizing-them-on-a-simulated-oscilloscope.html"/>
+        <updated>2021-12-28T18:34:26.000Z</updated>
         <summary type="html"><![CDATA[Comments]]></summary>
         <author>
             <name>Hacker News</name>
@@ -354,10 +792,40 @@
         </author>
     </entry>
     <entry>
+        <title type="html"><![CDATA[System Design Primer: Learn how to design large-scale systems]]></title>
+        <id>https://github.com/donnemartin/system-design-primer</id>
+        <link href="https://github.com/donnemartin/system-design-primer"/>
+        <updated>2021-12-28T18:17:52.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Finding a Creature in Ethereum's Dark Forest]]></title>
+        <id>https://bertcmiller.com/2021/12/28/glimpse_nonce_reuse.html</id>
+        <link href="https://bertcmiller.com/2021/12/28/glimpse_nonce_reuse.html"/>
+        <updated>2021-12-28T18:14:57.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[Hypertext '87 (1987) [pdf]]]></title>
         <id>http://www.cs.unc.edu/techreports/88-013.pdf</id>
         <link href="http://www.cs.unc.edu/techreports/88-013.pdf"/>
         <updated>2021-12-28T18:05:03.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Lessons from My PhD]]></title>
+        <id>https://web.eecs.utk.edu/~azh/blog/lessonsfrommyphd.html</id>
+        <link href="https://web.eecs.utk.edu/~azh/blog/lessonsfrommyphd.html"/>
+        <updated>2021-12-28T17:52:49.000Z</updated>
         <summary type="html"><![CDATA[Comments]]></summary>
         <author>
             <name>Hacker News</name>
@@ -398,6 +866,16 @@
         <id>https://gobolinux.org/</id>
         <link href="https://gobolinux.org/"/>
         <updated>2021-12-28T15:50:44.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[How I Build]]></title>
+        <id>http://pketh.org/how-i-build.html</id>
+        <link href="http://pketh.org/how-i-build.html"/>
+        <updated>2021-12-28T15:16:39.000Z</updated>
         <summary type="html"><![CDATA[Comments]]></summary>
         <author>
             <name>Hacker News</name>
@@ -814,6 +1292,16 @@ B 是大写的，一般意义上大写是特指。在《爱情神话》里，当
         </author>
     </entry>
     <entry>
+        <title type="html"><![CDATA[An Algorithmic Solution to Insomnia (2017)]]></title>
+        <id>https://ilya.sukhar.com/blog/an-algorithmic-solution-to-insomnia.html</id>
+        <link href="https://ilya.sukhar.com/blog/an-algorithmic-solution-to-insomnia.html"/>
+        <updated>2021-12-27T17:13:57.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[Front-Electric Sustainer Gliders]]></title>
         <id>https://www.front-electric-sustainer.com</id>
         <link href="https://www.front-electric-sustainer.com"/>
@@ -938,6 +1426,16 @@ B 是大写的，一般意义上大写是特指。在《爱情神话》里，当
         <id>http://www.gravitation3d.com/magiccube5d/</id>
         <link href="http://www.gravitation3d.com/magiccube5d/"/>
         <updated>2021-12-27T11:00:39.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Olaus' Carta Marina]]></title>
+        <id>https://apps.lib.umn.edu/bell/map/OLAUS/TOUR/indext.html</id>
+        <link href="https://apps.lib.umn.edu/bell/map/OLAUS/TOUR/indext.html"/>
+        <updated>2021-12-27T10:26:45.000Z</updated>
         <summary type="html"><![CDATA[Comments]]></summary>
         <author>
             <name>Hacker News</name>
@@ -15007,629 +15505,6 @@ Techwang，知乎知乎，知不道还咋咋呼呼。
         <id>http://web.archive.org/web/20170315194527/http://autocad.xarch.at/lisp/ffis.html</id>
         <link href="http://web.archive.org/web/20170315194527/http://autocad.xarch.at/lisp/ffis.html"/>
         <updated>2021-11-30T05:26:00.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[The Essence operating system at Handmade Seattle 2021 [video]]]></title>
-        <id>https://media.handmade-seattle.com/essence/</id>
-        <link href="https://media.handmade-seattle.com/essence/"/>
-        <updated>2021-11-29T23:15:22.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[如果真有后羿射日，需要怎样材质的箭才能摧毁太阳级别的恒星？]]></title>
-        <id>https://daily.zhihu.com/story/9742797</id>
-        <link href="https://daily.zhihu.com/story/9742797"/>
-        <updated>2021-11-29T23:07:40.000Z</updated>
-        <summary type="html"><![CDATA[瞻云，科普人，公众号「瞻云」
-阅读原文
-
-如果后羿是在地球上射日，哪怕射出去的箭，不小心与空气碰撞，溢出 25 亿分之一的能量，也足以把地球崩得渣都不剩。
-至于这箭的材质，我们来详细探讨一下。
-探讨后羿射日，我们首先需要知道，射爆太阳需要多少能量。
-一个天体的引力（重力）结合能，正好等于天体被彻底摧毁的能量。
-对于一个密度均匀的天体来说，引力结合能满足公式：
-
-根据这个公式，求出来的太阳引力结合能为：2.28×10^41 J
-网上也常常能看到用这个数字或者这个数字的近视值，来作为太阳引力结合能。
-但实际，太阳的引力结合能比这个数值高了不少。
-太阳不仅不是密度均匀，而且内核的密度比外部高了很多。
-0~25%为太阳核心，25%~70%辐射区，70%以上对流层
-太阳的平均密度只有 1409 kg/m³，也就比水大一点点。
-但太阳内核的密度却高达 1.5×10^5 kg/m³，太阳内核的半径约为太阳半径 R⊙的 20%~25%，内核的边缘密度也高达 2×10^4 kg/m³，是平均密度的十多倍。
-如何才能得到太阳更准确的引力结合能呢？
-太阳的质量和半径符合如下关系：
-
-从图可以看出，25%R⊙的内核范围，便占了太阳质量的 50%。
-这个范围内的曲线大致符合穿过零点的二次函数：
-
-由
-
-，可得
-
-于是
-
-又
-
-那么，引力结合能：
-
-2/3-3/5=1/15，也就是说，单单太阳内核的引力结合能，就已经比不少文章所用的太阳引力结合能大了 6~7%。
-而从 0.5M⊙~0.8M⊙的范围，则可以近似看成直线关系：
-
-这部分质量和半径的关系为：
-
-那么：
-
-
-也就是说，仅仅这一部分的引力结合能，便和同质量半径的均匀密度天体相当。
-剩下的 20%质量，由于质量已经很小，基本均分在 50%R⊙的两侧，我们可以简单来估算。
-把这些质量全部从 50%R⊙附近逐渐移动到无穷远时，且作为这部分的引力结合能…]]></summary>
-        <author>
-            <name>知乎日报</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[如何看待刘慈欣说「扎克伯格的元宇宙不是未来，元宇宙最后将引人类走向死路」？]]></title>
-        <id>https://daily.zhihu.com/story/9742803</id>
-        <link href="https://daily.zhihu.com/story/9742803"/>
-        <updated>2021-11-29T23:07:35.000Z</updated>
-        <summary type="html"><![CDATA[地平线HOA，简单、有趣、认真的科普。『公众号同名』
-阅读原文
-
-编者荐语：
-元宇宙，究竟是要闹个天翻地覆，还是社会发展的水到渠成？英国数据科学与机器学习博士，HOA 团队成员 @平凡，带来了他的最新长篇作品《详解元宇宙》。无论是专家学者，还是普罗大众，这篇由浅入深的科普作品，都将为您打开一扇知识的大门。
-
- 01 元宇宙的起源
-似乎只要一提到元宇宙Metaverse，我们就会把雪崩【SNOW CRASH】搬出来，因为“元宇宙”这个词首先出现于这本小说，一本由科幻小说家 Neal Stephenson 在 1992 年创作的小说。
-这本书一共 306 页，提到了（元宇宙）Metaverse119 次。
-第一次出现 Metaverse 是这一段： On the back is gibberish explaining how he may be reached: a telephone number. A half electronic communications nets. And an address in the Metaverse.
-即一个 Metaverse 中的地址，用来联系某个人的地址，与电话号码和半电子通讯网并列的一个联系方式。
-在后续的描写中，Metaverse 是一个虚拟的城市环境，这个虚拟世界中的土地可以被购买，并在上面开发建筑。
-Metaverse 的用户可以通过高质量的个人虚拟现实眼镜（VR 眼镜），或通过低质量的公共 VR 眼镜进入，并与彼此或软件客户端进行交互，Metaverse 的用户以第一人称视角进行体验。
-在 Metaverse 中，个人用户可以作为任何形式的化身出现，唯一的限制是高度——“以防止人们把他们的化身变成一英里高”。而交通工具仅限于步行或车，与现实中的一样。
-
- 02 元宇宙的今世
-关于元宇宙的定义，我更倾向于 Matthew…]]></summary>
-        <author>
-            <name>知乎日报</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[如何“破译”清朝的微积分课本？]]></title>
-        <id>https://daily.zhihu.com/story/9742807</id>
-        <link href="https://daily.zhihu.com/story/9742807"/>
-        <updated>2021-11-29T23:07:31.000Z</updated>
-        <summary type="html"><![CDATA[zdr0，B站：zdr0。合作请私信。
-
-前两天看到了网上流传的清朝的微积分课本中的几页，其中的所有数学表达式都是用中文书写的。虽然整个过程不忍直视，但还是感觉蛮有趣的。于是我打算写篇文章翻译一下这几页。[1][2]
-下面我们先来看到第一页：
-第一页
-请您上眼。乍一看大家肯定觉得：这都啥啊？这样的公式好丑，怎么能记得住呢？而且这里面居然还有完全不认识的字？比如一个双人旁一个天念啥？
-下面我就要使用魔法将这些丑丑的公式翻译成能看的懂的形式了。
-在翻译之前，我们要明确的一个 大原则 是：在清朝，“分数”的“分子”是分母，“分母”是分子 。也就是说，如果看到“分数”，则我们取它的倒数就可以得到现代意义下的分数 。
-提示：这条大原则全文适用 。
-首先映入眼帘的是：
-
-这明显是一个函数，它翻译成英语就是：
-
-啊，看着舒服多啦～这道例题提到了“...求其微分之式，则可依 blabla...”。害，无所谓依啥了，我们自己就可以搞定。求
-
-这个函数的微分函数比较容易的。首先将
-
-改写一下：
-
-进而成立：
-
-即：
-
-与：
-
-做比较可以得到以下破译密码：
-
-双人旁 
-一 
-长得像垂直符号的符号 
-訥 
-
-第一个公式的破译工作就完成啦～很顺利是不是！但是，下一个公式就很难破译了。没错，就是它：
-
-这个公式，堪称我破译工作中最可(**)爱(**)的一个。先不管天啊，地啊啥的。从刚才的破译密码中我们得知的信息是 双人旁 
-
-，于是问题就出现了这里面有
-
-，
-
-以及
-
-。咦？这么快就跳到全微分啦？但仔细不看不对啊，这跟全微分完全不沾边啊。于是我推测，这不是全微分，而是刚才例题的推广，因为我在下面的结果中看到了天的地次方：
-
-：
-
-此处的天和地不能再理解为
-
-和
-
-了，而是应该理解为
-
-与
-
-，说白了，就是对函数：
-
-求导（
-
-这个表达简直了。。。哈哈哈哈哈哈哈）。
-像破译第一个公式一样，这里我们如法炮制即可。首先将
-
-改写一下：
-
-进而成立：
-
-即：
-
-将式
-
-进一步化简可得：
-
-现在我们将
-
-除到左边之后与之前所提到的 大原则 一起可得：
-
-将式
-
-与：
-
-做比较可得：
-
-戍 
-天 / 地 
-
-这样第一页我们就完全破译啦！下面开始第二页的破译～
-第二页
-这一页的破译工作会异常轻松。首先我们看到了“积分”这个字眼，并且他说“啥啥（就是那个怪怪的公式），要必为简式”才可求其积分。所以我们不妨先来看看：
-
-这是个啥？
-由之前所总结的破译密码可知，天一定代表一个“变量”。而且我们还知道长得像垂直符号的那个符号等价于加法，因此我们推测：
-
-长得像转置符号的那个符号 
-
-而甲，乙，丙...啥的自然表示的就是常数
-
-等等。至于寅卯午巳这些字，如果你愿意，可以定义为
-
-等等，它们也都表示常数。因此，我们可以将其破译为（指数上注意 大原则 ）：
-
-同理，我们可以将：
-
-破译为（指数上注意 大原则 ）：
-
-聪明的你一定发现了：
-
-表达的就是不定积分的分部积分法：
-
-破译密码为：
-
-禾 
-戌 / 亥 
-
-最后是第三页：
-第三页
-有了之前两页的经验，相信这一页大家一定得心应手啦。在这一页中，所有的汉字数字与阿拉伯数字的含义是一致的。而天，地，人（这应该是人吧）表示的都是变量。因此我们可以设：
-
-因此：
-
-表示（注意 大原则 ）：
-
-而：
-
-表示（注意 大原则 ）：
-
-显然，式
-
-是式
-
-的一个原函数。而丙上面加一个点表示的是积分常数
-
-，与普通的丙表示的
-
-是不一样的（二丙，看起来像麻将）。
-现在让我们看到最右边的：
-
-这表示的显然是（注意 大原则 ）：
-
-我一度认为左边是二阶导数。。。后来一想不对，如果是二阶导数的话“分母”上的二应该在双人旁后面。因此：
-
-表示的是（注意 大原则 ）：
-
-然后后面说可以将
-
-，进而：
-
-表示的就是（注意 大原则 ）：
-
-阅读原文]]></summary>
-        <author>
-            <name>知乎日报</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[美白精华是晚上用效果好，还是白天晚上都用效果才好？]]></title>
-        <id>https://daily.zhihu.com/story/9742813</id>
-        <link href="https://daily.zhihu.com/story/9742813"/>
-        <updated>2021-11-29T23:07:25.000Z</updated>
-        <summary type="html"><![CDATA[科学怪人-k博，护肤体验派、成分党，致力于说人话的科普
-阅读原文
-
-美白精华到底是白天用，还是晚上用？？一定要看我这篇分析了！！！
-其实这是一个很多想美白的人非常关心但一直得不到有效回答的问题，虽然可能很多人大概也能猜出答案（对，晚上用），但原因一直不是很清楚，虽然我觉得原因有很多，但我就我了解倒的可能的原因跟大家分享一下。
-其实一个护肤品效果好不好，影响因素无外乎两个：
-
-这个产品的有效成分是否真的有效，浓度是否真的加足？
- 这个产品的透皮吸收效果咋样？
-
-首先，如果论白天用还是晚上用，也就是说产品是同一个，那就看在什么场景用（白天 or 晚上），护肤品的吸收会更好一点。
-其实要回答这个问题，我们首先要了解一个很重要的知识点 --生物节律。
-什么是生物节律
-生物节律，其实指的就是生物钟。在高等的光敏感生物中，生物钟是一套由感光神经元，内分泌系统，以及基因时序振荡表达调控共同形成的功能体系，使得生物从微观水平的基因表达、细胞代谢，到宏观的生物行为，形成昼夜更替的节律。
-其实生物节律这个事情很早的时候，国内外的很多科学家都开始研究了，但直到 2017 年，诺贝尔生理或医学奖授给了“生物节律”，才让很多平凡的人关注到这个普通的不能再普通的词。当然这一切我们要感谢三位老爷子：Jeffery C. Hall，Michael Rosbash，Michael W. Young 教授
-发现并阐明了生物节律的三位诺贝尔奖获得者
-生物节律的作用机制
-生物节律，我们更习惯的称之为“昼夜节律”，它的作用机制其实就和我们熟悉的时钟是一样一样的。那如果要让时钟指示正确的时间，有一个要素是至关重要的，那就是时钟的校正。
-同理，反应到我们人体种，其实我们人体内也有这样的一个校准机制（大脑中的视交叉上核（suprachiasmatic nucleus）是中枢时钟（master clock），负责将感受到的外界光信号整合后，向身体外周的时钟（peripheral clocks）传递信息），而且这个校准机制有一个非常重要的影响条件：光照。
-也就是说我们人体的这种校准机制的依据便是阳光，一般来说，我们身体的这个时钟每隔 24h 便会自我校准一次。
-
-因为我们人体内除了视神经之外，其他细胞是不具有感光能力的，所以虽然其他细胞虽然也一直不停的在工作，但因为是个瞎子（收不到信号），总有工作乱套的时候。
-这时候中枢时钟就扮演着一个总指挥官的角色，它会将视神经收到的信号及时的传递给下面的细胞，然后告知它们及时的校准调整时间，然后该干嘛干嘛，千万不要乱。而我们人体的内分泌系统，就通过分泌激素（主要是皮质醇和褪黑素），时刻扮演着这样的一个信号传导的工作。
-昼夜节律
-生物节律和皮肤有什么关系？
-皮肤作为我们人体最大的器官，其实也有非常明显的昼夜差异，也就是生物节律。具体表现在，我们的皮肤会根据外界光照条件的变化，来调整皮肤的状态。
-皮肤的生物节律
-白天，因为光照强，我们的皮肤会调整到一个重防御的状态。比如白天
-
-皮脂分泌能力强 --- 强化肌肤的屏障功能，降低水份流失，提高肌肤的防御力
-皮肤 pH 值高--- 主要为了调控真皮层的纤维细胞，让胶原蛋白和弹性蛋白更好的交织在一起，保持皮肤的弹性，以应对白天光照对 MMPs 的激活。
-皮肤角质屏障好--- 以应对日间 UVA/UVB 对皮肤的光照破坏。
-
-而到了夜晚，因为光照弱，我们的皮肤则会把自己调整到一个强吸收、快修复的状态。晚上：
-
-DNA 修复能力强--- 加速清楚自由基，修复日间的氧化损伤，调整肌肤的应激状态。
-细胞增值快--- 保证充足的细胞合成和细胞外脂质分泌，加速皮肤的修复过程。
-皮肤屏障弱，渗透能力强 --- 提高皮肤对活性物的吸收，以促进皮肤的自我更新和修复。
-皮肤温度高--- 调控角质细胞、黑色素细胞的周期和活性。
-
-所以从上面的肌肤昼夜节律我们可以看出：其实白天我们的皮肤是处于一个非常紧张、重防御的状态，这时候其实只需要做好基础的防晒和保湿即可，用一些抵抗光损伤的抗氧化产品也可。但一些美白、抗皱类的进阶级护肤，必须要等到晚上用才事半功倍。
-一方面是因为夜晚我们的皮肤屏障是打开的，欢迎很多好的护肤成分进入皮肤发挥作用，另一方面这些好用的护肤成分（比如美白、抗皱类成分）可以更好的在靶点发挥作用，因为这时候黑色素细胞（解决美白问题）和成纤维细胞（解决抗皱问题）都处于比较听话的状态。
-所以大家记住：美白和抗皱类的精华（比如 VC 和 VA）一定要晚上用，才能智慧出奇迹。
-VC 类：
-VA 类：
-虽然早 C 晚 A 的风很大，但 k 博我一直坚持 C 和 A 夜间用，并相互交叉用！效果棒棒！
-虽然生物节律目前在护肤上应用还不够多，但我相信，随着科学的进步，未来生物节律一定会成为护肤版图非常重要、也非常高效的一环。
-阅读原文]]></summary>
-        <author>
-            <name>知乎日报</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[如何回答孩子：以前的小朋友出门也要坐安全座椅嘛？]]></title>
-        <id>https://daily.zhihu.com/story/9742818</id>
-        <link href="https://daily.zhihu.com/story/9742818"/>
-        <updated>2021-11-29T23:07:15.000Z</updated>
-        <summary type="html"><![CDATA[Rachel品吆，爱死磕的钻研型妈妈 理性消费不踩坑｜vx:kolkolmom
-阅读原文
-
-汽车安全座椅在小朋友的眼中，也许是这样的：
-
-其实在 1940 年前后，一小部分有车家庭就开始使用了。但如果我跟你说，当时的画风是这样的，你还敢坐嘛？
-
-是的，那个时候它的长相和功能和现在相距甚远。严格来说还称不上是一个“安全座椅”，最多算是“汽车座椅”。
-1933 年的座椅像一个小雪橇
-如果回到那个时代生活，我宁愿孩子们都不要坐它！因为那个时候的汽车座椅并非现在的「免死金牌」，而是一个不折不扣、骇人听闻的「儿童杀手」。
-下面我就用多图来带大家看看，儿童汽车安全座椅有着怎样令人深感震撼的的百年曲折发展史。
-❤️ 阶段一：座椅？打包带！1. 啼笑皆非的早期原型
-上世纪 30 年代能开上车的，那可真不是一般人，人们普遍认为，巨大坚硬、风雨无阻的汽车本身就是最厉害的。
-当时的克莱斯勒汽车广告上俨然写着：
- “亲爱的爸爸，你看我在 100 公里每小时（60 迈 / 小时）的车上还能写字哎。” 
-“是的儿子，我们现在乘坐的就是无坚不摧的钢铁大桥号。”
-而且无论大人小孩，一律没有安全保护措施。
-
-这在今天就是典型的反面教材，但那时候人们的交通安全意识基本为零。当时的汽车就算有任何安全设施，也完全不是从乘客的健全和舒适角度出发，而是为了驾驶者的方便。
-比如，Bunny Bear 公司在 1933 年发明的第一台儿童汽车座椅，只需要用绑绳捆在座位上。娃坐的高了、看得远了，注意力被转移了。大人开车也就不容易被打扰了。
-
-到了 40-60 年代，家长可以花 1-5 刀买一个更加便携轻便的可折叠座椅。
-它通常是像下面这样，用铁架子加帆布、麻布、塑料板或木箱做成的。靠两个铁钩子挂在座位靠背上，酷似一个“带钩子的内裤”。
-
-单看乘坐的部分有点像如今的跳跳椅。不过从结构上更像一个吹风机挂篮的放大版。随意程度简直…]]></summary>
-        <author>
-            <name>知乎日报</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[瞎扯 · 如何正确地吐槽]]></title>
-        <id>https://daily.zhihu.com/story/9742820</id>
-        <link href="https://daily.zhihu.com/story/9742820"/>
-        <updated>2021-11-29T23:07:05.000Z</updated>
-        <summary type="html"><![CDATA[如何正确定义蓝颜？
-
-苏格拉小底裤，苟利装逼生死以，岂因打脸避趋之。
-阅读原文
-
-春来江水绿如蓝。
-阅读原文
-
-前女友发短信说想我，怎样回复会比较合适？
-
-李周，使劲创新的策划人！
-阅读原文
-
- 回句：“最近我老是收到这样的短信！” 
-阅读原文
-
-（被）光速打脸是种怎样的体验？
-
-阿拉斯加猫，看我答案，别看我点赞!
-阅读原文
-
-回京的高铁上，一个大叔买了个一等座，然后把一个硕大的包放在上面的行李架，差不多三分之一在外面，列车员过来劝大叔把包拿下来被狂吼一阵。
-「你告诉我不放上面往哪放？我花了钱为什么就不能放这儿了？你说不安全就不安全了？你说会掉下来就会掉下来了？」
-然后刚说完，他的包吧唧一下掉下来，打到他的脸上，车厢出奇的安静................
-
-
-
-阅读原文
-
-怕蛇的人如何学python？
-
-程墨Morgan，互联网行业老兵/快乐的职场人/杂家
-阅读原文
-
-怕虫子吗？
-干这行都要碰上 bug，怕就输了。
-阅读原文
-
-怎么才能把肌肉练出来？
-
-Ricki，总有一双鞋子适合你行业咨询请私信
-阅读原文
-
-单手抱 30 斤的娃散步。
-
-
-
-阅读原文]]></summary>
-        <author>
-            <name>知乎日报</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Ex-Google workers sue company, saying it betrayed 'Don't Be Evil' motto]]></title>
-        <id>https://www.npr.org/2021/11/29/1059821677/google-dont-be-evil-lawsuit</id>
-        <link href="https://www.npr.org/2021/11/29/1059821677/google-dont-be-evil-lawsuit"/>
-        <updated>2021-11-29T22:41:08.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Satellites Reveal Arctic Rivers are Changing Faster Than We Thought]]></title>
-        <id>https://www.umass.edu/news/article/satellites-reveal-arctic-rivers-are-changing-faster-we-thought</id>
-        <link href="https://www.umass.edu/news/article/satellites-reveal-arctic-rivers-are-changing-faster-we-thought"/>
-        <updated>2021-11-29T22:34:36.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Researchers find xenobots can give rise to offspring]]></title>
-        <id>https://www.theguardian.com/science/2021/nov/29/amazing-science-researchers-find-xenobots-can-give-rise-to-offspring</id>
-        <link href="https://www.theguardian.com/science/2021/nov/29/amazing-science-researchers-find-xenobots-can-give-rise-to-offspring"/>
-        <updated>2021-11-29T22:28:19.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Crises of Elite Competition in the East and West]]></title>
-        <id>https://americanaffairsjournal.org/2021/11/crises-of-elite-competition-in-the-east-and-west/</id>
-        <link href="https://americanaffairsjournal.org/2021/11/crises-of-elite-competition-in-the-east-and-west/"/>
-        <updated>2021-11-29T21:36:08.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Show HN: An AWS Savings Plans Calculator]]></title>
-        <id>https://cloudshim.com/calculator</id>
-        <link href="https://cloudshim.com/calculator"/>
-        <updated>2021-11-29T21:03:47.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Motion (YC W20) is hiring engineers to build the future of time management]]></title>
-        <id>https://jobs.ashbyhq.com/motion</id>
-        <link href="https://jobs.ashbyhq.com/motion"/>
-        <updated>2021-11-29T21:01:00.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Pull Through Cache Repositories for Amazon Elastic Container Registry]]></title>
-        <id>https://aws.amazon.com/blogs/aws/announcing-pull-through-cache-repositories-for-amazon-elastic-container-registry/</id>
-        <link href="https://aws.amazon.com/blogs/aws/announcing-pull-through-cache-repositories-for-amazon-elastic-container-registry/"/>
-        <updated>2021-11-29T20:51:32.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[The talent and labor of Stephen Sondheim]]></title>
-        <id>https://newcriterion.com/blogs/dispatch/the-talent-and-labor-of-stephen-sondheim</id>
-        <link href="https://newcriterion.com/blogs/dispatch/the-talent-and-labor-of-stephen-sondheim"/>
-        <updated>2021-11-29T20:50:29.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Asmrepl: REPL for x86 Assembly Language]]></title>
-        <id>https://github.com/tenderlove/asmrepl</id>
-        <link href="https://github.com/tenderlove/asmrepl"/>
-        <updated>2021-11-29T20:43:15.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Google Chromium, sans integration with Google]]></title>
-        <id>https://ungoogled-software.github.io/</id>
-        <link href="https://ungoogled-software.github.io/"/>
-        <updated>2021-11-29T20:31:33.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[AppFlowy: an open-source alternative to Notion]]></title>
-        <id>https://github.com/AppFlowy-IO/appflowy</id>
-        <link href="https://github.com/AppFlowy-IO/appflowy"/>
-        <updated>2021-11-29T19:49:58.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Music is a negative superstimulus for speech (2020)]]></title>
-        <id>https://whatismusic.info/blog/MusicIsNotAPositiveSuperstimulusItsANegativeSuperstimulus.html</id>
-        <link href="https://whatismusic.info/blog/MusicIsNotAPositiveSuperstimulusItsANegativeSuperstimulus.html"/>
-        <updated>2021-11-29T19:41:51.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Ph.D student demonstrates a single, working laser on silicon]]></title>
-        <id>https://brighterworld.mcmaster.ca/articles/laser-on-silicon-khadijeh-miarabbas-kiani/</id>
-        <link href="https://brighterworld.mcmaster.ca/articles/laser-on-silicon-khadijeh-miarabbas-kiani/"/>
-        <updated>2021-11-29T18:24:51.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[The Inherent Limitations of GPT-3]]></title>
-        <id>https://lastweekin.ai/p/the-inherent-limitations-of-gpt-3</id>
-        <link href="https://lastweekin.ai/p/the-inherent-limitations-of-gpt-3"/>
-        <updated>2021-11-29T17:57:09.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Why I Have Settled on XChaCha20+Blake3 for AEAD]]></title>
-        <id>https://mccarty.io/cryptography/2021/11/29/chacha20-blake3.html</id>
-        <link href="https://mccarty.io/cryptography/2021/11/29/chacha20-blake3.html"/>
-        <updated>2021-11-29T17:35:01.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Launch HN: Parade (YC S20) – Launch your company without hiring a designer]]></title>
-        <id>https://news.ycombinator.com/item?id=29382127</id>
-        <link href="https://news.ycombinator.com/item?id=29382127"/>
-        <updated>2021-11-29T16:58:54.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Free public domain audiobooks]]></title>
-        <id>https://librivox.org/</id>
-        <link href="https://librivox.org/"/>
-        <updated>2021-11-29T16:49:01.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Show HN: Factorio Blueprint Visualizer]]></title>
-        <id>https://github.com/piebro/factorio-blueprint-visualizer</id>
-        <link href="https://github.com/piebro/factorio-blueprint-visualizer"/>
-        <updated>2021-11-29T16:46:25.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Show HN: Security Camera Lens Calculator]]></title>
-        <id>https://www.jvsg.com/calculators/cctv-lens-calculator/</id>
-        <link href="https://www.jvsg.com/calculators/cctv-lens-calculator/"/>
-        <updated>2021-11-29T15:40:04.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Adversarial image attacks are no joke]]></title>
-        <id>https://www.unite.ai/why-adversarial-image-attacks-are-no-joke/</id>
-        <link href="https://www.unite.ai/why-adversarial-image-attacks-are-no-joke/"/>
-        <updated>2021-11-29T14:55:42.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[I resigned from Twitter]]></title>
-        <id>https://twitter.com/jack/status/1465347002426867720</id>
-        <link href="https://twitter.com/jack/status/1465347002426867720"/>
-        <updated>2021-11-29T14:25:18.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Susan Kare Explains Macintosh UI Ergonomics (1984) [video]]]></title>
-        <id>https://archive.org/details/Computer1984_3?start=926</id>
-        <link href="https://archive.org/details/Computer1984_3?start=926"/>
-        <updated>2021-11-29T14:02:35.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Winamp source code leak]]></title>
-        <id>https://web.archive.org/web/20210515031018/https://github.com/CONIGUERO/winamp</id>
-        <link href="https://web.archive.org/web/20210515031018/https://github.com/CONIGUERO/winamp"/>
-        <updated>2021-11-29T13:04:49.000Z</updated>
         <summary type="html"><![CDATA[Comments]]></summary>
         <author>
             <name>Hacker News</name>
