@@ -2,10 +2,511 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://7qi7qi.github.io/RSSFeeder/index.html</id>
     <title>osmos::feed</title>
-    <updated>2021-12-30T00:48:23.037Z</updated>
+    <updated>2021-12-31T00:50:17.082Z</updated>
     <generator>osmosfeed 1.11.3</generator>
     <link rel="alternate" href="https://7qi7qi.github.io/RSSFeeder/index.html"/>
     <link rel="self" href="https://7qi7qi.github.io/RSSFeeder/feed.atom"/>
+    <entry>
+        <title type="html"><![CDATA[Service Mesh 在中国工商银行的探索与实践]]></title>
+        <id>http://weekly.dockone.io/article/2434775</id>
+        <link href="http://weekly.dockone.io/article/2434775"/>
+        <updated>2021-12-31T00:50:15.218Z</updated>
+        <summary type="html"><![CDATA[微服务架构是当今互联网和金融机构渐趋主流的系统架构模式，其核心是集成服务通信、服务治理功能的服务框架，微服务框架在持续演进同时，服务网格（Service Mesh）作为一种新型的微服务架构，因架构灵活、普适性强，被认为具有较好发展前景。中国工商银行（后简称工行）主动探索服务网格领域，从 2019 年开始服务网格技术预研工作，通过对服务网格技术深入研究和实践后，于 2021 年建设了服务网格平台。服务网格与现有微服务架构融合发展，助力工行应用架构向分布式、服务化转型，承载未来开放平台核心银行系统。
+业界服务网格发展现状
+自 2016 年服务网格技术诞生以来，业界涌现了诸多的开源产品，如 Istio（Google + IBM + Lyft）、Linkerd（Twitter）、Consul（Hashicorp）等。其中以 Istio 社区活跃度和认可度最高，被作为服务网格的标杆开源产品。
+服务网格是一个专门处理服务通讯的基础设施层。它通过在业务 Pod 中注入 Sidecar 容器，接管业务容器的通信流量，同时 Sidecar 容器与网格平台的控制平面对接，基于控制平面下发的策略，对代理流量实施治理和管控，将原有服务框架的治理能力下层到 Sidecar 容器中，从而实现了基础框架能力的下沉，与业务系统解耦。
+
+
+
+图 1：服务网格示意图
+Sidecar 容器接管后端服务通信的进出流量后，通过标准协议进行服务间通信，可实现跨语言、跨协议的服务互访。此外，Sidecar 容器可对代理的流量进行管控，如统一的服务路由、安全加密、监控采集等。
+
+
+
+图 2：服务网格请求流转过程示意图
+服务网格技术在工行的探索与实践
+工行从 2015 年开启了 IT 架构转型工程，截止目前分布式体系已覆盖 240 余个关键应用，生产已有约超 48 万个提供方分布式服务节点，日均服务调用量超 127 亿，逐…]]></summary>
+        <author>
+            <name>JetLee</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Kubernetes Pod状态异常九大场景盘点]]></title>
+        <id>http://weekly.dockone.io/article/2434777</id>
+        <link href="http://weekly.dockone.io/article/2434777"/>
+        <updated>2021-12-31T00:50:15.211Z</updated>
+        <summary type="html"><![CDATA[Kubernetes Pod 作为 Kubernetes 核心资源对象，不仅 Service、Controller、Workload 都是围绕它展开工作。作为最小调度单元的它，还担任着传统 IT 环境主机的职责，包含了调度，网络，存储，安全等能力。
+正是因为 Pod 具有复杂的生命周期和依赖，绝大多数 Kubernetes 问题最终都会在 Pod 上表现出来。因此，我们介绍在实际工作实践中会遇到的 9 种典型场景，以及如何使用 Kubernetes 监控来处理这些场景，快速定位发现问题。
+
+
+
+容器是用户进程，Pod 就像是机器，所以调度，网络，存储，安全等机器级别的异常以及进程运行的异常都会在 Pod 上面体现出来。围绕着 Pod 来说，有以下几个关键的点非常容易出现问题：
+调度
+镜像拉取
+磁盘挂载
+Liveless/Readiness probe
+postStart/preStop handler
+配置
+运行时
+
+Kubernetes 提供相应的关键观测数据，包括 Pod Status 字段、相关事件、日志、性能指标、请求链路。
+那么，接下来我们来盘点一下相关常见的问题场景。
+常见问题场景
+问题场景 1：就绪失败，即 Pod 一直无法到达 Ready 状态，无法接收请求进行业务处理。
+
+
+
+常见的根因如下：
+资源不足，无法调度（Pending），即集群的 Node 没有预留资源能够满足 Pod 的 Request 资源；
+镜像拉取失败（ ImagePullBackoff ），镜像的仓库地址，tag 出现问题；
+磁盘挂载失败（Pending），容器挂载的 PVC 没有 bound；
+Liveless probe 探针失败，频繁重启；
+Readiness probe 探针失败，无法达到 Ready 状态；
+postStart 执行失败，一直无法进入运行状态；
+运行时程序崩溃…]]></summary>
+        <author>
+            <name>阿娇</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[一文读懂无损网络]]></title>
+        <id>http://weekly.dockone.io/article/2434776</id>
+        <link href="http://weekly.dockone.io/article/2434776"/>
+        <updated>2021-12-31T00:50:15.200Z</updated>
+        <summary type="html"><![CDATA[根据OpenAI的数据分析，自2012年起，最新的AI模型训练所需要的计算量每3-4个月就要翻一倍。在过去5年，GPU算力增长了近90倍，而网络带宽仅增长了10倍。随着AI训练集群规模的增大，以及单节点算力的增长，AI训练逐渐从计算约束转换为网络通信约束。
+另一方面，存储介质SSD（固态硬盘）的访问性能相比于分布式存储HDD（机械硬盘）已经提升了100倍，采用NVMe接口协议的SSD，访问性能可以提升10000倍。网络时延占比已经从原来小于5%提升到65%。网络时延也已经成为影响存储效率的重要因素。
+传统TCP/IP协议在接收/发送报文时，内核需要做多次上下文切换，每次切换需要耗费5us-10us左右，需要至少三次的数据拷贝，需要耗费算力进行协议封装。RDMA网络相比TCP提供更高的单流通信带宽。RDMA网络的内核旁路和内存零拷贝特性，大大缩短了协议栈的通信处理时延以及数据搬移时延。RDMA允许用户态的应用程序直接读取和写入远程内存，无需CPU接入多次拷贝内存，并可绕过内核直接向网卡写数据，实现了高吞吐量、超低时延和低CPU开销。
+最新版的RDMA协议RoCEv2 运行在UDP上，没有滑动窗口、确认应答等机制，一旦丢包，需要依靠上层应用检查并重传，这大大降低了RDMA传输效率。当网络的丢包率＞10-3时，将导致RDMA有效吞吐急剧下降；2%的丢包将使RDMA吞吐率下降为0。要使得RDMA吞吐不受影响，丢包率必须保证在十万分之一以下，最好为无丢包。总而言之，RDMA的高效率依赖于无损网络。
+网络拥塞原因
+要实现无损网络，实际上就是要解决网络上的拥塞问题。
+造成网络拥塞主要有如下原因：
+上下行非对称设计。网络设计通常采用非对称的方式，上下行链路带宽不一致（收敛比）。以交换机为例，当下联的服务器上行发包总速率超过上行链路总带宽时，上行口就会出现拥塞。
+ECMP。数据中心多采用Fa…]]></summary>
+        <author>
+            <name>guoaaaad</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[“Let's stop using NPS”]]></title>
+        <id>https://cranberryblog.substack.com/p/lets-stop-using-nps</id>
+        <link href="https://cranberryblog.substack.com/p/lets-stop-using-nps"/>
+        <updated>2021-12-30T23:56:56.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Problematic Employers in Tech]]></title>
+        <id>https://www.beginningwithi.com/2021/12/30/problematic-employers-in-tech/</id>
+        <link href="https://www.beginningwithi.com/2021/12/30/problematic-employers-in-tech/"/>
+        <updated>2021-12-30T23:56:31.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Linux Kernel RNG is now Blake2 instead of SHA1 and 3x faster]]></title>
+        <id>https://twitter.com/FiloSottile/status/1476698207413493766</id>
+        <link href="https://twitter.com/FiloSottile/status/1476698207413493766"/>
+        <updated>2021-12-30T23:39:13.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Improving the quality of publicly trusted intermediate CA certificates]]></title>
+        <id>https://blog.mozilla.org/security/2021/12/09/improved-quality-of-intermediate-certificates-with-enhanced-oversight-and-automation/</id>
+        <link href="https://blog.mozilla.org/security/2021/12/09/improved-quality-of-intermediate-certificates-with-enhanced-oversight-and-automation/"/>
+        <updated>2021-12-30T23:14:46.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Peter Thiel hires disgraced ex-Austrian chancellor Sebastian Kurz]]></title>
+        <id>https://nypost.com/2021/12/30/peter-thiel-hires-disgraced-ex-austrian-chancellor-sebastian-kurz/</id>
+        <link href="https://nypost.com/2021/12/30/peter-thiel-hires-disgraced-ex-austrian-chancellor-sebastian-kurz/"/>
+        <updated>2021-12-30T23:12:28.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[为什么有些男生走着走着就喜欢整一个投篮的姿势？]]></title>
+        <id>https://daily.zhihu.com/story/9743958</id>
+        <link href="https://daily.zhihu.com/story/9743958"/>
+        <updated>2021-12-30T23:07:30.000Z</updated>
+        <summary type="html"><![CDATA[郭艾伦
+阅读原文
+
+为啥这男的，走在路上，就莫名其妙投个篮呢？
+这事儿吧，就很自然。你走路上，你伸个手，哎哟，自然而然举起来了了，是不是想投个篮？
+你对着电脑敲了一天，吧嗒吧嗒，躺在办公椅上，伸个懒腰，是不是也想举手投个篮？
+好多动作啊，就像刻在咱男生 DNA 里的一样，做出来特别舒坦，特别自然。你说这动作像解压吧，有点；像自恋吧，嘿嘿，也有点，因为对着空气投篮，我永远进的是空心啊。
+不是有句话么：只要心中有沙，哪里都是马尔代夫。只要心中有篮筐，哪里都是总决赛第七场。球就在你手里，你出手就是绝杀，你投不投？别说男生犯二，哪个成年人还没个童心了是不？
+知道为啥科比，詹姆斯总能进绝杀不？就是我们生活中这些普通男生，没事儿举起双手空气投篮。他们就像《七龙珠》最后孙悟空整的元气弹一样，汇聚了几亿人的力量，才能在球场上投出绝杀的。
+空气投篮说白了吧，就是我们男生在摆 pose，在耍帅，在找自己失去的那点青春的感觉，有时候吧，也是我们庆祝发泄的方式。你看奥运会上，意大利那个跳高冠军，在最后一跳确定冠军后，也是做的空气投篮吧！
+男人至死是少年啊，朋友们。别藏着掖着了，你肯定平时自觉不自觉的都有空气投篮的瘾。要不，就在这儿秀出来给大家伙看看？我来给你们点评下？
+郭艾伦发起！场上见 | 空气投篮大赛
+阅读原文]]></summary>
+        <author>
+            <name>知乎日报</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[一部电影的整体制作流程是怎样的？]]></title>
+        <id>https://daily.zhihu.com/story/9743796</id>
+        <link href="https://daily.zhihu.com/story/9743796"/>
+        <updated>2021-12-30T23:07:22.000Z</updated>
+        <summary type="html"><![CDATA[元铭清，学习，拍片，思维流浪者～就是一小孩，尝试变成熟。不是自媒体
+阅读原文
+
+这个图应该可以简洁明了的说明一切了
+
+这个图基本上囊括了一个电影从无到有的全部具体过程，只是少了后期的宣发，发行等等项目操作。
+这个图把电影的制作流程分为四段。（按照颜色）
+第一段是创意建立，第二段是团队组建，第三段是拍摄执行，第四段是后期处理。
+
+那就这个图再补充几点：
+所有的电影都是来源于一个 idea，也就是这上面的创意，随后会写出剧本，然后制作公司就会立项。紧接着制作公司就会开始找团队，一般会先找到导演，导演会有自己的团队（摄像指导，剪辑，导演助理等等），这一切都和图上一样。
+但是要注意的是，剧本其实并不是说在第一阶段结束的，一般在和导演建立联系后，也会对剧本进行改动，有时候甚至会返回到第一阶段，甚至有些剧本被导演毙掉后，整个项目都有可能垮掉。
+在此期间，导演也会做导演阐述，一般导演阐述就是导演进行自我介绍，然后对这个项目进行评估
+一般导演阐述包括项目的创作思路，剧本评估，摄影风格的确立，视角效果的建立，对于演员的需求，场景的需求。
+在此期间导演需要和公司进行不断地磨合，修改。
+所以一般来说前两个阶段时间最长，我中途参与的一个项目听说一直在剧本磨合阶段，群里 8 个人，三个月一次会，群名从“2017xxxx”改到“2021xxxx”，马上就要“2022xxxx”
+所以剧本是一个项目的起步，每一个好剧本都肯定经历了很长时间的打磨。
+
+从选景、选演员开始，基本上就是拍摄前期的准备工作。
+而到黄色的第三阶段，也就进行到了拍摄阶段，但是拍摄的话，这个图用的基本上都是箭头，用循环的方式更加准确。
+一般一天拍摄的时候，我们需要对拍摄场地或者摄影棚进行规划处理，一般都是道具或者布光等等，演员也会开始化妆，两步同时进行后，会先进行简单的走位排练和摄影机调度排练。接着就开始拍摄。
+然后，有一个单独的素材管理，这是一个叫做 DIT 的工种，感觉应该算是相当重要的职位了，就是主要负责素材存储还有备份。看似很简单，但是压力很大的。
+最后就是后期处理工作，后期的话一般先让声画对位之后就会开始处理素材，剪接完成后就开始调色，反反复复，哪里有问题弄哪里，最后形成一个声画对位，可以播放出去的版本，就是定版。
+
+电影的制作流程就是这样，虽然流程比较清楚，但里面涉及到的人员是很多的，从小的个位数，到大的上万都是有可能的。
+之后电影就会进入宣发，发行阶段，这个就不属于电影的制作流程了，一般也会找到单独的电影宣传公司进行宣传，这个就要看每个电影项目自己的操作了。
+文字只是做很简单的补充，但是这个回答最重要的还是那张图，希望能清晰明了的让大家看懂。
+阅读原文]]></summary>
+        <author>
+            <name>知乎日报</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[多少台路由器同时辐射才会对人体造成伤害？]]></title>
+        <id>https://daily.zhihu.com/story/9743905</id>
+        <link href="https://daily.zhihu.com/story/9743905"/>
+        <updated>2021-12-30T23:07:14.000Z</updated>
+        <summary type="html"><![CDATA[张子立，能源，化学，材料
+阅读原文
+
+多少台。。。比较有意思的答案。。我们可以做一个很简单的估算。
+国家对电磁环境的要求是小于 0.4W/m2（这里提醒某些人，看清楚了频率，再来说磁场值。总有人用这个 0.04uT 来跟我杠，说高压线有害，我真的是没话说）。
+
+人肯定要比 1 平米小的多，但是费米说过，这种简单的估计只要数量级不错都是对的。我们就简单的假设，1 台路由器的辐射是 0.4W。
+路由器的电磁波和人身体作用，会产生热，根据无责任的经验的瞎猜，我们可以如此认定，这个效率在 0.01%~10%之间（我觉得这个区间还是合理的，毕竟没听说过谁从路由器边上过去就觉得跟进了微波炉一样）。
+所以一台路由器对人体的功率就是 4*10^-5 ~4*10^-1 W。 假设你在屋子里待 100 秒，所以一台路由器让人体产生的焦耳热就是 4*10^-3 ~4*10^0 J.
+热量不是导致伤害的根本，导致人体伤害的根本是温升，这里查着一个比热容。为了简（tou）单（lan），我们假设人的比热容和水一样，4.2×10^3J/（kg℃）。哎，这里是 4.2，上面是 4。好麻烦，就都当做是 4 吧，好算。
+假设人的体重是 50kg。所以呢，一台路由导致人体的温升就应该是：（4*10^-3 ~4*10^+1 J）/（50kg4×10^3J/（kg℃））=2*10^-8 ~ 2*10^-5 。
+也就是说一台路由器 100 秒内能让人的体温上升 2*10^-8 ~ 2*10^-5 度。人的体温要从 37 度达到 42 度才会造成伤害，也就是温升是 5 度。
+这样就需要 2.5*10^8 ~ 2.5*10^4 台路由器，也就是 25 万台到 2 亿 5 千万台路由器在 1 平米的空间里，在 100 秒内能让人受伤。
+下面一个问题，1 平米空间能装下这么多路由器吗？？？
+阅读原文]]></summary>
+        <author>
+            <name>知乎日报</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[越来越多歌曲因短视频爆红，这对音乐创作是好事还是坏事？]]></title>
+        <id>https://daily.zhihu.com/story/9743900</id>
+        <link href="https://daily.zhihu.com/story/9743900"/>
+        <updated>2021-12-30T23:07:08.000Z</updated>
+        <summary type="html"><![CDATA[EndingCredit，贝斯手 游戏爱好者 喜欢杂谈和当捧哏
+阅读原文
+
+我先说结论：我认为这个现象是一件有坏而且相对不好的事。我对这个现象的主要看法在于，短视频带来的短期流量是否会冲击歌曲的受众生态。
+既然是讨论的这些歌曲被应用在短视频里，我们可以在以下假设为前提的基础上去探讨： 1.短视频基于自身的流量属性可能会带来很多潜在的听众，有一定的可能会把引来的这部分观众转化成所使用的歌曲类型或风格的新受众。 2.短视频因为自身时长短，所以大部分的视频能产生影响或者流量收益的时长也短，因此能感受到除了少部分高质量短视频外，其他短视频的流量效益其实在很短时间内可能就会消失。 3.这类短视频应用歌曲后，会有听众来溯源寻找相应歌曲，这类人员一部分可能会入坑，另一部分可能会只是留下姓名而已，所以有很大概率会产生对歌曲所属生态圈子的冲击。
+基于以上几点，我总结一下我的前提：短视频带来的效益大部分都是大量却短暂的。
+然后我们来接着讨论这个问题即然短视频的确也能带来大量流量和收益，那么音乐创作的模式能否按照短视频的效益模式一样进行产出，又能否让音乐创作服务于短视频创作实现流量效益的双赢？
+我自己认为是不能的：我理解认为歌曲自身的属性和重点并不同于短视频，歌曲在传递信息中的一些点在短视频中是不会被注意或刻意体现出来的。
+举几个简单的例子，短视频中有时会用到一些比较有转折性，有节奏性或者强调性的音乐来配合画面进行演出或者呈现内容。也有的短视频也会翻唱歌曲或者截取歌曲的高潮部分来帮助观众代入当时的氛围或情绪，或者选用一些滑稽的音乐来营造或带入轻松搞笑的氛围。这些例子大部分都同时造成了一个现象：虽然在视频当中创作者在有意识地引导观众去进入歌曲会给视频带来的情感氛围或者体验环境，但是这些由歌曲带来的体验永远只是一部分，几乎不会是歌曲的全貌。
+我在这接着说一下我对于歌曲所蕴含属性的理解：歌曲之所以能够…]]></summary>
+        <author>
+            <name>知乎日报</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[瞎扯 · 如何正确地吐槽]]></title>
+        <id>https://daily.zhihu.com/story/9743966</id>
+        <link href="https://daily.zhihu.com/story/9743966"/>
+        <updated>2021-12-30T23:06:59.000Z</updated>
+        <summary type="html"><![CDATA[有哪些可以笑一辈子的笑话？
+
+寺下无人，我的理想是当个主持，期待寺下无人之时
+阅读原文
+
+有次买羽绒服，问店员，这个是纯鸭绒的吗？她说我们老板自己就穿了件，结果得了禽流感。
+阅读原文
+
+游泳可以减肥吗？
+
+匿名用户
+阅读原文
+
+应该可以，但我没成功。我市游泳馆比较偏，门口正对麦当劳，每次游完泳，饥肠辘辘，闻到香味，忍不住诱惑就进入了，所以更胖呢
+阅读原文
+
+为什么蚊子知道我快睡着了才突然在我耳边嘤一下，然而我装作睡着了等了它很久它却不来？
+
+念旧丶，若非迫不得已，谁愿颠沛流离
+阅读原文
+
+你装的不像。
+阅读原文
+
+考试砸了回到家，母亲打我的概率是 1/2，父亲打我的概率也是 1/2，那我被打的概率是多少？
+
+如花似玉，postdog
+阅读原文
+
+假设父母打你事件的相关系数为ρ，计算可知你会挨打的几率是(3-ρ)/4。所以你会发现父母行动越一致，你被打的概率越低。
+如果父母喜欢同时行动，那么你只有 1/2 几率会被打；
+如果两人行动完全不相关，此时两人的行动恰好也是独立的，挨打几率为 3/4
+如果两人喜欢对着干，相关系数为 -1，那你就惨了，100% 被打
+阅读原文
+
+一般的家长是怎么看待杨永信的？
+
+杨二米，生物教师 已婚
+阅读原文
+
+ 
+我给我妈讲了杨永信的事情。
+我：如果我有问题，你会把我送过去吗？
+我妈：我不会让你出问题的。一开始就好好教，你就不会出问题。
+我：如果就是出问题了呢？
+我妈：那里太贵了，还不如让你在家玩。
+我：如果在家待不住，真的无可救药了呢？
+我妈：真的无可救药了，这个钱不如送你去武校，出来还能去给演员做武打替身，以后也不至于赚不到钱饿死。
+ 
+阅读原文]]></summary>
+        <author>
+            <name>知乎日报</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[macOS Setup after 15 Years of Linux]]></title>
+        <id>https://hookrace.net/blog/macos-setup/</id>
+        <link href="https://hookrace.net/blog/macos-setup/"/>
+        <updated>2021-12-30T22:55:30.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[New Malware Uses SSD Over-Provisioning to Bypass Security Measures]]></title>
+        <id>https://www.tomshardware.com/news/ssd-over-provisioning-vulnerability</id>
+        <link href="https://www.tomshardware.com/news/ssd-over-provisioning-vulnerability"/>
+        <updated>2021-12-30T22:43:33.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[The Science of Visual Data Communication: What Works]]></title>
+        <id>https://journals.sagepub.com/doi/10.1177/15291006211051956</id>
+        <link href="https://journals.sagepub.com/doi/10.1177/15291006211051956"/>
+        <updated>2021-12-30T22:12:45.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Copy Protection in Modern Microcontrollers (2001)]]></title>
+        <id>https://www.cl.cam.ac.uk/~sps32/mcu_lock.html</id>
+        <link href="https://www.cl.cam.ac.uk/~sps32/mcu_lock.html"/>
+        <updated>2021-12-30T21:11:45.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Tesla recalls nearly half a million Model 3 and Model S cars]]></title>
+        <id>https://www.theverge.com/2021/12/30/22859717/tesla-model-3-s-recall-trunk-latch-failure-nhtsa</id>
+        <link href="https://www.theverge.com/2021/12/30/22859717/tesla-model-3-s-recall-trunk-latch-failure-nhtsa"/>
+        <updated>2021-12-30T21:05:38.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Skio (YC S20) is hiring founding engineers]]></title>
+        <id>https://skio.com/careers</id>
+        <link href="https://skio.com/careers"/>
+        <updated>2021-12-30T21:00:17.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Consuming Articles Offline]]></title>
+        <id>http://blog.nawaz.org/posts/2021/Dec/consuming-articles-offline/</id>
+        <link href="http://blog.nawaz.org/posts/2021/Dec/consuming-articles-offline/"/>
+        <updated>2021-12-30T18:51:55.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[An mRNA-based anti-tick vaccine]]></title>
+        <id>https://www.science.org/doi/10.1126/scitranslmed.abm2504</id>
+        <link href="https://www.science.org/doi/10.1126/scitranslmed.abm2504"/>
+        <updated>2021-12-30T18:08:02.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[iPhone camera app replaces person’s head with a leaf in photo]]></title>
+        <id>https://twitter.com/mitchcohen/status/1476351601862483968</id>
+        <link href="https://twitter.com/mitchcohen/status/1476351601862483968"/>
+        <updated>2021-12-30T18:00:20.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[SQL language proposal: JOIN FOREIGN]]></title>
+        <id>https://gist.github.com/joelonsql/15b50b65ec343dce94db6249cfea8aaa</id>
+        <link href="https://gist.github.com/joelonsql/15b50b65ec343dce94db6249cfea8aaa"/>
+        <updated>2021-12-30T17:54:07.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Show HN: Pystitcher – A Declarative Alternative to Pdftk]]></title>
+        <id>https://github.com/captn3m0/pystitcher</id>
+        <link href="https://github.com/captn3m0/pystitcher"/>
+        <updated>2021-12-30T17:25:14.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Germany: Data retention to be abolished]]></title>
+        <id>https://tutanota.com/blog/posts/data-retention-germany/</id>
+        <link href="https://tutanota.com/blog/posts/data-retention-germany/"/>
+        <updated>2021-12-30T17:02:39.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[How often people copy and paste from Stack Overflow]]></title>
+        <id>https://stackoverflow.blog/2021/12/30/how-often-do-people-actually-copy-and-paste-from-stack-overflow-now-we-know/</id>
+        <link href="https://stackoverflow.blog/2021/12/30/how-often-do-people-actually-copy-and-paste-from-stack-overflow-now-we-know/"/>
+        <updated>2021-12-30T16:17:27.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[The gift of it's your problem now]]></title>
+        <id>https://apenwarr.ca/log/20211229</id>
+        <link href="https://apenwarr.ca/log/20211229"/>
+        <updated>2021-12-30T13:03:16.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[On Emacs 28’ context menu and Unix mouse-usage in general]]></title>
+        <id>https://ruzkuku.com/texts/emacs-mouse.html</id>
+        <link href="https://ruzkuku.com/texts/emacs-mouse.html"/>
+        <updated>2021-12-30T13:03:02.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Vector Supercomputers]]></title>
+        <id>https://www.tfeb.org/fragments/2021/12/30/vector-supercomputers/</id>
+        <link href="https://www.tfeb.org/fragments/2021/12/30/vector-supercomputers/"/>
+        <updated>2021-12-30T13:01:18.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Why can’t you design noise in frequency space?]]></title>
+        <id>https://blog.demofox.org/2021/12/29/why-cant-you-design-noise-in-frequency-space/</id>
+        <link href="https://blog.demofox.org/2021/12/29/why-cant-you-design-noise-in-frequency-space/"/>
+        <updated>2021-12-30T12:35:03.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[The Graphical User Interface – 1945 to 1980]]></title>
+        <id>https://lunduke.substack.com/p/the-history-of-the-graphical-user</id>
+        <link href="https://lunduke.substack.com/p/the-history-of-the-graphical-user"/>
+        <updated>2021-12-30T10:13:53.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Table Oriented Programming (2002)]]></title>
+        <id>https://web.archive.org/web/20121024051826/http://www.geocities.com/tablizer/top.htm</id>
+        <link href="https://web.archive.org/web/20121024051826/http://www.geocities.com/tablizer/top.htm"/>
+        <updated>2021-12-30T09:59:32.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Big data may not know your name, but it knows everything else]]></title>
+        <id>https://www.wired.com/story/big-data-may-not-know-your-name-but-it-knows-everything-else/</id>
+        <link href="https://www.wired.com/story/big-data-may-not-know-your-name-but-it-knows-everything-else/"/>
+        <updated>2021-12-30T09:40:51.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[How did LastPass master passwords get compromised?]]></title>
+        <id>https://palant.info/2021/12/29/how-did-lastpass-master-passwords-get-compromised/</id>
+        <link href="https://palant.info/2021/12/29/how-did-lastpass-master-passwords-get-compromised/"/>
+        <updated>2021-12-30T09:31:06.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Databases in 2021: A Year in Review]]></title>
         <id>https://ottertune.com/blog/2021-databases-retrospective/</id>
@@ -274,6 +775,16 @@ DCSS
         <id>https://twitter.com/ID_AA_Carmack/status/1476294133975240712</id>
         <link href="https://twitter.com/ID_AA_Carmack/status/1476294133975240712"/>
         <updated>2021-12-29T20:54:09.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[How Sber Built ruDALL-E]]></title>
+        <id>https://serokell.io/blog/how-sber-built-rudall-e</id>
+        <link href="https://serokell.io/blog/how-sber-built-rudall-e"/>
+        <updated>2021-12-29T20:12:56.000Z</updated>
         <summary type="html"><![CDATA[Comments]]></summary>
         <author>
             <name>Hacker News</name>
@@ -708,6 +1219,16 @@ Spring Native借助GraalVM native-image编译器来编译Spring应用，所以�
         </author>
     </entry>
     <entry>
+        <title type="html"><![CDATA[Will Citroen manage to re-invent the wheel?]]></title>
+        <id>https://medium.com/@tkdynation/will-citroen-manage-to-reinvent-the-wheel-b74a07c056ce</id>
+        <link href="https://medium.com/@tkdynation/will-citroen-manage-to-reinvent-the-wheel-b74a07c056ce"/>
+        <updated>2021-12-29T12:44:46.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[Ask HN: Has remote work made you move to a new location or consider it?]]></title>
         <id>https://news.ycombinator.com/item?id=29724108</id>
         <link href="https://news.ycombinator.com/item?id=29724108"/>
@@ -722,6 +1243,16 @@ Spring Native借助GraalVM native-image编译器来编译Spring应用，所以�
         <id>https://jobs.lever.co/clerky/295375d9-c3d9-4ec8-99e0-bc5ac6232a64</id>
         <link href="https://jobs.lever.co/clerky/295375d9-c3d9-4ec8-99e0-bc5ac6232a64"/>
         <updated>2021-12-29T12:00:04.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Boston Dynamics’ Stretch robot can move 800 heavy boxes per hour]]></title>
+        <id>https://spectrum.ieee.org/warehouse-robot</id>
+        <link href="https://spectrum.ieee.org/warehouse-robot"/>
+        <updated>2021-12-29T11:48:11.000Z</updated>
         <summary type="html"><![CDATA[Comments]]></summary>
         <author>
             <name>Hacker News</name>
@@ -2444,6 +2975,16 @@ TIPS：电杂信号噪点产生的本质：“弱光”
         <id>https://jezenthomas.com/fast-counting-with-postgresql-and-haskell/</id>
         <link href="https://jezenthomas.com/fast-counting-with-postgresql-and-haskell/"/>
         <updated>2021-12-26T09:44:34.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Papers We Love]]></title>
+        <id>https://paperswelove.org/</id>
+        <link href="https://paperswelove.org/"/>
+        <updated>2021-12-26T06:48:26.000Z</updated>
         <summary type="html"><![CDATA[Comments]]></summary>
         <author>
             <name>Hacker News</name>
@@ -15403,541 +15944,6 @@ No.1 壹
         <id>https://www.betrfs.org/</id>
         <link href="https://www.betrfs.org/"/>
         <updated>2021-12-01T13:10:27.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[U.S. Satellites Are Being Attacked Every Day According to Space Force General]]></title>
-        <id>https://www.thedrive.com/the-war-zone/43328/u-s-satellites-are-being-attacked-everyday-according-to-space-force-general</id>
-        <link href="https://www.thedrive.com/the-war-zone/43328/u-s-satellites-are-being-attacked-everyday-according-to-space-force-general"/>
-        <updated>2021-12-01T12:05:20.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Dumping the NEC PC Engine YUV Table]]></title>
-        <id>http://furrtek.free.fr/?a=pceyuv</id>
-        <link href="http://furrtek.free.fr/?a=pceyuv"/>
-        <updated>2021-12-01T04:47:21.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Synthetic tissue can repair hearts, muscles, and vocal cords]]></title>
-        <id>https://www.mcgill.ca/newsroom/channels/news/synthetic-tissue-can-repair-hearts-muscles-and-vocal-cords-335206</id>
-        <link href="https://www.mcgill.ca/newsroom/channels/news/synthetic-tissue-can-repair-hearts-muscles-and-vocal-cords-335206"/>
-        <updated>2021-12-01T00:02:06.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[The American Prison System’s War on Reading]]></title>
-        <id>https://proteanmag.com/2021/11/29/the-american-prison-systems-war-on-reading/</id>
-        <link href="https://proteanmag.com/2021/11/29/the-american-prison-systems-war-on-reading/"/>
-        <updated>2021-11-30T23:41:11.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Pushed Around by the Stars]]></title>
-        <id>https://eighteenthelephant.com/2021/11/29/pushed-around-by-stars/</id>
-        <link href="https://eighteenthelephant.com/2021/11/29/pushed-around-by-stars/"/>
-        <updated>2021-11-30T23:30:15.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[腐乳到底是怎么发明出来的？]]></title>
-        <id>https://daily.zhihu.com/story/9742844</id>
-        <link href="https://daily.zhihu.com/story/9742844"/>
-        <updated>2021-11-30T23:09:02.000Z</updated>
-        <summary type="html"><![CDATA[魏水华，物候与美食专栏作家，公众号 食味艺文志-foodoor
-阅读原文
-
-
-撰文 | 魏水华
-头图 | pixabay
-由于比邻的地缘格局和相近的文化传统，东亚各国在饮食习惯上有着很多共性。比如用筷子、喝粮食酒、蘸酱油调味、吃辣椒酱、吃腌渍蔬菜、吃白米饭、吃狗肉……几乎所有被中国人打上了鲜明标签的本民族餐桌元素，都能在朝鲜、韩国、日本、越南找到共鸣。腐乳，也许是唯一的例外。
-
-这种由豆腐腌制发酵而来的小菜，廉价、鲜美、用途广泛。同时，它还完美解决了豆制品不耐存储运输的问题，是中国各地最常见的小菜之一。但神奇的是，同样对豆腐怀有热爱的朝鲜、韩国、日本和越南，却几乎见不到腐乳的影子。不吃腐乳，他们各有理由，诸如“有异味”“高盐”“不健康”，但似乎全然忘记了异味更大的日本纳豆，与含盐量同样高的韩国泡菜。历史上与中国有着千丝万缕联系的冲绳群岛，至今倒是依然流行着一种名为“豆腐糕“的食物。和腐乳一样，它依赖发酵改良豆腐的口感。
-
-因为豆腐糕不能太咸，所以其制作过程只能依靠酒精来控制霉菌的滋生。在加入冲绳本地烈酒“泡盛“后，大量有益菌群被杀死，这就导致豆腐糕的发酵程度不够深，空有腐乳的质感，缺乏氨基酸为腐乳带来的，爆炸般的鲜味。本质上，冲绳豆腐糕只是一种类似腐乳的点心，它远远达不到腐乳的味觉高度。究竟是怎样的土壤，成就了酵变于腐乳之中的中餐滋味、隐藏于腐乳之外的华夏风韵、搭建于腐乳之上的汉唐美学？
-
-No.1 壹
-制造腐乳的的原材料是豆腐，并且豆腐的含水量不能太高，需要达到一定的固形物密度。日本人发明的“绢豆腐”，是无法制造腐乳的。盐卤，是制作腐乳的先决要素。
-
-虽然这种由氯化钾、氯化镁和溴化镁等杂质构成的制盐废料，具有一定的化学毒性，经常被当成健康饮食的反面教材。但没有朴素的盐卤参与，就无法“点”出干湿适度、软硬合宜的豆腐。纵观众多历史久远的腐乳产地，诸如浙江绍兴、广西桂林、山东临…]]></summary>
-        <author>
-            <name>知乎日报</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[人类为什么要不停地探索太空？]]></title>
-        <id>https://daily.zhihu.com/story/9742847</id>
-        <link href="https://daily.zhihu.com/story/9742847"/>
-        <updated>2021-11-30T23:08:55.000Z</updated>
-        <summary type="html"><![CDATA[河森堡，国家博物馆讲解员
-阅读原文
-
-小伙子正盘腿坐在电视前，聚精会神地搓着游戏手柄，脸涨得通红，突然，教授走过来，拿起遥控器一按，电视换了频道。
-小伙子脖子上刹时冒出青筋来：“教授，你干嘛呀！我好不容易打到关底 BOSS！我还没存档呢！”
-教授没回头，把遥控器捏手里看着电视屏幕：“你天天跑我这来蹭吃蹭喝，现在电视也想霸占？看看这个，这可是全人类的大事。”
-小伙子呲牙咧嘴地看过去，只见电视屏幕上，一艘火箭正在点火，轰然升腾的浓烟中，其尾部爆射出恢宏的火焰，气势磅礴地冲入重重苍穹。
-电视前，教授看的入神，不住地微微点头，小伙子看了看屏幕，又转头看了看教授，“切”地把手柄一扔，双手枕在头后，闭眼撇嘴。
-教授没回头，依然盯着屏幕：“干嘛？”
-小伙子：“净整这些没用的。”
-教授：“你说什么没用？”
-小伙子闭着眼，伸手指向屏幕：“我说这电视里的东西没用，眼下社会上还有那么多人受病受灾，恨不得饭都吃不上呢，把大笔的预算扔进虚无缥缈的太空里而不解决切实的社会问题，纯粹浪费纳税人的钱。”
-教授哂笑一声，小伙子听出了教授的嘲讽，睁开一只眼睛：“您笑什么？我说错了？”
-教授依然看着屏幕上的发射直播：“何止错，简直错到离谱，探索太空是最具意义的人类实践之一，我甚至都在想是不是应该加上之一两字。”
-小伙子又盘腿坐了起来：“那您倒是说说，探索太空能有什么实际意义？事先声明，我说的可是实际意义，至于什么满足好奇心和民族自豪感之类的虚话，您还是别说了，没劲。”
-“探索太空最重要的意义在于...” 说到这，教授慢慢转过身来，看着小伙子“人类有个不可克服的弱点，即他们的思维往往受限于实践经验。”
-小伙子蒙了：“哈？您这是说什么呢？”
-教授坐到沙发上，翘起腿：“年轻人，你不妨想想看，世界各地古代的神怪都是什么样，中国的女娲，上半身是人，下半身是蛇，古希腊的米诺陶洛斯，上面是牛头，下面是人身，古埃及的阿努比斯，…]]></summary>
-        <author>
-            <name>知乎日报</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[哪些因素决定了一个国家/地区的美食发展水平？]]></title>
-        <id>https://daily.zhihu.com/story/9742834</id>
-        <link href="https://daily.zhihu.com/story/9742834"/>
-        <updated>2021-11-30T23:08:47.000Z</updated>
-        <summary type="html"><![CDATA[ag獭，好奇而无用的獭獭
-阅读原文
-
-资源因素——物产分布
-北印度的各种香料
-古代交通物流没有那么发达，当地出产什么食物，人们就吃什么食物。比如印度和东南亚出产各种香料，当地的食物自然就以善用香料闻名；而在气候相对寒冷的北欧沿海地区，海鱼是人们主要的蛋白质来源，自然就有各种鱼的做法；美洲是辣椒的原产地，所以当地人自然都比较能吃辣。靠山吃山，靠水吃水，此乃自然之理。
-印度做菜为什么那么爱放香料?
-地理位置
-地理位置的影响，除了上面所说的物产以外，还有两方面。
-其一是交通的便利程度。交通越便利，就越容易成为包括食材在内的物资集散中心，通常经济就越发达。有了丰富的食材，就有更多尝试的可能，人们的饮食就会变得更丰富，更多元。
-其二是气候，还是以上面的印度和北欧举例。
-印度大部分地区位于热带和亚热带，气候炎热，湿度较高，食物容易变质，不易储存。而很多香料有杀菌的作用，既能提升口味，刺激味觉，也可延长食物的保存时间，所以早在四千多年前，印度人就在烹饪时加入香料，也形成了丰富的香料应用传统。
-印度混合泡菜
-除了加入香料外，发酵是另一种延长食物保质期的办法。南亚是最早发明腌菜的地区之一，数千年前，当地人就开始用香料处理蔬菜，并将其放入油、醋等介质中，以此隔绝空气，延长保存时间。当然南亚的泡菜也是很有特色的，比如泡芒果、泡黄瓜等，这就又和物产有关了。
-此外，印度的气候比较适合种植水稻、小麦等谷物，许多谷物都可以一年两熟甚至三熟。相对于肉类和蔬菜，谷物产量较高，更容易让人填饱肚子，所以许多印度菜套餐中都可以见到多种主食（比如不同的饼 + 米饭）。
-爱尔兰的土豆炖肉
-到了北欧，问题就不一样了。北欧的气候比较冷，食物不那么容易变质。但这里的物产不如印度丰富，没那么多蔬菜，也不容易种粮食。所以在当地传统饮食习俗中，肉类和乳制品的占比较高，蔬菜和谷物则没有那么多。直到美洲的土豆传来后，这些耐寒的根茎类…]]></summary>
-        <author>
-            <name>知乎日报</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[「儿童专用药仅占 1.7%：吃药靠掰、用药靠猜」，家长存在哪些儿童用药难题？如何解决儿童用药困境？]]></title>
-        <id>https://daily.zhihu.com/story/9742829</id>
-        <link href="https://daily.zhihu.com/story/9742829"/>
-        <updated>2021-11-30T23:08:40.000Z</updated>
-        <summary type="html"><![CDATA[李昕，丁香妈妈签约专家/儿科主治医师/宝妈
-阅读原文
-
-文章里提及的困境的确存在。
-平时大家可能感受不到，从字面上来看：“儿童专用药”仅占 1.7%，特别让人恐慌，是否代表孩子生病时无药可用呢？并不是的。在某些品类，儿童可使用和成人同样的药物。静脉药物、外用药物、雾化剂型，相对不受限制。儿童常见病的口服药方面，也有丰富可选的剂型来满足宝宝的疾病需要。
-困难也的确存在。罕见病、少见病的特殊用药缺乏让家长和医生都无能为力。制药企业对利润不高的儿童专用药物兴趣不大。如果能从国家方面进行调控，促进儿童专用药物的研发和使用，这是对儿童健康的极大促进。
-儿童用药的一些现状。
-一、缺乏专用剂型
-儿童用药的特点是有孩子的生理特性决定的。同一种病，不同的孩子使用，用量是不一样的。因为要根据年龄体重来计算专门的剂量。不像成年人，同一种疾病使用量是相同的。这种情况就导致儿童专用药需要能细分剂量的药品剂型。
-如果是静脉注射药品，精确用药是可以做到的。通过计算药物配比，可以达到非常精准的用量。但是对口服药来说，就比较困难了。适合儿童的口服药剂型包括糖浆、冲剂、分散片。而胶囊型、缓释片型的药物不支持分药喂食。
-如果缺乏这些方便的剂型，用药的确会有困难，尤其是孩子年龄特别小，体重低时。用量越小分药会越困难。喂药时如何准确用药会让家长很为难。一种相对比较准确的方法：把整粒药物均匀溶化后，再用有刻度的针管按比例抽取药液来满足宝宝的特殊需要。
-
-二、市面上儿童剂型药物，不一定真正合适孩子。
-家长如果去药店买药，会发现治疗普通感冒的口服药物有好多种。但是常见的情况是基本化学成分相同，只是辅料不同，口味不同。虽然看起来是不同的药物，内在其实是同一类。儿童口服药可选的品种少，重复雷同的多。
-经常会遇到家长给感冒的孩子一次吃好几种冲剂。比如“抗病毒合剂”、‘’小儿退热颗粒”、“小儿止咳液”“小儿氨酚黄那敏冲剂”，对孩…]]></summary>
-        <author>
-            <name>知乎日报</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[为什么《圣斗士星矢》能成为经典？]]></title>
-        <id>https://daily.zhihu.com/story/9742838</id>
-        <link href="https://daily.zhihu.com/story/9742838"/>
-        <updated>2021-11-30T23:08:30.000Z</updated>
-        <summary type="html"><![CDATA[千翻儿娃，三亿光年外的漫魂
-阅读原文
-
-『车田漫画里需要的不是起承转合，如何让读者感到惊讶才是最重要的』
-———by 车田正美
-
-这是整个车田宇宙的核心，也是圣斗士成为经典的核心。
-也许当年就真吃这套，天马行空的设定比故事本身更受关注。车田这么做了，也确确实实的做到了，打造了一个跨世纪的经典。
-车田以他自己那套独创的模式开拓了一片新天地。「开头→叙述→转折→结尾」这种死板的形式，在车田宇宙里可不太常见。
-各种荒诞无稽的设定，夸张的必杀，独特的战斗表现集合成所谓的『车田節』。凭借这些独特之处，堆砌了圣斗士世界。
-车田坠地风格
-▽
-当然，光有核没有精美外壳想必也无法做到风靡世界。其中，星座的实体化无疑是圣斗士成为经典的最重要因素。
-在生活中，星座早已成为如同十二生肖般的必然存在。当时，多少朋友通过圣斗士把十二星座倒背如流。
-星座通过防具【圣衣】得到实体化。再配上美型男与其搭配，这是男女通杀的妙招，无一幸免。
-圣衣的定位本身也是一个亮点，它增大了星座实体化的魅力！
-
-『最初打算用日本武士铠甲型防具，战斗模式就像空手道对决那样。威力过于强大，所以需要穿戴防具。
-但感觉普通的防具太土。烦恼之际，脑中突然浮现出希腊神话，觉得把防具做成星座的形状那绝对很酷。
-防具定位于西洋风那种带曲线的设计。现在看来狮子座艾欧里亚的黄金圣衣，应该是最接近当初所构思的印象吧』
-
-圣衣效仿西洋风甲胄，但未照搬样式。反倒是削弱了笨重感，进行了更贴身的改良，就像穿戴的服装一样。
-动画版中的圣衣设计，更是改良得凸显了美型男的完美身体曲线。这样的视觉冲击，也是促进人气暴涨的重要因素吧。
-其中，荒木伸吾与姫野美智的功劳甚大
-圣衣根据等级还体现着不同的风格。而这种等级差异，车田直接用对身体的覆盖率，进行了体现。
-
-『当初对圣斗士有个大概的年龄设定。青铜为初中，白银为高中，黄金为大学。对应身高约在 165，175，180 左右。
-另外，圣衣的等级如同军队里的官阶。青铜为尉级，白银为校级，黄金则是将级。
-一般印象中，低等兵大都穿戴像作业服那种比较短款的服装，长官级是夹克之类的，而将领级则是长款大衣那种吧。
-如此，仅凭穿着就可能判断出级别。当时就是这样考虑的』
-圣斗士中青铜最低级，看着也最凉快。白银稍微严实点，黄金则露出更少，神圣衣基本就约等于全身覆盖了。
-
-虽然是防具，但圣衣更像是一种时尚。圣衣的命名『cloth』也算是回应了此特征。
-似衣非衣，即使不穿戴圣衣，它依靠着星座本来的造型依然能独立炫酷的存在。这样的设计超级有魅力，即便现在也依旧拉风。
-▽
-如此独特的设定，没有足够大的空间，想必也难以展现出它全部的魅力。
-圣斗士宏大的世界观，就为圣衣提供了一个完现魅力的『时尚平台』。圣衣在无形中仿佛拉近了传说与现实的距离。
-
-车田用一个『超』字把众多神话串联起，所有神话被归纳成同宗。各家神话在圣斗士世界里就相当于从宗家衍生出的支派。
-但在未普及互联网，信息较闭塞的当时也很难能了解到这部分内容。
-而圣斗士的历史背景，其尺度远比当时所理解的要大得多得多，被称之为『大圣战史』。
-》宇宙的诞生
-》生命的诞生
-》雅典娜的诞生
-》波塞冬的初次圣战，圣斗士与圣衣诞生
-》巨人族之战
-》阿瑞斯的圣战
-》and so on………
-在正篇开始之前，还有这么一大段迷一般的历史存在。这一切在作品中基本都未提及，而是记载于此刊物中。
-圣斗士星矢 COSMO SPECIAL
-当了解到这一大段历史后，有种圣斗士的尺度又被放大了一倍的感觉。就是在这样一个大世界里，光芒万丈的圣衣照亮着每个角落。
-《圣斗士星矢》中的众神体系是怎么样的？
-▽
-比起圣斗士的世界观，它的故事则显得要简单得多。但依靠这来自独特灵感的设计，依旧让此作如凤凰烈火般火红。
-因为车田一直致力于让观众感受到震撼！
-他破天荒的才能，对当时的观众来说也许是恰到好处。仿佛是艾欧洛斯附身，用暗影之箭束缚了世界各地观众的心。
-时代在变，那份情怀却难以忘怀。那句口号依旧响彻云霄，被喊出了跨世纪的经典：
-燃えろ、俺のコスモよ！
-
-^参考
-
-
-
-阅读原文]]></summary>
-        <author>
-            <name>知乎日报</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[瞎扯 · 如何正确地吐槽]]></title>
-        <id>https://daily.zhihu.com/story/9742853</id>
-        <link href="https://daily.zhihu.com/story/9742853"/>
-        <updated>2021-11-30T23:08:21.000Z</updated>
-        <summary type="html"><![CDATA[程序员兄弟们生涯中写过最大的bug是什么？
-
-Techwang，知乎知乎，知不道还咋咋呼呼。
-阅读原文
-
-以前看过的一个段子，某程序员写了一个获取微信昵称的小程序，拿同事微信做测试，返回数据是 null 。排查许久找不到原因，后来灵光一现，点开同事微信资料，同事昵称就是 null。。。。。
-阅读原文
-
-程序员在手机上用哪些app提高自己的技术水平？
-
-码码码码，胶片入坑，欢迎关注个人公众号“已非少年时”
-阅读原文
-
-放下手机
-阅读原文
-
-有哪些「明褒暗贬」的故事或段子？
-
-落满杂草的雪花
-阅读原文
-
-“历史上德才兼备的人太少了。你啊，有才”
-阅读原文
-
-扫地机器人可以踩吗？
-
-荀斋琮，人在知乎，刚出黑屋
-阅读原文
-
-啊，逮到个上知乎的哈士奇
-阅读原文
-
-基层公务员被老百姓要钱怎么办？
-
-黑化肥发灰，专注于职场和考研的靠谱答主，经常跑题……
-阅读原文
-
-高情商
-请他坐下，端茶倒水，嘘寒问暖。然后说：请手写一份 1000 字以上的申请书，留下联系方式和身份证号，60 个工作日内我们会给您答复。
-把人送走，把东西转交给信访办。
-中情商
-请他坐下，端茶倒水，嘘寒问暖。然后走到门口，拿出手机，以一个大小恰到好处的声音说：是 xx 精神病院么？我是 xx 镇政府的，我们这边有个重度精神病患者需要处置，请抓紧派车。
-在对方抱头鼠窜的时候，热情挽留。
-低情商
-辩论赛现在开始……
-没情商
-亮出你沙包大的拳头，高声呵斥：你莫不是来消遣洒家的？
-
-
-
-阅读原文]]></summary>
-        <author>
-            <name>知乎日报</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[German Court Rules Against Internet Security Non-Profit Quad9]]></title>
-        <id>https://www.quad9.net/news/press/german-court-rules-against/</id>
-        <link href="https://www.quad9.net/news/press/german-court-rules-against/"/>
-        <updated>2021-11-30T22:48:57.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[New cancer therapy holds potential to switch off major cancer types]]></title>
-        <id>https://www.princeton.edu/news/2021/11/29/new-cancer-therapy-yibin-kangs-lab-holds-potential-switch-major-cancer-types</id>
-        <link href="https://www.princeton.edu/news/2021/11/29/new-cancer-therapy-yibin-kangs-lab-holds-potential-switch-major-cancer-types"/>
-        <updated>2021-11-30T22:15:52.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Pne-more-re-nightmare – A fast regex compiler in Common Lisp]]></title>
-        <id>https://applied-langua.ge/posts/omrn-compiler.html</id>
-        <link href="https://applied-langua.ge/posts/omrn-compiler.html"/>
-        <updated>2021-11-30T21:35:51.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[UI/UX Designer at Nimble (YC S17) – P/T with F/T option]]></title>
-        <id>https://news.ycombinator.com/item?id=29397383</id>
-        <link href="https://news.ycombinator.com/item?id=29397383"/>
-        <updated>2021-11-30T21:00:09.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[The Art of Lost Sleep]]></title>
-        <id>https://www.thelondonmagazine.org/essay-the-art-of-lost-sleep-by-venetia-welby/</id>
-        <link href="https://www.thelondonmagazine.org/essay-the-art-of-lost-sleep-by-venetia-welby/"/>
-        <updated>2021-11-30T20:55:13.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[An Illustrated Guide to Elliptic Curve Cryptography Validation]]></title>
-        <id>https://research.nccgroup.com/2021/11/18/an-illustrated-guide-to-elliptic-curve-cryptography-validation/</id>
-        <link href="https://research.nccgroup.com/2021/11/18/an-illustrated-guide-to-elliptic-curve-cryptography-validation/"/>
-        <updated>2021-11-30T20:45:06.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[AWS Outposts]]></title>
-        <id>https://aws.amazon.com/blogs/aws/new-aws-outposts-servers-in-two-form-factors/</id>
-        <link href="https://aws.amazon.com/blogs/aws/new-aws-outposts-servers-in-two-form-factors/"/>
-        <updated>2021-11-30T20:44:28.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Moving Castles: Modular and Portable Multiplayer Miniverses]]></title>
-        <id>https://trust.support/feed/moving-castles</id>
-        <link href="https://trust.support/feed/moving-castles"/>
-        <updated>2021-11-30T20:01:39.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[FBI's ability to legally access secure messaging app content and metadata [pdf]]]></title>
-        <id>https://propertyofthepeople.org/document-detail/?doc-id=21114562</id>
-        <link href="https://propertyofthepeople.org/document-detail/?doc-id=21114562"/>
-        <updated>2021-11-30T19:53:32.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[DESQview/X: Forgotten mid-1990s OS from the future]]></title>
-        <id>https://lunduke.substack.com/p/desqviewx-the-forgotten-mid-1990s</id>
-        <link href="https://lunduke.substack.com/p/desqviewx-the-forgotten-mid-1990s"/>
-        <updated>2021-11-30T19:46:28.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Writing maintainable code is a communication skill]]></title>
-        <id>https://max.engineer/maintainable-code</id>
-        <link href="https://max.engineer/maintainable-code"/>
-        <updated>2021-11-30T19:42:47.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[The US C-Band Spectrum Saga, Explained]]></title>
-        <id>https://payloadspace.com/the-us-c-band-spectrum-saga-explained/</id>
-        <link href="https://payloadspace.com/the-us-c-band-spectrum-saga-explained/"/>
-        <updated>2021-11-30T19:31:13.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Scaling Kafka at Honeycomb]]></title>
-        <id>https://www.honeycomb.io/blog/scaling-kafka-observability-pipelines/</id>
-        <link href="https://www.honeycomb.io/blog/scaling-kafka-observability-pipelines/"/>
-        <updated>2021-11-30T19:25:21.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[AWS Nitro SSD – High Performance Storage for Your I/O-Intensive Applications]]></title>
-        <id>https://aws.amazon.com/blogs/aws/aws-nitro-ssd-high-performance-storage-for-your-i-o-intensive-applications/</id>
-        <link href="https://aws.amazon.com/blogs/aws/aws-nitro-ssd-high-performance-storage-for-your-i-o-intensive-applications/"/>
-        <updated>2021-11-30T19:15:12.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Silbo Gomero: ‘Special and Beautiful’ Whistled Language]]></title>
-        <id>https://www.nytimes.com/2021/02/18/world/europe/silbo-gomero-canary-islands.html</id>
-        <link href="https://www.nytimes.com/2021/02/18/world/europe/silbo-gomero-canary-islands.html"/>
-        <updated>2021-11-30T19:11:45.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[There oughta be a Blender plugin to animate growth]]></title>
-        <id>https://there.oughta.be/a/blender-plugin-to-animate-growth</id>
-        <link href="https://there.oughta.be/a/blender-plugin-to-animate-growth"/>
-        <updated>2021-11-30T19:06:47.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Reducing an LTO Linux kernel bug with cvise]]></title>
-        <id>https://nathanchance.dev/posts/cvise-lto-kernel-bug/</id>
-        <link href="https://nathanchance.dev/posts/cvise-lto-kernel-bug/"/>
-        <updated>2021-11-30T18:28:16.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[AWS Private 5G]]></title>
-        <id>https://aws.amazon.com/private5g/</id>
-        <link href="https://aws.amazon.com/private5g/"/>
-        <updated>2021-11-30T17:18:30.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Lazygit: A simple terminal UI for Git commands]]></title>
-        <id>https://github.com/jesseduffield/lazygit</id>
-        <link href="https://github.com/jesseduffield/lazygit"/>
-        <updated>2021-11-30T16:49:46.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[New research links potentially toxic fat-protein complexes to Alzheimer's]]></title>
-        <id>https://www.medicalnewstoday.com/articles/likely-cause-of-alzheimers-identified-in-new-study</id>
-        <link href="https://www.medicalnewstoday.com/articles/likely-cause-of-alzheimers-identified-in-new-study"/>
-        <updated>2021-11-30T16:33:08.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[My toy project turned into a viral challenge]]></title>
-        <id>https://blog.jinay.dev/posts/virality/</id>
-        <link href="https://blog.jinay.dev/posts/virality/"/>
-        <updated>2021-11-30T16:30:41.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Expanding our private information policy to include media]]></title>
-        <id>https://blog.twitter.com/en_us/topics/company/2021/private-information-policy-update</id>
-        <link href="https://blog.twitter.com/en_us/topics/company/2021/private-information-policy-update"/>
-        <updated>2021-11-30T14:17:24.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[What impossible meant to Richard Feynman]]></title>
-        <id>https://nautil.us/issue/108/change/what-impossible-meant-to-richard-feynman</id>
-        <link href="https://nautil.us/issue/108/change/what-impossible-meant-to-richard-feynman"/>
-        <updated>2021-11-30T13:48:54.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Twitter has a new CEO – what about a new business model?]]></title>
-        <id>https://stratechery.com/2021/twitter-has-a-new-ceo-what-about-a-new-business-model/</id>
-        <link href="https://stratechery.com/2021/twitter-has-a-new-ceo-what-about-a-new-business-model/"/>
-        <updated>2021-11-30T13:32:27.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[U.K. regulators order Meta to sell Giphy]]></title>
-        <id>https://www.axios.com/uk-regulators-order-facebook-meta-giphy-sale-457ccd20-f28e-4631-a508-a88639b1b121.html</id>
-        <link href="https://www.axios.com/uk-regulators-order-facebook-meta-giphy-sale-457ccd20-f28e-4631-a508-a88639b1b121.html"/>
-        <updated>2021-11-30T13:15:41.000Z</updated>
         <summary type="html"><![CDATA[Comments]]></summary>
         <author>
             <name>Hacker News</name>
