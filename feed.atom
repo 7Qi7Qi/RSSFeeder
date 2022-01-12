@@ -2,10 +2,641 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://7qi7qi.github.io/RSSFeeder/index.html</id>
     <title>osmos::feed</title>
-    <updated>2022-01-11T00:52:10.737Z</updated>
+    <updated>2022-01-12T00:51:05.167Z</updated>
     <generator>osmosfeed 1.12.0</generator>
     <link rel="alternate" href="https://7qi7qi.github.io/RSSFeeder/index.html"/>
     <link rel="self" href="https://7qi7qi.github.io/RSSFeeder/feed.atom"/>
+    <entry>
+        <title type="html"><![CDATA[在Windows上运行Rainbond，10分钟快速安装]]></title>
+        <id>http://weekly.dockone.io/article/2434800</id>
+        <link href="http://weekly.dockone.io/article/2434800"/>
+        <updated>2022-01-12T00:51:02.783Z</updated>
+        <summary type="html"><![CDATA[前言
+Windows 桌面运行 Rainbond，Windows 开发者的新选择。
+经过适配Mac以后，Windows的适配也是成为了近期的小目标，经过不断地测试，不断地研究。最后也是达成了完美运行的效果，实现了真正意义上的任何场景，多种架构的完美适配，让手里的电脑真正称的上是生产力工具。
+借助 Docker Desktop for win，可以快速的在 Windows 运行 Rainbond 开发测试环境， 接下来为大家介绍如何在 Windows 桌面上安装使用Rainbond。
+安装Docker Desktop
+Docker Desktop 是一款适用于Mac 或Windows 环境的易于安装的应用程序，使您能够在几分钟内开始编码和容器化。可以帮助我们在Windows上运行容器。Rainbond 的控制台会以容器的方式运行起来，而在控制台容器中，会以 Docker In Docker 的形式，运行起所有支撑 Rainbond 高级功能的组件。同时在控制台容器中内置 K3s 来提供容器的调度编排能力：
+
+Windows Docker Desktop 资源限额：
+| Docker Desktop版本 | Windows  内存 | Windows CPU |
+安装Rainbond
+> 启动之前需要定义 Rainbond 网关工作的 IP 地址，确保外界可以访问内部应用组件，IP地址为必填项，可以通过ipconfig命令，或者点击右下角网络图标>查看其属性获得IP地址，但注意的一点就是，除非你确定这个集群中部署的业务不会对除本机之外的其他人提供服务，否则不要填写127.0.0.1。
+
+
+-e EIP=IP地址 为必填项
+打开 Windows终端(CMD)，后续的指令都会在命令行界面下执行
+Windows 启动命令：
+docker run --privileged -d  -p 7070:7070 -p 80:80 -p 443:443 -p 6060:6060 -p 8443:8443 ^
+
+启动成功后的会看到以下提示：
+正在加载数据，预计3分钟，时间取决于磁盘性能...
+
+切换进容器，查看集群状态
+docker exec -ti rainbond-allinone bash
+
+获得以下返回，说明 Rainbond 已经安装完成
+NAME                                         READY   STATUS    RESTARTS       AGE
+
+
+快速熟悉Rainbond
+为了让大家能够快速熟悉Rainbond，安装成功后，默认会有示例应用：
+点击 团队界面 -> admin团队 -> 默认应用，即可查看Ghost示例，示例初次启动大概2分钟左右，待变成绿色，即可访问，如下图：
+
+写在最后
+本文简要介绍了一种在 Windows 电脑环境中快速体验 Rainbond 的方式，这种方式对个人开发者，或者缺乏足够服务器硬件支持的小企业、小团队非常友好。Rainbond 目前已经全面适配了 x86，对于最终用户环境为 x86架构的开发者而言，可以借助 Rainbond 有针对性的搭建开发环境。
+对于在Mac环境下的安装适配，可以参考上文。]]></summary>
+        <author>
+            <name>goodrain</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[在Mac上运行Rainbond，10分钟快速安装]]></title>
+        <id>http://weekly.dockone.io/article/2434801</id>
+        <link href="http://weekly.dockone.io/article/2434801"/>
+        <updated>2022-01-12T00:51:02.776Z</updated>
+        <summary type="html"><![CDATA[前言
+以往安装部署 Rainbond 的方式都无法绕过 Kubernetes 集群的搭建，无论是作为开发环境还是用于生产交付，部署的过程都非常依赖于服务器或云主机。这在体验 Rainbond 云原生应用管理平台的过程中设置了较高的门槛。然而对于个人开发者而言，准备一台服务器甚至多台服务器，才可以体验到这种企业级产品，是非常奢侈的。从今天开始，Rainbond 开辟了一条可以快速体验的道路，借助常见的个人 PC 平台（诸如 MacOS、Windows 等操作系统）上的 Docker Desktop ，以启动一个容器作为代价，提供一个全功能的 Rainbond 体验环境。这个部署过程被压缩到了 一条命令 运行，10分钟就可以体验到最新版本的 Rainbond。 接下来，将为大家介绍如何在个人 MAC 笔记本上安装使用Rainbond。
+MAC目前共分为两种芯片，一种是intel芯片，另外一种就是苹果最新的M1芯片（ARM版本），Rainbond目前不仅仅支持intel芯片，对于新款的M1也提供了支持，这次适配在任何一台MAC上都可以轻松启动Rainbond，这一体验尤其适合个人开发者。通过这种途径安装 Rainbond ，会在短时间内得到一整套开箱即用的单机环境，免去繁琐安装集群的痛苦，对接集群的痛苦，让你在任何笔记本上，台式机上都可以随时随地，实现高效开发测试。
+安装Docker Desktop
+安装 Rainbond 之前，我们需要在个人 PC 上安装Docker Desktop ，它可以帮助我们在MAC上运行容器。Rainbond 的控制台会以容器的方式运行起来，而在控制台容器中，会以 Docker In Docker 的形式，运行起所有支撑 Rainbond 高级功能的组件。同时在控制台容器中内置 K3s 来提供容器的调度编排能力。
+
+安装的 Docker Desktop 对于版本，和资源限额有一定要求：
+| Docker Desktop版本 | MAC 内存 | MAC CPU |
+安装Rainbond
+>  启动之前需要定义 Rainbond 网关工作的 IP 地址，确保外界可以访问内部应用组件。IP地址在MAC上可以通过在终端执行 ifconfig 命令获得，或者按住 Option 键的同时点击右上角 WIFI 图标即可。但注意的一点就是，除非你确定这个集群中部署的业务不会对除本机之外的其他人提供服务，否则不要填写127.0.0.1。
+打开 MAC 终端，后续的指令都会在命令行界面下执行
+设置IP变量
+export EIP=IP地址
+
+Intel版本启动命令（与M1二选一执行）：
+docker run --privileged -d -p 7070:7070 -p 80:80 -p 443:443 -p 6060:6060 -p 8443:8443 \
+
+M1版本启动命令（与Intel二选一执行）：
+docker run --privileged -d -p 7070:7070 -p 80:80 -p 443:443 -p 6060:6060 -p 8443:8443 \
+
+启动成功后的会看到以下提示：
+正在加载数据，预计3分钟，时间取决于磁盘性能...
+
+切换进容器，查看集群状态
+docker exec -ti rainbond-allinone bash
+
+获得以下返回，说明 Rainbond 已经安装完成
+NAME                                         READY   STATUS    RESTARTS       AGE
+
+
+快速熟悉Rainbond
+为了让大家能够快速熟悉Rainbond，安装成功后，默认会有示例应用：
+点击 团队界面 -> admin团队 -> 默认应用，即可查看Ghost示例，示例初次启动大概2分钟左右，待变成绿色，即可访问，如下图：
+
+写在最后
+本文简要介绍了一种在 MAC 电脑环境中快速体验 Rainbond 的方式，这种方式对个人开发者，或者缺乏足够服务器硬件支持的小企业、小团队非常友好。Rainbond 目前已经全面适配了 Arm64 架构的芯片，对于最终用户环境为 Arm64 架构的开发者而言，可以借助 Rainbond 有针对性的搭建开发环境。
+接下来还有文章介绍如何在 Windows 环境中快速体验 Rainbond 的方式，敬请期待。]]></summary>
+        <author>
+            <name>goodrain</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[分布式系统中的工程可靠性和容错性]]></title>
+        <id>http://weekly.dockone.io/article/2434804</id>
+        <link href="http://weekly.dockone.io/article/2434804"/>
+        <updated>2022-01-12T00:51:02.136Z</updated>
+        <summary type="html"><![CDATA[原文链接：Engineering dependability and fault tolerance in a distributed system  （翻译：钟涛）
+用户希望可以依赖提供给他们的服务。在实践中，因为个别不可避免地的因素，可能会导致服务失败，但即使如此，我们也要尽量避免服务失败。
+在本文中，我们将详细讨论什么是工程可靠性和容错性，并解释Ably平台是如何设计的，已达到工程可靠性和容错性。
+作为讨论的前提，首先是一些定义：
+可靠性
+用户对产品或服务的可信赖程度。这意味着系统不仅可用，而且还设计了大量冗余措施，以继续按照用户的期望工作。
+可用性
+产品或服务在需要时的可用程度。这通常归结为，在系统出现故障时，是否能够提供足够的资源冗余。
+什么是容错性？
+容错性是指系统的某些组件或子系统出现故障时，依然具备可用性和可靠性。
+具备容错性的系统可以容忍故障，它们旨在减轻不利因素对系统的影响，并确保系统对用户保持始终可用。容错技术可用于提高可用性和可靠性。
+可用性可以粗略地认为是保证系统的正常运行；可靠性可以被认为是系统在运行期间提供服务的质量--也就是说，确保在系统故障中尽可能有效地维护功能和用户体验。
+如果该服务无法提供使用，那就是可用性不足。如果服务可用，但在使用时偏离了用户预期，那就是可靠性不足。容错设计方法解决了这些不足，为业务和用户体验提供了连续性。
+可用性、可靠性和状态
+在大多数情况下，容错设计的主要基础是：冗余。提供超过服务所需的最小组件数量或容量。关键问题是如何管理“冗余”。
+在真实世界中，可用性和可靠性存在着区别：
+可用性可以接受服务的短暂停止，好比更换汽车轮胎；
+可靠性需要确保服务的连续性，那么“冗余”必不可少。比如飞机的发动机不止一个。
+
+连续性的要求会影响冗余容量的提供方式。
+在分布式系统中，我们可以将组件分为两类，分别为"有状态"和“无状态”。…]]></summary>
+        <author>
+            <name>cainzhong</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[FabEdge V0.4 新特性：支持多集群通讯]]></title>
+        <id>http://weekly.dockone.io/article/2434802</id>
+        <link href="http://weekly.dockone.io/article/2434802"/>
+        <updated>2022-01-12T00:51:02.096Z</updated>
+        <summary type="html"><![CDATA[边缘计算是指在靠近物或数据源头的⼀侧，采用网络、计算、存储、应用核心能力为⼀体的开放平台，就近提供最近端服务。其应用程序在边缘侧发起，产生更快的网络服务响应，满足行业在实时业务、应⽤智能、安全与隐私保护等方面的基本需求。边缘计算处于物理实体和⼯业连接之间，或处于物理实体的顶端。
+​
+根据计算能力大小，边缘计算可以分为两⼤类： 
+
+FabEdge 是⼀个基于 kubernetes 构建的，专注于边缘计算场景的容器网络⽅案，解决了边缘计算场景下⽹络管理复杂，割裂互不通信，缺少拓扑感知能力，无法提供就近访问等问题，使能云边、边边之间的业务协同。FabEdge 支持 KubeEdge，SuperEdge， OpenYurt 等边缘计算框架管理的轻量边缘节点。在最新发布的V0.4版中，加⼊对重边缘，也就是边缘集群的⽀持，完成了对所有边缘场景的全覆盖。
+
+以上图为例，共有三个集群，集群 blue 是 host 集群，负责管理其它集群的通讯；集群 red，green 是两个成员集群，会上报本集群的网络配置信息到 host 集群 blue。将集群 red 和 green 加入 community1 后，FabEdge 会自动建立集群 red 和 green 之间的隧道，允许两个集群之间的 pod 和 service 之间的互访。
+FabEdge 多集群通讯的的交互过程见下图：
+
+
+在 host 集群中先创建集群 green 和 red，获取相应 token。
+
+使⽤获取的token注册集群 green 和 red。
+
+集群 green 和 red 汇报本集群网络端点信息到host集群。
+
+将集群 green 和 red 加⼊⼀个 community。
+
+集群 green 和 red 定时从 host 集群拉取远程的端点信息。
+
+host集群根据 community 信息，为集群 green 和 red 下发相关的端点信息到成员集群 operator。
+
+成员集群 green 和red的 operator 为自己 connector 更新 configmap。
+
+成员集群 green 和 red 的 connector 根据⾃⼰的 configmap 发起到对⽅的隧道。
+
+隧道建⽴成功后，成员集群 green 和 red 可以互相通讯。
+
+FabEdge 相关资料
+聚焦支持边缘弱网环境，博云开源FabEdge边缘网络方案
+FabEdge V0.2 快速安装指南，大幅降低使用门槛
+#社区例会# 第一期 | 视频回看+资料下载
+#社区例会# 第二期 | V0.2 安装部署过程介绍及实操
+#社区例会# 第三期 | V0.3版本前瞻，实操演示快速上手
+Github：
+https://github.com/FabEdge/fabedge
+官方网站：
+http://www.fabedge.io
+视频回看汇总：
+https://space.bilibili.com/524926244
+点击BoCloud博云了解更多解决方案]]></summary>
+        <author>
+            <name>博云BoCloud</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[金融云原生漫谈（五）｜如何打造更适合云原生的数据存储方案？]]></title>
+        <id>http://weekly.dockone.io/article/2434803</id>
+        <link href="http://weekly.dockone.io/article/2434803"/>
+        <updated>2022-01-12T00:51:02.087Z</updated>
+        <summary type="html"><![CDATA[在金融行业数字化转型的驱动下，国有银行、股份制银行和各级商业银行也纷纷步入容器化的进程。
+如果以容器云上生产为目标，那么整个容器云平台的设计、建设和优化对于银行来说是一个巨大的挑战。如何更好地利用云原生技术，帮助银行实现敏捷、轻量、快速、高效地进行开发、测试、交付和运维一体化，从而重构业务，推动金融科技的发展，是个长期课题。
+本期云原生漫谈，将和您一起探寻如何打造更适合云原生的数据存储方案。
+
+
+
+
+近年来，金融服务形态经历了巨大的变化。线上业务的兴起，带来了海量的数据接入和业务的不确定性。
+数据系统管理弹性需求提升、数据系统访问查询需求提升，对数据存储、处理、挖掘的性能、稳定性、可靠性都提出了更高的要求。除此之外，金融企业IT还要建立数据“敏态引擎”，能够通过统一的编排系统配合业务上线，可以实现快速扩容。同时，存储系统自身的自动化运维能力，也成为IT建设者关注的焦点……
+那么，云原生时代，我们需要什么样的数据存储方案？针对底层的IT基础架构，和数据存储环境挑战，金融IT建设者们真实发问：
+容器云数据持久化存储方案怎么选？
+容器云的数据资源如何分配？
+如何提升容器云平台的数据一致性？
+高并发情况下，如何实现故障快速恢复？
+
+本篇文章将为您抽丝剥茧。
+容器云数据持久化存储方案怎么选？
+首先，容器云平台的底座主流是Kubernetes，所以从理论上来说，只要支持K8s CSI存储接口的商用存储产品，就可以选择使用。
+在实际生产环境中，NFS是最常见的协议，也是容器云平台在数据持久化方面最简单的实现方式。容器自身可以支持文件、块、对象三类存储形式。可以依据行内应用场景的需求，以及自身的运维能力，选择最合适的存储协议。
+文件存储：适合少量数据存储、配置文件场景
+块存储：适合数据库等高性能场景（当然，也有一些文件存储可以提供极高的性能，取决于存储）
+对象存储：适合存放图片、视频、网盘…]]></summary>
+        <author>
+            <name>灵雀云</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Ask HN: Why new browsers use Chromium instead of Firefox as their base?]]></title>
+        <id>https://news.ycombinator.com/item?id=29900496</id>
+        <link href="https://news.ycombinator.com/item?id=29900496"/>
+        <updated>2022-01-12T00:21:34.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[The Great Siberian Thaw]]></title>
+        <id>https://www.newyorker.com/magazine/2022/01/17/the-great-siberian-thaw</id>
+        <link href="https://www.newyorker.com/magazine/2022/01/17/the-great-siberian-thaw"/>
+        <updated>2022-01-12T00:17:08.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[新人有哪些途径可以开始导演职业生涯？]]></title>
+        <id>https://daily.zhihu.com/story/9744254</id>
+        <link href="https://daily.zhihu.com/story/9744254"/>
+        <updated>2022-01-11T23:07:54.000Z</updated>
+        <summary type="html"><![CDATA[周杰伧的小粉丝，电影学徒
+阅读原文
+
+虽然都叫导演，但其实电影导演、电视剧导演、广告导演、话剧导演……成长路径各有不同，默认题主问的是影视剧导演吧。
+我就以我个人经历作个答。
+2006-2010 年左右我算是小有名气的网红，创作的常用手法是把一些不搭界的影视作品混剪在一起，制作成一个新的故事短片。但当我拿着这些作品参加平台举办的短片节时，只能拿到观众投票产生的人气奖，而评委会大奖往往被科班出身的同辈拿走了。我那时看着他们制作精良的短片，羡慕不已，萌生了去北京做专业导演的想法。
+在那之前，我熟读了周传基先生审校的《电影语言的语法》，并自购单反相机，用北京烤鸭和红薯作为演员，试着拍了两个实拍小片，获得了观众认可。
+2011 年底我来到北京，起初团队开展的是广告业务，听取甲方需求，策划方案，提报，大部分时候要竞标。因为像我们一样只能接小活儿的团队很多，所以竞争很激烈，我那时候抱着笔记本电脑跑遍了北京几乎所有的 4A 公司，也与一些客户结成了深厚的友谊，比如马应龙，十年后我再开公司时，它第一个过来下单支持，令我办公室里堆满了数不清的痔疮膏和眼霜，客人来了常常羡慕不已。
+在各种广告小剧组里观察了一段时间之后，我决定拿同事练手，于是召集团队里的所有人做演员，花了几千块拍摄了一支短片，在 2012 年 2 月 14 日上线。我导演手法虽然生疏，但大家表演经验更生疏，于是剧组气氛十分融洽默契，谁也不嘲笑谁。
+所以一个 tips 是，首支短片要和绝对信任你的人合作。
+几个月后，陆川导演注意到了我的作品，邀请我拍摄一支短片，他监制并且客串，里八神编剧，主演是聂远和秦岚。这是我第一次接触专业演员和专业剧组，剧情严肃且深刻，我还特意亲自绘制了分镜，并得到了陆川导演的高度评价：看不懂。
+由于不可抗力，这支短片完成后无法上线，只能封存在硬盘里。但在整个过程中，陆川导演给我上了一堂生动的电影课，令我受益良多，心底里燃起了一点和电影有关的火苗。
+2013 年，基于之前积攒的拍小广告的经验，我开发了一个系列短剧，也就是小有名气的《万万没想到》系列。至此，算是正式开启了职业导演的生涯。
+个人总结下来，新人做导演大概是以下几点要注意：
+1.导演是个杂家职业，各部门专业知识都要懂一些，所以要多听多看，多阅读专业书籍，多实践。
+2.要找到志同道合的伙伴，他们愿意帮助你成为导演，并且你也能帮到他们。
+3.提升自身修为的同时，遇到前辈提携，要抓住机会，也要铭记感恩。
+4.多创作，多发表，不断试错。比如各类视频平台，或者电影节创投环节。这个时代太适合闪光的金子了。
+5.从剧组的专业岗位开始做起，是很多导演的入门通道。
+说回我自己，虽然已经拍摄了两部电影，但是对于电影导演来说，目前是个刚起步的状态，毕竟四十岁以下都叫青年导演，我趁自己还算青年的时候，今年参加了《开拍吧》这个节目，一方面是因为我转电影导演之后，完全没有精力再做短片，这次正好有机会可以痛快玩一次，另一方面也是想弥补十二年前的遗憾，让作品获得专业人士的赞赏。
+但一路录制下来，我发现自己是从观众里来，那最终也要回到观众里去。
+十二年前，我以为获得专业人士的认可，才是好导演。十二年后，我发现观众喜欢你，你就是好导演。
+所以，我也还处在摸索的过程中。除了小部分天才外，大部分导演都是 35-40 岁才开始进入成熟期。耐心也是一个导演必备的品质。
+最后借一句彼得布鲁克的话送给题主：
+「戏剧就是游戏。」
+在导演这条路上，共勉吧。
+阅读原文]]></summary>
+        <author>
+            <name>知乎日报</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[人格心理学的最新研究：造就天才的，竟然是这种性格特质？！]]></title>
+        <id>https://daily.zhihu.com/story/9744256</id>
+        <link href="https://daily.zhihu.com/story/9744256"/>
+        <updated>2022-01-11T23:07:46.000Z</updated>
+        <summary type="html"><![CDATA[思维心理，Mindspace 临床心理学家，心理咨询
+
+No.01【天赋异禀】性格竟决定天赋？
+有人三岁能诵六岁能诗；
+却也有人“天生我材必有用，不如自挂东南枝”。
+我们似乎普遍认为，天赋（Giftedness）就是天生拥有过人的智商。
+但其实，是否拥有天赋，更由你的性格决定。
+人格心理学家发现，大五人格中的开放性特质高低能够预测个体是否“天赋异禀”。
+大五人格海洋· OCEAN
+
+
+大五人格理论（Big Five Personality Theory），作为目前全世界心理学领域最受认可的人格特质理论， 被广泛应用于人格心理学实验领域。
+专家们普遍认为，特定的人格特质能够从某种程度上预测个体在特定领域的潜力。
+No.02【天赋人格】高开放性的天才
+为了探究人格对天赋的影响， 美国威斯康辛大学与北德克萨斯州大学的两位天赋教育学博士 Uzeyir Ogurlu 和 Adnan Özbey 对 13 篇有关论文进行了元分析（Meta-analysis）。
+13 个实验中的被试都是高分通过了权威才能测试的个体、来自普通学校“天才营”或“天才学校”的学生们。他们要么在少年时期就早早展现天赋，从同龄人中脱颖而出；要么厚积薄发，在工作岗位上如鱼得水，凭借强悍的能力在激烈的职场竞争中一骑绝尘。
+研究者们将他们的大五人格测试成绩与随机抽取的“非天才们”进行了分析比较。
+Ogurlu & Özbey 对这些实验元分析结果表明:
+“天才”们的开放性人格特质（Openness）普遍高于“非天才”，而另外四种 OCEAN 人格特质对个体是否“天赋异禀”没有显著的影响！
+
+
+No.03【Checklist】高开放性人士的特点
+你是不是一个高开放性的人呢？
+想要粗略判断自己的开放性程度，不妨问问自己这些问题：
+ 请如实回答 1）是；2）一般般；3）不是：
+· 我是不是一个善于提出新点子的人？
+· 我是否…]]></summary>
+        <author>
+            <name>知乎日报</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[送外卖一天 17 个小时可以快速还债吗？]]></title>
+        <id>https://daily.zhihu.com/story/9744265</id>
+        <link href="https://daily.zhihu.com/story/9744265"/>
+        <updated>2022-01-11T23:07:38.000Z</updated>
+        <summary type="html"><![CDATA[藤原大柱子，自由职业，众包骑手，外贸，自媒体
+阅读原文
+
+我是众包骑手，跑单区域是龙华，民治，坂田加上清湖，平时以龙华中心，坂田，民治为主要跑单区域。
+先上结论，辛苦一年，真的能够坚持下去，不敢说一年全部还清，至少 10 万左右是没问题的。
+但这个过程，常常是痛苦的。
+回想跑单种种，差点泪目。所幸坚持了下来，也在稳定较为轻松获取收入的路上。
+
+专送，众包，驻店，傻傻分不清楚
+深圳跑外卖分为驻店骑士，专送，众包。盒马，朴朴，美团，顺丰，达达不外乎这几个工作类型。
+专送和驻店就是外卖服务公司或商家的一线打手，单价固定，单量固定。美团单价 7～9 块，饿了么差不多。
+饿了么专送现在可以工作到凌晨 2 点。美团专送好像到夜里 12 点。
+至于众包，随时上线，随时下线。自由灵活是众包的最大特点。但是众包也是最难的。个人入行两年，断断续续跑单一年有余。自由的工作恰恰需要极强的自律。特定的时间做特定的事情。划重点。
+众包包括了美饿推出的普通众包，乐跑，优先，核心同城（仅限美团）以及顺丰同城骑士以及达达骑士。
+这是目前在深圳活跃的外卖类型。
+专送小弟并无经历。参考和同行交流，专送和驻店好比工厂公司上班的员工，有规定时间，你可以这么理解专送需要打卡上下班，上班时间固定。
+应该选择专送，还是众包，亦或乐跑
+拿我来说，美团，达达，饿了么，顺丰，达达，多个平台都跑过。目前以美团和达达为主。
+各平台侧重的市场，单量，规则都不一样。但大体的跑单流程，跑单的区域路线都是类似的。
+当初，我在球友建议下，先从美饿开始，逐渐过渡到美团达达为主，顺丰饿了么为辅。闪送，目前还在观望中。
+总体而言，美团体量＞饿了么＞达达大于顺丰＞闪送（等其他平台，UU 跑腿，裹小弟）。但是美团的规则也是最严格的，没有之一。
+刚开始跑，请教了一名骑手，他告诉我一单一单开始送。这样做的目的是刚开始，不熟悉区域，商家地点，客户地点，寻找…]]></summary>
+        <author>
+            <name>知乎日报</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[木卫一为什么会拥有类地行星的内部结构？]]></title>
+        <id>https://daily.zhihu.com/story/9744279</id>
+        <link href="https://daily.zhihu.com/story/9744279"/>
+        <updated>2022-01-11T23:07:32.000Z</updated>
+        <summary type="html"><![CDATA[昙花再现，昙花一现又再现，此中真意已惘然。
+阅读原文
+
+先简要回答问题，后面再做详细分析。
+简答
+木卫一之所以结构类似类地行星，是因为在木星形成过程中，木星所吸积的物质的重力势能释放产生高温，热辐射将木卫一轨道附近的冰物质（水、甲烷、氨）气化，导致木卫一尽管处于太阳系冻结线以外，其形成环境却类似冻结线以内的类地行星——没有固态的冰可吸积，最终成为一颗缺冰的岩石星体。
+木卫一会有这样的结局，关键一点在于，它的轨道太过接近木星。木星的另外三颗大卫星则因离木星较远，热辐射造成的温度还不足以熔化冰，因此它们是遵循冻结线外行星演化的标准模式来发展的，最终成为冰卫星。
+分析
+有一点需要澄清，题主对问题的表述很容易让人产生一个误解，就是以为地球这样的岩石地幔和富铁内核是一种不常见的特殊构造。
+事实上，太阳系所有岩石行星、冰巨行星、矮行星以及较大的卫星，都拥有与地球相似的这种外岩石 + 内铁核构造；两颗气态巨行星中，木星从目前的研究来看与前面提到的天体是不太一样的，至于土星，不是非常确定。
+只不过除了四颗类地行星、月球和木卫一之外，其它的行星和大型类行星天体，在岩石的外面又穿了一层（冰）或两层（冰 + 氢氦）“衣服”。而类地行星，可以理解为裸奔的行星。
+A、在不考虑最外层大气的情况下，这些太阳系天体可以按内部结构分为四类：
+①、类地行星、月球、木卫一，以及那些大到可以达成流体静力平衡、球状的小行星带小行星：是由岩石的外层以及富铁的内核组成。所谓岩石是指以硅酸盐为主的各种高熔点化合物，包括但不限于固体形态。
+
+②、所有矮行星、除月球和木卫一之外的所有大卫星，以及那些大到可以达成流体静力平衡、球状的柯伊伯带小天体：在①的内核外穿了一层冰质“内衣”。所谓冰是指以水、甲烷、氨为主要成分的较低熔点物质，包括但不限于固体形态。这个冰“内衣”的厚度，与天体质量正相关，与天体温度负相关。
+
+③、天王星、海…]]></summary>
+        <author>
+            <name>知乎日报</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[瞎扯 · 如何正确地吐槽]]></title>
+        <id>https://daily.zhihu.com/story/9744309</id>
+        <link href="https://daily.zhihu.com/story/9744309"/>
+        <updated>2022-01-11T23:07:25.000Z</updated>
+        <summary type="html"><![CDATA[古代男人可以通过毁掉贵族女子名声的方式高攀千金小姐吗？
+
+打火机也没了，注意力的小船，在信息的海洋漂浮。
+阅读原文
+
+没有必要把打死盲流子这个事写到县志上。
+阅读原文
+
+为什么历史是 history，而不是 herstory？
+
+火耀石，现在看知乎还不如看新闻联播
+阅读原文
+
+为什么遗产是 heritage 不是 hisitage？
+阅读原文
+
+唐僧真的对女儿国国王动了情吗？
+
+临渊之乐，咸鱼一条
+阅读原文
+
+应该是动了，走的时候女儿国国王问唐僧，御弟哥哥，你愿不愿意嫁给我，唐僧说，嫁。可惜白龙马会错了意，走了。
+
+
+
+阅读原文
+
+面对传教应该如何拒绝？
+
+刘阳
+阅读原文
+
+我不跟你谈，叫你们领导来
+阅读原文
+
+长大后你做过哪些「童年报复性补偿」的事？
+
+知乎用户，春暖花开，知乎有你，滴-
+阅读原文
+
+给我妈报名老年大学并且督促其认真完成作业
+阅读原文]]></summary>
+        <author>
+            <name>知乎日报</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Jevons Paradox]]></title>
+        <id>https://en.wikipedia.org/wiki/Jevons_paradox</id>
+        <link href="https://en.wikipedia.org/wiki/Jevons_paradox"/>
+        <updated>2022-01-11T22:37:29.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Terence Tao's favorite problem-solving strategies (2010)]]></title>
+        <id>https://terrytao.wordpress.com/2010/10/21/245a-problem-solving-strategies/</id>
+        <link href="https://terrytao.wordpress.com/2010/10/21/245a-problem-solving-strategies/"/>
+        <updated>2022-01-11T22:29:01.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[“Modern” C++ Lamentations(2018)]]></title>
+        <id>https://aras-p.info/blog/2018/12/28/Modern-C-Lamentations/</id>
+        <link href="https://aras-p.info/blog/2018/12/28/Modern-C-Lamentations/"/>
+        <updated>2022-01-11T22:18:11.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Annotated equations for increased readability and understanding of papers]]></title>
+        <id>https://twitter.com/sibinmohan/status/1480583840858996743</id>
+        <link href="https://twitter.com/sibinmohan/status/1480583840858996743"/>
+        <updated>2022-01-11T21:57:53.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Compound (YC S19) is hiring to build financial products for tech employees]]></title>
+        <id>https://withcompound.com/</id>
+        <link href="https://withcompound.com/"/>
+        <updated>2022-01-11T21:31:44.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Is the madness ever going to end?]]></title>
+        <id>https://unixsheikh.com/articles/is-the-madness-ever-going-to-end.html</id>
+        <link href="https://unixsheikh.com/articles/is-the-madness-ever-going-to-end.html"/>
+        <updated>2022-01-11T21:15:39.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[The Future of Hardware Is Software]]></title>
+        <id>https://octoml.ai/blog/the-future-of-hardware-is-software/</id>
+        <link href="https://octoml.ai/blog/the-future-of-hardware-is-software/"/>
+        <updated>2022-01-11T21:13:09.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Revisiting why hyperlinks are blue]]></title>
+        <id>https://blog.mozilla.org/en/internet-culture/why-are-hyperlinks-blue-revisited/</id>
+        <link href="https://blog.mozilla.org/en/internet-culture/why-are-hyperlinks-blue-revisited/"/>
+        <updated>2022-01-11T21:01:33.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Make the “semantic web” web 3.0 again – with the help of SQLite]]></title>
+        <id>https://ansiwave.net/blog/semantic-web.html</id>
+        <link href="https://ansiwave.net/blog/semantic-web.html"/>
+        <updated>2022-01-11T20:47:52.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[PCI-Sig Releases 256GBps PCIe 6.0 X16 Spec]]></title>
+        <id>https://www.servethehome.com/pci-sig-releases-256gbps-pcie-6-0-x16-spec/</id>
+        <link href="https://www.servethehome.com/pci-sig-releases-256gbps-pcie-6-0-x16-spec/"/>
+        <updated>2022-01-11T20:22:17.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Microtargeting as Information Warfare [pdf]]]></title>
+        <id>https://cyberdefensereview.army.mil/Portals/6/Documents/2021_winter_cdr/04_CDR_V6N1_Dawson.pdf</id>
+        <link href="https://cyberdefensereview.army.mil/Portals/6/Documents/2021_winter_cdr/04_CDR_V6N1_Dawson.pdf"/>
+        <updated>2022-01-11T20:00:27.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[What Defcon Sounds Like: Skyking Emergency Action Messages (2016)]]></title>
+        <id>https://specialcollections.radio/This-Is-What-DEFCON-Sounds-Like-Skyking-Emergency-Action-Messages</id>
+        <link href="https://specialcollections.radio/This-Is-What-DEFCON-Sounds-Like-Skyking-Emergency-Action-Messages"/>
+        <updated>2022-01-11T19:34:59.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[New SysJoker Backdoor Targets Windows, Linux, and macOS]]></title>
+        <id>https://www.intezer.com/blog/malware-analysis/new-backdoor-sysjoker/</id>
+        <link href="https://www.intezer.com/blog/malware-analysis/new-backdoor-sysjoker/"/>
+        <updated>2022-01-11T19:09:17.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Reading a Pacific navigator’s mysterious map may require a shift in perspective]]></title>
+        <id>https://knowablemagazine.org/article/society/2021/reading-pacific-navigators-mysterious-map</id>
+        <link href="https://knowablemagazine.org/article/society/2021/reading-pacific-navigators-mysterious-map"/>
+        <updated>2022-01-11T18:23:07.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[RFC8890 – The Internet Is for End Users]]></title>
+        <id>https://datatracker.ietf.org/doc/html/rfc8890</id>
+        <link href="https://datatracker.ietf.org/doc/html/rfc8890"/>
+        <updated>2022-01-11T17:54:45.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[CSS Gradients that avoid the “gray dead zone”]]></title>
+        <id>https://www.joshwcomeau.com/css/make-beautiful-gradients/</id>
+        <link href="https://www.joshwcomeau.com/css/make-beautiful-gradients/"/>
+        <updated>2022-01-11T17:32:15.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Embrace slow productivity]]></title>
+        <id>https://www.newyorker.com/culture/office-space/its-time-to-embrace-slow-productivity</id>
+        <link href="https://www.newyorker.com/culture/office-space/its-time-to-embrace-slow-productivity"/>
+        <updated>2022-01-11T16:33:24.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[The WebSocket Handbook]]></title>
+        <id>https://ably.com/blog/introducing-the-websocket-handbook</id>
+        <link href="https://ably.com/blog/introducing-the-websocket-handbook"/>
+        <updated>2022-01-11T16:09:27.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Dsq: Commandline tool for running SQL queries against JSON, CSV, Parquet, etc.]]></title>
+        <id>https://datastation.multiprocess.io/blog/2022-01-11-dsq.html</id>
+        <link href="https://datastation.multiprocess.io/blog/2022-01-11-dsq.html"/>
+        <updated>2022-01-11T15:20:25.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Launch HN: Clover (YC S20) – Notes, whiteboarding, and daily planner in one tool]]></title>
+        <id>https://news.ycombinator.com/item?id=29892134</id>
+        <link href="https://news.ycombinator.com/item?id=29892134"/>
+        <updated>2022-01-11T14:57:26.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Google says iMessage is too powerful]]></title>
+        <id>https://arstechnica.com/gadgets/2022/01/after-ruining-android-messaging-google-says-imessage-is-too-powerful/</id>
+        <link href="https://arstechnica.com/gadgets/2022/01/after-ruining-android-messaging-google-says-imessage-is-too-powerful/"/>
+        <updated>2022-01-11T09:52:17.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Another new record in self-cleaning Turing machines]]></title>
+        <id>https://nickdrozd.github.io/2022/01/10/another-self-cleaning-turing-machine.html</id>
+        <link href="https://nickdrozd.github.io/2022/01/10/another-self-cleaning-turing-machine.html"/>
+        <updated>2022-01-11T06:48:07.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[The medieval habit of ‘two sleeps’]]></title>
+        <id>https://www.bbc.com/future/article/20220107-the-lost-medieval-habit-of-biphasic-sleep</id>
+        <link href="https://www.bbc.com/future/article/20220107-the-lost-medieval-habit-of-biphasic-sleep"/>
+        <updated>2022-01-11T03:08:39.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[金融云原生漫谈（二）｜中小银行破局之道：云原生架构转型全攻略]]></title>
         <id>http://weekly.dockone.io/article/2434797</id>
@@ -446,6 +1077,16 @@ Naegi Makoto，在光明的世界活下去，别回头…别被影子抓住！
         </author>
     </entry>
     <entry>
+        <title type="html"><![CDATA[Prices and wages in Medieval England (2014)]]></title>
+        <id>https://medium.com/@zavidovych/what-we-can-learn-by-looking-at-prices-and-wages-in-medieval-england-8dc207cfd20a</id>
+        <link href="https://medium.com/@zavidovych/what-we-can-learn-by-looking-at-prices-and-wages-in-medieval-england-8dc207cfd20a"/>
+        <updated>2022-01-10T21:02:00.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[Flow Club (YC S21) is hiring our first marketer]]></title>
         <id>https://flowclub.notion.site/Work-at-Flow-Club-1e6cc84bfc0d4463ab333ee9bc02c46a</id>
         <link href="https://flowclub.notion.site/Work-at-Flow-Club-1e6cc84bfc0d4463ab333ee9bc02c46a"/>
@@ -590,6 +1231,46 @@ Naegi Makoto，在光明的世界活下去，别回头…别被影子抓住！
         <id>https://www.heltweg.org/posts/who-wrote-this-shit/</id>
         <link href="https://www.heltweg.org/posts/who-wrote-this-shit/"/>
         <updated>2022-01-10T12:56:06.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Window.js is an open-source JavaScript runtime for desktop graphics programming]]></title>
+        <id>https://github.com/windowjs/windowjs</id>
+        <link href="https://github.com/windowjs/windowjs"/>
+        <updated>2022-01-10T12:53:10.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[That famous Pixar lunch of 1994 (2014)]]></title>
+        <id>https://gointothestory.blcklst.com/that-famous-pixar-lunch-of-1994-2200a9f68afd?gi=ef10ce1b8e80</id>
+        <link href="https://gointothestory.blcklst.com/that-famous-pixar-lunch-of-1994-2200a9f68afd?gi=ef10ce1b8e80"/>
+        <updated>2022-01-10T08:51:00.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[The Power of Defaults]]></title>
+        <id>https://julian.digital/2021/12/20/the-power-of-defaults/</id>
+        <link href="https://julian.digital/2021/12/20/the-power-of-defaults/"/>
+        <updated>2022-01-10T06:39:26.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Decoded: GNU Coreutils (2018)]]></title>
+        <id>http://www.maizure.org/projects/decoded-gnu-coreutils/index.html</id>
+        <link href="http://www.maizure.org/projects/decoded-gnu-coreutils/index.html"/>
+        <updated>2022-01-10T05:38:39.000Z</updated>
         <summary type="html"><![CDATA[Comments]]></summary>
         <author>
             <name>Hacker News</name>
@@ -15385,518 +16066,6 @@ D.Han
         <id>https://gist.github.com/ilyakurdyukov/f514418f3affd677e1ac408ec0c09188</id>
         <link href="https://gist.github.com/ilyakurdyukov/f514418f3affd677e1ac408ec0c09188"/>
         <updated>2021-12-13T15:29:17.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Integrating Emacs with Siri Shortcuts]]></title>
-        <id>https://danpetrov.xyz/macos/emacs/lisp/2021/12/11/integrating-emacs-with-siri-shortcuts.html</id>
-        <link href="https://danpetrov.xyz/macos/emacs/lisp/2021/12/11/integrating-emacs-with-siri-shortcuts.html"/>
-        <updated>2021-12-13T12:34:05.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Marketing is scary for a solo developer]]></title>
-        <id>https://raumet.com/marketing</id>
-        <link href="https://raumet.com/marketing"/>
-        <updated>2021-12-13T10:27:35.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[The Goldbeater, the Cow and the Airship (2006)]]></title>
-        <id>http://www.ptt-museum.dk/en/online_magazine/previous_articles/broadcasting/?id=74</id>
-        <link href="http://www.ptt-museum.dk/en/online_magazine/previous_articles/broadcasting/?id=74"/>
-        <updated>2021-12-13T09:13:08.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Repulsive Surfaces]]></title>
-        <id>https://www.cs.cmu.edu/~kmcrane/Projects/RepulsiveSurfaces/index.html</id>
-        <link href="https://www.cs.cmu.edu/~kmcrane/Projects/RepulsiveSurfaces/index.html"/>
-        <updated>2021-12-13T08:54:17.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Decontextualizer]]></title>
-        <id>https://paulbricman.com/thoughtware/decontextualizer</id>
-        <link href="https://paulbricman.com/thoughtware/decontextualizer"/>
-        <updated>2021-12-13T03:55:57.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Former BuzzFeed Employees Missed Their Big Payday]]></title>
-        <id>https://www.newyorker.com/news/annals-of-communications/how-former-buzzfeed-employees-missed-their-big-payday</id>
-        <link href="https://www.newyorker.com/news/annals-of-communications/how-former-buzzfeed-employees-missed-their-big-payday"/>
-        <updated>2021-12-12T23:22:42.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Ask HN: Robust and affordable alternatives to Google Play for app distribution?]]></title>
-        <id>https://news.ycombinator.com/item?id=29534663</id>
-        <link href="https://news.ycombinator.com/item?id=29534663"/>
-        <updated>2021-12-12T23:11:15.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[如何向孩子解释「航空」和「航天」的区别？]]></title>
-        <id>https://daily.zhihu.com/story/9743249</id>
-        <link href="https://daily.zhihu.com/story/9743249"/>
-        <updated>2021-12-12T23:07:29.000Z</updated>
-        <summary type="html"><![CDATA[中国航天科工，在这里，探知中国航天！
-阅读原文
-
-航空是指人在大气层中的飞行活动。包括使用飞机、飞艇、氢气球等各种飞行器，但一般多指使用飞机而言。
-航天又称空间飞行或宇宙航行。“航天”系泛指航天器在太空在地球大气层以外（包括太阳系内）的航行活动，又分为载人航天和不载人航天两大类。
-
-作为两个不同的技术门类，航空技术主要是研制飞机等航空器，航天技术主要是研制航天器、运载火箭和导弹武器，从航空器与航天器的重大区别上即可看出两个技术领域的显着差异。
-第一，飞行环境不同。所有航空器都是在稠密大气层中飞行的，其工作高度有限。现代飞机最大飞行高度也就是距离地面 30 多千米。即使以后飞机上升高度提高，它也离不开稠密大气层。而航天器冲出稠密大气层后，要在近于真空的宇宙空间以类似自然天体的运动规律飞行，其运行轨道的近地点高度至少也在 100 千米以上。对在运行中的航天器来讲，还要研究太空飞行环境。
-第二，动力装置不同。航空器都应用吸气发动机提供推力，吸收空气中的氧气作氧化剂，本身只携带燃烧剂。而航天器其发射和运行都应用火箭发动机提供推力，既带燃烧剂又带氧化剂。吸气发动机离开空气就无法工作，而火箭发动机离开空气则阻力减小有效推力更大。吸气发动机包括燃烧剂箱在内都可随飞机多次使用，而发射航天器的运载火箭都是一次性使用。虽然航天飞机的固体助推器经过回收可以重复使用 20 次，其轨道器液体火箭发动机可以重复使用 50 次，但与航空器使用的吸气发动机比较起来，使用次数仍然是很少的。吸气发动机所用的燃烧剂仅为航空汽油和航空煤油，而火箭发动机所用的推进剂却是多种多样的，既有液体的，也有固体的，还有固液型的。
-第三，飞行速度不同。现代飞机最快速度也就是音速的三倍多，且是军用型飞机。至于目前正在使用的民用类客机，都是以亚音速飞行的。而航天器为了不致坠地，都是以非常高的速度在太空运行的。如在距地面 600 千米高的圆形轨道上运行的航天器，其速度是音速的 22 倍。所有航天器正常运行时都处于失重状态，长期载人会使人产生失重生理效应，并影响健康。正因如此，航天员与飞机驾驶员比较起来，其选拔和训练要严格得多。
-第四，工作时限不同。无论是军用还是民用飞机，最大航程计约 2 万千米，最长飞行时间不超过一昼夜。其活动范围和工作时间都很有限，主要用于军事和交通运输。虽然通用轻型飞机应用广泛，但每次活动范围相对更小。而航天器在轨道上可持续工作非常长时间，如目前在太空的我国天宫空间站、国际空间站。至于无人航天器，如各种应用卫星，一般都在绕地轨道上工作多年。航空器的优点是能多次重复使用，而航天器一般只能一次性使用。
-第五，升降方式不同。飞机的升空是从起飞线开始滑跑到离开地面，加速爬升到安全高度为止的运动过程。它返回地面降落时只要经过下滑和着陆即可。而至今为止的航天器发射，包括地面和海上的发射，顶部装着航天器的运载火箭都是垂直腾空的。在完成发射过程中，运载火箭要按程序掉头转向和逐级脱离，最终将航天器送入预定轨道运行。有的航天器发射，中间还要经过多次变轨，情况更为复杂。而航天器返回，其回归地面必须经历离轨、过渡、再入和着陆四个阶段，远比飞机降落困难。航空器的起飞、飞行和降落与航天器的发射、运行和返回，虽然都离不开地面中心的指挥，但两者的地面设施和保障系统及其工作性能与内容也是大有区别的。
-阅读原文]]></summary>
-        <author>
-            <name>知乎日报</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[有哪些听起来很厉害的专业术语？]]></title>
-        <id>https://daily.zhihu.com/story/9743144</id>
-        <link href="https://daily.zhihu.com/story/9743144"/>
-        <updated>2021-12-12T23:07:20.000Z</updated>
-        <summary type="html"><![CDATA[钱程，微信公众号，微博ID：技术型吃货
-阅读原文
-
-有啊。
-在食品科学范畴内，有两种情况。
-第一种是「让人一听就觉得很厉害，但在从业人员眼里就那么回事」
-举几个例子：
-·
-Superfood 超级食物
-不是吃了就能变超人，
-也不是说只要狂吃这种食物就会更健康！
-这只是一个营销词汇！食品科学的专业书中不存在的！
-具体是啥意思呢？无非就是宣传这种食物营养更加全面，更容易被人体吸收。
-如果说藜麦、奇亚籽算「超级食物」还算有点道理
-毕竟大家也不会吃太多。
-巧克力，椰子油又是什么鬼！！
-这些吃多了真！的！会！胖！啊！！
-·
-Sous vide 真空低温慢煮技术
-其实没有什么高科技。
-就是把食物放到塑料袋中
-抽真空
-然后在 60-75 度左右的环境下，煮它几个小时，或者几天。
-·
-Cold brew 冷萃咖啡
-就是把咖啡豆磨碎，加上水放冰箱一个晚上
-第二天再拿出来过滤一下加点冰块。
-建议大家买点好的咖啡豆，自己在家做
-·
-「该食品 / 保健品获得了美国 FDA 认证」
-这个属于虚假宣传
-目前没有食品和保健品，能获得美国 FDA 的认证
-因为美国 FDA 对于这些东西只有监管，没有认证。
-如果你的产品在美国上市，出了事情 FDA 会找你麻烦，
-但他们才懒得给每种产品都「认证」一下呢
-想知道更多，请戳右边的链接： Is It Really 'FDA Approved?'
-·
-「生产企业获得了 HACCP 认证」
-HACCP 是目前最主流的食品安全管控体系之一。
-所以，对于一个食品厂，这是一个比较基本的要求。
-中国不是强制实行，只是「鼓励」大家都去认证一下
-这东西在美国是强制的。
-·
-下面来说说第二种，就是「从业人员的日常，但是别人听了会被当作装 X 拖出去打」的那种。
-·
-
-普通消费者：「哇！这个炸鸡翅好好吃！！」
-食品行业从业人员：「该产品色泽金黄，具有新鲜的油炸食品香味，无异味。裹粉体系裹覆率高，粘结性较好，无脱落和分离。裹粉层酥脆度适中，吸油率较低。基料肉质较嫩，香辛料风味浓郁，甜度适中，咸度适中，鲜度适中，辣度适中，油腻度较小，整体感官评价较优。」
-·
-
-普通消费者：「哇！这款烧烤酱好吃得简直停不下来啊！」
-食品行业从业人员：「该产品酱体为红褐色，可见少许香辛料颗粒。质构稳定，无出水 / 水油分离现象。粘度适中，可涂抹性较好。具有烧烤酱特有的气味。top note 香辛料气味较重，直冲感适中。酸感比较柔和，甜度适中，甜酸比合适。咸度适中，鲜度适中，aftertaste 适中，无异味。整体感官评价较优」
-
-
-
-阅读原文]]></summary>
-        <author>
-            <name>知乎日报</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[能否通俗地解释一下，什么是量子纠缠？]]></title>
-        <id>https://daily.zhihu.com/story/9743241</id>
-        <link href="https://daily.zhihu.com/story/9743241"/>
-        <updated>2021-12-12T23:07:15.000Z</updated>
-        <summary type="html"><![CDATA[yang元祐，物理码工 无序系统 人文历史
-阅读原文
-
-什么是“纠缠”？
-这是系统各部分之间的相关性。假设您有一本 100 页的书，如果您阅读 10 页，您将了解 10% 的内容。如果你再读 10 页，你会再学到 10%。但在一本高度纠缠的量子书中，如果你一次读一页——甚至是 10 页——你几乎什么也学不到。信息没有写在页面上。它存储在页面之间的相关性中，因此您必须以某种方式一次读取所有页面。
-再比如，我们读包含有 20 个字的一句话，我们需要把整句话读完才能准确明白这句话的意思。显然，这句话的信息不仅仅只是这 20 个字的信息的简单叠加，更主要的是这 20 个字之间的关联性。
-
-进入到量子世界，当两个或多个粒子以某种方式连接起来时，无论它们在空间中相距多远，它们的状态都会保持连接。这意味着它们共享一个共同的、统一的量子态。因此，对其中一个粒子的观察可以自动提供有关其他纠缠粒子的信息，而不管它们之间的距离如何。对纠缠态的一个粒子的任何动作都将不可避免地影响纠缠系统中的其他粒子。
-谁发现了量子纠缠？
-物理学家在 20 世纪初期研究量子力学时，发展了纠缠背后的基本思想。他们发现，为了正确描述亚原子系统，他们必须使用一种叫做量子态的东西。
-在量子世界中，没有什么是确定的。例如，你永远不知道原子中电子的确切位置，只知道它可能在哪里。量子态概括了测量粒子特定属性的概率，例如其位置或角动量。因此，电子的量子态描述了可能找到它的所有位置，以及在这些位置找到电子的概率。
-量子态的另一个特征是它们可以与其他量子态相关联，这意味着对一种状态的测量会影响另一种状态。在 1935 年的一篇论文中，阿尔伯特·爱因斯坦、鲍里斯·波多尔斯基和内森·罗森研究了相关量子态之间相互作用的强度。他们发现，当两个粒子强相关时，它们会失去各自的量子态，而是共享一个单一的、统一的状态。这种统一状态将被称为量子纠缠。
-…]]></summary>
-        <author>
-            <name>知乎日报</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[如何判断皮肤是否处于缺水状态？]]></title>
-        <id>https://daily.zhihu.com/story/9743258</id>
-        <link href="https://daily.zhihu.com/story/9743258"/>
-        <updated>2021-12-12T23:07:11.000Z</updated>
-        <summary type="html"><![CDATA[知乎用户，化妆品研发工程师/化妆品科普/时尚盐究员
-阅读原文
-
-在解答这个问题前，我们需要先搞清楚干性皮肤（Dry skin）和脱水性皮肤（Dehydrated skin）的区别。
-
-简单来说，干性皮肤是一种皮肤类型，长期存在，主要是由缺油引起，补充脂质是关键。而脱水性皮肤，是一种暂时性的皮肤状态，通常会表现为“外油内干”。为了恢复皮肤内的天然水分平衡，不仅需要保湿成分来防止进一步的经皮水分流失（TEWL），还需要使用补水成分从内部滋润皮肤。皮肤脱水大多由外部因素引起，如日晒，过度洁面，桑拿、游泳和气候变化等。
-下面给大家介绍几个判断皮肤是否缺水的方法。
-1.容易干燥缺水的部位
-我们身体表面容易干燥缺水的部位，通常是一些汗腺和皮脂腺不太发达的一些区域，如嘴唇，前臂掌侧，手掌小鱼际，臀部，小腿外侧，脚后跟等【1】。
-
-根据欧莱雅从 2007 年 8 月到 2008 年 1 月对 354 名上海女性（18-80 岁）面部的水分与出油量分析结果表明，随着年龄增加（尤其是 40 岁后）皮脂腺数量与皮脂量逐步减少；夏天的皮肤的皮脂较冬天更高。年龄增加导致皮肤干燥，不仅含水量减少，也变得更加容易脱水；相比冬天，夏天皮肤含水量更高，皮肤更不易脱水【2】。所以对于年级较大的人群，为了应对冬季皮肤干燥症，补水和补油必须双管齐下。
-
-接下来我们来进一步地剖析面部皮肤的水分分布情况。传统的 TEWL 或 SC 含水量测试仅仅测试皮肤的一小块区域，而 DSM 的研究则在我们关注的面部皮肤上测试 30 个点，通过一定的软件处理技术，形成皮肤表面水分分布的 mapping，更好地反应面部皮肤的状态【3】。
-
-该研究发现面部不同区域的 TEWL（经皮水分流失）也和角质层含水量并不相同，而平均而言，中国女性的角质层含水量在所有招募种族中最少，而 TEWL 排倒数第二；中国人面部主要干燥的区域为鼻翼和脸颊，…]]></summary>
-        <author>
-            <name>知乎日报</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[瞎扯 · 如何正确地吐槽]]></title>
-        <id>https://daily.zhihu.com/story/9743287</id>
-        <link href="https://daily.zhihu.com/story/9743287"/>
-        <updated>2021-12-12T23:07:04.000Z</updated>
-        <summary type="html"><![CDATA[问大家一个问题，电鳗电电鳗会不会把电鳗电死，还是电电鳗的电鳗会被挨电的电鳗的电把电电鳗的电鳗电死呢？
-
-MODcraft，什么领域都爱涉及一些的学生辣
-阅读原文
-
-电电鳗的电鳗身上有一层保护层，被电鳗电的电鳗身上也有这样一层保护层。所以就算电电鳗的电鳗使劲电被电鳗电的电鳗被电鳗电的电鳗也不会被电电鳗的电鳗电死。
-阅读原文
-
-哪些名字能拯救牛这个姓氏？
-
-大学毕业当矿工
-阅读原文
-
-众里寻他千百度，蓦然回首，那人却在灯火阑珊处。就叫阑珊吧。
-阅读原文
-
-女孩子喝醉酒有多可怕？
-
-小霸王，你叫谁小王八？！
-阅读原文
-
-在哈尔滨旅行时认识的一个姑娘，旅舍一群人约着去吃烤羊腿，我们干了几箱大绿棒子，然后回去的路上，冷风一吹，她突然说她要亲我，我说不行，你死了这条心吧
-然后，凌晨两点零下十五度的哈尔滨大街上，她追着亲我撵了两条街，差点惊动了巡夜的警察
-
-
-
-阅读原文
-
-你曾起过最沙雕的网名是什么？
-
-匿名用户
-阅读原文
-
-用过一个网名叫梦遗
-同学说我网名挺有意思
-当时还一脸懵逼
-查了一下立刻换了
-阅读原文
-
-《西游记》有哪些谣言在网络上广为流传？
-
-天眼查，公平看清世界
-阅读原文
-
-有没有想过，西游记里的主角在现实中可能真的存在？（w
-
- 
-
-
-阅读原文]]></summary>
-        <author>
-            <name>知乎日报</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Directory Opus is a complete replacement for Explorer]]></title>
-        <id>https://www.gpsoft.com.au/</id>
-        <link href="https://www.gpsoft.com.au/"/>
-        <updated>2021-12-12T22:18:38.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Predict civilization collapse with Python and World3 model]]></title>
-        <id>https://github.com/cvanwynsberghe/pyworld3</id>
-        <link href="https://github.com/cvanwynsberghe/pyworld3"/>
-        <updated>2021-12-12T22:05:08.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Chemical emitted by babies could make men more docile, women more aggressive]]></title>
-        <id>https://www.science.org/content/article/chemical-emitted-babies-could-make-men-more-docile-women-more-aggressive</id>
-        <link href="https://www.science.org/content/article/chemical-emitted-babies-could-make-men-more-docile-women-more-aggressive"/>
-        <updated>2021-12-12T21:47:10.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Show HN: FileFlows – file processing Docker application]]></title>
-        <id>https://fileflows.com</id>
-        <link href="https://fileflows.com"/>
-        <updated>2021-12-12T21:29:06.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[1953: The Year That Revolutionized Life, Death, and the Digital Bit (2012)]]></title>
-        <id>https://www.theatlantic.com/technology/archive/2012/03/1953-the-year-that-revolutionized-life-death-and-the-digital-bit/254013/</id>
-        <link href="https://www.theatlantic.com/technology/archive/2012/03/1953-the-year-that-revolutionized-life-death-and-the-digital-bit/254013/"/>
-        <updated>2021-12-12T21:26:00.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Backblaze restore for Personal Backup is awful]]></title>
-        <id>https://news.ycombinator.com/item?id=29533753</id>
-        <link href="https://news.ycombinator.com/item?id=29533753"/>
-        <updated>2021-12-12T21:23:31.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[The Matrix Is Unreal]]></title>
-        <id>https://www.fxguide.com/fxfeatured/the-matrix-is-unreal/</id>
-        <link href="https://www.fxguide.com/fxfeatured/the-matrix-is-unreal/"/>
-        <updated>2021-12-12T21:14:16.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[A ghostly galaxy lacking dark matter]]></title>
-        <id>https://esahubble.org/images/heic1806a/</id>
-        <link href="https://esahubble.org/images/heic1806a/"/>
-        <updated>2021-12-12T20:57:03.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Hammerspoon – Lua-based powerful tool automation of macOS]]></title>
-        <id>https://www.hammerspoon.org/</id>
-        <link href="https://www.hammerspoon.org/"/>
-        <updated>2021-12-12T20:52:40.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Every Schubert Song, Ranked: Listening to 40 hours of lieder]]></title>
-        <id>https://van-magazine.com/mag/every-schubert-song-ranked/</id>
-        <link href="https://van-magazine.com/mag/every-schubert-song-ranked/"/>
-        <updated>2021-12-12T20:44:03.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[UniFi Network Application 6.5.54]]></title>
-        <id>https://community.ui.com/releases/UniFi-Network-Application-6-5-54/d717f241-48bb-4979-8b10-99db36ddabe1</id>
-        <link href="https://community.ui.com/releases/UniFi-Network-Application-6-5-54/d717f241-48bb-4979-8b10-99db36ddabe1"/>
-        <updated>2021-12-12T20:12:59.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Drop-In Replacement for Memcached]]></title>
-        <id>https://www.memc.rs</id>
-        <link href="https://www.memc.rs"/>
-        <updated>2021-12-12T19:09:00.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Everyone on Earth is your cousin (2015)]]></title>
-        <id>https://qz.com/557639/everyone-on-earth-is-actually-your-cousin/</id>
-        <link href="https://qz.com/557639/everyone-on-earth-is-actually-your-cousin/"/>
-        <updated>2021-12-12T18:55:37.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Signal Identification Guide]]></title>
-        <id>https://www.sigidwiki.com/wiki/Signal_Identification_Guide</id>
-        <link href="https://www.sigidwiki.com/wiki/Signal_Identification_Guide"/>
-        <updated>2021-12-12T18:32:35.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Frickin' Shaders with Frickin' Laser Beams]]></title>
-        <id>https://acko.net/blog/frickin-shaders-with-frickin-laser-beams/</id>
-        <link href="https://acko.net/blog/frickin-shaders-with-frickin-laser-beams/"/>
-        <updated>2021-12-12T18:24:34.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Tacit knowledge is more important than deliberate practice]]></title>
-        <id>https://commoncog.com/blog/tacit-knowledge-is-a-real-thing/</id>
-        <link href="https://commoncog.com/blog/tacit-knowledge-is-a-real-thing/"/>
-        <updated>2021-12-12T18:08:28.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Old CSS, New CSS (2020)]]></title>
-        <id>https://eev.ee/blog/2020/02/01/old-css-new-css/</id>
-        <link href="https://eev.ee/blog/2020/02/01/old-css-new-css/"/>
-        <updated>2021-12-12T18:08:12.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Peer-to-Peer NAT64 Network]]></title>
-        <id>https://p2p.nat64.dk/</id>
-        <link href="https://p2p.nat64.dk/"/>
-        <updated>2021-12-12T17:36:23.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Show HN: AlterClass – A platform for making and selling programming courses]]></title>
-        <id>https://alterclass.io/</id>
-        <link href="https://alterclass.io/"/>
-        <updated>2021-12-12T17:20:06.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Win-Vind: Become an instant ninja in operating Windows at the speed of thought]]></title>
-        <id>https://github.com/pit-ray/win-vind</id>
-        <link href="https://github.com/pit-ray/win-vind"/>
-        <updated>2021-12-12T17:13:08.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[This website has 81% battery power remaining]]></title>
-        <id>https://solar.lowtechmagazine.com/power.html</id>
-        <link href="https://solar.lowtechmagazine.com/power.html"/>
-        <updated>2021-12-12T16:51:47.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Sending SMS Messages Through the ISS (2020)]]></title>
-        <id>https://www.kj7nzl.net/blog/sending-sms-messages-through-iss/</id>
-        <link href="https://www.kj7nzl.net/blog/sending-sms-messages-through-iss/"/>
-        <updated>2021-12-12T15:34:06.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Putty maintainer on his attitude towards security and open source]]></title>
-        <id>https://andrewducker.dreamwidth.org/4085856.html?thread=28352864#cmt28352864</id>
-        <link href="https://andrewducker.dreamwidth.org/4085856.html?thread=28352864#cmt28352864"/>
-        <updated>2021-12-12T15:18:52.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Japanese scientists develop vaccine to eliminate cells behind aging]]></title>
-        <id>https://www.japantimes.co.jp/news/2021/12/12/national/science-health/aging-vaccine/</id>
-        <link href="https://www.japantimes.co.jp/news/2021/12/12/national/science-health/aging-vaccine/"/>
-        <updated>2021-12-12T14:23:02.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Fredrik Lundh has died]]></title>
-        <id>https://lwn.net/ml/python-dev/CAP7+vJLbxJY-SPPzaoT4qnhF9MRkXDuhmr8wxZ=Es1X2ob3gMg@mail.gmail.com/</id>
-        <link href="https://lwn.net/ml/python-dev/CAP7+vJLbxJY-SPPzaoT4qnhF9MRkXDuhmr8wxZ=Es1X2ob3gMg@mail.gmail.com/"/>
-        <updated>2021-12-12T14:16:52.000Z</updated>
         <summary type="html"><![CDATA[Comments]]></summary>
         <author>
             <name>Hacker News</name>
