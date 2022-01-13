@@ -76,12 +76,533 @@
 <body>
 <!-- %after-body-begin.html% -->
   <section class="daily-content">
+    <h2 class="daily-heading"><time datatime="2022-01-13">2022-01-13</time></h2>
+    <ul class="sources card">
+      <li class="source">
+        <section>
+          <h3 class="source-name"><a class="source-name__link" href="http://weekly.dockone.io">DockOne.io</a></h3>
+          <section class="articles-per-source">
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">x86架构应用如何向Arm架构低成本迁移</summary>
+                <a class="article-summary-link article-summary-box-outer" href="http://weekly.dockone.io/article/2434805">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>曾几何时，无论是在服务器还是个人电脑，CPU芯片领域一直是 Intel 独占鳌头，旗下的 X86_64 架构被广泛采用。然而王权没有永恒，近年来 Arm64 架构异军突起，服务器端有华为鲲鹏920高性能芯片做代表，个人电脑端则以苹果M1芯片惊艳世人。Arm64 架构芯片用低功耗和高性能炫耀着其市场价值，国产化替代的洪流也在不断将 Arm64 推向军队、政府、国企的供应商们。抓住先机，迅速拥抱与适配国产化芯片，是这个时代软件交付的新话题。
+拥抱 Arm64 的难处
+从 X86_64 迈向 Arm64 并非易事，指令集的改变，影响半径极大。
+最直接的影响，是原来在  X86_64 环境中可以正常运行的业务系统需要基于 Arm64 重新编译才可以运行。即使开发时使用的语言具备跨架构的能力，重新编译本身就是一种很繁复的工作，需要投入大量的人力成本和时间成本。
+Arm64 的开发语言生态并不是那么健全，这无形中会增加了本不该开发人员关心的负担。很多语言本身的运行环境都需要重新编译，更不要提很多开源中间件的适配工作。
+以上仅仅是开发人员关注的重点。
+在软件交付领域，软件交付到客户环境中运行起来，仅仅是个开始。业务系统的管理、监控、迭代、容灾都是交付团队需要持续关注的点。多数交付团队在 X86_64 架构下，都已经有了自己的解决方案。那么容器、Kubernetes、DevOps这些先进的工具方法，在 Arm64 架构下如何复刻？
+解决之道
+Rainbond 可以利用自身能力抹平芯片架构的差异，无论是开发人员，还是交付人员，都可以基于 Rainbond 找到拥抱 Arm64 的解决之道。Rainbond 通过不同层次的能力来解决从 X86_64 到 Arm64 的迁移问题。
+
+既有能力：Rainbond 本身是一款适用于软件交付，或者应用运维管理的云原生应用管理平台。无论是快速交付部署，还…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+        </section>
+      </li>
+    </ul>
+  </section>
+  <section class="daily-content">
     <h2 class="daily-heading"><time datatime="2022-01-12">2022-01-12</time></h2>
     <ul class="sources card">
       <li class="source">
         <section>
+          <h3 class="source-name"><a class="source-name__link" href="https://news-at.zhihu.com/api/4/stories/latest?client&#x3D;0">知乎日报</a></h3>
+          <section class="articles-per-source">
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">发动机工作时其内部是如何承受两千多度的高温的？</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9744296">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>苏黎世贝勒爷，会持续输出汽车知识技术/赛道驾驶/性能评测方面的内容干货。
+阅读原文
+
+要不是我手头有一些发动机温度数据的材料，都不好回答这个问题。。。
+如何承受两千多度？不用考虑，因为并不需要承受。发动机宏观的平均温度也就一百多度，局部一些部件能有两三百度，最热的排气阀门大几百度。
+你说的燃烧的最高温度是两千多摄氏度（汽油最高 2500 左右，柴油 2000 左右），这没问题，但是这和发动机要承受这个温度是两件事儿。
+简单来说，发动机能在宏观上保持在一百多度，是因为这个状态下高温气体传递给它的能量和发动机能用散热系统带走的能量是平衡的。
+在具体说，就是因为发动机有冷却系统，而且这个冷却系统（对于搞定燃烧能给发动机传递的热量而言）是足够有效的。
+考虑一个由气缸盖，气缸壁，活塞，进排气阀门所围成的燃烧室，气缸壁和汽缸盖一侧贴着燃烧室，另一侧贴着冷却水，
+
+由于金属的导热性足够好，使得贴着燃烧室的气缸壁和汽缸盖在温度升高之后，马上就开始向冷却水一侧传递热量，并且这个传递的速率足够大，使得气缸壁和汽缸盖温度只需要稍微高一点，建立的温度梯度就足够导出高温气体传递给他们的热量。（在冷却水回路工作正常的情况下）
+以上是散热端，即散热有效，热源端是反过来的，所谓的热源其实没那么热。
+虽然发动机最高燃烧温度两千多，但是时间是很短的，只有做工冲程开始那段，如果考虑整个进气行程低温的空气，两者一中和就没多少了，这也就导致，整个循环的平均气体温度其实没那么夸张，也就大几百度。
+综合以上两者，就是为什么发动机整体平均温度只需要一百多度就足够了，下图是一个八缸汽油发动机某工况下，一个完整循环内气缸壁的温度，减去 273 才是摄氏度，这么看也就是一百多度。
+总结来说，就是发动机比较强的散热能力和因为自身工作原理导致的非常短暂的高温瞬间的特性，使得其可以承受（或者说允许）很高的温度，从而获得很高的单位质量工质的功率密度。（不是发动机的）
+
+如果想看更全面的温度分布，可以参考下面这个图，展示的是气缸壁的温度（减去 273 是摄氏度），是从曲轴的位置往上看，温度在 100-200 摄氏度。
+
+下面这个也说明了类似的情况，气缸壁内测温度在 120（底部）-200（顶部）摄氏度。
+
+当然，此时还是有一些相对比较重要的部件，比如汽缸盖温度是比气缸壁高的，因为接触燃烧最热的地方，但是整体也就高个几十度，气缸壁中下部分其实温度不高。
+活塞的温度也比较高，这是因为活塞类似汽缸盖并且没有直接地散热途径，
+
+这也是为什么，现代的发动机都会在曲轴箱下面有个往上喷机油的喷嘴，这样活塞运动到最底部的时候，就可以被机油冷却，虽然没有冷却水那么好用，但是也比没有强了。
+
+这个时候，有人已经想到了。其实问题最严峻的不是活塞，而是排气阀门。因为不同于燃烧室内的其他部件，排气阀门的背面要持续不断地面对排气歧管里的高温排气，这个时候就不是瞬态的问题了，而是稳态的问题。一般排气阀门都需要承受 700-800 摄氏度的高温，这也是为什么所谓的中空注钠排气阀门的由来，增加传热性能，降低因为升温导致的负荷。保时捷之前做过一个 991.1 的卡雷拉自吸发动机的排气阀门温度测试，大概看起来是这样，阀门背面基本在 600-700 摄氏度。
+
+至于发动机上温度再高的地方，也是有的，那就是排气歧管和涡轮了，因为他们是一直持续不断地接受排气的高温，是完整的稳态现象。在最大功率点，温度得在 950-1000 摄氏度了，不过这不属于你问的发动机内部了，而是“严格”地属于外部。
+
+这也是为什么在汽油机上除了 911Turbo，没有人用可变涡轮的原因。
+阅读原文</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">防汛抗洪时用的防汛沙袋真的有用吗？</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9744293">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>中国气象局，分享一个气象万千的世界！
+阅读原文
+
+沙袋能不能防汛，我们可以先回答几个问题
+一、我们说的防汛，实际上是在做什么？
+情景一：镇子、村子下大雨，道路积水眼看着越来越高，你家地势正好比较低，家里很可能面临比别人家更快进水的危险；同理，下班高峰期时，地铁外暴雨如注，当排水系统饱和后，外面道路积水倒灌进地铁，上班族很可能不幸被困。
+情景二：居民旁边挨着一条河，上游下大雨，河水暴涨，水压骤增，堤坝渗水严重、细沙随水带出，形成孔穴而集中涌水，即管涌（部分地区叫突水），很可能威胁到临河居民的生命财产安全。
+情景三：同样是居民旁边挨着一条河，上游下大雨，河水暴涨，短时间内可怕地涨到跟堤坝一样高，而且气象预报雨还将继续下，要是再不做点什么，河水可能会冲出堤坝，威胁到临河居民的生命财产安全。
+……
+这是几个急需做出防汛措施的典型场景。而如果出现了上述场景，我们分别需要做的，可以总结为：
+一：使用某种物品拦住可能涌进家门口的水；拦住可能涌进地铁口的水；
+二：使用某种物品堵住管涌；
+三：使用某种物品加高堤坝。
+那沙袋能不能达到这几个目标呢？
+答案是：能
+二、沙袋能够用于防汛，靠的是什么本领？
+沙袋防汛，主要是通过一层一层地堆叠（根据汛情严重程度有时还要多垒几排），抵挡水的冲击力。
+首先，洪水冲向沙袋后，水虽然会渗入沙子的空隙中，但是在水的表面张力等复杂因素作用下，沙子与水会暂时结合成一体，整个沙袋也会变得很重，能够承受洪水巨大的压力。
+其次，还是当水进入沙子的空隙后，同样是在表面张力的等复杂因素的作用下，沙子整体会变“硬”，但同时会变得有黏性且足够柔软。这样的湿沙子能堆出“城堡”，也能让一个个沙袋塑造出所需要的形状，相互嵌套、不留空隙，防止洪水侵入沙袋间隙。
+沙袋的这些特性，决定了它能够在“拦”“堵”洪水中发挥作用。
+三、沙袋不是只要堆起来就好了吗？
+说垒放沙袋是个技术活儿，估计很少人…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">海洋里到底有什么可怕的东西？</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9744298">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>王福霖，一只生科狗
+阅读原文
+
+苏联的 K-8 核潜艇，躺在海底。1970 年，K-8 因为水兵放火而沈没。K-8 配备有十枚鱼雷，两枚鱼雷带有核弹头，都在海底躺着呢。
+
+苏联的К-278 攻击性核潜艇，躺在 1600 米深的海底，配备有十枚鱼雷，两枚带有核弹头，都在海底躺着呢。
+
+苏联的 k129 战略核潜艇，躺在瓦胡岛西北水下 4000 多米处。确切的说是部分 k129，因为剩下的部分被美国人打捞，这又是另一个传奇故事了。重点来了，k129 带着三枚弹道导弹，配有百万吨级的核弹头，也在那躺着呢。
+
+你以为我是在黑苏联海军，其实我还要黑美国。
+1956 年，一架 B47 轰炸机，携带有武器级核材料，在执行任务的过程中失踪，美国空军认定飞机坠毁于地中海某处，现在应该是躺在海底某处，位置未知，材料可以组装两枚核弹，具体型号未知。
+
+美国 mark15 型氢弹，三百万吨级，躺在位于华沙湾。1958 年，一架 B-47 轰炸机和一架 F-86 L 侦察机发生剐蹭，B47 引擎受损，英勇的轰炸机机组就把氢弹扔到了海里。空军打捞氢弹多天未果，但很快南卡洲出传来好消息，通知他们不用打捞了。因为，另一架 B47 也把核弹给扔了，还砸着了人，空军又要收拾烂摊子，就停止了 mark15 的打捞工作，同时宣称 mark15 没有装起爆装置，不会炸。对了，空军还采取了一项重要措施，就是给这枚氢弹起了个名字，“泰比”，世界上第四个被命名的核弹，前三个分别是“小玩意”(记成大男孩了)，“小男孩”，“胖子”。还有，1996 年亚特兰大奥运会的帆船比赛就在华沙湾举行。
+
+美国的 mk101 深水炸弹，1.1 万吨级，躺在普吉特湾海底。1959 年，一架 P5M 反潜机携带有 mk101 深水炸弹，坠毁于华盛顿州的普吉特湾，mk101 核深水炸弹未被打捞。
+
+B43 型核弹，当量可调，躺在菲律宾海的海底，距离琉球群岛只有 130 公里。1965 年，一架 A4E 攻击机从航母上坠海，飞机，飞行员，还有携带的核弹未被打捞。
+
+SSB-589 天蝎号攻击性核潜艇，躺在亚速海的海底(经过提醒，这里应该是亚速尔群岛，天蝎号躺在亚速尔群岛西南方向 740km，是大西洋海底。毕竟天蝎号也不可能跑到苏联的内海去浪 )。1968 年，天蝎号核潜艇因未知原因沈没。有人认为是因为苏联潜艇的攻击，但未被证实。潜艇的两枚 Mark 45 鱼雷带有 W34 型核弹头，未被打捞。
+
+1968 年，一架 B52 轰炸机，在格林兰岛附近海域坠毁，当时海上全是海冰，所以四枚氢弹被摔坏，造成放射性污染，这就是着名的图勒核事故。有报道称，有一枚氢弹砸穿海冰后沈入海底，未被美国空军打捞，但是 Wiki 没有提到氢弹的型号和具体丢失情况，所以这枚氢弹是否丢失存疑。
+参考资料：List of military nuclear accidents
+PS：美国空军也不是完全不管海里的氢弹，在着名的帕利马雷斯氢弹事故中，一架 B52 空中解体，导致一枚氢弹落海，美国空军硬是找数学家算出了氢弹的坠落地点，然后从 800 多米的水底捞出了氢弹。数学家是用贝叶斯方法计算氢弹落去不同区域的概率，然后从高概率区域向低概率区域搜索，很快就就找到了。另外，ssb589 天蝎号核潜艇也是同一个数学家用贝叶斯方法找到的。就是这个:https://en.m.wikipedia.org/wiki/John_P._Craven
+PSS：B-47 造成核武器事故多到可怕，屠榜一般的存在。
+PSSS：人类还没灭绝真是个奇迹。
+PSSSS:图勒核事故摔坏的是四枚 Mark 28 型氢弹，其中一枚氢弹的二级圆筒下落不明。主要是氘化锂和铀，进行核聚变的部位，但是因为裂变装置已经找到，所以不会诱发核聚变。笑容终于不用消失了。( ﹡ˆoˆ﹡ )
+阅读原文</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">长痘痘和吃辣的食品有关系吗？</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9744286">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>墨墨daisy，皮肤激光科医生 丁香医生签约作者 家有萌娃一枚
+阅读原文
+
+这个问题每天都会被问到，来系统的回答下大伙的困扰。
+先上结论：个人观点，长痘痘和吃辣之间的关系存疑。
+
+大部分科学观念认为：饮食方面，痤疮和食辣无关，而与摄入的糖、奶、脂肪相关。
+部分专家认为摄入高糖、高脂、乳饮食可使血糖升高,从而导致高胰岛素血症和胰岛素抵抗,进而影响内分泌轴,使胰岛素样生长因子 1（IGF-1）、雄激素分泌增加,导致痤疮的发生。[1]
+图片来源网络：侵删
+吃辣和痤疮之间的关系
+传统观念认为是没有关系的，并且解释为：“因为你吃辣的时候往往也吃了很多油 / 碳水 / 脂肪，比如烧烤、火锅、麻辣烫等，不是辣椒导致长痘，而是其他的食物”。
+但如果你去医院看病治痘痘，大部分医生都会给出“饮食清淡、少食辛辣”的建议。
+图片来源网络：侵删
+如果吃辣和长痘之间真的毛线关系没有，为啥要给这个建议呢？
+事实上，迄今为止，还没有绝对科学的文献能够支持“吃辣椒会导致长痘”这样一说法。
+但有调查表明， 73.5％痤疮患者认为辛辣、油腻食物会加重痤疮皮疹,即辛辣、刺激饮食会使痤疮患者的病情加重,[2] 这与国内专家认为痤疮患者应该注意避免辛辣、油腻食物的观点是一致的。
+曾有人做过一项 300 位痤疮患者的调查，为的就是研究饮食和睡眠对于痤疮患者的影响。调查结果对于总体来说，饮食因素对痤疮的影响较为有限,而睡眠不规律对痤疮的影响更为显着,对 26-30 岁痤疮患者影响更为明显。 [3]同时，该调查的病例组食用辛辣食品、甜食等饮食因素的比例较对照组高,不过差异未达到统计学的意义。
+吃辣椒和长痘痘之间没有明确的相关性，但是临床上的确很多患者都会觉得一吃辣就长痘的情况。我也经常被问到“医生长痘痘能不能吃辣椒”的问题。
+我的回答是：如果你长痘期间，吃辣椒不会加重你的痘痘，那你吃不吃关系都不大，但是如果你发现你吃完辣后痘痘会变严重，那么就尽量不要吃。吃完辣以后是否长痘存在个体差异，不存在绝对的能吃或者不能吃。
+总的来说，痤疮患者，好好睡觉对于改善痤疮是有益的，少食油、糖、奶类也是有益的，饮食清淡相较于辛辣刺激对于痤疮患者肯定是更适合的。
+参考文献：
+[1] :Melnik B C. Linking diet to acne me tabolomics,inflamma tion,and comedogenesis:an update[J]。Clin Cosmet Investig Dermatol,2015,8:371-388.
+[2]:《饮食与生活习惯对痤疮发病的影响分析》李英姬 【文章编号】1674-9308（2018）03-0043-02 doi ：10.3969/j.issn.1674-9308.2018.03.022
+[3]《饮食与生活习惯对痤疮发病的影响 》赵惠娟 闫慧敏 郭独一 路雪艳 姜 薇
+阅读原文</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">CPU 为什么会有高频低负载的状态？</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9744299">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>老狼，UEFI固件、服务器、嵌入式产品(公众号:UEFIblog)
+阅读原文
+
+先说结论，这样做是为了更加省电。现在 CPU 内核的频率控制由一个叫做 PCU（Package Control Unit）的微处理器来控制。PCU 从 Nehalem CPU 开始就嵌入在 CPU 的封装中。
+PCU 控制内核频率本着省电和提高响应度来进行调节。完成一项工作，为了节省能耗，是不是就是低频慢慢干就好了呢？答案是否定的。我们排除浪费时间等因素，只从能耗上考量，如果我们衡量干完某件事需要消耗的整体能量，实际上有两种策略：
+
+保持固定频率，将事情干完，然后 CPU 进入休息状态。
+加速干事情，忍受短时功耗上升，尽快干完事情，尽早让 CPU 休息。
+
+这和人一样，有些人是慢性子，徐徐图之；而有些人性子急，希望早干完早休息。很难判断哪种好，这就需要量化分析了，好在 Intel 的工程师已经为我们找到这个平衡点：
+
+在这个平衡点附近，按照工作量（workload demand）被分成 Low Range 和 High Range，PCU 采取两种策略。
+策略一
+在 Low Range 的区间，CPU 的主频低于 Pe 就没有任何意义了，PCU 总是让内核工作在 Pe 频率上，尽快干完事，进入休眠状态（CState）。这就是有时计算机比较清闲，我们打开任务管理器时，会发现有些 CPU 既不是工作在最低主频上，也不是工作最高主频上的原因。
+
+在 High Range 中，提高内核频率尽管可以让任务完成的更快，但是因为能耗和频率 f 是 3 次方的关系，对能耗比来说并不合算。这就需要操作系统来提示支持 Speed Shift 的 PCU，采取激进的高频高功耗模式，来提供更好的相应；还是保守的能耗优先模式。
+结论
+为什么低负载还高频呢，就是因为负载落在 low Range 中，内核会被加速到 Pe 来尽快完成，从而尽快进入省电的 Cstate，即省电，有快速响应，何乐而不为呢？
+阅读原文</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">瞎扯 · 如何正确地吐槽</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9744374">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>为什么漫威电影宇宙中全宇宙都讲英文？
+
+初一一，幼稚无知，死性不改。
+阅读原文
+
+小的时候我也不明白，为什么同样是孙悟空和唐僧，有的说普通话，有的说粤语，他们不是都是从东土大唐来的吗？还是说一个来自于首都，一个来自于特区？
+阅读原文
+
+恒大集团退租深圳总部大楼，将总部搬回广州，这透露了哪些信息？
+
+知乎用户，この俺の一生どうやって過ごすだろう
+阅读原文
+
+透露了恒大又要欠搬家公司和物流公司一大笔钱
+阅读原文
+
+每天走一万步真的能降低死亡率吗？
+
+王郝，重症医师（ICU医生）
+阅读原文
+
+对于从事办公室工作的人来说，一万步是需要付出一定的时间和努力才能完成的。
+如果，一个人能为了健康每天走路，他 / 她大概率也会为了健康坚持健康饮食等其他生活方式，都有助于减少因为不良生活方式导致的疾病。
+我觉得步数不那么重要，换句话说，运动量本身不是那么重要，每天坚持才是最重要的。
+如果一个人从 30 岁开始坚持每天走一万步，至少坚持 2-3 万天吧，必有成效。
+阅读原文
+
+一看就不好惹的男生大概长什么样？
+
+李景亮
+阅读原文
+
+我从来没有在大街上和别人发起过争执，一次见义勇为的机会都没有。
+不知道为什么……
+
+
+
+阅读原文
+
+你们玩过最无下限无尺度的大冒险是什么?
+
+天生不服气，不说硬话不做软事
+阅读原文
+
+在酒桌上，喝的正起劲，正高潮，我输了，他们让我回家。
+阅读原文</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+        </section>
+      </li>
+      <li class="source">
+        <section>
           <h3 class="source-name"><a class="source-name__link" href="https://news.ycombinator.com/">Hacker News</a></h3>
           <section class="articles-per-source">
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Grocery store shortages are back</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.npr.org/2022/01/12/1072462477/grocery-shortage-shelves-reasons">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(4 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Lab-Made Coronavirus Triggers Debate (2015)</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://web.archive.org/web/20200123174440/https://www.the-scientist.com/news-opinion/lab-made-coronavirus-triggers-debate-34502">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Apple execs: Let&#x27;s take a 30% cut of Uber and Lyft&#x27;s membership programs (2018)</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://twitter.com/TechEmails/status/1481339345822879745">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(1 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Poor man&#x27;s VPN (pay for only what you need)</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://github.com/amritb/poor-mans-vpn">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">BuildZoom (better way to build custom homes) Is hiring a Growth Associate</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://jobs.lever.co/buildzoom">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(1 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Dark Web – Justice League</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://analyst1.com/blog/dark-web-justice-league">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(4 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Losing our product to button syndrome</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://olickel.com/button-syndrome">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(8 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">About the security content of iOS 15.2.1 and iPadOS 15.2.1</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://support.apple.com/en-us/HT213043">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(1 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Using Git Commit Message Templates to Write Better Commit Messages</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://gist.github.com/lisawolderiksen/a7b99d94c92c6671181611be1641c733">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(7 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Async Rust in Practice: Performance, Pitfalls, Profiling</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.scylladb.com/2022/01/12/async-rust-in-practice-performance-pitfalls-profiling/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(7 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Show HN: I built a gravity simulator in pure CSS</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.multiplanetary.website/rocketscience">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Great AA Alkaline Battery Test (2016)</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://goughlui.com/2016/12/19/great-aa-alkaline-battery-test-pt-1-battery-testing-fundamentals/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(20 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Who Contributed to PostgreSQL Development in 2020 and 2021?</summary>
+                <a class="article-summary-link article-summary-box-outer" href="http://rhaas.blogspot.com/2022/01/who-contributed-to-postgresql.html">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(9 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Young people from Brazil&#x27;s favelas set out to conquer digital world</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.spiegel.de/international/world/brazil-s-favela-tech-boom-young-people-from-poor-neighborhoods-set-out-to-conquer-digital-world-a-81a80497-0634-49e1-ad31-d1c8d5f83382">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(15 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Parcel CSS: A new CSS parser, compiler, and minifier</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://parceljs.org/blog/parcel-css/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(4 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">FOSS donations which reach the roots</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://github.com/openfare/openfare">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(3 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Why don&#x27;t I have a blog?</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://fede.dm/blog/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(4 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">In MySQL, use “utf8mb4” instead of “utf8” (2016)</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://adamhooper.medium.com/in-mysql-never-use-utf8-use-utf8mb4-11761243e434">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(3 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">IPython 8.0</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://blog.jupyter.org/release-of-ipython-8-0-6e034ff122ef?gi&#x3D;5efbb52d543e">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(3 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">The State of Web Scraping 2022</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://scrapeops.io/blog/the-state-of-web-scraping-2022/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(10 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Wine on Wayland year-end update: improved functionality and stability</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.collabora.com/news-and-blog/blog/2021/12/22/wine-on-wayland-year-end-update-improved-functionality-stability/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(3 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Writing a Game Boy Emulator in OCaml</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://linoscope.github.io/writing-a-game-boy-emulator-in-ocaml/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(20 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Apache PLC4X announcing end of community support due to missing funding</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://github.com/chrisdutz/blog/blob/main/plc4x/free-trial-expired.adoc">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(8 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
             <article>
               <details class="article-expander">
                 <summary class="article-expander__title">Ask HN: Why new browsers use Chromium instead of Firefox as their base?</summary>
@@ -740,10 +1261,54 @@ A、在不考虑最外层大气的情况下，这些太阳系天体可以按内�
             </article>
             <article>
               <details class="article-expander">
+                <summary class="article-expander__title">Readers Love Curious George. I Fell in Love with the Author’s Astronomy Books</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://nautil.us/issue/112/inspiration/readers-love-curious-george-i-fell-in-love-with-the-authors-astronomy-books">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(12 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Chip aging becomes design problem (2018)</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://semiengineering.com/chip-aging-becomes-design-problem/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(17 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">UltraRAM: &#x27;Universal Memory&#x27; That Brings RAM-Like Speed to Non-Volatile Storage</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.tomshardware.com/news/ultraram-implemented-in-silicon-for-first-time">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(4 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
                 <summary class="article-expander__title">Google says iMessage is too powerful</summary>
                 <a class="article-summary-link article-summary-box-outer" href="https://arstechnica.com/gadgets/2022/01/after-ruining-android-messaging-google-says-imessage-is-too-powerful/">
                   <div class="article-summary-box-inner">
                     <span class="article-reading-time">(4 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Ask HN: Good open source alternatives to Google Analytics?</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://news.ycombinator.com/item?id&#x3D;29888599">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(10 min)</span>
                     <span>Comments</span>
                   </div>
                 </a>
@@ -1443,6 +2008,17 @@ Naegi Makoto，在光明的世界活下去，别回头…别被影子抓住！
             </article>
             <article>
               <details class="article-expander">
+                <summary class="article-expander__title">Astronomers discover a strange galaxy without dark matter</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.wired.com/story/astronomers-discover-a-strange-galaxy-without-dark-matter/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(6 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
                 <summary class="article-expander__title">That famous Pixar lunch of 1994 (2014)</summary>
                 <a class="article-summary-link article-summary-box-outer" href="https://gointothestory.blcklst.com/that-famous-pixar-lunch-of-1994-2200a9f68afd?gi&#x3D;ef10ce1b8e80">
                   <div class="article-summary-box-inner">
@@ -1454,10 +2030,32 @@ Naegi Makoto，在光明的世界活下去，别回头…别被影子抓住！
             </article>
             <article>
               <details class="article-expander">
+                <summary class="article-expander__title">Making nice-looking and interactive diagrams for your PCBs</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://blog.honzamrazek.cz/2021/06/making-nice-looking-and-interactive-diagrams-for-your-pcbs/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(3 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
                 <summary class="article-expander__title">The Power of Defaults</summary>
                 <a class="article-summary-link article-summary-box-outer" href="https://julian.digital/2021/12/20/the-power-of-defaults/">
                   <div class="article-summary-box-inner">
                     <span class="article-reading-time">(16 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Autosaved: A Go utility for autosaving progress in Git projects</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://github.com/nikochiko/autosaved">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(5 min)</span>
                     <span>Comments</span>
                   </div>
                 </a>
@@ -17208,550 +17806,13 @@ CMOS 相比 CCD，成像噪点大，畸变处理差，易产生残影、杂色�
                 </a>
               </details>
             </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">I started a paper website business</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://daily.tinyprojects.dev/paper_website">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(6 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Using WebScript</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://developer.apple.com/library/archive/documentation/LegacyTechnologies/WebObjects/WebObjects_3.1/DevGuide/WebScript/WebScript.mif.book.html">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(1 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Ublacklist – the missing button on Google search, IMO</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://github.com/iorate/uBlacklist">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(3 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-        </section>
-      </li>
-    </ul>
-  </section>
-  <section class="daily-content">
-    <h2 class="daily-heading"><time datatime="2021-12-13">2021-12-13</time></h2>
-    <ul class="sources card">
-      <li class="source">
-        <section>
-          <h3 class="source-name"><a class="source-name__link" href="https://news-at.zhihu.com/api/4/stories/latest?client&#x3D;0">知乎日报</a></h3>
-          <section class="articles-per-source">
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">中国能否在十年内普及无人驾驶？</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9743297">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(0 min)</span>
-                    <span>Will.liu，十年汽车生涯，怎能不白头。（汽车/科技）
-阅读原文
-
-首先要了解什么是无人驾驶。
-这个看似聊得很多，但实际即便汽车行业的人，如果没有专门研究过无人驾驶，也容易混淆无人驾驶的等级概念。
-下图为 SAE(汽车工程师协会）给出的自动驾驶级别的较为专业的一个版本，这也是全世界公认的一个版本。（平时我们看的是简化版。）
-
-L0，L1，L2 不多说了，大概涵盖的功能如下：
-
-自适应巡航控制
-自适应灯光控制
-防抱死制动系统
-自动泊车
-盲点监测
-碰撞避免
-碰撞警告
-驾驶员困倦监测
-电动汽车警告声
-紧急状况驾驶员辅助功能
-防眩前照灯和像素照明
-倒车辅助
-变道辅助
-车道偏离警告
-带交通信息的导航系统
-夜视系统
-停车传感器
-行人保护
-环视系统
-交通信号识别
-
-这里从 L3 开始说起，这就是自动驾驶的分界点了，L3 叫做有条件的自动驾驶，意味着系统可以在某些路况接管你的驾驶需求，也就是有条件限制的无人驾驶。
-2017 款的奥迪 A8，搭载了这种 L3 级别的无人驾驶，在一定条件下，可以允许没有司机操控驾驶。
-该车配备了 4 颗鱼眼摄像头，12 颗超声波雷达，4 颗中距离毫米波雷达，1 颗长距离毫米波雷达，1 颗激光雷达，1 颗前视摄像头。允许在 60KM/H 以下，且无复杂路况的时候开启 L3 驾驶。
-
-这意味着，一旦 L3 允许开启，那么在 L3 退出之前，所有的驾驶操控车辆的行为，如转弯、加速、减速、刹停全部都交给车载电脑完成，司机是允许看报纸，喝咖啡，和人闲聊的，除了睡觉这种长期托管驾驶的行为之外，司机是可以不管路况的，做自己的事情，只要不睡觉，不离开驾驶位就行。
-因为 L3 属于无人驾驶的初级阶段，适合开启的条件比较苛刻，所以在必要时候还是要求司机接管，比如提前通过 V2X（云、路、人、车的交互）得知即将脱离路况良好的路段，进入路况复杂的路段。L3 会给驾驶员缓冲的时间，…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">摆拍和滤镜制造出来的美，是「假」吗？</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9743303">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(0 min)</span>
-                    <span>Yichen 在西海岸，新西兰华人史爱好者 | 备份公众号：Yichen的西海岸
-阅读原文
-
-我看到这个题目的第一想法是，「美」能被摆拍和滤镜制造吗？
-又一想，「美」难道还有「天然的」和「制造的」这种区别？不论是精英还是民间的「审美」活动，甚至说不定能拓展到动物界，「美」的概念难道不都是被制造出来的吗？
-所以，这个问题要搞清楚的地方还真不少，展开写总觉得写出一本书来都有可能。我的知识有限，讲一讲我想到的几点，权做抛砖引玉。
-1. 摆拍是摄影打娘胎里带来的技能包
-相机的前身是辅助绘画使用的「暗箱」。
-翁老师在翁昕：小翁杂谈：维米尔到底是不是骗子？ 中就讨论了暗箱对维米尔画作的帮助、维米尔「构建」一幅画面时候的思路。维米尔活跃的年代离达盖尔申请到摄影术的专利尚有两个世纪之久，但「构图」因为暗箱的辅助已经和摄影作品基本无异。
-快进到维米尔之后二百年——虽然摄影的速度比起画师确实已经是快到了天上，但绝对不是如今那种你坐下摆个姿势，咔嚓就能搞定的体验。在曝光期间被摄者轻微的动作也会导致画面模糊，摄影师们只好搞出了这种用来固定人的夹子，好让自己的客户在曝光过程中不要乱动。
-拍个照堪比上刑（x
-出现这个情况的原因我之前一些答案里提过：最早的达盖尔法的曝光时间是以分钟计，后来改进的湿版也起码是按秒算，因此无法轻易用于拍摄几乎任何会动的东西，甚至大白天拿去拍大街的时候，如果有人走过，也只能在画面中留下些鬼影。
-至于合用的闪光灯，那都已经是达盖尔法发明后快半个世纪的事情了，而且使用效果是这样的：
-Race Gentry 演示 1909 年生产的镁粉闪光灯（棒？），根据 CC BY-SA 2.0 共享
-同时，和肖像画画师的必备技能是给自己雇主「美颜」或者「换背景」一样，在旅游离普通人仍然很远的年头，换个背景、帮客户跨越一下地理距离限制这种小事怎么难得住我们一心服务广大群众的摄影师（划掉
-在尼亚加…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">在没有肥皂、洗衣液情况下，沐浴液，洗发水、洗洁精这三种谁洗衣服相对更适合？</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9743304">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(0 min)</span>
-                    <span>胖博士，懂你皮肤问题的清华胖师兄
-阅读原文
-
-作为一个有八年经验的化妆品研发人员，我想说，无论是从理论上，还是实际上，洗发水的洗衣服效果都最好！
-曾经有个做了十年洗发水配方的同事送我一桶卡诗的洗发水，她说“一不小心做多了，你拿回家洗衣服吧，效果特别好！”
-回家之后，我迫不及待的把脏衣服扔进洗衣机里，把卡诗倒了进去。几个小时的洗涤烘干之后，从洗衣机里取出的是柔软，香喷喷，干干净净的衣服。
-我把那桶洗发水装了一些出来，本来想洗头。后来觉得没包装太丑，就放在角落里了。
-沐浴露，洗发水，洗洁精，都能洗干净！
-沐浴露，洗发水，洗洁精最核心的功能的都是清洁。所以它们的配方骨架都以表面活性剂为主。
-大家都有这样的体验，吃饭不小心滴了油在身上，用水是没有办法洗掉的，因为油和水不相容，它们之间相互讨厌。用再多的水来洗油，也是白费力气。
-这时候就轮到表面活性剂登场了。它是一种特殊的分子，一头和水亲近，一头和油亲近。于是当有表面活性剂存在的时候，它能把老死不相往来的水和油紧紧的抓在一起。用水再一冲，就能把脏东西带走了。
-表面活性剂（图片来自网络）
-正应为加了表面活性剂，所以洗洁精能洗掉盘子上的油，洗发水能洗掉头上的油，沐浴液能洗掉身上的油。
-当然因为售价和成本不同，所以它们使用的表面活性剂也不同。
-价格最贵的洗发水主流是 SLES 和氨基酸表面活性剂。价格居中的沐浴露主流是 SLES 表面活性剂和皂基。而最便宜的洗洁精主流是 AES 表面活性剂。表面活性剂的价格也从高到底。
-从清洁能力上来说，这些表面活性剂本身都没有太大的区别。当然不同的产品和品牌表面活性剂的添加量可能不一样，最后产品的清洁能力可能会有稍微的差别。但是基本上，能洗干净的都能洗干净。
-
-为啥我青睐洗发水
-洗发水最大的不同是会在配方中加入调理剂。调理剂主要有三类，硅油，阳离子调理剂和植物油。如果是硅油洗发水，那么一般是硅油和阳离子调理剂的组合。而如果是无硅油洗发水，那么添加的一般是阳离子调理剂加植物油。
-调理剂的作用在于让我们的头发更顺滑，还能修护受损头发。
-正常的头发表面被毛鳞片覆盖，带正电荷。洗发水里的硅油或者植物油沈积到头发表面之后，会让头发更顺滑，光泽度更好，触感也更舒服。
-一旦头发受损，毛鳞片翘起，那么受损处的头发就会带负电荷。这时候阳离子调理剂就可以定向的和受损部位结合，沈积在受损部位，起到修复的效果。
-健康的头发（左）和受损的头发（右）
-头发是一种纤维，羊毛也是一种纤维，棉花也是纤维，而衣服就是由纤维织成布再裁剪而成的。洗发水既然能让头发更顺滑，也能让衣服更顺滑。
-事实上，衣物柔顺剂（比如金纺）的主要成分就是硅油和阳离子调理剂。
-所以用洗发水洗衣服，能实现洗衣液 + 柔顺剂的双重效果。
-沐浴液，洗发水和洗洁精都还差点意思
-虽然沐浴液，洗发水和洗洁精都有不错的清洁能力。沐浴液甚至能带来额外的柔顺剂功能。但是它们和洗衣液相比都还差一点，那就是“蛋白酶”。
-洗衣液用蛋白酶（图片来自 1688）
-日常衣服上的污渍除了油脂外，最常见的就是蛋白质。这些大分子的蛋白质干了之后不太容易被洗掉。而洗衣液里面的蛋白酶能把这些衣服蛋白质分解成小分子的多肽。这些多肽非常容易溶解在水里，所以这些蛋白质带来的污渍也就很容易被洗干净了。尤其是血渍等这种顽固的污渍。
-而无论是沐浴露，洗发水还是洗洁精都不会添加蛋白酶，因为没必要。这三者的使用场景中都不会涉及到蛋白质污渍的去除（虽然食物中有很多蛋白质，但是它们很难附着在光滑的餐具表面上）。
-
-所以如果你要洗的衣服上有顽固的污渍，那无论是沐浴露，洗发水还是洗洁精都洗不干净。
-所以从清洁能力上来说，沐浴液，洗发水和洗洁精三者大同小异。而且遇到顽固性污渍，三者也都洗不干净。
-但是因为洗发水里面添加调理剂，如果用洗发水代替洗衣液，洗出来的衣服会非常柔顺，实现洗衣液加金纺的效果。
-阅读原文</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">为什么缩写梗会流行起来？这提升还是降低了交流的效率？</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9743305">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(0 min)</span>
-                    <span>湖底的海因斯，爱这世间种种真相与狂言
-阅读原文
-
-01 缩写梗是啥？
-当我虔诚的在度娘搜索栏里打出‘缩写梗’三个字时，我非常惊讶地发现，百度关联的词条都非常正经！一点都没有活泼泼、不正经（什么）的关联联想，可见大家对缩写梗充满的都是学术上的探求！紧接着，我利索按下了回车键，习惯性想一睹缩写梗的【定义】，然后发现：百度百科还未收入这一词条！
-我挠着下巴，不由陷入了沈思…………
-
-那么，到底啥叫缩写梗？作为可以打 80 分的中度网民，我拍着脑袋说，谁还不懂几个缩写梗了？缩写嘛，不就分两种，中午缩写和英文缩写。想我也是常年把“绝绝子，笑不活了，双厨狂喜，瓜保熟吗，xswl，yyds，”挂在嘴边的走在时代潮流前沿的美女子好不好！
-直到现在，我第一次主动推开了缩写的大门，看到了…………
-给我整不会了
-看完后，我：？？？？
-
-作为一个好学的青年，我立刻打开了搜索框，终于弄白了这句话的意思：
-【看完这些是不是瑟瑟发抖，快！给我一个名字吧！千万别觉得干你屁事，关我屁事，关他屁事，要是不帮助弟弟，我就不嗨森而且会真心累了。】
-然后，我 ssfd 了。
-
-同时，我忽然意识到搞个缩写梗词汇表的必要性！以后哪里不懂点哪里……（别愣着，存图啊！）
-
-xswl &#x3D; 笑死我了达咩：不要
-zqsg &#x3D; 真情实感河南拔智齿：很难不支持
-xjj &#x3D; 小姐姐，xgg&#x3D;小哥哥绝绝子：太绝了
-sk &#x3D; 生快 &#x3D; 生日快乐雷爆：超级讨厌
-pyq＝朋友圈修狗：小狗的意思
-ky &#x3D; 没眼色、胡说康康：看看
-ssfd &#x3D; 瑟瑟发抖夺笋啊：多损的意思
-Yyds&#x3D; 永远的神 / 永远单身集美：姐妹
-Awsl&#x3D;阿伟死了（被一物击中的强烈情感）玉玉症：抑郁症
-Fyp &#x3D; 上热门窝室嫩爹：我是你爹
-Xxs &#x3D; 小学生你礼貌吗：字面意思
-Cdx &#x3D; 处对象吴签：wyf 的新别名
-Eve &#x3D; 宝藏男 / 女孩我宣你：我喜欢你
-Kpdd …</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">瞎扯 · 如何正确地吐槽</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9743310">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(0 min)</span>
-                    <span>如何给孩子解释「萤火虫为什么会发光？把萤火虫带回家，可以省电吗」？
-
-一生寥无痕
-阅读原文
-
-可以省电，因为看萤火虫需要关上灯
-阅读原文
-
-马云这类大佬的经验与知识和一千万你选哪个?
-
-D.Han
-阅读原文
-
-马云的经验知识，可能就是告诉你要选这一千万。
-阅读原文
-
-南方人在北方生活，有哪些搞笑的事？
-
-鹿目圆香，ACG、音乐
-阅读原文
-
-我在绝地求生的海岛地图里告知南方队友这个是暖气片，由于是第一人称模式，只见他的人蹲蹲起起趴趴，以各种不同倍率的瞄具把暖气欣赏了个遍
-阅读原文
-
-“七窍玲珑心”，怎么对前句合适?
-
-知乎用户，科幻神话女权秦汉史 免费提供避孕和性知识咨询9年，欢迎私信
-阅读原文
-
-五香大头菜
-阅读原文
-
-长得像历史人物是怎样一种体验？
-
-阿里姜，兼照相师傅的美工
-阅读原文
-
-那次拔智齿后脸肿的像唐朝仕女。
-
-
-
-阅读原文</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-        </section>
-      </li>
-      <li class="source">
-        <section>
-          <h3 class="source-name"><a class="source-name__link" href="https://news.ycombinator.com/">Hacker News</a></h3>
-          <section class="articles-per-source">
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">I Think about Writing</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://danluu.com/writing-non-advice/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(28 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Kryptology: Coinbase’s Open Source Cryptography Library</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://blog.coinbase.com/meet-kryptology-coinbases-open-source-cryptography-library-b5f22854f3f7">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(0 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Bird populations declining fast across North America</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://emagazine.com/bird-population-declines/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(3 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Leaving Quora after 10 years of answering questions</summary>
-                <a class="article-summary-link article-summary-box-outer" href="http://exquora.thoughtstorms.info/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(6 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">The Scientific Paper is Obsolete (2018)</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://www.theatlantic.com/science/archive/2018/04/the-scientific-paper-is-obsolete/556676/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(17 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Sonic the Hedgehog for Commodore 64/128 + REU</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://www.lemon64.com/forum/viewtopic.php?t&#x3D;78945">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(3 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">The Hazards of Industrial Research</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://www.thearticle.com/the-hazards-of-industrial-research">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(7 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Corrily (YC W21) Is Hiring a Founding Data Engineer</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://corrily.crew.work/jobs/61816dd0b896270d9e61c812">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(0 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Spiking Neural Networks</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://simons.berkeley.edu/news/spiking-neural-networks">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(11 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Kintsugi – Art of Repair</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://traditionalkyoto.com/culture/kintsugi/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(9 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Show HN: Emergency Wallet Cards</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://w.hutson.gy/projects/emergency-wallet-cards">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(2 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">The Session Extension</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://www.sqlite.org/sessionintro.html">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(10 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Toyota owners have to pay $8/mo to keep using their key fob for remote start</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://arstechnica.com/cars/2021/12/toyota-owners-have-to-pay-8-mo-to-keep-using-their-key-fob-for-remote-start/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(3 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Optimizing the kernel to saturate a 100Gbps link (2017)</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://netflixtechblog.com/serving-100-gbps-from-an-open-connect-appliance-cdb51dda3b99?gi&#x3D;7c9e72ecd546">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(13 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">NeXTSpirit, high-res NeXTSTEP Icons for macOS</summary>
-                <a class="article-summary-link article-summary-box-outer" href="http://galgot.free.fr/wordpress/?p&#x3D;1380">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(3 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">When HDMI 2.1 isn&#x27;t HDMI 2.1 – the confusing world of the standard</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://tftcentral.co.uk/articles/when-hdmi-2-1-isnt-hdmi-2-1">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(20 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Nextspace, a desktop environment that brings a NeXTSTEP look and feel to Linux</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://github.com/trunkmaster/nextspace">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(4 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">More than you want to know about gift cards</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://bam.kalzumeus.com/archive/more-than-you-want-to-know-about-gift-cards/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(8 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">T* Makes for a Poor Optional</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://brevzin.github.io/c++/2021/12/13/optional-ref-ptr/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(10 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Neon Genesis Evangelion (2019)</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://fontsinuse.com/uses/28760/neon-genesis-evangelion">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(17 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">The messy future of social media</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://jacobobryant.com/p/messy-future-social-media/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(2 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Show HN: I wrote a comprehensive book on web application deployment</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://deploymentfromscratch.com/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(6 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Bulgaria&#x27;s new eGov minister is a software engineer</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://twitter.com/yurukov/status/1470422316102430720">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(1 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Reimagining projections for the interactive maps era</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://www.mapbox.com/blog/adaptive-projections">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(9 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Show HN: 10-40% faster LZMA decoder using x86 CMOVcc</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://gist.github.com/ilyakurdyukov/f514418f3affd677e1ac408ec0c09188">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(8 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
         </section>
       </li>
     </ul>
   </section>
 
   <footer>
-    <time id="build-timestamp" datetime="2022-01-12T00:51:05.107Z">2022-01-12T00:51:05.107Z</time>
+    <time id="build-timestamp" datetime="2022-01-13T00:53:12.139Z">2022-01-13T00:53:12.139Z</time>
     <span><a class="footer-link" href="https://github.com/osmoscraft/osmosfeed">osmosfeed 1.12.0</a></span>
   </footer>
   <script src="index.js"></script>
