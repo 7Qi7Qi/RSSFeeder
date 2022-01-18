@@ -76,8 +76,583 @@
 <body>
 <!-- %after-body-begin.html% -->
   <section class="daily-content">
+    <h2 class="daily-heading"><time datatime="2022-01-18">2022-01-18</time></h2>
+    <ul class="sources card">
+      <li class="source">
+        <section>
+          <h3 class="source-name"><a class="source-name__link" href="http://weekly.dockone.io">DockOne.io</a></h3>
+          <section class="articles-per-source">
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">使用Rainbond打包业务模块，实现业务积木式拼装</summary>
+                <a class="article-summary-link article-summary-box-outer" href="http://weekly.dockone.io/article/2434808">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(1 min)</span>
+                    <span>背景
+每个程序员在学习开发的过程中，都知道解耦和模块化的重要性，也希望自己设计和开发的程序支持模块化，开发好的模块其他人就能快速复用，为了达成这个效果，我们学习各种模块化和解耦的技术，从面向对象的设计模式到微服务架构，近几年大家觉得微服务架构是模块化的银弹，都朝微服务架构改造，但实际效果不仅没有很好模块化，反而陷入应用部署和运维的泥潭里。本文将讲讲Rainbond解决应用架构解耦和模块化的一些新思路。
+当前业务模块化和解耦的问题
+
+架构耦合度还是太高，解耦的不彻底 。比如通过微服务架构拆解的微服务，受开发语言和微服务框架限制，跨开发语言不能调用，跨框架也无法使用，还受限于部署环境，换个环境需要重新解决部署问题。
+从开发者角度定义模块，而不是从使用者角度定义模块，导致使用体验不好 。现在我们定义的模块通常都是开发定义的，由于开发离实际使用场景比较远，主观的认为模块拆的细和小，不管有什么场景需求我的模块都能复用和满足，但从使用者角度，模块拆分的越小越细，学习和使用的成本就越高，甚至根本使用不起来，很多模块化是过度的拆解和过度的设计。
+模块化发布复杂，维护和升级成本高 。现在的模块化本身是一个开发过程，定义和打包过程都需要开发参与，导致成本高。
+
+基于Rainbond应用模型的解耦和实现思路
+Rainbond是一个云原生应用管理平台，可以管理应用全生命周期。下面我们详细讲解一下Rainbond如何解决上述问题。
+Rainbond的核心抽象和定义了一套应用模型，通过应用模型从架构上解决解耦问题，应用模型将应用、运维特性和底层基础设施彻底解耦，应用又由多个业务组件拼装而成，每个业务组件可以是不同开发语言和不同构建方式，只要符合业务契约就可以拼装。通过以上解耦方式，彻底将业务组件、运维能力和部署环境解耦，业务组件只需要专注纯业务，不再关心由于使用场景差异需要匹配不同开发框架、服务治理功…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+        </section>
+      </li>
+    </ul>
+  </section>
+  <section class="daily-content">
     <h2 class="daily-heading"><time datatime="2022-01-17">2022-01-17</time></h2>
     <ul class="sources card">
+      <li class="source">
+        <section>
+          <h3 class="source-name"><a class="source-name__link" href="https://news-at.zhihu.com/api/4/stories/latest?client&#x3D;0">知乎日报</a></h3>
+          <section class="articles-per-source">
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">有了 IP 地址，为什么还要用 MAC 地址？</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9744439">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>闪客sun，公众号：低并发编程（dibingfa）
+阅读原文
+
+你是一台电脑，你的名字叫 A
+很久很久之前，你不与任何其他电脑相连接，孤苦伶仃。
+
+直到有一天，你希望与另一台电脑 B 建立通信，于是你们各开了一个网口，用一根网线连接了起来。
+
+用一根网线连接起来怎么就能&quot;通信&quot;了呢？我可以给你讲 IO、讲中断、讲缓冲区，但这不是研究网络时该关心的问题。
+如果你纠结，要么去研究一下操作系统是如何处理网络 IO 的，要么去研究一下包是如何被网卡转换成电信号发送出去的，要么就仅仅把它当做电脑里有个小人在开枪吧~
+
+反正，你们就是连起来了，并且可以通信。
+第一层
+有一天，一个新伙伴 C 加入了，但聪明的你们很快发现，可以每个人开两个网口，用一共三根网线，彼此相连。
+
+随着越来越多的人加入，你发现身上开的网口实在太多了，而且网线密密麻麻，混乱不堪。（而实际上一台电脑根本开不了这么多网口，所以这种连线只在理论上可行，所以连不上的我就用红色虚线表示了，就是这么严谨哈哈~）
+
+于是你们发明了一个中间设备，你们将网线都插到这个设备上，由这个设备做转发，就可以彼此之间通信了，本质上和原来一样，只不过网口的数量和网线的数量减少了，不再那么混乱。
+
+你给它取名叫集线器，它仅仅是无脑将电信号转发到所有出口（广播），不做任何处理，你觉得它是没有智商的，因此把人家定性在了物理层。
+
+由于转发到了所有出口，那 BCDE 四台机器怎么知道数据包是不是发给自己的呢？
+首先，你要给所有的连接到交换机的设备，都起个名字。原来你们叫 ABCD，但现在需要一个更专业的，全局唯一的名字作为标识，你把这个更高端的名字称为 MAC 地址。
+你的 MAC 地址是 aa-aa-aa-aa-aa-aa，你的伙伴 b 的 MAC 地址是 bb-bb-bb-bb-bb-bb，以此类推，不重复就好。
+这样，A 在发送数据包给 B 时，…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">怎么能够确定世界上没有两片相同的雪花？</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9744458">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>太空僧，和尚洗头用飘柔
+阅读原文
+
+答案是：世界上 存 在 相同的雪花。直接上照片：
+在严格相同环境条件下，冰晶能以相似的模式生长（Ken Libbrecht、CalTech）
+雪花是什么形状的？
+绝大多数的人没有亲自在显微镜下看过雪花。大部分人都是从杂志或者网图上看到那些漂亮的六角形的完美对称的雪花，就以为雪花真的就是那个样子了[1]。
+
+或者是这样：
+
+但事实上，大部分的雪花都不是完美对称的，甚至是残缺不全的。上面这张图是在 7000 个雪花中找到的少见的完美的雪花[2]。
+残缺不全的雪花，网图侵删
+按常理来猜想，完美的雪花都是相似的（六边形），残缺的雪花各有各的不同。所以第一步，先把大部分残缺的雪花排除在“寻找两片相同的雪花”的备选之外。
+而在剩下的那些“完美的”雪花中，又因为温度、重力、湿度、气压等条件的不同，会生成很多种不同的雪花[3]：
+自然降雪中发现的几种不同形态的雪花。(a) 自然界不太常见的简单板状晶体，高 1.4 毫米，-20 ̊C 且低湿条件；(b) 高 2.1 毫米，具有复杂对称性；(c) 树枝状的晶体，高 3.0 毫米，常在较高湿度且 -15 ̊C 时才能形成。(d)六棱柱状晶体，长 0.45 毫米；(e) 针状晶体，长 1.1 毫米；( f ) 一根封顶的柱状晶体，长 0.6 毫米
+或者这样：
+在温度分别为 -2 ̊C（左）、 -5 ̊C（中）和 -15 ̊C（右）的实验室条件下制造的雪花晶体。图右下的竖黑线长为 100μm
+雪花是怎么形成的？
+总的来说，6 角形的扁平雪花晶体的形成是动态不稳定（混沌）的，大气温度、湿度等变化会极大的改变雪花的形状。这就造成了在自然界中寻找相同的雪花非常的困难。
+初中化学老师教过我们，一个水分子是由两个氢原子和一个氧原子构成的（还记得共价键么？）。最开始，低温下的水分子会因为极性而形成两种多面体：
+球代表氧原子，…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">我买了全麦面包给爸妈，他们却说全麦是最次的面粉，真的是这样吗？</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9744445">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>知乎用户，用最通俗的语言说最好玩的食品营养学
+阅读原文
+
+全麦面粉和普通面粉哪个更好？
+这个问题没有一个绝对的答案，因为它们并不能简单地分出哪个更好。
+看完这篇回答，你会了解到：
+
+什么是全麦粉，它和普通面粉有什么区别？
+为什么爸妈说它是最次的面粉？
+为什么全麦面包这么贵？
+什么面粉最好，怎么选择合适的面粉？
+
+全麦面粉和普通面粉都来源于小麦，只是取粉的区域不一样。
+全麦面粉取粉自整颗小麦，就是把胚乳、麸皮（小麦的表皮）和胚芽（小麦的芽）都磨成了面粉。
+普通面粉取粉自胚乳，就是把外层的麸皮和胚芽去掉后，将剩余的胚乳磨成了面粉。
+
+普通面粉也分为不同加工精度。
+高加工精度就是把胚乳外层部分也去掉，取更中心部分的区域来磨粉，所以也叫麦芯粉。
+所以，全麦面粉≈普通面粉 + 麸皮 + 胚芽。
+
+在老一辈人的眼里，全麦面粉确实是品质不好的面粉。
+1. 全麦粉有食用安全的风险，也保存不久
+其一，不干净的小麦籽粒有可能带有毒素，在以前没有针对性的处理方法时候，大部分毒素会附着在小麦的麸皮上面。
+这里的毒素包括致病微生物、毒素、重金属和农药残留等等。
+全麦粉保留了麸皮，相当于保留了麸皮上这些潜在的毒素。
+在以前，全麦粉的平均毒素水平可能达到普通面粉的 4-5 倍。
+也就是说，吃了不安全的全麦面粉会有拉肚子、甚至食物中毒的风险。
+其二，大部分的生物酶保留在胚芽组织，在经过针对性处理前，这些生物酶是处于活跃状态的。
+活跃的生物酶会加速脂肪氧化的过程，而氧化的脂肪会出现我们常说的酸败味、哈喇味儿、哈败味儿等等。
+这对于面粉的保质是非常不利的。
+在过去，普通面粉能保存 9-12 个月，而全麦粉一般只能保存 1-2 个月。
+2. 全麦馒头、包子口感不好，也容易「刮嗓子」
+面点的口感是由面筋决定的，它是和面时逐渐形成的一种网状结构，它的强弱影响着面团挺立度和延展性的平衡。
+也是因为这种平衡的变化，我们…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">猫藓长什么样子，猫藓的症状是什么？</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9744430">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>今日说猫，知乎猫话题下，用心分享与科普，猫猫养护经验的铲屎人。
+阅读原文
+
+猫癣最常见的表现形态，是圆形的脱毛癣块，有结痂和脱屑；有一部分猫表现脱毛、红斑、瘙痒、结痂等情况。
+猫癣的病症常常会出现在，猫猫的面部、耳朵、前腿等部位。
+猫癣还是很容易被发现的，当我们撸猫的时候，经常掰开猫毛看看，是否有异常（红斑、皮屑增多、脱毛等现象）。每天多关注下猫猫，看看猫猫在行为上是否有异常，比如说，抓挠、过度舔舐等现象。
+图来源网络，侵删
+猫感染猫癣的原因
+猫癣是由皮肤癣菌（一种真菌）感染而引起的皮肤疾病，引起猫猫皮肤感染的一般有犬小孢子菌、石膏样小孢子菌、须毛癣菌，其中大多数情况下的真菌感染是由，犬小孢子菌引发的。
+1、身体免疫力低、精神压力大
+患有猫癣的猫猫，常见于幼猫、小猫、病猫、身体抵抗力差的猫猫。这些猫猫都有一个共同特点，身体抵抗力差、免疫力低下。
+在这类猫猫中，患有猫癣比例大的，是那些刚到家幼猫或者小猫，因为对环境不熟悉，精神压力大的同时，身体抵抗力差，免疫系统还没有足够完善，很容易引发猫癣。
+2、接触病菌而感染
+猫癣具有传染性，猫和人都可以因感染猫癣真菌而得猫癣。猫癣传播的途径是接触传播。它通过与已经感染猫癣的猫或者猫的器具等接触而传播。
+猫癣如何诊断
+1、在家视诊
+观看猫猫的行为是否异常表现，比如说抓挠、过度舔舐。
+查看猫猫的毛发，是否有脱毛、圆形癣块，脱毛的位置是否有皮屑、结痂、红斑、红色丘疹等症状。
+2、在家借助伍德氏灯检查[1]
+在家也可以借助伍德氏灯，为猫猫做初步检查，不同的真菌在伍德氏灯（紫外线）的照射下，会有不同颜色的荧光，借助不同的荧光可以判断真菌的种类。
+因为猫癣大多数情况下，引起猫猫皮肤感染的真菌是犬小孢子菌引发的，而犬小孢子在伍德氏灯照射下是苹果绿荧光。
+图来源 veteriankey
+3、医院诊断
+当宠物去医院，兽医一般会根据经验，通过视诊的同时借助伍德氏灯检查，从而进行判断。
+有些医院会对疑似真菌感染的毛发或者感染的皮肤组织，直接在显微镜下检查，这个成本太高了，一般不会这样做。
+真菌培养，收集猫猫的毛发或感染的皮肤组织进行真菌培养，真菌培养是诊断皮肤癣病相对可靠的方式，也能识别到底是感染了什么真菌，引发的皮肤病。
+犬小孢子菌，图来源网络，侵删
+猫癣如何治疗
+根据猫癣感染的程度以及严重性，有针对的去治疗。
+1、局部感染
+猫猫感染猫癣不是很严重，在身体上就那么几处癣块，这时候我们可以使用宠物专用的，抗真菌的药膏或者喷剂。
+在使用抗真菌类的猫癣药膏和喷剂的时候，先把癣块附近的毛发给剪掉，用棉棒沾温水清理下癣块处，然后涂抹药膏或者喷射喷剂。
+在给猫猫涂抹药膏后，给猫猫戴上伊丽莎白圈，一是为了避免猫猫舔舐药膏后影响药性，另外就是有些药膏有刺激性，猫猫舔舐了，容易引起肠胃问题。
+2、全身感染
+猫猫全身感染猫癣的部位比较多，这时候我们可以选择抗真菌类的药浴。药浴一般一周给猫猫洗澡 2~3 次，最好能在药浴中泡上 10 分钟左右。在给猫猫药浴后，一定用温水在帮猫猫冲洗。
+对于全身感染猫癣的猫猫，有些兽医会建议使用抗真菌类的口服药，口服药对于猫猫可能会有一定的副作用，一定在兽医的指导下，合理的使用。
+Tips:
+1、在帮助猫猫处理猫癣的时候，一定要带上一次性手套，猫癣是传染给人的，并且属于接触感染。
+2、在治疗猫癣期间，可以给猫猫一些 VB。
+3、治疗猫癣时，一定要坚持，不要间断。
+参考
+
+真菌感染 https://veteriankey.com/fungal-infections-2/
+
+
+
+阅读原文</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">瞎扯 · 如何正确地吐槽</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9744472">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>台当局想把福岛食品由「核食」改为「福食」，如何看待这一宣传？
+
+喵斯拉天王，WX：喵星军事观察组（帝王组织华东观测站文宣总监）
+阅读原文
+
+下次把核爆改“福报”，完美。
+阅读原文
+
+为什么一些哺乳动物，比如猫狗喜欢被摸头，人类却不喜欢？
+
+moving
+阅读原文
+
+狗去摸陌生狗，猫去摸陌生猫，人去摸陌生人，当场打起来完全意料之中
+阅读原文
+
+为什么好多人不支持就地过年？
+
+王老板，建筑外装顾问
+阅读原文
+
+网上有个梗：
+我以前是非常不支持就地过年，但就在昨天发生了一件事，彻底改变了我之前的看法，让我觉得从前的自己那么自私，只考虑自己，没有考虑国家、集体。我很愧疚，我现在非常支持就地过年。
+那件事就是，我到家了。
+阅读原文
+
+怎么说服女朋友一起洗澡？
+
+葳蕤
+阅读原文
+
+emmmm，我有一次在我男朋友洗澡的时候拎着搓澡巾就进去了，把那个南方孩子搓的嗷嗷叫，从此他洗澡必锁门
+阅读原文
+
+有哪些是你进了体制内才知道的事情?
+
+啊哈，分享体制内的事儿
+阅读原文
+
+进入体制我才知道：
+公文标题二号方正小标宋简体
+正文三号仿宋 GB2312
+行距固定值 28.8
+页码 4 号半角宋体阿拉伯数字
+页边距上 3.8cm 下 3.6cm 左 2.7cm 右 2.5cm
+阅读原文</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+        </section>
+      </li>
+      <li class="source">
+        <section>
+          <h3 class="source-name"><a class="source-name__link" href="https://news.ycombinator.com/">Hacker News</a></h3>
+          <section class="articles-per-source">
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Israel Finds Fourth Covid Booster Is Ineffective</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://healthpolicy-watch.news/israel-fourth-covid-booster-ineffective/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(5 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">In defense of flat earthers (2020)</summary>
+                <a class="article-summary-link article-summary-box-outer" href="http://danboykis.com/posts/flat-earth/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Containerize Go and SQLite with Docker</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://awstip.com/containerize-go-sqlite-with-docker-6d7fbecd14f0">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Nerd-dictation, hackable speech to text on Linux</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://github.com/ideasman42/nerd-dictation">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(6 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Zoroastrians make a comeback in northern Iraq</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.reuters.com/article/us-iraq-religion-zoroastrianism-idUSKBN26L336">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Cain&#x27;s Jawbone: Puzzle solved for just third time in almost 100 years (2020)</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.theguardian.com/books/2020/nov/10/literary-puzzle-solved-for-just-third-time-in-almost-100-years-cains-jawbone">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(3 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Mars rover detects carbon signature that may hint at past life source</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.science.org/content/article/mars-rover-detects-carbon-signature-hints-past-life-source">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(7 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">The Charisma Machine: The life, death, and legacy of One Laptop per Child</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://morganya.org/charisma.html">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Why I Enjoy PostgreSQL – Infrastructure Engineer&#x27;s Perspective</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.shayon.dev/post/2022/17/why-i-enjoy-postgresql-infrastructure-engineers-perspective/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Who Watches Watchmen? – Integrating Elixir Applications with Systemd</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://hauleth.dev/post/who-watches-watchmen-i/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(10 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Matrix Multiplication</summary>
+                <a class="article-summary-link article-summary-box-outer" href="http://matrixmultiplication.xyz/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">The SNESticle Liberation Project</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://dataswamp.org/~josk/snesticle/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Ruby: Porting YJIT to Rust</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://bugs.ruby-lang.org/issues/18481">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(16 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Jodd – The Unbearable Lightness of Java</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://jodd.org/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(1 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">WLED Arduino WiFi LED Controller</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://github.com/Aircoookie/WLED">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(4 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">uLisp on the Raspberry Pi Pico</summary>
+                <a class="article-summary-link article-summary-box-outer" href="http://www.ulisp.com/show?3KN3">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(3 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Show HN: MdSilo – A knowledge silo runs in your web browser</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://mdsilo.com/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">The Theoretical Minimum (2013)</summary>
+                <a class="article-summary-link article-summary-box-outer" href="http://theoreticalminimum.com/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(1 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">A high-dimensional sphere spilling out of a high-dimensional cube</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://stanislavfort.github.io/blog/sphere-spilling-out/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Freshpaint (YC S19) Is Hiring – Head of Marketing</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.ycombinator.com/companies/freshpaint/jobs/9JGTh1N-head-of-marketing">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(4 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">LibreTexts – Free The Textbook</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://libretexts.org/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Graphviz: Open-source graph visualization software</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://graphviz.org/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Effortless personal productivity (or how I learned to love my monkey mind)</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://jakobgreenfeld.com/personal-productivity">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(3 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Hello Mac OS X Tiger</summary>
+                <a class="article-summary-link article-summary-box-outer" href="http://bunn.dev/benchmark/2022/01/16/hello-tiger.html">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Remembrance Agent (1996)</summary>
+                <a class="article-summary-link article-summary-box-outer" href="http://alumni.media.mit.edu/~rhodes/Papers/remembrance.html">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(11 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">The curious case of the Raspberry Pi in the network closet (2019)</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://blog.haschek.at/2019/the-curious-case-of-the-RasPi-in-our-network.html">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(4 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">The money printing press that is chip maker TSMC</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.nextplatform.com/2022/01/14/the-money-printing-press-that-is-chip-maker-tsmc/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(9 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Building a neural network in pure Lisp using only atoms and lists</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://woodrush.github.io/blog/posts/2022-01-16-neural-networks-in-pure-lisp.html">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(20 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+        </section>
+      </li>
       <li class="source">
         <section>
           <h3 class="source-name"><a class="source-name__link" href="http://weekly.dockone.io">DockOne.io</a></h3>
@@ -665,6 +1240,28 @@ Docker的诸多辅助工具处理所有与容器编排相关的任务，从负�
                 <a class="article-summary-link article-summary-box-outer" href="https://github.com/wonderworks-software/PyFlow">
                   <div class="article-summary-box-inner">
                     <span class="article-reading-time">(4 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">In Japan, digicams are the new film</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://casualphotophile.com/2022/01/04/digicams-are-the-new-film/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(20 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">The writer who made me love comics taught me to hate them (2016)</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.polygon.com/2016/3/1/11139828/the-dark-knight-returns">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(7 min)</span>
                     <span>Comments</span>
                   </div>
                 </a>
@@ -16807,480 +17404,13 @@ pop blue
                 </a>
               </details>
             </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Bottles: GUI front end to run Windows software on Linux</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://usebottles.com/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(1 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Everything I googled in a week as a professional software engineer (2019)</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://localghost.dev/2019/09/everything-i-googled-in-a-week-as-a-professional-software-engineer/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(4 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Designing a New PRNG</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://tom-kaitchuck.medium.com/designing-a-new-prng-1c4ffd27124d">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(18 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Does superdeterminism save quantum mechanics?</summary>
-                <a class="article-summary-link article-summary-box-outer" href="http://backreaction.blogspot.com/2021/12/does-superdeterminism-save-quantum.html">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(13 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Show HN: IR stove thermometer, firmware in Rust</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://www.anyleaf.org">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(0 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-        </section>
-      </li>
-    </ul>
-  </section>
-  <section class="daily-content">
-    <h2 class="daily-heading"><time datatime="2021-12-18">2021-12-18</time></h2>
-    <ul class="sources card">
-      <li class="source">
-        <section>
-          <h3 class="source-name"><a class="source-name__link" href="https://news-at.zhihu.com/api/4/stories/latest?client&#x3D;0">知乎日报</a></h3>
-          <section class="articles-per-source">
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">为什么缩写梗会流行起来？这提升还是降低了交流的效率？</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9743467">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(0 min)</span>
-                    <span>燕碧天，全是干货
-阅读原文
-
-为什么“yyds”能红？
-这篇回答将会沿用文化工业理论来解释缩写词。文化工业理论，意味着我们将会一起来把缩写词当成网络意识形态的一部分去理解；也就是缩写词的内涵是由它背后的商业运转模式，等等这些社会因素决定的。所以，我们需要先分析缩写词真正的意义由哪些部分构成，再分析这些部分是经过什么样的运转，比如商业乃至整个社会的运转，被输送到这一个个小小的缩写词里面的。下面也会用到一些媒介理论和符号学理论来辅助分析。
-首先：缩写词不是文字，而是像指路图标一样的符号。
-同一个网络社区，可能汇聚了不同的人，大部分人的年龄、性格、教育背景、生活环境都相差太大了。对 A 来说表示褒义的句子，在 B 眼里可能是贬义的；对 A 来说简洁明了的表达，在 B 眼里可能太长、太复杂以致阅读困难。在这种情况下，网络世界逐渐自己生长出了一套语言系统，“yyds”这种缩写梗、“绝绝子”这种热词都是这套语言的一部分。
-这里有一个相关的概念，也就是美国符号学派的创始人皮尔斯所说的“象征符”。这个概念的定义是“通过某种法规指称其客体,这种法规通常是一般观念的联想,致使该象征被解释为指称那个个体”的符号。
-这段话很绕口，但我们把它放到缩写词这个例子里就很好理解了：缩写词通过各方面的规则（比如 zqsg 一般在追星语境下使用），指称它想表达的意思（比如 zqsg 不仅指真情实感，还指在虚拟事件比如追星中投入过多真实的感情），这种法规通常是一般观念的联想（比如 zqsg 这个缩写因为一开始在粉圈里出现，导致人们在使用的时候会联想到它这个语境，所以人们也会把那个语境包含的意思带到这个词本身的含义里去）。
-所以：为了尽可能快捷地传递信息，网络语言把文字压缩成了符号。“yyds”这样的缩写，与其说像文字，更像是指路图标一样的图片符号，它们像是能显示在文字中间的小型表情包，它包含的意思是要大于文字本…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">地球上发生过5次物种大灭绝，除了6500万年前恐龙的灭绝是由于小行星撞击外，其余四次是什么原因？</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9743465">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(0 min)</span>
-                    <span>中科院南古所，一起来聊聊古生物的事儿
-阅读原文
-
-二叠纪末生物大灭绝，“凶手”不止一个！
-二叠纪末生物大灭绝是近 5 亿多年以来地质历史中发生的最严重的生物灭绝事件，导致约 81%的海洋生物物种和 89%的陆地生物物种在短短 6 万年内灭绝，而地球足足花了 500 万年才恢复过来。
-长期以来，对于造成这次生命大灭绝的原因一直存在巨大争议，究竟是什么导致了二叠纪末海洋生物大灭绝？是“天体撞击”“大规模火山喷发”“海底可燃冰的快速分解”“海水缺氧”？目前，二叠纪末生物大灭绝的模式和精确时间大都来自于华南的地质记录，尤其是浙江长兴煤山剖面的研究表明这次生物大灭绝发生在两层火山灰之间。主流观点认为，这与当时的西伯利亚“超级火山”喷发有关。
-浙江长兴煤山剖面 P-T 界线地层
-火山喷发如同扣动扳机，引发连锁反应。巨量的二氧化碳不停涌入大气层，还造成海水缺氧和酸化，导致生物大量死亡。
-大规模火山喷发示意图（图片来自网络）
- “大规模火山喷发”——西伯利亚大火成岩省？
-以往的研究在解释二叠纪末生物大灭绝的原因时，都归咎于西伯利亚大火成岩省的基性火山喷发。认为这次火山喷发释放了大量温室气体，使得温度快速上升、海水酸化和缺氧；而特提斯洋和其他地区的酸性火山作用则被低估甚至忽略。
-然而，一直被认为是二叠纪末生物大灭绝推手的西伯利亚大火成岩省所在区域却很少有化石记录的灭绝模式，也没有可以与全球对比的沈积地球化学证据证实这次生物大灭绝。并且，最新的少量的古生物资料也表明：西伯利亚地区二叠纪末生物大灭绝造成的生物多样性损失并没有像华南地区这么严重。
-此外，通过高精度同位素测年等技术手段，可以得知西伯利亚大火成岩省开始于二叠纪末生物大灭绝事件之前约 30 万年，并一直持续到生物灭绝事件之后约 50 万年；但二叠纪末生物大灭绝事件仅发生在 6 万年甚至更短的时间内；并且西伯利亚大火成岩省有 1/3 的喷…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">新手入门，有哪些相机推荐？</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9743472">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(0 min)</span>
-                    <span>思叔，从国企辞职的摄影师 / 家有一猫一狗
-阅读原文
-
-这是一篇针对摄影新手的相机选购攻略，但是在继续往下读之前，我想先请你思考以下两个问题：你是否真的需要一台相机？你清楚相机拍摄相较于手机的优点么？
-现实中，我见过身边太多朋友花了大价钱购买了不错的相机，但没用几次就尘封落灰了。
-人们买相机的初衷是各种各样的：想更好的记录生活或者是发展一个靠谱的爱好；单纯喜欢图片中所蕴含的温度与文艺的气息；想凝固住美好的瞬息并把这份真实与他人分享；热衷学习并打算发展成副业或者职业；又或是觉得挎一部相机很酷就是与别人不一样……你属于其中的哪一种？
-西湖边正在用手机拍摄的游客
-如果从记录生活出发，手机其实已经是最方便的摄影器材了。作为每个人必定会每日携带的设备，任何时候你都能把它掏出来拍上那么一张。比起相机，手机更便携，操作更加简捷，无须换镜头就能拥有多种视角，更先进的 AI 加上许多滤镜 APP 都能方便你获得不错的色彩。如果你只是为了想获得更优于手机的画质，但又对于相机相对复杂的操作、摄影基础理论知识没有更加深入的了解，浅尝辄止。那么背一台既重又不方便的相机出门，还不一定能比手机拍的好，几次下来，热情消耗殆尽，这就会成为相机迅速落灰的重要原因了。你是不是买了相机后，兜兜转转最后还是觉的手机真香？
-某则网友留言
-但是如果你能回答我开头提到的两个问题，也做好了一个摄影菜鸟通过不断学习，掌握更多相机摄影技巧的准备，踏上这条用好数码相机的必经之路，那么以下这些内容或许正是为你准备的。
-购买相机前你需要做一份购买规划
-
-一、从预算出发选择合适的器材
-首先，明确自己的购机预算，在能够承受的范围内选择最适合自己的相机。毕竟对大多数人来说，相机价格不菲，已经能算作家庭大宗数码产品了。预算有限的朋友，完全可以考虑入手一部入门级别的相机，比如一部主流 APS-C 画幅的相机，价位合适，日常使用就完全足够了。按…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">为什么大多数情况，低马尾显得温婉，高马尾显得活泼？</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9743476">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(0 min)</span>
-                    <span>这是eno，时尚｜服装｜设计｜艺术工作者全网最棒的穿搭公众号：艾诺说
-阅读原文
-
-一个非常有意思的问题。
-准确的说，高马尾除了会显得更加活泼以外，还会让女生看起来更加独立、自信、强势，甚至是有力量感和权力感。
-这是我随手找的一个电影截图。
-即便不看脸，我们也可以知道图中的这两个人，谁会感觉更强势。
-
-一、谁在定义「美」？
-如果你对这其中的本质原因很感兴趣，那么我强烈建议你了解一下「进化心理学[1]」。
-这是一门相当有意思的学科。
-它可以解释很多人类天生的，对于某些事物的审美偏好。
-举几个最简单的例子，你就会惊叹这门学科的神奇之处了。
-1. 为什么有些人看起来很凶？
-通常，我们会觉得两眼间距比较近的人，看起来更凶。
-你看，被我 P 过之后的新垣结衣，还有直男敢叫她老婆吗？
-
-为什么眼睛距离比较近的人看起来会很凶呢？
-其实原因很简单。
-因为在远古时期，在人类的活动范围里所接触到的食肉动物，基本都是眼睛长在前面的。
-
-而食草动物的眼睛，则大多都长在两侧。
-
-人类在演化的过程中，将这种心理通过基因传承给了我们的后代。
-目的就是为了让后来的人远离危险。
-我们可以结合眼间距这个特点，来对比一下同样笑容暖心治愈的王冰冰和新垣结衣。
-为什么王冰冰能迅速的火出圈，收获一大票直男粉丝的喜爱。
-因为王冰冰的两眼间距，和新垣结衣比起来，更开一些。
-所以相较于同样笑容治愈的新垣结衣来说，王冰冰会看起来更亲切，攻击性更少。
-
-这里说个有关医美的题外话。
-很多女生在垫了鼻梁之后，整个人都看起来会很凶。
-就是因为被垫高了的鼻梁，拉扯到周围的皮肤组织，让内眼角的距离更近了。
-
-2. 下巴的执念
-说完了眼间距，再来说一下人类对于「下巴」的执念。
-你有没有想过，为什么我们都会觉得微翘的下巴更好看？
-你觉得，这是谁灌输给你的审美？
-
-同样，进化心理学也可以解释这其中的原因。
-因为自打人类直立行走解放双手，并且开始…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">如何判断一个人哲学天赋的高低？</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9743427">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(0 min)</span>
-                    <span>White，想接地气地讲点哲学
-阅读原文
-
-比起天赋，我更愿意说能力。因为能力是容易识别的，而它是天赋还是训练的结果则不好识别。下面我试着给出我所理解的哲学能力。
-研究哲学的能力，最基本的是两个：理解能力和思维能力。前者代表你可以读懂哲学着作，后者代表你可以独立思考。写作能力也可算一个基本能力，但很次要。
-理解能力是最基本的，如果连哲学书都读不懂，就别搞哲学了。如何判断理解能力的高低？可以通过口头讨论哲学文本的方式，也可以看他写的相关论文。
-卓越的理解能力可以让你成为一个优秀的哲学工作者。然而，如果想要成为哲学家，则还需要卓越的思维能力。哲学思维能力可以细分为很多类，以下是我暂时想到的一些：
-逻辑思维和论证能力：这是哲学思维中最基础的能力，几乎所有哲学家都具有。如果举例的话，就举康德吧，他的批判哲学体现了严密的思维能力。关于令人赞叹的论证能力，我则想到了哥德尔。
-综合、演绎与迁移能力：这个能力指的是利用其他思想资源的能力。哲学家在提出自己观点时，往往也要借用、回应、改造前人的思想，最典型的是阿奎那对亚里士多德的重新阐发。一些眼界开阔的哲学家甚至可以利用其他学科的资源，比如霍布斯对机械主义心理学的利用，莱布尼茨对数学的利用，丹内特对认知科学的利用。
-体系建构能力：这个能力是建立在前两个能力之上的。哲学往往追求一种无所不包的解释体系，这要求哲学家能够把分散的思维，以及其他思想资源，整合为一个体系。最着名的体系哲学家是黑格尔，他的哲学涵盖了几乎所有领域，“终结了形而上学”。
-问题发现能力：以上能力都是对已经发现问题的解答能力，但发现问题也是一个可贵的能力。一些哲学家往往能够提出一些深刻而容易被忽视的问题。比如，海德格尔提出存在的问题。此外，发现问题往往是建立在怀疑常识之上的，这方面的天才是笛卡尔和休谟。笛卡尔提出了普遍怀疑的思路，引起了认识论转向，休谟则提出了最经典的怀疑论。
-对细节的洞察能力：一些哲学家能够深入地洞察细节，并且发现它们的哲学意义。维特根斯坦就是一例，他的《哲学研究》通过对语言的细致考察，揭示了前人哲学理论的困境。由于哲学家们大都沈溺于普遍的、抽象的思考，这种洞察细节的能力就显得更加可贵。
-以上只是思维能力的几个方面，欢迎知友们补充。另外，这仅仅是一些标准，至于如何使用这些标准则没有简单易行的方法，或许这要求判断者本人也有一定的哲学能力吧。
-阅读原文</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-        </section>
-      </li>
-      <li class="source">
-        <section>
-          <h3 class="source-name"><a class="source-name__link" href="https://news.ycombinator.com/">Hacker News</a></h3>
-          <section class="articles-per-source">
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Manifesto for Ubiquitous Linking</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://linkingmanifesto.org/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(1 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">The Light and Dark Side of the API Economy</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://www.swyx.io/api-economy/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(5 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">C Programming on System 6 – Implementing Multi-User Chat</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://jcs.org/2021/12/18/chat">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(1 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Windows: The next killer application on the internet (1994) [pdf]</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://sriramk.com/memos/KillerApp.pdf">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(44 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">The Haskell School of Music (2012) [pdf]</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://www.cs.yale.edu/homes/hudak/Papers/HSoM.pdf">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(160 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Exa - A Modern Replacement for ls</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://the.exa.website/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(2 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Display-switch: Turn a $30 USB switch into a full-featured multi-monitor KVM</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://github.com/haimgel/display-switch">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(5 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Hidden Pentagon Records Reveal Patterns of Failure in Deadly Airstrikes</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://www.nytimes.com/interactive/2021/12/18/us/airstrikes-pentagon-records-civilian-deaths.html">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(36 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Thread Safety in C++ and Rust</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://blog.reverberate.org/2021/12/18/thread-safety-cpp-rust.html">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(5 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Tell HN: AWS warns us about irregular activity related to Log4shell</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://news.ycombinator.com/item?id&#x3D;29608244">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(5 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Omniscient Mozart: library for automatic transcription of every aspect of music</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://github.com/Music-and-Culture-Technology-Lab/omnizart">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(3 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">A deep dive on a Facebook reseller of bikes stolen in Colorado</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://bikeindex.org/news/closing-the-loop-a-deep-dive-on-a-facebook-reseller-of-bikes-stolen-in">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(12 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">UberEats took unauthorized amount (and not willing to pay it back)</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://twitter.com/TamasNo1/status/1472271668898893834">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(1 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Why Not Rust?</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://matklad.github.io//2020/09/20/why-not-rust.html">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(6 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Kolmogorov Complicity and the Parable of Lightning (2017)</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://slatestarcodex.com/2017/10/23/kolmogorov-complicity-and-the-parable-of-lightning/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(279 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Wingman for Haskell</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://haskellwingman.dev/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(3 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Telling the time with computer vision</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://blog.jinay.dev/posts/timekeeper/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(5 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Show HN: Timeless articles posted on Hacker News, written 1321 to 2021</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://hn.lindylearn.io">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(5 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Ask HN: Can web scraping be the basis of a viable business model?</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://news.ycombinator.com/item?id&#x3D;29605104">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(21 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Boston police bought spy tech with a pot of money hidden from the public</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://www.propublica.org/article/boston-police-bought-spy-tech-with-a-pot-of-money-hidden-from-the-public#1203986">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(10 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">A system in which soft robots “evolve” to walk or climb</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://www.wired.com/story/see-little-robots-get-swole-in-this-virtual-gym/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(4 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Firefox Profilemaker</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://ffprofile.com/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(8 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">An Origami Samurai Made from a Single Sheet of Rice Paper</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://www.openculture.com/2021/12/an-origami-samurai-made-from-a-single-sheet-of-rice-paper.html">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(7 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
         </section>
       </li>
     </ul>
   </section>
 
   <footer>
-    <time id="build-timestamp" datetime="2022-01-17T00:52:14.270Z">2022-01-17T00:52:14.270Z</time>
+    <time id="build-timestamp" datetime="2022-01-18T00:53:18.286Z">2022-01-18T00:53:18.286Z</time>
     <span><a class="footer-link" href="https://github.com/osmoscraft/osmosfeed">osmosfeed 1.12.0</a></span>
   </footer>
   <script src="index.js"></script>
