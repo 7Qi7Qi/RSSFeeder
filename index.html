@@ -76,12 +76,638 @@
 <body>
 <!-- %after-body-begin.html% -->
   <section class="daily-content">
-    <h2 class="daily-heading"><time datatime="2022-01-20">2022-01-20</time></h2>
+    <h2 class="daily-heading"><time datatime="2022-01-21">2022-01-21</time></h2>
     <ul class="sources card">
       <li class="source">
         <section>
           <h3 class="source-name"><a class="source-name__link" href="https://news.ycombinator.com/">Hacker News</a></h3>
           <section class="articles-per-source">
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Sir David Cox, 1924-2022</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://rss.org.uk/news-publication/news-publications/2022/general-news/sir-david-cox-1924-2022/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(3 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+        </section>
+      </li>
+      <li class="source">
+        <section>
+          <h3 class="source-name"><a class="source-name__link" href="http://weekly.dockone.io">DockOne.io</a></h3>
+          <section class="articles-per-source">
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Kubernetes API探索之旅的正确姿势</summary>
+                <a class="article-summary-link article-summary-box-outer" href="http://weekly.dockone.io/article/2434812">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(4 min)</span>
+                    <span>【编者的话】本文带你打开Kubernetes API探索之旅的正确姿势，快来一睹为快吧！
+使用CLI（如curl）或GUI（如postman）HTTP客户端调用Kubernetes API有很多理由。例如，你可能需要对Kubernetes对象进行比kubectl提供的更细粒度的控制，或者只是想在尝试从代码访问API之前探索它。
+本文不仅仅是一个方便的命令列表，还是一个深思熟虑的演练，揭示了一些你在从命令行调用Kubernetes API时可能会偶然发现的有趣问题。它涵盖以下主题：
+如何获取Kubernetes API服务器地址
+如何向客户端验证API服务器
+如何使用证书向API服务器验证客户端
+如何使用令牌向API服务器验证客户端
+奖励：如何从Pod内部调用Kubernetes API
+如何使用curl对Kubernetes对象执行基本的CRUD操作
+如何使用kubectl的raw模式直接访问Kubernetes API
+奖励：如何查看哪些API请求kubectl命令（如apply发送）
+
+享受本次阅读吧！
+
+
+
+设置Kubernetes游乐场
+如果你没有Kubernetes集群可以玩，下面是使用arkade快速创建本地游乐场的方法：
+$ curl -sLS https://get.arkade.dev | sudo sh
+
+
+curl | sudo sh模式很吓人。从Internet获取软件包并在笔记本电脑上运行它们的想法也是如此。由于我没有时间检查我使用的每一段开源代码，所以我更喜欢隔离和一次性的开发环境。你可以在此处阅读有关我的开发程序的更多信息。
+如何获取Kubernetes API主机和端口
+要调用任何API，你首先需要知道其服务器地址。对于Kubernetes，每个集群都有一个API服务器。因此，查找API主机和端口的最简单方法是查看kubectl cluste…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">悠悠二十载，Nginx创始人Igor宣布离职</summary>
+                <a class="article-summary-link article-summary-box-outer" href="http://weekly.dockone.io/article/2434813">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>2002年春季，Igor Sysoev迈上了Nginx的开发之旅。面对互联网的早期飞速发展，他希望提出一种更好的网络流量处理方式——这将是一种新颖的架构，能够让高流量网站更从容地处理数万个并发连接，并将照片、视频等一众可能严重影响页面加载速度的内容缓存起来。
+时间推进二十年，Igor创建的代码已经在为世界上运行的大部分网站提供支持——既有直接应用，也有作为Cloudflare、OpenResty及Tengine等流行服务器的底层软件。事实上，很多人认为Igor当初的愿景就是推动Web一路发展成今天的样貌。而Igor本人的精神与价值主张凝聚成为Nginx公司，致力于在开源和社区的支持下带来卓越且高度透明的代码，同时创造出客户喜爱的商业产品。
+但这两点目标其实很难和谐共存。Igor之所以受到技术社区、开发人员、企业客户乃至Nginx内部工程师们的高度推崇，依靠的正是他谦逊的举止、永远旺盛的好奇心、以及对于构建出色软件的一往无前的坚持与引领。
+因此，今天我们怀着遗憾与感激之情，宣布Igor正式退出Nginx与F5。在未来的岁月中，他将有更多时间陪伴好友和家人，同时也将继续参与感兴趣的个人项目。
+Igor与Nginx：一段简史
+Igor出身平民阶层。他是一名军官的儿子，出生于哈萨克斯坦（当时隶属于苏联）的一个小镇。一岁时，他们举家迁往首都阿拉木图。Igor从小就对计算机非常着迷，上世纪八十年代中期他在一台Yamaha MSX上写下了人生中的第一行代码。而随着早期互联网的逐渐成型，Igor随后毕业于著名的鲍曼莫斯科国立技术大学并获得了计算机科学学位。
+Igor最初曾担任系统管理员一职，但却从未停止过编写代码的脚步。1999年，他开发出自己的第一款汇编语言程序——一种AV反病毒软件，能够抵御当时最常见的十种计算机病毒。Igor免费发布了二进制文件，也让这款程序在俄罗斯国内着实流行了好几…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+        </section>
+      </li>
+    </ul>
+  </section>
+  <section class="daily-content">
+    <h2 class="daily-heading"><time datatime="2022-01-20">2022-01-20</time></h2>
+    <ul class="sources card">
+      <li class="source">
+        <section>
+          <h3 class="source-name"><a class="source-name__link" href="https://news-at.zhihu.com/api/4/stories/latest?client&#x3D;0">知乎日报</a></h3>
+          <section class="articles-per-source">
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">为什么人类会把小麦做成面条？</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9744536">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>知乎用户，用最通俗的语言说最好玩的食品营养学
+阅读原文
+
+小麦要做成面条，第一步是磨成面粉。
+我们的祖先为什么要把小麦磨成面粉呢？
+
+我好奇地翻了一下手边一本相关的书。
+《食物如何改变我们人类和全球历史》：小麦——世界的征服者
+有关人类如何以及为何开始(从小麦)制作面包(等面制品)，目前尚未有令人信服的理论。........食物史上这至为重要的一章，可能将是一个永远难解的奥秘。
+出乎意料的是，作者也没有答案——看来这是一个开放性的问题。
+作为一名食品研发人员，我突然来了兴趣。
+在我的知识体系里，面粉比小麦有什么优势呢？
+是营养或者易消化性吗？
+整粒小麦在膳食纤维和 B 族维生素上更有优势，在煮烂成粥以后也不应该有消化性的问题。
+储藏和运输方面的可能性也不大。对缺乏容器和外包装的古代来说，拥有天然保护层(外皮和麸皮)的小麦应该是更好保存的。
+
+我又翻了下另外一本偏技术的书。
+《食物与厨艺：面食、酱料、甜点、饮料》
+史前时代有两个发现，正是因为这两个发现我们才懂得把谷粒转变为面包、面条、蛋糕、酥皮等食品。
+第一项是，谷子除了可以煮成粥，还可以碾碎、渗水调成面团，摆在高温余烬或者石头上方就会转变成很有趣的固体无酵饼。
+第二项是，面团静置几天以后，就会发酵并充气膨胀，制出比较柔软、轻柔、别具滋味的面包。
+emm..人们把小麦磨成面粉，难道是因为食欲的觉醒？
+还真有可能，面制品比小麦好吃，因为里面有成型的面筋。
+面团中的面筋结构
+面粉经过吸水、和面以后就会形成面筋——这是一个神奇的东西。
+就拿发酵膨胀的面团来说：
+面筋具有延展性，在酵母发酵后可以充气膨胀；也具有刚性，可以支撑膨胀后的结构不倒塌。
+其他食物一般会偏向其中一种性质，比如只有延展性的口香糖和只有刚性的布丁。
+所以，有没有可能是这么一个魔幻的脑回路：
+人类把小麦碾碎、加水和面，发现做出的面制品更好吃，最后慢慢形成了把小麦做成面粉(面食)来食用的习惯。
+简单地说，人类发现了面筋的作用，推动了小麦到面粉、再到面条的转变。
+而且，把食物做的更好吃，也是符合面粉制粉乃至整个食品工业的发展趋势的。
+从以前对小麦的整粒碾磨到现代的精细化加工，就是为了针对不同面食的要求，对面筋的品质进行微调和优化。
+现代化的面粉制粉车间
+包括后续添加剂、黄油的使用，面包酵母的选育，也是为了达到“更好吃”的目的。
+所以,以后的面食会是什么样的呢？既然是开放性的题目，我们让脑洞再飞一会儿。
+
+首先是食物形态上的改变，这个观点来源于我最近看到的一门新学科：食品建筑学。
+食品被分解成可食用的“积木”，比如小麦面粉将被分成蛋白、淀粉、多糖、脂肪等组分；然后这些“积木”将被3D 打印机打印成各种你想要的质感、结构和形状。
+3D 打印的“小龙虾”
+分子美味学找到了“美味”的科学依据，也就是人体是怎么接收、传递和判断美味的终极秘密。营养学、生物传感器和人工智能的联用让我们拥有针对每个人的定制化健康饮食。
+也就是说，以后的面食将会是高度定制化的，包括营养、味道、质感和形状。
+作为一名食品研发人员，我希望我们能努力实现这一天。
+-end.
+资料来源：
+
+https://www.greatbritishchefs.com/features/history-flour-milling-baking.
+https://waste4change.com/blog/what-did-people-do-with-leftovers-before-there-were-fridge-and-microwaves/.
+哈罗德.马基. 食物与厨艺 (2013). 北京：北京美术摄影出版社.
+菲利普.费尔南多.阿梅斯托. 食物如何改变我们人类和全球历史 (2020). 北京：中信出版集团.
+大卫. 朱利安. 麦克伦茨. 未来食品：现代科学如何改变我们的饮食方式 (2020). 北京：北京轻工业出版社.
+
+
+
+阅读原文</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">肯尼亚为什么马拉松长跑这么厉害？有什么训练秘诀吗？</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9744543">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>奶黄包包包包
+阅读原文
+
+就竞技层面而言，东非这群黑人确实有不同于常人的天赋，也没必要去否认这种天赋的存在。在长跑 / 马拉松项目上，说东非代表了当下最高的训练水准，大体没错。
+随便找了些照片，差不多是肯尼亚、埃塞俄比亚各个“长跑小镇”、跑团、训练队的日常常态：
+
+再想一个问题——世界上满足 2000-3000 米海拔区间的高原那么多，为何每年有如此多的欧美选手、日本选手包括我们的国家队队员，会选择去东非两国进行训练、尤其是大赛前的备战？
+是东非高原的环境就更加适合长跑？它们的起伏土路一定比别的地方土质出色？有更完美的后勤保障？
+都不见得，相反当地的训练条件其实比绝大多数训练基地还更落后些，甚至很多力量训练设备简陋的发指，远没很多社区健身房完善：
+
+从这些器械也能倒推出，他们的生活条件并不会好到哪去（尽管基普乔格们已经是收入最高的田径选手之一了）。
+他们的训练视频里，很多时候车辆就在旁边开过，漫天灰尘，饲养的牛羊随意穿插在路上，甚至于跑一些长距离会经过几乎纯野外环境，还会有斑马和角马等穿梭过去。
+肯尼亚和埃塞俄比亚两国的政局也并不算稳定，还有另一方面的人身危险存在。
+最主要的原因是——
+只有在肯尼亚和埃塞俄比亚，才能找到如此大量的、处于同一水准的顶尖选手一起训练。
+而只有和这些顶级选手一起训练，同为顶级选手的跑者能力才会得到最大提升。
+相当于，你自身已经是学习比较出色的人了，与一群学霸们共同学习、交流得到的益处，要远超过更好教学环境、教学器材、生活环境的作用。
+这也是为什么欧美选手会放下更优质训练环境 / 条件，去东非训练的原因。训练伙伴的要素远大于其它。
+上面这些图中，肯尼亚 / 埃塞俄比亚当地的跑步训练基地，每次都能汇集 10-30 人全马成绩在 215 以内的跑者，甚至 210、205 内的也能找出很多位。
+比如马拉松第一人基普乔格的日常训练，非赛季备战期间里每日的跑…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">给孩子讲题为什么容易急眼？</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9744561">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>文子，接受亲子关系、学业教育、青少年抑郁焦虑咨询
+阅读原文
+
+因为相对于成年人来说，小孩子都是智力障碍……
+一般需要成年人讲题的小孩，都处于小学阶段，而且大多是数学题。
+绝大部分父母，也就只能教教小学题目。
+初中以后，他们也忘得差不多了……除了少数高知家庭。
+小学的孩子认知水平处于什么状态呢呢？
+按照皮亚杰的儿童认知发展，7-12 岁在第三阶段，具体运算阶段。
+感知运动阶段 0-2 岁。
+前运算阶段 2-7 岁。
+具体运算阶段 7-12 岁。
+形式运算阶段 12-16 岁。
+基本学龄前、幼儿园、小学、初中的年级划分和教科书教学内容都是按照这个划分的。
+这里不展开讲，就只聊聊小学的具体运算阶段特点。
+具体运算阶段的主要特点，是还无法进行概念性思维，必须依赖具体的内容或者图形才能进行运算，同时逐步掌握守恒性。
+——————
+什么叫必须依赖具体的内容和图形？
+我们来看看小学的题目：
+小明家有两只小狗，每只小狗有四条腿；小红家有三只鹦鹉，每只鹦鹉有两条腿；请问小明有几条腿（写错，划掉）——请问小明和小红家的小动物总共有几条腿？
+然后来看看初中的题目：
+已知 A&#x3D;2，B&#x3D;4，C&#x3D;3，D&#x3D;A，求 A 和 B 的乘积与 C 和 D 的乘积之和。
+初中的题目就属于形式运算阶段，可以完全脱离实际内容和图形，以符号为概念进行思维运算。
+很显然，对于成年人来说，初中的形式运算更清晰简洁，什么鸡鸭牛鹅反而是一种审题上的干扰。
+但是小学生不行，人的大脑要在 12 岁才发育到和成人大脑重量一致。小学生大脑没发育完成，无法单纯以文字和符号进行运算，必须联系到生活中的实际内容或者有具体图示，大脑里才能理解。这纯粹是个生理问题，和聪不聪明无关。
+——————
+什么叫逐步掌握守恒呢？
+把一杯可乐倒进细长的试管，问小学阶段的孩子，可乐变多了还是变少了？
+答案都是变多了。
+这就叫未掌握体积守恒。
+对于生活中的物质形态变化，小学阶段的孩子还无法完全掌握其本质，必须经历几个阶段，这也和大脑发育息息相关。
+6-7 岁，掌握数量守恒。
+7-8 岁，掌握物质守恒和长度守恒。
+9-10 岁，掌握面积守恒和重量守恒。
+12 岁，掌握体积守恒。
+为什么基础几何要在三年级才开始学习？因为孩子这个时候才能理解长度守恒，掌握线段平移。
+为什么面积变换要在五年级才开始学习？因为孩子这个时候才能理解面积守恒，一个长方形裁成的两个三角形面积之和，等于原本的长方形。
+年龄没到的孩子，理都理解不了，怎么教都不会的。
+——————
+随便截图了个江苏六年级的奥数题目，大家看一看：
+
+六年级奥数才会偶尔会出现几道形式运算题，只有极少数大脑发育较快的孩子可以答出来，绝大部分还是具体运算题，六年级以下更不用说。
+再来一张初一奥数题做对比。
+
+画风立刻不一样了吧？
+各种纯粹符号运算。
+——————
+大脑发育的速度和基因有关。
+认知发育比较快的孩子，一般显得比较聪明。
+认知发育比较慢的孩子，发育完成后，聪明才会显露出来。
+这也是不提倡提前入学的原因，入学早不代表学得快，更多是大脑跟不上，成绩长期垫底，从而让孩子认为自己不适合学习，荒废学业。
+——————
+如果家长并不清楚小学生的思维特点，那么就无法理解孩子解题时的思路，就会奇怪于很多理所当然的道理，一眼看出的答案，孩子为什么要想半天。
+然后得出结论：我孩子怎么这么笨？
+接着就生气了……
+再教，还不会，心态直接爆炸，自然急眼。
+其实说白了，就是大人和小孩的思维方式不兼容，鸡同鸭讲，对牛弹琴。
+小学阶段的孩子，必须以小学的教学方式去教。
+多举例，多画图，联系生活，联系实际。
+家长们，我已经算是手把手带你们怎么教孩子功课了，如果再不会，我也要急眼了。
+阅读原文</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">1 克精面粉所有粉尘颗粒的表面积之和与地球的表面积哪个大？</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9744548">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>田耕，中科院长春应化所在读 回答又臭又长
+阅读原文
+
+别神话分形，虽然理论上无限大，但实际表面积增加相对于阶数来说并不快，分到原子尺度以下都没多少。
+别忘了地球表面积 510067866 平方公里，5.1*10¹⁴平方米，质量 5.965×10²⁷g，而阿伏伽德罗常数才 6.02×10²³，1 克离微观的极限比离天文数字更近。
+1、你可以以同样的方式把地球表面无限细分嘛。
+2、根据 2012 年的报道，比表面积最大的金属有机框架（MOFs）NU-109/110 比表面积高达 7000 [1] 。面粉显然低于该值。
+3、最细的面粉 140 目，折合直径约 105 微米，查得面粉密度 0.52 g/ml，按球体计算。
+比表面积 
+这也太低了。。。。才两张 A4 纸那么大，因为面粉颗粒 105 微米在化学上可以说是巨大了。表面有什么微观结构也大不了几个数量级。
+4、以门格海绵为例估算分形能达到的最大比表面积（没装 Mathematica，又没找到通项公式，只能手算了，还没装编程环境，不能递归。。。就靠卡西欧手打）
+
+设不打孔的标准立方体，最小边长 1、体积 1、表面积 6，体积比表面积 6 cm²/cm³。（和克匹配，单位为厘米)
+一阶：相当于去掉中间的 7 块的魔方，最小边长 1/3，体积 20/27，表面积(20*6-4*12)/9&#x3D;8，比表面积 8*27/20&#x3D;10.8。
+二阶：1/9，20²/27²，(20²*6-20*48-8*48)/81&#x3D;352/27&#x3D;13.04，比表面积 23.76。
+三阶：1/27，20³/27³，(20³*6-20²*48-20*8*48-8²*48)/729&#x3D;6016/242&#x3D;24.86，比表面积 61.16。
+假设最小边长可以到纳米尺度，那么最多可以展开到 1cm/3¹³&#x3D;6.27nm。也就是 13 阶。（其实 15 阶也行，实在不想算了，多不了多少）
+没算错的话 13 阶的表面积是 64457.45（输入三分钟，卡西欧 991CN 都算了半秒），比表面积 3188688.797，换算成平方米才 319m²/g，勉强够得着普通活性炭。。。（密度按 1 算大了点，但也差不到数量级）
+就这？都完美分形了，算出来也没有超过实际值。。。应该再多放 2-3 阶比较真实，到氮气分子键长附近，但也过不了 1 万。再往下没意义了。
+5、姑且按实心球算不同粒子的比表面积
+先计算碳原子，看做球形实体，半径 0.077nm，质量 12g/ 阿伏伽德罗常数
+比表面积为
+
+，emmmm 还不如上面的 MOF，考虑到活性炭最大值为 1000 左右，比较可信。（MOF 能超过这个值是因为分子结构有空腔，但考虑到强度很难超过一个数量级）
+氢负离子半径没有查到，但至多比上面的大一个数量级，稳定存在的其他负离子会更小。
+考虑一下质子材料吧，三体里面没说水滴是什么做的，白矮星虽然是碳氧，但压缩后是什么形态也未可知，按单质子算。假设它还是由小球组成而且表面积还有意义。直径取 1.7×10^-15m,质量是 1.67 × 10^-27 kg
+比表面积是 5.43*10^-6m^2/g。。。因为质子密度太大了，除以质量以后反而低的可怕。
+但如果改成一立方厘米的该物质，单纯计算体积表面积可达 3.52*10^15 ，约合 6.9 个地球。
+但既然是球体，不可能一点空隙都没有，按密堆积空间利用率 74.048%计算只有 5.1 个地球。同时也说明基本粒子以上尺度的东西都到不了地球表面积这个数量级。
+总之不可能有 1g 能和地球比的，连一万平方米都到不了，你要是改成 1 毫升的物质，质子勉强可以算，但是按常规理解那就是一个实心块，没有内表面积。
+阅读原文</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">为什么一些哺乳动物，比如猫狗喜欢被摸头，人类却不喜欢？</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9744555">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>陈怼怼，宅心仁厚屠狗辈 义薄云天铲屎官
+阅读原文
+
+哺乳动物都是需要被摸头的，人类也是一样。
+动物们对于摸头的需求分为主观需求和被动顺从两种，不同情况下摸头的意义也不同。
+而人类却会随着身份的演变，开始变得不在需要被摸头。
+但可以肯定的是，当下依旧有人喜欢被摸头。只不过他们要看摸自己头发的对象是谁。
+比如：有人被喜欢或尊敬的人摸头时，会有宠溺被保护的感觉，为此甚至每天洗头；有些人被摸头却觉得摸头是种羞辱。
+一、猫狗为什么喜欢被摸头？
+猫狗之所以喜欢被摸脑袋有这么几点因素：
+1、渴望得到关注。
+美国塔夫茨大学卡明斯兽医学院的 Nicholas Dodman 教授表示[1]，猫狗们渴望得到主人的关注，摸头这个动作则表明了你的注意力正在它们身上。
+2、梳理毛发。
+猫狗的爪子虽然挠得到下巴，但是却无法梳理头顶，而人类的爱抚可以帮助宠物解决这个问题。
+尤其是部分存在过敏刺激迹象的宠物，会非常享受被人摸头。
+3、情感联系的行为[2]。
+对于宠物而言，头部、脸颊或下巴上温柔的爱抚，能在一定程度上唤醒幼年被父母舔舐的感觉，本质上是种对亲情的认可。
+4、表达友好的“触击”行为。
+气味是动物们最常用的”语言“，加州大学伯克利分校的心理学博士兼猫咪行为顾问 Mikel Delgado 曾经表示，猫的全身都有气味腺，这些腺体都集中在猫的前额、脸颊和下巴上，而头部的摩擦也是传递气味的方式之一。
+当你的猫是用脑袋来回触碰你时，其实是它们用腺体分泌出的香味给你做标记，这不仅意味着你是它们的财产和领土，而且是在向你表达它们友好的感情。
+红色部分为公猫身上的腺体
+5、身份感的认可。
+摸头也是宣示地位的方式，这也是很多独立性较强的狗不喜欢被摸头的原因。
+小型犬在培育时为了更好的贴近人类生活，它们对摸头的敏感程度并不高，但那些曾经、现在的烈性犬们仍然会保留着这份独立性。
+所以说不要随便摸狗子的脑袋，尤其是不要摸陌生狗的脑袋。
+二、为什么有人会喜欢被摸头发？
+与人类相比之下，猫狗喜欢被摸头的五点因素或多或少的适用于人类。
+另外，被抚摸头部、头发和头皮之所以容易让人陶醉，是因为相关的感觉神经元就位于毛囊底。
+当有人以充满爱的方式抚摸你时，大脑分泌出一种名叫“后叶催产素”的化学物质[3]，同时伴有少量的催产素(oxytocin)[4]。
+这些特殊的物质会比多巴胺更能让人心情愉悦，能够促进信任行为的产生。
+摸头行为在幼儿园教育中应用最多，有研究[5]得出结论：在教师和幼儿在日常互动中，牵手和摸头是最好的互动方式之一。
+此外，在伴侣中，女生更喜欢被对方抚摸头发，这么做可增强性满足[6]。
+三、为什么很多人不喜欢被摸头呢？
+在日常交际中，头不是随便可以去碰的部位。
+除了因为头部是人类脆弱敏感的部位以外，随便摸他人脑袋的行为还会被视为冒犯，容易给人一种从上对下的高傲姿态。
+此外，摸头时还会搞乱别人发型，这是很多人不能接受的。
+在家庭教育中，很多家长还会额外的教育孩子不能被陌生人摸脑袋。
+这个观点主要是出于在关系不熟悉的情况下，摸他人的头发有试探别人身体底线的嫌疑。
+总之不喜欢被摸头是种自我保护的行为。
+阅读原文</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">瞎扯 · 如何正确地吐槽</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9744531">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>假如有一种药片，可以把人身体状态定格在 25 岁，让人在 70 岁骤然离世，世界会变成什么样子？
+
+有木桑
+阅读原文
+
+身体状态定格在 25 岁？然后不衰老直接死？
+你还想不想要退休工资了？
+阅读原文
+
+如何看待沈阳市盛京通公司推出张作霖「大帅币」交通卡？
+
+相关规定，你号没了
+阅读原文
+
+张作霖跟交通卡联系，有种肯尼迪代言敞篷车的奇幻感觉
+阅读原文
+
+如何看待「麦乐鸡侠」的梗？你有遇到过吗？
+
+stray
+阅读原文
+
+之前在补课机构上班的时候，几乎每节课都给学生多上十分钟
+阅读原文
+
+为啥很多人描述收入都要加上公积金？直接报实际到手的不行吗？
+
+龙猫祺祺
+阅读原文
+
+对不同的人用不同的算法说出来，能产生不同的效果。
+对自己说的:
+这个月到手 5000，奖金剩下 3000，公积金 800，一共 8800，扣除房租 1500，存 5000 留给家，还有 2300 不错，下月继续努力！
+对盆友说的:
+我那个惨啊，每月只有那鸡碎的 5000，还要扣个 1500 的房租，跟你们吃喝拉啥的基本上一个月就剩个几百块能维持一下做梦了。
+对女朋友说:
+这个月绩效不错，走吧，公司奖金都有 3000，之前你说不是看上了那个。。。我会继续努力的，下年部门里头有个主管的位置可以竞聘，我觉得能努力一下的，每年都往上爬一点，这样才能对得起当初不嫌弃我的你。。。
+对亲戚说:
+没有，我这边打工的还是很难，这个月也就 5000 到手，房租都要 1500，一个月只剩个 3500 还要吃喝的也没剩多少了，哪像张姨你儿子多有出息啊，对对对，我那个没法和你儿子比了，已经是大公司的员工了啊。。。月薪都有 10K 啊？？哇⊙∀⊙！不得了不得了，你家儿子真的光宗耀祖了啊。。。。
+对父母说的:
+还不错啦，到手加公积金（8600）加上公司保险福利 1500，我一个月收入都有 1W 了，对啊！之前不是和你们说了么，你儿子年薪都起码 15W 的呢，年底还有年终奖呢，这个月多发了奖金稍后我打过去补贴一下家用哈，你两也再不用那么辛苦啦，哎哟你两真的不用担心，我在这边好的很。。。。好啦，我这边朋友叫我今晚出去聚会了，就挂啦。。。。拜拜，保重身体啊！
+对知乎说的:
+公司白领，保底年薪 15W+ 年终奖，每年公司组织旅游（公司旁边的 XX 山公园），固定每年的职业技术培训，再加骨干精英干部外出学习（兄弟单位交流）公司三年晋升计划，主管级别持有公司股份。。。。
+阅读原文
+
+孙悟空改了生死簿，阎王为什么不改回去？
+
+流浪的蛤蟆
+阅读原文
+
+改回去之后，孙悟空不是人间蒸发，而是会魂游地府……
+阎王改生死簿，相当于召唤孙悟空来揍他……
+阎王不傻吧……
+阅读原文</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+        </section>
+      </li>
+      <li class="source">
+        <section>
+          <h3 class="source-name"><a class="source-name__link" href="https://news.ycombinator.com/">Hacker News</a></h3>
+          <section class="articles-per-source">
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Make Your Python CLI Tools Pop with Rich</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://hackaday.com/2022/01/19/make-your-python-cli-tools-pop-with-rich/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(5 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">70% of startups offer remote work options as hiring heats up, YC data shows</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://news.crunchbase.com/news/remote-work-y-combinator/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(6 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">UK is spending £500k on a PR campaign demonising end-to-end encryption</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.theregister.com/2022/01/20/no_place_hide_campaign_anti_e2ee_ukgov/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(8 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">FlyZolo – Youngest Woman Solo</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://flyzolo.com/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(1 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">SICP: JavaScript Edition available for pre-order</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://mitpress.mit.edu/books/structure-and-interpretation-computer-programs-1">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(4 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">The Ecology of Freedom (1982)</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://theanarchistlibrary.org/library/murray-bookchin-the-ecology-of-freedom">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(557 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Google Camera randomly changes some QR code URLs on Android 12</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.androidpolice.com/google-camera-randomly-changes-some-qr-code-urls-on-android-12/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(5 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Thomas Hobbes’s Leviathan shaped modern politics</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.newstatesman.com/culture/books/2022/01/how-thomas-hobbes-shapes-modern-politics">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(10 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Tonga volcano eruption created ripples in Earth’s atmosphere</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.nature.com/articles/d41586-022-00127-1">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(6 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Reverie Labs (YC W18) is hiring senior software engineers to tackle cancer</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.reverielabs.com/careers">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Senate panel approves antitrust bill restricting big tech platforms</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.wsj.com/articles/senate-panel-approves-antitrust-bill-restricting-big-tech-platforms-11642701487">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(7 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Roblox October Outage Postmortem</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://blog.roblox.com/2022/01/roblox-return-to-service-10-28-10-31-2021/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(18 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">How will the correction in the stock market impact startup fundraising?</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://tomtunguz.com/multiples-2022-01-19/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(1 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">American Airlines and The Points Guy  are suing each other</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://viewfromthewing.com/american-airlines-and-the-points-guy-are-suing-each-other/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(15 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">The long, slow process of carcinogenesis</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.science.org/content/blog-post/long-slow-process-carcinogenesis">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(4 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Adding unusable RAM for tax reasons</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.cpcwiki.eu/index.php/472">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(6 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Porting USB applications to the web. Part 1: libusb</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://web.dev/porting-libusb-to-webusb/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(13 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Linux kernel heap buffer overflow in fs_context.c since version 5.1</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://seclists.org/oss-sec/2022/q1/54">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(1 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">No amount of alcohol is good for the heart, says World Heart Federation</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.bloomberg.com/news/articles/2022-01-20/is-a-glass-of-wine-a-day-good-for-me-heart-federation-says-no">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">DynamoDB 10 years later</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.amazon.science/latest-news/amazons-dynamodb-10-years-later">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(21 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
             <article>
               <details class="article-expander">
                 <summary class="article-expander__title">Before wave of train thefts, Union Pacific laid off some of its police force</summary>
@@ -348,6 +974,17 @@ Elendil Zheng，NScrapy http://r6d.cn/bxeag
             </article>
             <article>
               <details class="article-expander">
+                <summary class="article-expander__title">Aranese: Spain&#x27;s little-known language</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.bbc.com/travel/article/20220117-aranese-spains-little-known-language">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(6 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
                 <summary class="article-expander__title">Forage (YC S21) Is Hiring a Software Engineers</summary>
                 <a class="article-summary-link article-summary-box-outer" href="https://www.ycombinator.com/companies/forage-2/jobs/lpQNgvs-software-engineer">
                   <div class="article-summary-box-inner">
@@ -513,6 +1150,17 @@ Elendil Zheng，NScrapy http://r6d.cn/bxeag
             </article>
             <article>
               <details class="article-expander">
+                <summary class="article-expander__title">The harrowing journey to Elephant Island by Ernest Shackleton and Endurance crew</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.atlasobscura.com/articles/shackleton-endurance-elephant-island">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(12 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
                 <summary class="article-expander__title">When my wife developed Alzheimer’s, the story of our marriage kept us connected</summary>
                 <a class="article-summary-link article-summary-box-outer" href="https://thewalrus.ca/when-my-wife-developed-alzheimers-the-story-of-our-marriage-kept-us-connected/">
                   <div class="article-summary-box-inner">
@@ -535,10 +1183,43 @@ Elendil Zheng，NScrapy http://r6d.cn/bxeag
             </article>
             <article>
               <details class="article-expander">
+                <summary class="article-expander__title">Telenot Complex: Insecure AES Key Generation</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://x41-dsec.de/lab/blog/telenot-complex-insecure-keygen/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(12 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">The mystery of social behavior in octopuses</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://hakaimagazine.com/features/can-we-really-be-friends-octopus/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(16 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
                 <summary class="article-expander__title">Examining the covidtests.gov architecture</summary>
                 <a class="article-summary-link article-summary-box-outer" href="https://adhoc.team/2022/01/18/covidtests-usps-aws-managed-services/">
                   <div class="article-summary-box-inner">
                     <span class="article-reading-time">(4 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Libor, long the most important number in finance, dies at 52</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.nytimes.com/2022/01/12/business/libor-finance.html">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(5 min)</span>
                     <span>Comments</span>
                   </div>
                 </a>
@@ -961,6 +1642,28 @@ ze ran，less is more
             </article>
             <article>
               <details class="article-expander">
+                <summary class="article-expander__title">The horizon problem for faster than light travel</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://eriklentzphd.blogspot.com/2022/01/the-horizon-problem-for-faster-than.html">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(11 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">TypeScript Features to Avoid</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.executeprogram.com/blog/typescript-features-to-avoid">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
                 <summary class="article-expander__title">Sonora: Python implementation of gRPC-Web built on top of WSGI/ASGI</summary>
                 <a class="article-summary-link article-summary-box-outer" href="https://github.com/public/sonora">
                   <div class="article-summary-box-inner">
@@ -1150,6 +1853,17 @@ ze ran，less is more
               <details class="article-expander">
                 <summary class="article-expander__title">Show HN: Matrix-CRDT – real-time collaborative apps using Matrix as backend</summary>
                 <a class="article-summary-link article-summary-box-outer" href="https://github.com/YousefED/Matrix-CRDT">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(5 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Geometry from Another Universe</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.falsifian.org/blog/2022/01/17/s3d/">
                   <div class="article-summary-box-inner">
                     <span class="article-reading-time">(5 min)</span>
                     <span>Comments</span>
@@ -16862,649 +17576,13 @@ A writer writes.
                 </a>
               </details>
             </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Tell HN: AWS appears to be down again</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://news.ycombinator.com/item?id&#x3D;29648286">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(60 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Improved Learning in a Large-Enrollment Physics Class (2011) [pdf]</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://www.bu.edu/cas/files/2011/12/Science-article-Active-Learning.pdf">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(20 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Myths about the brain</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://nautil.us/issue/111/spotlight/that-is-not-how-your-brain-works">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(11 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">DNA seen through the eyes of a coder</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://berthub.eu/articles/posts/amazing-dna/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(16 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">The Death of John Berryman (1996)</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://www.poetryfoundation.org/poetrymagazine/browse?contentId&#x3D;39466">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(1 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Intuitive Advanced Cryptography [pdf]</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://github.com/cryptosubtlety/intuitive-advanced-cryptography/blob/master/advancedcrypto.pdf">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(1 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Quantum theory based on real numbers can be experimentally falsified</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://www.nature.com/articles/s41586-021-04160-4">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(19 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-        </section>
-      </li>
-    </ul>
-  </section>
-  <section class="daily-content">
-    <h2 class="daily-heading"><time datatime="2021-12-21">2021-12-21</time></h2>
-    <ul class="sources card">
-      <li class="source">
-        <section>
-          <h3 class="source-name"><a class="source-name__link" href="https://news-at.zhihu.com/api/4/stories/latest?client&#x3D;0">知乎日报</a></h3>
-          <section class="articles-per-source">
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">打羽毛球有什么礼仪吗？</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9743567">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(0 min)</span>
-                    <span>王适娴，羽毛球世界冠军
-阅读原文
-
-看到知乎平台上有这么多喜欢羽毛球和支持中国羽毛球队的球迷，真的非常开心。希望羽毛球可以让大家的生活更加健康和丰富多彩！
-为什么打羽毛球需要规范礼仪呢，目的就是为了规范球员在场上的行为举止，使球员们相互尊重，同时给观众们带来以一场精彩的比赛。也能让观众们感受到打羽毛球的乐趣！
-说到礼仪首先是着装：
-1、你进入羽毛球场一般要穿专用的羽毛球鞋，不允许穿硬底鞋或带钉的鞋入场；赤脚或者赤脚穿鞋入场打球都是没有礼貌的。
-2、即使你是穿便服来到球场，你要在上场打球前主动换好运动服，以舒适，吸汗透气为宜。一般女选手穿中袖或无袖上衣及短裙或连衣短裙。
-其次进入赛场后：
-1、比赛开始和结束都要和对手及裁判友好示意，比如微笑握手，比赛开始时裁判会掷硬币来决定发球方和场区。
-2、一般比赛正式开始前，都会和对手打几个热身球，感受下本场比赛的球速和风向等等。
-3、要发球时先看一看对方是否已做好了接球的准备，最好将球举起来示意一下，如果你是接发球，没准备好时也可以向对方举手示意。现在羽毛球比赛发球规定为：运动员发球高度不得超过 1.15 米，这个是很多人需要注意的。
-4、比赛中如果不小心打到对方或者出现滚网球得分，一定要举拍示意，告诉对方很抱歉。国际比赛中一般都会用英文说“sorry”
-5、当球落地时，一般情况下由球所在场地一方捡球，并将球递给对方；如果球触网落在中间时，失误方应主动捡球，当对方捡球送你后，你应举拍示意或说“谢谢”。 比赛结束后，球所在场地那一方也要主动把球捡回来交给副裁。
-6、比赛中换球要和对手及裁判示意，再从发球裁判那换新球，并说声感谢。
-7、比赛中难免会有误判等情况，这个时候你可以挑战鹰眼，如果没有鹰眼，即便最后裁判坚持误判对你不利，也要表示尊重和服从裁判的判罚。
-8、比赛中如果遇到意外受伤或者擦汗、擦地板等也要和裁判主动申请，同时也要尽量避免耽误太长时间。
-9、如果在比赛中遇到了自己的好朋友，我们一般会在比赛结束后来一个拥抱。
-10、比赛结束离场时，一般也都会和支持自己的球迷粉丝招手示意，表示感谢，有时也会签名合影。
-其实打羽毛球的礼仪没有那么复杂，希望大家看完我的回答能更加喜欢这项运动。最后再次感谢大家喜欢和支持中国羽毛球队，让我们一起为他们加油吧！
-
-
-
-阅读原文</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">为什么小小的昆虫进化的外形非常精密，而体型大的动物看起来没什么武器？</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9743599">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(0 min)</span>
-                    <span>知乎用户，智绝古今有文化，颜贯乾坤未成家。
-阅读原文
-
-节肢动物要是不进化出点凶器，你不觉得，它们看起来，根本就是一个移动的外卖便当吗？
-开盖就能吃
-节肢动物的运动能力并不强，即便身上各种武器装备，到如今也几乎是食物链的底层。它们不灭绝，靠的是祖上传下来的惊人的繁殖能力～外卖影分身之术。
-要是连最后这点反甲都拆了，那可就是～
-
-越看越好吃了不是？
-它们要都变成了虾仁，那再厉害的繁殖能力都不够其他动物吃的。
-
-脊椎动物在进化成今天这副模样之前，那可是被节肢动物骑在头上欺负。
-在寒武纪前的时候，动物们长得都很随便。因为往前几十亿年，是生产者大军攒下的大量有机营养物质，动物们根本不需要什么高超的本领就能吃喝不愁。
-
-但行业内卷自古存在，动物们把植物吃得差不多了，就要考虑吃动物了，否则就要饿死。节肢动物正是在这个时候崛起的一支。它们在进化的历程中选择了叠甲，强化这身防具，并且把防具也升级开发成了武器。无疑，这身盔甲在长得随便的动物中，可谓是鹤立鸡群。不仅不容易被吃掉，而且吃起别人来，还特别轻松。
-
-节肢动物刚穿上盔甲的时候，咱们脊椎动物是什么德行呢？
-
-大概就是这德行↑……
-就一个肉口袋，在海里吸水，过滤有机物营养。怎么看都不如虾仁，标准的盘中餐生物。
-为了在残酷的节肢动物内卷中存活，这群肉口袋也决心进化。终于有一支成为了后来的脊椎动物。
-脊椎动物在生存战争中打赢的第一仗，靠的是“脊索”和“神经系统”。脊索是一种内骨骼，有弹性，能够大大强化肉口袋的运动能力。而神经系统的进化，让脊椎动物拥有了动物界最快的神经信号传导速度
-
-也就是说，比起节肢动物的叠甲加攻，脊椎动物是把天赋点堆到了敏捷和智力上！
-不过随着脊椎动物的进化日趋成熟，鱼类出现了。它们将肉口袋时期用来支撑鳃孔的骨结构改造成了下颌，也就是——嘴！它诞生了！
-
-虽然在咱们这个时代，嘴是很普通的器官。但在寒武纪前后，大家可没有这么复杂的构造。大家不是肉口袋，就是肉球，要么就是肉片，要么就是装在盒子里的肉片。要进化出来什么有用的器官，不是用来跑路就是拿去叠甲。谁能想到，脊椎动物居然拿这玩意“开罐头”呢？
-嘴，是我们脊椎动物拿下高阶生态位的第一个武器，并且一直用它赢到今天！
-所以，别人说你“嘴强王者”的时候，可能是在夸你祖上凶猛强悍。
-呃，其实光有嘴，咱们就能把所有罐头都打开了，节肢动物根本没戏啊。
-很重要的一点是，节肢动物的很难进化出巨大的体形。一方面是它们过早地将天赋点都用于叠甲，所有的资源都尽快用掉，这导致它们这个种族没有足够的余力转型发展敏捷，体形增大之后，神经信号的传输速度跟不上。研究表明，脊椎动物这种有髓神经纤维的传导速度大概能有 100m/s。而节肢动物这种无髓神经纤维的传导速度大概只有……1m/s。
-意思就是说，假如这只虫虫长到一米长，它脑袋发现了前方道路异常，踩刹车，它的腿要 1 秒后才会收到肌肉收缩的信号。
-整整 1 秒的内网延迟。这盒大外卖是不是有点可爱 ？
-是的你没看错，二者速度相差 100 倍！
-而且随着体形增大，节肢动物的肌肉和骨骼将逐渐变得难以承受自重。因为面积是平方数增长的，体积是立方数增长的，动物体形增大，它们表面积的增长率根本拼不过体积，三次方增长的质量会迅速挤垮外骨骼，因此大型节肢动物极为少见，更不存在巨型的节肢动物。即便长成庞然大物，它们也会因为运动能力太弱而被欺负。
-所以节肢动物永远只能在大家都还是小弟弟的时候逞威风，等大家长胖了，它就嚣张不起来了。
-为什么脊椎动物能够长得巨大呢？因为咱们用的是内骨骼，内骨骼可以很粗壮，有很强的力学结构，并且咱们可以在骨骼外包裹大量肌肉保证运动能力不衰退。而节肢动物的外骨骼都是片状的，很薄，同时外骨骼会限制肌肉的生长，这就是传说中的“作茧自缚”。它们根本长不大。
-脊椎动物不仅可以长得很大，而且因为失去外骨骼的束缚，咱们的运动能力更是进化得天花乱坠。
-在鱼类时期，辐鳍鱼类的鱼鳍还只能用来划划水。到两栖、爬行纲的时代，原本的鱼鳍早就进化成为了四肢，强有力的肌肉和骨骼让脊椎动物拥有更加出色的运动能力和战斗能力，它们拥有了更大的活动范围，同时也扩张了自己的菜单食谱……节肢动物就渐渐从难开的罐头，变成了好开的罐头。甚至……
-带壳的口感也不错
-
-
-阅读原文</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">如何看待单亲妈妈买房被中介恐吓侮辱「听说你是人工授精？也许我可以帮你」？通过中介买房有哪些坑需要注意？</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9743586">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(0 min)</span>
-                    <span>忘忧草，解放思想 实事求是
-阅读原文
-
-提示：本文共 2000 余字，阅读大约需要八分钟。
-在此次事件中，抛开部分人的过激行为不谈，二手房买卖过程中「跳单」的认定以及相应的法律责任是事件争议的焦点。
-在一些中介眼中，只要房屋买卖双方接受了包括带看、价格磋商等任一服务，最后却未通过自家中介签订正式房屋买卖合同，都是「跳单」。
-但实际上，《民法典》关于「跳单」的规定要比这严格许多，认定「跳单」不是那么容易。
-《民法典》第九百六十五条　【委托人私下与第三人订立合同后果】委托人在接受中介人的服务后，利用中介人提供的交易机会或者媒介服务，绕开中介人直接订立合同的，应当向中介人支付报酬。
-一、通过中介进行二手房买卖的具体过程
-在进一步阐述「跳单」的认定及其法律责任之前，先得插播一个重要知识，即实践中通过中介进行二手房交易的具体步骤：
-第一步，卖方先与中介签订中介合同，委托中介出售房屋，其后由中介将房屋信息挂在网上。
-第二步，买方在网上搜寻相关房屋信息，寻找到心仪房源后与中介联系。
-第三步，中介带买方看房，如满意再与卖方磋商价格。在此过程中，买方可能与中介签订中介合同。（也可能在第四步签订正式房屋买卖合同时一起签订中介合同）
-第四步，买方、卖方签订房屋买卖合同，后续才是房屋过户等事宜。
-上述每一步都是二手房交易过程中的重要时点，接下来的阐述过程也需要结合这四步进行。
-二、法律上关于「跳单」的认定
-介绍完二手房买卖具体步骤后，结合《民法典》的规定，再参考法院关于「跳单」纠纷作出的判决，认定二手房买卖中的委托方构成「跳单」，需要满足以下条件：
-第一，认定「跳单」的前提，是委托方和中介人之间存在有效的中介合同。
-既然是「跳单」，必须先有「单」存在，这里的「单」也即委托方与中介人之间的中介合同。
-这里的合同，既可是书面形式，也可是口头形式，但都必须有证据证明。
-如果中介人无法证明自己与委托方之间…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">为什么肉第一次烧是越炖越酥烂，但是烧完之后加热却会越来越老？</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9743598">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(0 min)</span>
-                    <span>知乎用户，用最通俗的语言说最好玩的食品营养学
-阅读原文
-
-肉的质地一直是个神奇的命题。
-有的人烧出来的肉软硬适中，有的人照着同样的菜谱却死活做不出来。烧菜的火力、时间，甚至油、淀粉的使用都对肉的质地产生重要的影响。
-肉是嫩还是老，核心点是温度，因为它决定了熟肉的 2 个核心要素：肌纤维的状态和水含量
-回到上面这个提问来，我们先来看看肉越炖越烂、越炒越硬背后的原因。
-也就是说，温度是怎么影响肉里面肌纤维状态和水含量的？
-
-肉其实是个“水货”，肉重量的 70-80%都是水。
-生肉里水占了 3/4-4/5 的重量 (图片来源 pixabay)
-可是这个“水货”伪装的特别好，即使它里面大部分是水，你却看不出来。
-因为水不会流出来。
-为什么不流出来呢？这就跟肌肉的结构有关系了。
-骨骼肌结构 (网图，Ref 1)
-肌肉是由一束束肌原纤维组成的，就是上图右上角的 Myofibril，水就存在肌原纤维里面。
-一般情况下，水是被紧紧包裹在里面的，即使你用力挤也挤不出来。
-“时间就像肌肉里的水，你怎么挤也挤不出来”-- 开尔文
-但是，如果肉的温度上升的话，里面的肌球蛋白和肌动蛋白就会因为聚集而失去弹性 (蛋白变性)，这种强悍的储水能力就消失了。
-牛肉在不同温度下的状态 (来源：ThermoWorks)
-上图是牛肉在不同温度下逐步失水和变硬的过程，总的来说是有两轮的变化。
-第一轮变化是在 115-120°F (46-49°C)开始的，肉的体积开始缩小，因为肌球蛋白开始变性聚集了；
-第二轮变化是在 150-163°F (66-73°C) 开始，肉的体积开始进一步缩小，这回是肌动蛋白变性聚集了。
-在整个变化的过程中，牛肉中的肌纤维在持续的聚集、收缩，把里面储存的水“挤”了出来。
-原来被肌纤维包裹的“非自由水”变成了可以流动的“自由水”。
-所以我们在用筷子捅一下半熟的牛排，能看到红色的血水渗出来。
-鸡…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">《权力的游戏》哪些角色最不贴合于原著？</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9743576">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(0 min)</span>
-                    <span>项天鹰
-阅读原文
-
-第一，史坦尼斯·拜拉席恩
-史坦尼斯为人刚峻严酷，冷血无情，他杀了很多人，但是无一例外都是经世俗法律宣判有罪的。
-赫柏·蓝布顿及其三个儿子，杀了四个后党。
-冈瑟·桑格拉斯，在黑水河之战开始前想离开龙石岛。
-蓝礼·拜拉席恩，篡位。
-科塔奈·庞洛斯，武力对抗史坦尼斯。
-艾利斯特·佛罗伦，私自向兰尼斯特商议投降。
-比兹伯利伯爵的四个手下，吃人肉。
-亚赛尔·佛罗伦和萨拉多·桑恩建议史坦尼斯劫掠背叛自己的封臣赛提加伯爵的领地蟹岛，但是史坦尼斯在发兵之前一定要先论证蟹岛的老百姓有没有犯罪。戴佛斯据理力争，把史坦尼斯气个半死，但是最终确定蟹岛老百姓无罪之后，史坦尼斯的决定是：“我要给维斯特洛带来公正。对于公正，亚赛尔爵士了解甚微，就像他对战争的了解。蟹岛对我没有好处……而且如你所言，那是邪恶的举动。赛提加必须付出谋逆的代价，但应由本人偿还，将来我一统天下之日会惩罚他，与骚扰老百姓毫无瓜葛。无论高高在上的贵族，还是低贱卑微的小民，行为各有其报应处置。将来有些人失去的不止手指尖，我向你保证，他们让我的王国血流成河，我绝不会忘记。”
-结果在剧里呢？赫柏·蓝布顿、冈瑟·桑格拉斯、艾利斯特·佛罗伦的死因变成了他们不皈依拉赫洛。史坦尼斯一下子从顽固地坚持法律的形象变成了迫害异教徒的狂信徒。
-史坦尼斯唯一一次试图违背律法烧人就是计划烧死劳勃的私生子艾德瑞克·风暴。但是在戴佛斯等王党人士的帮助下，他还是悬崖勒马了。在戴佛斯的劝谏下，他选择了暂停虚无缥缈的唤醒魔龙计划，为国家做点实事，北上长城救援守夜人：“是的，我早该赶到，然而若非我的首相提醒，也许根本不会来。席渥斯大人出身低微，但他提醒我自己的职责，当时我满脑子所想的只有权位。戴佛斯说，我把马车放在了马前面，是啊，靠赢取王座来拯救国家，根本是本末倒置，我应该拯救国家，从而赢取王座。”
-史坦尼斯在进军临冬城的路上遇到了暴风雪，部下建议他…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">瞎扯 · 如何正确地吐槽</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9743618">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(0 min)</span>
-                    <span>你读过的哪些书是完全浪费时间的文字垃圾，内容质量特别差？
-
-敦仙，慎
-阅读原文
-
-我自己的硕士论文，116 页，自己都读不下去。
-20210730：今天闲来无事又读了一下，写的确实很差。
-阅读原文
-
-薇娅偷逃税被追缴并处罚款13.41亿元，会对她产生怎样的影响？对直播行业有哪些警示？
-
-吴開拓老师，知乎上最酷的老师。写一点教育。
-阅读原文
-
-王力宏还在为了 1.5 亿吵翻天的时候，薇娅已经补交了 5 亿。
-王力宏唱了一辈子，还不如薇娅几个月。
-阅读原文
-
-如何看待网易 3:0 战胜腾讯，赢得 DOTA2 互联网员工杯的冠军？
-
-colin
-阅读原文
-
-拼多多本来也准备参加，不过直到比赛前最后一刻，仍然只凑齐了 4.99 个队员……
-阅读原文
-
-有哪个瞬间让你觉得这个世界出bug了？
-
-知乎用户，喜欢可以关注一下，虽然不知道关注有什么用
-阅读原文
-
-一个电子广告牌死机了。。。那天晚上正好又起雾。。。于是，冥冥夜空中，这一切看起来就十分诡异了
-
-
-
-阅读原文
-
-《西游记》中如果每降服一处妖王，唐僧都可以选择收其为徒，那么到灵山时能拉起一支多大战斗力的队伍？
-
-我亦是行人
-阅读原文
-
- 
-灵山大雷音寺外，文殊普贤观音地藏四大菩萨挡住了三藏的去路。
-三藏道：「贫僧自东土大唐而来，历九九八十一难来往西天取经，还请通报我佛如来。」
-四大菩萨不置可否。
-三藏又道：「莫是不凑巧如来不在寺中？」
-「不是。」四大菩萨异口同声。
-又道：「莫不是贫僧所做不周使我佛不满了？」
-「也不是。」四大菩萨异口同声。
-三藏不解：「那为何不准许贫僧和徒儿们面见我佛？」
-四大菩萨面面相觑，最后还是观音上前一步，望着漫山遍野人山人海的魑魅魍魉，吞了吞口水，还是勉强从口中挤出了几个字，说得不卑不亢，有理有据。只听得三藏羞愧难当，恨不得找个地缝钻进去。
-「训练师只能携带不超过六只宝可梦！」
- 
-阅读原文</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-        </section>
-      </li>
-      <li class="source">
-        <section>
-          <h3 class="source-name"><a class="source-name__link" href="https://news.ycombinator.com/">Hacker News</a></h3>
-          <section class="articles-per-source">
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">2021-22 Tesla Model Y earns highest IIHS accolade</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://www.iihs.org/news/detail/2021-22-tesla-model-y-earns-highest-iihs-accolade">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(2 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Show HN: Aftertext</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://breckyunits.com/aftertext.html">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(6 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Non-Fungible Olive Gardens</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://nonfungibleolivegardens.com/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(2 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Dear self: we need to talk about social media</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://acesounderglass.com/2021/12/04/dear-self-we-need-to-talk-about-social-media/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(13 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">PostgreSQL&#x27;s Missing DateDiff Function</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://www.narrator.ai/blog/postgres-missing-datediff-function/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(3 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">The Great SPAC Scam: SPACs a Great Deal for Sponsors, but Not Others</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://www.mergersandinquisitions.com/great-spac-scam/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(17 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Apple and NeXT, 25 Years Ago this week</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://blog.hayman.net/blog/2021/12/20/apple-next-25-years-ago-today/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(0 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">A Quadrillion Mainframes on Your Lap</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://spectrum.ieee.org/ibm-mainframe">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(8 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Boeing, Airbus executives urge delay in U.S. 5G wireless deployment</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://www.reuters.com/business/aerospace-defense/boeing-airbus-executives-urge-delay-5g-wireless-deployment-2021-12-21/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(2 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Mantic Monday: Let Me Google That for You</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://astralcodexten.substack.com/p/mantic-monday-let-me-google-that">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(7 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">The Muse (YC W12) Is Hiring a Senior Dev Ops Engineer</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://www.themuse.com/jobs/themuse/senior-dev-ops-engineer">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(3 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Tuple: Pair Programming Tool for macOS</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://tuple.app/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(2 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Faster Linux 2.5G Networking with Realtek RTL8125B</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://www.jeffgeerling.com/blog/2021/check-your-driver-faster-linux-25g-networking-realtek-rtl8125b">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(2 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Hidden Networks in TP-Link Routers</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://jahed.dev/2021/12/19/hidden-networks-in-tp-link-routers/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(1 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">DARPA open sources resources to aid evaluation of adversarial AI defenses</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://www.darpa.mil/news-events/2021-12-21">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(0 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Devon calls victory in 27-year war on termites</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://www.theguardian.com/uk-news/2021/dec/21/a-world-first-devon-calls-victory-in-27-year-war-on-termites">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(4 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Titanpointe: The NSA’s spy hub in New York, hidden in plain sight (2016)</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://theintercept.com/2016/11/16/the-nsas-spy-hub-in-new-york-hidden-in-plain-sight/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(13 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Internet Movie Firearms Database</summary>
-                <a class="article-summary-link article-summary-box-outer" href="http://www.imfdb.org/wiki/Main_Page">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(1 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Interactive maps of Europe in the 19th century</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://maps.arcanum.com/en/map/europe-19century-secondsurvey/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(2 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">The secret Uganda deal that has brought NSO to the brink of collapse</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://arstechnica.com/information-technology/2021/12/the-secret-uganda-deal-that-has-brought-nso-to-the-brink-of-collapse/?comments&#x3D;1">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(14 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Ordering movie credits with graph theory</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://endcrawl.com/credits-ordering/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(17 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Internet Archive as a default host-of-record for startups</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://twitter.com/ID_AA_Carmack/status/1473327982605385735">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(1 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Moral lessons from free software and GNU Emacs</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://protesilaos.com/codelog/2021-04-16-emacs-moral-lessons/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(10 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Unix Admin Horror Story Summary (1992)</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://www-uxsup.csx.cam.ac.uk/misc/horror.txt">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(74 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">What is Web3? Interview with Gavin Wood, who coined the term in 2014</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://www.wired.com/story/web3-gavin-wood-interview/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(10 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">TSMC in Japan: Things to know about its chip factory plans</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://asia.nikkei.com/Business/Tech/Semiconductors/TSMC-in-Japan-5-things-to-know-about-its-chip-factory-plans">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(2 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Show HN: SlikSafe – A decentralized, end-to-end encrypted alternative to Dropbox</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://news.ycombinator.com/item?id&#x3D;29637188">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(33 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
         </section>
       </li>
     </ul>
   </section>
 
   <footer>
-    <time id="build-timestamp" datetime="2022-01-20T00:55:22.316Z">2022-01-20T00:55:22.316Z</time>
+    <time id="build-timestamp" datetime="2022-01-21T00:46:12.479Z">2022-01-21T00:46:12.479Z</time>
     <span><a class="footer-link" href="https://github.com/osmoscraft/osmosfeed">osmosfeed 1.12.0</a></span>
   </footer>
   <script src="index.js"></script>
