@@ -76,6 +76,451 @@
 <body>
 <!-- %after-body-begin.html% -->
   <section class="daily-content">
+    <h2 class="daily-heading"><time datatime="2022-01-23">2022-01-23</time></h2>
+    <ul class="sources card">
+      <li class="source">
+        <section>
+          <h3 class="source-name"><a class="source-name__link" href="http://weekly.dockone.io">DockOne.io</a></h3>
+          <section class="articles-per-source">
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Kubernetes 计划在即将发布的 1.24 版本里弃用 dockershim</summary>
+                <a class="article-summary-link article-summary-box-outer" href="http://weekly.dockone.io/article/2434814">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(1 min)</span>
+                    <span>【编者的话】Kubernetes 计划在即将发布的 1.24 版本里弃用并移除 dockershim。
+Kubernetes 计划在即将发布的 1.24 版本里弃用并移除 dockershim。使用 Docker 引擎作为其 Kubernetes 集群的容器运行时的工作流或系统需要在升级到 1.24 版本之前进行迁移。1.23 版本将会保留 dockershim，对该版本的支持则会再延长一年。
+Docker 是 Kubernetes 使用的第一个容器运行时。最开始对于 Docker 的支持部分被硬编码在 Kubernetes 的代码里，但是随着项目的发展，Kubernetes 开始添加更多的运行时支持。Kubernetes 社区决定转向更加结构化和标准化的接口，而不是直接把第三方的解决方案集成到核心代码里。这就有了容器运行时接口（CRI），容器网络接口（CNI）以及容器存储接口（CSI）这些标准。
+正如 Mirantis 的 CTO Adam Parco 所说：
+
+对于大多数人来说，弃用 dockershim 不是什么问题，因为他们甚至可能都感觉不到，他们实际上并没有使用 Docker 本身，他们用的是符合 CRI 标准的 containerd。对于那些人来说，这跟之前没什么两样。
+由于 Docker 不符合 CRI 标准，dockershim 更多充当的是 kubelet 和 Docker 之间的一个翻译层。然后 Docker 再通过接口形式调用 containerd 来执行容器。containerd 之前是作为一个自包含的容器运行时从 Docker 项目里提取出来，随后它便成为第一个符合 CRI 标准的运行时。可以看到，弃用 dockershim 以后 kubelet 便可以和 containerd 这样的容器运行时直接通信。
+
+
+
+分别采用 containerd 和 …</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+        </section>
+      </li>
+    </ul>
+  </section>
+  <section class="daily-content">
+    <h2 class="daily-heading"><time datatime="2022-01-22">2022-01-22</time></h2>
+    <ul class="sources card">
+      <li class="source">
+        <section>
+          <h3 class="source-name"><a class="source-name__link" href="https://news-at.zhihu.com/api/4/stories/latest?client&#x3D;0">知乎日报</a></h3>
+          <section class="articles-per-source">
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">为什么现在越来越多的人不再追捧「穷游」了？</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9744614">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>鱼丸，每个异乡都是故乡
+阅读原文
+
+先总结，我的观点：
+
+基建的铺设，目的地的开发，越来越没有必要为省钱而吃苦。
+资本的推动影响大众的判断，精致游更有能力做推广宣传。
+分享方式的变化，穷游可能有，但你不再容易看到它们。
+
+1. 基建的发展
+拿题中的「去西藏」举例，以前是没得选择，现在拉林铁路都要修成通动车了。十年前进藏和现在完全不是一个体验[1]。
+我对象就是当年的穷游青年，他在 13 年骑行过一次川藏线和一次青藏线。各种烂路石子路，没几座隧道不知道翻了多少次山，瞬息万变的气候下骑到失温，被落石砸，被狗群追，在修路工人的道班过夜，各种物资匮乏缺补给（他说除了屎啥都吃……），惨并快乐着。
+少年的珍贵影像资料→_→当年沿途界碑全是涂鸦，现在都被洗掉了
+当年波密到鲁朗路上的「通麦天险」只有一座超级破的桥，桥后还在炸山。现在架了坚固的悬索桥，已经是第三代。318 各种隧道也挖通了，路也修出来了，沿途村镇条件也好多了，已然是一条成熟的休闲线路。
+最左：隧道里面没灯，打着电筒骑车；最右：通麦的旧桥如今通麦天险的第三代桥（前两代也还在旁边），网图
+19 年我去西藏调研，拉萨林芝不说，在传统印象里很穷的藏东也是全程柏油路，平稳得不得了。还记得沿途看到很多山上架满了电塔，能在这样地势险峻、气候多变的高原铺电网，做到乡乡通电，真的很了不起。
+牦牛和电塔左：尼洋河畔的一个村子，右：波密，以前哪有这么好的住宿
+越野爱好者一直在寻找更险更荒的路线，从 318 到格聂南线、独库公路、丙察察、青甘线……一个地方火起来就会修路开发旅游，看前人的分享记录，路况每年都在变，探索的脚步跟不上国家扶贫基建的速度。
+除非真的是没几个人知道的极小众，否则还要强调如何艰难险阻，未免有点过分标榜的味道。
+可以，但没必要。
+2. 资本的干预
+你知道一个叫 Couchsurfing 的网站吗？这个免费住宿分享平台在起初十几年全靠志愿者和捐款用爱发电。然后杀出一个 Airbnb，从每笔交易中抽成 3%-20%的佣金，很快干死了 Couchsurfing。全球最大沙发客网站都撑不下去不得不强制收费，穷游者的精神家园靠什么维系。
+5-10 年前最权威的旅行攻略工具是什么——穷游网和马蜂窝。穷游网走中产定位，先提出「穷游的穷是穷尽的意思」，又换了几次 slogan，一直想摆脱「穷」的刻板印象，为什么？因为穷赚不到钱啊。抱住众信的大腿苟了几年，如今众信自己都要撑不下去了。马蜂窝靠什么生存？不是攻略，而是强势有能力的酒店销售营收。
+相对地，我的观感，精品酒店越开越多，譬如较早的梅里既下山，近年的赛里木湖克鲁格营地，将开的敦煌碧玥……专挑小众偏远的地方打差异化。占据极好的选址，内有知名建筑师设计师，专业管理团队的打磨，外有请博主，做宣传，美文美图视频铺开种草，背后都是资本的运作。
+譬如甘南桑科草原的诺尔丹营地，大几千元一晚还一房难求，在草原上能把一切都安排得精致妥帖；其实也有百元一晚的牧民帐篷，盖发潮的被子，与小飞虫共眠，晚上只有一两个小时通电。
+譬如宁夏中卫，有四位数的黄河宿集，逛着像在北非摩洛哥；也有几十元一间房的农家乐，除了有个地方睡觉不指望其他任何功能。
+黄河宿集
+还有滇藏线风头最旺的酒店集团松赞，硬件设施到软件服务理念，无不是城市豪华酒店标准。
+松赞
+而且它们拍照都非常好看。
+哪怕普通民宿，也要搞搞氛围，加点网红元素。有溢价的空间，才有长久生存扩张的能力。
+在巴西和墨西哥住过的好看民宿，不好看的我都没拍……
+3. 分享方式的变化
+我也算在旅行媒体这行混了一些岁月。早年内容如何呈现，是论坛，是编辑加精筛选。是长篇大论讲故事。
+如今，是小红书抖音为代表的图片短视频平台，是算法，是短平快平台推荐。
+当年看游记做攻略，是这样的现在是这样的
+还有多少人看得下长游记？取而代之的是将旅途最精华的部分碎片化，又穷又苦的那部分，读者不容易留意到，作者和平台也不太展示出来。
+我早年也没少穷游，欧铁学生通票加一路青旅沙发客，用 500 英镑在欧洲玩了半个月。可以暴走 8~12 个小时，在路边啃三明治解决一餐。睡过五大洲的机场，无数次夜巴夜火车，12 人的青旅和有老鼠的大通铺。但也很少在游记里说，一来这些对我读者的价值不如美景的抚慰或实用攻略预算参考，二来总有种卖惨的感觉，毕竟预算紧是我自己的问题，而且再穷也没人资助我啊。
+扪心自问，你喜欢看精致海景别墅爽一爽，还是蓬头垢面吃糠咽菜苦兮兮。反正都是网络世界，生活已经很艰难了，从游记里感受一点浓缩的美好不好吗。
+穷游的「穷」不是目的，只是一种手段而已。
+以上。
+阅读原文</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">电视剧《开端》有哪些细节细思极恐？</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9744604">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>毕导，欢迎关注同名公众号“毕导”
+阅读原文
+
+最近大火的《开端》大家都看了吗！这部剧讲了游戏架构师肖鹤云和大学生李诗情，在遭遇公交车爆炸后不断陷入时间循环，之后一起努力阻止爆炸、寻找真相的故事。
+
+这片子剧情相当精彩，白敬亭赵今麦演技全程在线，看得人很上头！我感觉身边每个人都在看，我也一口气追到现在。等更新的日子实在难熬，我又反复观看挖出了 7 个彩蛋，这就分享给大家！
+（ps：以下内容涉及剧情讨论，还没看到 13 集且不愿被剧透的慎点！）
+ 
+
+彩蛋一：男女主被炸翻 17 次！只药检了 2 次！
+都知道剧里一直在循环，但到底循环了几次呢？每次都有啥不同？我狂看一波，给大家整理出了全网最全爆炸信息版本！从图中我们可以看出很多惊人的数据
+
+截至第 13 集，男女主一共经历了 24 次时间循环！肖鹤云昨天在警局里画公交图画得 6 吧，这二十四趟车可不是白坐的！
+男女主一共被炸死 17 次，生还率只有 29.17%。其中撞油罐车爆炸 6 次，凶手锅姨直接手动引爆 7 次。事实证明，锅姨比油罐车更容易失控。
+男女主的破案进程：炸到第 9 次才发现有炸弹，炸到第 17 次才确认锅姨是凶手，炸到第 21 次发现司机是凶手。确实这破案进程也不能太快，不然直接结局了你看啥
+后续对爆炸的了解呈爆炸性增长
+男女主进了 4 次局子，只药检了两次。刘涛饰演杜局，每次听到男女主说循环都会安排他俩药检，怀疑精神不正常。你以为剧里天天检，但实际上只药检了 2 次！
+
+天地良心，杜局真不是那种没事就药检的人！倒是看剧的大家值得反思一下，你是不是进入了时间循环，不然为啥老觉得人家在准备药检
+
+彩蛋二：炸弹真的有肉味吗？
+大家应该还记得，剧里男女主第一次怀疑端锅阿姨的时候，女主李诗情去试探了一番，阿姨说锅里装的是肉。当时李诗情对肖鹤云回忆道，好像确实闻到了炖肉的味道。
+
+后来我们也知道，这锅里装的其实是炸翻全…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">开赛车的人会不会觉得平时开车太慢？</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9744631">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>Coalescence，职业赛车手/多伦多大学化学工程
+阅读原文
+
+看了一圈问题底下的回答其实都答的很到位，我稍微做个补充吧
+先上个答案：会也不会
+我本人高中就在北美，赛车方面从跑加拿大的国家级卡丁车比赛到 f4 方程式和现在的 Radical cup 和运动原型车也有 N 年了，tcr 和 gt4 一类的房车也做过测试（个人还是更习惯开放座舱一些），算是个职业选手吧。公路上是 16 岁拿的驾照 17 岁买了第一台车，到现在也开了 5 年的车了，从一开始的 suv 到现在的改装过的性能车前后也买过开过不少车，没有国内驾驶经验但是北美交规和限速也差不多。总体顺序是先拿的赛照再拿的驾照，是比较典型的赛车和公路混开的，在两个方面都有足够的经验可以说明问题。
+我有很多朋友问过我这个问题，我也仔细考虑过。我认为首先虽然都是开车，但是这俩完全是两个概念，从心态上还有环境上就有根本的不同。
+赛车尤其是比赛（不是自己做圈速练习）是作为竞技运动的心态而非协作，侧重点是操作细节够不够细腻，攻防策略还有轮胎管理。赛道作为一个理想的可控环境（一般来说对手也比较可控）开得快本身已经成为了一个比较程式化的东西，驾驶的关注点是对驾驶节奏的控制，这个时候感觉到的快并不是传统意义上的开的速度有多快，而是节奏和细节上的快，比如这个弯道下午的胎胶比上午的多温度比上午高我可以用更快的速度入弯同时也可以做到同样的出弯速度和线路，整体节奏就可以快一些。这种有目的快和逼近车辆极限是有心理压力的是有风险的，尤其是在赛道上第一次出事故以后（早晚的事儿）感觉会越来越明显。至于题主想问的直线速度…大直道是用来考虑下几个弯怎么过的。
+公路驾驶偏向于协作，在路上开车心态更多的是怎么和别的车合作可以让出行的效率高一些。公路上的很多环境并不可控…比如路上走着走着突然掉头的或者是不打灯突然并道抢道的，行人 / 红绿灯和复杂的道路环境导致相比于赛道一条平整宽阔的顺 / 逆时针环路，公路非常没有可预见性，加上如果路烂全是坑导致车变得非常不可控，就算是限速内都会觉得吓人…目的上来讲，公路上没有那种为了快而快，去逼近车辆极限的目的性和心理压力，对于速度的关注更偏向于自己能多快到达目的地，所以公路和赛车根本就是关注点和目的都完全不一样的两个概念，自然不会觉得平时路上的速度太慢。
+加上赛车普遍对自己冒的风险和用风险换来的收益经常做评估（就是所谓的策略），以至于赛车开多了也会把这个习惯带到公路上。我的很多队友都是在赛道上风格越野越快的在公路上就开的越怂…
+至于会感觉到慢：开完赛车再开公路能感觉到的慢不是速度上的慢，更多的是对其他车拖泥带水的操作觉得慢。拿我个人举例，我练完车回家的路上会觉得，哎前面这个人为啥要瞎踩刹车，这个人右转为什么非要几乎刹停再转，这个人上个匝道 ramp 为啥这么小心翼翼这么墨迹…等等等等。不过我以前刚练完车比完赛出赛车场回家也会下意识的带一些赛道驾驶的东西…下意识做了个 trail braking 重刹拖了个档，赛车转向比还没适应回公路车导致转弯转不好，或者是心态还是竞技心态没平复下来，这两年这毛病好了很多…
+总结一下，对我个人来说赛车和公路驾驶完全是两码子事儿驾驶者也是两种模式所以在速度上并不会觉得公路驾驶慢，但是有时候会觉得别的车开的拖泥带水有很多无意义的蜜汁操作…
+阅读原文</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">如何看待新研究表明，新冠患者即使无症状或轻度感染，注意力和记忆力在数月时间内也会有所下降？</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9744622">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>赵思家，牛津大学神经科学博士后
+阅读原文
+
+谢谢谢谢。
+这个研究的发现其实很简单，也没有标题党，确实就是发现，曾感染上新冠的年轻人，即使当时新冠的症状很轻、甚至没有任何症状，在康复后半年里还是会有无法长期集中注意力和微弱的健忘的情况。
+其实这项研究并不应该引起人的过度的担忧，反而应该是给大众一个&quot;定心丸&quot;。说是“定心丸”也不准确，毕竟这个就是个小实验，只做了 100 多个人，样本很小。但至少在这个小研究中发现，就算有轻度的后遗症，随着时间的流逝也会康复的。之前对此了解很少，只有定性没有定量的研究，反而更令人感到担忧。希望有更多资金和团队关注新冠后的认知情况，给大家带来更详实，更完善的结论。
+常见问题
+先回答几个我已经被外媒和微信上的朋友问过的关键问题：
+
+这是不是和长期困于疫情所导致的大范围的焦虑、睡眠不佳等问题导致的呢？不是的。因为实验是同时在没有新冠康复者和对照组上做的。没有患过新冠的人，是同时间、同年龄、同地区的。换言之，如果这只是 lockdown（封城）引起了的认知变化，那么两组的结果应该是一样的。
+为什么一个呼吸道的病影响了大脑呢？这背后的机理我们现在还不完全清楚，有些证据指向可能是新冠的某些症状损伤了大脑中某些区域的微小血管（microvascular damage and fibrinogen leakage）使得血脑屏障受到了影响。详细的内容请阅读我导师 Masud Husain 最近写的一个小文： Husain M (2021) COVID and the brain. Brain 144:3545–3546. https://doi.org/10.1093/brain/awab421 （免费阅读）
+欧美有调查显示低收入人群更有可能患有新冠，而之前也有研究说明，教育水平、社会地位、经济状态都可能和认知能力有关。那有没有可能这里看到的认知能力的减退只是和新…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">孩子上课举手发言，老师不点他名，家长该怎么和老师沟通？</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9744623">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>七优，养猴小能手 /灵魂班主任
+阅读原文
+
+利益相关：公立学校 10+ 工作经验班主任、5 岁男孩妈妈
+最近正在和学生们一起准备期末复习，整个人忙得焦头烂额，午饭间隙看到这个话题，赶紧放下碗筷，忍不住想跟题主唠个知心嗑。你先别急，咱们慢慢来盘一下「回答问题」这件事，如果不想看分析，也可以直接拖到最后看策略。
+一、作为老师，通常会选什么样的孩子回答问题？
+在很多家长看来，老师上课时经常点孩子起来回答问题，是一桩喜事。的确，课堂参与度高的孩子，更容易集中注意力，如果回答正确的话，也很容易在老师的表扬和同学的钦佩中汲取自信的力量。
+但一个教学经验丰富的老师，ta 授课时选什么学生、选多少学生来回答问题并不是随意为之，而是是有规可循的，每个老师的「内心选生规则」可能不太一样，且以我个人为例，我的规则通常是：
+1、如果我的提问非常简单和基础，我会找学习基础薄弱的学生先来回答。
+这种情况下我的主要目的是想看看学困生掌握的情况，如果连他们都掌握很不错，那说明大概率上班级其他同学也都可以轻松 get，那么，这一趴的学习内容可以快速过，抓紧进入下一趴；反之，如果点到的几位基础薄弱生在这个基础问题上都跌了跟头，我就要赶紧反思是不是我的预设有漏洞？是不是之前学相关知识的时候我没讲透彻？是不是这个问题还存在难度？那不能快速过，得再拿出时间详细讲一讲。
+在此刻，学生回答问题的状态就是我的复盘晴雨表，帮助我来把握课堂授课的节奏。
+2、如果我的提问非常刁钻和复杂，我会找学习能力强或敢于表达的学生先来回答。
+当我在课堂上抛出一个难题时，大部分孩子是会有畏难心理的，「怕」字当头，思维就容易被束缚，这时，非常需要一个善于思考且敢于打破沉默的孩子，大胆回答，为其他同学「打个样儿」。如果回答得基本正确，作为老师我会给予肯定，而那些畏手畏脚不敢出头的同学也会因为榜样效应而开始积极参与，大胆地对这个孩子的回答进行补充…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+        </section>
+      </li>
+      <li class="source">
+        <section>
+          <h3 class="source-name"><a class="source-name__link" href="https://news.ycombinator.com/">Hacker News</a></h3>
+          <section class="articles-per-source">
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Bell Labs Org Chart</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://neil.computer/notes/bell-labs-org-chart/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Over 90 WordPress themes, plugins backdoored in supply chain attack</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.bleepingcomputer.com/news/security/over-90-wordpress-themes-plugins-backdoored-in-supply-chain-attack/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(4 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Why skyscrapers are so short</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.worksinprogress.co/issue/why-skyscrapers-are-so-short/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(13 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Diamond hauled from deep inside Earth holds never-before-seen mineral</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.livescience.com/new-mantle-mineral-found-in-diamond">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(3 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Show HN: Perspec – Scriptable desktop app to correct the perspective of images</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://github.com/feramhq/Perspec">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(4 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Myths About Cooking Steak That Need to Go Away (2013)</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.seriouseats.com/old-wives-tales-about-cooking-steak">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(15 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Pydantic</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://github.com/samuelcolvin/pydantic">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Tesorio (YC S15) is hiring a Senior DevOps to join our fully distributed team</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.tesorio.com/careers#job-openings">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(1 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Shell’s carbon capture plant is emitting more than it’s capturing</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.vice.com/en/article/7kb43x/shell-quest-carbon-capture-plant-alberta">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(3 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Show HN: Hacker XP – Hacker News styled as a Windows XP Outlook email client</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://hackerxp.com/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(1 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">I built a system that takes pictures of all the airplanes that fly over my house</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://twitter.com/LukeBerndt/status/1484916000139194375">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(1 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Amazon activist’s firing deemed illegal by labor board officials</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.bloomberg.com/news/articles/2022-01-21/amazon-activist-s-firing-deemed-illegal-by-labor-board-officials">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">The control group is out of control (2014)</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://slatestarcodex.com/2014/04/28/the-control-group-is-out-of-control/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(104 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">How E Ink developed full-color e-paper</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://spectrum.ieee.org/how-e-ink-developed-full-color-epaper">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(18 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Kedro – Creating reproducible, maintainable and modular data science code</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://github.com/kedro-org/kedro">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(5 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Ant mill</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://en.wikipedia.org/wiki/Ant_mill">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">The Dangers of Dimethylmercury (2019)</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.chemistryworld.com/opinion/the-dangers-of-dimethylmercury-/3010064.article">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(4 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Ethnographic research on Dynamicland</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.christophlabacher.com/notes/ethnographic-research-on-dynamicland">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(19 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Linux on a 486SX</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://ocawesome101.github.io/486-linux.html">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(3 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Zombocom is a well of deep wisdom (2021)</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://expmag.com/2021/09/the-internets-most-useless-website-is-a-well-of-deep-wisdom/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(4 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">A toast to all the rejects</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.theatlantic.com/family/archive/2022/01/celebrate-your-rejections-failures/621327/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(7 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Click and Swap, our alternative to Drag and Drop</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://engineering.contentsquare.com/2021/click-and-swap-alternative-to-drag-and-drop/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(8 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+        </section>
+      </li>
+    </ul>
+  </section>
+  <section class="daily-content">
     <h2 class="daily-heading"><time datatime="2022-01-21">2022-01-21</time></h2>
     <ul class="sources card">
       <li class="source">
@@ -370,6 +815,17 @@ K 博拿到新样品又屁颠屁颠的去做实验了。这次结果好了很多
             </article>
             <article>
               <details class="article-expander">
+                <summary class="article-expander__title">Audio Sparklines</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://melatonin.dev/blog/audio-sparklines/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(3 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
                 <summary class="article-expander__title">Open-Sourcing our Firmware</summary>
                 <a class="article-summary-link article-summary-box-outer" href="https://frame.work/blog/open-sourcing-our-firmware">
                   <div class="article-summary-box-inner">
@@ -502,6 +958,17 @@ K 博拿到新样品又屁颠屁颠的去做实验了。这次结果好了很多
             </article>
             <article>
               <details class="article-expander">
+                <summary class="article-expander__title">A night with the freegans</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://mashable.com/article/nyc-freegans-what-do-they-do">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(7 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
                 <summary class="article-expander__title">Starlink satellites hindering detection of near-Earth asteroids, study finds</summary>
                 <a class="article-summary-link article-summary-box-outer" href="https://www.caltech.edu/about/news/palomar-survey-instrument-analyzes-impact-of-starlink-satellites">
                   <div class="article-summary-box-inner">
@@ -526,6 +993,28 @@ K 博拿到新样品又屁颠屁颠的去做实验了。这次结果好了很多
               <details class="article-expander">
                 <summary class="article-expander__title">Any single galaxy reveals the composition of an entire universe</summary>
                 <a class="article-summary-link article-summary-box-outer" href="https://www.quantamagazine.org/with-one-galaxy-ai-defines-a-whole-simulated-universe-20220120/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(5 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Atlas – Terraform but for Database Migrations</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://atlasgo.io/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(1 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Ten years against division of labor in software</summary>
+                <a class="article-summary-link article-summary-box-outer" href="http://akkartik.name/post/division-of-labor">
                   <div class="article-summary-box-inner">
                     <span class="article-reading-time">(5 min)</span>
                     <span>Comments</span>
@@ -1095,6 +1584,17 @@ stray
             </article>
             <article>
               <details class="article-expander">
+                <summary class="article-expander__title">Everything must be paid for twice</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.raptitude.com/2022/01/everything-must-be-paid-for-twice/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
                 <summary class="article-expander__title">The long, slow process of carcinogenesis</summary>
                 <a class="article-summary-link article-summary-box-outer" href="https://www.science.org/content/blog-post/long-slow-process-carcinogenesis">
                   <div class="article-summary-box-inner">
@@ -1161,10 +1661,32 @@ stray
             </article>
             <article>
               <details class="article-expander">
+                <summary class="article-expander__title">Findings on route optimization in practice</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.graphhopper.com/blog/2022/01/19/findings-on-route-optimization-in-practice-part-1/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(4 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
                 <summary class="article-expander__title">Typed Config Languages</summary>
                 <a class="article-summary-link article-summary-box-outer" href="https://kevincox.ca/2022/01/19/typed-config-languages/">
                   <div class="article-summary-box-inner">
                     <span class="article-reading-time">(3 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">MicroShift</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://next.redhat.com/2022/01/19/introducing-microshift/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(4 min)</span>
                     <span>Comments</span>
                   </div>
                 </a>
@@ -1616,6 +2138,17 @@ Elendil Zheng，NScrapy http://r6d.cn/bxeag
                 <a class="article-summary-link article-summary-box-outer" href="https://wordleheb.web.app/">
                   <div class="article-summary-box-inner">
                     <span class="article-reading-time">(0 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">FOQS: Making a distributed priority queue disaster-ready</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://engineering.fb.com/2022/01/18/production-engineering/foqs-disaster-ready/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(8 min)</span>
                     <span>Comments</span>
                   </div>
                 </a>
@@ -16843,551 +17376,13 @@ ARPG：一：ARPG——美式《暗黑破坏神》刷刷刷类
                 </a>
               </details>
             </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">LaTeX Cookbook – Collection of LaTeX Recipes</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://latex-cookbook.net/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(2 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Building Remote Teams for Startups</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://vadimkravcenko.com/en/how-to-build-remote-teams-properly/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(9 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Running your own email is increasingly an artisanal choice, not a practical one</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://utcc.utoronto.ca/~cks/space/blog/sysadmin/EmailServersNoLongerPractical">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(3 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Street Fighter II, Spin when you can&#x27;t</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://fabiensanglard.net/sf2_spin/index.html">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(2 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Scuttlebutt Protocol Guide</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://ssbc.github.io/scuttlebutt-protocol-guide/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(25 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Subsea Cable to Connect Asia, Europe, and North America Through the Arctic</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://www.cinia.fi/en/blog/blog/cinias-subsea-cable-to-connect-asia-europe-and-north-america-through-the-arctic-in-2025">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(2 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Ansiwave BBS, a modern BBS with ANSI art and MIDI music</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://ansiwave.net/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(1 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Statistical Imaginaries: An ode to responsible data science</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://zephoria.substack.com/p/statistical-imaginaries">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(17 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Did Fentanyl Overdose Become Top Cause of Death for Adults Aged 18-45 in the US?</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://www.snopes.com/fact-check/fentanyl-overdose-death/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(3 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-        </section>
-      </li>
-    </ul>
-  </section>
-  <section class="daily-content">
-    <h2 class="daily-heading"><time datatime="2021-12-23">2021-12-23</time></h2>
-    <ul class="sources card">
-      <li class="source">
-        <section>
-          <h3 class="source-name"><a class="source-name__link" href="https://news-at.zhihu.com/api/4/stories/latest?client&#x3D;0">知乎日报</a></h3>
-          <section class="articles-per-source">
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">「东北大米比南方大米好吃」的说法是怎么来的？</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9743658">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(0 min)</span>
-                    <span>朴朴超市，hu~人在朴朴，刚下订单！
-阅读原文
-
-东北大米比南方大米的区别，归根结底是稻区的区别。
-
-北方稻区分为 3 个稻作区和 7 个稻作亚区，仅占全国播种面积的 6%左右，但稻作区跨度很大，主要包括北京、天津、山东、河南中、北部、河北、东北的黑龙江、吉林、辽宁和西北的陕西中、北部、宁夏及新疆等省市自治区。
-
-北方稻区基本上为粳稻，所以产出的基本为颗粒短而圆的粳米。
-南方稻区分为 3 个稻作区 9 个稻作亚区，占全国总播种面积的 93.6%，主要包括长江流域的主要省市上海，江苏、浙江、安徽、湖北，江西，湖南、四川、西南高原的贵州和云南，以及华南沿海的福建、台湾、广东和广西等省市自治区，以及陕西、河南两省的南部。
-
-南方稻区籼粳稻并存，以籼稻为主，产出大米主要为颗粒修长的籼米。
-籼米和粳米的区别
-除了外形外，籼米和粳米的根本差别在直链淀粉和支链淀粉的含量上。粳米里支链淀粉高，口感偏黏；而籼米中直链淀粉多，口感偏硬。
-
-两种大米的淀粉结构不同，也与气温和地域也有相关。我国南北方气候差异大，北方秋季光照充分、昼夜温差大，稻米中直链淀粉含量低、质软、口感好，这就是有「东北大米比南方大米好吃」说法的主要原因。
-
-相反，南方是在高温、昼夜温差小的环境下种植的水稻，稻米中直链淀粉含量高、质硬、口感相对就差。
-粳米和籼米在营养学上各有千秋
-一般来说，籼米的蛋白质含量较粳米要高约 2%，尼克酸含量也比粳米要高一些。
-
-籼米黏性较差，煮熟之后米粒颗颗松散，适合用来制作炒饭。用它煮饭的时候，要适当多加点水，比较“出饭”。粳米黏性适中，适合用来煮饭或煮粥，吃水比较少，“不出饭”。
-东北的粳米容易消化吸收，适合消化不良的人群，但同时它的血糖反应也更高，升糖速度快，糖尿病人要适量。而南方的籼米消化慢，升糖也慢，相对糖尿病人更有利于调节血糖。
-阅读原文</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">装置艺术和建筑学有什么关系？</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9743655">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(0 min)</span>
-                    <span>知乎用户，装配式建筑
-阅读原文
-
-很有趣的问题，我娘也问过我装置艺术的意义是什么，在我带她参观美国博物馆的时候。装置艺术可以说在国内离群众的生活还是有些距离，所以觉得疑惑特别正常。在美国，博物馆美术馆甚至大街小巷中，都能看到不少永久的或者临时的装置艺术，所以大部分群众对这些艺术的熟悉度和体验交互能力非常高。更好地了解装置艺术可以帮助我们更清楚得理解它和建筑的关系。
-Loader logoRing Installation / Arnaud Lapierre
-所以我是怎么回答我娘的呢？
-1.装置艺术与艺术画作所调动的感知方式是不同的
-我们欣赏的大部分的艺术作品都是静态的，不管是雕塑还是绘画。这种作品需要我们仔细去观察去感受。但不管再怎么用心，也是用眼睛去体会和认知。但是装置艺术不光需要视觉，可能还会用听觉，触觉甚至嗅觉来激发你的反应——我们称为沈浸式体验。
-Delirious Frites installation by Les AstronautesThe Art Mall: WonderWall Pavilion by LikeArchitects
-回到建筑上，建筑设计不能只存在于我们的电脑屏幕上，绘图铅笔下。真实的建筑体验更接近于装置艺术带给我们的全方位感知，包括材料给你的观感和触感，声音对你空间判断的影响，空间给你的感受是舒适还是压迫等等。所以学习装置艺术可以帮助我们更全面地去认知和处理建筑设计，而非只从鸟瞰效果图去定性建筑的好坏。
-2.装置艺术与艺术画作的感知维度是不同的
-传统绘画作品都是对事物和场景的二维呈现和表达。甚至三维的雕塑也因为其静态的局限性而更多只是呈现了一种固定景象。但是装置艺术带给我们的体验维度是空间—时间上的。这个换句话说就是我们在朋友圈秀我们去博物馆的时候，对绘画名作的反应是拍照：
-
-而对装置艺术的呈现会是录小视频：
-https://www.zhihu.com/video/1005616303435972608
-我们再来解释装置艺术的空间—时间性与雕塑的三维不同的时候，如何去体会欣赏作品就成了判断标准，这点尤其体现在时间性上。学建筑学傻了才会以为室内效果图就能代表室内空间。从一个大空间进入一个小空间，或者在一个狭长的通道走几分钟所产生的压抑感，绝不是几张图片就能呈现的。我们设计空间时要考虑的也不仅仅是单一空间本身的特性，而应该包括了我们在从一个空间进入另一个空间或者在空间中活动产生的心理情绪。这样设计出来的结果才能呈现有逻辑的空间变化。
-3.装置艺术需要人
-区分艺术和装置艺术的一个重要的点就是有无人的参与。装置艺术需要人的体验和互动，甚至说就是为人的体验而设计的艺术作品。没有人参与的装置艺术是不完整的，在人开始使用和介入的那一刻起，装置艺术才算开始呈现它的艺术价值。与曲高和寡的一些绘画作品不同，装置艺术每个作品的内核都是艺术家想激发的让观众自我感知的观点，情绪，体验等等。这个情绪不一定是正向的，甚至每个人先入为主的想法和体验后的认知完全是不同的。不过可以确定的是，不管是何种反应，这个艺术作品都完成了与人在空间，时间，内心中的互动。
-Big Maze, Bjarke Ingels Group, BIG, in National Building Museum, WAshington DC, Labyrinth, cool art installation
-比如上图 BIG 在华盛顿国家建筑博物馆设计的大迷宫。迷宫从外围的高耸看不见人，内凹到里面人与人可以在终点附近相见交流。我们很难界定这种空间的设计到底是艺术的还是建筑的。而这个作品作为装置艺术却真实的让我们感受到了空间与时间的力量，包括人的参与使用所呈现的效果和作用。
-因此我们再去看装置艺术就会发现他与我们本能上畏惧和疏远的抽象艺术有很大区别。它是最贴近人的生活尺度的艺术，是最需要考虑人的使用方式的艺术，是最合理利用空间，时间，激发人的五感的艺术。所以我们应该也可以得出，这是最接近真实建筑设计的艺术。
-阅读原文</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">杠铃杆分为哪几种类型？不同类型所用的滚花也是不同的吗？</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9743661">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(0 min)</span>
-                    <span>kmlover，公众号:不仅是健身/虫趣
-阅读原文
-
-（图片甚多，流量党慎点！）
-简单地说，杠铃杆可以分为直杆和非直杆两大类，而这两大类下面又各自分为若干品种。
-先说直杆。由于限制了形状，直杆间的区别主要是在长度、直径和重量上，例如：
-长 2200/2010 毫米，直径 28/25 毫米，重量为 20/15 公斤，两端装载杠铃片的套筒长度为 415/320 毫米，直径为 50/50 毫米的标准举重男子 / 女子杠铃杆
-标准男子举重杠铃杆参数图标准女子举重杠铃杆参数图
-（女性大多手小，因此杠铃杆也细一些，方便抓握。另外中间部分没有滚花）
-以及直径较细，两端装载杠铃片的部份不是套筒，而是螺纹的简易杠铃杆（奇怪的是国外把这种杠铃杆叫做 Standard bar）
-
-下图中可看到这种杆子两端是螺纹，与标准举重杆的光滑套筒不同：
-
-也有一些形制与标准举重杆类似，两端装载杠铃片的套筒直径同为 50 毫米，但短得多的杠铃杆，如下图中较短的那几根：
-
-以上的直杠在国内健身房基本都有。而在国外的多层装备（multi-plies）力量举比赛中，由于运动员举起的重量在装备助力下大大提高，因此必须使用一些长度、重量和直径超过了标准举重杠铃杆的特制杠铃杆，例如在深蹲比赛中常用的三种加长加粗加重的特制杠铃杆：
-长 2440 毫米，直径 30 毫米，重量为 25 公斤，两端装载杠铃片的套筒长度为 432 毫米，直径为 50 毫米的德州深蹲杠铃杆
-图中显示的杠铃杆长度为 96.5 英寸，本答案采纳的是官网 96 英寸（244 厘米）的数据
-长 2440 毫米，直径 35 毫米，重量为 27 公斤的长毛象深蹲杠铃杆（套筒数据暂缺），据说加到 1200 磅（约 544 公斤）都不会弯
-图中 A 为德州深蹲杠铃杆，B 为长毛象深蹲杠铃杆，可见 B 明显更粗
-着名的西部杠铃甚至搞出了长 2616 毫米，重量为 3…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">弹钢琴不就是在钢琴上的固定按键按吗，为什么有的人是大师，有的人不是?</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9743649">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(0 min)</span>
-                    <span>圭多达莱佐，三角铁十级
-阅读原文
-
-虽说脑洞比较有趣，但感觉其实也没必要黑题主。因为我知道真的有很多人是这么想的，也很不解。之前知乎还有一个类似的问题，大概是说，钢琴是按键，电脑打字也是按键。如果人能自学学会盲打，那一定也能自学会钢琴。回答区给题主科普了几十层，题主也听不进去，固执己见，将给他科普的人定性成“传统从业者无法接受新理论新思维”。相比之下，题主只是不懂就问，非常符合知乎的原则。所以，能从专业角度讲讲，还是讲讲吧。
-钢琴的确是固定按键，但绝不仅仅是这么简单。
-首先，你想把固定的键按对，就已经需要花费很大的精力了。这个不是你想象中那么简单的。越专业越复杂的曲子，指法是很难的，乐谱本身也可能很复杂。想要按对，没有无数次无数小时反复枯燥的练习，其实并不容易做到。钢琴大师开音乐会都不敢保证一场不错音，更何况普通人。
-在大致把键按对的基础上，还需要以正确合适的速度来演奏。有些速度比较变态的曲子，指法难度会更大。
-以上大致是钢琴演奏基础中的基础。在这些基础达标的前提下，需要练习的更多是集中在音乐处理方面。一首曲子，一个段落，用 80 的速度弹，还是用 85 的速度弹，不同的人弹出来，音乐形象是不一样的。乐谱上一个力度标记 f，到底是多强，不同的人有不同的理解，弹奏出的效果也不一样。一个地方有一个和弦，三个音组成，这三个音，可不是你一只手砸下去，哐的一下，就完事了，有的人，一只手下去，最上面的音会比下面两个音强一点，弹出的音乐性，就是会不一样。一段旋律，有的人弹出来，是有加连线的感觉，有的人弹出来，是没有感情的。一首抒情的曲子，踏板怎么踩，才能使音乐听起来既丰满，又不会浑浊，这是需要练的。踏板踩错半拍，可能音响就脏了，等等，这些都是进一步的技术问题。
-再往深入去说，钢琴家不是只对着钢琴天天练就可以的，对自己要求更高的演奏者，会去从乐理、音乐史、音乐文化等方面去研究作品。巴洛克的作品和浪漫时期的作品如何弹出各自的风格？需要去研究巴洛克时期的指法，研究当时非连奏的处理方法。贝多芬和海顿作品力度处理上有什么不同？需要去研究下当时钢琴结构。这个和弦为什么非要突然强一下才好听？因为从和声上来讲，这里突然出现了一个减七和弦。这个曲子这段琶音到底要用什么效果弹？哦，要尽量模仿古筝的感觉，因为通过研究我发现这个曲子是在模仿古筝的意境，等等。
-练琴无止境，回头是岸！
-阅读原文</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">瞎扯 · 如何正确地吐槽</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9743687">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(0 min)</span>
-                    <span>剖腹产台上听到过什么让你难忘的话？
-
-ada，行政
-阅读原文
-
-孩子出来了，医生说是男孩，腿很长哦，我说了一句像我，然后医生看着我这不到 160 的身高说，应该是像爸爸……
-阅读原文
-
-考上末流985很丢人吗？
-
-路康西，一个可耻的吃货。
-阅读原文
-
-一如往常，我准备坐 Uber 回学校，上了车，黑人司机问我：“Hi bro, 去哪啊？”我回道：“Northwestern University，西北大学。”（虽然我是陕西西北大学的，但是为了不被歧视，我宁愿在伊利诺伊州下车，等司机走了再走回西北），面相看似很凶的司机也变得轻声细语地说到：“Uh you are fxxking awesome! ”
-路上司机拉到一位小姐姐，也是一同去 NU 的，司机看我们是一个学校的，便说：“你俩运气挺好的，一个学校的呀。”
-小姐姐听到也来了兴趣问我：“同学你哪个专业的啊？”我回到：“Engineering。”小姐姐兴奋地说到：“哇真有缘，不过没怎么见过你，我也是 Engineering 的。”
-接着问道：“敢问你是哪个实验室里的呢？”看似很稳的我突然慌了起来，支支吾吾地回道：“我就是主楼八楼那个实验室的，小姐姐你呢？”这时我的背部已经打湿了，原本笑眯眯地小姐姐脸突然垮了起来略有尴尬地说道“啊哈，我是九楼实验室的，原来隔那么近。”。
-我暗暗松了口气。司机笑容也更明媚了，说：“我还以为你是陕西西北大学的呢！最近总有些冒牌大学学生坐到 NU，等我走了再走回去！”
-小姐姐眼神中透出鄙视的轻蔑地说：“什么垃圾说唱带专？也配冒充我们 NU 人上人？”
-一听到 NU 这 2 个字，司机投来羡慕的眼光，我顿时吓得脸色苍白，不过还好司机没有注意到。
-我们两个一起在 NU 下了车，我急急忙忙的往西安走去，不敢在伊利诺伊州停留一秒。到了陕西西北大学门口突然碰到了刚才那个小姐姐。小姐姐脸色一红说道：“原来你也是咱西安人啊。”
-
-轮胎君
-阅读原文
-
-@轮胎君 ：一如往常，我准备搭的士回学校。后面忘了。
-阅读原文
-
-胖子可以出cos吗？
-
-一碗甜心糖，没文化但能吹/上过小学/喜欢平胸/喜欢你
-阅读原文
-
-
-
-
-阅读原文
-
-上帝为什么选择犹太人为世界之主？
-
-FanFanFan
-阅读原文
-
-为什么陨石总是砸到陨石坑里？
-阅读原文
-
-如何看待健身时只穿运动bra的女生？
-
-倪十一
-阅读原文
-
-有点不合适，毕竟只穿上半身，不穿裤子有点不好
-阅读原文</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-        </section>
-      </li>
-      <li class="source">
-        <section>
-          <h3 class="source-name"><a class="source-name__link" href="https://news.ycombinator.com/">Hacker News</a></h3>
-          <section class="articles-per-source">
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Google&#x27;s removed all mentions of an Intercept investigation from Search</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://twitter.com/theintercept/status/1474135677419859981">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(1 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Show HN: Jupyter kernel using Poetry for reproducible Python package management</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://github.com/pathbird/poetry-kernel">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(3 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">The satirical Non-Fungible Olive Gardens sold more than $130k in volume</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://opensea.io/collection/non-fungible-olive-gardens?tab&#x3D;activity">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(0 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Toyota &#x27;Reviewing&#x27; Key Fob Remote Start Subscription Plan After Blowback</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://www.thedrive.com/news/43636/toyota-reviewing-key-fob-remote-start-subscription-plan-after-massive-blowback">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(4 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Ask HN: Those making $500/month on side projects in 2021 – Show and tell</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://news.ycombinator.com/item?id&#x3D;29667095">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(14 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Cornell McRay T&#x27;Racing</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://github.com/h3r2tic/cornell-mcray">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(2 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">How to Set Low Expectations at Your Two Remote Jobs</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://overemployed.com/set-low-expectations-at-your-two-remote-jobs/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(12 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">We Discovered a Rogues’ Gallery of Monster-Sized Gas Giants</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://nautil.us/blog/we-discovered-a-rogues-gallery-of-monster_sized-gas-giants">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(7 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">U.S. SEC rejects Valkyrie, Kryptoin Bitcoin trusts</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://www.reuters.com/markets/funds/us-sec-rejects-valkyrie-kryptoin-bitcoin-trusts-2021-12-23/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(2 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">State of Valhalla</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://openjdk.java.net/projects/valhalla/design-notes/state-of-valhalla/01-background">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(9 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Facebook says it was wrong to ban Canadian MP’s Christmas message</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://reclaimthenet.org/facebook-bans-mp-mark-strahls-christmas-message/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(2 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Redirector – Browser extension to redirect to privacy respecting front-ends</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://github.com/einaregilsson/Redirector">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(3 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Twitter’s founder admits that shutting down the API was “Worst thing we did”</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://www.revyuh.com/news/software/developers/twitters-founder-admits-that-shutting-down-the-api-was-worst-thing-we-did-it-affected-users-and-developers/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(8 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">That&#x27;s My Ape - A blockchain-free chain of custody tool</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://thatsmyape.com/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(0 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Flexport is hiring software engineers to rebuild the global trading system</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://www.flexport.com/careers">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(3 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">/tap – Powerful and customizable note-taking system</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://www.tatatap.com/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(1 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Be curious, not judgmental</summary>
-                <a class="article-summary-link article-summary-box-outer" href="http://www.shubhro.com/2021/12/20/be-curious-not-judgmental/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(2 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Designed to Last</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://jeffhuang.com/designed_to_last/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(8 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">A Lisp Interpreter Implemented in Conway&#x27;s Game of Life</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://github.com/woodrush/lisp-in-life">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(9 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">FreeFileSync: Open-Source File Synchronization and Backup</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://freefilesync.org/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(45 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">QOI – The “Quite OK Image Format” for fast, lossless image compression</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://github.com/phoboslab/qoi">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(3 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">SpeedCrunch</summary>
-                <a class="article-summary-link article-summary-box-outer" href="http://speedcrunch.org/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(1 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
         </section>
       </li>
     </ul>
   </section>
 
   <footer>
-    <time id="build-timestamp" datetime="2022-01-22T00:45:35.555Z">2022-01-22T00:45:35.555Z</time>
+    <time id="build-timestamp" datetime="2022-01-23T00:47:58.553Z">2022-01-23T00:47:58.553Z</time>
     <span><a class="footer-link" href="https://github.com/osmoscraft/osmosfeed">osmosfeed 1.12.0</a></span>
   </footer>
   <script src="index.js"></script>
