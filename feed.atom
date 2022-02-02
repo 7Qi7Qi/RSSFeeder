@@ -2,10 +2,443 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://7qi7qi.github.io/RSSFeeder/index.html</id>
     <title>osmos::feed</title>
-    <updated>2022-02-01T00:50:03.546Z</updated>
+    <updated>2022-02-02T00:49:56.129Z</updated>
     <generator>osmosfeed 1.12.0</generator>
     <link rel="alternate" href="https://7qi7qi.github.io/RSSFeeder/index.html"/>
     <link rel="self" href="https://7qi7qi.github.io/RSSFeeder/feed.atom"/>
+    <entry>
+        <title type="html"><![CDATA[都说固态硬盘寿命短，那么有谁把使用寿命用完了吗？]]></title>
+        <id>https://daily.zhihu.com/story/9744945</id>
+        <link href="https://daily.zhihu.com/story/9744945"/>
+        <updated>2022-02-01T23:07:51.000Z</updated>
+        <summary type="html"><![CDATA[北极，请勿付费咨询
+阅读原文
+
+我的工作是做操作系统存储驱动相关的东西，包括文件系统、存储驱动、USB 都接触过，把盘写坏了的事情还是遇到过不少次的。
+如果把写坏的盘做一个汇总，可以总结以下几个特点：
+1. 基本上都是不出名的小厂的盘，大厂尤其是 Intel 的盘在压力测试下也没出过问题，Intel 的盘不仅耐用，并且掉电丢数据的情况也很少。
+2. 新产品更容易坏，比如 NVMe 刚出来的时候，各种杂牌子的盘很多，坏的也多，但过了一段时间以后，NVMe 的稳定性比第一批盘要好。这个规则也适用于 SATA-SSD（以下简称 SSD），但是因为 SSD 已经比较成熟了，所以 SSD 的问题相对于 NVMe 来说要少一些。
+3. 操作系统上层操作很难写坏一个盘，因为盘自身带缓存，解决方法是发送硬件的 flush(SYNC)命令，并且不要使用 TRIM 命令。
+早年（大概 8 年前）SSD 刚开始普及的时候，杂牌子的 SSD 比较多，国外客户更是什么样的盘都有，寄过来一些故障盘，发现在持续烤机一段时间（大概一个月）以后，性能开始下降，文件系统（RTOS 上的）性能从 200MB/s 左右下降到不到 100MB/s，这个时候盘已经快要坏了，大版本 release 测试的时候发现性能有下降，会用不同的盘测一下，如果是某个特定的盘的问题，那么就会把这个盘从测试环境里取出来，不再继续使用。这些盘年代久远，印象不太深刻。
+我印象深刻的是两年前我写坏过一个 NVMe 盘，盘不是我买的，但是因为我们文件系统的性能距离官方数据有一定差距，并且想研究一下 TRIM(DISCARD)的影响，我就拿过来研究了一下（顺便说一下，有几个回答里有人提到过这个品牌，这个品牌名声一般）。为了避免硬件缓存的影响，我每次测试之前，会全盘写一遍 0x55，再写一遍 0xAA，每写一段就发一个 SYNC 命令，这样能迫使硬件缓存完全失效，并且会完全消耗一次 PE 次数。写完一遍 55/AA 之后，再进行后续性能测试（以每次 256KB 的数据块写 2GB 的内容）。
+这个 NVMe 盘（PCI-E）裸写的速度大概是 700-800MB/s，在我反复擦写 0x55/0xAA 大概 5 次左右的时候，盘的写速度突然掉到 200MB/s，之后一直就保持在这个速度上了。
+基本上可以认为这个盘已经坏了。
+评论有人说 SSD 跟 NVMe 是一种东西，不应该这么比，我回答里的 SSD 特指 SATA-SSD，二者的主控并不一样，NVMe 刚流行的那两年，因为主控问题导致 NVMe 挂掉的盘很多，第一批 NVMe 的主控技术并不好。主控对闪存的性能和寿命影响是很大的。
+
+所以，要问固态盘快要坏了的时候是什么现象，那么首先可能遇到的是掉速问题，频繁擦写（尤其是写一轮 55/AA）可能会导致固态盘的负载均衡算法失灵；也可能会零碎的丢失一些数据，但考虑到盘本身很大，如果不是像 Chia 那样 P 盘的话，未必能发现异常的数据块。
+正常使用，尤其是用大厂的盘，一般不会有什么问题，我手头的 Intel SSD 730 Series 240GB，是 2014 年买的，作为系统盘使用至今没有任何问题。但另外一块 SanDisk 的 1T SSD，用了不到 4 年，已经有好几块坏快了（但还能用）。但是大厂的东西，贵是真的贵，一分钱一分货，十分钱两分货。
+
+写废盘的测试流程（注：绕过文件系统，直接操作驱动）：
+1. 申请 256KB 的固定缓存；
+2. 缓存填充 0x55，从第一个扇区写到最后一个扇区；
+2.1. 每写完 1G，发送一次硬件 Flush 命令（NVMe：Flush Cmd 0x00，SATA：ATA_CMD_FLUSH 0xE7/0xEA）
+3. 缓存填充 0xAA，从第一个扇区写到最后一个扇区；
+3.1. 每写完 1G，发送一次硬件 Flush 命令（同上）
+4. 准备 1-2GB 的内存，按偏移量对 0x100 求余填充数据
+5. 计时，写入数据，计算性能
+6. 计时，读取数据，计算性能，校验
+7. 发送 Flush 命令，并重复 4-6 步骤多次（>5）求平均数
+阅读原文]]></summary>
+        <author>
+            <name>知乎日报</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[如果以后上大学想学野生动物保护专业，出来去保护濒危野生动物，路怎么走？]]></title>
+        <id>https://daily.zhihu.com/story/9744947</id>
+        <link href="https://daily.zhihu.com/story/9744947"/>
+        <updated>2022-02-01T23:07:46.000Z</updated>
+        <summary type="html"><![CDATA[初雯雯，野生动物摄影师
+阅读原文
+
+谢邀，我刚从野外回来刚跟同事们开完会~正在考虑招人的工作，想来和我们一起奋斗的小伙伴（兽医专业和科研人员）直接看最后有招聘启事哈~
+那，进入正题哈，我叫初雯雯，我的好多相关的故事网上都能查到，概括一下就是从我父亲那一辈就开始保护野生动物，他当年是为了河狸来新疆的，我就从小跟他一起出野外，从小就看着动物看着大自然，也就自然而然的想要以后做这一份工作。最开始的时候我其实是在 2014 年的时候建立了瞳之初自然影像工作室，希望通过我拍摄的野生动物照片和视频来唤起大家对于野生动物保护的意识，还出了一本书叫做《初瞳 - 我和我的野生动物朋友》，但是后来我发现真的没办法回答大家问的最多的问题，作为一个普通人，不能接触自然的人，要怎么参与自然保护？所以在 2018 年，我们变成了现在这个机构，阿勒泰地区自然保护协会。我们旨在于成为连接人类社会和自然之间的桥梁，让自然保护这件事儿变得简单一些，让所有人都能参与的那种。对于我们团队来说，具体工作呢就包括科研工作、公益项目、野生动物救助还有自然教育及新媒体宣传。
+我们这个行业其实就像其他很多行业一样，别人看着觉得很神秘，但是对于我们来说其实就是日复一日的工作。
+我们的工作一共分为四个板块，第一个重要的就是我们的科研工作，可以说是其他几个板块的基础支撑吧，我们通过野外调查去明确不同的物种所面临的问题和威胁，然后我们来设计相关的能够带大众参与的公益项目，我们还通过科研的方式来了解野生动物在自然环境下的食物组成还有日常行为，来为救助的野生动物们设计食谱和进行笼舍的丰容，我们还通过将科研得出的结论转化成科普的表达方式，来向大家输出野生动物和自然保护的真实样子，这就是我们科研工作的意义。
+第二个部分呢，是公益项目，我们汇聚社会上的不同资源，包括政府、企业、基金会、个人，大家聚力为野生动物去做一些能够带来改变的工作，比如…]]></summary>
+        <author>
+            <name>知乎日报</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[《长津湖之水门桥》中有哪不容忽视的细节？]]></title>
+        <id>https://daily.zhihu.com/story/9744935</id>
+        <link href="https://daily.zhihu.com/story/9744935"/>
+        <updated>2022-02-01T23:07:37.000Z</updated>
+        <summary type="html"><![CDATA[韩东君，演员
+阅读原文
+
+大家好，我是韩东君，在《长津湖之水门桥》中饰演第七穿插连第 280 名战士，神枪手平河。
+我相信不仅对我，对每一个参与其中的人来说，《水门桥》都是一部承载着重要意义的电影，从长津湖到水门桥，七连的志愿军战士们踏过一座又一座战场，在一场场汹涌的战火硝烟中冲锋陷阵，为了身后的家，更是为了心中的国。
+对我而言，《长津湖之水门桥》中有太多印象深刻的故事了。在完成影片拍摄后的很长一段时间里，那些故事和故事里的人，以及我们一起在拍摄现场所经历的种种，时常在我脑海里复演。相信大家看完电影以后，也会和我有同样的感受。
+首先还是先说说平河吧。
+我至今还记得第一次在剧本中看到平河这个角色时的第一感受，就是“好奇”。平河是个不太爱讲话的人，无论是在战场内外，你很难通过他说了什么话，来判断他是一个什么样的人。但是在《长津湖》中，他枪法奇准，擅用各种枪械武器，并且还知道圣诞节的由来。这样一来，这个人物的多面性和独特性就凸显出来。在后来的每一次拍摄中，我都会不断地琢磨，平河来自哪里，职业是什么，有什么样的家庭，有什么爱好，抗美援朝战争爆发之前，他有过哪些经历等等。在不断的“自我对话”（其实是韩东君与平河的对话）后，我逐渐找到这个角色的重心——他是一个有学识、有思想、有胆魄，同时又不喜高调的人。
+我很喜欢平河的名字，这两个字倒过来念，就是“和平”。无论是在《长津湖》还是《水门桥》中，和平，都是所有人的心愿。我曾跟导演讨论过，想通过设计一些细节，让观众找到一条走进平河内心的道路。所以后来便有了：一场大战过后，平河坐在美军的坦克上，在弹壳上刻下一个“平”字。他把自己每一次的“劫后余生”都纪念在这枚弹壳上，只要上面的“平”字还在不断增加，自己就可以坚持，直到取得最终胜利，和战友们一起回家。对平河来说，弹壳是他的护身符，而在《水门桥》中，有一个大家看不到的细节——平河将弹壳从手腕解下，…]]></summary>
+        <author>
+            <name>知乎日报</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[如何评价马丽、魏翔、陈明昊主演的电影《这个杀手不太冷静》？]]></title>
+        <id>https://daily.zhihu.com/story/9744941</id>
+        <link href="https://daily.zhihu.com/story/9744941"/>
+        <updated>2022-02-01T23:07:28.000Z</updated>
+        <summary type="html"><![CDATA[邢文雄，编剧
+阅读原文
+
+泻药，作为这部戏的编剧和导演，无论怎么评价都属于王婆卖瓜，所以我想着借这个机会，给大家讲讲这部戏后背的故事。
+背后的故事。
+2016 年，我揣着在老家赚的三万块来到北京，两眼一抹黑，谁都不认识。恰逢一个给电视剧组写剧本的机会，我意外从话剧舞台辗转进入了影视行业。
+经过两年的拼搏和奋斗，成功负债好几十万。
+那时候我迷茫的就像临近冬天的蚊子，吃又吃不着，跑又跑不掉。就在这个时候，仰仗着我在喜剧综艺节目里面写小品的经历，我认识了魏翔。
+接下来就是一段没羞没臊的合作生涯，我们共同经历了快乐，经历了诋毁，哥俩有彻夜长谈，有把酒言欢，也有因为一部好电影痛哭流涕的羞耻岁月，回过头来想，那些时候大抵都是为了这部电影在默默做着准备。
+当我们第一次看到《魔幻时刻》的时候，属实被惊艳到了，它活泼，搞笑，又带着讽刺和戏谑。决定改编她之前，我和翔哥还有西虹市的乐斌总开了个小会，认真分析改编难度和未来会呈现出来的大概样子，最终决定硬啃这块老骨头。Ps：我这人一直挺狗，热情又奔放。
+接下来的三年，我就扑在了这一件事儿上，前一年每次修改还标一个版本号，到后来，版本号都记不清楚了，反正就是改改改。
+说真的，改编翻拍这件事情，要比原创一个故事难得多。第一个要面临的问题，就是原作和改编作品的比较，原作是上古神作，我们是电影新人，这种难度堪比你买了武林盟主的剑谱，训练三年就要和他登台比剑。第二个面临的问题，就是如何本土化，让大多数观众看得懂看得爽。所以，我们保留了核心创意，修改了人物关系，重新梳理了故事走向，在严格的制约下自由飞翔了一回。
+在闫非大魔二位监制的严格要求下，从春天到冬天，再到春天，又到冬天。伴随着一次又一次的疫情来袭，我们终于做好了准备工作，决定开机。
+拍摄过程艰苦且顺利，一次次的调整，一次次的磨合，在无数人的帮助下，我们终于在开机 89 天后，完成了所有的拍摄。
+到了电影后期，一种深深的乏力感再次涌了上来，我和绝大多数观众一样，只看过，没拍过，纷繁复杂的后期工作开始后，我又进入了一个全新的领域，剪辑，视效，动效，调色，包装，我只能是边学边做，凭着虎了吧唧的劲头，走到了最后。
+其实早就做好了心理建设，在强手如林的春节档，我们这部小片必定是最不被看好的一部。等待上映的日子里，我的心情每天都像在坐过山车，忽上忽下。
+直到有一天和监制聊天，他们告诉我，现在不被看好也许是个好事儿，可以降低大家对影片的预期，到时候咱们逆风迎战，多过瘾。
+这个说法一下点醒了我，仔细想想，从小到大一路走来，哪次不是不被看好，哪次不是迎难而上，哪次不是逆风迎战？（在游戏里不是，逆风就是被按地摩擦）
+七八岁时家里亲戚就说这个孩子，将来肯定啥也不是。高中时，班主任说邢文雄你将来要能考上大学，我倒立从班级走到学校门口。排话剧时，我自己投资自己写剧本自己排，还被人说我们是瞎胡闹穷欢乐草台班子。
+作为这个春节档最不应该有包袱但是电影里可能最有包袱儿的新人，我早已经把自己完完全全的交待给了电影，交待给了观众。是死是活，咱拼一把！
+映会的第一天，我和翔哥坐在影院的最后一排，看着所有观众哈哈大笑，我们俩人手拉手默默流泪。不敢哭出声，怕影响观众观影。
+最近这些日子，大家关于这部电影说的每句话我都看到了，有期待，有唱衰，有喜欢，有批评，我都一并接收。也一定会认真听取建议，如果有机会再拍电影，你们一定会看到我们的进步。
+后背的故事说完了，第一次拍戏，还有很多难忘的小事儿，有机会还会和大家一一分享。
+最后回到主题，我如何评价这部电影。
+因为我无法客观的评价这部影片，所以我给它换了个标题。
+你如何评价拍摄这部电影的过程。
+我的回答是：棒极了！
+阅读原文]]></summary>
+        <author>
+            <name>知乎日报</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[瞎扯 · 如何正确地吐槽]]></title>
+        <id>https://daily.zhihu.com/story/9744957</id>
+        <link href="https://daily.zhihu.com/story/9744957"/>
+        <updated>2022-02-01T23:07:20.000Z</updated>
+        <summary type="html"><![CDATA[假如武侠世界让你建立一个门派，你会定下哪些规矩？
+
+白苏，中庸偏左
+阅读原文
+
+芝麻信用低于 750 分的不考虑，拖欠学费的概率很大。
+阅读原文
+
+请老板吃饭，老板说「菜点多了点多了，太客气了」，应该怎么正确回复呢？
+
+道小忘，我只是一只井底之蛙，认知有限，最喜欢学习新知识。
+阅读原文
+
+没事，今天我让你吃不了兜着走。
+阅读原文
+
+为什么有人讨厌别人说话时夹杂英文？
+
+Leeres Wort，emoji
+阅读原文
+
+陈胜者，985 人也，aka 涉。吴广者，211 人也，aka 叔。陈涉少时，尝与人做 pre，辍 pre 之垄上，emmm 久之，曰：“苟财务自由，无相忘。”cohort 笑而应曰：“若为普罗，何财务自由也？”陈涉太息曰：“嗟乎！燕雀安 cue 鸿鹄之志哉！”
+ 二世元年 July，发闾左 transfer 戍渔阳，0.9k 人屯大泽乡。陈胜﹑吴广皆次当行，为 leaders。会天大雨，道不通，度已失 ddl。失 due，法皆斩。陈胜﹑吴广乃谋曰：“今亡亦死，举大计亦死；等死，死国可乎？”陈胜曰：“天下苦秦 push 久矣。吾闻二世弱鸡也，不当立，当立者乃大佬扶苏。扶苏以数 appeal 故，上使外将兵。今或闻无罪，二世杀之。百姓多闻其牛逼，未知其死也。项燕为楚将，数有 titles，爱士卒，楚人 respect 之。或以为死，或以为亡。今诚以吾众诈自称大佬扶苏﹑项燕，为天下唱，宜多应者。”吴广以为然。乃行卜。卜者知其 idea，曰：“足下事皆 work，有功。然足下卜之鬼乎！”陈胜﹑吴广喜，念鬼，曰：“此教我先威众耳。”乃丹书帛曰“陈胜 yyds”，置人所罾鱼腹中。卒买鱼烹食，得鱼腹中 note，固以？？？矣。又间令吴广之次所旁 plaza 中，夜篝火，狐鸣呼曰：“大楚兴，陈胜 yyds。”卒皆夜惊恐。旦日，卒中往往语，皆 cue 陈胜。
+阅读原文
+
+为什么学计算机的，不会修计算机？
+
+有木桑，嗷呜～★ 嗷～☆！
+阅读原文
+
+还是技术没学到位。
+我有个朋友学生物的，可会造孩子了
+阅读原文
+
+中国古代画作里，女性都看起来很丑，是出于怎样的原因？
+
+鬼束千寻
+阅读原文
+
+央视的《考古进行时》是这样描述这尊石人的「……眼圆睁，嘴微翘，透露着成熟女性特有的谦和……」
+啥？？？
+
+
+
+阅读原文]]></summary>
+        <author>
+            <name>知乎日报</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Analysis of Magic Leap 2 at SPIE AR/VR/Mr 2022]]></title>
+        <id>https://kguttag.com/2022/01/31/magic-leap-2-at-spie-ar-vr-mr-2022/</id>
+        <link href="https://kguttag.com/2022/01/31/magic-leap-2-at-spie-ar-vr-mr-2022/"/>
+        <updated>2022-02-01T23:05:19.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[America’s Covid job-saving programme gave most of its cash to the rich]]></title>
+        <id>https://www.economist.com/graphic-detail/2022/01/31/americas-covid-job-saving-programme-gave-most-of-its-cash-to-the-rich</id>
+        <link href="https://www.economist.com/graphic-detail/2022/01/31/americas-covid-job-saving-programme-gave-most-of-its-cash-to-the-rich"/>
+        <updated>2022-02-01T21:20:25.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Twitter stores original account names, dox vulnerability via Twitter Spaces]]></title>
+        <id>https://twitter.com/tszzl/status/1488466979799265281</id>
+        <link href="https://twitter.com/tszzl/status/1488466979799265281"/>
+        <updated>2022-02-01T21:17:53.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[A DNS resolver in 80 lines of Go]]></title>
+        <id>https://jvns.ca/blog/2022/02/01/a-dns-resolver-in-80-lines-of-go/</id>
+        <link href="https://jvns.ca/blog/2022/02/01/a-dns-resolver-in-80-lines-of-go/"/>
+        <updated>2022-02-01T21:11:40.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Alphabet Announces Fourth Quarter and Fiscal Year 2021 Results]]></title>
+        <id>https://abc.xyz/investor/static/pdf/2021Q4_alphabet_earnings_release.pdf?cache=d72fc76</id>
+        <link href="https://abc.xyz/investor/static/pdf/2021Q4_alphabet_earnings_release.pdf?cache=d72fc76"/>
+        <updated>2022-02-01T21:09:02.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[C2rust: Transpile C to Rust]]></title>
+        <id>https://c2rust.com/</id>
+        <link href="https://c2rust.com/"/>
+        <updated>2022-02-01T21:06:55.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Fetch (YC S15) Is Hiring]]></title>
+        <id>https://www.ycombinator.com/companies/fetch/jobs/aTjJR0S-head-of-growth</id>
+        <link href="https://www.ycombinator.com/companies/fetch/jobs/aTjJR0S-head-of-growth"/>
+        <updated>2022-02-01T21:00:35.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Google Maps now requires WiFi scanning to use navigation]]></title>
+        <id>https://news.ycombinator.com/item?id=30167865</id>
+        <link href="https://news.ycombinator.com/item?id=30167865"/>
+        <updated>2022-02-01T19:31:31.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Stablecoins: Growth potential and impact on banking]]></title>
+        <id>https://www.federalreserve.gov/econres/ifdp/stablecoins-growth-potential-and-impact-on-banking.htm</id>
+        <link href="https://www.federalreserve.gov/econres/ifdp/stablecoins-growth-potential-and-impact-on-banking.htm"/>
+        <updated>2022-02-01T19:24:11.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Furiosa's Cat Feeder (2016)]]></title>
+        <id>https://blondihacks.com/furiosas-cat-feeder/</id>
+        <link href="https://blondihacks.com/furiosas-cat-feeder/"/>
+        <updated>2022-02-01T19:14:43.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[WebVM: Server-less x86 virtual machines in the browser]]></title>
+        <id>https://leaningtech.com/webvm-server-less-x86-virtual-machines-in-the-browser/</id>
+        <link href="https://leaningtech.com/webvm-server-less-x86-virtual-machines-in-the-browser/"/>
+        <updated>2022-02-01T19:01:08.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Cruise is opening driverless cars to the public in San Francisco]]></title>
+        <id>https://www.getcruise.com/news/welcome-riders/</id>
+        <link href="https://www.getcruise.com/news/welcome-riders/"/>
+        <updated>2022-02-01T18:35:24.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[The McNamara fallacy: Measurement is not understanding]]></title>
+        <id>http://mcnamarafallacy.com/</id>
+        <link href="http://mcnamarafallacy.com/"/>
+        <updated>2022-02-01T18:02:14.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[How a PhD astrophysicist thinks about data]]></title>
+        <id>https://hex.tech/blog/friends-of-data/melodie-kao-1/</id>
+        <link href="https://hex.tech/blog/friends-of-data/melodie-kao-1/"/>
+        <updated>2022-02-01T17:56:14.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Python Tools for the Semantic Web, an Overview]]></title>
+        <id>https://github.com/pysemtec/semantic-python-overview</id>
+        <link href="https://github.com/pysemtec/semantic-python-overview"/>
+        <updated>2022-02-01T17:42:55.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Predicting the tide with an analog computer made from Lego]]></title>
+        <id>http://pepijndevos.nl/2022/01/30/predicting-the-tide-with-an-analog-computer-made-from-lego.html</id>
+        <link href="http://pepijndevos.nl/2022/01/30/predicting-the-tide-with-an-analog-computer-made-from-lego.html"/>
+        <updated>2022-02-01T17:12:36.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[The Casio employee behind the “Sleng Teng” riddim that revolutionized reggae]]></title>
+        <id>https://www.nippon.com/en/japan-topics/g02027/</id>
+        <link href="https://www.nippon.com/en/japan-topics/g02027/"/>
+        <updated>2022-02-01T17:03:57.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Tesla to recall vehicles that may disobey stop signs]]></title>
+        <id>https://www.reuters.com/business/autos-transportation/tesla-recalls-nearly-54000-us-vehicles-rolling-stop-software-feature-2022-02-01/</id>
+        <link href="https://www.reuters.com/business/autos-transportation/tesla-recalls-nearly-54000-us-vehicles-rolling-stop-software-feature-2022-02-01/"/>
+        <updated>2022-02-01T16:03:33.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Ask HN: Who is hiring? (February 2022)]]></title>
+        <id>https://news.ycombinator.com/item?id=30164271</id>
+        <link href="https://news.ycombinator.com/item?id=30164271"/>
+        <updated>2022-02-01T16:01:55.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Ask HN: Who wants to be hired? (February 2022)]]></title>
+        <id>https://news.ycombinator.com/item?id=30164269</id>
+        <link href="https://news.ycombinator.com/item?id=30164269"/>
+        <updated>2022-02-01T16:01:53.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[MariaDB to go public at $672M valuation]]></title>
+        <id>https://mariadb.com/newsroom/press-releases/mariadb-corporation-ab-to-become-a-publicly-traded-company-via-combination-with-angel-pond-holdings-corporation/</id>
+        <link href="https://mariadb.com/newsroom/press-releases/mariadb-corporation-ab-to-become-a-publicly-traded-company-via-combination-with-angel-pond-holdings-corporation/"/>
+        <updated>2022-02-01T15:42:12.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Career advice nobody gave me: Never ignore a recruiter]]></title>
+        <id>https://alexchesser.medium.com/career-advice-nobody-gave-me-never-ignore-a-recruiter-4474eac9556</id>
+        <link href="https://alexchesser.medium.com/career-advice-nobody-gave-me-never-ignore-a-recruiter-4474eac9556"/>
+        <updated>2022-02-01T15:23:04.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Ask HN: Who wants to collaborate?]]></title>
+        <id>https://news.ycombinator.com/item?id=30162767</id>
+        <link href="https://news.ycombinator.com/item?id=30162767"/>
+        <updated>2022-02-01T14:24:03.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Origin of the Bluetooth Name]]></title>
+        <id>https://www.bluetooth.com/about-us/bluetooth-origin/</id>
+        <link href="https://www.bluetooth.com/about-us/bluetooth-origin/"/>
+        <updated>2022-02-01T12:59:19.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Fetch API has landed into Node.js]]></title>
+        <id>https://github.com/nodejs/node/commit/6ec225392675c92b102d3caad02ee3a157c9d1b7</id>
+        <link href="https://github.com/nodejs/node/commit/6ec225392675c92b102d3caad02ee3a157c9d1b7"/>
+        <updated>2022-02-01T12:31:47.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Push Notifications, WebXR, and better PWA support coming to iOS]]></title>
+        <id>https://firt.dev/ios-15.4b</id>
+        <link href="https://firt.dev/ios-15.4b"/>
+        <updated>2022-02-01T10:18:20.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[How to Mislead with Facts]]></title>
+        <id>https://consilienceproject.org/how-to-mislead-with-facts/</id>
+        <link href="https://consilienceproject.org/how-to-mislead-with-facts/"/>
+        <updated>2022-02-01T03:25:52.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Show HN: Colab-xterm – Open a terminal in colab, including the free tier]]></title>
         <id>https://github.com/InfuseAI/colab-xterm</id>
@@ -452,6 +885,16 @@ fass Funk
         </author>
     </entry>
     <entry>
+        <title type="html"><![CDATA[Netflix: Lessons in Experimentation]]></title>
+        <id>https://www.aakashg.com/2022/01/18/netflix-experimentation/</id>
+        <link href="https://www.aakashg.com/2022/01/18/netflix-experimentation/"/>
+        <updated>2022-01-31T19:25:16.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[The unreasonable effectiveness of one-on-ones]]></title>
         <id>https://www.benkuhn.net/11/</id>
         <link href="https://www.benkuhn.net/11/"/>
@@ -556,6 +999,26 @@ fass Funk
         <id>https://www.nytimes.com/2022/01/31/sports/football/super-bowl-sports-betting.html</id>
         <link href="https://www.nytimes.com/2022/01/31/sports/football/super-bowl-sports-betting.html"/>
         <updated>2022-01-31T14:42:58.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[I reversed a Node.js malware and found the author]]></title>
+        <id>https://medium.com/@devops-guy/how-i-reversed-a-nodejs-malware-and-found-the-author-7dd9531b389f</id>
+        <link href="https://medium.com/@devops-guy/how-i-reversed-a-nodejs-malware-and-found-the-author-7dd9531b389f"/>
+        <updated>2022-01-31T10:24:36.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Radar fall detection and breath rate under $40]]></title>
+        <id>https://www.seeedstudio.com/24GHz-mmWave-Radar-Sensor-Fall-Detection-Module-p-5268.html</id>
+        <link href="https://www.seeedstudio.com/24GHz-mmWave-Radar-Sensor-Fall-Detection-Module-p-5268.html"/>
+        <updated>2022-01-31T10:00:24.000Z</updated>
         <summary type="html"><![CDATA[Comments]]></summary>
         <author>
             <name>Hacker News</name>
@@ -15205,531 +15668,6 @@ pianist 被翻译成“钢琴家”，因为带了“家”字，很多人自然
         <id>https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6733523/</id>
         <link href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6733523/"/>
         <updated>2022-01-03T13:13:51.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Mechanical Computing Systems Using Only Links and Rotary Joints]]></title>
-        <id>https://arxiv.org/abs/1801.03534</id>
-        <link href="https://arxiv.org/abs/1801.03534"/>
-        <updated>2022-01-03T12:09:11.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[How to grow green potassium ferrioxalate crystals from iron rust]]></title>
-        <id>https://crystalverse.com/potassium-ferrioxalate-crystals/</id>
-        <link href="https://crystalverse.com/potassium-ferrioxalate-crystals/"/>
-        <updated>2022-01-03T12:05:36.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Show HN: Changedetection.io detect changes in websites and JSON feeds]]></title>
-        <id>https://github.com/dgtlmoon/changedetection.io</id>
-        <link href="https://github.com/dgtlmoon/changedetection.io"/>
-        <updated>2022-01-03T11:17:20.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Using a mild Twitter addiction to get things done]]></title>
-        <id>https://nick.comer.io/post/ios-shortcuts</id>
-        <link href="https://nick.comer.io/post/ios-shortcuts"/>
-        <updated>2022-01-03T11:08:01.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Surviving the desert by building a motorcycle from a broken car? (2017)]]></title>
-        <id>https://historygarage.com/emile-leray-survived-the-desert-by-building-a-motorcycle-from-his-broken-car/</id>
-        <link href="https://historygarage.com/emile-leray-survived-the-desert-by-building-a-motorcycle-from-his-broken-car/"/>
-        <updated>2022-01-03T06:23:55.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Computers Built to Last]]></title>
-        <id>https://www.datagubbe.se/30yearcomp/</id>
-        <link href="https://www.datagubbe.se/30yearcomp/"/>
-        <updated>2022-01-03T05:53:39.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[SDP 方案部署平台]]></title>
-        <id>http://weekly.dockone.io/article/2434778</id>
-        <link href="http://weekly.dockone.io/article/2434778"/>
-        <updated>2022-01-03T00:49:03.121Z</updated>
-        <summary type="html"><![CDATA[视频 - https://youtu.be/Ea6VF0-yXuw
-用 Cloud Native 朝着 on-demand prod deployment 和 declarative automation 的理想前进。
-以 DORA 的统计为基础，提升各层次的技术走向。]]></summary>
-        <author>
-            <name>gosharplite</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Unsupervised Brain Models]]></title>
-        <id>https://xcorr.net/2021/12/31/2021-in-review-unsupervised-brain-models/</id>
-        <link href="https://xcorr.net/2021/12/31/2021-in-review-unsupervised-brain-models/"/>
-        <updated>2022-01-03T00:07:02.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Automated Code Optimization with E-Graphs]]></title>
-        <id>https://arxiv.org/abs/2112.14714</id>
-        <link href="https://arxiv.org/abs/2112.14714"/>
-        <updated>2022-01-02T23:51:37.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Slicer: Auto-Sharding for Datacenter Applications]]></title>
-        <id>https://www.usenix.org/conference/osdi16/technical-sessions/presentation/adya</id>
-        <link href="https://www.usenix.org/conference/osdi16/technical-sessions/presentation/adya"/>
-        <updated>2022-01-02T23:46:01.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[2.3k Patch Would Improve Linux Build Times 50~80% & Fix “Dependency Hell”]]></title>
-        <id>https://www.phoronix.com/scan.php?page=news_item&amp;px=Linux-Fast-Kernel-Headers</id>
-        <link href="https://www.phoronix.com/scan.php?page=news_item&amp;px=Linux-Fast-Kernel-Headers"/>
-        <updated>2022-01-02T23:30:08.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Loving Someone with Depression]]></title>
-        <id>https://www.mentalhealth.org.uk/stories/andrew-loving-someone-depression</id>
-        <link href="https://www.mentalhealth.org.uk/stories/andrew-loving-someone-depression"/>
-        <updated>2022-01-02T23:12:03.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Machine Learning for MRI Image Reconstruction]]></title>
-        <id>https://rhotter.github.io/posts/ml-for-mri/</id>
-        <link href="https://rhotter.github.io/posts/ml-for-mri/"/>
-        <updated>2022-01-02T23:09:46.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[为什么顶尖运动员也需要教练？]]></title>
-        <id>https://daily.zhihu.com/story/9744002</id>
-        <link href="https://daily.zhihu.com/story/9744002"/>
-        <updated>2022-01-02T23:07:26.000Z</updated>
-        <summary type="html"><![CDATA[吕小军，奥运会举重冠军
-阅读原文
-
-2012 年伦敦奥运会，挺完 204 公斤确定拿金后，我死死把于导抓着冲台下大吼“这是我教练！！！”那会唯一的念头，就想让全世界的人都看到他，知道他是谁。
-大伙在电视上看到运动员跟教练拥抱啊举高啊，是会有点疯狂，但确实控制不了。因为什么呢，他是成就你的人。差不多是最重要的那一个。
-
-这么说吧，技术实现教练不一定比得上运动员，但他一定是这个世界上极少极少真正懂你的人，无论是在生理上还是心理上。实话越往后走，最难的部分反倒不在训练，而是保持专注力。都是普通人，会被很多事情困扰，技术、体力、年龄、伤病、家庭，还有已经取得的成绩。
-老说上场就是跟自己比，也这意思。心不稳，练再多都没用。
-教练就是那个一直在旁边看着你，在前面拉着你，把你拽回正轨上的人。就我和于导搭档的这些年吧，关系还挺复杂，师傅、朋友、家长、人生导师，都有。
-师傅，是做教练的基础内容。我理解吧，有时更像个对手。怎么说呢，得把你挖透了，看破了，才知道该从哪儿下手能最快提升啊。我是 2003 年进的国家队，2009 年 2 月底才开始跟着于导。8 个月后，拿了世锦赛冠军。
-
-这是我的第一个世界冠军。那之后，才开始敢想着去冲奥运金牌的。可以说，现在我弱点是哪，极限在哪，恐惧什么，他全门清。当然，除了我，他还得花很多精力去抠竞争者的技术点，最新的训练方法，要照顾很多事。
-光整技术远远不够，还得抓心理。这茬说起来有点玄乎，说俩幕后的事儿吧。我人比较内向，劲儿都在里头憋着。于导很了解这点，所以有时训练看哪把差点儿意思，他也不正儿八经走你旁边认真说道，就慢悠悠飘一句：“没有高度啊，铃不往上走啊。”语气漫不经心，但就能扎实地给人敲一鼓，大家能懂我意思嘛？
-再有，重大赛场上教练间的心理战编排，至关重要。有些神来之笔，是奠定战果的关键。
-东奥决赛挺举，我开把 197 公斤。按常规是 5 公斤加把，但意大利选手第一把结束后我俩差距只有 2 公斤，咬太紧了。于导很干脆地破了例，开 205 公斤，瞬间压力全搁对方身上了。小伙子二把顶着开了 203 公斤，没举好。之后，我们才把重量改到 204 公斤，把优势稳在了极难超越的 9 公斤。
-
-说东奥还想起个事儿。刚知道延迟那会，下了训练于导经常找我喝茶（真喝茶），两男人坐一块聊孩子，说家庭，海阔天空地侃。起先还迷糊，后来琢磨明白了，他是专门给我卸思想负担来了。
-搭档快 13 年了，一路走来的艰难都是他陪着。他叫于杰，由衷感恩。
-另外想借这个地儿，向举重队所有站在背后默默付出的教练组员们说一句谢谢。新的一年，我想跟大家伙一起走得更远。
-我是吕小军，一个热爱举重的中国人。
-阅读原文]]></summary>
-        <author>
-            <name>知乎日报</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[猫瘟有什么症状表现？]]></title>
-        <id>https://daily.zhihu.com/story/9744006</id>
-        <link href="https://daily.zhihu.com/story/9744006"/>
-        <updated>2022-01-02T23:07:22.000Z</updated>
-        <summary type="html"><![CDATA[枸橼猫，谢绝标签化｜喜欢安静，无需关注
-阅读原文
-
-看到很多老师都从病理学和诊断学上对猫瘟进行了讲解，那我索性用拉家常的方式和大家讨论下猫瘟的症状与防治。我想，对于铲屎官来说，如何尽可能地避免猫的烈性传染病的发生还是比较重要的。
-来，铲屎的萌新们，咱们来聊聊，尽可能把知识弄得简单一些吧。
-在养猫前后，或者你的猫是从宠物商人那儿购买的话，或多或少你可能会听说甚至经历过一个概念叫“星期猫”，看起来猫好端端的带回家，一周左右，就会出现各种疾病症状并且迅速病死。
-猫常见的病毒性传染病种类并不多，如此猛烈和快速致死、让你猫财两空的传染病，学名叫猫泛白细胞减少症，它有个臭名昭着的别称叫猫瘟热。
-还有一些别称如“猫传染性肠炎”、“猫细小病毒感染”，请记住，指的都是这家伙。它是由一种细小病毒（Feline parvo virus,FPV）引起的，潜伏期是 2-9 天。这就给你的迎接新猫进家门带来了很大的隐患，你见到猫的时候别看它生龙活虎的，它可能已经感染，正处在疾病的潜伏期，数天后就会发病并出现症状。
-插个题外话，这次新型冠状病毒的疫情期间，你一定接触过一个概念叫“14 天医学观察”，疫区的来客需要居家隔离满十四天才可以出来。因为很多急性传染病都有着数天的潜伏期，猫瘟也是这样。如果你的家里已经有原住民了的话，外来的新猫一定要单独隔离 14 天以上，把传染病的可能性排除了，再正式欢迎它成为你家的新伙伴。建议养成这个良好的公共卫生习惯，于人于猫都很有益处。
-那一旦这 14 天内不幸中彩了，你可能会观察到如下症状：
-一、可能观察到高烧，发热体温 40℃以上，伴随患猫的沈郁、厌食，摸猫的耳朵和鼻子，你会明显感到干涩和滚烫。猫瘟发热呈双相热型，发烧和退烧会在数天内交替出现。
-二、明显与采食或吐毛球无关的呕吐，因为呕吐物中含有胆汁，所以呈现黄色或者黄绿色水样。
-三、严重脱水，猫体重减轻，眼球深陷，有经…]]></summary>
-        <author>
-            <name>知乎日报</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[为什么很多人说「综艺在影视行业鄙视链的底端」？综艺真的没有电影、电视剧含金量高吗？]]></title>
-        <id>https://daily.zhihu.com/story/9743983</id>
-        <link href="https://daily.zhihu.com/story/9743983"/>
-        <updated>2022-01-02T23:07:13.000Z</updated>
-        <summary type="html"><![CDATA[乌合之子但愿君，一只二次元三头身的猫猫正在路过
-阅读原文
-
-这个问题一开始好像是这样的：为什么很多人觉得综艺没有电影和电视剧高级？
-我个人看法是，事实上的高级和觉得高级是两个不一样的概念，从纯逻辑的思考来看，有些东西可能事实上是高级的，但旁人不一定觉得高级。我不懂什么是真正的高级，但我大概能理解什么叫做觉得高级，包括这个问题写的“很多人说”。这个“很多人说”其实就是觉得高级。
-一、综艺节目的类型
-我想先从综艺节目内部的分类说起，我也是随便分（才不是，这么分肯定是有用的），肯定有所偏废。大家完全可以排个序，你觉得哪种类型“更高级”？
-
--1、真实秀综艺
-我也看了严敏导演和魏嘉毅老师的对谈视频。严敏导演的谈话里，讲的更多的知识综艺节目里的一部分，他称之为真实秀（也就是真人秀）。当然，谈真实秀，没严敏导演可以说是非常合适，比如《向往的生活》《极限挑战》《奔跑吧》《花儿与少年》《偶像来了》，这些都是在有实验手册预设的前提下，看到不管是明星还是素人面对生活的真实反应。
-在我看来，真实秀更像是戈夫曼的一本书名“日常生活中的自我呈现”。真实秀节目通常没有一个要分阶段完成的主线任务，有的只是一些日常生活的展现。这种展现非常像电影《楚门的世界》，最妙的是，打广告的方式也是如此。
-如果说为了保证节目的可观看性，会设置一些需要完成任务的环节，仿佛看起来有起伏和节奏的话；这些环节本身之间的关系也显得并不紧密，能够衔接它们的，往往是需要获得 / 抢夺 / 转移的道具，而不是能带来更为相互呼应的活动。如果是在一部讲究细节呼应的电影作品里，恐怕就很难见到这么松散的结构。
-真实秀里也可以稍微细分一下，分成嘉宾可见的和不可见的真实秀。
-像《拜托了冰箱》《饭局的诱惑》《举杯呵呵喝》《康熙来了》这些就是可见的真实秀，几个嘉宾围绕在某个环境下进行聊天。我们当然不能说嘉宾在这些节目里的反应是表演出来的——毕竟和电影…]]></summary>
-        <author>
-            <name>知乎日报</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[对于一个电影、电视创作者来说「相信」自己拍的东西，对一部作品的成功而言是不是最重要的事情？]]></title>
-        <id>https://daily.zhihu.com/story/9743804</id>
-        <link href="https://daily.zhihu.com/story/9743804"/>
-        <updated>2022-01-02T23:07:09.000Z</updated>
-        <summary type="html"><![CDATA[segelas，电影学硕士已毕业，但仍旧略懂皮毛
-阅读原文
-
-简单地谈几句个人的看法。
-对于表演，有这样一种说法：信念感的有无，决定了表演的说服力。事实上，于内容创作来说，这也同样成立。对于主题的信念，将直接影响到主题表达系统的完成度。而这个完成度，便会带来一个更重要环节的成败：作为表达接收者的观众，是否能够充分认可表达的主题，它是否具有说服力。
-试想一下，如果系统的架构者自身都对自己的核心目标不够坚定，而是左右摇摆、试图寻找平衡点，那么作品的完成度必然会受到影响——在一个既定的大背景之下，于一些局部阶段做反复横跳，试图修补成面面俱到的样子，寻找到主题与非主题考量的平衡点，此时，原定主题的表达逻辑，便会不那么严谨完整了。审查尺度、观众认知、类型诉求，都可能成为那个“非主题”的构成部分。
-今年上映的〈热带往事〉，便是一个案例。特别是它对结尾的处理，是有些“自暴自弃”的，完全没有将通篇下来的主题贯彻到底，引领着电影走入了混沌。
-从张艾嘉其角色的落脚点，我们看到了此前主题；的延续：即使在“一切走向光明”的结尾，导演依然没有正面表现她与彭于晏之间的重逢，没有正面确认她的想法。张艾嘉的确凿真实完整的内心世界，依然如全篇所做的那样，处于一种隐约的不言明之中。并且，在她与彭于晏那些用老歌来渲染阳光一面的相处片段中，也时而混入了打破向好节奏的突兀要素。
-如果本片从头到尾都是一部“张艾嘉与彭于晏走出各自魔障、阴影”的故事，那么至少在结尾，此前维持始终的“模糊形象”理应被揭开，张艾嘉身上“暗示其夫妻关系不佳，对事件无感（甚至在留白中可能掩盖了更多阴暗情绪）的状态，理应被打破，也必须被打破——没有什么，会比她与彭于晏的重逢，来的更有力量。尤其是在彭于晏一方有了明确呈现之后，更需要如此。
-表面上，她走向了明亮的结局，用对彭于晏的思绪填补了情感的空白，但是，这种情感在“禁断”感觉之外，也在暗中有着丰…]]></summary>
-        <author>
-            <name>知乎日报</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[怎样才能做出一份完美的煎牛排？]]></title>
-        <id>https://daily.zhihu.com/story/9743961</id>
-        <link href="https://daily.zhihu.com/story/9743961"/>
-        <updated>2022-01-02T23:07:02.000Z</updated>
-        <summary type="html"><![CDATA[识食务者，硬核科学吃货 | 淘宝请搜：识食务者 | 进群请加同名公众号
-阅读原文
-
-做一块完美牛排，拢共分七步！！
-1.解冻；2.擦干；3.热锅；4.用油；5.煎制；6.静置；7.调味……
-对于煎了几千块牛排，试过 NNN 种方法的我来说，我觉得最终大道至简，总结下来都离不开这 7 步。
-这里的每一步都不简单，因为每一步都有它对应的目的，以及相对应的建议的做法；但这里的每一步其实又很简单，你只需要多一点点了解，上手做 1-2 次，以后基本就是一个“肌肉记忆”的动作了，不需要思考，几分钟就能做好一块牛排，堪称家里能做的最简单的硬菜！
-掌握了，不管是薄切：
-
-还是厚切：
-
-都可以轻松掌握！
-这一篇，用最简单明了的七步法，让你轻松掌握薄切、厚切等不同厚度的牛排做法，包学包会！
-
-一、七步，做出完美牛排
-1.解冻
-牛排到底要不要解冻？必须要，尤其是厚切牛排。
-不解冻会造成两个非常严重的后果：
-（1）原本应该解冻环节流出的汁水，在煎的过程流出来了，导致锅温迅速降低，影响煎出来的焦褐感：
-外部焦褐感不足的牛排
-（2）本来煎 + 静置的过程能让牛排变得 5 成熟，但却因为没有解冻导致内部初始温度过低，变成了夹生肉：
-内部近乎全生的牛排
-那怎么解冻呢？我推荐的方式是缓慢解冻，先把牛排从冰箱 -18°C 区域移至 4°C 区域 24 小时，再从冰箱拿到室温环境下 2-3 小时。
-缓慢解冻的好处在于，可以避免内外解冻程度的不一致，导致的汁水过多流失问题。
-当然，如果你实在来不及，那么就真空袋泡水里，即使是快速解冻也一定优于你不解冻就下锅。
-这个步骤，你只需要记住：缓慢解冻＞快速解冻＞不解冻
-2.擦干
-为什么饭店的牛排总是有浓郁的肉香味，焦香味？
-因为很多饭店会用切割好的冷鲜肉，或者是彻底解冻后的冷冻牛排放置在冷柜里风干了一段时间，这样表面不仅干爽，甚至还有点粘手，反正不是湿哒哒的。
-
-这样做的…]]></summary>
-        <author>
-            <name>知乎日报</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[瞎扯 · 如何正确地吐槽]]></title>
-        <id>https://daily.zhihu.com/story/9744028</id>
-        <link href="https://daily.zhihu.com/story/9744028"/>
-        <updated>2022-01-02T23:06:56.000Z</updated>
-        <summary type="html"><![CDATA[如何用一句话让恐怖故事更恐怖？
-
-匿名用户
-阅读原文
-
-本故事改编自真实事件
-阅读原文
-
-为什么大家明明知道摆烂了，就可以活的豁然开朗，但是大家却就是做不到，依然活的如此的拧巴？
-
-不当人了，些许潦草
-阅读原文
-
-那你期末考试怎么办呢
-阅读原文
-
-人在无聊的时候会干什么？
-
-金大力
-阅读原文
-
-我如果不无聊，应该也看不到你这个问题
-阅读原文
-
-你是从哪些细节发现对方出轨的？有什么技巧吗？
-
-单调喊数，青春就是过自己想要的生活。
-阅读原文
-
-原来我做傻事总是喊我傻瓜，后来我又给了路边乞丐十块钱，ta说我傻逼。
-阅读原文
-
-你是如何误杀自己的宠物的?
-
-拔不完的麻花
-阅读原文
-
-养了一年的珍珠熊，某天冬天忘记拿进去，白天把笼子拿出来通风晒太阳，第二天它就僵了，然后想着估计也老了，又冷，怀着悲伤又愧疚的心情把它埋了。
-长大以后发现仓鼠其实有冬眠，僵了拿吹风机有时候也会好，我又想起了我的蛋蛋，不知道它是真的死了还是冬眠就被我埋了，更悲伤了
-阅读原文]]></summary>
-        <author>
-            <name>知乎日报</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[An Algorithm for Passing Programming Interviews]]></title>
-        <id>https://malisper.me/an-algorithm-for-passing-programming-interviews/</id>
-        <link href="https://malisper.me/an-algorithm-for-passing-programming-interviews/"/>
-        <updated>2022-01-02T22:58:40.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Optimization of brain and life performance: Striving for playing at the top]]></title>
-        <id>https://arxiv.org/abs/1111.4621</id>
-        <link href="https://arxiv.org/abs/1111.4621"/>
-        <updated>2022-01-02T22:46:47.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Summary of Atomic Habits]]></title>
-        <id>https://www.chrisbehan.ca/posts/atomic-habits</id>
-        <link href="https://www.chrisbehan.ca/posts/atomic-habits"/>
-        <updated>2022-01-02T22:41:15.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[No Trash Search]]></title>
-        <id>https://notrashsearch.github.io</id>
-        <link href="https://notrashsearch.github.io"/>
-        <updated>2022-01-02T22:01:45.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Zotero: Free, easy-to-use tool to collect, organize, cite, and share research]]></title>
-        <id>https://www.zotero.org</id>
-        <link href="https://www.zotero.org"/>
-        <updated>2022-01-02T21:25:42.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Show HN: A an R7RS Scheme Implementation in WebAssembly]]></title>
-        <id>https://github.com/PollRobots/scheme</id>
-        <link href="https://github.com/PollRobots/scheme"/>
-        <updated>2022-01-02T21:09:58.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Analysis of the overhead of a minimal Zig program]]></title>
-        <id>https://zig.news/aransentin/analysis-of-the-overhead-of-a-minimal-zig-program-4lg0</id>
-        <link href="https://zig.news/aransentin/analysis-of-the-overhead-of-a-minimal-zig-program-4lg0"/>
-        <updated>2022-01-02T20:50:04.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Notes on BPF and eBPF]]></title>
-        <id>https://jvns.ca/blog/2017/06/28/notes-on-bpf---ebpf/</id>
-        <link href="https://jvns.ca/blog/2017/06/28/notes-on-bpf---ebpf/"/>
-        <updated>2022-01-02T19:48:23.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Tcl/Tk Spline Editor]]></title>
-        <id>https://wiki.tcl-lang.org/page/SplineEditor</id>
-        <link href="https://wiki.tcl-lang.org/page/SplineEditor"/>
-        <updated>2022-01-02T19:25:08.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[RSS-Bridge – The RSS feed for websites missing it]]></title>
-        <id>https://github.com/RSS-Bridge/rss-bridge</id>
-        <link href="https://github.com/RSS-Bridge/rss-bridge"/>
-        <updated>2022-01-02T19:19:45.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Google no longer producing high quality search results in significant categories]]></title>
-        <id>https://twitter.com/mwseibel/status/1477701120319361026</id>
-        <link href="https://twitter.com/mwseibel/status/1477701120319361026"/>
-        <updated>2022-01-02T18:50:38.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Understanding the Power of Lisp (2020)]]></title>
-        <id>https://joshbradley.me/understanding-the-power-of-lisp/</id>
-        <link href="https://joshbradley.me/understanding-the-power-of-lisp/"/>
-        <updated>2022-01-02T18:36:33.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Microsoft confirms Exchange Year 2022 problem]]></title>
-        <id>https://borncity.com/win/2022/01/02/microsoft-besttigt-exchange-year-2022-problem-fip-fs-scan-engine-failed-to-load-1-jan-2022/</id>
-        <link href="https://borncity.com/win/2022/01/02/microsoft-besttigt-exchange-year-2022-problem-fip-fs-scan-engine-failed-to-load-1-jan-2022/"/>
-        <updated>2022-01-02T18:08:40.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[When they warn of rare disorders, these prenatal tests are usually wrong]]></title>
-        <id>https://www.nytimes.com/2022/01/01/upshot/pregnancy-birth-genetic-testing.html</id>
-        <link href="https://www.nytimes.com/2022/01/01/upshot/pregnancy-birth-genetic-testing.html"/>
-        <updated>2022-01-02T17:49:20.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Dr. Awkward and Olson in Oslo (1986) [pdf]]]></title>
-        <id>https://digitalcommons.butler.edu/cgi/viewcontent.cgi?article=3170&amp;context=wordways</id>
-        <link href="https://digitalcommons.butler.edu/cgi/viewcontent.cgi?article=3170&amp;context=wordways"/>
-        <updated>2022-01-02T17:22:18.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Recurrences converging to the wrong limit in finite precision (2020) [pdf]]]></title>
-        <id>https://etna.math.kent.edu/vol.52.2020/pp358-369.dir/pp358-369.pdf</id>
-        <link href="https://etna.math.kent.edu/vol.52.2020/pp358-369.dir/pp358-369.pdf"/>
-        <updated>2022-01-02T16:53:09.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Faster TypedArrays: Vector Addition in WebAssembly]]></title>
-        <id>https://jott.live/markdown/wasm_vector_addition</id>
-        <link href="https://jott.live/markdown/wasm_vector_addition"/>
-        <updated>2022-01-02T16:43:01.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[I Built a Shed (2020)]]></title>
-        <id>https://eduardosasso.co/blog/how-i-built-a-wfh-shed/</id>
-        <link href="https://eduardosasso.co/blog/how-i-built-a-wfh-shed/"/>
-        <updated>2022-01-02T16:30:37.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Preliminary analysis of the Hayabusa2 samples returned from asteroid Ryugu]]></title>
-        <id>https://www.nature.com/articles/s41550-021-01550-6</id>
-        <link href="https://www.nature.com/articles/s41550-021-01550-6"/>
-        <updated>2022-01-02T16:25:22.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Indiana life insurance CEO says deaths are up 40% among people ages 18-64]]></title>
-        <id>https://www.thecentersquare.com/indiana/indiana-life-insurance-ceo-says-deaths-are-up-40-among-people-ages-18-64/article_71473b12-6b1e-11ec-8641-5b2c06725e2c.html</id>
-        <link href="https://www.thecentersquare.com/indiana/indiana-life-insurance-ceo-says-deaths-are-up-40-among-people-ages-18-64/article_71473b12-6b1e-11ec-8641-5b2c06725e2c.html"/>
-        <updated>2022-01-02T15:59:24.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[OpenDrop: An open Apple AirDrop implementation written in Python]]></title>
-        <id>https://github.com/seemoo-lab/opendrop</id>
-        <link href="https://github.com/seemoo-lab/opendrop"/>
-        <updated>2022-01-02T13:00:06.000Z</updated>
         <summary type="html"><![CDATA[Comments]]></summary>
         <author>
             <name>Hacker News</name>
