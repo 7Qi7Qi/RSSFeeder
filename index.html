@@ -76,6 +76,558 @@
 <body>
 <!-- %after-body-begin.html% -->
   <section class="daily-content">
+    <h2 class="daily-heading"><time datatime="2022-02-11">2022-02-11</time></h2>
+    <ul class="sources card">
+      <li class="source">
+        <section>
+          <h3 class="source-name"><a class="source-name__link" href="http://weekly.dockone.io">DockOne.io</a></h3>
+          <section class="articles-per-source">
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">在Rainbond中实现数据库结构自动化升级</summary>
+                <a class="article-summary-link article-summary-box-outer" href="http://weekly.dockone.io/article/2434871">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>Rainbond 这款产品一直致力于打通企业应用交付的全流程，这个流程中不可或缺的一环是企业应用的不断升级、迭代。Rainbond 特有的能力，是可以将囊括多个服务组件的企业应用系统进行打包，并执行一键安装、升级以及回滚的操作。上述的内容仅仅解决了应用程序本身的版本控制问题。企业应用的升级迭代流程想要完全实现自动化，还需要能够自动处理数据库表结构（Schema）的版本控制。经过不断的探索，Rainbond 首先在源码构建领域借助业界领先的 Liquibase 集成了云原生时代的数据库 Schema 版本管理的能力。
+Schema版本管理难题
+数据库表结构（Schema）定义了数据表（Table）的名字，以及每一个数据表中所包含的数据列（Column）的名字、属性等信息。它描述了一个数据库所拥有的框架，记录在数据库中的数据都需要遵循 Schema 里的定义。
+区别于应用程序自身的升级，Schema 版本管理问题，本质上是一种持久化数据的升级，这一特征伴随着两个疑问：
+持久化数据如何升级：云原生时代的交付，已经无法跳脱出容器化、平台化的特征。各大云原生平台在进行软件交付过程中，都不会轻易将持久化数据纳入版本控制体系中去。原因很简单，每个交付环境中的数据都是不同的，升级过程中很难抉择持久化数据的统一版本管理方案。
+哪些持久化数据需要升级：既然难以抉择持久化数据的统一版本管理方案，那么退而求其次，是否可以优先选择必要的持久化数据进行版本管理。缩小范围之后，就突出了数据库表结构这一特殊持久化数据类型。其版本管理的必要性是显而易见的，应用程序本身从V1版本升级到了V2版本，那么对应的数据库表结构也需要增加必要的新表、新列。
+
+这两个疑问引出了本文的主旨：在企业级软件交付领域，如何合理的在每次升级的过程中处理数据库表结构（Schema）的版本控制？
+传统软件交付领域，在 Schema 版…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">在Rainbond中实现数据库结构自动化升级</summary>
+                <a class="article-summary-link article-summary-box-outer" href="http://weekly.dockone.io/article/2434872">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>Rainbond 这款产品一直致力于打通企业应用交付的全流程，这个流程中不可或缺的一环是企业应用的不断升级、迭代。Rainbond 特有的能力，是可以将囊括多个服务组件的企业应用系统进行打包，并执行一键安装、升级以及回滚的操作。上述的内容仅仅解决了应用程序本身的版本控制问题。企业应用的升级迭代流程想要完全实现自动化，还需要能够自动处理数据库表结构（Schema）的版本控制。经过不断的探索，Rainbond 首先在源码构建领域借助业界领先的 Liquibase 集成了云原生时代的数据库 Schema 版本管理的能力。
+Schema版本管理难题
+数据库表结构（Schema）定义了数据表（Table）的名字，以及每一个数据表中所包含的数据列（Column）的名字、属性等信息。它描述了一个数据库所拥有的框架，记录在数据库中的数据都需要遵循 Schema 里的定义。
+区别于应用程序自身的升级，Schema 版本管理问题，本质上是一种持久化数据的升级，这一特征伴随着两个疑问：
+持久化数据如何升级：云原生时代的交付，已经无法跳脱出容器化、平台化的特征。各大云原生平台在进行软件交付过程中，都不会轻易将持久化数据纳入版本控制体系中去。原因很简单，每个交付环境中的数据都是不同的，升级过程中很难抉择持久化数据的统一版本管理方案。
+哪些持久化数据需要升级：既然难以抉择持久化数据的统一版本管理方案，那么退而求其次，是否可以优先选择必要的持久化数据进行版本管理。缩小范围之后，就突出了数据库表结构这一特殊持久化数据类型。其版本管理的必要性是显而易见的，应用程序本身从V1版本升级到了V2版本，那么对应的数据库表结构也需要增加必要的新表、新列。
+
+这两个疑问引出了本文的主旨：在企业级软件交付领域，如何合理的在每次升级的过程中处理数据库表结构（Schema）的版本控制？
+传统软件交付领域，在 Schema 版…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">使用JMX Exporter监控Rainbond上的Java应用</summary>
+                <a class="article-summary-link article-summary-box-outer" href="http://weekly.dockone.io/article/2434863">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(1 min)</span>
+                    <span>场景
+Prometheus 社区开发了 JMX Exporter 用于导出 JVM 的监控指标，以便使用 Prometheus 来采集监控数据。当您的 Java 应用部署在Rainbond上后
+可通过本文了解部署在 Rainbond 上的 Java 应用如何使用  JMX Exporter 暴露 JVM 监控指标。
+JMX Exporter 简介
+Java Management Extensions，JMX 是管理 Java 的一种扩展框架，JMX Exporter 基于此框架读取 JVM 的运行时状态。JMX Exporter 利用 Java 的 JMX 机制来读取 JVM 运行时的监控数据，然后将其转换为 Prometheus 可辨识的 metrics 格式，让 Prometheus 对其进行监控采集。
+JMX Exporter 提供 启动独立进程 及 JVM 进程内启动（in-process)两种方式暴露 JVM 监控指标：
+启动独立进程
+JVM 启动时指定参数，暴露 JMX 的 RMI 接口。JMX Exporter 调用 RMI 获取 JVM 运行时状态数据，转换为 Prometheus metrics 格式，并暴露端口让 Prometheus 采集。
+JVM 进程内启动（in-process)
+JVM 启动时指定参数，通过 javaagent 的形式运行 JMX Exporter 的 jar 包，进程内读取 JVM 运行时状态数据，转换为 Prometheus metrics 格式，并暴露端口让 Prometheus 采集。
+
+官方不建议使用 启动独立进程 方式，该方式配置复杂且需单独的进程，进程本身的监控又引发了新的问题。本文以 JVM 进程内启动（in-process)方式为例，在 Rainbond 中使用 JMX Exporter 暴露 JVM 监控指标。…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+        </section>
+      </li>
+    </ul>
+  </section>
+  <section class="daily-content">
+    <h2 class="daily-heading"><time datatime="2022-02-10">2022-02-10</time></h2>
+    <ul class="sources card">
+      <li class="source">
+        <section>
+          <h3 class="source-name"><a class="source-name__link" href="https://news-at.zhihu.com/api/4/stories/latest?client&#x3D;0">知乎日报</a></h3>
+          <section class="articles-per-source">
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">冬奥会上冰面被划的千疮百孔，不影响下一位选手的发挥吗？</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9745264">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>奶黄包包包包
+阅读原文
+
+会有影响。
+所以浇补频率会更高。例如花滑的冰面浇补次数就从日常训练的每日 12 次左右升级到 17 次左右，基本每间隔 70 分钟就浇冰一次。
+清理冰面+修复冰面的工作主要靠制冰车 / 浇冰车完成。
+先是冰铲刮掉浮冰、冰屑，用刷子收集清理这些废冰，再用清洁剂对冰面进行清洁；
+而后用温水喷淋（所以制冰车上是热水罐），这样冰面凹凸起伏部分会有轻微融化，再加上车底刮刀高频率的削冰，冰面就平整修复了。
+热水的温度在65°左右。
+除了融化的效果外，不用冰水的原因在于，冰水会影响冰面的脆度，反而对比赛造成影响。
+——至于制冰用的水（及补冰热水），多数冰场直接用普通水。但非常顶级的冰场会用纯净水 / 软化水（0-60ppm）。软化水里的含盐量、钙 / 镁离子量都要低很多，冰面的透光度更高，滑行速度更快。
+冰面品质不好，选手就会感觉冰刀有那种黏连和钝化感。当然这肯定是很顶级选手才能感受出来的细微差别。
+多数 NHL 球场用的就是软化水，盲猜这届北京冬奥会应该也是。
+制冰车 / 浇冰车也很“辛苦”，以前温哥华冬奥会就发生过速滑决赛前制冰车坏了的情况，直接导致比赛延迟
+之前看过 NHL 球场的制冰，喷水（雾）- 结冰 - 来回双向灌水 - 结冰 - 喷淋结晶 - 喷漆 - 再喷淋 - 灌水……反复 5、6 个步骤，喷水量也是由多慢慢减少——一遍又一遍，一层又一层，越是最上层越精雕细琢——而后再磨冰机 / 浇冰车打磨找平。
+不夸张的讲，整个过程比绝大多数豪车的喷漆打蜡都繁琐细致。
+
+国内本身顶级制冰师很少，北京冬奥的冰场还是找了加拿大团队来主要操刀制冰。冰面品质上，冰丝带等场馆都做到了最顶级。
+
+不同冰上项目对冰面的要求区别很大。拿花滑、短道速滑（短道）和速滑（大道）举例——
+花滑冰面更厚（4.5-5cm）、最软、温度更高（−3℃）；
+短道冰面更薄（3.5-4.5cm）、更硬、温度更低（−5℃）；
+大道冰面最薄（2.5-3.5cm）、温度最低（−5--9℃）。
+花样选手适应完场地，会根据冰面情况再微调冰刀的深槽浅槽。
+而雪车雪橇中心那种冰面温度又要更低些，对修冰、补冰和养护又会有另一套标准。
+
+如果留意冬奥会也会发现，制冰车 / 浇冰车也有好几种。严谨来讲它们都有自己的专门用途，冰面重铺机、冰面换肤机、刨冰机、冰面铺设机……
+它们的刮刀长度都很长，从 1.7 到 2.3 米不等，这样可以确保更大面积冰面的平整度。
+
+这玩意技术含量不低，上一届平昌用的美国 zamboni，北京用的是意大利 engo。
+长得还挺可爱的。
+（去 engo 官网搜了圈，没看到价格。加拿大制冰团队连着服务了五届冬奥会，之前采访里还说自己用惯了 zamboni，很怕自动化更高的 engo 会出故障。祝这些铁胆制冰侠们一切顺利吧……）
+
+补充：
+评论里有提到以前冰场加牛奶，这个我不太清楚。
+NHL 冰球场以前会在靠近地面的基础冰层加入一些物质（好像是工业用盐），越往上面的冰层越纯净。具体场地具体分析，目前几届冬奥会冰场都确定没有加牛奶。
+多数冬奥场地可以理解成 3-5 层（或更多）冰面的叠加，尽管它们的成分都是水 / 冰。另外多数冰场场地显示出的白色并非油漆，其实是中间层喷雾凝结成的冰晶，油漆只作描绘赛事 logo、比赛画线用，上面再覆盖有数层透明冰层——因而选手的冰刀并不会直接接触到这些油漆。
+阅读原文</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">有哪些叫「虎」但不是虎的动物？</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9745266">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>上海自然博物馆
+阅读原文
+
+大家的回答真的是太精彩了，其实在植物界，也有不少是以虎为名的，今天我们就来聊聊以虎为名的植物。
+1.打领结的绅士：虎耳草Saxifraga stolonifera
+虎耳草（Saxifraga stolonifera）为虎耳草科（Saxifragaceae）虎耳草属多年生常绿草本。它的叶片形状颇像虎的耳朵，叶面常有白色脉纹，恰似虎纹，所以被叫做虎耳草很是贴切。虎耳草叶的两面以及植物体的其他部位都被毛，整个就是毛绒绒的，如果你有撸一撸它的冲动，那不妨就撸它一撸，它虽有虎名，但决不会开口咬你。
+虎耳草，叶和匍匐茎
+虎耳草属名“Saxifraga”意为打破石头，是指这个属的一些种生长在岩石上，还能促岩石破碎，这样看来它并非浪得虎名。种加词“stolonifera”意为有匍匐茎的，指虎耳草近根处有细丝伸出。匍匐茎通常呈紫红色，能生出新的植株，所以你只要种一株虎耳草在花盆中，它渐渐地给你长成满盆。
+虎耳草，全株
+暮春时节，虎耳草会从叶丛中抽出直立的花葶。花葶上开出几朵至几十朵花，微风轻袭，蝴蝶领结似的花朵就会随风摇曳。虎耳草的花形十分精致，白色花瓣的中上部具紫红色斑点，基部又具黄色斑点，5 片花瓣中，上面 3 片较小，下面 2 片较长；内有雄蕊 10 枚和雌蕊 2 枚，雌蕊下部还有橙色花盘围着。
+虎耳草，花
+2.到英国大发虎威：虎杖Reynoutria japonica
+虎杖（Reynoutria japonica）为蓼科（Polygonaceae）虎杖属多年生草本。它的茎高大、粗壮，表面有明显的纵棱和小突起，还散生红色或紫红斑点。《本草纲目》李时珍释名曰：“杖言其茎，虎言其斑也。”
+虎杖，幼茎 | 图源：WIKI
+虎杖又名酸筒杆，因它的茎有明显的节，中空，有酸味。春天发出嫩茎，小孩们采来咀嚼，尝它的酸味，也有的地方的人采作野菜食用。茎中的酸味源自它所含的草…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">不胜“膝”嘘，金牌为何没属于苏翊鸣？</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9745245">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>比利白，冬天滑雪夏天浪
+
+写下这篇文章时，距离苏翊鸣完成历史性突破，拿下 2022 北京冬奥会男子单板坡面障碍技巧银牌，已经两天了。
+在过去的 48 小时，小鸣 1800 五圈转体的决胜一滑遗憾摘银，国内高呼加拿大裁判压分的网络热议，似乎在谷爱凌大跳台的神奇夺冠后，一切都消停了下来。
+
+然而北美欧洲的群众醒来后，围绕着颇有争议的裁判判罚，这场奥运决赛也在全球的单板群体中炸开了锅。争议的焦点，自然是金牌的归属，以及冠军 Max Parrot 的“膝盖抓板门”事件。
+Snowboarder Magazine 的帖子在 Instagram 上引起热议
+著名的单板杂志 Snowboarder Magazine 在社交媒体账户上发帖：“The men’s slopestyle podium from Beijing. If you missed it live, don’t worry, so did the judges. Who do YOU have on the top spot?”（这是北京冬奥会男子坡面障碍技巧比赛领奖台三人组，错过直播的朋友不要紧，裁判也掉线了。那么你怎么看待奖牌归属？）
+评论区自然闲不下来，有调侃 Max 膝盖抓板的“I Kneed to Win”（我盖赢！）。有支持 Max 的，认为在这个旋转圈数至上的时代，抓个膝盖也应该算抓板。一众 Mark McMorris 的粉丝为 Sparky 在道具区的表现喝彩，也有大量在为苏翊鸣抱不平的外国友人。
+“I’m a proud Canadian but that 17 year old from China took gold. No contest.”（我为作为加拿大人感到自豪，但毫无疑问，这个 17 岁的中国小伙是冠军。）
+Max Parrot 的争议动作，Knee Grab 膝盖抓板
+我想了想，没有写下…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">如何评价 Epic Games 平台?</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9745242">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>Marc，PPT 资本家
+阅读原文
+
+从 2021 年 12 月起写了一系列文章介绍 Epic Games 发展史。
+
+Marc：虚幻宇宙创造者——Epic Games 史诗三十年 (序章)
+Marc：Epic Games 史诗三十年 (1)：Epic 第一款编辑器，不是 Unreal
+Marc：Epic Games 史诗三十年 (2)：Doom 逼出虚幻引擎
+Marc：Epic Games 史诗三十年 (3)：祭出战争机器，Epic 加入主机战争
+Marc：Epic Games 史诗三十年 (4)：堡垒之夜，意料之外的必然
+Marc：Epic Games 史诗三十年 (终篇)：打造元宇宙
+
+其中在最后一篇，我尝试梳理了 Epic Games 对元宇宙的定义和相关布局，其中 EGS 也是其中的一环，将文章转到下面和大家讨论。
+
+Tim 的“究极游戏”
+Epic 创始人和 CEO Tim Sweeney 心目中的“究极游戏”是什么？他在 2001 年的一次访谈中给出过答案：
+长远来看，有一些很酷的可能性……对我来说，互联网的特性可以运用在游戏之中，没有统一机构管理，而是分布式的。这样的系统不会完美地运作，但能够赋予每个人自主权，让人能够在其中创新。所以说，创作一款分布式的超多人在线游戏，任何人都能够架设服务器，任何人都能够给游戏里面增加内容……游戏、程序、信息需要原生开放和可编辑。因此，这需要一个不同的系统……这样的事情可能在某天在游戏中实现，这很酷，我希望未来我能够做出这样的东西。
+事实上，Tim 对于理想中的“究极游戏”的构想早已开始。在 1997 年开发初代虚幻的时候，他原本希望将其打造成一个能够支持超多人同时联网的游戏——来自全球的玩家都处在同一个场景之中，可以无缝地探索世界，传送到不同的关卡，而其中一些关卡由玩家自己创作。但由于网络设施和相关技术的不成熟，这个设想无…</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">瞎扯 · 如何正确地吐槽</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9745255">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(0 min)</span>
+                    <span>被解读为「远远望着谷爱凌夺冠」的远望谷连续涨停，谷爱凌代言的中国移动也涨停，如何看待谷爱凌全网刷屏？
+
+知乎用户，数据科学博士在读|合作私聊+V|刷题进度（3/200）
+阅读原文
+
+知道为什么不能碰A股了吧？
+阅读原文
+
+你给哪些牛人发过邮件？有哪些结果？
+
+知乎用户
+阅读原文
+
+说起来略有点不好意思，大学的时候有次看非诚勿扰，有个做软件开发的男嘉宾牵手失败，屏幕上打出了他的邮箱，让观众们觉得合适的可以邮件联系，然后我就发邮件问他能不能帮我做编程作业 ……结果他真的帮我做了 ……
+阅读原文
+
+本科学的经济学，亲戚们总让我推荐几只股票，该怎么说才能让他们明白「我不会炒股」？
+
+铁树心，谁相厮守谁相伴？独自流离独自行！
+阅读原文
+
+推荐他们买银行股，这样就既能显示出你确实学了经济学，也能让他们彻底相信你真的不会炒股。
+阅读原文
+
+有没有哪道题可以结合所有科目的知识来解答？
+
+黄一珂，练体能/练舞/看书/发呆/yygq/INTJ
+阅读原文
+
+《基于大规模机器学习势能分子动力学模拟方法绘制关键蛋白质 power spectra 多维描述符相关函数分析方法重现人类进化迁移分支——思维方式关联程度对地缘政治局势演变分析和预测》
+Correlation function analysis on multi-dimensional descriptor of power spectra of critical proteins simulated by Large-scale machine-learning potential implemented molecular dynamics simulation reproducing branching of human evolution and migration: analysis and prediction of geopolitical situation impacted by correlation of thinking methodology between two sides.
+我每次这么写句子的时候都觉得老板会揍我
+
+
+阅读原文
+
+如何用两句真话和一句假话描述你的虎年春节体验？
+
+芝麻酱，这个营养师天天喝奶茶
+阅读原文
+
+吃得很好
+睡得很香
+没有长胖
+阅读原文</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+        </section>
+      </li>
+      <li class="source">
+        <section>
+          <h3 class="source-name"><a class="source-name__link" href="https://news.ycombinator.com/">Hacker News</a></h3>
+          <section class="articles-per-source">
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Case against OOP is understated, not overstated (2020)</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://boxbase.org/entries/2020/aug/3/case-against-oop/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(24 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Australian spy agency disrupts foreign election interference</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://mainichi.jp/english/articles/20220210/p2g/00m/0in/042000c">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Wordle Now Redirects to NYT</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://news.ycombinator.com/item?id&#x3D;30293297">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(11 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Cloudflare announces fourth quarter and fiscal year 2021 financial results</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://cloudflare.net/news/news-details/2022/Cloudflare-Announces-Fourth-Quarter-and-Fiscal-Year-2021-Financial-Results/default.aspx">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(19 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Qvin (YC W16) Is Hiring a Women&#x27;s Health D2C Product Lead</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://boards.greenhouse.io/qvin/jobs/4943736003">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(3 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Structured Procrastination (1995)</summary>
+                <a class="article-summary-link article-summary-box-outer" href="http://www.structuredprocrastination.com/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(4 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">How illiterate people use their mobile phones (2012)</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.researchgate.net/publication/266595198_Text_is_not_the_enemy_How_illiterates%27_use_their_mobile_phones">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(30 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Twenty years of C# with Anders Hejlsberg [audio]</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.dotnetrocks.com/?show&#x3D;1780">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(4 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Show HN: A Schemaless Data Store Within Your SQL Database</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://schemafreesql.com/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(18 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Betty Davis has died</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.rollingstone.com/music/music-news/betty-davis-dead-obit-1297372/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(6 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">France to Build Six New Nuclear Reactors</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.politico.eu/article/france-to-build-6-new-nuclear-reactors/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(4 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Twitter misses ad revenue and user growth estimates</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.reuters.com/technology/twitter-misses-ad-revenue-user-growth-estimates-revenue-forecast-light-2022-02-10/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(4 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Show HN: EdgeDB 1.0</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.edgedb.com/blog/edgedb-1-0">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(5 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Have we been thinking about inflation all wrong?</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://thewalrus.ca/have-we-been-thinking-about-inflation-all-wrong/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(8 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">An update on AirTag and unwanted tracking</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.apple.com/newsroom/2022/02/an-update-on-airtag-and-unwanted-tracking/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(9 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">A look inside the chips that powered the landmark Polaroid SX-70 instant camera</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.righto.com/2022/02/a-look-inside-chips-that-powered.html">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(10 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Theses on Sleep</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://guzey.com/theses-on-sleep/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(37 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Attacking an Ethereum L2 with Unbridled Optimism</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.saurik.com/optimism.html">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(22 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Ray Tracing for the TI-84 CE</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://github.com/TheScienceElf/TI-84-CE-Raytracing">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(2 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Computer scientists prove why bigger neural networks do better</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.quantamagazine.org/computer-scientists-prove-why-bigger-neural-networks-do-better-20220210/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(4 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Modern human incursion into Neanderthal territories 54k years ago at Mandrin</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.bbc.com/news/science-environment-60305218">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(5 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Show HN: Makers.so – A website builder inside Figma</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://news.ycombinator.com/item?id&#x3D;30286185">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(9 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">How the modern world arose from imaginary numbers</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://nautil.us/imaginary-numbers-are-reality-13999/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(9 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Everything Has Fresnel (2010)</summary>
+                <a class="article-summary-link article-summary-box-outer" href="http://filmicworlds.com/blog/everything-has-fresnel/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(3 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Ask HN: What is your “I don&#x27;t care if this succeeds” project?</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://news.ycombinator.com/item?id&#x3D;30283264">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(40 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Turbulence Equations Discovered After Century-Long Quest</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.scientificamerican.com/article/turbulence-equations-discovered-after-century-long-quest/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(4 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+        </section>
+      </li>
+    </ul>
+  </section>
+  <section class="daily-content">
     <h2 class="daily-heading"><time datatime="2022-02-09">2022-02-09</time></h2>
     <ul class="sources card">
       <li class="source">
@@ -359,6 +911,17 @@ ACNE 的卫衣一件要卖两三千，这个价格到底值不值？
             </article>
             <article>
               <details class="article-expander">
+                <summary class="article-expander__title">The Art World’s Spider Man</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://www.nytimes.com/2022/02/07/t-magazine/tomas-saraceno-spiders-shed.html">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(9 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
                 <summary class="article-expander__title">The performative quality of computer-generated art</summary>
                 <a class="article-summary-link article-summary-box-outer" href="https://hyperallergic.com/710156/appreciating-the-performative-quality-of-computer-generated-art/">
                   <div class="article-summary-box-inner">
@@ -425,6 +988,17 @@ ACNE 的卫衣一件要卖两三千，这个价格到底值不值？
             </article>
             <article>
               <details class="article-expander">
+                <summary class="article-expander__title">SSD Endurance</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://etbe.coker.com.au/2022/01/16/ssd-endurance/">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(7 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
                 <summary class="article-expander__title">The data are clear: The boys are not all right</summary>
                 <a class="article-summary-link article-summary-box-outer" href="https://www.washingtonpost.com/opinions/2022/02/08/andrew-yang-boys-are-not-all-right/">
                   <div class="article-summary-box-inner">
@@ -460,6 +1034,17 @@ ACNE 的卫衣一件要卖两三千，这个价格到底值不值？
               <details class="article-expander">
                 <summary class="article-expander__title">Launch HN: Pelm (YC W22) – Plaid for Utilities</summary>
                 <a class="article-summary-link article-summary-box-outer" href="https://www.pelm.com/use-cases">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(1 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Safer entropy accumulation in Linux 5.18&#x27;s RNG</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://twitter.com/EdgeSecurity/status/1491128272276664328">
                   <div class="article-summary-box-inner">
                     <span class="article-reading-time">(1 min)</span>
                     <span>Comments</span>
@@ -528,6 +1113,17 @@ ACNE 的卫衣一件要卖两三千，这个价格到底值不值？
                 <a class="article-summary-link article-summary-box-outer" href="https://yetanotherdevblog.com/lsm/">
                   <div class="article-summary-box-inner">
                     <span class="article-reading-time">(4 min)</span>
+                    <span>Comments</span>
+                  </div>
+                </a>
+              </details>
+            </article>
+            <article>
+              <details class="article-expander">
+                <summary class="article-expander__title">Back-end languages are coming to the front-end</summary>
+                <a class="article-summary-link article-summary-box-outer" href="https://github.com/readme/featured/server-side-languages-for-front-end">
+                  <div class="article-summary-box-inner">
+                    <span class="article-reading-time">(9 min)</span>
                     <span>Comments</span>
                   </div>
                 </a>
@@ -16788,888 +17384,13 @@ PCU 控制内核频率本着省电和提高响应度来进行调节。完成一�
                 </a>
               </details>
             </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">What Do We Know About Time Pressure in Software Development?</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://www.computer.org/csdl/magazine/so/2021/05/09184214/1mLHZkBtQiI">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(0 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Living on 24 Hours a Day</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://www.justindfuller.com/2022/01/living-on-24-hours-a-day/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(6 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Wine on Wayland year-end update: improved functionality and stability</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://www.collabora.com/news-and-blog/blog/2021/12/22/wine-on-wayland-year-end-update-improved-functionality-stability/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(3 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">The specs behind the specs – a deep-dive on ASN.1</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://engineering.wgtwo.com/the-specs-behind-the-specs-part-1">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(20 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Writing a Game Boy Emulator in OCaml</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://linoscope.github.io/writing-a-game-boy-emulator-in-ocaml/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(20 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Apache PLC4X announcing end of community support due to missing funding</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://github.com/chrisdutz/blog/blob/main/plc4x/free-trial-expired.adoc">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(8 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Teaching how to code is broken</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://neil.computer/notes/teaching-how-to-code-is-broken/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(2 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Ask HN: Why new browsers use Chromium instead of Firefox as their base?</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://news.ycombinator.com/item?id&#x3D;29900496">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(1 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">The Great Siberian Thaw</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://www.newyorker.com/magazine/2022/01/17/the-great-siberian-thaw">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(28 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-        </section>
-      </li>
-      <li class="source">
-        <section>
-          <h3 class="source-name"><a class="source-name__link" href="http://weekly.dockone.io">DockOne.io</a></h3>
-          <section class="articles-per-source">
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">在Windows上运行Rainbond，10分钟快速安装</summary>
-                <a class="article-summary-link article-summary-box-outer" href="http://weekly.dockone.io/article/2434800">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(1 min)</span>
-                    <span>前言
-Windows 桌面运行 Rainbond，Windows 开发者的新选择。
-经过适配Mac以后，Windows的适配也是成为了近期的小目标，经过不断地测试，不断地研究。最后也是达成了完美运行的效果，实现了真正意义上的任何场景，多种架构的完美适配，让手里的电脑真正称的上是生产力工具。
-借助 Docker Desktop for win，可以快速的在 Windows 运行 Rainbond 开发测试环境， 接下来为大家介绍如何在 Windows 桌面上安装使用Rainbond。
-安装Docker Desktop
-Docker Desktop 是一款适用于Mac 或Windows 环境的易于安装的应用程序，使您能够在几分钟内开始编码和容器化。可以帮助我们在Windows上运行容器。Rainbond 的控制台会以容器的方式运行起来，而在控制台容器中，会以 Docker In Docker 的形式，运行起所有支撑 Rainbond 高级功能的组件。同时在控制台容器中内置 K3s 来提供容器的调度编排能力：
-
-Windows Docker Desktop 资源限额：
-| Docker Desktop版本 | Windows  内存 | Windows CPU |
-安装Rainbond
-&gt; 启动之前需要定义 Rainbond 网关工作的 IP 地址，确保外界可以访问内部应用组件，IP地址为必填项，可以通过ipconfig命令，或者点击右下角网络图标&gt;查看其属性获得IP地址，但注意的一点就是，除非你确定这个集群中部署的业务不会对除本机之外的其他人提供服务，否则不要填写127.0.0.1。
-
-
--e EIP&#x3D;IP地址 为必填项
-打开 Windows终端(CMD)，后续的指令都会在命令行界面下执行
-Windows 启动命令：
-docker run --privileged -d  -p 7070:7070 -p 80:80 -p 443:443 -p 6060:6060 -p 8443:8443 ^
-
-启动成功后的会看到以下提示：
-正在加载数据，预计3分钟，时间取决于磁盘性能...
-
-切换进容器，查看集群状态
-docker exec -ti rainbond-allinone bash
-
-获得以下返回，说明 Rainbond 已经安装完成
-NAME                                         READY   STATUS    RESTARTS       AGE
-
-
-快速熟悉Rainbond
-为了让大家能够快速熟悉Rainbond，安装成功后，默认会有示例应用：
-点击 团队界面 -&gt; admin团队 -&gt; 默认应用，即可查看Ghost示例，示例初次启动大概2分钟左右，待变成绿色，即可访问，如下图：
-
-写在最后
-本文简要介绍了一种在 Windows 电脑环境中快速体验 Rainbond 的方式，这种方式对个人开发者，或者缺乏足够服务器硬件支持的小企业、小团队非常友好。Rainbond 目前已经全面适配了 x86，对于最终用户环境为 x86架构的开发者而言，可以借助 Rainbond 有针对性的搭建开发环境。
-对于在Mac环境下的安装适配，可以参考上文。</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">在Mac上运行Rainbond，10分钟快速安装</summary>
-                <a class="article-summary-link article-summary-box-outer" href="http://weekly.dockone.io/article/2434801">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(1 min)</span>
-                    <span>前言
-以往安装部署 Rainbond 的方式都无法绕过 Kubernetes 集群的搭建，无论是作为开发环境还是用于生产交付，部署的过程都非常依赖于服务器或云主机。这在体验 Rainbond 云原生应用管理平台的过程中设置了较高的门槛。然而对于个人开发者而言，准备一台服务器甚至多台服务器，才可以体验到这种企业级产品，是非常奢侈的。从今天开始，Rainbond 开辟了一条可以快速体验的道路，借助常见的个人 PC 平台（诸如 MacOS、Windows 等操作系统）上的 Docker Desktop ，以启动一个容器作为代价，提供一个全功能的 Rainbond 体验环境。这个部署过程被压缩到了 一条命令 运行，10分钟就可以体验到最新版本的 Rainbond。 接下来，将为大家介绍如何在个人 MAC 笔记本上安装使用Rainbond。
-MAC目前共分为两种芯片，一种是intel芯片，另外一种就是苹果最新的M1芯片（ARM版本），Rainbond目前不仅仅支持intel芯片，对于新款的M1也提供了支持，这次适配在任何一台MAC上都可以轻松启动Rainbond，这一体验尤其适合个人开发者。通过这种途径安装 Rainbond ，会在短时间内得到一整套开箱即用的单机环境，免去繁琐安装集群的痛苦，对接集群的痛苦，让你在任何笔记本上，台式机上都可以随时随地，实现高效开发测试。
-安装Docker Desktop
-安装 Rainbond 之前，我们需要在个人 PC 上安装Docker Desktop ，它可以帮助我们在MAC上运行容器。Rainbond 的控制台会以容器的方式运行起来，而在控制台容器中，会以 Docker In Docker 的形式，运行起所有支撑 Rainbond 高级功能的组件。同时在控制台容器中内置 K3s 来提供容器的调度编排能力。
-
-安装的 Docker Desktop 对于版本，和资源限额有一定要求：
-| Docker Desktop版本 | MAC 内存 | MAC CPU |
-安装Rainbond
-&gt;  启动之前需要定义 Rainbond 网关工作的 IP 地址，确保外界可以访问内部应用组件。IP地址在MAC上可以通过在终端执行 ifconfig 命令获得，或者按住 Option 键的同时点击右上角 WIFI 图标即可。但注意的一点就是，除非你确定这个集群中部署的业务不会对除本机之外的其他人提供服务，否则不要填写127.0.0.1。
-打开 MAC 终端，后续的指令都会在命令行界面下执行
-设置IP变量
-export EIP&#x3D;IP地址
-
-Intel版本启动命令（与M1二选一执行）：
-docker run --privileged -d -p 7070:7070 -p 80:80 -p 443:443 -p 6060:6060 -p 8443:8443 \
-
-M1版本启动命令（与Intel二选一执行）：
-docker run --privileged -d -p 7070:7070 -p 80:80 -p 443:443 -p 6060:6060 -p 8443:8443 \
-
-启动成功后的会看到以下提示：
-正在加载数据，预计3分钟，时间取决于磁盘性能...
-
-切换进容器，查看集群状态
-docker exec -ti rainbond-allinone bash
-
-获得以下返回，说明 Rainbond 已经安装完成
-NAME                                         READY   STATUS    RESTARTS       AGE
-
-
-快速熟悉Rainbond
-为了让大家能够快速熟悉Rainbond，安装成功后，默认会有示例应用：
-点击 团队界面 -&gt; admin团队 -&gt; 默认应用，即可查看Ghost示例，示例初次启动大概2分钟左右，待变成绿色，即可访问，如下图：
-
-写在最后
-本文简要介绍了一种在 MAC 电脑环境中快速体验 Rainbond 的方式，这种方式对个人开发者，或者缺乏足够服务器硬件支持的小企业、小团队非常友好。Rainbond 目前已经全面适配了 Arm64 架构的芯片，对于最终用户环境为 Arm64 架构的开发者而言，可以借助 Rainbond 有针对性的搭建开发环境。
-接下来还有文章介绍如何在 Windows 环境中快速体验 Rainbond 的方式，敬请期待。</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">分布式系统中的工程可靠性和容错性</summary>
-                <a class="article-summary-link article-summary-box-outer" href="http://weekly.dockone.io/article/2434804">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(0 min)</span>
-                    <span>原文链接：Engineering dependability and fault tolerance in a distributed system  （翻译：钟涛）
-用户希望可以依赖提供给他们的服务。在实践中，因为个别不可避免地的因素，可能会导致服务失败，但即使如此，我们也要尽量避免服务失败。
-在本文中，我们将详细讨论什么是工程可靠性和容错性，并解释Ably平台是如何设计的，已达到工程可靠性和容错性。
-作为讨论的前提，首先是一些定义：
-可靠性
-用户对产品或服务的可信赖程度。这意味着系统不仅可用，而且还设计了大量冗余措施，以继续按照用户的期望工作。
-可用性
-产品或服务在需要时的可用程度。这通常归结为，在系统出现故障时，是否能够提供足够的资源冗余。
-什么是容错性？
-容错性是指系统的某些组件或子系统出现故障时，依然具备可用性和可靠性。
-具备容错性的系统可以容忍故障，它们旨在减轻不利因素对系统的影响，并确保系统对用户保持始终可用。容错技术可用于提高可用性和可靠性。
-可用性可以粗略地认为是保证系统的正常运行；可靠性可以被认为是系统在运行期间提供服务的质量--也就是说，确保在系统故障中尽可能有效地维护功能和用户体验。
-如果该服务无法提供使用，那就是可用性不足。如果服务可用，但在使用时偏离了用户预期，那就是可靠性不足。容错设计方法解决了这些不足，为业务和用户体验提供了连续性。
-可用性、可靠性和状态
-在大多数情况下，容错设计的主要基础是：冗余。提供超过服务所需的最小组件数量或容量。关键问题是如何管理“冗余”。
-在真实世界中，可用性和可靠性存在着区别：
-可用性可以接受服务的短暂停止，好比更换汽车轮胎；
-可靠性需要确保服务的连续性，那么“冗余”必不可少。比如飞机的发动机不止一个。
-
-连续性的要求会影响冗余容量的提供方式。
-在分布式系统中，我们可以将组件分为两类，分别为&quot;有状态&quot;和“无状态”。…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">FabEdge V0.4 新特性：支持多集群通讯</summary>
-                <a class="article-summary-link article-summary-box-outer" href="http://weekly.dockone.io/article/2434802">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(1 min)</span>
-                    <span>边缘计算是指在靠近物或数据源头的⼀侧，采用网络、计算、存储、应用核心能力为⼀体的开放平台，就近提供最近端服务。其应用程序在边缘侧发起，产生更快的网络服务响应，满足行业在实时业务、应⽤智能、安全与隐私保护等方面的基本需求。边缘计算处于物理实体和⼯业连接之间，或处于物理实体的顶端。
-​
-根据计算能力大小，边缘计算可以分为两⼤类： 
-
-FabEdge 是⼀个基于 kubernetes 构建的，专注于边缘计算场景的容器网络⽅案，解决了边缘计算场景下⽹络管理复杂，割裂互不通信，缺少拓扑感知能力，无法提供就近访问等问题，使能云边、边边之间的业务协同。FabEdge 支持 KubeEdge，SuperEdge， OpenYurt 等边缘计算框架管理的轻量边缘节点。在最新发布的V0.4版中，加⼊对重边缘，也就是边缘集群的⽀持，完成了对所有边缘场景的全覆盖。
-
-以上图为例，共有三个集群，集群 blue 是 host 集群，负责管理其它集群的通讯；集群 red，green 是两个成员集群，会上报本集群的网络配置信息到 host 集群 blue。将集群 red 和 green 加入 community1 后，FabEdge 会自动建立集群 red 和 green 之间的隧道，允许两个集群之间的 pod 和 service 之间的互访。
-FabEdge 多集群通讯的的交互过程见下图：
-
-
-在 host 集群中先创建集群 green 和 red，获取相应 token。
-
-使⽤获取的token注册集群 green 和 red。
-
-集群 green 和 red 汇报本集群网络端点信息到host集群。
-
-将集群 green 和 red 加⼊⼀个 community。
-
-集群 green 和 red 定时从 host 集群拉取远程的端点信息。
-
-host集群根据 community 信息，为集群 green 和 red 下发相关的端点信息到成员集群 operator。
-
-成员集群 green 和red的 operator 为自己 connector 更新 configmap。
-
-成员集群 green 和 red 的 connector 根据⾃⼰的 configmap 发起到对⽅的隧道。
-
-隧道建⽴成功后，成员集群 green 和 red 可以互相通讯。
-
-FabEdge 相关资料
-聚焦支持边缘弱网环境，博云开源FabEdge边缘网络方案
-FabEdge V0.2 快速安装指南，大幅降低使用门槛
-#社区例会# 第一期 | 视频回看+资料下载
-#社区例会# 第二期 | V0.2 安装部署过程介绍及实操
-#社区例会# 第三期 | V0.3版本前瞻，实操演示快速上手
-Github：
-https://github.com/FabEdge/fabedge
-官方网站：
-http://www.fabedge.io
-视频回看汇总：
-https://space.bilibili.com/524926244
-点击BoCloud博云了解更多解决方案</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">金融云原生漫谈（五）｜如何打造更适合云原生的数据存储方案？</summary>
-                <a class="article-summary-link article-summary-box-outer" href="http://weekly.dockone.io/article/2434803">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(0 min)</span>
-                    <span>在金融行业数字化转型的驱动下，国有银行、股份制银行和各级商业银行也纷纷步入容器化的进程。
-如果以容器云上生产为目标，那么整个容器云平台的设计、建设和优化对于银行来说是一个巨大的挑战。如何更好地利用云原生技术，帮助银行实现敏捷、轻量、快速、高效地进行开发、测试、交付和运维一体化，从而重构业务，推动金融科技的发展，是个长期课题。
-本期云原生漫谈，将和您一起探寻如何打造更适合云原生的数据存储方案。
-
-
-
-
-近年来，金融服务形态经历了巨大的变化。线上业务的兴起，带来了海量的数据接入和业务的不确定性。
-数据系统管理弹性需求提升、数据系统访问查询需求提升，对数据存储、处理、挖掘的性能、稳定性、可靠性都提出了更高的要求。除此之外，金融企业IT还要建立数据“敏态引擎”，能够通过统一的编排系统配合业务上线，可以实现快速扩容。同时，存储系统自身的自动化运维能力，也成为IT建设者关注的焦点……
-那么，云原生时代，我们需要什么样的数据存储方案？针对底层的IT基础架构，和数据存储环境挑战，金融IT建设者们真实发问：
-容器云数据持久化存储方案怎么选？
-容器云的数据资源如何分配？
-如何提升容器云平台的数据一致性？
-高并发情况下，如何实现故障快速恢复？
-
-本篇文章将为您抽丝剥茧。
-容器云数据持久化存储方案怎么选？
-首先，容器云平台的底座主流是Kubernetes，所以从理论上来说，只要支持K8s CSI存储接口的商用存储产品，就可以选择使用。
-在实际生产环境中，NFS是最常见的协议，也是容器云平台在数据持久化方面最简单的实现方式。容器自身可以支持文件、块、对象三类存储形式。可以依据行内应用场景的需求，以及自身的运维能力，选择最合适的存储协议。
-文件存储：适合少量数据存储、配置文件场景
-块存储：适合数据库等高性能场景（当然，也有一些文件存储可以提供极高的性能，取决于存储）
-对象存储：适合存放图片、视频、网盘…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-        </section>
-      </li>
-    </ul>
-  </section>
-  <section class="daily-content">
-    <h2 class="daily-heading"><time datatime="2022-01-11">2022-01-11</time></h2>
-    <ul class="sources card">
-      <li class="source">
-        <section>
-          <h3 class="source-name"><a class="source-name__link" href="https://news-at.zhihu.com/api/4/stories/latest?client&#x3D;0">知乎日报</a></h3>
-          <section class="articles-per-source">
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">新人有哪些途径可以开始导演职业生涯？</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9744254">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(0 min)</span>
-                    <span>周杰伧的小粉丝，电影学徒
-阅读原文
-
-虽然都叫导演，但其实电影导演、电视剧导演、广告导演、话剧导演……成长路径各有不同，默认题主问的是影视剧导演吧。
-我就以我个人经历作个答。
-2006-2010 年左右我算是小有名气的网红，创作的常用手法是把一些不搭界的影视作品混剪在一起，制作成一个新的故事短片。但当我拿着这些作品参加平台举办的短片节时，只能拿到观众投票产生的人气奖，而评委会大奖往往被科班出身的同辈拿走了。我那时看着他们制作精良的短片，羡慕不已，萌生了去北京做专业导演的想法。
-在那之前，我熟读了周传基先生审校的《电影语言的语法》，并自购单反相机，用北京烤鸭和红薯作为演员，试着拍了两个实拍小片，获得了观众认可。
-2011 年底我来到北京，起初团队开展的是广告业务，听取甲方需求，策划方案，提报，大部分时候要竞标。因为像我们一样只能接小活儿的团队很多，所以竞争很激烈，我那时候抱着笔记本电脑跑遍了北京几乎所有的 4A 公司，也与一些客户结成了深厚的友谊，比如马应龙，十年后我再开公司时，它第一个过来下单支持，令我办公室里堆满了数不清的痔疮膏和眼霜，客人来了常常羡慕不已。
-在各种广告小剧组里观察了一段时间之后，我决定拿同事练手，于是召集团队里的所有人做演员，花了几千块拍摄了一支短片，在 2012 年 2 月 14 日上线。我导演手法虽然生疏，但大家表演经验更生疏，于是剧组气氛十分融洽默契，谁也不嘲笑谁。
-所以一个 tips 是，首支短片要和绝对信任你的人合作。
-几个月后，陆川导演注意到了我的作品，邀请我拍摄一支短片，他监制并且客串，里八神编剧，主演是聂远和秦岚。这是我第一次接触专业演员和专业剧组，剧情严肃且深刻，我还特意亲自绘制了分镜，并得到了陆川导演的高度评价：看不懂。
-由于不可抗力，这支短片完成后无法上线，只能封存在硬盘里。但在整个过程中，陆川导演给我上了一堂生动的电影课，令我受益良多，心底里燃起了一点和电影有关的火苗。
-2013 年，基于之前积攒的拍小广告的经验，我开发了一个系列短剧，也就是小有名气的《万万没想到》系列。至此，算是正式开启了职业导演的生涯。
-个人总结下来，新人做导演大概是以下几点要注意：
-1.导演是个杂家职业，各部门专业知识都要懂一些，所以要多听多看，多阅读专业书籍，多实践。
-2.要找到志同道合的伙伴，他们愿意帮助你成为导演，并且你也能帮到他们。
-3.提升自身修为的同时，遇到前辈提携，要抓住机会，也要铭记感恩。
-4.多创作，多发表，不断试错。比如各类视频平台，或者电影节创投环节。这个时代太适合闪光的金子了。
-5.从剧组的专业岗位开始做起，是很多导演的入门通道。
-说回我自己，虽然已经拍摄了两部电影，但是对于电影导演来说，目前是个刚起步的状态，毕竟四十岁以下都叫青年导演，我趁自己还算青年的时候，今年参加了《开拍吧》这个节目，一方面是因为我转电影导演之后，完全没有精力再做短片，这次正好有机会可以痛快玩一次，另一方面也是想弥补十二年前的遗憾，让作品获得专业人士的赞赏。
-但一路录制下来，我发现自己是从观众里来，那最终也要回到观众里去。
-十二年前，我以为获得专业人士的认可，才是好导演。十二年后，我发现观众喜欢你，你就是好导演。
-所以，我也还处在摸索的过程中。除了小部分天才外，大部分导演都是 35-40 岁才开始进入成熟期。耐心也是一个导演必备的品质。
-最后借一句彼得布鲁克的话送给题主：
-「戏剧就是游戏。」
-在导演这条路上，共勉吧。
-阅读原文</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">人格心理学的最新研究：造就天才的，竟然是这种性格特质？！</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9744256">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(0 min)</span>
-                    <span>思维心理，Mindspace 临床心理学家，心理咨询
-
-No.01【天赋异禀】性格竟决定天赋？
-有人三岁能诵六岁能诗；
-却也有人“天生我材必有用，不如自挂东南枝”。
-我们似乎普遍认为，天赋（Giftedness）就是天生拥有过人的智商。
-但其实，是否拥有天赋，更由你的性格决定。
-人格心理学家发现，大五人格中的开放性特质高低能够预测个体是否“天赋异禀”。
-大五人格海洋· OCEAN
-
-
-大五人格理论（Big Five Personality Theory），作为目前全世界心理学领域最受认可的人格特质理论， 被广泛应用于人格心理学实验领域。
-专家们普遍认为，特定的人格特质能够从某种程度上预测个体在特定领域的潜力。
-No.02【天赋人格】高开放性的天才
-为了探究人格对天赋的影响， 美国威斯康辛大学与北德克萨斯州大学的两位天赋教育学博士 Uzeyir Ogurlu 和 Adnan Özbey 对 13 篇有关论文进行了元分析（Meta-analysis）。
-13 个实验中的被试都是高分通过了权威才能测试的个体、来自普通学校“天才营”或“天才学校”的学生们。他们要么在少年时期就早早展现天赋，从同龄人中脱颖而出；要么厚积薄发，在工作岗位上如鱼得水，凭借强悍的能力在激烈的职场竞争中一骑绝尘。
-研究者们将他们的大五人格测试成绩与随机抽取的“非天才们”进行了分析比较。
-Ogurlu &amp; Özbey 对这些实验元分析结果表明:
-“天才”们的开放性人格特质（Openness）普遍高于“非天才”，而另外四种 OCEAN 人格特质对个体是否“天赋异禀”没有显著的影响！
-
-
-No.03【Checklist】高开放性人士的特点
-你是不是一个高开放性的人呢？
-想要粗略判断自己的开放性程度，不妨问问自己这些问题：
- 请如实回答 1）是；2）一般般；3）不是：
-· 我是不是一个善于提出新点子的人？
-· 我是否…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">送外卖一天 17 个小时可以快速还债吗？</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9744265">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(0 min)</span>
-                    <span>藤原大柱子，自由职业，众包骑手，外贸，自媒体
-阅读原文
-
-我是众包骑手，跑单区域是龙华，民治，坂田加上清湖，平时以龙华中心，坂田，民治为主要跑单区域。
-先上结论，辛苦一年，真的能够坚持下去，不敢说一年全部还清，至少 10 万左右是没问题的。
-但这个过程，常常是痛苦的。
-回想跑单种种，差点泪目。所幸坚持了下来，也在稳定较为轻松获取收入的路上。
-
-专送，众包，驻店，傻傻分不清楚
-深圳跑外卖分为驻店骑士，专送，众包。盒马，朴朴，美团，顺丰，达达不外乎这几个工作类型。
-专送和驻店就是外卖服务公司或商家的一线打手，单价固定，单量固定。美团单价 7～9 块，饿了么差不多。
-饿了么专送现在可以工作到凌晨 2 点。美团专送好像到夜里 12 点。
-至于众包，随时上线，随时下线。自由灵活是众包的最大特点。但是众包也是最难的。个人入行两年，断断续续跑单一年有余。自由的工作恰恰需要极强的自律。特定的时间做特定的事情。划重点。
-众包包括了美饿推出的普通众包，乐跑，优先，核心同城（仅限美团）以及顺丰同城骑士以及达达骑士。
-这是目前在深圳活跃的外卖类型。
-专送小弟并无经历。参考和同行交流，专送和驻店好比工厂公司上班的员工，有规定时间，你可以这么理解专送需要打卡上下班，上班时间固定。
-应该选择专送，还是众包，亦或乐跑
-拿我来说，美团，达达，饿了么，顺丰，达达，多个平台都跑过。目前以美团和达达为主。
-各平台侧重的市场，单量，规则都不一样。但大体的跑单流程，跑单的区域路线都是类似的。
-当初，我在球友建议下，先从美饿开始，逐渐过渡到美团达达为主，顺丰饿了么为辅。闪送，目前还在观望中。
-总体而言，美团体量＞饿了么＞达达大于顺丰＞闪送（等其他平台，UU 跑腿，裹小弟）。但是美团的规则也是最严格的，没有之一。
-刚开始跑，请教了一名骑手，他告诉我一单一单开始送。这样做的目的是刚开始，不熟悉区域，商家地点，客户地点，寻找…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">木卫一为什么会拥有类地行星的内部结构？</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9744279">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(0 min)</span>
-                    <span>昙花再现，昙花一现又再现，此中真意已惘然。
-阅读原文
-
-先简要回答问题，后面再做详细分析。
-简答
-木卫一之所以结构类似类地行星，是因为在木星形成过程中，木星所吸积的物质的重力势能释放产生高温，热辐射将木卫一轨道附近的冰物质（水、甲烷、氨）气化，导致木卫一尽管处于太阳系冻结线以外，其形成环境却类似冻结线以内的类地行星——没有固态的冰可吸积，最终成为一颗缺冰的岩石星体。
-木卫一会有这样的结局，关键一点在于，它的轨道太过接近木星。木星的另外三颗大卫星则因离木星较远，热辐射造成的温度还不足以熔化冰，因此它们是遵循冻结线外行星演化的标准模式来发展的，最终成为冰卫星。
-分析
-有一点需要澄清，题主对问题的表述很容易让人产生一个误解，就是以为地球这样的岩石地幔和富铁内核是一种不常见的特殊构造。
-事实上，太阳系所有岩石行星、冰巨行星、矮行星以及较大的卫星，都拥有与地球相似的这种外岩石 + 内铁核构造；两颗气态巨行星中，木星从目前的研究来看与前面提到的天体是不太一样的，至于土星，不是非常确定。
-只不过除了四颗类地行星、月球和木卫一之外，其它的行星和大型类行星天体，在岩石的外面又穿了一层（冰）或两层（冰 + 氢氦）“衣服”。而类地行星，可以理解为裸奔的行星。
-A、在不考虑最外层大气的情况下，这些太阳系天体可以按内部结构分为四类：
-①、类地行星、月球、木卫一，以及那些大到可以达成流体静力平衡、球状的小行星带小行星：是由岩石的外层以及富铁的内核组成。所谓岩石是指以硅酸盐为主的各种高熔点化合物，包括但不限于固体形态。
-
-②、所有矮行星、除月球和木卫一之外的所有大卫星，以及那些大到可以达成流体静力平衡、球状的柯伊伯带小天体：在①的内核外穿了一层冰质“内衣”。所谓冰是指以水、甲烷、氨为主要成分的较低熔点物质，包括但不限于固体形态。这个冰“内衣”的厚度，与天体质量正相关，与天体温度负相关。
-
-③、天王星、海…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">瞎扯 · 如何正确地吐槽</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9744309">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(0 min)</span>
-                    <span>古代男人可以通过毁掉贵族女子名声的方式高攀千金小姐吗？
-
-打火机也没了，注意力的小船，在信息的海洋漂浮。
-阅读原文
-
-没有必要把打死盲流子这个事写到县志上。
-阅读原文
-
-为什么历史是 history，而不是 herstory？
-
-火耀石，现在看知乎还不如看新闻联播
-阅读原文
-
-为什么遗产是 heritage 不是 hisitage？
-阅读原文
-
-唐僧真的对女儿国国王动了情吗？
-
-临渊之乐，咸鱼一条
-阅读原文
-
-应该是动了，走的时候女儿国国王问唐僧，御弟哥哥，你愿不愿意嫁给我，唐僧说，嫁。可惜白龙马会错了意，走了。
-
-
-
-阅读原文
-
-面对传教应该如何拒绝？
-
-刘阳
-阅读原文
-
-我不跟你谈，叫你们领导来
-阅读原文
-
-长大后你做过哪些「童年报复性补偿」的事？
-
-知乎用户，春暖花开，知乎有你，滴-
-阅读原文
-
-给我妈报名老年大学并且督促其认真完成作业
-阅读原文</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-        </section>
-      </li>
-      <li class="source">
-        <section>
-          <h3 class="source-name"><a class="source-name__link" href="https://news.ycombinator.com/">Hacker News</a></h3>
-          <section class="articles-per-source">
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Jevons Paradox</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://en.wikipedia.org/wiki/Jevons_paradox">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(11 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Terence Tao&#x27;s favorite problem-solving strategies (2010)</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://terrytao.wordpress.com/2010/10/21/245a-problem-solving-strategies/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(41 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">“Modern” C++ Lamentations(2018)</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://aras-p.info/blog/2018/12/28/Modern-C-Lamentations/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(16 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Annotated equations for increased readability and understanding of papers</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://twitter.com/sibinmohan/status/1480583840858996743">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(1 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Compound (YC S19) is hiring to build financial products for tech employees</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://withcompound.com/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(1 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Is the madness ever going to end?</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://unixsheikh.com/articles/is-the-madness-ever-going-to-end.html">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(3 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">The Future of Hardware Is Software</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://octoml.ai/blog/the-future-of-hardware-is-software/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(5 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Revisiting why hyperlinks are blue</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://blog.mozilla.org/en/internet-culture/why-are-hyperlinks-blue-revisited/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(9 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Make the “semantic web” web 3.0 again – with the help of SQLite</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://ansiwave.net/blog/semantic-web.html">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(2 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">PCI-Sig Releases 256GBps PCIe 6.0 X16 Spec</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://www.servethehome.com/pci-sig-releases-256gbps-pcie-6-0-x16-spec/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(4 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Microtargeting as Information Warfare [pdf]</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://cyberdefensereview.army.mil/Portals/6/Documents/2021_winter_cdr/04_CDR_V6N1_Dawson.pdf">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(34 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">What Defcon Sounds Like: Skyking Emergency Action Messages (2016)</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://specialcollections.radio/This-Is-What-DEFCON-Sounds-Like-Skyking-Emergency-Action-Messages">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(2 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">New SysJoker Backdoor Targets Windows, Linux, and macOS</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://www.intezer.com/blog/malware-analysis/new-backdoor-sysjoker/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(9 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Reading a Pacific navigator’s mysterious map may require a shift in perspective</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://knowablemagazine.org/article/society/2021/reading-pacific-navigators-mysterious-map">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(17 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">RFC8890 – The Internet Is for End Users</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://datatracker.ietf.org/doc/html/rfc8890">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(11 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">CSS Gradients that avoid the “gray dead zone”</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://www.joshwcomeau.com/css/make-beautiful-gradients/">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(5 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Embrace slow productivity</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://www.newyorker.com/culture/office-space/its-time-to-embrace-slow-productivity">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(8 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">The WebSocket Handbook</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://ably.com/blog/introducing-the-websocket-handbook">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(7 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Colors in movies and TV: What happened to them?</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://www.vox.com/culture/22840526/colors-movies-tv-gray-digital-color-sludge">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(16 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Dsq: Commandline tool for running SQL queries against JSON, CSV, Parquet, etc.</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://datastation.multiprocess.io/blog/2022-01-11-dsq.html">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(2 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">Launch HN: Clover (YC S20) – Notes, whiteboarding, and daily planner in one tool</summary>
-                <a class="article-summary-link article-summary-box-outer" href="https://news.ycombinator.com/item?id&#x3D;29892134">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(20 min)</span>
-                    <span>Comments</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-        </section>
-      </li>
-      <li class="source">
-        <section>
-          <h3 class="source-name"><a class="source-name__link" href="http://weekly.dockone.io">DockOne.io</a></h3>
-          <section class="articles-per-source">
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">金融云原生漫谈（二）｜中小银行破局之道：云原生架构转型全攻略</summary>
-                <a class="article-summary-link article-summary-box-outer" href="http://weekly.dockone.io/article/2434797">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(0 min)</span>
-                    <span>*在金融行业数字化转型的驱动下，国有银行、股份制银行和各级商业银行也纷纷步入容器化的进程。
-如果以容器云上生产为目标，那么整个容器云平台的设计、建设和优化对于银行来说是一个巨大的挑战。如何更好地利用云原生技术，帮助银行实现敏捷、轻量、快速、高效地进行开发、测试、交付和运维一体化，从而重构业务，推动金融科技的发展，是个长期课题。
-因此，twt社区主办了主题为“银行高并发交易类场景下，容器云架构如何保障高性能、高可靠性“的线上交流活动，吸引了众多来自银行一线的技术大咖参与交流。我们将干货整理出来，以“金融云原生漫谈”系列文章的形式陆续呈现。*
-
-
-
-
-企业数字化转型的道路上，一些大型全国性股份制银行已经走在全行业的最前沿。在构建云原生技术平台的过程中，不仅投入大量的人力和技术资源，还会与专业的第三方技术厂商合作，用先进的技术、解决方案和方法论，以及完善的咨询服务武装自己，保障云原生技术的落地。当然，这样大刀阔斧的改革，也意味着不断试错，和预算、人力、资源的巨大消耗。
-对于资源相对有限，技术能力相对薄弱，但数字化需求和要求同样高标准的中小银行来说，数字化转型路上面临的挑战会更加复杂。
-云原生的架构改造，是否存在“万能模板”？   
-云原生架构下应用转型有无相关规范可以参考？   
-中小银行也需要百人规模的技术团队吗？  
-飞快的技术更迭下，中小银行如何做稳健的技术选型？
-
-本期“云原生漫谈”，我们就将和大家聊一聊，中小银行如何找到适合自己的云原生构建思路，快速抓住科技变革机遇，快速、平稳、高效数字化转型破局。
-## 中小银行在采用云原生架构时，“万能模板”是什么 ##
-在云原生技术实践联盟（CNBPA）2021年初的调研中显示，国内 72.7%的企业已经采用Kubernetes作为容器编排技术，占据了绝对的优势地位。这也与CNCF最新发布的中国区云原生调查报告中，72%的受访者已…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">金融云原生漫谈（一）｜银行业如何快速提升应用研发效能和交付效率？</summary>
-                <a class="article-summary-link article-summary-box-outer" href="http://weekly.dockone.io/article/2434796">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(0 min)</span>
-                    <span>*在金融行业数字化转型的驱动下，国有银行、股份制银行和各级商业银行也纷纷步入容器化的进程。
-因此，twt社区主办了主题为“银行高并发交易类场景下，容器云架构如何保障高性能、高可靠性“的线上交流活动，吸引了众多来自银行一线的技术大咖参与交流。我们将干货整理出来，以“金融云原生漫谈”系列文章的形式陆续呈现。*
-
-
-
-
-很多银行会选择自建容器云平台，或者直接采用成熟的K8s发行版，不管是哪种方案，容器云如何与银行自身的持续集成系统、测试服务系统，或者DevOps流水线进行有效对接，更好地提升IT系统产品研发效能和交付效率，是值得我们去深入思考的问题。
-众所周知，传统瀑布式开发动辄耗时数月甚至数年，无法满足业务快速变化和竞争的需求，只有引入持续交付和 DevOps，掌控从开发、测试到运维的应用全生命周期，才能打造出快速迭代、与业务同频的应用，为企业创造盈利的价值链。
-云原生技术的出现，为DevOps插上了翅膀，可以更加充分地利用云原生基础设施，基于微服务架构体系和开源标准，提升持续交付和智能自运维的能力，从而做到比传统DevOps更高的服务质量、更低的开发运维成本，让研发专注于业务的快速迭代。
-过去的几年间，灵雀云有幸服务了超过半数的全国性股份制银行和众多商业银行，在这些银行业的云原生实践中发现，银行在设计容器云平台的时候，可以通过以下几点有效地提升各类应用产品的研发效能和交付效率：
-如何利用容器云提升研发效能
-首先，银行自身的持续集成系统、测试服务系统或者DevOps流水线工具，我们建议尽可能使用开源工具来建设，目的主要是让整个产品研发的工具链体系和开发流程更加灵活，目前我们看到有大量中小银行都在采用开源工具链来进行DevOps工具体系的建设。
-同时，建议引入一些开放的可以整合这些开源工具链的产品，例如灵雀云的DevOps开放平台，充分尊重银行原来使用的开源工具链，通过工具链集成的形式简化银行DevOps工具体系建设的复杂性，统一DevOps工具链全链路管理能力。
-其次，改变应用的交付方式。原来传统的以二进制Jar包、War包为制品的交付方式，最好统一成以标准容器镜像包为制品的交付方式进行交付，需要注意的是，要严格规范业务应用运行的中间件版本或者应用运行环境等，例如限定JDK的某几个常用版本，Tomcat的某几个常用版本等，同时尽可能使用轻量化、可容器化的中间件作为业务应用的运行环境，例如tomcat、nginx等，不建议使用websphere、weblogic这种比较重的并且对于容器化不够友好的中间件产品。
-最后，建议引入Service Mesh这种下一代微服务网格技术，简化产品研发的人力资源投入，提升整个产品的服务治理和全局可视化管理的能力。
-如何利用容器云提升交付效率
-首先，容器云平台一定要提供开放的API对接能力，目前市面上主流的容器云平台都是基于Kubernetes技术发展出来的，所以Kubernetes的原生对接能力是非常重要的；
-其次，银行自身的持续集成系统、测试服务系统或者DevOps流水线需要具备和容器云平台对接的能力，例如这些敏捷开发工具可以直接调用Kubernetes的API来自动进行应用的持续发布；
-另外，建议容器云平台最好可以提供一部分DevOps CD的功能，在银行现有敏捷开发工具无法进行容器云平台API对接的情况下，可以通过例如基于制品更新为触发条件的自动化持续发布能力。
-灵雀云在银行的云原生转型实践上已经有了很多成功的落地案例，银行可以通过灵雀云的银行业容器PaaS解决方案，搭建自主可控、自下而上的云管理技术平台，实现IT基础设施从硬件化IT到软件化IT的转变，更好地提升产品研发效能和交付效率。</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">金融云原生漫谈（三）｜银行云原生基础设施构建：裸金属VS虚拟机</summary>
-                <a class="article-summary-link article-summary-box-outer" href="http://weekly.dockone.io/article/2434798">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(0 min)</span>
-                    <span>在金融行业数字化转型的驱动下，国有银行、股份制银行和各级商业银行也纷纷步入容器化的进程。
-
-
-
-
-
-虽然，金融行业推进云原生建设的各种实践案例比比皆是，然而银行在着手实际建设之初，围绕“如何构建先进的云原生基础设施”的话题，依然众说纷纭，没有特别明确的答案。
-以部署容器的底层计算资源为例，理论上来说容器云可以运行在任意基础设施上，既可以选择裸金属部署，也可以选择虚拟机部署。
-过去，很多银行会选择虚拟机作为容器云的底层计算资源，然而，虚拟化的过程在为用户带来高灵活性的同时，其性能损耗也给用户带来了焦虑。
-现在，随着容器技术的成熟，在裸金属上部署容器所带来的高性能等特点越发明显，让用户又开始面临着裸金属部署还是虚拟机部署的选择题。
-在虚拟机上部署容器云平台有什么优劣势？
-在裸金属上部署容器云平台有什么优劣势？
-本篇文章将带你一探究竟。
-在虚拟机上部署容器云平台有什么优劣势？
-首先，选择虚拟机，可以最大化利用现有的基于虚拟化的云计算资源，为用户带来高灵活性的运维体验。从硬件管理层面来看，虚拟机对于底层硬件资源的管理和监控能力也更强。
-但相对于裸金属，在虚拟机上部署容器云平台的性能损耗会更高一些。基于容器的云原生的价值之一就是直接和硬件层打交道，减少软件层的损耗以提升性能。然而我们在金融行业的落地实践中发现，使用虚拟机+容器方案，相比物理机直接跑容器中间多了一层Hypervisor，可能会导致很多硬件创新无法及时、高效地提供给应用使用，性能也会损耗大概10%～20%。
-在裸金属上部署容器云平台有什么优劣势？
-目前我们在客户实践案例中，渐渐可以看到一个趋势，越来越多的用户会选择裸金属部署容器。那么裸金属服务器有哪些优势呢？
-首先在性能层面，由于少了虚拟机这一层的性能损耗，裸金属服务器构建出来的容器平台性能损失更小。应用程序可以直接访问CPU、内存及其他硬件资源，从而大大缩短延迟，并最大限度地提高资源利用率，有助于大幅提升性能。从具体的场景角度来看，例如人工智能的推理场景，借助 CPU 的 AI 优化指令集，AI 推理的性能可能带来几十倍甚至上百倍的性能提升。
-在成本层面，由于少了虚拟机部分的建设投入，裸金属服务器构建出来的容器平台成本投入更低。在相同成本的前提下，裸金属配置往往能够提供比虚拟机配置更强大的功能，更适合需要高端硬件和快速扩展的较复杂项目。
-在管理层面，由于少了虚拟机这一层的运维管理，裸金属服务器构建出来的容器平台运维管理更为简单。裸金属服务器的好处贯穿于整个开发过程。缺少虚拟化层降低了系统的复杂性，使故障排除起来更容易。由于配置更精简，管理服务自动化和软件部署也更容易。
-在安全层面，裸金属服务器是单租户环境，比虚拟机的多租户环境更安全。裸金属服务器管理员全面控制系统配置，在降低网络攻击风险、敏感信息处理方面更具优势。对于关键类应用或性能要求较高的业务（如大数据集群、企业中间件系统），并且要求安全可靠的运行环境，更推荐使用裸金属服务器部署容器。
-在工作负载层面，裸金属服务器可以支持灵活创建针对特定工作负载而优化的配置。虚拟机实例通常托管旨在满足一般工作负载需求的配置上。这意味着非常特定的硬件配置很少可供使用。而裸金属服务器配置可高度定制，可加以优化来支持要求苛刻的特定工作负载。
-在组织层面，裸金属服务器不会被供应商工具束缚。裸金属服务器上的容器云平台可以支持管理员全面控制底层的硬件基础架构，使组织避免供应商锁定现象，降低迁移解决方案的难度。
-当然，裸金属服务器作为底层计算资源相比与虚拟机也有一些缺点，主要是在容器云扩容层面，容器云的节点扩容性不如虚拟机，毕竟裸金属服务器的采购周期较长。
-此外在硬件管理层面，应用裸金属部署容器的另一个问题在于如何提高底层硬件资源的管理和监控能力，相对于传统的云计算平台，K8s本身作为一个服务和负载的调配平台，目前对底层资源的管理能力相对较弱。
-但是值得一提的是，目前已经出现了一些基础设施层面的优化工具，例如Intel有一些CPU调度相关组件（CPU Management，Resource Management Daemon等），ARM也有很多针对CPU性能优化方面的工具，可以帮助我们实现裸金属的高级部署方式，提升容器在裸金属上部署的硬件管理能力，更高效地利用硬件级别的创新，如计算加速设备、低延迟大带宽网络设备、高性能持久化设备等。
-在实际业务中，选择裸金属还是虚拟机，作为容器云的底层计算资源，还要取决于银行的IaaS能力。如果银行的IaaS能力提供祼金属服务，特别是软硬一体化加速的祼金属服务，则优先祼金属服务，可获得高性能的同时，也得到了扩缩容的弹性支持。否则，建议采用虚拟机以提升交付效率、弹性伸缩和降低运维成本。
-不过可以肯定的是，无论选择裸金属，还是虚拟机，以容器为代表的云原生技术都将为银行数字化转型增添浓墨重彩的一笔。</span>
-                  </div>
-                </a>
-              </details>
-            </article>
-            <article>
-              <details class="article-expander">
-                <summary class="article-expander__title">金融云原生漫谈（四）｜如何构建高可用、高并发、高性能的云原生容器网络？</summary>
-                <a class="article-summary-link article-summary-box-outer" href="http://weekly.dockone.io/article/2434799">
-                  <div class="article-summary-box-inner">
-                    <span class="article-reading-time">(0 min)</span>
-                    <span>*在金融行业数字化转型的驱动下，国有银行、股份制银行和各级商业银行也纷纷步入容器化的进程。
-如果以容器云上生产为目标，那么整个容器云平台的设计、建设和优化对于银行来说是一个巨大的挑战。如何更好地利用云原生技术，帮助银行实现敏捷、轻量、快速、高效地进行开发、测试、交付和运维一体化，从而重构业务，推动金融科技的发展，是个长期课题。
-上期我们聊到云原生的底层计算资源该怎么选，本期金融云原生漫谈，将继续和大家共同探讨如何构建高可用、高并发、高性能的云原生容器网络。*
-
-
-
-
-谈起云原生基础设施构建，就必然会提到云原生的容器网络。
-众所周知，容器网络作为云原生的基石，是云原生平台必不可少的基础组件，也是云原生容器平台构建时的最大挑战之一。
-随着银行应用数量和类型的进一步增多，对网络复杂度的要求也越来越高。银行的应用有自身特点，银行应用的管理级别不同，访问特色也不同，需要考虑如何兼容传统网络架构，实现传统网络和容器网络之间的互联互通，同时，传统应用容器化迁移后如何实现固定IP，以及对于容器多网络平面、多网卡的管理，多租户和跨云网络、容器流量的监测、调度与QoS等也都面临新的挑战。
-目前有很多银行容器网络的内部其实是一个“黑盒”，容器内部和外部的网络没有打通，也无法实现跨云多网络集群的互通，亟需进行转型改造。
-在这种压力下，构建高性能的容器网络就显得尤为重要，然而：
-两地三中心架构中的容器网络怎么改造可用性更高？
-高并发场景下，银行的容器网络如何规划？
-如何打造高性能的容器网络？
-本篇文章将为你解答。
-## 两地三中心架构中的容器网络怎么改造可用性更高？ ##
-面对应用的高可用性需求，很多银行都在积极建设两地三中心，或者异地灾备建设。那么如何对接或改造容器平台的网络，以满足容器平台中应用与传统虚拟机、物理机中旧业务系统的相互通信，避免或尽可能减少对银行现有网络管理模式的冲击呢？
-首先从整…</span>
-                  </div>
-                </a>
-              </details>
-            </article>
         </section>
       </li>
     </ul>
   </section>
 
   <footer>
-    <time id="build-timestamp" datetime="2022-02-10T00:50:39.474Z">2022-02-10T00:50:39.474Z</time>
+    <time id="build-timestamp" datetime="2022-02-11T00:54:57.329Z">2022-02-11T00:54:57.329Z</time>
     <span><a class="footer-link" href="https://github.com/osmoscraft/osmosfeed">osmosfeed 1.12.0</a></span>
   </footer>
   <script src="index.js"></script>
