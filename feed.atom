@@ -2,10 +2,475 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://7qi7qi.github.io/RSSFeeder/index.html</id>
     <title>osmos::feed</title>
-    <updated>2022-02-12T00:53:08.297Z</updated>
-    <generator>osmosfeed 1.12.0</generator>
+    <updated>2022-02-13T00:53:25.895Z</updated>
+    <generator>osmosfeed 1.12.1</generator>
     <link rel="alternate" href="https://7qi7qi.github.io/RSSFeeder/index.html"/>
     <link rel="self" href="https://7qi7qi.github.io/RSSFeeder/feed.atom"/>
+    <entry>
+        <title type="html"><![CDATA[WebAssembly是下一个Kubernetes吗？]]></title>
+        <id>http://weekly.dockone.io/article/2434877</id>
+        <link href="http://weekly.dockone.io/article/2434877"/>
+        <updated>2022-02-13T00:53:25.842Z</updated>
+        <summary type="html"><![CDATA[几周前我有一个“哦，啊哈，当然”的时刻，我想分享一下：WebAssembly是下一个Kubernetes吗？
+K8s来了
+Kubernetes承诺提供一个软件虚拟化基础，可以让你同时解决许多问题：
+
+与在裸机上运行服务相比，Kubernetes（“k8s”）可以让你更有效地使用硬件。K8s允许你在一台硬件服务器上运行多个容器，并允许你根据需要向集群中添加更多服务器。
+
+“容器云”架构有效地划分了构建服务器端应用程序的工作。数据库团队可以发布数据库容器，后端团队可以发布Java容器，产品经理使用网络作为通用中间层将它们连接在一起。它符合康威定律：软件看起来像组织结构图。
+
+容器抽象足够通用，可以支持许多不同类型的服务。Go、Java、C++等等——它不是特定于语言的。开发团队可以使用他们喜欢的东西。
+
+负责运行容器的k8s服务器的运维团队不必信任他们运行的容器，他们内置了一些沙盒和安全性。
+
+K8s本身是对先前架构OpenStack的演变。OpenStack让每个容器都是一个完整的虚拟机，具有完整的内核和操作系统以及一切。相反，K8s通常使用容器，容器中通常不需要内核。它们更轻量级——想想 Docker 与 VirtualBox。
+在Kubernetes部署中，内核仍然位于软件架构的中心位置。容器化的基本机制是具有私有命名空间的Linux内核进程。然后这些容器通过TCP和UDP套接字粘合在一起。然而，虽然每个容器一个或多个内核进程确实比完整的虚拟机扩展得更好，但它通常不会扩展到数百万个容器。并且进程确实有一些启动时间——你不能为每个对高性能Web服务的请求启动一个容器。这些技术限制导致某些类型的系统架构，通常具有保持某种状态的长期组件。
+k8s会演化到w9y吗
+服务器端WebAssembly与Kubernetes处于类似的空间——或者更确切地说，WebAssembly类似于进程和私有命名空间。WebAssembly为你提供了良好的抽象屏障和（可以提供）高度安全隔离。在某些方面它甚至更好，因为WebAssembly提供了“允许列表”安全性——它没有一开始的功能，要求运行WebAssembly的“主机”将自己的一些功能显式委托给来宾WebAssembly模块。与默认情况下从每个功能开始然后必须受到限制的进程进行比较。
+与Kubernetes一样，WebAssembly也为你提供康威定律系统。你无需传送容器，而是传送WebAssembly模块——以及一些关于他们需要从环境中获得哪些类型的东西的元数据（“导入”）。WebAssembly是通用的——它是一个低级的虚拟机，任何东西都可以编译成。
+但是，在WebAssembly中你会得到更多的东西。一是快速启动，因为内存就是数据，所以你可以安排创建一个WebAssembly模块，该模块的状态从内存中预初始化的状态开始。这样的模块可以在几微秒内启动——速度足够快，可以在每个请求上创建一个，在某些情况下，只是在之后丢弃状态。你可以在WebAssembly上比在容器上更有效地运行功能即服务架构。另一个是虚拟化完全在用户空间中提供。一个进程可以在许多不同的WebAssembly模块之间多路复用。这让一台服务器可以做更多事情。而且，你不需要使用网络来连接WebAssembly组件；他们可以在内存中传输数据，有时甚至无需复制。
+（题外话：WebAssembly的这种轻量级进程内方面使得其他架构也成为可能，例如这个有趣的hack将链接到Firefox的库沙箱化，他们实际上已经发布了！）
+我将WebAssembly与K8s进行比较，但实际上它更像是进程和私有命名空间。所以对最初提出的问题的一个答案是，不，WebAssembly不是下一个 Kubernetes。下一个项目正在等待建立，尽管我知道一些已经开始的组织。
+不过，我似乎很清楚一件事：WebAssembly将处于新事物的底部，因此WebAssembly的近期轨迹很可能会跟随Kubernetes的轨迹，这意味着......
+
+分析师的香槟时间！
+
+Gartner 魔力象限再次出现
+
+IBM推出了一个新的WebAssembly部门
+
+埃森哲开始向公司询问他们的WebAssembly迁移计划
+
+Linux基金会尝鲜
+
+等等。我在不久的将来看到了动荡的水域。所以从这个意义上说，Kubernetes本质上不是一个技术软件，而是一个泡沫商业竞争的纽带，当然：我们还有5年左右的时间，我们会很开心。
+原文链接: webassembly: the new kubernetes?]]></summary>
+        <author>
+            <name>cleverlzc</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[More Than Half of Bitcoin Investors Are in the Red, Study Says]]></title>
+        <id>https://money.com/bitcoin-crypto-losses-2022/</id>
+        <link href="https://money.com/bitcoin-crypto-losses-2022/"/>
+        <updated>2022-02-13T00:05:28.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[为什么捏住鼻子就不会尝到味道？]]></title>
+        <id>https://daily.zhihu.com/story/9745310</id>
+        <link href="https://daily.zhihu.com/story/9745310"/>
+        <updated>2022-02-12T23:37:12.000Z</updated>
+        <summary type="html"><![CDATA[卫小妖GOGOGO，这个金牛座设计师爱好有点多，聊聊美食聊聊人生。
+阅读原文
+
+看到这个问题让我想起上周刚去上的 SCA 咖啡风味感官杯测的课和考的试，学习到了比较系统的一个对于咖啡“风味，味道”的理解、感受和测评的过程。
+咖啡鼻子，闻香瓶训练
+给我们上课也是最后主考的老师是国内咖啡界非常资深的一位大佬。从业十年，老师给我们说她每天都会坚持生理盐水清洗鼻子，因为咖啡的风味其实 80%都是用鼻子感受到的。也提醒我们，如果考试那天不巧感冒鼻塞了，很大程度会影响考试结果的。
+这个知识点挺有意思的，因为在这之前大家普遍认知——味道是味蕾来感受的，但其实食物的风味主要是由嗅觉、味觉、触觉和视觉共同组成的“味觉系统”来一起感受的，其中嗅觉占到了 80%。
+”为什么捏住鼻子就不会尝到味道呢？“
+其实这个描述不是特别的准确，应该修正为”捏住鼻子就只能尝出有限的几个味道”。
+要解答这个问题，只需要从两方面思考就可以了——
+1.味道指的是什么
+味道是指一种感觉——味觉受体对食物中的分子作出反应的化学过程。我们大脑会储存这些我们日常吃到的食物喝到的饮品等的“感觉”。日常描述“味道”感觉的词语很多，比如：酸甜，咸香，苦，苹果醋的酸，香梨的清甜，沙瓤西瓜的甜，新疆马奶提的甜蜜，烤杏仁的香，烤榛子的香等等。大脑获得这些信息靠的是多种感官共同作用输送信息得知的。
+2.鼻子和舌头各自的能力和分工
+舌头能尝到的味道只有酸、甜、苦、咸、鲜五种，但鼻子可以闻到的味道种类却是不受限的，目前科学论据尚未得出人类可以区分的气味数量，但这个数字介于 10,000 到 1 万亿之间。无论是哪种方式，它都比五种来得多。
+所以我们在看不管是品酒师，还是香水闻香师或者是咖啡的杯测师，第一时间都是先去“闻”，在这类品鉴活动中，我们把经嗅觉感知到的气味称为“香气”（Aroma）。
+杯测课上大家闻咖啡的干香湿香杯测课上大家闻咖啡的干香湿香
+闻到气味的方式有两种，一种是通过鼻腔黏膜上的 300 多种嗅细胞感知，称为鼻前通路 (orthonasal olfaction)，另一种则是从嘴巴里感知的，就是通过口腔和喉咙，称为鼻后通路 (retronasal olfaction)。前者主要是是感受感知食物挥发出的气味，用咖啡举例子——比如贵咖啡瑰夏，你在闻咖啡干粉时就可以捕捉到非常明显的花香以及小香梨果皮的清香，还有淡淡的新鲜香草籽的香味。这个就是通过“鼻前通路”感受到的。
+我们在高空中的飞机上吃“飞机餐”或者其他食物，总会觉得有点寡淡，一方面是因为高空中我们的嗅觉和味觉都有一些减弱，另外也是因为高空机舱中干燥，我们日常依靠的蒸发鼻腔粘液来闻气味的技能受到了影响，所以在飞机上吃什么都会比平常寡淡两倍。
+而“鼻后通路”，则是食物进入到嘴巴里的气味，由鼻后通路感知，传递到大脑。但因为这个“动作”是食物吃进去后大脑得到的反馈，所以我们一般会误认为这是“舌头”感受到的味觉，但其实是鼻子的功劳。想要打破这个固有观念很简单，就是采用题主问题的这个试验方法——捏住鼻子再去吃同一款食物，你会发现你感受不到大部分的味道了，就是这个“鼻后通路”的原因。
+鼻孔闻到的香气是“鼻前嗅觉”（左图）、嚼食时从口中传入的则是“鼻后嗅觉”（右图）
+感冒后，吃任何食物都寡然无味，其实也是这个原因，鼻子被堵塞后，我们原来可以“品尝”到的味道都受限了，自然会觉得“吃什么都没味”。
+[1][2][3]
+阅读原文]]></summary>
+        <author>
+            <name>知乎日报</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[为什么饭和粥的营养价值不一样?]]></title>
+        <id>https://daily.zhihu.com/story/9745324</id>
+        <link href="https://daily.zhihu.com/story/9745324"/>
+        <updated>2022-02-12T23:37:03.000Z</updated>
+        <summary type="html"><![CDATA[沈夏冰，营养师终究会获得社会的认可
+阅读原文
+
+1.饭和粥营养价值不一样，主要是成品的含水率不同导致的。
+2.烹饪过程和含水率的不同，会让粥和米饭的 GI 值不同
+3.煮粥时间往往更长，维生素 B1 损失会更多一些，但也很有限。
+以粳米为例，大米和米饭的比例大约是 1：2.3，即 1 份种类的大米加上 1.3 份的水，煮出来 2.3 份重的米饭，而煮粥的加水量要多的多。根据粥的稀稠程度不同，加水量差别非常大，比如稠粥，大米和最后粥的比例大约是 1；5（相当于 100g 的大米煮出来 500g 的稠粥）。
+特别稀的粥，大米和粥的比例可以达到 1：20，可以说非常非常稀了......
+加水量不同，会使得最终成品的营养价值被“稀释”，也就使得营养成分表上，米饭和粥的营养价值有差异。但两者同属于谷类，且原料一致，所以通常可以通过「热量相等」的原则进行互换，以 90kcal 为一份的话：
+25g 的大米 = 60g 米饭（1：2.3）=500g 的粥（1：20）
+问：烹饪过程不同，会影响粥和米饭的营养价值吗？
+会的，为了让粥更黏糊，通常煮粥的时间会更长（电饭煲里煮粥都是 2h+，而煮饭往往是 40min~1h），要不然就是要让米提前在水中浸泡。
+长时间和水的接触会使得部分水溶性维生素（维生素 B1）流失，当然如果是连着浸泡的水一起煮会好很多。
+煮粥相比于煮饭，在高温下时间更长，以维生素 B1 为首的热敏感维生素也会破坏更多，更别说很多家庭在煮粥时候加碱（小苏打），也会加剧维生素 B1 的损失。
+但是，考虑到加工过程中，精白米的维生素 B1 已经损失的一塌糊涂了，所以我觉得烹饪对于粥和米饭中的维生素 B1 的影响差异真的有限...
+问：两者血糖生成指数（GI）是不是不一样？
+由于粥的淀粉糊化更彻底，往往大家会认为粥的 GI 比米饭更高。但是由于粥当中水比较多，冲淡了消化酶，人体对于大米中碳水化合物消化吸收的速率反而会下降，所以 GI 值甚至比米饭看起来更低。
+不过就算如此，也不建议糖尿病人喝粥，因为白粥中的碳水化合物依然会被完全吸收，对血糖的影响也很大，再者，现有的 GI 数据是基于健康人群调节血糖能力计算得出的，糖尿病患者调节血糖的能力与健康人群的存在一定差异。
+（感谢疾控大佬 @猫咪首领教授 的建议~）
+阅读原文]]></summary>
+        <author>
+            <name>知乎日报</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[为什么屎壳郎能把粪球推那么圆？]]></title>
+        <id>https://daily.zhihu.com/story/9745329</id>
+        <link href="https://daily.zhihu.com/story/9745329"/>
+        <updated>2022-02-12T23:36:54.000Z</updated>
+        <summary type="html"><![CDATA[biokiwi，用生命科学的角度看世界！
+阅读原文
+
+屎壳郎推粪球的行为虽然很出名，但是很意外的是研究的人其实非常少，除了 @赵泠 在回答里提到的文章之外，相关的研究屈指可数，这里我们简单整理一下，看看能不能还原出屎壳郎推粪球的基本行为模式。
+为啥会推粪球？
+首先，任何生物问题是一个进化问题：那屎壳郎最早是怎么推粪球的？屎壳郎是一种金龟子科的昆虫，这一科里的昆虫有的以推粪球为食（腐食性），有的则是以植物为食（植食性）。
+研究者通过化石和基因组的推测分析，可以发现像屎壳郎这样一类的腐食性金龟子可能出现在 1.19-1.3 亿年前，最晚也是 8500 万年前[1]。而那个时候还是恐龙称霸的时代（哺乳动物的辐射进化在 6000-8000 万年，所以屎壳郎推的粪主要应该是恐龙粪），因此那时候的屎壳郎推的粪球和现在屎壳郎推的粪球可能大不相同：爬行动物（尤其是鸟类）与哺乳动物的粪便成分很不一样（比如现代来看，鸟类的粪便尿素含量会更高，粪便中物质代谢的程度也更低），含有的营养物质也不一样。
+所以屎壳郎从哪学会推粪球这个问题，还是有很大争议的。但至少可以发现，恐龙在数千万年前的大灭绝，肯定是大大影响了屎壳郎们的饮食环境，进而导致群体的进化发生了一定的改变[1]。
+怎么推粪球？
+这可能是题主更感兴趣的问题，而这方面的研究，则更像是一个仿生学问题：昆虫是怎么行走的？通过研究昆虫行走的模式，我们就可能对复杂地形的运动、运输有更好的认识。那屎壳郎的行为，当然是研究球体（粪球）运输的最佳典范啦~[2]
+屎壳郎搬运过程中的图示：A 侧视图，B 俯视图，C 连续侧视图，其中黄红绿点依次表示了它的前中后腿的位置
+可以看到，屎壳郎推的时候，首先要前脚用力，通过推动地面来产生前进的动力；同时，它的中腿和后退会稳稳地扶住粪球，然后以一定的规律循环往复地运动。
+屎壳郎转动的模式图
+其中，前腿以顺时针方向转动，重复着“站立 - 踩住地板 - 推”这样的动作，来维持动力需要；中腿和后退则是以逆时针方向转动，跟随着粪球的运动也时刻转动着，并且中腿和后腿的转动在方向上会有一定的区别：要是方向完全一致可能两条腿就打架了，这可能就需要维持一个平衡的运动。
+三条腿转动的轨迹图
+进一步观察，研究者总结了屎壳郎推粪球的四条基本规则：
+1、前脚着地，并且左右交替着地，这样能确保动力持续存在；
+2、中腿的运动轨迹，和对侧后腿的运动轨迹相似，应该是同步的进行能确保平衡；
+3、同一侧的中腿和后腿往往不会同时抬起来，左右的中腿或者后腿也很少同时抬起来；
+4、中后腿之间有着明显的协调循环运动过程。
+同时也发现，前腿的运动和中后腿的运动往往是相互孤立的：这也好理解，执行的功能完全不一样，两套独立运转的系统对于不同粪球、不同地形的控制肯定自由度也更高一些。
+六条腿的运动轨迹记录与研究，可以和前面的四条规则对应起来看
+在这六条腿的配合下，屎壳郎也就能将粪球越滚越圆越滚越大了。
+阅读原文]]></summary>
+        <author>
+            <name>知乎日报</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[影视剧中有哪些可以借鉴的穿搭？]]></title>
+        <id>https://daily.zhihu.com/story/9745334</id>
+        <link href="https://daily.zhihu.com/story/9745334"/>
+        <updated>2022-02-12T23:36:44.000Z</updated>
+        <summary type="html"><![CDATA[黎贝卡，微信公众号：黎贝卡的异想世界，欢迎来找我玩儿^_^
+阅读原文
+
+《现在正在分手中》这部剧的热度其实不算高。不过乔妹在里面的穿搭还是很值得一看的。
+尤其是这套全身牛仔 + 毛衣披肩，超多人模仿～▼
+
+这几套也很好看。▼
+
+乔妹在里面扮演的河英恩，是时尚品牌的主设计师，穿搭水平自然是十分在线的。作为设计师，她的穿搭既有职场女性的干练，又不乏流行的时尚元素，属于比较好模仿的轻熟女风，还蛮值得一看的。▼
+
+当然，也有很多人是冲着乔妹的颜值去看的。
+这部剧讲的是她扮演的设计师河英恩（乔妹今年 40 岁，剧中年龄设定是 38 岁）和张基龙扮演的自由摄影师尹在国之间的爱情故事。张基龙比乔妹小 11 岁，但大家都说两人搭戏一点都不违和。男帅女美，整部剧的画面还是非常赏心悦目的。▼
+
+至于剧情，我个人觉得还是比较韩剧套路的，又是车祸又是癌症的......
+所以，今天主要来和大家扒一扒乔妹在剧中是怎么打造轻熟女风的。不管有没有看剧，这些穿搭都很值得看看哦。
+开始之前，先简单说下宋慧乔的身材。她官方身高 161cm，小骨架，看起来比较娇小，也经常被当作小个子女生的穿搭典范。
+一起来看看：
+（例牌声明：本文不含任何商业软性植入）
+
+衣服篇
+乔妹在剧中常穿的单品虽然也是风衣、大衣、西装这些，但她的选款和搭配很有自己的特点，走进人群也能让人眼前一亮。
+彩色风衣
+剧中让我印象最深的是她的风衣造型。
+风衣颜色不是常见的大地色系，而是以彩色居多。选的也都是简约款，没有风衣常见的肩章、枪挡、风雨覆等设计。
+搭配方面，她最爱拿风衣跟裙子组 cp。裙子首选面料有垂坠感的，裙长在大衣长度上下 10cm 左右比较好看。▼
+
+另外，因为剧里河英恩一直在努力发展韩国本土品牌嘛，她穿的衣服也是以韩国牌子为主，出镜率最高的要数 Michaa。这个牌子外套大部分是几千块一件，大衣有些会上万。这两套都是半裙 + 风衣的组…]]></summary>
+        <author>
+            <name>知乎日报</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[飞机，动车上的呕吐袋为什么那么小?]]></title>
+        <id>https://daily.zhihu.com/story/9745351</id>
+        <link href="https://daily.zhihu.com/story/9745351"/>
+        <updated>2022-02-12T23:36:39.000Z</updated>
+        <summary type="html"><![CDATA[太空僧，和尚洗头用飘柔
+阅读原文
+
+这么冷门的一个问题。
+因为呕吐袋本来是用来装食物的。比如下图左边这个上世纪 90 年代的中国西北航空的清洁袋，标准尺寸是 9.5X5 英寸（237X125mm）[1]。这个尺寸和美国通用的 lunch bag（图右）几乎一样。
+
+那为什么不用其它更大一点的袋子呢（毕竟棕色纸袋也有其它尺寸呀）？
+发明得太晚了
+有人认为是因为带有塑料涂层的呕吐袋发明的太晚了。
+在商业飞行的早期阶段，飞机机舱里的空气因为密闭性不够好，会有强烈的燃油味（如果你坐过 80 年代的瓦罐公交车，你就知道我在说什么了），增压也不够好，低空的颠簸感加剧了晕机的感觉，当时的乘客会使用各种袋子来防止呕吐。但由于当时乘坐飞机的人都是所谓高端人士（如果你关注我的话，你应该看过我之前的一篇关于“飞机座位为什么这么挤”的回答），机舱内是重要的社交场所，所以绅士与淑女们都通过在旅行前适当减少进食来防止出糗。如果实在忍不住，就用随手可得的 lunch bag 来盛呕吐物。
+
+1949 年，吉尔摩·施耶达尔（Gilmore Schjeldahl，就是后来制造出人类发射的第一颗试验型无源通信卫星回声 1 号 Echo-1 的那个施耶达尔）[2]为美国西北航空公司发明了第一个专门为呕吐物而设计的塑料涂层袋。
+只过了 3 年，世界上第一架增压的商用喷气式飞机“彗星”客机投入定期的航班运营[3][4]。从伦敦到约翰内斯堡的行程虽然耗时 23 小时，但乘客们纷纷表示与以前相比，飞行更舒适了，飞得比以前更平稳、饭菜也好像变得更好吃了。
+之后，越来越大的喷气式飞机比早期的螺旋桨飞机更加稳定；不断改进的天气雷达系统和日渐完善的空中交通管制，减少了无谓的滞空盘旋和颠簸；90 年代开始禁止在机舱内吸烟，空气质量的提升也有助于缓解恶心症状。据 NASA 在 2008 年的一项研究[5]，目前只有 1-2%的普通人在商用飞机上会遇到类似问题的困扰；而英国另一项研究表明，商业航班中只有 0.5%的乘客报告呕吐，8.4%报告恶心。正如约一半的宇航员在第一次入轨的前几天会感到恶心、过几天就适应了一样，在过去的半个世纪里，普通民众好像也变得更加适应现在的飞行了（还有一部分是心理作用）。
+可以说，大型飞机的发展和设计的进步显著减少了晕机的发生。这导致呕吐袋被乘客更多地拿来当成防水的袋子来装餐余和垃圾，甚至用来当做邮寄照片用的信封（特别是在澳大利亚）。有的袋子上印上了纸牌游戏的记分表。
+
+呕吐量
+你还记得上一次看到有人在飞机上呕吐是什么时候么？
+好像并不是那么常见了。
+但即使是设计再优良的飞机，也不可避免会遇上颠簸的气流，所以还是会有人需要呕吐袋的。
+那你见过吐到从袋子里溢出来的情况么？
+有，但很少见。
+就拿上面说的袋子来说，它的容量大概是 1 升，考虑到它的束口形状，短时间装个半升的呕吐物没有太大的问题。
+一个人的胃容量是多少呢？
+空腹的时候，大约是 50mL。正常体重的成年人吃到饱，也就 1.5 升左右。
+如果你有因晕车呕吐的经历或者有易晕车体质，那你应该能体会到，我们很难一次性就能像把胃里的东西催吐干净。而每次吐之后，你的临座会有足够的时间递给你一个新的袋子。
+像下面这样医用的呕吐袋，一般也就 1000mL。
+
+未来
+在过去的一个世纪，航空公司一点点的取消了机舱内供应的红酒、香烟、豪华飞机餐、冰淇淋，可乐咖啡、甚至是花生。
+欧洲最大的廉价航空公司瑞安航空最近已决定逐步取消提供呕吐袋。
+航空旅行从奢侈品变成大众商品，其中很多服务改变的原因，只不过是成本而已。
+阅读原文]]></summary>
+        <author>
+            <name>知乎日报</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Compile-Time Sort in D]]></title>
+        <id>https://dlang.org/blog/2017/06/05/compile-time-sort-in-d/</id>
+        <link href="https://dlang.org/blog/2017/06/05/compile-time-sort-in-d/"/>
+        <updated>2022-02-12T23:26:12.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[FPGA Interchange format to enable interoperable FPGA tooling]]></title>
+        <id>https://opensource.googleblog.com/2022/02/FPGA%20Interchange%20format%20to%20enable%20interoperable%20FPGA%20tooling.html</id>
+        <link href="https://opensource.googleblog.com/2022/02/FPGA%20Interchange%20format%20to%20enable%20interoperable%20FPGA%20tooling.html"/>
+        <updated>2022-02-12T23:11:38.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[SikuliX – Automate what you see on a computer monitor]]></title>
+        <id>http://sikulix.com</id>
+        <link href="http://sikulix.com"/>
+        <updated>2022-02-12T23:10:41.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Running macOS in a Virtual Machine on Apple Silicon Macs]]></title>
+        <id>https://developer.apple.com/documentation/virtualization/running_macos_in_a_virtual_machine_on_apple_silicon_macs#overview</id>
+        <link href="https://developer.apple.com/documentation/virtualization/running_macos_in_a_virtual_machine_on_apple_silicon_macs#overview"/>
+        <updated>2022-02-12T23:03:00.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Mutt 2.2.0]]></title>
+        <id>http://www.mutt.org/relnotes/2.2/</id>
+        <link href="http://www.mutt.org/relnotes/2.2/"/>
+        <updated>2022-02-12T22:58:37.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[HTTP/3: Everything you need to know about the next-generation web protocol]]></title>
+        <id>https://portswigger.net/daily-swig/http-3-everything-you-need-to-know-about-the-next-generation-web-protocol</id>
+        <link href="https://portswigger.net/daily-swig/http-3-everything-you-need-to-know-about-the-next-generation-web-protocol"/>
+        <updated>2022-02-12T22:57:08.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Forbidden Emacs Lisp Knowledge: Block Comments]]></title>
+        <id>https://emacsninja.com/posts/forbidden-emacs-lisp-knowledge-block-comments.html</id>
+        <link href="https://emacsninja.com/posts/forbidden-emacs-lisp-knowledge-block-comments.html"/>
+        <updated>2022-02-12T22:34:42.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Dino 0.3: Video calls and conferences – encrypted and peer-to-peer]]></title>
+        <id>https://dino.im/blog/2022/02/dino-0.3-release/</id>
+        <link href="https://dino.im/blog/2022/02/dino-0.3-release/"/>
+        <updated>2022-02-12T21:36:30.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Brainwashing Is Sorcery]]></title>
+        <id>https://www.overcomingbias.com/2022/02/brainwashing-is-sorcery.html</id>
+        <link href="https://www.overcomingbias.com/2022/02/brainwashing-is-sorcery.html"/>
+        <updated>2022-02-12T21:34:41.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[When Postgres blocks: tips for dealing with locks]]></title>
+        <id>https://www.citusdata.com/blog/2018/02/22/seven-tips-for-dealing-with-postgres-locks/</id>
+        <link href="https://www.citusdata.com/blog/2018/02/22/seven-tips-for-dealing-with-postgres-locks/"/>
+        <updated>2022-02-12T21:25:19.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Motion (YC W20) Is Hiring a React Native Engineers]]></title>
+        <id>https://jobs.ashbyhq.com/motion/f421f314-f9d9-4e19-b664-af0067648faf</id>
+        <link href="https://jobs.ashbyhq.com/motion/f421f314-f9d9-4e19-b664-af0067648faf"/>
+        <updated>2022-02-12T21:00:39.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[The Kobayashi Maru of Comparing Dates with Times]]></title>
+        <id>https://zachholman.com/posts/kobayashi-maru-of-comparing-dates-with-times</id>
+        <link href="https://zachholman.com/posts/kobayashi-maru-of-comparing-dates-with-times"/>
+        <updated>2022-02-12T20:18:57.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[A disquisition into the sadly slovenly takeup of 10GBASE-T (2012)]]></title>
+        <id>https://www.sprezzatech.com/blog/0009-a-disquisition-into-the-sadly-slovenly-takeup-of-10gbase-t.html</id>
+        <link href="https://www.sprezzatech.com/blog/0009-a-disquisition-into-the-sadly-slovenly-takeup-of-10gbase-t.html"/>
+        <updated>2022-02-12T19:59:47.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Recycled silicon used in 19.7% efficient PERC solar cells]]></title>
+        <id>https://pv-magazine-usa.com/2022/02/07/recycled-silicon-used-in-19-7-efficient-perc-solar-cells/</id>
+        <link href="https://pv-magazine-usa.com/2022/02/07/recycled-silicon-used-in-19-7-efficient-perc-solar-cells/"/>
+        <updated>2022-02-12T19:56:50.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Still-active phreak numbers, all safe and free]]></title>
+        <id>https://stormrider.io/odd-numbers.html</id>
+        <link href="https://stormrider.io/odd-numbers.html"/>
+        <updated>2022-02-12T19:40:06.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Joke written by an AI: “A basic program walked into a bar ”]]></title>
+        <id>https://news.ycombinator.com/item?id=30315604</id>
+        <link href="https://news.ycombinator.com/item?id=30315604"/>
+        <updated>2022-02-12T19:39:00.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[On Dumpster Diving (1991) [pdf]]]></title>
+        <id>https://www.laprogram.org/docs/EighnerOnDumpsterDiving.pdf</id>
+        <link href="https://www.laprogram.org/docs/EighnerOnDumpsterDiving.pdf"/>
+        <updated>2022-02-12T18:41:48.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Sci-Hub statistics and database]]></title>
+        <id>https://sci-hub.ru/database</id>
+        <link href="https://sci-hub.ru/database"/>
+        <updated>2022-02-12T17:40:18.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[An unscientific benchmark of SQLite vs. the file system (btrfs)]]></title>
+        <id>https://github.com/chrisdavies/dbench</id>
+        <link href="https://github.com/chrisdavies/dbench"/>
+        <updated>2022-02-12T17:09:54.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Putting Ideas into Words]]></title>
+        <id>http://paulgraham.com/words.html</id>
+        <link href="http://paulgraham.com/words.html"/>
+        <updated>2022-02-12T15:21:42.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Real-Cugan: Real Cascade U-Nets for Anime Image Super Resolution]]></title>
+        <id>https://github.com/bilibili/ailab/blob/main/Real-CUGAN/README_EN.md</id>
+        <link href="https://github.com/bilibili/ailab/blob/main/Real-CUGAN/README_EN.md"/>
+        <updated>2022-02-12T14:55:14.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Benefits and costs of writing a Posix kernel in a high-level language (2018) [pdf]]]></title>
+        <id>https://pdos.csail.mit.edu/6.S081/2021/readings/biscuit.pdf</id>
+        <link href="https://pdos.csail.mit.edu/6.S081/2021/readings/biscuit.pdf"/>
+        <updated>2022-02-12T14:25:51.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Server-Sent Events: an alternative to WebSockets]]></title>
+        <id>https://germano.dev/sse-websockets/</id>
+        <link href="https://germano.dev/sse-websockets/"/>
+        <updated>2022-02-12T14:05:14.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Growing a mango tree from seed – one year time lapse [video]]]></title>
+        <id>https://www.youtube.com/watch?v=jh_ukt8g53c</id>
+        <link href="https://www.youtube.com/watch?v=jh_ukt8g53c"/>
+        <updated>2022-02-12T13:35:38.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Language Homogenization at Harvard]]></title>
         <id>https://inteoryx.com/htmls/LanguageHomog.html</id>
@@ -352,6 +817,16 @@ PROTACs 技术和分子胶（molecular glues）正成为新药研发的热点之
         </author>
     </entry>
     <entry>
+        <title type="html"><![CDATA[Easily handle CLI operation via Python instead of regular Bash programs]]></title>
+        <id>https://github.com/CZ-NIC/pz</id>
+        <link href="https://github.com/CZ-NIC/pz"/>
+        <updated>2022-02-11T16:01:58.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[Show HN: Windi – knowledge management and sharing platform based on short notes]]></title>
         <id>https://windi.app/</id>
         <link href="https://windi.app/"/>
@@ -392,10 +867,30 @@ PROTACs 技术和分子胶（molecular glues）正成为新药研发的热点之
         </author>
     </entry>
     <entry>
+        <title type="html"><![CDATA[Crafting a Lox Interpreter in Rust, Part 1]]></title>
+        <id>https://www.diegofreijo.com/blog/rlox-vm-a-lox-interpreter-in-rust-part-1/</id>
+        <link href="https://www.diegofreijo.com/blog/rlox-vm-a-lox-interpreter-in-rust-part-1/"/>
+        <updated>2022-02-11T14:28:18.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[I used Apple AirTags, Tiles and a GPS tracker to watch my husband’s every move]]></title>
         <id>https://www.nytimes.com/2022/02/11/technology/airtags-gps-surveillance.html</id>
         <link href="https://www.nytimes.com/2022/02/11/technology/airtags-gps-surveillance.html"/>
         <updated>2022-02-11T13:35:17.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[App can vibrate a single drop of blood to determine how well it clots]]></title>
+        <id>https://www.washington.edu/news/2022/02/11/smartphone-app-vibrate-single-drop-of-blood-determine-how-well-clots/</id>
+        <link href="https://www.washington.edu/news/2022/02/11/smartphone-app-vibrate-single-drop-of-blood-determine-how-well-clots/"/>
+        <updated>2022-02-11T13:28:57.000Z</updated>
         <summary type="html"><![CDATA[Comments]]></summary>
         <author>
             <name>Hacker News</name>
@@ -416,6 +911,16 @@ PROTACs 技术和分子胶（molecular glues）正成为新药研发的热点之
         <id>https://slimemoldtimemold.com/2022/02/10/the-scientific-virtues/</id>
         <link href="https://slimemoldtimemold.com/2022/02/10/the-scientific-virtues/"/>
         <updated>2022-02-11T13:00:58.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Little Sound Dj]]></title>
+        <id>https://www.littlesounddj.com/lsd/index.php</id>
+        <link href="https://www.littlesounddj.com/lsd/index.php"/>
+        <updated>2022-02-11T10:53:32.000Z</updated>
         <summary type="html"><![CDATA[Comments]]></summary>
         <author>
             <name>Hacker News</name>
@@ -893,6 +1398,16 @@ Correlation function analysis on multi-dimensional descriptor of power spectra o
         <id>https://guzey.com/theses-on-sleep/</id>
         <link href="https://guzey.com/theses-on-sleep/"/>
         <updated>2022-02-10T17:33:27.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Hagia Triada Sarcophagus]]></title>
+        <id>https://en.wikipedia.org/wiki/Hagia_Triada_Sarcophagus</id>
+        <link href="https://en.wikipedia.org/wiki/Hagia_Triada_Sarcophagus"/>
+        <updated>2022-02-10T17:19:20.000Z</updated>
         <summary type="html"><![CDATA[Comments]]></summary>
         <author>
             <name>Hacker News</name>
@@ -15257,476 +15772,6 @@ https://azure.microsoft.com/en-us/services/cognitive-services/speaker-recognitio
         <id>https://news.ycombinator.com/item?id=29934192</id>
         <link href="https://news.ycombinator.com/item?id=29934192"/>
         <updated>2022-01-14T13:29:38.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[HTML is/as a programming language]]></title>
-        <id>https://github.com/marianoguerra/hiapl</id>
-        <link href="https://github.com/marianoguerra/hiapl"/>
-        <updated>2022-01-14T12:23:48.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[PayPal faces lawsuit for freezing customer accounts and funds]]></title>
-        <id>https://www.engadget.com/paypal-lawsuit-freezing-customer-accounts-funds-073128563.html</id>
-        <link href="https://www.engadget.com/paypal-lawsuit-freezing-customer-accounts-funds-073128563.html"/>
-        <updated>2022-01-14T12:08:51.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Jad Abumrad's Steps to Better Storytelling]]></title>
-        <id>https://www.descript.com/blog/article/jad-abumrads-workflow-5-steps-to-better-storytelling</id>
-        <link href="https://www.descript.com/blog/article/jad-abumrads-workflow-5-steps-to-better-storytelling"/>
-        <updated>2022-01-14T08:52:41.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Game-makers creating new Game Boy games (2021)]]></title>
-        <id>https://arstechnica.com/gaming/2021/05/meet-the-developers-making-og-game-boy-games-in-2021/</id>
-        <link href="https://arstechnica.com/gaming/2021/05/meet-the-developers-making-og-game-boy-games-in-2021/"/>
-        <updated>2022-01-14T07:50:48.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Badger leads archaeologists to hoard of Roman coins in Spain]]></title>
-        <id>https://www.cnn.com/style/article/badger-roman-coins-spain-scli-intl-scn/index.html</id>
-        <link href="https://www.cnn.com/style/article/badger-roman-coins-spain-scli-intl-scn/index.html"/>
-        <updated>2022-01-14T03:12:49.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Simple.css – A classless CSS framework]]></title>
-        <id>https://simplecss.org</id>
-        <link href="https://simplecss.org"/>
-        <updated>2022-01-14T01:24:26.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Reciting Pictures: Buddhist Texts for the Illiterate]]></title>
-        <id>https://publicdomainreview.org/collection/buddhist-texts-for-the-illiterate/</id>
-        <link href="https://publicdomainreview.org/collection/buddhist-texts-for-the-illiterate/"/>
-        <updated>2022-01-14T00:20:16.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[南方火锅和北方火锅的区别有哪些？]]></title>
-        <id>https://daily.zhihu.com/story/9744324</id>
-        <link href="https://daily.zhihu.com/story/9744324"/>
-        <updated>2022-01-13T23:07:57.000Z</updated>
-        <summary type="html"><![CDATA[地道风物，人文地理，风物美食，公众号地道风物
-阅读原文
-
-北豪西绝 南妙东巧 谁是中国火锅江湖魁首？
-
-火锅，就是中国人生活里的江湖。
-沈浮一方天地，汇通四海食材。涮得了山珍海味，也烫得了杂碎边角，热气鼎沸之间，多了几分人情来往，一口煮沸的汤锅里，藏着流动的中国味道。
-▲ 中国火锅江湖图鉴，这么多流派，你喜欢哪个？制图 /F50BB
-一方独特水土，往往养出一方地道火锅：北派的吃肉豪情，云贵派的奇崛，川渝派的火热，闽粤派的生猛，江浙派的妙趣，五员火锅大将之外，更有两湖、东北、徽派等门派精彩纷呈，以及与各大门派若即若离的“奇门火锅”。它们，共同构成了活色生香的火锅“群英谱”。
--01- “北派”火锅，有多豪放？
-东起河北秦皇岛的“海味”浑锅，西至大大大的新疆土火锅，一到寒冬，广阔的北方就架起了一座锅子“长城”。
-▲ 涮羊肉，是铜锅火锅界的老大哥。摄影 /fancao208209，图 / 汇图网
-多数北方火锅，要用到一口厚底座、圆肚子的铜质锅子，炭火旺盛，周边一圈汤水鼎沸，最配冬雪。这一容器衍生出北方各地的“土火锅”，食材蘸料，也因地制宜。
-▲ 上图，铜锅里的羊蝎子。摄影 / 阿游；下图，火火热热的沧州火锅鸡。摄影 / 冯安雨 ，图 / 汇图网
-在青海，多了高原风情的牦牛肉；在甘肃天水，锅底变成了酸香浆水；到了陕西宝鸡，蘸料变成了陕味油泼辣子，铜炉口还可用来烤饼……一口北派铜锅，处处暗藏惊喜。
-▲ 中国“北派”及东北火锅主要分布。制图 / 伍攀
-大口吃肉的北派火锅，可称“北豪”：北京羊蝎子、天津银鱼紫蟹、内蒙古羊肉、沧州火锅鸡、山东肥牛……特别是在山东潍坊，有一口天下最“大”的火锅，这就是曾经能以锅台为桌的朝天锅。人们围锅而坐，随意涮煮猪肉及猪杂，涮后要卷饼来吃，还可佐以山东的招牌大葱，两个字，豪迈。
-▲ 天津的银鱼紫蟹火锅，可能是最豪华的北派火锅。摄影 /lymtm，图 / 汇…]]></summary>
-        <author>
-            <name>知乎日报</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[为什么会掉头发？怎么解决脱发问题？]]></title>
-        <id>https://daily.zhihu.com/story/9744308</id>
-        <link href="https://daily.zhihu.com/story/9744308"/>
-        <updated>2022-01-13T23:07:53.000Z</updated>
-        <summary type="html"><![CDATA[中国科普博览，我们科学家有话说
-阅读原文
-
-希波克拉底，古希腊时代的医生，将医学从巫术和占卜之中分离出来的先驱者，被尊为西方医学之父。作为医师誓词名义上的原创作者，他为后世留下了许多传世之宝，例如做手术用的希波克拉底手术套装，固定骨骼用的希波克拉底长凳，以及一种被称为“希波克拉底花环”（Hippocratic wreath）的东西，俗称……秃了。
-下图这位头戴希波克拉底花环的慈祥老人，正是谢顶界祖师爷——希波克拉底。
-（图片来源：作者制作 底图来源：维基百科）
-头发生从何来？
-
-毛发对于哺乳动物来说首要的功能是保温。
-但对于人类来说，保温的功能有许多工具可以满足人类的需要，因此头发更多地具有心理学或者社会学的意义，人们认为浓密的头发是活力和青春的象征，也是个人身份认同的一部分。因此，脱发给人造成的伤害，往往是心理上的。
-子曰：“未知生，焉知死？”
-想要了解头发是怎么没的，还是需要先知道头发是怎么来的。
-头发的主要成分，是蛋白质。披散着头发在实验室捣鼓酒精灯的话，有时会闻到一股烧焦蛋白质气味，你就知道这是燎着头发了。
-在表皮之下的真皮里，有一种叫做毛囊的小结构，里面生活着制造头发的可爱细胞们。
-头发的一生可以分为三个阶段。
-第一阶段是生长期，此阶段里，各种原材料（主要是氨基酸）被血管运到毛囊底部，细胞利用这些原材料进行组装，头发开始生长。这一阶段要持续好多年。
-如果毛囊收到身体发给的某种信号，那么对毛囊底部的血液供应被切断，进入第二个阶段，也就是退行期。此时，毛囊底部由于缺血而逐渐萎缩，头发逐渐停止生长，但仍然连在毛囊里。可惜的是，人们对这个阻止头发继续生长的信号所知甚少。
-当头发完全停止生长后，就进入了第三个阶段休止期，可以持续两三个月。这个阶段事实上是毛囊的休息期。头发与毛囊的连接处逐渐萎缩，最终断开。一旦断开，就随时可以脱落，之后就开始酝酿下一轮的生长期。
-虽然头发一直…]]></summary>
-        <author>
-            <name>知乎日报</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[对男生来说，篮球究竟是一种怎样的存在？]]></title>
-        <id>https://daily.zhihu.com/story/9744318</id>
-        <link href="https://daily.zhihu.com/story/9744318"/>
-        <updated>2022-01-13T23:07:43.000Z</updated>
-        <summary type="html"><![CDATA[郭艾伦
-阅读原文
-
-今儿就来一不邀自答了吧。不管经历过什么，对篮球，是真的爱，打小就是。
-我应该算是很幸运的那类人，打小就知道自己真正喜欢的是什么。可能不少人都以为我的篮球启蒙是我叔郭士强，其实应该是我爸。我爸因为当过兵，身体素质很好，在单位里参加运动会撇标枪、跳高跳远、踢足球都比较厉害，篮球、乒乓球也都耍挺好。有那么些遗传成分吧，只记得小时候第一次摸到球，在手上会有种熟稔的感觉。
-天赋？有，但也并不那么多。很瘦，个儿不高，就一正常孩子吧。小学那会我成绩还挺好的，听我妈说，好几个老师都夸我是块学习的材料，还建议不要送去打篮球，因为觉得学习不好才会转别的。她也动摇过，只不过没犟过我。次次说到这块，我妈老说“还不是看你睡觉都得抱个球”。没辙了。
-记得那时候，每天放学自己抱个篮球跑到大院里练拍球，只拿标准尺寸的球，小的不要，练可带劲儿了。老爸给布置的任务开始是一天 100，后来加到 200，最后是 500，刮风下雨都去。手拍肿了，守门大爷还埋怨过我妈…儿子让您背锅咯…害。
-很小的时候去了沈阳大院，舍不得爸妈的，但更想打出点成绩，证明自己。但刚到的时候吧，还是跟伙伴们有差距，跑得不算快，跳的也不高。索性心一横，每天给自己加餐。待到训练馆都关灯了是常态，没灯了也不打紧，借有亮的地儿不停练就完事了。即便过年放假，我也总提前归队。加练的习惯我也一直保持到现在。
-记得有阵参加了不少训练营，最早是李宁训练营，拿到最佳后卫，然后耐克的各种训练营都有参加。每次上场，都是铆足劲儿拼命去打。还好，每次都能把最好的奖杯带给我妈。她可稀罕了。
-靠嘴跟人争辩，不如直接亮实力。我现在坚持和不服输的性格吧，也是小时候磨出来的。2009 年和 2010 年对我来说是很有意义的两年，先是随队拿了亚洲青年锦标赛冠军，后来又在 U17 世界青年篮球锦标赛摘了得分王，也进了国家队，且入了土耳其世锦赛名单。很多人应该是从这里才开始知道我的。
-叨叨说了这么些，算是阶段性纪念下自己与篮球相伴的日子吧。至于未来，还是那句，来啥都能挺住，问题不大。
-还有，咱就是说，别再叫我大侄子了！
-阅读原文]]></summary>
-        <author>
-            <name>知乎日报</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[如何有效克服选择困难症?]]></title>
-        <id>https://daily.zhihu.com/story/9744311</id>
-        <link href="https://daily.zhihu.com/story/9744311"/>
-        <updated>2022-01-13T23:07:36.000Z</updated>
-        <summary type="html"><![CDATA[予墨，专注职场心理学、职场成长
-阅读原文
-
-引入
-对于一名重度选择困难症患者而言， 每天都要面临许多“艰难”选择。
-在琳琅满目的货架前转了无数圈但最终还是空手而归；每天早上在衣柜面前站的时间越来越长；中午吃饭在“吃什么”的问题上越来越纠结……
-
-着名心理学家 Sheena Iyengar 说道：一个成人平均每天至少要做 70 个选择。而对于纠结的人而言，每做一次选择，就会有大量的脑细胞和多巴胺阵亡。
-这些“纠结星球”的人们每次面对选择会感到特别困难，犹豫不决，他们在选择面前宁愿逃避。
-关于选择困难，网上流传着一个梗，哪有什么选择困难，还不是因为你又贪又穷？但是真的是这样吗？哪些深受选择困扰的人，做选择的机制是什么？
-为什么会选择困难？
-1、 无法融合内心的矛盾诉求
-矛盾感指的是人往往有多种诉求，但是这些欲求又是相互对立、无法同时满足的。通俗一点讲，就是鱼和熊掌不可兼得。看似有好几个选项，然而每个选项都不是最优解。不管选哪个，都不能满足全部需要，总是差那么点意思。
-这种冲突、矛盾感往往来源于两个方面：
-一是“客观矛盾”，比如当你很喜欢一双鞋子，但是却又觉得很贵，鞋子很贵这样的一种客观的外在条件，让你的选择变得犹豫不定。
-二是“主观矛盾”，即自身内在产生的对事物两面性的权衡。你会不断地权衡所有的选项，并陷入到无尽的纠结之中。你的脑海中就会出现两个持不同观点的小人打架。
-2、穷尽所有选择之后的疲惫
-吃饭的时候想要挑一部电视剧看，饭都吃完了还没决定追哪部剧
-淘宝上一个小卡包也要翻遍所有的类型，然后再慢慢分析每一个的好坏
-租房子的时候总觉得还会有更好的，结果挑了一圈，挑烦了，随便选了一个，结果还是不满意
-如果以上是你做选择时的常态，那么你的选择困难症可能来自于“害怕有更好选择综合征”（Fear of Better Options），个人会因为害怕错过最佳的选择，凡事都想穷尽所有可能的…]]></summary>
-        <author>
-            <name>知乎日报</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[蛔虫对人体影响有多大？]]></title>
-        <id>https://daily.zhihu.com/story/9744331</id>
-        <link href="https://daily.zhihu.com/story/9744331"/>
-        <updated>2022-01-13T23:07:25.000Z</updated>
-        <summary type="html"><![CDATA[中国科普博览，我们科学家有话说
-阅读原文
-
-【注】本文中所有“蛔虫”的叙述均指人蛔虫。
-蛔虫是人体内最常见的寄生虫之一，成年的蛔虫一般寄生在人的小肠里，卵随粪便排出。当人误食了沾有蛔虫卵的食物时有很高的概率会被蛔虫感染，小孩子感染的概率尤其高。
-那么，蛔虫究竟长什么样呢？它们是如何运动的？又是怎么感染人并在人体内生活的呢？
-神秘又坚强的寄生虫
-蛔虫属于线虫动物门，具有线虫的一般特点。
-雌蛔虫横切面（图片来源：wiki）
-既然蛔虫会在我们的肠道中生活，那么它首先要解决的问题就是如何保证自己不会像食物一样被我们消化掉。为了避免自己被消化，蛔虫在进化中衍生出了一个保护层——抗寄主消化酶的弹性角质膜（上图最外圈），蛔虫的身体躲在保护层内。这个保护层具有几个特点：
-
-消化不掉
-
-这个保护层其实是一层角质，实质上也是一层蛋白质，之所以名为角质，是因为它的化学成分虽然是蛋白质，但物理强度、耐腐蚀性却可以媲美羚羊角、犀牛角，对机械损伤、化学损伤、生物损伤有非常强的抗性。在我们的肠道中，不存在能够把这层角质分解掉的消化酶，自然就不能把它消化掉了，蛔虫就避免了被消化的厄运。
-
-弹性很好
-
-虽然大多数人没见过活的蛔虫，但是相信很多人在雨后泥泞的路上见过蚯蚓。蛔虫的保护膜和蚯蚓的体表有一个类似的特点：都很方便伸缩。这层保护膜在纵向上的弹性是很好的，它能在蛔虫运动的时候依然紧贴着蛔虫的身体，不管蛔虫做出多么高难度的动作。
-
-能很好地维持体内液压
-
-蛔虫没有我们人类的这种钙质坚硬的骨骼，但是它们又能够维持一个十分“饱满”的形状，原因就在于这层保护膜。我们不妨在家里做这样一个实验，用手按压融化了的冰棒，不难发现，在水喷出来之前，冰棒的形状可以被很好地维持。原理说起来大家都知道，就是液压产生的向外的力，动物学上称为流体静力。蛔虫的保护膜就像这个冰棒的塑料管子一样可以紧紧地裹着蛔虫和它里面的大量液体，从而维…]]></summary>
-        <author>
-            <name>知乎日报</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[瞎扯 · 如何正确地吐槽]]></title>
-        <id>https://daily.zhihu.com/story/9744417</id>
-        <link href="https://daily.zhihu.com/story/9744417"/>
-        <updated>2022-01-13T23:07:17.000Z</updated>
-        <summary type="html"><![CDATA[有哪些网文作者必备的数码产品？
-
-胖小豆，唉……
-阅读原文
-
-一台垃圾电脑。
-因为电脑性能越好，能跑的游戏就越多……
-阅读原文
-
-有什么适合在手术室放的音乐？
-
-刘彬，正经医院的不正经麻醉医生。
-阅读原文
-
-实习的时候一个老教授每次手术必点《大悲咒》。
-阅读原文
-
-如果给你1个亿，让你在活死人墓陪小龙女生活1年，你愿意吗？
-
-明天戒酒，但愿老死花酒间，不愿鞠躬车马前
-阅读原文
-
-什么？让我出一个亿？
-跟小龙女住一年？
-等下，我去借点钱，把名额留给我
-阅读原文
-
-我今年24岁，没上过高中，想学游戏开发，得先从什么开始学？？？
-
-知乎用户，深圳市南山区第十二太乙真人
-阅读原文
-
-从辟谷开始学。
-先试着三个馒头过一天，然后逐渐减量。等你可以稳定一个馒头过三天的时候，我再教你下一轮心法。
-阅读原文
-
-拼多多砍价案庭审「因显示百分比位数有限，显示 0.9% 」，实际小数点后还有 6 位，这种算法合理吗？
-
-知乎用户，持续学习
-阅读原文
-
-还好，拼多多至少承认了十进制。
-阅读原文]]></summary>
-        <author>
-            <name>知乎日报</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Best Wordle Guessing Strategy]]></title>
-        <id>https://slc.is/#Best%20Wordle%20Strategy%20%E2%80%94%20Explore%20or%20Exploit</id>
-        <link href="https://slc.is/#Best%20Wordle%20Strategy%20%E2%80%94%20Explore%20or%20Exploit"/>
-        <updated>2022-01-13T23:03:14.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Life at 800 MHz]]></title>
-        <id>https://artemis.sh/2022/01/12/life-at-800mhz.html</id>
-        <link href="https://artemis.sh/2022/01/12/life-at-800mhz.html"/>
-        <updated>2022-01-13T22:43:26.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Nominative determinism in hospital medicine, by Limb, Limb, Limb and Limb]]></title>
-        <id>https://publishing.rcseng.ac.uk/doi/full/10.1308/147363515X14134529299420#/doi/full/10.1308/147363515X14134529299420</id>
-        <link href="https://publishing.rcseng.ac.uk/doi/full/10.1308/147363515X14134529299420#/doi/full/10.1308/147363515X14134529299420"/>
-        <updated>2022-01-13T21:12:01.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Overview (YC W19) Is Hiring Front End/Full Stack for Manufacturing/DL Platform]]></title>
-        <id>https://news.ycombinator.com/item?id=29926778</id>
-        <link href="https://news.ycombinator.com/item?id=29926778"/>
-        <updated>2022-01-13T21:00:42.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Provably Space-Efficient Parallel Functional Programming]]></title>
-        <id>https://blog.sigplan.org/2022/01/13/provably-space-efficient-parallel-functional-programming/</id>
-        <link href="https://blog.sigplan.org/2022/01/13/provably-space-efficient-parallel-functional-programming/"/>
-        <updated>2022-01-13T19:29:11.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Exploring System76's New Rust Based Desktop Environment]]></title>
-        <id>https://blog.edfloreshz.dev/articles/linux/system76/rust-based-desktop-environment/</id>
-        <link href="https://blog.edfloreshz.dev/articles/linux/system76/rust-based-desktop-environment/"/>
-        <updated>2022-01-13T18:43:45.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Show HN: Create animations by dragging an element with your mouse]]></title>
-        <id>https://animatize.com/</id>
-        <link href="https://animatize.com/"/>
-        <updated>2022-01-13T18:34:52.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Big Time Public License]]></title>
-        <id>https://writing.kemitchell.com/2021/06/15/Big-Time-1.0.0.html</id>
-        <link href="https://writing.kemitchell.com/2021/06/15/Big-Time-1.0.0.html"/>
-        <updated>2022-01-13T18:32:24.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Music industry is suing youtube-dl hosters]]></title>
-        <id>https://news.i-n24.com/lifestyle/news/253970.html</id>
-        <link href="https://news.i-n24.com/lifestyle/news/253970.html"/>
-        <updated>2022-01-13T18:12:16.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[SSH Bastion Host Best Practices]]></title>
-        <id>https://goteleport.com/blog/security-hardening-ssh-bastion-best-practices/</id>
-        <link href="https://goteleport.com/blog/security-hardening-ssh-bastion-best-practices/"/>
-        <updated>2022-01-13T17:52:13.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Hate leap seconds? Imagine a negative one]]></title>
-        <id>https://counting.substack.com/p/hate-leap-seconds-imagine-a-negative</id>
-        <link href="https://counting.substack.com/p/hate-leap-seconds-imagine-a-negative"/>
-        <updated>2022-01-13T17:50:38.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Show HN: Login with HN (Unofficially)]]></title>
-        <id>https://loginwithhn.com</id>
-        <link href="https://loginwithhn.com"/>
-        <updated>2022-01-13T17:31:47.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Updating a 50 terabyte PostgreSQL database (2018)]]></title>
-        <id>https://www.adyen.com/blog/updating-a-50-terabyte-postgresql-database</id>
-        <link href="https://www.adyen.com/blog/updating-a-50-terabyte-postgresql-database"/>
-        <updated>2022-01-13T17:06:43.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Minitel: The Online World France Built Before the Web (2017)]]></title>
-        <id>https://spectrum.ieee.org/minitel-the-online-world-france-built-before-the-web</id>
-        <link href="https://spectrum.ieee.org/minitel-the-online-world-france-built-before-the-web"/>
-        <updated>2022-01-13T16:21:09.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Engine cooling – why rocket engines don’t melt]]></title>
-        <id>https://everydayastronaut.com/engine-cooling-methodes/</id>
-        <link href="https://everydayastronaut.com/engine-cooling-methodes/"/>
-        <updated>2022-01-13T15:49:50.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[CryptPad: Collaboration suite end-to-end encrypted and open-source]]></title>
-        <id>https://cryptpad.cz/</id>
-        <link href="https://cryptpad.cz/"/>
-        <updated>2022-01-13T15:45:24.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Make an internet radio station with one line of bash]]></title>
-        <id>https://schollz.com/blog/radio/</id>
-        <link href="https://schollz.com/blog/radio/"/>
-        <updated>2022-01-13T15:36:45.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Show HN: Looptap – A minimal game to waste your time]]></title>
-        <id>https://looptap.vasanthv.com/</id>
-        <link href="https://looptap.vasanthv.com/"/>
-        <updated>2022-01-13T15:01:17.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Don’t try to sanitize input, escape output (2020)]]></title>
-        <id>https://benhoyt.com/writings/dont-sanitize-do-escape/</id>
-        <link href="https://benhoyt.com/writings/dont-sanitize-do-escape/"/>
-        <updated>2022-01-13T14:48:10.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Show HN: I made a grid based font editor and font]]></title>
-        <id>https://brutalita.com/</id>
-        <link href="https://brutalita.com/"/>
-        <updated>2022-01-13T14:36:06.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[5.5 mm in 1.25 nanoseconds]]></title>
-        <id>https://randomascii.wordpress.com/2022/01/12/5-5-mm-in-1-25-nanoseconds/</id>
-        <link href="https://randomascii.wordpress.com/2022/01/12/5-5-mm-in-1-25-nanoseconds/"/>
-        <updated>2022-01-13T13:37:23.000Z</updated>
         <summary type="html"><![CDATA[Comments]]></summary>
         <author>
             <name>Hacker News</name>
