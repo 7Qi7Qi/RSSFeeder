@@ -82,8 +82,188 @@
             data-action="toggle-accordions"
             title="Click to toggle the day, Ctrl + click to toggle all."
           >
-            <time class="daily-heading-toggle__weekday js-offset-weekday" data-offset-date=2022-03-13 datetime="2022-03-13T00:09:11.000Z">2022-03-13</time>
-            <time class="daily-heading-toggle__date js-offset-date" data-offset-date=2022-03-13 datetime="2022-03-13T00:09:11.000Z"></time>
+            <time class="daily-heading-toggle__weekday js-offset-weekday" data-offset-date=2022-03-14 datetime="2022-03-14T00:58:56.895Z">2022-03-14</time>
+            <time class="daily-heading-toggle__date js-offset-date" data-offset-date=2022-03-14 datetime="2022-03-14T00:58:56.895Z"></time>
+          </button>
+        </h2>
+        <ul class="sources card">
+            <li class="card__section">
+              <section class="js-toggle-accordions-scope">
+                <h3 class="source-heading">
+                  <button
+                    class="source-heading__name"
+                    data-action="toggle-accordions"
+                    title="Click to toggle the source, Ctrl + click to toggle all."
+                  >DockOne.io</button>
+                  <a class="source-heading__link" href="http://weekly.dockone.io">Open</a>
+                </h3>
+                <section class="articles-per-source">
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="http://weekly.dockone.io/article/2434863"
+                        open
+                      >
+                        <summary class="article-expander__title">使用JMX Exporter监控Rainbond上的Java应用</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="http://weekly.dockone.io/article/2434863">
+                          <div class="article-summary-box-inner media-object">
+                            <span class="media-object__text">
+                              <span>场景
+Prometheus 社区开发了 JMX Exporter 用于导出 JVM 的监控指标，以便使用 Prometheus 来采集监控数据。当您的 Java 应用部署在Rainbond上后
+可通过本文了解部署在 Rainbond 上的 Java 应用如何使用  JMX Exporter 暴露 JVM 监控指标。
+JMX Exporter 简介
+Java Management Extensions，JMX 是管理 Java 的一种扩展框架，JMX Exporter 基于此框架读取 JVM 的运行时状态。JMX Exporter 利用 Java 的 JMX 机制来读取 JVM 运行时的监控数据，然后将其转换为 Prometheus 可辨识的 metrics 格式，让 Prometheus 对其进行监控采集。
+JMX Exporter 提供 启动独立进程 及 JVM 进程内启动（in-process)两种方式暴露 JVM 监控指标：
+启动独立进程
+JVM 启动时指定参数，暴露 JMX 的 RMI 接口。JMX Exporter 调用 RMI 获取 JVM 运行时状态数据，转换为 Prometheus metrics 格式，并暴露端口让 Prometheus 采集。
+JVM 进程内启动（in-process)
+JVM 启动时指定参数，通过 javaagent 的形式运行 JMX Exporter 的 jar 包，进程内读取 JVM 运行时状态数据，转换为 Prometheus metrics 格式，并暴露端口让 Prometheus 采集。
+
+官方不建议使用 启动独立进程 方式，该方式配置复杂且需单独的进程，进程本身的监控又引发了新的问题。本文以 JVM 进程内启动（in-process)方式为例，在 Rainbond 中使用 JMX Exporter 暴露 JVM 监控指标。…</span>
+                                &ensp;<span class="article-reading-time">(&hairsp;1
+                                  min&hairsp;)</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="http://weekly.dockone.io/article/2434871"
+                        open
+                      >
+                        <summary class="article-expander__title">在Rainbond中实现数据库结构自动化升级</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="http://weekly.dockone.io/article/2434871">
+                          <div class="article-summary-box-inner media-object">
+                            <span class="media-object__text">
+                              <span>Rainbond 这款产品一直致力于打通企业应用交付的全流程，这个流程中不可或缺的一环是企业应用的不断升级、迭代。Rainbond 特有的能力，是可以将囊括多个服务组件的企业应用系统进行打包，并执行一键安装、升级以及回滚的操作。上述的内容仅仅解决了应用程序本身的版本控制问题。企业应用的升级迭代流程想要完全实现自动化，还需要能够自动处理数据库表结构（Schema）的版本控制。经过不断的探索，Rainbond 首先在源码构建领域借助业界领先的 Liquibase 集成了云原生时代的数据库 Schema 版本管理的能力。
+Schema版本管理难题
+数据库表结构（Schema）定义了数据表（Table）的名字，以及每一个数据表中所包含的数据列（Column）的名字、属性等信息。它描述了一个数据库所拥有的框架，记录在数据库中的数据都需要遵循 Schema 里的定义。
+区别于应用程序自身的升级，Schema 版本管理问题，本质上是一种持久化数据的升级，这一特征伴随着两个疑问：
+持久化数据如何升级：云原生时代的交付，已经无法跳脱出容器化、平台化的特征。各大云原生平台在进行软件交付过程中，都不会轻易将持久化数据纳入版本控制体系中去。原因很简单，每个交付环境中的数据都是不同的，升级过程中很难抉择持久化数据的统一版本管理方案。
+哪些持久化数据需要升级：既然难以抉择持久化数据的统一版本管理方案，那么退而求其次，是否可以优先选择必要的持久化数据进行版本管理。缩小范围之后，就突出了数据库表结构这一特殊持久化数据类型。其版本管理的必要性是显而易见的，应用程序本身从V1版本升级到了V2版本，那么对应的数据库表结构也需要增加必要的新表、新列。
+
+这两个疑问引出了本文的主旨：在企业级软件交付领域，如何合理的在每次升级的过程中处理数据库表结构（Schema）的版本控制？
+传统软件交付领域，在 Schema 版…</span>
+                                &ensp;<span class="article-reading-time">(&hairsp;2
+                                  min&hairsp;)</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="http://weekly.dockone.io/article/2434872"
+                        open
+                      >
+                        <summary class="article-expander__title">在Rainbond中实现数据库结构自动化升级</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="http://weekly.dockone.io/article/2434872">
+                          <div class="article-summary-box-inner media-object">
+                            <span class="media-object__text">
+                              <span>Rainbond 这款产品一直致力于打通企业应用交付的全流程，这个流程中不可或缺的一环是企业应用的不断升级、迭代。Rainbond 特有的能力，是可以将囊括多个服务组件的企业应用系统进行打包，并执行一键安装、升级以及回滚的操作。上述的内容仅仅解决了应用程序本身的版本控制问题。企业应用的升级迭代流程想要完全实现自动化，还需要能够自动处理数据库表结构（Schema）的版本控制。经过不断的探索，Rainbond 首先在源码构建领域借助业界领先的 Liquibase 集成了云原生时代的数据库 Schema 版本管理的能力。
+Schema版本管理难题
+数据库表结构（Schema）定义了数据表（Table）的名字，以及每一个数据表中所包含的数据列（Column）的名字、属性等信息。它描述了一个数据库所拥有的框架，记录在数据库中的数据都需要遵循 Schema 里的定义。
+区别于应用程序自身的升级，Schema 版本管理问题，本质上是一种持久化数据的升级，这一特征伴随着两个疑问：
+持久化数据如何升级：云原生时代的交付，已经无法跳脱出容器化、平台化的特征。各大云原生平台在进行软件交付过程中，都不会轻易将持久化数据纳入版本控制体系中去。原因很简单，每个交付环境中的数据都是不同的，升级过程中很难抉择持久化数据的统一版本管理方案。
+哪些持久化数据需要升级：既然难以抉择持久化数据的统一版本管理方案，那么退而求其次，是否可以优先选择必要的持久化数据进行版本管理。缩小范围之后，就突出了数据库表结构这一特殊持久化数据类型。其版本管理的必要性是显而易见的，应用程序本身从V1版本升级到了V2版本，那么对应的数据库表结构也需要增加必要的新表、新列。
+
+这两个疑问引出了本文的主旨：在企业级软件交付领域，如何合理的在每次升级的过程中处理数据库表结构（Schema）的版本控制？
+传统软件交付领域，在 Schema 版…</span>
+                                &ensp;<span class="article-reading-time">(&hairsp;2
+                                  min&hairsp;)</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="http://weekly.dockone.io/article/2434883"
+                        open
+                      >
+                        <summary class="article-expander__title">监听端口到底是什么意思？</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="http://weekly.dockone.io/article/2434883">
+                          <div class="article-summary-box-inner media-object">
+                            <span class="media-object__text">
+                              <span>这个故事探讨了计算机网络中的一些概念，灵感来自Michael Nielsen的discovery fiction的想法。代码示例也可以在这个repo中找到。截取的片段是在Debian Linux上使用OpenBSD风格的netcat；行为和IPv6的支持可能因版本而异。
+在学生会大楼的角落里，有一家咖啡店，在咖啡店的角落里有两个学生。利兹敲打着她哥哥在她搬到大学时给她的那台破旧的手摇MacBook的键盘。在她左边的长椅上，蒂姆在一个装订成卷的笔记本上写着公式。他们之间有一杯半空的常温咖啡，莉兹不时地喝上一口以保持清醒。
+在房间的对面，咖啡师把目光从他的手机上移开，抬起头来，扫视着店内的情况。他一个耳朵戴着耳机，另一个悬空，而他的手机正在播放他的电影课的指定观看内容。在这家学生经营的店里，有一条不成文的规定，上夜班的员工可以利用顾客之间的漫长空隙来补习功课。除了蒂姆和丽兹，还有两名男学生独自坐在那里，紧盯着他们的笔记本电脑，他们已经这样做了几个小时。除此之外，店内空无一人。
+蒂姆写到一半就停笔了，把这张纸从笔记本上撕下来，揉成一团，放在其他揉成一团的小纸片旁边。
+“Shit，现在几点了？”他问到。
+利兹看了看她笔记本上的时钟，“刚过两点”
+蒂姆打了个哈欠，又开始在新的一页上面涂鸦，但利兹打断了他。
+“蒂姆”
+“什么？！”，蒂姆回答说，夸张地表达了他对刚开始写就被打断的恼怒。
+“在一个端口上监听是什么意思？”
+“呃嗯……”
+“我必须为net写这个网络服务器的东西”，net是Computer Networks 201的缩写，这是蒂姆在上学期上的一门课。
+“是的，我记得那门课”
+“所以我在一个端口上监听连接”
+“80端口”，蒂姆自信地回答，希望通过抢先回答她的问题来缩短谈话时间。
+“实际上，我们应该监听8080，这样它就可以在没有root的情况下运行，但这不是重点。”
+“哦，对了。…</span>
+                                &ensp;<span class="article-reading-time">(&hairsp;2
+                                  min&hairsp;)</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                </section>
+              </section>
+            </li>
+            <li class="card__section">
+              <section class="js-toggle-accordions-scope">
+                <h3 class="source-heading">
+                  <button
+                    class="source-heading__name"
+                    data-action="toggle-accordions"
+                    title="Click to toggle the source, Ctrl + click to toggle all."
+                  >Hacker News</button>
+                  <a class="source-heading__link" href="https://news.ycombinator.com/">Open</a>
+                </h3>
+                <section class="articles-per-source">
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://hamblingreen.gitlab.io/2022/03/02/my-pinephone-setup.html"
+                        open
+                      >
+                        <summary class="article-expander__title">My Pinephone Setup</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://hamblingreen.gitlab.io/2022/03/02/my-pinephone-setup.html">
+                          <div class="article-summary-box-inner media-object">
+                            <span class="media-object__text">
+                              <span>Comments</span>
+                                &ensp;<span class="article-reading-time">(&hairsp;8
+                                  min&hairsp;)</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                </section>
+              </section>
+            </li>
+        </ul>
+      </section>
+      <section class="daily-content js-toggle-accordions-scope">
+        <h2 class="daily-heading">
+          <button
+            class="daily-heading-toggle"
+            data-action="toggle-accordions"
+            title="Click to toggle the day, Ctrl + click to toggle all."
+          >
+            <time class="daily-heading-toggle__weekday js-offset-weekday" data-offset-date=2022-03-13 datetime="2022-03-13T23:29:46.000Z">2022-03-13</time>
+            <time class="daily-heading-toggle__date js-offset-date" data-offset-date=2022-03-13 datetime="2022-03-13T23:29:46.000Z"></time>
           </button>
         </h2>
         <ul class="sources card">
@@ -102,6 +282,470 @@
                       <details
                         class="article-expander"
                         data-action="toggle-native-accordion"
+                        data-accordion-key="https://github.com/ttddee/Cascade"
+                        open
+                      >
+                        <summary class="article-expander__title">Cascade: Open-source Node-based image editor with GPU-acceleration</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://github.com/ttddee/Cascade">
+                          <div class="article-summary-box-inner media-object">
+                              <img src="https://opengraph.githubassets.com/200a72e9204ad8045e0727a1a4ee8270b58adf6f18a30b835097c73717d3f462/ttddee/Cascade" loading="lazy" class="media-object__media article-image" />
+                            <span class="media-object__text">
+                              <span>Comments</span>
+                                &ensp;<span class="article-reading-time">(&hairsp;3
+                                  min&hairsp;)</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://github.com/TalalMash/SmoothWAN"
+                        open
+                      >
+                        <summary class="article-expander__title">Show HN: SmoothWAN a simple home internet bonding router using Speedify</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://github.com/TalalMash/SmoothWAN">
+                          <div class="article-summary-box-inner media-object">
+                              <img src="https://repository-images.githubusercontent.com/440586219/75d22160-c278-4051-a100-e18deecc8e26" loading="lazy" class="media-object__media article-image" />
+                            <span class="media-object__text">
+                              <span>Comments</span>
+                                &ensp;<span class="article-reading-time">(&hairsp;4
+                                  min&hairsp;)</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="http://www.oilshell.org/release/latest/doc/qsn.html"
+                        open
+                      >
+                        <summary class="article-expander__title">QSN: A Familiar String Interchange Format (2020)</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="http://www.oilshell.org/release/latest/doc/qsn.html">
+                          <div class="article-summary-box-inner media-object">
+                            <span class="media-object__text">
+                              <span>Comments</span>
+                                &ensp;<span class="article-reading-time">(&hairsp;4
+                                  min&hairsp;)</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://joern.io/"
+                        open
+                      >
+                        <summary class="article-expander__title">Joern – Bug Hunter&#x27;s Workbench</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://joern.io/">
+                          <div class="article-summary-box-inner media-object">
+                              <img src="https://joern.io/assets/images/thumbnail.jpeg" loading="lazy" class="media-object__media article-image" />
+                            <span class="media-object__text">
+                              <span>Comments</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://www.tokamakenergy.co.uk/tokamak-energy-moves-closer-to-commercial-fusion/"
+                        open
+                      >
+                        <summary class="article-expander__title">Tokamak Energy sets a temperature record among commercial fusion companies</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://www.tokamakenergy.co.uk/tokamak-energy-moves-closer-to-commercial-fusion/">
+                          <div class="article-summary-box-inner media-object">
+                            <span class="media-object__text">
+                              <span>Comments</span>
+                                &ensp;<span class="article-reading-time">(&hairsp;2
+                                  min&hairsp;)</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://thecritic.co.uk/issues/march-2022/wonders-and-warnings-from-the-ancient-world/"
+                        open
+                      >
+                        <summary class="article-expander__title">A new history of Byzantium reveals the inner workings of a late antique empire</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://thecritic.co.uk/issues/march-2022/wonders-and-warnings-from-the-ancient-world/">
+                          <div class="article-summary-box-inner media-object">
+                              <img src="https://standfirst-thecriticmag-production.imgix.net/uploads/2022/02/books-dunn-constantinople.jpg?auto&#x3D;compress,format&amp;crop&#x3D;faces,entropy,edges&amp;fit&#x3D;crop&amp;w&#x3D;1024&amp;h&#x3D;504" loading="lazy" class="media-object__media article-image" />
+                            <span class="media-object__text">
+                              <span>Comments</span>
+                                &ensp;<span class="article-reading-time">(&hairsp;5
+                                  min&hairsp;)</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://believermag.com/logger/stuck/"
+                        open
+                      >
+                        <summary class="article-expander__title">Stuck</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://believermag.com/logger/stuck/">
+                          <div class="article-summary-box-inner media-object">
+                              <img src="https://d3ml8cfhn9inlg.cloudfront.net/wp-content/uploads/2002/02/Screen-Shot-2022-02-24-at-11.01.00-AM.png" loading="lazy" class="media-object__media article-image" />
+                            <span class="media-object__text">
+                              <span>Comments</span>
+                                &ensp;<span class="article-reading-time">(&hairsp;24
+                                  min&hairsp;)</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://twitter.com/YTVanced/status/1503052250268286980"
+                        open
+                      >
+                        <summary class="article-expander__title">Vanced has been discontinued</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://twitter.com/YTVanced/status/1503052250268286980">
+                          <div class="article-summary-box-inner media-object">
+                            <span class="media-object__text">
+                              <span>Comments</span>
+                                &ensp;<span class="article-reading-time">(&hairsp;1
+                                  min&hairsp;)</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://www.popularmechanics.com/adventure/outdoors/a19225/marooned-among-the-polar-bears/"
+                        open
+                      >
+                        <summary class="article-expander__title">Marooned among the polar bears (2016)</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://www.popularmechanics.com/adventure/outdoors/a19225/marooned-among-the-polar-bears/">
+                          <div class="article-summary-box-inner media-object">
+                              <img src="https://hips.hearstapps.com/pop.h-cdn.co/assets/16/07/4000x2000/landscape-1455726347-gettyimages-498047720.jpg?resize&#x3D;1200:*" loading="lazy" class="media-object__media article-image" />
+                            <span class="media-object__text">
+                              <span>Comments</span>
+                                &ensp;<span class="article-reading-time">(&hairsp;15
+                                  min&hairsp;)</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://andreas.welcomes-you.com/zfs-risc-v-512mb-lichee-rv/"
+                        open
+                      >
+                        <summary class="article-expander__title">ZFS on a single core RISC-V hardware with 512MB</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://andreas.welcomes-you.com/zfs-risc-v-512mb-lichee-rv/">
+                          <div class="article-summary-box-inner media-object">
+                            <span class="media-object__text">
+                              <span>Comments</span>
+                                &ensp;<span class="article-reading-time">(&hairsp;4
+                                  min&hairsp;)</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://rubenerd.com/my-essential-firefox-fixes-in-2022/"
+                        open
+                      >
+                        <summary class="article-expander__title">My essential Firefox fixes in 2022</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://rubenerd.com/my-essential-firefox-fixes-in-2022/">
+                          <div class="article-summary-box-inner media-object">
+                            <span class="media-object__text">
+                              <span>Comments</span>
+                                &ensp;<span class="article-reading-time">(&hairsp;2
+                                  min&hairsp;)</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://gcaptain.com/container-lithium-battery-fire/"
+                        open
+                      >
+                        <summary class="article-expander__title">Container loaded with discarded lithium batteries catches fire enroute to port</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://gcaptain.com/container-lithium-battery-fire/">
+                          <div class="article-summary-box-inner media-object">
+                              <img src="https://gcaptain.com/wp-content/uploads/2022/03/lithium-battery-fire.jpg" loading="lazy" class="media-object__media article-image" />
+                            <span class="media-object__text">
+                              <span>Comments</span>
+                                &ensp;<span class="article-reading-time">(&hairsp;4
+                                  min&hairsp;)</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://www.sciencedirect.com/science/article/abs/pii/S0006320717306201"
+                        open
+                      >
+                        <summary class="article-expander__title">Lawn mowing frequency affects bee abundance and diversity (2018)</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://www.sciencedirect.com/science/article/abs/pii/S0006320717306201">
+                          <div class="article-summary-box-inner media-object">
+                              <img src="https://ars.els-cdn.com/content/image/1-s2.0-S0006320718X00044-cov150h.gif" loading="lazy" class="media-object__media article-image" />
+                            <span class="media-object__text">
+                              <span>Comments</span>
+                                &ensp;<span class="article-reading-time">(&hairsp;1
+                                  min&hairsp;)</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://picower.mit.edu/news/neurons-are-fickle-electric-fields-are-more-reliable-information"
+                        open
+                      >
+                        <summary class="article-expander__title">Electric fields, not individual neurons, may hold information in memory: study</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://picower.mit.edu/news/neurons-are-fickle-electric-fields-are-more-reliable-information">
+                          <div class="article-summary-box-inner media-object">
+                            <span class="media-object__text">
+                              <span>Comments</span>
+                                &ensp;<span class="article-reading-time">(&hairsp;5
+                                  min&hairsp;)</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://blog.mediocregopher.com/2022/03/13/the-case-for-open-infrastructure.html"
+                        open
+                      >
+                        <summary class="article-expander__title">The case for open infrastructure</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://blog.mediocregopher.com/2022/03/13/the-case-for-open-infrastructure.html">
+                          <div class="article-summary-box-inner media-object">
+                            <span class="media-object__text">
+                              <span>Comments</span>
+                                &ensp;<span class="article-reading-time">(&hairsp;6
+                                  min&hairsp;)</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://www.independent.co.uk/news/world/americas/mavis-beacon-teaches-typing-real-b2034472.html"
+                        open
+                      >
+                        <summary class="article-expander__title">Mavis Beacon was the top typing teacher in the US, then she vanished</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://www.independent.co.uk/news/world/americas/mavis-beacon-teaches-typing-real-b2034472.html">
+                          <div class="article-summary-box-inner media-object">
+                              <img src="https://static.independent.co.uk/2022/03/02/14/newFile-6.jpg?quality&#x3D;75&amp;width&#x3D;1200&amp;auto&#x3D;webp" loading="lazy" class="media-object__media article-image" />
+                            <span class="media-object__text">
+                              <span>Comments</span>
+                                &ensp;<span class="article-reading-time">(&hairsp;7
+                                  min&hairsp;)</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://earthsky.org/space/alpha-centauri-travel-time/"
+                        open
+                      >
+                        <summary class="article-expander__title">New solar sail may travel to Alpha Centauri</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://earthsky.org/space/alpha-centauri-travel-time/">
+                          <div class="article-summary-box-inner media-object">
+                            <span class="media-object__text">
+                              <span>Comments</span>
+                                &ensp;<span class="article-reading-time">(&hairsp;7
+                                  min&hairsp;)</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://aaronhertzmann.com/2022/03/10/photographic-tone.html"
+                        open
+                      >
+                        <summary class="article-expander__title">Why dark and light is complicated in photographs</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://aaronhertzmann.com/2022/03/10/photographic-tone.html">
+                          <div class="article-summary-box-inner media-object">
+                              <img src="https://aaronhertzmann.com/images/tone/james-dean-retouch-b.jpg" loading="lazy" class="media-object__media article-image" />
+                            <span class="media-object__text">
+                              <span>Comments</span>
+                                &ensp;<span class="article-reading-time">(&hairsp;9
+                                  min&hairsp;)</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://horace.io/pytorch-vs-tensorflow/"
+                        open
+                      >
+                        <summary class="article-expander__title">PyTorch vs. TensorFlow in Academic Papers</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://horace.io/pytorch-vs-tensorflow/">
+                          <div class="article-summary-box-inner media-object">
+                            <span class="media-object__text">
+                              <span>Comments</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://bastian.rieck.me/blog/posts/2022/server/"
+                        open
+                      >
+                        <summary class="article-expander__title">Who&#x27;s Attacking My Server?</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://bastian.rieck.me/blog/posts/2022/server/">
+                          <div class="article-summary-box-inner media-object">
+                            <span class="media-object__text">
+                              <span>Comments</span>
+                                &ensp;<span class="article-reading-time">(&hairsp;5
+                                  min&hairsp;)</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://github.com/google/s2geometry"
+                        open
+                      >
+                        <summary class="article-expander__title">S2: Computational geometry and spatial indexing on the sphere</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://github.com/google/s2geometry">
+                          <div class="article-summary-box-inner media-object">
+                              <img src="https://opengraph.githubassets.com/effd16d97dd8c1eeaae05aa45a407323f7f0a408ccc9fde92f81208d5e474bb5/google/s2geometry" loading="lazy" class="media-object__media article-image" />
+                            <span class="media-object__text">
+                              <span>Comments</span>
+                                &ensp;<span class="article-reading-time">(&hairsp;4
+                                  min&hairsp;)</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://www.eevblog.com/forum/dodgy-technology/not-dodgy-at-all-and-long-overdue-user-replaceable-batteries/"
+                        open
+                      >
+                        <summary class="article-expander__title">EU to make it mandatory to use customer-replaceable batteries in household items</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://www.eevblog.com/forum/dodgy-technology/not-dodgy-at-all-and-long-overdue-user-replaceable-batteries/">
+                          <div class="article-summary-box-inner media-object">
+                            <span class="media-object__text">
+                              <span>Comments</span>
+                                &ensp;<span class="article-reading-time">(&hairsp;8
+                                  min&hairsp;)</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://www.gwern.net/docs/economics/2020-arbel.pdf"
+                        open
+                      >
+                        <summary class="article-expander__title">Theory of the Nudnik: The Future of Consumer Activism [pdf]</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://www.gwern.net/docs/economics/2020-arbel.pdf">
+                          <div class="article-summary-box-inner media-object">
+                            <span class="media-object__text">
+                              <span>Comments</span>
+                                &ensp;<span class="article-reading-time">(&hairsp;105
+                                  min&hairsp;)</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://thephd.dev/to-save-c-we-must-save-abi-fixing-c-function-abi"
+                        open
+                      >
+                        <summary class="article-expander__title">To save C, we must save ABI</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://thephd.dev/to-save-c-we-must-save-abi-fixing-c-function-abi">
+                          <div class="article-summary-box-inner media-object">
+                              <img src="https://thephd.dev//assets/img/2022/03/bunurrii%20-%20eyes%20open.jpg" loading="lazy" class="media-object__media article-image" />
+                            <span class="media-object__text">
+                              <span>Comments</span>
+                                &ensp;<span class="article-reading-time">(&hairsp;29
+                                  min&hairsp;)</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
                         data-accordion-key="https://github.com/libsm64/libsm64-blender"
                         open
                       >
@@ -113,6 +757,284 @@
                               <span>Comments</span>
                                 &ensp;<span class="article-reading-time">(&hairsp;2
                                   min&hairsp;)</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                </section>
+              </section>
+            </li>
+            <li class="card__section">
+              <section class="js-toggle-accordions-scope">
+                <h3 class="source-heading">
+                  <button
+                    class="source-heading__name"
+                    data-action="toggle-accordions"
+                    title="Click to toggle the source, Ctrl + click to toggle all."
+                  >知乎日报</button>
+                  <a class="source-heading__link" href="https://news-at.zhihu.com/api/4/stories/latest?client&#x3D;0">Open</a>
+                </h3>
+                <section class="articles-per-source">
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://daily.zhihu.com/story/9746350"
+                        open
+                      >
+                        <summary class="article-expander__title">为什么猫和老虎长得那么像？</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9746350">
+                          <div class="article-summary-box-inner media-object">
+                            <span class="media-object__text">
+                              <span>云杉，动物/人类双料营养师，扛过枪读过书的科普爱好者。
+阅读原文
+
+我咨询了 @青檀 并结合文献阅读后的推测是：
+猫科（Felidae）作为演化较快的一个科，虽然体型大小与生境（Habitat，赖以生存的生态环境）分化了，但在占据不同生态位的过程中，其伏击——跟踪——短距离爆发猎捕的捕食模式在不同生境中的适应度都很高，不同体型、高度分化的猫科动物在生活区域内没有实力相差悬殊的竞争者，在自己的层级上生态位牢固，捕食逻辑没有什么大的变化。
+因此，它们在生理结构、行为模式上，有着诸多相似性。
+谁还不是个食肉目了
+憨态可掬的家猫、身材修长的薮猫、威猛慑人的狮子都是——猫科动物。
+比起豹亚科的虎，猫亚科下的狞猫、家猫、美洲狮、猞猁、薮猫、金猫才叫傻傻分不清
+为了便于潜行和藏匿在意想不到的位置，它们都拥有灵活如水的身体和四肢；
+为了便于潜行和尾随猎物，它们都拥有柔软的趾垫；
+都想 rua 一下
+为了能够在发动突袭后将猎物一击毙命，它们都拥有粗壮的腭弓和发达的矢状脊以供更多的腭部肌肉附着；
+不同猫科动物的头骨，尺寸不同但构造类似
+为了更好地在夜里奇袭猎物，它们的眼睛中都拥有数量是人类 6-8 倍的视杆细胞（只能感受弱光、无法辨别颜色）和适应光线变化快速放大缩小的瞳孔；
+为了减少两顿不稳定进食间的能量消耗，猫科动物普遍每天睡 10 小时以上，并且采取了醒 1 份时间睡 3 份时间醒 1 份时间睡 3 份时间的醒睡循环(Sleep-wake cycle)；
+家猫的醒睡循环
+因为不可知的原因，它们感受甜味的 Tas1r2 基因自古便失效了，无法品尝淀粉香甜的它们离植食越来越远，成了不折不扣的超级肉食者（Hypercarnivores）...
+但是，反直觉的是，猫科动物是高度特化的。
+食肉目下，犬型亚目和猫型亚目平分天下，犬科和猫科是二者的主力。
+一部分学者认为两科动物采取了不同适应环境的策略，犬科选择了更为通用的体型和生理结构来降低适应新环境的容错率，猫科则高度特化某一性状使自己在生境中拥有最强的适应性。
+作为捕食者，猫科动物是顶级的存在。
+此猫科动物演化谱系成于世纪初，虽有变动但依然可供参考
+也正因如此，在被人类选择前，犬科下属动物体型差距没有猫科那么大（黑足猫 3 斤 -- 西伯利亚虎 600 斤），同重量级的犬科动物也被四肢更强壮的猫科动物暴打，因此猫科动物占据更高生态位。
+平均 3.2 斤重的黑足猫（Felis nigripes），腾空一跃可达 140cm
+进化树上，猫科动物的进化程度也高于犬科动物。
+犬科（蓝）与猫科（黄）
+云豹舍弃了陆地转向树冠层生存、狞猫一蹦可达 3 米、奔向水体的渔猫则生出了蹼状的爪子、虎仅凭掌击就能拍断猎物脖子、猎豹的时速能达到 112km/h...
+渔猫（Viverrinus）
+至于家猫...家猫在与人类相处过程中产生了 281 条基因变化，适应了人类习惯用食物作为奖励的套路，变得更加容易亲近和被驯服...
+
+激进的进化策略使得猫占据了更高的生态位，但自然也有其代价：
+生态易感性强，更容易因环境改变而灭绝
+短跑冠军猎豹已经预定为下一个灭绝的大型猫科动物，其栖息地紧缩为原来的 9%，在亚洲，大概有不超过 50 头的亚洲猎豹个体正在近亲繁殖。
+
+现今地表最快的生物，以后大概率只会出现在历史课本中。
+
+
+
+阅读原文</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://daily.zhihu.com/story/9746354"
+                        open
+                      >
+                        <summary class="article-expander__title">卫生间有哪些装修经常翻车，用着不爽还有后患？</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9746354">
+                          <div class="article-summary-box-inner media-object">
+                            <span class="media-object__text">
+                              <span>新住，公众号：新住（ixinzhu），美好居住看新住
+阅读原文
+
+没有丰富的装修经验，那就多看些装修案例，再看看评价，吸取成功经验很重要，多看点翻车案例，避坑更重要！
+为了让大家少入坑，总结 15 个卫生间易翻车的情况，大家引以为戒。
+1、不装木门
+做门的时候没有考虑那么多，一起做了全屋的木门，忽视了卫生间的特殊性，即使平时使用再小心翼翼，用了几年后，后患问题还是会暴露出来。
+经常接触水的下沿会腐蚀、掉漆，尤其是南方比较湿润的地方，再好看的木门都不要有装在卫生间的想法，实木板的也同样经不起长期潮湿的考验
+
+要想好看又好用，建议选用铝合金、钛镁合金配玻璃的门，美观大气，也能经得起岁月的考量，不怕水淋、不怕潮，性价比也是蛮不错的
+
+如果喜欢长虹玻璃，一定要加一层磨砂（一层磨砂一层长虹），如果是长虹加透明，用在卫生间的话会透，家里客人了就比较尴尬。
+2、不装台上盆、岩板盆
+台上盆的翻车点主要在不好打理上，盆与台面之间的缝隙靠玻璃胶固定，用久了会出现发霉变黑等问题，而且玻璃胶老化破损后，可能会出现缝隙漏水等问题。
+
+岩板因为渗水率低，近两年越来越多的家庭装岩板台盆，但是用久了问题就暴露出来了，主要集中在清洁问题上。
+
+深色的岩板台盆会出现水垢、泛白等问题，浅色的岩板如下图，边角会积脏，主要因为岩板一般是整块板子，用来做台盆的话就需要把整块的板子剪裁后再拼接，拼接时是用胶固定，直角边角清洁困难，缝隙的胶用久了也会出现发霉的现象。
+
+有了这些前人的经验，我们在挑选台盆的时候把握两个原则：一是台下盆比台上盆好清理，二是一体盆比拼接盆好清理。
+台下盆低于台面，视觉上美观，但缺点是安装相对复杂，费用贵，需要较大的承重，一体盆中可丽耐和陶瓷盆都是不错之选。
+
+可丽耐一体盆的优点是尺寸比较灵活，可以定制到适合的尺寸，陶瓷一体盆尺寸相对固定，预算有限的话可以选用陶瓷盆。
+ps 小贴士：如果是久住之…</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://daily.zhihu.com/story/9746385"
+                        open
+                      >
+                        <summary class="article-expander__title">看完电影《花束般的恋爱》你有什么体会?</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9746385">
+                          <div class="article-summary-box-inner media-object">
+                            <span class="media-object__text">
+                              <span>何卓夫，公众号：尺度。8年情感咨询从业经历，情感咨询案例1000+
+阅读原文
+
+作为男性，我认为男主问题非常大。
+在电影前半部分，男女主好像是要建立一段“共生”关系。
+对于多数人来说，爱情只是生活的一部分。
+而共生关系在情侣中却是很罕见的，它的门槛在于：
+必须建立一个可以完全不被影响的二人世界，并且能提供这段关系需要的所有养分。
+也就是说，无论生活如何变化，这段关系里始终要有一个精神空间，是决不许被外界染指和破坏的。
+在电影里，男女主的相恋方式很像一段共生关系的开始：
+两个人都不善于和外界打交道，在生活社交中多少有些格格不入，但都有很难向外界开放的内心世界。
+这样的两个人相遇，发现了性转版本的自己，迅速的建立了一个只有两个人才懂的精神世界。
+电影前半段，男主多次表达了类似的愿望：
+
+“我的人生目标，就是和你维持现状。”
+他的想法和李诞说过的某句话很类似：
+“我不认为我们要保护婚姻，婚姻应该是一个壳，它应该来保护我们。”
+“维持现状”这个承诺，实际上是明示了他对于这段关系的指向：
+走向共生，建立一个专属于你我的空间。
+无论外界和生活怎样变，我们都要维持这个小空间不变。
+这其实是一句很重的承诺，而我认为男主的最大的问题也出在这里。
+因为接下来他的一系列行为，直接推翻了自己的这个承诺。
+比较明显的一个细节是：男主从自由职业进入公司后，拿到了很好的机会，但也因此很忙无奈推掉了几次和女友的约会。
+这时男主的态度是很有问题的，他只是很冷冰的表示“自己没有时间”，而女生的眼神是黯然的。
+其实他应该主动带动女友去规划一下未来：
+我接下来可能会提高多少收入，可以为我们未来省下多少奋斗时间。
+但男主没有这么做，而是直接选择了沉默，这种沉默无形中传递了一件事：
+其中一方的持续变好，是一件和另一半完全没有关系的事。
+男主口口声声说：“我希望一直维持现状。”
+但是他却在生活发生剧变（其实是好的变化）…</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://daily.zhihu.com/story/9746369"
+                        open
+                      >
+                        <summary class="article-expander__title">什么叫经济学直觉？</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9746369">
+                          <div class="article-summary-box-inner media-object">
+                            <span class="media-object__text">
+                              <span>张星健，学经济学的
+阅读原文
+
+“经济学的直觉”其实对于我们搞经济学研究的人来说并不陌生，我还记得我几年前刚接触科研就被导师叮嘱“要培养自己对经济学的 sense”。我觉得，要了解这个话题，需要一点耐心，先从几个问题开始讲起。
+想要了解这个话题，首先要问第一个问题，这种直觉或是感觉是一种显性知识吗？可以肯定，这并不是某一个显性知识。换句话说，这种经济学的感觉指的并不是某个人的编程能力非常强，各种编程语言信手拈来，或是单纯地数学能力很强，能解各种复杂的模型这种显而易见，能写上简历的能力。反而，这是一个默会知识，它从本质上就不存在于书本中，不可能读完它的定义就掌握了，而是只能在实践中展现、被觉察和被意会。我们并不能根据某个标准化测试来评判一个经济学研究者是否有这个“直觉”，只有当这个经济学研究者在做研究的时候，作为旁观者的我们才能说“他的经济学直觉很好”。
+第二个问题，这种经济学直觉重要吗？既然是带有一定“玄学色彩”的能力，我们真的需要努力让自己有这种经济学直觉 / 感觉吗？我们可以这样说，差的研究总是有一个或多个缺陷，可能是它研究的经济学问题根本就不重要，对社会和经济学界毫无贡献；可能是这项研究早就有人在 30 年前做过了，用了同样的数据同样的方法，这个研究只是在拾人牙慧罢了；也可能是研究中利用的数据非常杂乱，数据中不合逻辑的情况大量出现，没有能处理干净。诸如此类的缺陷，在我们看到一篇差的文章的时候总能够将其归类进去。但是，我们几乎看不到评论一个好的经济学研究说“这个研究没有经济学直觉”。因为这种感觉是做出好研究的必要条件。那么好的经济学研究所说的“直觉”是怎么样的？我认为，就是在研究者在学术训练后，运用逻辑和经济学框架提出、了解、回答一些重要的问题，在处理这个问题的时候，自觉或不自觉地意识到自己不能踩哪些坑，将这个问题规范科学地回答好。
+第三个问题，怎么培养这种经济学感觉？…</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://daily.zhihu.com/story/9746360"
+                        open
+                      >
+                        <summary class="article-expander__title">《少年 Jump》历史前 20 的作品排行榜应该怎么排？</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9746360">
+                          <div class="article-summary-box-inner media-object">
+                            <span class="media-object__text">
+                              <span>许多的小兵器，石田龙弦.jpg
+阅读原文
+
+按时间顺序说一下我的看法：
+（1）男儿当大将（男一匹ガキ大将 本宮 ひろ志 1968）
+
+如果说《少年 jump》是一个帝国，那这本漫画就是其立国之本。
+在它之前《少年 jump》的台柱子是一部叫《父之魂》的棒球漫画，《男儿当大将》只是在《父之魂》休刊期间临时顶上来的作品，结果一发不可收拾，顶替其成为当红台柱子。
+同样的故事在后来的《龙珠》身上还会再次上演。
+开启了不良少年打架漫画的热潮，将《少年 jump》从名不见经传的二流杂志直接推上一流。本宫宏志本人则是《少年 jump》初代编辑长长野规到三代编辑长西村繁男的亲历者和功臣，影响了无数后世漫画家（比如车田正美）。
+就算不按时间顺序而是单纯地论贡献，天字第一号给本宫宏志也没啥毛病。
+（2）破廉耻学园（ハレンチ学園 永井豪 1968）
+
+和《男儿当大将》并称的两大上古门神。
+对内容不予置评，单纯从题材上，《破》和《男》分别确保了《少年 jump》在故事漫画（ストーリー漫画）和搞笑漫画（ギャグ漫画）两大漫画题材上齐头并进，两条腿走路让杂志的风格更平衡。
+搞擦边球搞出社会事件，某种意义上这也算是在《少年 jump》上后无来者的记录。
+一个是不良少年统一江湖，一个是问题学校对抗教育系统，这两个作品植根于当时日本风云变化的社会现实，也从另一个侧面突出了它们的历史代表性。
+（3）乌龙派出所（こちら葛飾区亀有公園前派出所 秋本治 1976）
+
+跨越了若干时代的《少年 jump》活化石。
+二代编辑长中野祐介强化搞笑漫画方针的一个突出成果。作为搞笑漫画，其突破在于采用了比较写实的剧画画风（而不是像破廉耻学园那样的漫画风格）。
+认同其历史地位主要出于其连载长度、国民认知度以及其记录下来的日本社会风貌变迁。
+
+以上三部基本上代表了《少年 jump》创刊的第一个十年（1968-1978），随后将进入《少…</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://daily.zhihu.com/story/9746347"
+                        open
+                      >
+                        <summary class="article-expander__title">瞎扯 · 如何正确地吐槽</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9746347">
+                          <div class="article-summary-box-inner media-object">
+                            <span class="media-object__text">
+                              <span>秃鹫吃腐肉会消化不良吗？
+
+李涛，如果我不能为梦想而生，那就让我为梦想而死吧
+阅读原文
+
+猫看着你：这家伙在吃黄瓜，难道他不会消化不良吗？
+牛看着你：这家伙在吃肉，难道他不会消化不良吗？
+屎壳郎看着你：这家伙吃的居然不是屎，难道他不会消化不良吗？
+你看着秃鹫……
+阅读原文
+
+如果《英雄联盟》有一件可以燃烧草丛的装备会发生什么？
+
+三思而后买
+阅读原文
+
+导致 pm 2.5 浓度上升，战争迷雾范围变大，能见度降低，全员李青。
+阅读原文
+
+《西虹市首富》里面想花完钱却越花越多的情况，现实里面会发生吗？
+
+真的有神仙，专修卫星漏水、高铁触礁
+阅读原文
+
+去买体育彩票，赌中国男足能够出线，参加卡塔尔世界杯。
+你就是有马斯克的身价，也会输得倾家荡产。
+阅读原文
+
+如果蚊子叮咬了新冠病毒感染者，再叮咬未感染者，那么是否会间接传播新冠病毒，使未感染者被感染新冠病毒?
+
+赵泠，遗迹是曾经讴歌繁荣的生命留下的缺页的梦。
+阅读原文
+
+不太行。蚊子需要连咬几十个新冠患者不擦嘴，才能在接下来的一针里有送来足够感染一个人的病毒的概率。蚊子的行为不是那样的，不但不会连咬那么多人，还经常擦嘴。
+阅读原文
+
+大连新机场征名开始，最佳命名奖可获 2 万元，你有哪些好想法？
+
+知乎用户，用爱发电
+阅读原文
+
+大连连看机场、大连欢晚会机场、大连养机场、大连银机场、大连盘子机场、大连黄渤机场、大连云港机场、大连花清瘟机场、大连不上网机场、大连不通机场 ​、大连有俩机场 ​、大连有个机场 ​、大连好大一机场、大连理工大学附属国际机场、大连俊俏好容颜此鲜花无人采琵琶断弦无人弹呐机场、大连中三元气满满载而归心似箭无虚发财致富可敌国际机场。
+阅读原文</span>
                             </span>
                           </div>
                         </a>
@@ -552,6 +1474,26 @@
                       <details
                         class="article-expander"
                         data-action="toggle-native-accordion"
+                        data-accordion-key="https://www.theregister.com/2022/03/01/the_internet_is_so_hard/"
+                        open
+                      >
+                        <summary class="article-expander__title">Arpanet pioneer Jack Haverty says the internet was never finished</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://www.theregister.com/2022/03/01/the_internet_is_so_hard/">
+                          <div class="article-summary-box-inner media-object">
+                              <img src="https://regmedia.co.uk/2015/07/03/networks_8974356536.jpg" loading="lazy" class="media-object__media article-image" />
+                            <span class="media-object__text">
+                              <span>Comments</span>
+                                &ensp;<span class="article-reading-time">(&hairsp;8
+                                  min&hairsp;)</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
                         data-accordion-key="https://github.com/arata-nvm/mitnal"
                         open
                       >
@@ -615,6 +1557,25 @@
                       >
                         <summary class="article-expander__title">Today is Y Combinator&#x27;s 17th birthday</summary>
                         <a class="article-summary-link article-summary-box-outer" href="https://twitter.com/paulg/status/1502424734679638028">
+                          <div class="article-summary-box-inner media-object">
+                            <span class="media-object__text">
+                              <span>Comments</span>
+                                &ensp;<span class="article-reading-time">(&hairsp;1
+                                  min&hairsp;)</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://python-patterns.guide/"
+                        open
+                      >
+                        <summary class="article-expander__title">Python Design Patterns (2018)</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://python-patterns.guide/">
                           <div class="article-summary-box-inner media-object">
                             <span class="media-object__text">
                               <span>Comments</span>
@@ -1458,6 +2419,26 @@ CNI deep dive（https://www.youtube.com/watch...）
                       <details
                         class="article-expander"
                         data-action="toggle-native-accordion"
+                        data-accordion-key="https://alexturek.com/2022-03-07-How-to-do-less/"
+                        open
+                      >
+                        <summary class="article-expander__title">How to Do Less</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://alexturek.com/2022-03-07-How-to-do-less/">
+                          <div class="article-summary-box-inner media-object">
+                              <img src="https://alexturek.com/images/haw.png" loading="lazy" class="media-object__media article-image" />
+                            <span class="media-object__text">
+                              <span>Comments</span>
+                                &ensp;<span class="article-reading-time">(&hairsp;9
+                                  min&hairsp;)</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
                         data-accordion-key="https://news.ycombinator.com/item?id&#x3D;30642577"
                         open
                       >
@@ -1659,6 +2640,26 @@ CNI deep dive（https://www.youtube.com/watch...）
                             <span class="media-object__text">
                               <span>Comments</span>
                                 &ensp;<span class="article-reading-time">(&hairsp;4
+                                  min&hairsp;)</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://www.fastruby.io/blog/rails/upgrades/what-i-learned-first-rails-upgrade.html"
+                        open
+                      >
+                        <summary class="article-expander__title">What I Learned from My First Rails Upgrade</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://www.fastruby.io/blog/rails/upgrades/what-i-learned-first-rails-upgrade.html">
+                          <div class="article-summary-box-inner media-object">
+                              <img src="https://fastruby.io/blog/assets/images/header/first-rails-upgrade.jpg" loading="lazy" class="media-object__media article-image" />
+                            <span class="media-object__text">
+                              <span>Comments</span>
+                                &ensp;<span class="article-reading-time">(&hairsp;5
                                   min&hairsp;)</span>
                             </span>
                           </div>
@@ -25680,726 +26681,10 @@ Linux基金会尝鲜
             </li>
         </ul>
       </section>
-      <section class="daily-content js-toggle-accordions-scope">
-        <h2 class="daily-heading">
-          <button
-            class="daily-heading-toggle"
-            data-action="toggle-accordions"
-            title="Click to toggle the day, Ctrl + click to toggle all."
-          >
-            <time class="daily-heading-toggle__weekday js-offset-weekday" data-offset-date=2022-02-11 datetime="2022-02-11T23:29:11.000Z">2022-02-11</time>
-            <time class="daily-heading-toggle__date js-offset-date" data-offset-date=2022-02-11 datetime="2022-02-11T23:29:11.000Z"></time>
-          </button>
-        </h2>
-        <ul class="sources card">
-            <li class="card__section">
-              <section class="js-toggle-accordions-scope">
-                <h3 class="source-heading">
-                  <button
-                    class="source-heading__name"
-                    data-action="toggle-accordions"
-                    title="Click to toggle the source, Ctrl + click to toggle all."
-                  >Hacker News</button>
-                  <a class="source-heading__link" href="https://news.ycombinator.com/">Open</a>
-                </h3>
-                <section class="articles-per-source">
-                    <article>
-                      <details
-                        class="article-expander"
-                        data-action="toggle-native-accordion"
-                        data-accordion-key="https://inteoryx.com/htmls/LanguageHomog.html"
-                        open
-                      >
-                        <summary class="article-expander__title">Language Homogenization at Harvard</summary>
-                        <a class="article-summary-link article-summary-box-outer" href="https://inteoryx.com/htmls/LanguageHomog.html">
-                          <div class="article-summary-box-inner media-object">
-                            <span class="media-object__text">
-                              <span>Comments</span>
-                                &ensp;<span class="article-reading-time">(&hairsp;4
-                                  min&hairsp;)</span>
-                            </span>
-                          </div>
-                        </a>
-                      </details>
-                    </article>
-                    <article>
-                      <details
-                        class="article-expander"
-                        data-action="toggle-native-accordion"
-                        data-accordion-key="https://ianyepan.github.io/posts/emacs-ide/"
-                        open
-                      >
-                        <summary class="article-expander__title">Building an Intelligent Emacs</summary>
-                        <a class="article-summary-link article-summary-box-outer" href="https://ianyepan.github.io/posts/emacs-ide/">
-                          <div class="article-summary-box-inner media-object">
-                            <span class="media-object__text">
-                              <span>Comments</span>
-                                &ensp;<span class="article-reading-time">(&hairsp;5
-                                  min&hairsp;)</span>
-                            </span>
-                          </div>
-                        </a>
-                      </details>
-                    </article>
-                    <article>
-                      <details
-                        class="article-expander"
-                        data-action="toggle-native-accordion"
-                        data-accordion-key="https://www.americaspace.com/2020/02/01/lock-the-doors-remembering-columbias-final-homecoming-otd-in-2003/"
-                        open
-                      >
-                        <summary class="article-expander__title">Lock the doors: Remembering Columbia&#x27;s final homecoming (2020)</summary>
-                        <a class="article-summary-link article-summary-box-outer" href="https://www.americaspace.com/2020/02/01/lock-the-doors-remembering-columbias-final-homecoming-otd-in-2003/">
-                          <div class="article-summary-box-inner media-object">
-                            <span class="media-object__text">
-                              <span>Comments</span>
-                                &ensp;<span class="article-reading-time">(&hairsp;13
-                                  min&hairsp;)</span>
-                            </span>
-                          </div>
-                        </a>
-                      </details>
-                    </article>
-                    <article>
-                      <details
-                        class="article-expander"
-                        data-action="toggle-native-accordion"
-                        data-accordion-key="https://jobs.lever.co/taplytics"
-                        open
-                      >
-                        <summary class="article-expander__title">DevCycle (YC W14) is hiring</summary>
-                        <a class="article-summary-link article-summary-box-outer" href="https://jobs.lever.co/taplytics">
-                          <div class="article-summary-box-inner media-object">
-                            <span class="media-object__text">
-                              <span>Comments</span>
-                            </span>
-                          </div>
-                        </a>
-                      </details>
-                    </article>
-                    <article>
-                      <details
-                        class="article-expander"
-                        data-action="toggle-native-accordion"
-                        data-accordion-key="https://news.mit.edu/2022/new-programming-language-high-performance-computers-0207"
-                        open
-                      >
-                        <summary class="article-expander__title">A new programming language for high-performance computers</summary>
-                        <a class="article-summary-link article-summary-box-outer" href="https://news.mit.edu/2022/new-programming-language-high-performance-computers-0207">
-                          <div class="article-summary-box-inner media-object">
-                            <span class="media-object__text">
-                              <span>Comments</span>
-                                &ensp;<span class="article-reading-time">(&hairsp;5
-                                  min&hairsp;)</span>
-                            </span>
-                          </div>
-                        </a>
-                      </details>
-                    </article>
-                    <article>
-                      <details
-                        class="article-expander"
-                        data-action="toggle-native-accordion"
-                        data-accordion-key="https://lithub.com/how-einstein-arrived-at-his-theory-of-general-relativity/"
-                        open
-                      >
-                        <summary class="article-expander__title">How Einstein arrived at his theory of general relativity</summary>
-                        <a class="article-summary-link article-summary-box-outer" href="https://lithub.com/how-einstein-arrived-at-his-theory-of-general-relativity/">
-                          <div class="article-summary-box-inner media-object">
-                            <span class="media-object__text">
-                              <span>Comments</span>
-                                &ensp;<span class="article-reading-time">(&hairsp;11
-                                  min&hairsp;)</span>
-                            </span>
-                          </div>
-                        </a>
-                      </details>
-                    </article>
-                    <article>
-                      <details
-                        class="article-expander"
-                        data-action="toggle-native-accordion"
-                        data-accordion-key="https://anjahealth.com"
-                        open
-                      >
-                        <summary class="article-expander__title">Launch HN: Anja Health (YC W22) – Freezing stem cells at birth for future health</summary>
-                        <a class="article-summary-link article-summary-box-outer" href="https://anjahealth.com">
-                          <div class="article-summary-box-inner media-object">
-                            <span class="media-object__text">
-                              <span>Comments</span>
-                                &ensp;<span class="article-reading-time">(&hairsp;1
-                                  min&hairsp;)</span>
-                            </span>
-                          </div>
-                        </a>
-                      </details>
-                    </article>
-                    <article>
-                      <details
-                        class="article-expander"
-                        data-action="toggle-native-accordion"
-                        data-accordion-key="https://github.com/andy-goryachev/MemSafeCrypto"
-                        open
-                      >
-                        <summary class="article-expander__title">Show HN: MemSafeCrypto, Java cryptography primitives using DirectByteBuffer</summary>
-                        <a class="article-summary-link article-summary-box-outer" href="https://github.com/andy-goryachev/MemSafeCrypto">
-                          <div class="article-summary-box-inner media-object">
-                            <span class="media-object__text">
-                              <span>Comments</span>
-                                &ensp;<span class="article-reading-time">(&hairsp;2
-                                  min&hairsp;)</span>
-                            </span>
-                          </div>
-                        </a>
-                      </details>
-                    </article>
-                    <article>
-                      <details
-                        class="article-expander"
-                        data-action="toggle-native-accordion"
-                        data-accordion-key="https://intellisec.de/research/lasershark/"
-                        open
-                      >
-                        <summary class="article-expander__title">Lasershark: Fast, bidirectional communication into air-gapped systems</summary>
-                        <a class="article-summary-link article-summary-box-outer" href="https://intellisec.de/research/lasershark/">
-                          <div class="article-summary-box-inner media-object">
-                            <span class="media-object__text">
-                              <span>Comments</span>
-                                &ensp;<span class="article-reading-time">(&hairsp;1
-                                  min&hairsp;)</span>
-                            </span>
-                          </div>
-                        </a>
-                      </details>
-                    </article>
-                    <article>
-                      <details
-                        class="article-expander"
-                        data-action="toggle-native-accordion"
-                        data-accordion-key="https://acoup.blog/2022/02/11/collections-rome-decline-and-fall-part-iii-things/"
-                        open
-                      >
-                        <summary class="article-expander__title">Rome: Decline and Fall? Part III: Things</summary>
-                        <a class="article-summary-link article-summary-box-outer" href="https://acoup.blog/2022/02/11/collections-rome-decline-and-fall-part-iii-things/">
-                          <div class="article-summary-box-inner media-object">
-                            <span class="media-object__text">
-                              <span>Comments</span>
-                                &ensp;<span class="article-reading-time">(&hairsp;55
-                                  min&hairsp;)</span>
-                            </span>
-                          </div>
-                        </a>
-                      </details>
-                    </article>
-                    <article>
-                      <details
-                        class="article-expander"
-                        data-action="toggle-native-accordion"
-                        data-accordion-key="https://github.com/floodfx/liveviewjs"
-                        open
-                      >
-                        <summary class="article-expander__title">Show HN: LiveViewJS – TypeScript back end for LiveView Apps (Phoenix LiveView)</summary>
-                        <a class="article-summary-link article-summary-box-outer" href="https://github.com/floodfx/liveviewjs">
-                          <div class="article-summary-box-inner media-object">
-                            <span class="media-object__text">
-                              <span>Comments</span>
-                                &ensp;<span class="article-reading-time">(&hairsp;6
-                                  min&hairsp;)</span>
-                            </span>
-                          </div>
-                        </a>
-                      </details>
-                    </article>
-                    <article>
-                      <details
-                        class="article-expander"
-                        data-action="toggle-native-accordion"
-                        data-accordion-key="https://ugmonk.com/blogs/journal/analog-the-simplest-productivity-system"
-                        open
-                      >
-                        <summary class="article-expander__title">Analog: A simple productivity system</summary>
-                        <a class="article-summary-link article-summary-box-outer" href="https://ugmonk.com/blogs/journal/analog-the-simplest-productivity-system">
-                          <div class="article-summary-box-inner media-object">
-                            <span class="media-object__text">
-                              <span>Comments</span>
-                                &ensp;<span class="article-reading-time">(&hairsp;4
-                                  min&hairsp;)</span>
-                            </span>
-                          </div>
-                        </a>
-                      </details>
-                    </article>
-                    <article>
-                      <details
-                        class="article-expander"
-                        data-action="toggle-native-accordion"
-                        data-accordion-key="https://github.com/CZ-NIC/pz"
-                        open
-                      >
-                        <summary class="article-expander__title">Easily handle CLI operation via Python instead of regular Bash programs</summary>
-                        <a class="article-summary-link article-summary-box-outer" href="https://github.com/CZ-NIC/pz">
-                          <div class="article-summary-box-inner media-object">
-                            <span class="media-object__text">
-                              <span>Comments</span>
-                                &ensp;<span class="article-reading-time">(&hairsp;14
-                                  min&hairsp;)</span>
-                            </span>
-                          </div>
-                        </a>
-                      </details>
-                    </article>
-                    <article>
-                      <details
-                        class="article-expander"
-                        data-action="toggle-native-accordion"
-                        data-accordion-key="https://windi.app/"
-                        open
-                      >
-                        <summary class="article-expander__title">Show HN: Windi – knowledge management and sharing platform based on short notes</summary>
-                        <a class="article-summary-link article-summary-box-outer" href="https://windi.app/">
-                          <div class="article-summary-box-inner media-object">
-                            <span class="media-object__text">
-                              <span>Comments</span>
-                            </span>
-                          </div>
-                        </a>
-                      </details>
-                    </article>
-                    <article>
-                      <details
-                        class="article-expander"
-                        data-action="toggle-native-accordion"
-                        data-accordion-key="https://www.thediff.co/p/the-factorio-mindset"
-                        open
-                      >
-                        <summary class="article-expander__title">The Factorio Mindset</summary>
-                        <a class="article-summary-link article-summary-box-outer" href="https://www.thediff.co/p/the-factorio-mindset">
-                          <div class="article-summary-box-inner media-object">
-                            <span class="media-object__text">
-                              <span>Comments</span>
-                                &ensp;<span class="article-reading-time">(&hairsp;11
-                                  min&hairsp;)</span>
-                            </span>
-                          </div>
-                        </a>
-                      </details>
-                    </article>
-                    <article>
-                      <details
-                        class="article-expander"
-                        data-action="toggle-native-accordion"
-                        data-accordion-key="https://venhance.github.io/napkin/Napkin.pdf"
-                        open
-                      >
-                        <summary class="article-expander__title">An Infinitely Large Napkin [pdf]</summary>
-                        <a class="article-summary-link article-summary-box-outer" href="https://venhance.github.io/napkin/Napkin.pdf">
-                          <div class="article-summary-box-inner media-object">
-                            <span class="media-object__text">
-                              <span>Comments</span>
-                                &ensp;<span class="article-reading-time">(&hairsp;514
-                                  min&hairsp;)</span>
-                            </span>
-                          </div>
-                        </a>
-                      </details>
-                    </article>
-                    <article>
-                      <details
-                        class="article-expander"
-                        data-action="toggle-native-accordion"
-                        data-accordion-key="https://www.dailyprincetonian.com/article/2022/02/stem-intro-courses-humanites-exploration"
-                        open
-                      >
-                        <summary class="article-expander__title">Why won’t anyone teach me math?</summary>
-                        <a class="article-summary-link article-summary-box-outer" href="https://www.dailyprincetonian.com/article/2022/02/stem-intro-courses-humanites-exploration">
-                          <div class="article-summary-box-inner media-object">
-                            <span class="media-object__text">
-                              <span>Comments</span>
-                                &ensp;<span class="article-reading-time">(&hairsp;5
-                                  min&hairsp;)</span>
-                            </span>
-                          </div>
-                        </a>
-                      </details>
-                    </article>
-                    <article>
-                      <details
-                        class="article-expander"
-                        data-action="toggle-native-accordion"
-                        data-accordion-key="https://www.diegofreijo.com/blog/rlox-vm-a-lox-interpreter-in-rust-part-1/"
-                        open
-                      >
-                        <summary class="article-expander__title">Crafting a Lox Interpreter in Rust, Part 1</summary>
-                        <a class="article-summary-link article-summary-box-outer" href="https://www.diegofreijo.com/blog/rlox-vm-a-lox-interpreter-in-rust-part-1/">
-                          <div class="article-summary-box-inner media-object">
-                            <span class="media-object__text">
-                              <span>Comments</span>
-                                &ensp;<span class="article-reading-time">(&hairsp;9
-                                  min&hairsp;)</span>
-                            </span>
-                          </div>
-                        </a>
-                      </details>
-                    </article>
-                    <article>
-                      <details
-                        class="article-expander"
-                        data-action="toggle-native-accordion"
-                        data-accordion-key="https://www.nytimes.com/2022/02/11/technology/airtags-gps-surveillance.html"
-                        open
-                      >
-                        <summary class="article-expander__title">I used Apple AirTags, Tiles and a GPS tracker to watch my husband’s every move</summary>
-                        <a class="article-summary-link article-summary-box-outer" href="https://www.nytimes.com/2022/02/11/technology/airtags-gps-surveillance.html">
-                          <div class="article-summary-box-inner media-object">
-                            <span class="media-object__text">
-                              <span>Comments</span>
-                                &ensp;<span class="article-reading-time">(&hairsp;10
-                                  min&hairsp;)</span>
-                            </span>
-                          </div>
-                        </a>
-                      </details>
-                    </article>
-                    <article>
-                      <details
-                        class="article-expander"
-                        data-action="toggle-native-accordion"
-                        data-accordion-key="https://www.washington.edu/news/2022/02/11/smartphone-app-vibrate-single-drop-of-blood-determine-how-well-clots/"
-                        open
-                      >
-                        <summary class="article-expander__title">App can vibrate a single drop of blood to determine how well it clots</summary>
-                        <a class="article-summary-link article-summary-box-outer" href="https://www.washington.edu/news/2022/02/11/smartphone-app-vibrate-single-drop-of-blood-determine-how-well-clots/">
-                          <div class="article-summary-box-inner media-object">
-                            <span class="media-object__text">
-                              <span>Comments</span>
-                                &ensp;<span class="article-reading-time">(&hairsp;6
-                                  min&hairsp;)</span>
-                            </span>
-                          </div>
-                        </a>
-                      </details>
-                    </article>
-                    <article>
-                      <details
-                        class="article-expander"
-                        data-action="toggle-native-accordion"
-                        data-accordion-key="https://github.com/chrisbra/csv.vim"
-                        open
-                      >
-                        <summary class="article-expander__title">Csv.vim: A Filetype plugin for CSV files</summary>
-                        <a class="article-summary-link article-summary-box-outer" href="https://github.com/chrisbra/csv.vim">
-                          <div class="article-summary-box-inner media-object">
-                            <span class="media-object__text">
-                              <span>Comments</span>
-                                &ensp;<span class="article-reading-time">(&hairsp;35
-                                  min&hairsp;)</span>
-                            </span>
-                          </div>
-                        </a>
-                      </details>
-                    </article>
-                    <article>
-                      <details
-                        class="article-expander"
-                        data-action="toggle-native-accordion"
-                        data-accordion-key="https://slimemoldtimemold.com/2022/02/10/the-scientific-virtues/"
-                        open
-                      >
-                        <summary class="article-expander__title">The Scientific Virtues: Stupidity, Arrogance, Laziness</summary>
-                        <a class="article-summary-link article-summary-box-outer" href="https://slimemoldtimemold.com/2022/02/10/the-scientific-virtues/">
-                          <div class="article-summary-box-inner media-object">
-                            <span class="media-object__text">
-                              <span>Comments</span>
-                                &ensp;<span class="article-reading-time">(&hairsp;43
-                                  min&hairsp;)</span>
-                            </span>
-                          </div>
-                        </a>
-                      </details>
-                    </article>
-                </section>
-              </section>
-            </li>
-            <li class="card__section">
-              <section class="js-toggle-accordions-scope">
-                <h3 class="source-heading">
-                  <button
-                    class="source-heading__name"
-                    data-action="toggle-accordions"
-                    title="Click to toggle the source, Ctrl + click to toggle all."
-                  >知乎日报</button>
-                  <a class="source-heading__link" href="https://news-at.zhihu.com/api/4/stories/latest?client&#x3D;0">Open</a>
-                </h3>
-                <section class="articles-per-source">
-                    <article>
-                      <details
-                        class="article-expander"
-                        data-action="toggle-native-accordion"
-                        data-accordion-key="https://daily.zhihu.com/story/9745303"
-                        open
-                      >
-                        <summary class="article-expander__title">食品行业为什么不能出于安全性和顺应用户对健康的追求，减去食物中的糖和不使用氢化油脂？</summary>
-                        <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9745303">
-                          <div class="article-summary-box-inner media-object">
-                            <span class="media-object__text">
-                              <span>知乎用户，用最通俗的语言说最好玩的食品营养学
-阅读原文
-
-糖的替换是个高难度的活儿。
-大家可能会想，减糖不是把糖去掉，加入一样甜度的代糖就行了吗？
-没那么简单。
-首先，你得保证「减糖后的食品好吃」。
-其次，你得把减糖做成「完整的解决方案」。
-
-什么叫保证「减糖后的食品好吃」？
-甜除了「甜度」外，还有「甜味」的区别。
-大家想想，芒果、橙子这些水果的甜味和方糖的甜味是不是不一样？
-那是果糖和蔗糖甜味的区别。
-对于五花八门的代糖，甜味和蔗糖就差得更远了。
-个人汇总的代糖分类，供参考
-比如，罗汉果苷、甜菊糖苷有强烈的「甘味」，可以在嘴里十几分钟不消失；糖精有一股金属的味道等等。
-这是其一。
-另外，不同的糖和代糖，甜的释放速度也不一样。
-有的糖吃进去马上会释放甜味，然后迅速消失；有的要吃进去好几秒，人才会感知到甜味。
-这是其二。
-不同的糖，甜释放的速度不一样
-所以，对于消费者来说：
-你把糖换了没关系，但甜度、甜味和释放的速度得保证和以前一样吧？
-对不对？
-不然别说消费者不买单了，老板就能把你给 KO 掉。
-像现在卖的比较好的「0 糖气泡水」、「0 糖乳茶」等，代糖的方案是市场比较认可的，用的也是最接近蔗糖味道的赤藓糖醇和三氯蔗糖。
-但味觉灵敏的人还是能喝出来和蔗糖的区别。
-你说甜味模拟有多难？
-而且，这还只是第一小步。
-
-第二步，你得搞定减糖后的副作用。
-糖在食品里面不仅仅提供甜味，特别是对于固体食品。
-比方说，糖在谷物棒、糖葫芦和沙琪玛这些食品里有粘合剂的作用。
-如果减糖以后没有补充新的粘合剂，这些食品都会变成散落的结构。
-图片来源：pixabay
-还有，糖可以改变食品的抗冻结能力，给冰淇淋带来细腻、柔滑的口感。
-如果没有糖，冰淇淋吃起来会更像冰沙、刨冰那种沙沙的口感。
-图片来源：pixabay
-再比方说，糖有吸水保湿的能力，让面包、蛋糕保持湿润、柔软的口感。
-如果缺少糖，刚出炉的面包会在几小时内失水，变成法棍那样的口感。
-图片来源：pixabay
-从技术难度上来说，糖在固体食品里的替代要远比饮料类食品难。
-这也是为什么奶茶、咖啡这些饮料容易减糖或者定制化「五分糖」，但面包、蛋糕这种固体食品很少有类似的选项。
-对于大食品行业来说，现在减糖的技术还不成熟。
-如果硬要赶鸭子上架的话，会造成食品某方面使用体验的下降。
-甚至，会让大家变成「喷射战士」。
-是的，说的就是某乎月饼里面代糖的不当使用 。
-所以，题主说食品行业没有减糖，其实可以理解。
-因为技术的不成熟，现在行业只能在部分饮料里面做到减糖，没有能力去做全面的推广。
-而且，要全面推广的话需要有完整的减糖方案，里面可不仅仅包含技术。
-
-什么是「完整的减糖方案」？
-举个简单的例子。
-电灯的发明能解决照明的问题吗？
-不能。
-电灯 + 供电系统才是一套解决照明问题的解决方案。
-在 1850 年的时候，美国已经有 400 多家煤气灯企业了；但直到 1890 年前后供电系统完成商业化后，电灯才开始逐步地扩大范围应用。
-爱迪生和白炽灯
-同样，糖的替代也不是食品企业把技术做好就完事了。
-食品企业做好应用技术，上游供应商做好代糖，下游做好相关设备(辅材)，才是一套完整的解决方案。
-比如，上面说到了对代糖的搭配使用，但这种搭配也是有限度的。
-原料太差的话，巧妇也难为劣米之炊。
-上游供应商开发出更接近蔗糖特性的代糖，才是从根源上解决问题的方法。
-目前，我们已经看到越来越多好的代糖被开发出来了。
-比如阿洛酮糖，被国内外专家、投资者认为蔗糖最理想的替代品之一，目前在国内已经准备工业化生产和推广了。
-在食品应用领域，D- 阿洛酮糖具有甜度高、溶解性好、低卡路里和低血糖反应等优点，被认为是最理想的蔗糖替代品之一。在食品中添加 D- 阿洛酮糖，不仅能提高它的胶凝度，还可以与食品蛋白发生美拉德反应改善其风味。2011 年，D- 阿洛酮糖被 FDA 认证安全，可在食品和膳食领域作为添加剂使用。
-其次，代糖的应用也需要各种设备、辅材的加持。
-比如，部分代糖的溶解性、分散性不好，需要专用的设备去溶解；减糖的蛋糕保湿性下降，需要专用的保湿设备、包装来支持，等等。
-
-最后，像糖和脂肪这种关键原料的替换是个高难度、系统性的工程。
-这是一个摸着石头过河的过程，不是短短几年能做好的。
-但是，现在也已经看到曙光了，不是吗？
--end.
-阅读原文</span>
-                            </span>
-                          </div>
-                        </a>
-                      </details>
-                    </article>
-                    <article>
-                      <details
-                        class="article-expander"
-                        data-action="toggle-native-accordion"
-                        data-accordion-key="https://daily.zhihu.com/story/9745348"
-                        open
-                      >
-                        <summary class="article-expander__title">如果一个人染上了艾滋病，那么他还能活多久？</summary>
-                        <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9745348">
-                          <div class="article-summary-box-inner media-object">
-                            <span class="media-object__text">
-                              <span>kkhenry，魔都三甲医生｜科研内卷工人｜业余颜值博主
-阅读原文
-
-对这个问题好像没有人认真的去查下数据，那么我（作为国际艾滋病日出生的且当医生的人）
-就去检索了下文献。
-首先理清两个概念，HIV 感染者，和艾滋病患者。
-HIV 感染者是指明确感染 HIV 病毒，但尚未出现艾滋病临床症状的人。他们体内有病毒，免疫力可能有下降，但并没有达到艾滋病免疫缺陷的程度。
-艾滋病患者，是指已经出现艾滋病免疫缺陷症状的患者，患者体内病毒不再受控制，免疫力也大幅下降，出现各种机会感染、肿瘤等。
-我先放上我能找到最久远的关于生存期的文献。
-
-1988 年，受限于当时检测技术和对疾病的认知不够，人们无法对 HIV 感染者进行统计，所以只有艾滋病患者的数据。患者一旦确诊艾滋病，生存期 9-13 个月。
-接下来是最新的，发表在《JAMA》杂志的艾滋病诊疗指南，
-
-在这篇国际性指南共识中，开篇即提到，
-
-The success of ART has led to a substantial increase in survival such that persons with HIV now live a near-normal lifespan. As a re- sult, increasing numbers of persons with HIV are living to the age of 50 years and older.
-翻译：“得益于抗逆转录药物的使用，HIV 感染者的可以生存到 50 岁后甚至更老。”
-这是一个模糊的说法，那么真实的数据是如何呢？
-我找到了发表在《JAMA NetworkOpen》上的研究，统计数据来自于美国 2000-2016 年的 HIV 感染者。
-
-研究主题就是讨论 HIV 感染以后能活多久的问题（在使用抗逆转录药物的情况下）
-
-在统计的 39000…</span>
-                            </span>
-                          </div>
-                        </a>
-                      </details>
-                    </article>
-                    <article>
-                      <details
-                        class="article-expander"
-                        data-action="toggle-native-accordion"
-                        data-accordion-key="https://daily.zhihu.com/story/9745316"
-                        open
-                      >
-                        <summary class="article-expander__title">现在为什么很少有人去创作古典音乐了？</summary>
-                        <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9745316">
-                          <div class="article-summary-box-inner media-object">
-                            <span class="media-object__text">
-                              <span>Molho，lbg小粉丝/音乐制作/音频软硬件/交互装置艺术
-阅读原文
-
-最近收到了不少邀请，所以趁假期简单写一下吧，如果有错误或者遗漏欢迎指出。本文有很多音视频内容，如果能一边看一边听会更容易理解这个问题。
-先上结论：如果我们从时间脉络上来看的话，“古典音乐”的内涵其实一直在扩大，广义上的古典音乐，直到今天还是有很多人去创作的。但是如果指的是“狭义的古典音乐”，那么确实是已经死了。但是音乐的发展不是一个一蹴而就的过程，一种风格的诞生与式微也必然需要漫长的时间，所以本文将主要按照时间顺序（曲目大致按照作曲家的生卒年排序）来梳理“古典音乐”的发展过程，并且说一说为什么古典音乐虽然死了，但是又没死（bushi）。
-一、早期音乐（Early Music）
-早期音乐，主要指的是中世纪到文艺复兴时期的音乐，当然也有文献将巴洛克时期的音乐也归到早期音乐的范畴里。这一时期的音乐，通常不被认为属于“古典音乐”的范畴，但是可以认为是西方音乐的初始的形态。更早期的就不说了，说一下这一时期比较有代表性的几种音乐类型：格里高利圣咏（Gregorian chant）和奥尔加农（Organum）。
-1. 格里高利圣咏
-格里高利圣咏是一种由人声演唱的，单声部无伴奏的教会音乐，记谱法与现代的五线谱也有一些差别，用的是纽姆记谱法（Neuma）。这种音乐虽然很原始，但是后续的多声部音乐以及复调音乐却是在这种音乐形态上发展起来的。
-格里高利圣咏 - Deum Verumhttps://www.zhihu.com/video/1474785841633882112
-2. 奥尔加农
-奥尔加农则是在格里高利圣咏的基础上又增加了更多的声部，属于最早的多声部音乐。最初的奥尔加农是在格里高利圣咏的声部下方增加一个平行五度或是四度的固定音程声部，又称为“平行奥尔加农”，第二个声部并不具有独立性。不过随着时间的发展，作曲家也开…</span>
-                            </span>
-                          </div>
-                        </a>
-                      </details>
-                    </article>
-                    <article>
-                      <details
-                        class="article-expander"
-                        data-action="toggle-native-accordion"
-                        data-accordion-key="https://daily.zhihu.com/story/9745361"
-                        open
-                      >
-                        <summary class="article-expander__title">羽生结弦 4A 首次被国际滑联「认定」，这一认定具有怎样的意义？羽生结弦距离完成 4A 还差多远？</summary>
-                        <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9745361">
-                          <div class="article-summary-box-inner media-object">
-                            <span class="media-object__text">
-                              <span>Alkaid.K，微信公众号/头条号：行走的彩蛋 （kukushkabear）
-阅读原文
-
-任何跳跃要被认证需要几个条件：
-1.出现国际滑联举办的比赛，且整个裁判组都具备国际裁判的资格。各国的国内赛不管水准多高，都不在此列。
-2.被裁判认定为起跳合规，周数完全，落冰用脚正确，且没有摔倒，扶冰，踏出等落冰时的问题。
-就以四周半（4A）的简短历史来看，第一个在满足条件一的情况下尝试的是前俄国选手（小）阿瑟·德米特里耶夫。他在 2018 年的大奖赛俄国站上成为了第一个吃螃蟹的人。但是他那一次的跳跃周数严重不足，被判降组，所以基础分值依旧是按三周半（3A）来计算。
-羽生今天尝试四周半依旧没被认证，因为存在落冰摔倒和周数不足被判存周两个主要问题。
-不过相对于三年多前小德米特里耶夫的尝试，羽生今天的尝试进步在于周数不是被判降组（《），而是被判存周（＜）。如果是降组的跳跃，基础分值是按照同种跳跃小一个周数计算，而存周的基础分值则是以该跳跃基础分值的 80%计算。
-所以德米特里耶夫当年的四周半尝试的基础分值是 8，也就是三周半的基础分值，而今天羽生的四周半的基础分值是 10，也就是四周半基础分值 12.5 的 80％。
-行百里半九十，无论接下来是谁要挑战四周半的话，要取得突破首先必须要周数充足且站住站稳才能称得上是成功的尝试。考虑到冬奥周期结束后国际滑联可能会大幅修改规则，对技术创新是鼓励还是压制尚是未知之数，下个周期是否有其他人愿意挑战这个跳跃依旧充满不确定性。而现在，有意愿挑战这一跳跃的只有两个人，除了羽生之外就是上文提到的德米特里耶夫。不过后者水平一般年龄不小，入籍美国后未必能得到足够的国际赛场出场机会来挑战这一跳跃。羽生的话，同样需要保持健康并参加足够多的比赛，才有挑战成功的机会。
-阅读原文</span>
-                            </span>
-                          </div>
-                        </a>
-                      </details>
-                    </article>
-                    <article>
-                      <details
-                        class="article-expander"
-                        data-action="toggle-native-accordion"
-                        data-accordion-key="https://daily.zhihu.com/story/9745293"
-                        open
-                      >
-                        <summary class="article-expander__title">一个普通高中生研发出了朊病毒的解药，能不能保送北大医学部？</summary>
-                        <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9745293">
-                          <div class="article-summary-box-inner media-object">
-                            <span class="media-object__text">
-                              <span>知乎用户，基因治疗，生物科普，重度猫奴
-阅读原文
-
-朊病毒解药研发是体力劳动，不是脑力劳动。除非手多如蜈蚣，否则劳动量之大，高中生还真做不出。
-
-讲讲朊病毒解药怎么做。
-首先，先看下朊病毒致病原理：
-朊病毒（PrPsc)是个构象突变的蛋白，结合到正常蛋白(PrPc)上会导致正常蛋白结构变化，最后都变成突变蛋白，就像瘟疫一样在大脑中传染。
-
---
-所以对付朊病毒的方法有两种：
-1）把大脑里现有的 PrPsc 全降解掉，干掉源头。
-2）把 PrPsc 和 PrPc 结合位点封闭掉，切断传播途径。
---
-下面分别来讲：
-1. 把大脑里现有的 PrPsc 全降解掉，干掉源头。
-目前针对蛋白降解这块最好的工具叫 PROTAC。可以把它看作一个保洁人员，检测到特定不正常的蛋白，在它上面贴个标签，然后把它扔进垃圾回收厂。
-第一步，PROTAC 分子把黄色的垃圾蛋白和蓝色的 E3 连接酶粘起来。认为这个蛋白是垃圾，先扔进垃圾桶。
-
-第二步，绿色的 E2 酶过来，上面带了个泛素化标签，把标签贴到目标蛋白上，确定它是个垃圾。
-
-第三步，更多 E2 酶过来，不停在垃圾蛋白上贴标签，真垃圾啊，真垃圾，真垃圾啊，真垃圾。
-
-第四步，垃圾标签多到可以被识别，整个垃圾蛋白被扔进垃圾回收站（蛋白酶体），蛋白全面降解。
-组图截图自 AstraZeneca PROTAC 科普视频
-所以 PROTAC 最关键的是第一步，筛选出那个 PROTAC 分子，它识别 E3 连接酶的元件可以固定，最重要的它要有个元件特异识别朊病毒 PrPsc，不能识别正常蛋白 PrPc，也不能识别脑中其他蛋白。
-怎么筛选到这个 PROTAC 分子呢？
-可以用细胞实验做筛选。
-在细胞里表达一个朊病毒，后面连接一个绿色荧光蛋白 PrPsc-EGFP，把需先做好的化合物库加进去，如果 PrPsc-EGFP 被降解，就没绿色荧光了。
-由此可以高通量筛到可以降解朊病毒的 PROTAC 分子。
-怎么高通量筛呢？
-
-用自动化工作站，机器不停往细胞孔板里加样，96 个一板，筛 100 板就有 1 万个 PROTAC 分子了。
-所以……高中生除非是蜈蚣，手多干得快，否则根本不可能找到 能降解朊病毒的 PROTAC 分子。
-分子库要用钱买，或者找 CRO 公司做，价格之高，啧啧啧。
-有钱、有人力、有物力才做得起来。
-好吧，既然筛选 PROTAC 分子又贵又费劳力，有没有不降解朊病毒 PrPsc 也能治疗疾病的方法呢？
-有。
---
-2.筛选降低朊病毒 PrPsc 和正常蛋白 PrPc 结合力的分子。
-你没看错，又是筛选。
-这里举个 BIFC 的例子
-BIFC 就是拆出两个荧光蛋白，一个加到朊病毒 PrPsc 上，一个加到正常蛋白 PrPc 上，当 PrPsc 和 PrPc 结合时发光。
-
-如果小分子可以抑制朊病毒和正常蛋白结合，荧光不亮，由此可以筛选到影响 PrPsc 结合的分子。
-一样高通量，筛上万个分子。
---
-总结：
-所以你看到了，朊病毒的解药最好是能降解朊病毒 PrPsc 的分子，比如 PROTAC 分子；次一点的话是影响朊病毒 PrPsc 与正常蛋白 PrPc 结合的分子。
-原理大家都懂，方法也现成，做吗？
-没有人力、物力、财力。
-现代医药已经不是“我有一个好想法”就能做出成果的年代，而是往下筛选发掘才能出成果的庞大产业，没有支持很难做出突破性结果。
-高中生能做的话……做条蜈蚣吧，手多干活快。
-
-评论区对 PROTAC 的计算机模拟很感兴趣，我举个例子：
-2022 年 2 月 9 日，CelerisTx 宣布与德国默克（Merck KGaA）达成一项研究合作协议，利用 CelerisTx 基于图形的人工智能（AI）技术平台，发现和设计新型小分子结合剂和双功能蛋白降解剂。
-PROTACs 技术和分子胶（molecular glues）正成为新药研发的热点之一。CelerisTx 开发的Celeris One 平台是一个能预测生物分子相互作用的发现引擎，可生成符合相关降解剂成功标准的化合物，并将这一知识扩展到合成和生化验证。这一发现引擎的应用有望简化强效降解剂的发现方式，同时提高上游研发的生产力。
-所以计算引导药物开发正在不断推进，未来会大大降低人力物力，只是现在还需要让子弹再飞一会儿。
-阅读原文</span>
-                            </span>
-                          </div>
-                        </a>
-                      </details>
-                    </article>
-                </section>
-              </section>
-            </li>
-        </ul>
-      </section>
 
     <footer>
-      <a class="footer-link" href="https://github.com/7Qi7Qi/RSSFeeder/actions/runs/1974908631">
-        <time id="build-timestamp" datetime="2022-03-13T00:55:25.114Z">2022-03-13T00:55:25.114Z</time>
+      <a class="footer-link" href="https://github.com/7Qi7Qi/RSSFeeder/actions/runs/1978063898">
+        <time id="build-timestamp" datetime="2022-03-14T00:58:57.752Z">2022-03-14T00:58:57.752Z</time>
       </a>
       <a class="footer-link" href="https://github.com/osmoscraft/osmosfeed">osmosfeed 1.14.4</a>
     </footer>
