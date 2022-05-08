@@ -2,10 +2,532 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://7qi7qi.github.io/RSSFeeder/index.html</id>
     <title>osmos::feed</title>
-    <updated>2022-05-07T01:08:54.298Z</updated>
+    <updated>2022-05-08T01:12:01.004Z</updated>
     <generator>osmosfeed 1.14.4</generator>
     <link rel="alternate" href="https://7qi7qi.github.io/RSSFeeder/index.html"/>
     <link rel="self" href="https://7qi7qi.github.io/RSSFeeder/feed.atom"/>
+    <entry>
+        <title type="html"><![CDATA[Kubernetes 1.24新特性解读]]></title>
+        <id>http://weekly.dockone.io/article/2434904</id>
+        <link href="http://weekly.dockone.io/article/2434904"/>
+        <updated>2022-05-08T01:11:55.984Z</updated>
+        <summary type="html"><![CDATA[北京时间5月4日， Kubernetes 1.24版正式发布了，像之前的几个版本一样，给Kubernetes带来了大大小小多达几十项的变化。几十项涉及到基础设施、运维和应用开发的方方面面，可能很难有人能够全部搞懂，本文也不打算一一罗列，谨结合自己的体会，谈几个应用开发者可能比较关注的点。
+
+
+
+Kubernetes 1.24版Logo：观星者
+首当其冲是对dockershim支持的正式移除。在一年多以前，Kubernetes 1.20版本宣布对Docker的支持置为“废弃（Deprecated）”状态，不再演进，并“将在未来的某个版本中移除（Will be removed）”。这次发布的1.24版即是所谓“正式移除Docker支持”的版本，然而，Docker公司却宣称，在Kubernetes环境中，可以继续使用Docker，其Docker Desktop产品的用户仍然能够无缝使用Kubernetes的最新发布版本。这是怎么回事？
+事实上，仔细阅读Kubernetes官方的1.24版的Change Log，你会发现，其对于Docker支持的表述与一年前的1.20版有微妙的不同。
+
+
+
+1.20版Change Log 截图
+
+
+
+
+1.24版Change Log截图
+Kubernetes移除Docker主要是因为Docker长期以来不支持Kubernetes主推的CRI容器运行时接口标准，因此Kubernetes社区维护了一个dockershim组件专门用来对接Docker。
+这在当年Docker具备垄断地位时非常有必要，随着containerd和kata等容器运行时发展成熟，尤其是containerd在生产环境中大量使用，Kubernetes社区决定不再维护dockershim。
+然而，最近两年Mirantis（已于2019年11月收购Docker Enterprise部门）…]]></summary>
+        <author>
+            <name>阿娇</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[谷歌对Web3的未来持乐观态度]]></title>
+        <id>http://weekly.dockone.io/article/2434903</id>
+        <link href="http://weekly.dockone.io/article/2434903"/>
+        <updated>2022-05-08T01:11:55.928Z</updated>
+        <summary type="html"><![CDATA[谷歌云团队正组建专项团队，负责为区块链应用程序开发人员构建工具服务，目的自然是把握加密货币与相关项目蓬勃发展的这波大好势头。
+谷歌云副总裁Amit Zavery在周五写给员工的邮件中指出，公司希望能让Google Cloud Platform成为区块链领域开发者们的首选方案。
+他在邮件中写道，“虽然Web3的探索和推广仍处于早期阶段，但这一市场已经展现出巨大的潜力，不少客户已经要求我们增加对Web3以及加密货币相关技术的支持。”
+Web3的先驱们已经建立起一套去中心化的点对点系统，希望能用这些系统建立起下一代互联网。其背后的基本理念直接对现有互联网态势提出挑战，甚至喊出了推翻由亚马逊、谷歌、Meta Platforms等互联网巨头垄断的旧世界这一激进口号。
+面对阿里巴巴、亚马逊、微软等云基础设施大厂带来的重重压力，谷歌希望另辟蹊径、为有意编写Web3软件的开发人员提供后端服务。
+Zavery在采访中表示，“我们并不想直接参与到由加密货币掀起的这波淘金热当中。我们更倾向于向企业提供技术，帮助他们在当前业务中充分利用Web3的分布式特性。”
+作为前甲骨文公司高管，Zavery于2019年正式加盟谷歌云部门。几个月前，谷歌正式任命甲骨文前产品开发总裁Thomas Kurian为云部门的下一届负责人。
+在组建Web3工具开发团队的过程中，谷歌还打算采取进一步举措以证明自己的严肃态度。今年1月，随着不可替代代币（NFT）业务的迅猛增长，谷歌云部门也公布了面向客户的数字资产合作计划。谷歌还在认真观察客户如何使用加密货币进行支付。
+Zavery解释道，展望未来，谷歌可以设计出一套供其他企业使用的系统、帮助人们更轻松地探索区块链数据，同时简化区块链节点的构建与运行流程、降低交易验证和记录的门槛。他还补充道，谷歌工具还可以运行在其他计算环境中，例如AWS。
+但随着投资者与加密货币这类高风险资产保持距离，今年以来即使是成熟度最高的比特币也呈现出价格疲态。截至本周四晚，比特币在年内的价格已经下跌达21%，表现甚至逊于标准普尔500指数（下跌约13%）。
+但Zavery认为，区块链应用程序并不会受币圈波动的影响，而是继续进军主流市场，在金融服务、零售等行业中发挥愈发重要的作用。
+耐克公司CEO John Donahoe就在今年3月的电话会议上告知分析师，这家鞋业巨头计划建立Web3产品与体验。华纳音乐集团同样对此表现出探索的兴趣。
+华纳音乐集团CEO Steve Cooper在今年第一季度财报电话会议上提到，“从数字藏品到音乐版税，Web3为音乐行业勾勒出了令人兴奋的前景，也将帮助我们的艺术家以更有趣、更具创新性的方式对接数百万新粉丝。”
+于2019年加入谷歌的前花旗集团高管James Tromans将领导这支新建的产品与工程团队，并直接向Zazvery汇报工作。Zavery还指出，该团队将汇聚起以公司或个人名义参与Web3开发的谷歌内部员工。
+目前，谷歌的云计算业务仍落后于亚马逊和微软，但这部分业务的增长速度已经超过了核心广告部门。谷歌母公司Alphabet CFO Ruth Porat上周表示，谷歌云部门也是目前员工人数增长最快的分支。
+原文链接：Google’s cloud group forms Web3 team to capitalize on booming popularity of crypto]]></summary>
+        <author>
+            <name>Andy_Lee</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[New Assembly Like Programming Language?]]></title>
+        <id>https://github.com/wellang/well</id>
+        <link href="https://github.com/wellang/well"/>
+        <updated>2022-05-08T00:03:21.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Web Development for Beginners – A Curriculum]]></title>
+        <id>https://github.com/microsoft/Web-Dev-For-Beginners</id>
+        <link href="https://github.com/microsoft/Web-Dev-For-Beginners"/>
+        <updated>2022-05-07T23:40:16.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[California Targets Loud Exhaust with Sound Activated Cameras]]></title>
+        <id>https://www.autoweek.com/news/technology/a39906304/california-targets-loud-exhaust-with-sound-activated-camera-enforcement/</id>
+        <link href="https://www.autoweek.com/news/technology/a39906304/california-targets-loud-exhaust-with-sound-activated-camera-enforcement/"/>
+        <updated>2022-05-07T23:28:44.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[早餐要怎么吃才能营养均衡？]]></title>
+        <id>https://daily.zhihu.com/story/9748392</id>
+        <link href="https://daily.zhihu.com/story/9748392"/>
+        <updated>2022-05-07T23:06:17.000Z</updated>
+        <summary type="html"><![CDATA[心尖上的刀客，三甲医院心脏大血管外科及心脏移植中心医生
+阅读原文
+
+都说「一日之计在于晨」，而早餐是唤醒身体，补给能量的开始。丰富又营养的早餐安排，可以增加幸福感，身体活力满满一整天。但早餐也是最容易被人忽略的一餐，很多人都在随意对付甚至不吃早餐。
+你的早餐安排还是简单的牛奶配鸡蛋，油条配豆浆，三明治配果汁......吗？健康又营养的早餐应该如何安排呢？
+高质量的早餐，重在营养均衡。早餐作为三餐之一，其食物的搭配，关乎到日常营养补充是否能够满足生活所需。传统而流行的早餐虽然方便，但营养搭配上缺点较多，我们应注意调整改善。
+鉴于我们每天要进食不低于 12 种的食物，所以早餐安排应丰富食物种类，遵循「五谷杂粮，荤素搭配，多样适量」的原则，选择全面、多样化的食物，通过简单健康的烹调方式，制作开胃的、丰富多彩的早餐，以保证各大营养素的补充。
+关老师建议多安排高营养密度和颜色丰富的食物，也要关注蔬菜、水果等富含膳食纤维食物的补充噢。
+
+营养师眼中的满分营养早餐
+满分的营养早餐应具备谷薯类主食，优质蛋白质食物（如肉蛋奶豆制品），果蔬和坚果四大类食物，建议采用蒸、煮、炒等清淡健康的方式烹制噢。
+1、谷薯类主食，提供碳水化合物，是人体能量的主要来源。
+早餐的主食安排应不低于 50 克，其中 1/3 为杂粮或薯类，可以选择杂粮粥、蒸红薯、蒸玉米等，烹制简单又快捷。早餐安排粗粮类主食，不仅可以快速充饥，为大脑及时补充能量，避免低血糖，焕发身体活力；也有助于促进消化液的分泌，保护胃肠功能。
+2、蛋白质类食物，奶、蛋、豆类食物的安排应不低于两种。
+建议可选择奶类半杯以上（＞100g）、鸡蛋 1 个、肉或鱼 20 克，一杯豆浆或几块豆腐（约 25g）。蛋白质可以接替淀粉类主食，为人体持续供能，延长饱腹感，让早餐更扛饿。另外，补充多品种的蛋白质，可以均衡氨基酸比例，有助于人体各种蛋白质的合成和组织的更新，增强机体抵抗力。
+3、蔬菜和水果，是维生素和矿物质等营养素补充的重要来源。
+早餐可以选择蔬菜水果沙拉、炒蔬菜或凉拌菜等，建议水果和蔬菜各安排 100g 左右。果蔬中含有丰富的膳食纤维、维生素、矿物质和植物化合物。早餐进食适量的果蔬，不仅可以润肠通便，还有助于机体各项活动的正常运作，使身体充满活力。
+4、坚果，是高能量、高营养密度的食物，可提高早餐的营养质量，学生党可以合并在早餐，上班族可以放在加餐食用。
+建议任意选择核桃、松子、巴旦木、花生、瓜子等食物中的几种混合搭配，每天安排 10g 左右。坚果含有维生素 E、多种矿物质、不饱和脂肪酸等优质营养素，对预防肥胖、保护心脏、减少心血管疾病的发生等方面都有重要的作用。
+注意，早餐的食物热量供应应占全天所需热量的 30%，一定要吃好，切勿糊弄式解决噢。早餐的食物安排应尽可能多样化，建议参考我国居民膳食指南，合理安排上述四大类食物。
+另外，早餐需注意避免油炸、烧烤、熏制等食物（如油条、炸糕、培根、熏肠等）的摄入，以免加重身体负担。
+
+不同人群的早餐安排可以有哪些区别？
+早餐在四大类营养均衡的前提下，不同人群应学会根据各自的特点，适当替换或增减调整，以满足身体的需要。
+1、偏瘦人群
+一般瘦子的新陈代谢较快，早餐安排应注重保证充足的能量供应。建议保证 75g-100g 的主食，注意多安排鸡蛋、豆腐、瘦肉、鱼虾等高蛋白食物；蔬菜可以炒制为主，有时间建议做荤素菜。切记不能不吃早餐，长期以往会增加营养不良性脂肪肝、胆囊炎等的患病风险。
+2、超重和肥胖人群
+「减肥误区千万个，不吃早餐是其一」，不吃早餐不但不能减肥，还会增加肥胖的风险。对于肥胖者来说，早餐不能忽略，要学会调整食物搭配来减少热量的摄入。
+例如，主食可以多选择饱腹感较强的杂粮饼、杂豆粥或蒸粗粮；蛋白质类要选择低脂的食物如去皮禽肉、鱼、虾等，牛奶选择低脂或脱脂的；蔬果多选择富含膳食纤维、饱腹较强的，比如西兰花、紫甘蓝、苹果等深颜色食物；注意多采用拌、蒸等少油的方式烹制，不吃油炸食物及甜食。
+
+3、老年人
+应注意烹制较软、容易消化的食物。老年人活动量较少，且消化功能变差，容易出现便秘问题。所以，早餐制作上应注意安排充足水分、多纤维、易消化的食物。主食可选择杂粮粥、杂豆粥及蒸薯类食物，搭配一些优质蛋白汤羹如鸡蛋羹、牛肉番茄汤等。同时，也别忘了蔬菜的补充噢，注意用清淡少油的方式烹饪。
+4、高血糖人群
+早餐应注重粗粮的安排，进食时注意干湿分离。建议主食粗细参半，且以干制为主（如杂粮饭适量、燕麦片、蒸杂粮馒头等）；多选择富含优质蛋白和不饱和脂肪酸的食物，如鱼、虾、煮鸡蛋等；多选择粗纤维蔬菜和主食搭配着吃，可安排什锦拌菜、素炒或白灼青菜等；注意不能空腹吃水果，多选择低 GI 和低 GL 水果如苹果、圣女果等。
+
+明天开始，起床要好好吃早餐噢~
+阅读原文]]></summary>
+        <author>
+            <name>知乎日报</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[有哪些看似离生活很遥远但很必要的科学研究？]]></title>
+        <id>https://daily.zhihu.com/story/9748404</id>
+        <link href="https://daily.zhihu.com/story/9748404"/>
+        <updated>2022-05-07T23:06:12.000Z</updated>
+        <summary type="html"><![CDATA[浩浩耗，我有屠龙之术，欲翻流云起舞；我有苍茫之志，欲煎七海成田；
+阅读原文
+
+哈，看到这个问题，我居然脑中马上冒出了一堆答案.....
+而这一堆答案，都可以归属于一个名词范畴——基础研究（basic research）,当然，与之对应的还有一个名词——应用性研究（applied research）
+为什么这么说呢？想当年，我博士一毕业就去了企业，一个最主要的原因，就在于我不想继续做基础研究。而之所以不想继续做基础研究的原因，就是因为，它们往往离我们生活太远了，我甚至都无法让我爸妈理解，我博士期间盯着一个蛾子研究了 4 年，还维持很兴奋，到底是为了什么......
+
+那基础研究和应用性研究有什么区别呢？如果粗暴一点总结，大部分基础研究的出发点是为了填补人类对未知世界的认知，而应用性研究的出发点，是为了解决人类的某一种具体的需求。这就是为什么通常企业都只做应用型研究，而基础研究往往主要是在高校和科研机构中开展。
+
+这么一看，是不是就明白了，为什么已看到题目，我脑子马上蹦出了基础研究这个词。但是，虽然从现实层面来看，应用性研究好像确实更有价值，但是！我可以很负责任的告诉你，现在很多应用性研究的底子，都是从数十年前的基础研究中来的，甚至可以说，没有基础研究，就不会有应用性研究。
+下面就到了讲故事时间了，作为一个生物人，当然要给大家提一提，绿色荧光蛋白 （Green fluorescent protein：GFP）和水母的故事。
+1962 年，一个神奇的现象，引起了日本研究人员下村脩的兴趣，为什么有一种水母（维多利亚多管发光水母(Aequorea victoria)）会在晚上发光？随后，在他的推动下，他的团队在水母体内发现了冷光蛋白质水母素与绿色萤光蛋白，以及编码它们的基因。绿色萤光蛋白是一个由约 238 个氨基酸组成的蛋白质，从蓝光到紫外线都能使其激发，发出绿色萤光。整个发光过程，需要这两种蛋白的配合，且这个冷光蛋白质与钙离子（Ca2+）可产生交互作用。
+
+谁能料到，就这样一个在当时看上去平淡无奇，离我们生活很远，甚至在中途因为无法获取足够得研究经费一度被放弃的研究，却在其它研究学者的持续改良下，在几十年后彻底重新定义荧光显微镜，并且被做成了经典的分子生物学追踪体系，让很多的研究得到了极大的推动。
+比如把绿色萤光蛋白基因克隆到其它模式生物上进行表达，由于其发光的特性，常被用做报导基因（reporter gene），可以帮助研究人员对含有特定成分的细胞在体内进行追踪，比如我们想要了解神经系统的发育途径，就可以通过大脑中出现荧光的顺序来获取信息。而这些应用性研究的结论，又最终被用在医学上，使我们人类在日常生活中获益，所谓天道轮回，有没有感觉到很神奇？
+
+当然，2008 年 10 月 8 日，发现 GFP 的下村脩、后期改良 GFP 的美国科学家马丁·查尔菲和钱永健也因此，在 2008 年获得了当年的诺贝尔化学奖。
+
+当然类似的科学研究还有很多，比如当年花费 30 亿美金，由 6 国科学家共同参与，与曼哈顿原子弹计划和阿波罗登月计划齐名的人类基因组计划，在当时看来，无疑是跟大众的生活是毫不相干的研究，却在今天与我们每个人息息相关。
+
+比如，通过基因组比对，我们真的发现有一些突变与疾病的产生有相当的关联性，一些完全不抽烟，但患肺癌基因风险较高的人群，肺癌的患病率却比有些基因风险较低的重度烟民高出 40%。
+
+而现在的基因测序成本，已经降低到全民都可以接受的程度，那么，如果我们每个人从一出生就获得了自己的基因组数据，是不是就可以根据自己基因层面的风险，从小就开始针对性的注意自己的生活饮食习惯，从而极大的降低未来的患病概率呢？
+人均 120 岁的目标，说不定真的能在 21 世纪实现！
+
+
+
+阅读原文]]></summary>
+        <author>
+            <name>知乎日报</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[为什么很多人喜欢进球不多的足球比赛？]]></title>
+        <id>https://daily.zhihu.com/story/9748409</id>
+        <link href="https://daily.zhihu.com/story/9748409"/>
+        <updated>2022-05-07T23:06:03.000Z</updated>
+        <summary type="html"><![CDATA[JekyllHyde，一个在伦敦创投行业流浪的海派杂家
+阅读原文
+
+从五前锋到四后卫，
+足球的本质是追求攻守平衡。
+历届世界杯场均进球数
+我们可以看到一个很明显的现象：
+在经历的上古时期的野性发展之后，足球从一项偏重进攻的运动逐渐演化成了一项攻守平衡（甚至进攻难以防守）的运动。
+而且非常有意思的一点是——无论足球的风格如何，在大数据的平衡之下，场均进球数是高度趋同的。
+我来举五大联赛的例子：
+英超的特点是攻防转换快，对抗强；
+西甲的特点是技术流；
+德甲的特点是相对注重攻防的一体性和效率；
+意甲的特点是战术素养高，立足于防守体系；
+法甲的特点是浪漫足球。
+无论风格如何，场均进球数都在同一区间内，可见技战术风格特点会影响进球数，但确实不算大。
+
+究其本质，我想是因为两点：
+
+足球和战争的高度拟合性
+足球比赛允许平局存在
+
+体育是对战争的直接模仿。
+全攻全守足球的创造者、绰号「将军」的荷兰足球教父里努斯·米歇尔斯则更是直白：
+足球即战争
+
+他的足球哲学核心即是空间理论。在空间理论中，最重要的是两点：
+
+进攻时要让球场空间变大
+防守时要让球场空间变小
+
+进攻时，球员要充分利用球场的宽度和纵深，调动对方阵型横向移动，让对手球员间的间距变大，某个局部便会出现可利用空挡（进攻时要让球场空间变大）；
+而防守时，则要利用压缩对手的空间，尽可能地让“更小”的球门直接暴露在对手面前（防守时要让空间变小）
+这里就体现了足球赛场上的战争艺术：
+进攻和防御是战争中的两种基本作战形式。 二者是相互联系、相互转化的。
+进攻是最好的防守——谁在有限的赛场时间内掌握了更多的有效控球时间，谁就拥有更多创造额外空间的机会，谁就拥有更多破门的可能性。
+经历了几十年的发展，足球慢慢变成了空间和反空间的争夺战。
+而在空间与反空间的斗争中，我个人认为比较经典的是穆里尼奥的皇马和瓜迪奥拉的巴萨之争：
+瓜迪奥拉的 Tiki-taka，核心在于短距离传送和频繁跑动，核心理念是保持控球权，以减低后方防守球员的压力。此战术有别于传统的足球布阵理念，倾向于区域组织（zonal play）。
+而穆里尼奥的「摆大巴」，在对抗巴萨的时候的核心在于放弃控球，减少由攻转守的次数，而增加由守转攻的次数和效率。
+三年的时间，皇马完成了从 0-5 到 2-1 的蜕变。
+时下最经典的战役就是世界杯预选赛附加赛中北马其顿淘汰意大利的比赛。
+
+又因为足球比赛中允许有平局存在，因此战略目标就能更加灵活。
+究其本质，即是在面对强敌时，允许教练们将防守的优先级放得更高，先把篱笆扎紧，然后在对手体能下降或者专注力不集中的时候再准确地亮出锋利的匕首，以期完成致命的一击。
+即便赢不了，也可以收获 1 分的积分。
+因此，在足球比赛中，指挥的艺术就显得十分重要；
+也正因为足球比赛的进球不多，进球真的到来时的我们才会更加珍惜。
+2017 年 3 月 23 日，2018 年俄罗斯世界杯亚洲区预选赛 12 强赛，贺龙体育场，长沙雨夜，中国队 1:0 韩国队
+在以遭遇战为主的杯赛当中，攻守的平衡就显得更为重要。
+因此，有两种战术逐渐成为了主流：
+4-2-3-1 和三中卫体系。
+而这也成为了去年欧洲杯赛场使用频率最高的两种阵型。
+4-2-3-1 阵型：
+
+近几年来，4-2-3-1 近乎成为了一种标配阵容。
+4-2-3-1 阵型的基本配置是四后卫，双后腰，三个攻击型中场外加单前锋。双后腰中，一个负责扫荡，另一个负责出球。
+比如 2018 年的法国世界杯夺冠阵容，后腰线上就是博格巴 - 坎特的配置。
+
+而另一种体系则是三中卫体系。
+
+在 2020 欧洲杯，一共有 13 支球队用这个体系——奥地利、比利时、丹麦、芬兰、德国、匈牙利、荷兰、北马其顿、波兰、俄罗斯、苏格兰、瑞士和威尔士。在压迫战术中，这套体系允许球队在球场中间区域更加平衡，在攻守转换时由两名中场球员负责扫荡后防线前的空当。有些球队用的则是伪四后卫体系——比如英格兰，用右后卫 / 中后卫摇摆人凯尔沃克做首发，右边锋优选能够防守的萨卡，进攻由左后卫卢克肖发起。
+
+因此，足球的迷人之处，就在于战略的博弈：
+只要战术得当，即便生而为大卫，也能有机会战胜歌利亚。
+
+
+
+阅读原文]]></summary>
+        <author>
+            <name>知乎日报</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[人类能走出银河系吗？]]></title>
+        <id>https://daily.zhihu.com/story/9748416</id>
+        <link href="https://daily.zhihu.com/story/9748416"/>
+        <updated>2022-05-07T23:05:57.000Z</updated>
+        <summary type="html"><![CDATA[太空精酿
+阅读原文
+
+最核心的硬核约束是逃逸速度，不以人类意志为转移。
+在人类现有的认知范围内，万有引力定律、能量守恒定律和牛顿运动定律在宇宙中是普遍适用的，这也就衍生出了任何一个天体都有的航天器逃逸速度概念。
+可以简单理解为：在这个速度下，一个航天器拥有的动能终于和它对天体的重力势能平衡了，动能可以完全转化为势能。
+再可以简单理解为：这货飞出去后，即便被天体引力拖着不断减速，但它依然能逃到无限远的地方，速度也变得无限趋近于零。
+只要超过逃逸速度，就肯定能永不回头。
+显而易见，这个逃逸速度跟天体的质量和跟天体的距离有关系。
+例如在火星表面，需要 5km/s；在地球表面，需要 11.2km/s；在木星表面，就需要 59.5km/s 了。
+距离天体越远，引力越弱，越容易逃离。例如在太阳表面时，需要 600km/s；但是在地球附近，由于距离太阳很远以及地球运动带来的惯性助力，逃离太阳反而只需要 16.7km/s 了。
+从地球上看到的银河系一角，已经是无数的恒星
+那么，现在看看银河系。
+超级巨无霸！
+这货里面保守估计有 1000-4000 亿个恒星，直径 10-18 万光年。在银河系中心，大家普遍认为存在着巨大的黑洞。
+黑洞的逃逸速度，是超光速。换句话说，连光都逃不出去，只能被困在事件视界内，这也是为什么它叫「黑洞」的原因。如果我们住在银河系中心附近，就不用想着逃出去了。
+幸运的是，太阳系所在的猎户悬臂距离银河系中心很远，我们逃离银河系反而变得「容易」很多，所谓的从地球出发逃离用的第四宇宙速度，大家认为只有 500+km/s。这个数据众说纷纭，因为大家对银河系的质量、半径之类的并没有精准的认知，但八九不离十。
+这意味着我们的航天器达到这个速度之后，把它从地球上向着银河系外放出去，只要路上不撞到东西（包括直接冲进大天体引力希尔球），就肯定能逃出银河系。
+可是，给一个有一定质量的航天器（哪怕仅有几吨吧）获得 500km/s 的速度增量，现在的人类科技还远远做不到。
+即便是借助其他大型的恒星引力助力，对于现有的人类而言更是理论而已，因为我们对系内充满了未知。面对的风险远远超过用木星金星的借力，还不如不做。
+从第三宇宙速度（逃离太阳系）的 16.7km/s，到第四宇宙速度的 500km/s，看似只有 30 多倍的增长。但动能公式告诉我们，航天器的最终动能需求会是速度的平方，也就是 1000 倍！这些都直接反映到火箭里的一个概念，特征能量 C2。
+而且目前只能靠火箭来弄，摄星计划之类的都是幻想，因此实际情况下这个 1000 倍会进一步增加。因为这也带来了一个大问题，火箭自己也是重量、也要消耗到巨大的能量啊，更何况最终能量要求是暴增到逃离太阳系的 1000 倍，自身出发时需要的变化要更多。火箭越重，自己连飞都飞不起来了，还有个毛线用处。
+现在人类的火箭极限是什么呢？用我《下一站火星》书里的原话好了，新视野号，
+新视野号是人类史上唯五、且最快的逃离太阳系探测器，可悲的是最近 20 年内人类都没有新的逃离太阳系任务了
+探测器的动能来自火箭，根据动能定理（能量跟速度的平方成正比），探测器 飞得稍远一点就需要更高的速度逃离，对火箭供能的要求会大幅提升。一次彻底摆 脱太阳引力的任务对火箭要求极高，目前仅有 2006 年发射的新视野号在离开地球 和太阳时达到并超过这个速度（相对太阳速度在 45 千米 / 秒左右），当时是一个 重达 569 吨的宇宙神 V-551 型火箭全力推送一个 0.478 吨重的探测器。其他四个目 前能够脱离太阳系的探测器（1972 年先驱者 10 号和先驱者 11 号，1977 年旅行者 1 号和旅行者 2 号）就要依赖木星等各大行星的「引力助推」才可能实现，甚至新 视野号在飞行途中也受到木星「助推」。
+人类历史上只有的这一个探测器能直接飞出太阳系，代价是 569 吨火箭全力推 0.478 吨。
+要把最终的速度提升到逃离银河系、相对新视野号再提升 1000 倍的动能，显然是远远远不够的，人类做不到，连擦个边都是奢望。
+而且即便达到了又如何呢，一旦出发后巨大的引力便会让航天器迅速减速，旅程实际上在越来越慢。再以人类史上距离地球最远的航天器旅行者一号为例，自从 1977 年发射至今天（2022 年 2 月 26 日），它已经连续工作 45 年之久了，旅途远达惊人的 233 亿千米。
+但这个距离，光速仅需要 21 个半小时就可以走完了，还不到一光天。而且旅行者的速度还在不断降低。就算抵达距离太阳最近的恒星半人马座，都需要至少数百万年。
+人类历史才几千年，几百万年太遥远了。
+这还是最近的恒星，银河系里可是有数千亿颗恒星呢。
+人类几十年的寿命，在这种尺度算个啥。
+要逃离银河系，就基本是搞笑了。
+阅读原文]]></summary>
+        <author>
+            <name>知乎日报</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[长颈鹿的脖子会骨折吗?]]></title>
+        <id>https://daily.zhihu.com/story/9748422</id>
+        <link href="https://daily.zhihu.com/story/9748422"/>
+        <updated>2022-05-07T23:05:48.000Z</updated>
+        <summary type="html"><![CDATA[苏澄宇，动物科学 / 冷门问题收割者/看心情更新
+阅读原文
+
+当然会骨折。 
+骨折，简单来说，是一种在外力作用下导致的骨骼断裂。
+人类如果脖子骨折了，原因有很多，比如从某处小区经过被东西砸到颈部，把脖子给折了；又或者不专业人员从高台跳水的时候，把脖子折了；又或者脸朝下摔地上，颈部弯曲过度，把脖子给折了……折得太严重了就会死。
+对于长颈鹿来说，把脖子给折了同样也是外力所致，而其中最常见的情况，就是雄性之间为了配偶权打架。
+
+一般雄性长颈鹿打架场面极其惨烈，快速地甩动脖子，然后用自己的头部作为榔头击打对方的身体。
+如果你有幸在旁边观看长颈鹿打架，你甚至可以听到击打时候传来的咚咚咚的巨响，听着都觉得很疼。
+
+长颈鹿的头很硬、很重，和战斧一样的形状，尤其是雄性的，可以说它们的头骨就是为了战斗而生（头重，脖子长，一不小心就容易把脖子给折了）。
+为战斗而生的长颈鹿头骨
+雌性长颈鹿的头没那么铁，是因为它们不用头打架，而是用脚来踹……
+雄性的头骨比雌性的头骨重且大
+回到话题，既然长颈鹿的颈椎会有外力击打，那么就有可能会出现骨折。
+当然，严重的情况下，就不只是骨折那么简单了……
+下面这只长颈鹿是摄影师马克 · 德赖斯代尔在塞伦盖蒂国家公园旅游的时候发现的。
+
+随行的向导和摄影师解释，这只长颈鹿五六年前在一次打斗中把脖子给折了，由于没有得到兽医的治疗，它的脖子就就变成了这样。
+
+虽然脖子已经折成了畸形，但似乎并没有影响到它的生活，该吃吃该喝喝。当然脖子没那么好使的时候，也限制了它吃到高处的树叶，只能挑一些矮的树叶来吃。
+
+长颈鹿保护基金协会撰写了一本长颈鹿指南，其中就有介绍如何应对长颈鹿脖子出现脖子骨折的状况。
+
+说完长颈鹿骨折，再说说其他的。
+下面这只长颈鹿颈部也出现了问题，c3-c5 节颈椎出现急性倾斜，俗称：
+落枕
+
+没错，长颈鹿还会落枕。
+
+这只长颈鹿在被运输的途中落枕了，在被卸下来的时候才发现的。和人类落枕一样，长颈鹿落枕脖子一样动弹不得，肌肉痉挛，动一动就会疼的不行。
+后来使用了激光治疗和颈椎活动度练习，才治好了长颈鹿的落枕。
+已经康复的长颈鹿
+话说回来，只要不是金刚狼的亚德曼金属颈椎，普通的动物的颈椎都有可能会骨折，估计是因为长颈鹿的太太太长了，才会有这些奇奇怪怪的迷思。
+阅读原文]]></summary>
+        <author>
+            <name>知乎日报</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Robots Are Writing Poetry, and Many People Can’t Tell the Difference]]></title>
+        <id>https://thewalrus.ca/ai-poetry/</id>
+        <link href="https://thewalrus.ca/ai-poetry/"/>
+        <updated>2022-05-07T21:47:01.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[AtoB (YC S20) is hiring to build Stripe for Transportation]]></title>
+        <id>https://careers.atob.com</id>
+        <link href="https://careers.atob.com"/>
+        <updated>2022-05-07T21:01:12.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Unauthorized gem takeover for some gems]]></title>
+        <id>https://github.com/rubygems/rubygems.org/security/advisories/GHSA-hccv-rwq6-vh79</id>
+        <link href="https://github.com/rubygems/rubygems.org/security/advisories/GHSA-hccv-rwq6-vh79"/>
+        <updated>2022-05-07T20:48:35.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Apple's Director of Machine Learning Resigns Due to Return to Office Work]]></title>
+        <id>https://www.macrumors.com/2022/05/07/apple-director-of-machine-learning-resigns/</id>
+        <link href="https://www.macrumors.com/2022/05/07/apple-director-of-machine-learning-resigns/"/>
+        <updated>2022-05-07T20:33:43.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Some CUDA programming fun with Julia]]></title>
+        <id>https://cancandan.github.io/julia/graphics/cuda/2022/05/07/triangles.html</id>
+        <link href="https://cancandan.github.io/julia/graphics/cuda/2022/05/07/triangles.html"/>
+        <updated>2022-05-07T20:24:05.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Show HN: Weron – A Peer-to-Peer VPN Based on WebRTC Written in Go]]></title>
+        <id>https://github.com/pojntfx/weron</id>
+        <link href="https://github.com/pojntfx/weron"/>
+        <updated>2022-05-07T19:48:46.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Xilem: An Architecture for UI in Rust]]></title>
+        <id>https://raphlinus.github.io/rust/gui/2022/05/07/ui-architecture.html</id>
+        <link href="https://raphlinus.github.io/rust/gui/2022/05/07/ui-architecture.html"/>
+        <updated>2022-05-07T19:09:11.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Deletionpedia: Rescuing articles from Wikipedia's deletionism]]></title>
+        <id>https://deletionpedia.org/en/Main_Page</id>
+        <link href="https://deletionpedia.org/en/Main_Page"/>
+        <updated>2022-05-07T18:15:46.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Meta-Perceptual Helmets]]></title>
+        <id>http://www.connolly-cleary.com/Home/helmets.html</id>
+        <link href="http://www.connolly-cleary.com/Home/helmets.html"/>
+        <updated>2022-05-07T17:35:44.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Show HN: I made a browser-based RTS game]]></title>
+        <id>https://www.battle-of-flags.com</id>
+        <link href="https://www.battle-of-flags.com"/>
+        <updated>2022-05-07T16:45:54.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Amazon abruptly fires senior managers tied to unionized warehouse]]></title>
+        <id>https://www.nytimes.com/2022/05/06/technology/amazon-fires-managers-union-staten-island.html</id>
+        <link href="https://www.nytimes.com/2022/05/06/technology/amazon-fires-managers-union-staten-island.html"/>
+        <updated>2022-05-07T16:32:51.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Okular – Universal document viewer]]></title>
+        <id>https://okular.kde.org/</id>
+        <link href="https://okular.kde.org/"/>
+        <updated>2022-05-07T14:07:29.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Singapore Government Tech Stack]]></title>
+        <id>https://www.developer.tech.gov.sg/singapore-government-tech-stack/overview/index.html</id>
+        <link href="https://www.developer.tech.gov.sg/singapore-government-tech-stack/overview/index.html"/>
+        <updated>2022-05-07T13:49:32.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Your phone may soon replace many of your passwords]]></title>
+        <id>https://krebsonsecurity.com/2022/05/your-phone-may-soon-replace-many-of-your-passwords/</id>
+        <link href="https://krebsonsecurity.com/2022/05/your-phone-may-soon-replace-many-of-your-passwords/"/>
+        <updated>2022-05-07T13:35:55.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Show HN: I made Ankify that converts notes to Anki cards]]></title>
+        <id>https://ankify.krxiang.com/</id>
+        <link href="https://ankify.krxiang.com/"/>
+        <updated>2022-05-07T13:33:11.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[I made a virtual bookshelf]]></title>
+        <id>https://petargyurov.com/bookshelf/</id>
+        <link href="https://petargyurov.com/bookshelf/"/>
+        <updated>2022-05-07T11:35:16.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Roland TR-808 Cowbell Rebuild]]></title>
+        <id>http://www.frisnit.com/roland-tr-808-cowbell-rebuild/</id>
+        <link href="http://www.frisnit.com/roland-tr-808-cowbell-rebuild/"/>
+        <updated>2022-05-07T11:21:31.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[RSS Feed Best Practices]]></title>
+        <id>https://kevincox.ca/2022/05/06/rss-feed-best-practices/</id>
+        <link href="https://kevincox.ca/2022/05/06/rss-feed-best-practices/"/>
+        <updated>2022-05-07T10:40:22.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Eve Online is getting Microsoft Excel support]]></title>
+        <id>https://www.theverge.com/2022/5/6/23059064/eve-online-fanfest-microsoft-excel</id>
+        <link href="https://www.theverge.com/2022/5/6/23059064/eve-online-fanfest-microsoft-excel"/>
+        <updated>2022-05-07T08:48:12.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Prodspec和Annealing]]></title>
         <id>http://weekly.dockone.io/article/2434893</id>
@@ -295,6 +817,16 @@ NEDC 工况下燃料电池动力系统表现电堆及系统效率随电堆输出
         </author>
     </entry>
     <entry>
+        <title type="html"><![CDATA[When is a ‘tank’ not a tank?]]></title>
+        <id>https://acoup.blog/2022/05/06/collections-when-is-a-tank-not-a-tank/</id>
+        <link href="https://acoup.blog/2022/05/06/collections-when-is-a-tank-not-a-tank/"/>
+        <updated>2022-05-06T18:54:31.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[The joys and sorrows of maintaining a personal website]]></title>
         <id>https://cheapskatesguide.org/articles/joys-and-sorrows.html</id>
         <link href="https://cheapskatesguide.org/articles/joys-and-sorrows.html"/>
@@ -355,6 +887,16 @@ NEDC 工况下燃料电池动力系统表现电堆及系统效率随电堆输出
         </author>
     </entry>
     <entry>
+        <title type="html"><![CDATA[Flash Boys 2.0: Frontrunning, Transaction Reordering, and Consensus Instability]]></title>
+        <id>https://arxiv.org/abs/1904.05234</id>
+        <link href="https://arxiv.org/abs/1904.05234"/>
+        <updated>2022-05-06T16:14:47.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[Half Baked]]></title>
         <id>https://seths.blog/2022/05/half-baked/?via=thomas.me</id>
         <link href="https://seths.blog/2022/05/half-baked/?via=thomas.me"/>
@@ -385,6 +927,16 @@ NEDC 工况下燃料电池动力系统表现电堆及系统效率随电堆输出
         </author>
     </entry>
     <entry>
+        <title type="html"><![CDATA['Rater' is paid $10 hourly to teach Google's algorithm]]></title>
+        <id>https://finance.yahoo.com/news/google-raters-paid-to-teach-algorithm-204308901.html</id>
+        <link href="https://finance.yahoo.com/news/google-raters-paid-to-teach-algorithm-204308901.html"/>
+        <updated>2022-05-06T14:39:49.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[Efficiency is the enemy?]]></title>
         <id>https://fs.blog/slack/</id>
         <link href="https://fs.blog/slack/"/>
@@ -395,10 +947,50 @@ NEDC 工况下燃料电池动力系统表现电堆及系统效率随电堆输出
         </author>
     </entry>
     <entry>
+        <title type="html"><![CDATA[How many Linux commands can 7 year old learn?]]></title>
+        <id>https://thejavaguy.org/posts/008-my-kid-learned-bash-in-one-hour/</id>
+        <link href="https://thejavaguy.org/posts/008-my-kid-learned-bash-in-one-hour/"/>
+        <updated>2022-05-06T13:58:01.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Seed-firing drones are planting 40k trees every day to fight deforestation]]></title>
+        <id>https://www.euronews.com/green/2022/05/04/this-australian-start-up-wants-to-fight-deforestation-with-an-army-of-drones</id>
+        <link href="https://www.euronews.com/green/2022/05/04/this-australian-start-up-wants-to-fight-deforestation-with-an-army-of-drones"/>
+        <updated>2022-05-06T13:08:50.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Learning modern Linux: A handbook for the cloud native practitioner]]></title>
+        <id>https://www.oreilly.com/library/view/learning-modern-linux/9781098108939/</id>
+        <link href="https://www.oreilly.com/library/view/learning-modern-linux/9781098108939/"/>
+        <updated>2022-05-06T11:45:27.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[Where do space, time and gravity come from?]]></title>
         <id>https://www.quantamagazine.org/where-do-space-time-and-gravity-come-from-20220504/</id>
         <link href="https://www.quantamagazine.org/where-do-space-time-and-gravity-come-from-20220504/"/>
         <updated>2022-05-06T08:10:10.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Exporting Data from Old Gear Through LCD Sniffing]]></title>
+        <id>https://hackaday.com/2022/05/05/exporting-data-from-old-gear-through-lcd-sniffing/</id>
+        <link href="https://hackaday.com/2022/05/05/exporting-data-from-old-gear-through-lcd-sniffing/"/>
+        <updated>2022-05-06T06:27:14.000Z</updated>
         <summary type="html"><![CDATA[Comments]]></summary>
         <author>
             <name>Hacker News</name>
@@ -945,6 +1537,16 @@ mapple，胖过
         <id>https://blog.thevinter.com/posts/vimeo</id>
         <link href="https://blog.thevinter.com/posts/vimeo"/>
         <updated>2022-05-05T10:00:04.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Extreme depth-of-field light field camera thanks to an extinct marine arthropod]]></title>
+        <id>http://image-sensors-world.blogspot.com/2022/05/extreme-depth-of-field-light-field.html</id>
+        <link href="http://image-sensors-world.blogspot.com/2022/05/extreme-depth-of-field-light-field.html"/>
+        <updated>2022-05-05T08:30:19.000Z</updated>
         <summary type="html"><![CDATA[Comments]]></summary>
         <author>
             <name>Hacker News</name>
@@ -15032,488 +15634,6 @@ FIG. 2. Calibration of track momentum and electron’s calorimeter energy.(A) Fr
         <id>https://eightcolors.net</id>
         <link href="https://eightcolors.net"/>
         <updated>2022-04-08T13:54:40.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Slide Rule Simulator Emulator Replica Collection]]></title>
-        <id>https://www.sliderules.org/</id>
-        <link href="https://www.sliderules.org/"/>
-        <updated>2022-04-08T11:31:21.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[How to control the metacognition process of programming?]]></title>
-        <id>https://lambdaisland.com/blog/2022-02-17-the-fg-command</id>
-        <link href="https://lambdaisland.com/blog/2022-02-17-the-fg-command"/>
-        <updated>2022-04-08T10:02:52.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Reversing Sound Blaster X7 Control for Fun and Linux Support]]></title>
-        <id>https://sayr.us/reverse/soundblaster-reverse/</id>
-        <link href="https://sayr.us/reverse/soundblaster-reverse/"/>
-        <updated>2022-04-08T09:38:53.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[What happens in your dog’s brain when you speak]]></title>
-        <id>https://www.science.org/content/article/here-s-what-happens-your-dog-s-brain-when-you-speak</id>
-        <link href="https://www.science.org/content/article/here-s-what-happens-your-dog-s-brain-when-you-speak"/>
-        <updated>2022-04-08T09:27:43.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Reading academic computer science papers]]></title>
-        <id>https://stackoverflow.blog/2022/04/07/you-should-be-reading-academic-computer-science-papers/</id>
-        <link href="https://stackoverflow.blog/2022/04/07/you-should-be-reading-academic-computer-science-papers/"/>
-        <updated>2022-04-08T00:14:55.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Walmart truckers to start at $95k a year]]></title>
-        <id>https://www.axios.com/walmart-trucker-salary-9bc06c92-4da5-45d4-bc95-39795f75e015.html</id>
-        <link href="https://www.axios.com/walmart-trucker-salary-9bc06c92-4da5-45d4-bc95-39795f75e015.html"/>
-        <updated>2022-04-08T00:13:52.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Arrests of a Yakuza Leader and Affiliates for Narcotics and Weapons Trafficking]]></title>
-        <id>https://www.justice.gov/usao-sdny/pr/manhattan-us-attorney-announces-arrests-yakuza-leader-and-affiliates-international</id>
-        <link href="https://www.justice.gov/usao-sdny/pr/manhattan-us-attorney-announces-arrests-yakuza-leader-and-affiliates-international"/>
-        <updated>2022-04-08T00:11:34.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[1.5-Inch Hand-Carved Agate from 1500 B.C. Shows Sub-Millimeter Details]]></title>
-        <id>https://news.artnet.com/art-world/griffin-warrior-tomb-pylos-combat-agate-1142624</id>
-        <link href="https://news.artnet.com/art-world/griffin-warrior-tomb-pylos-combat-agate-1142624"/>
-        <updated>2022-04-07T23:13:01.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[为什么括号又叫括弧？]]></title>
-        <id>https://daily.zhihu.com/story/9747315</id>
-        <link href="https://daily.zhihu.com/story/9747315"/>
-        <updated>2022-04-07T23:07:48.000Z</updated>
-        <summary type="html"><![CDATA[oooooohmygosh，平面设计爱好者。
-阅读原文
-
-在研究直角引号（鉤括弧）[1]的过程中，了解了「括弧」名称的演变，在这个问题里面写出来吧。
-最早的中文翻译就是「括弧」，但后来「括号」成为了主流。
-在日本维基百科可以查到这样一段内容：
-他方、清代末期の中国では、スコットランド国教会の宣教師アレクサンダー・ワイリー（英語版）（1815-1887 年）が、19 世紀後期の初めから半ば（1847-1877 年）まで『幾何原本』後編 9 巻（1856 年）など数学書の翻訳に取り組んでいたが、その際に記号と共に「括弧」という語を用いた[5]。日本にはこれが他書を介して伝わり、『改正増補 和英語林集成』（1886 年 / 明治 19 年）や『工学字彙』（1894 年 / 明治 27 年）に収録されることで一般化していった。[2]
-这里说伟烈亚力在中文翻译版《几何原本》后编九卷（1856 年）里面，有使用「括弧」这个词汇。但事实上我用了两天时间分别采用肉眼和 OCR 识别的方式，都没能在里面找到「括弧」这个词。但是在这本书里将曲线称作「弧线」的情况非常多。
-1859 年伟烈亚力与李善兰合译的《代微积拾集》[3]，是我能找到「括弧」这个词最早的出处。
-1859 年，伟烈亚力 / 李善兰，《代微積拾級》
-1906 年，朱文熊在日本出版的《江苏新字母》中，把括号称为「括弓」。这是一个介绍汉字拼音化方案的书籍。
-1906 年，朱文熊，《江苏新字母》
-1915 年，胡适在《藏暉劄記》里面记录了为《科学》杂志所作文章《论句读及文字符号》的部分内容，其中将括号简称为「括」。当然，这里面大部分符号都写为略称，比如「引号、诧号、线号、不尽号」分别被写为「引、诧、线、不尽」。
-1915 年，胡适，《藏暉劄記》
-1916 年，《科学》第二卷第一期中，胡适编写的《论句读及文字符号》[4]一文，称之为「括号」。
-1916 年，胡适，《论句读及文字符号》
-1919 年，马裕藻、周作人、朱希祖、刘复、钱玄同、胡适六人第一次向教育部提出《请颁行新式标点符号议案》[5]，称为「夹注号」。[6]
-1930 年，在 1919 年基础上重发布的《新式标点符号案》
-1951 年，中华人民共和国公布的《标点符号用法》，正式定名为「括号」。
-1951 年 9 月 26 日，人民日报第七版
-此后，括号在官方称呼中被沿用至今，但「括弧」仍在民间广为流传。
-阅读原文]]></summary>
-        <author>
-            <name>知乎日报</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[游戏界有哪些称得上大师的人物？]]></title>
-        <id>https://daily.zhihu.com/story/9747287</id>
-        <link href="https://daily.zhihu.com/story/9747287"/>
-        <updated>2022-04-07T23:07:41.000Z</updated>
-        <summary type="html"><![CDATA[芒果冰OL
-阅读原文
-
-到底达成什么样的成就才能被称之为游戏行业的大师。是创造一种新玩法？还是建立几家最顶尖的工作室，游戏销量上千万？是开发通用图形引擎？还是主导设计 PS4、PS5 这样的主机？事实上有一个男人同时达成了以上的所有目标，他就是大名鼎鼎的马克·赛尔尼。如果要写一篇游戏题材的爽文，他就是毫无疑问的男主角！分享一篇最近写的马克·赛尔尼生平介绍吧～
-在所有授予游戏开发者个人的奖项中，游戏开发者大会（GDC）颁发的 GDC 终身成就奖无疑是含金量最高的一个。我们耳熟能详的宫本茂，小岛秀夫，坂口博信，席德·梅尔，约翰·卡马克，都是这一奖项的得主。这些获奖者有的开创了全新的玩法类型，有的在引擎技术上做出了前所未有的突破，还有的总结出不少游戏开发的思路秘诀，被同行奉为圭臬。可以说行业的整体进步，离不开这些天才对于玩法边界和前沿技术的拓展和挖掘。在所有获奖者中，有一位相较其他人而言更为特殊。他不仅比刚才那几位获奖者更早（04 年）拿到了 GDC 终身成就奖，还同时在游戏开发、硬件设计、乃至企业管理等领域都取得了极高的成就。此前讲述滚球类游戏发展史的视频中，我曾提到过他的名字——马克·塞尔尼（Mark Cerny）。
-在马克·塞尔尼前一年获得 GDC 终身成就奖的是：十字键之父 - 横井军平
-这位 18 岁入行的天才少年至今已在电子游戏领域耕耘了 40 年。从 80 年代初的雅达利街机到如今的新世代主机 PS5，无数大作中都留下了他的名字。他曾是索尼克，古惑狼，和小龙斯派罗等知名 IP 的制作人，也是杀戮地带，战神，神海、死亡搁浅的技术顾问。当然，现今他最为玩家们所熟悉的头衔或许是索尼近两代主机 PS4、PS5 的主架构师。纵观整个电子游戏发展史，巅峰期如此之长，成就跨度如此之大的开发者，也只此一位，被誉为“现代达芬奇”。翻看赛尔尼的从业经历，简直如同阅读一本游戏开发题材的爽…]]></summary>
-        <author>
-            <name>知乎日报</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[各种豆角都怎么叫？做法有什么区别？]]></title>
-        <id>https://daily.zhihu.com/story/9747294</id>
-        <link href="https://daily.zhihu.com/story/9747294"/>
-        <updated>2022-04-07T23:07:32.000Z</updated>
-        <summary type="html"><![CDATA[卫小妖GOGOGO，这个金牛座设计师爱好有点多，聊聊美食聊聊人生。
-阅读原文
-
-看了下问题日志，已经过去 7 年了，相信题主已经知道了这几种豆角的叫法和区别了，如果还不知道也没关系，来看这篇就够了。
-我想写这个「豆角」专题的契机除了 7 年前的这个提问，也是这几天去超市闲逛，看到了这一排：
-从左到右分别是豇豆、荷兰豆、毛豆、刀豆、四季豆和白不老
-这还只是北方城市的一个小超市，就有 6 种不同的「豆角」，更不用说南方这段春季时令新鲜的蚕豆、豌豆和扁豆、东北独有的五花八门的油豆角了，这天下好吃的豆角千千万。
-不过我发现这个小超市给好几个「豆角」标记的名字和我认知的不太一样，回家查了一些资料，发现不同地区的人们对「豆角」叫法也不一样。网上各个平台搜了下（包括在知乎），感觉大家对各种「豆角」的区分和辨认都有着强烈的求知欲，比如：
-
-「豆角们」到底有没有全国统一标准的学名呢？
-到底能不能彻底把这些「豆角们」区别开呢？
-干煸豆角到底干煸的是哪种豆角？
-四季豆和刀豆到底是不是一种豆角？
-豌豆和荷兰豆到底什么关系？
-到底有没有一颗油豆角可以活着走出大东北？
-蛇豆、龙豆、佛豆、罗汉豆和雪豆分别指的是哪些豆角呢？
-不同豆角的做法和口感又有什么不同呢？
-国外吃的是什么样的豆角？吃法是怎样的？
-豆角生吃到底有毒吗？
-吃豆角有什么注意事项吗？
-
-如果你和我一样，有着对美好食材强烈的好奇心和闲的无聊的雅兴，强烈建议你看完并且收藏这篇小妖肝了好几天的万字「豆角分类科普文」，熟记并且勤加练习，相信假以时日，你的技能点又会多了个「认豆角」，现在的社会，技多不压身，会认豆角不丢人（还挺押韵）。
-
-引言这篇「豆角分类科普文」的主要依据——《中国植物志》
-新版：
-关于本志 FRPS《中国植物志》全文电子版 iPlant
-旧版：
-FRPS《中国植物志》全文电子版网站
-作为园林专业本硕 7 年毕业的美食答主，不瞒您说…]]></summary>
-        <author>
-            <name>知乎日报</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[儿童柔韧度，尤其是坐位体前屈怎样科学提高？]]></title>
-        <id>https://daily.zhihu.com/story/9747307</id>
-        <link href="https://daily.zhihu.com/story/9747307"/>
-        <updated>2022-04-07T23:07:27.000Z</updated>
-        <summary type="html"><![CDATA[萌爸Kyle，北语田径队主教练/带娃的二宝爸/北师大教育学硕士
-阅读原文
-
-作为北京师范大学体育与运动学院运动训练专业毕业，在高校有 10 余年一线体育工作的田径教练员，我来回答一下这个问题。在介绍柔韧练习时，成人和儿童同样适用，因此这篇文章不仅仅是写给儿童，也同样送给正在阅读文章的你。如果有用，请转发给你的亲朋好友。
-柔韧为什么这么重要？
-在回答怎么提高柔韧、如何练习坐位体前屈之前，我们应该对体能、运动素质有所了解，这样有因有果，知其然、知其所以然。
-体能
-在体育院校通用教材《运动训练学》中，对体能和运动素质是这样描述的。
-体能是人机体的基本运动能力，人的体能发展水平由身体形态、身体机能和运动素质的发展状况所决定。身体形态是指机体内外部的形状。身体机能是指机体各器官系统的功能。运动素质是指机体在活动时所表现出来的各种基本运动能力，通常包括力量、耐力、速度、柔韧和灵敏等。
-简单通俗的来说，身体形态就是长成什么样子、身体机能就是内部如何工作、运动素质就是外在表现。
-身体形态、机能和素质三个因素相对独立，彼此制约、相互影响，毕竟长成啥样我们决定不了，内部工作是一个涉及多学科的庞大复杂的系统问题，就跟人体的奥秘一样我们还在不断探索，而运动素质是体能的外在表现，可以通过简单地测试进行量化体现，因此也是人们在运动训练中着重发展并对此制定了诸多的身体训练基本内容。
-柔韧
-柔韧素质是指人体关节在不同方向上的运动能力以及肌肉、韧带等软组织的伸展能力。柔韧素质通过关节运动的幅度，也就是按一定的运动轴产生转动的活动范围而表现出来。如果一个人的柔韧性差，那么在完成某些动作时，关节肌肉因受限则无法完成，甚至会影响我们的生活。
-举几个简单的例子，有的人可以向前俯身鼻尖贴住小腿，有些人却是弯腰都费力；有些人手指柔软反向弯曲可以轻松碰到手腕，有的人却根本无法背伸。再说一个好笑又气人的活生生的例子，你有没…]]></summary>
-        <author>
-            <name>知乎日报</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[一部电影创作过程中，导演的作用是什么？]]></title>
-        <id>https://daily.zhihu.com/story/9747298</id>
-        <link href="https://daily.zhihu.com/story/9747298"/>
-        <updated>2022-04-07T23:07:21.000Z</updated>
-        <summary type="html"><![CDATA[元铭清，思维流浪家～嚷嚷着要拍电影。好好学习去了，不接商务，佛系写作
-阅读原文
-
-听到过一个有趣的小观点，正好分享一下。
-在理想状态下，导演这个岗位并没有任何作用。
-因为在剧组里每个人能力超强且可以直接心领神会对方意思的时候，编剧会直接写出内容跌宕起伏，节奏很好，极具丰富画面感的剧本。分镜师直接创作出流畅的分镜。美术布景直接布出最能体现全片内涵且极具美感的背景。摄影可以准确的拍出画面且带有一定审美标准的画面。录音也可以录出完美的声音且永远不穿......
-那这样的剧组是不是就可以不用要导演了？是的，可以不要了。
-当然，这是理想状态下，那理想状态就是，不可能实现。
-个人认为导演最重要能力，应该是对于一个故事的落地执行能力（这要涉及想象力，记忆力，决策力还有管理能力，当然，编剧能力也是不可或缺的）
-在电影制作过程中，导演最重要的作用就是一定要明确的知道他们的作品最后需要呈现出一个什么模样！
-就算在制片人中心制下，导演虽然是打工人，但是也需要将制片人的想法落实在最后的成片里。所以，导演一定是剧组所有人里面，最清楚整个作品在最后的大银幕上呈现出来是一个什么效果的人。
-因此，导演一定要全面把控各个方面，不需要非常精通，但是对各个地方的把控都需要准确传达出自己的的想法。
-
-一个电影的制作过程往往可以分为前期筹划，拍摄和后期制作三个阶段，三个阶段导演都是缺一不可的。
-前期筹划中，导演要做导演阐述，做出自己对整个片子项目的理解，之后要对剧本进行修改，编剧提供的剧本往往不是最好的，在画面的把控与气氛上可能做不到导演想要的模样，所以需要导演提出意见，甚至一起修改。（国内对于编剧的话语权相对较低，但是也有编剧中心制，编剧中心制往往就是编剧写好内容之后，自己作为制片人找到导演及拍摄团队，这种制度的话一般在美剧韩剧里偏多，导演的话语权与对整个影片的作用也相对较少。）
-在前期筹备过程中，导演也会对摄影…]]></summary>
-        <author>
-            <name>知乎日报</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[瞎扯 · 如何正确地吐槽]]></title>
-        <id>https://daily.zhihu.com/story/9747316</id>
-        <link href="https://daily.zhihu.com/story/9747316"/>
-        <updated>2022-04-07T23:07:13.000Z</updated>
-        <summary type="html"><![CDATA[ENTP 面对博物馆失火救猫还是救画的问题会选择什么？
-
-匿名用户
-阅读原文
-
-对不起，火是 ENTP 放的。
-阅读原文
-
-一个男生每天主动找你借作业意味着什么？
-
-旻旻子，马克思主义的坚定信仰者
-阅读原文
-
-你写了作业。
-阅读原文
-
-如果你被贞子或者伽椰子缠上了，你想怎样活下来？
-
-子不语，想当学校的校长。
-阅读原文
-
-从未被女生缠上，听起来好刺激的样子。
-阅读原文
-
-如何评价美剧《月光骑士》第二集《召唤战服》？
-
-Pagliacci
-阅读原文
-
-
-这小眼神，跟没见过钱一样，果然是月光的骑士。
-阅读原文
-
-在《哈利·波特》系列中，莉莉·伊万斯对詹姆·波特的评价是「自以为是的自大狂」，那两人为什么会走到一起？
-
-小叶子
-阅读原文
-
-这就是我们詹莉学的主要研究内容。
-阅读原文]]></summary>
-        <author>
-            <name>知乎日报</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[“I believe CGI is getting worse even as the tech advances.”]]></title>
-        <id>https://twitter.com/fantomascinema/status/1511101077055229960</id>
-        <link href="https://twitter.com/fantomascinema/status/1511101077055229960"/>
-        <updated>2022-04-07T22:57:14.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Birds Make Better Bipedal Bots Than Humans Do]]></title>
-        <id>https://www.scientificamerican.com/article/birds-make-better-bipedal-bots-than-humans-do/</id>
-        <link href="https://www.scientificamerican.com/article/birds-make-better-bipedal-bots-than-humans-do/"/>
-        <updated>2022-04-07T21:52:50.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[The Muse (YC W12) Is Hiring a Senior Platform Engineer (Learn More)]]></title>
-        <id>https://www.themuse.com/jobs/themuse/senior-platform-engineer-233c9c</id>
-        <link href="https://www.themuse.com/jobs/themuse/senior-platform-engineer-233c9c"/>
-        <updated>2022-04-07T21:01:13.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Raspberry Pi update removes the default user]]></title>
-        <id>http://deepaqua.me/2022/04/07/the-pi-user-is-dead-long-life-the-pi-user/</id>
-        <link href="http://deepaqua.me/2022/04/07/the-pi-user-is-dead-long-life-the-pi-user/"/>
-        <updated>2022-04-07T19:17:56.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[The ever-increasing walled-gardeness of Twitter]]></title>
-        <id>https://annoying.technology/posts/e6901c0ea272f57d/</id>
-        <link href="https://annoying.technology/posts/e6901c0ea272f57d/"/>
-        <updated>2022-04-07T19:10:48.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Apollo 10 1/2 Reanimated Houston’s Lost Memories of the ’60s]]></title>
-        <id>https://www.vulture.com/2022/04/richard-linklater-on-the-apollo-10-1-2-animation-process.html</id>
-        <link href="https://www.vulture.com/2022/04/richard-linklater-on-the-apollo-10-1-2-animation-process.html"/>
-        <updated>2022-04-07T18:28:22.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Newly Measured Particle Seems Heavy Enough to Break Known Physics]]></title>
-        <id>https://www.quantamagazine.org/fermilab-says-particle-is-heavy-enough-to-break-the-standard-model-20220407/</id>
-        <link href="https://www.quantamagazine.org/fermilab-says-particle-is-heavy-enough-to-break-the-standard-model-20220407/"/>
-        <updated>2022-04-07T18:11:34.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Mantle – Serverless Maps Using Lambda or Cloudflare Workers]]></title>
-        <id>https://protomaps.com/blog/serverless-self-hosted-maps/</id>
-        <link href="https://protomaps.com/blog/serverless-self-hosted-maps/"/>
-        <updated>2022-04-07T18:11:17.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Ruby 3.2 preview 1 with support for WASM compilation]]></title>
-        <id>https://www.ruby-lang.org/en/news/2022/04/03/ruby-3-2-0-preview1-released/</id>
-        <link href="https://www.ruby-lang.org/en/news/2022/04/03/ruby-3-2-0-preview1-released/"/>
-        <updated>2022-04-07T17:38:00.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[TypeScript as fast as Rust: TypeScript++]]></title>
-        <id>https://zaplib.com/docs/blog_ts++.html</id>
-        <link href="https://zaplib.com/docs/blog_ts++.html"/>
-        <updated>2022-04-07T17:29:43.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[What software engineers can learn from the rapid collapse of Fast]]></title>
-        <id>https://newsletter.pragmaticengineer.com/p/the-scoop-fast</id>
-        <link href="https://newsletter.pragmaticengineer.com/p/the-scoop-fast"/>
-        <updated>2022-04-07T17:23:16.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[The computers used to do 3D animation for Final Fantasy VII in 1996]]></title>
-        <id>https://lunduke.substack.com/p/the-computers-used-to-do-3d-animation</id>
-        <link href="https://lunduke.substack.com/p/the-computers-used-to-do-3d-animation"/>
-        <updated>2022-04-07T16:55:20.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[A detailed look at the S-300P anti-aircraft missile system]]></title>
-        <id>http://ausairpower.net/APA-Grumble-Gargoyle.html</id>
-        <link href="http://ausairpower.net/APA-Grumble-Gargoyle.html"/>
-        <updated>2022-04-07T16:53:39.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Redesigning an app, one day a week at a time]]></title>
-        <id>http://pketh.org/redesigning-an-app.html</id>
-        <link href="http://pketh.org/redesigning-an-app.html"/>
-        <updated>2022-04-07T16:50:38.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Show HN: Redditle.com – For those of us who add 'Reddit' to every Google search]]></title>
-        <id>https://redditle.com</id>
-        <link href="https://redditle.com"/>
-        <updated>2022-04-07T16:33:15.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[The physicalization of metamathematics and the implications for its foundations]]></title>
-        <id>https://writings.stephenwolfram.com/2022/03/the-physicalization-of-metamathematics-and-its-implications-for-the-foundations-of-mathematics/</id>
-        <link href="https://writings.stephenwolfram.com/2022/03/the-physicalization-of-metamathematics-and-its-implications-for-the-foundations-of-mathematics/"/>
-        <updated>2022-04-07T15:37:48.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Tree-sitter grammar for org-mode]]></title>
-        <id>https://github.com/milisims/tree-sitter-org</id>
-        <link href="https://github.com/milisims/tree-sitter-org"/>
-        <updated>2022-04-07T15:37:41.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Denonia: The First Malware Specifically Targeting AWS Lambda]]></title>
-        <id>https://www.cadosecurity.com/cado-discovers-denonia-the-first-malware-specifically-targeting-lambda/</id>
-        <link href="https://www.cadosecurity.com/cado-discovers-denonia-the-first-malware-specifically-targeting-lambda/"/>
-        <updated>2022-04-07T15:36:15.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Canada to ban foreigners from buying homes]]></title>
-        <id>https://www.bloomberg.com/news/articles/2022-04-06/canada-to-ban-some-foreigners-from-buying-homes-as-prices-soar</id>
-        <link href="https://www.bloomberg.com/news/articles/2022-04-06/canada-to-ban-some-foreigners-from-buying-homes-as-prices-soar"/>
-        <updated>2022-04-07T15:09:12.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Microplastics found in live human lung tissue]]></title>
-        <id>https://www.iflscience.com/health-and-medicine/microplastics-found-in-live-human-lung-tissue-for-the-first-time/</id>
-        <link href="https://www.iflscience.com/health-and-medicine/microplastics-found-in-live-human-lung-tissue-for-the-first-time/"/>
-        <updated>2022-04-07T15:08:07.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[ACM Opens First 50 Years Backfile]]></title>
-        <id>https://www.acm.org/articles/bulletins/2022/april/50-years-backfile</id>
-        <link href="https://www.acm.org/articles/bulletins/2022/april/50-years-backfile"/>
-        <updated>2022-04-07T14:30:16.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[I stopped advertising and nothing happened]]></title>
-        <id>https://theantistartup.com/i-stopped-advertising-everywhere-and-nothing-happened/</id>
-        <link href="https://theantistartup.com/i-stopped-advertising-everywhere-and-nothing-happened/"/>
-        <updated>2022-04-07T14:01:03.000Z</updated>
         <summary type="html"><![CDATA[Comments]]></summary>
         <author>
             <name>Hacker News</name>
