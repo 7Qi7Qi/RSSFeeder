@@ -2,10 +2,500 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://7qi7qi.github.io/RSSFeeder/index.html</id>
     <title>osmos::feed</title>
-    <updated>2022-06-04T01:08:28.721Z</updated>
+    <updated>2022-06-05T01:21:25.156Z</updated>
     <generator>osmosfeed 1.14.4</generator>
     <link rel="alternate" href="https://7qi7qi.github.io/RSSFeeder/index.html"/>
     <link rel="self" href="https://7qi7qi.github.io/RSSFeeder/feed.atom"/>
+    <entry>
+        <title type="html"><![CDATA[Go编程语言和环境]]></title>
+        <id>http://weekly.dockone.io/article/2434902</id>
+        <link href="http://weekly.dockone.io/article/2434902"/>
+        <updated>2022-06-05T01:21:22.157Z</updated>
+        <summary type="html"><![CDATA[Go 是一种编程语言，2007 年底在谷歌创建，2009 年 11 月正式开源发布。从那时起，它开始作为一个公共项目运作，有成千上万的个人和数十家公司参与贡献。Go 已成为构建云基础设施的流行语言：Linux 容器管理器 Docker 和容器部署系统 Kubernetes 是用 Go 编写的核心云技术。今天，Go 是每个主要云提供商的关键基础设施的基础，并且是云原生计算基金会托管的大多数项目的实现语言。
+早期用户被 Go 吸引的原因有很多。用于构建系统的垃圾收集、静态编译的语言，这并不常见。Go 对并发和并行的原生支持有助于利用当时成为主流的多核机器。自包含的二进制文件和简单的交叉编译简化了部署。而谷歌的名字无疑也是一个加成。
+但是为什么用户能留下来？为什么Go 变得越来越流行，而许多其他语言项目却没有？我们相信语言本身只是答案的一小部分。完整的故事必须涉及整个 Go 环境：库、工具、约定和软件工程的整体方法，它们都支持使用该语言进行编程。因此，在语言设计中做出的最重要的决定是让 Go 更适合大型软件工程，并帮助我们吸引志同道合的开发人员。
+本文研究了我们认为对 Go 的成功作出最大贡献的设计决策，探索它们如何不仅适用于语言，还适用于更广泛的环境。很难分离出某个特定决策的贡献，因此本文不应被视为科学分析，而应作为对过去十年经验和用户反馈的最佳理解的呈现。
+起源
+Go 源于在 Google 构建大型分布式系统的经验，在由数千名软件工程师共享的大型代码库中工作。我们希望为这种环境设计的语言和工具能够解决公司和整个行业面临的挑战。由于开发工作的规模和正在部署的生产系统的规模，挑战出现了。
+发展规模。在开发方面，Google 在 2007 年有大约 4,000 名活跃用户使用单一、共享、多语言（C++、Java、Python）代码库。单一代码库可以很容易地修复，例如内存分配器的问题…]]></summary>
+        <author>
+            <name>崔婧雯</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[刚刚，Kubernetes 1.24正式发布]]></title>
+        <id>http://weekly.dockone.io/article/2434901</id>
+        <link href="http://weekly.dockone.io/article/2434901"/>
+        <updated>2022-06-05T01:21:22.031Z</updated>
+        <summary type="html"><![CDATA[今天，我们很高兴地向大家宣布，Kubernetes 1.24暨2022年的首个版本已经正式发布！
+1.24版本涉及46项增强功能：其中14项已升级为稳定版，15项进入beta阶段，13项则刚刚进入alpha阶段。此外，另有2项功能被弃用、2项功能被删除。
+要点汇总
+从kubelet中移除dockershim
+自1.20版本被弃用之后，dockershim组件终于在1.24的kubelet中被删除。从1.24开始，大家需要使用其他受到支持的运行时选项（例如containerd或CRI-O）；如果您选择Docker Engine作为运行时，则需要使用cri-dockerd。关于dockershim移除的更多详细信息，请参阅本指南。
+各beta API默认关闭
+在默认情况下，新的各beta API不会在集群内得到启用。但全部原有beta API及其新版本将在1.24中继续默认启用。
+签名发布工件
+在1.24版本中，发布工件将使用cosign进行签名，同时提供实验性的镜像签名验证支持。发布工件的签名与验证属于Kubernetes软件发布供应链的安全性改进举措之一。
+OpenAPI v3
+Kubernetes 1.24开始为API的OpenAPI v3发布格式提供beta支持。
+存储容量与存储卷扩展双双迎来通用版本
+存储容量跟踪通过CSIStorageCapacity对象公开当前可用的存储容量，并对使用后续绑定的CSI存储卷的pod进行调度增强。
+存储卷扩展则新增对现有持久卷的重新调整功能。
+NonPreemptingPriority迎来稳定版
+此功能为PriorityClasses添加了新的选项，可开启或关闭pod抢占机制。
+存储插件迁移
+目前Kubernetes开发团队正在迁移树内存储插件，希望在实现CSI插件的同时、保持原有API的正常起效。Azure Disk与OpenSta…]]></summary>
+        <author>
+            <name>大卫</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Why Rust easily optimizes out smart pointers where C++ cannot?]]></title>
+        <id>https://news.ycombinator.com/item?id=31626508</id>
+        <link href="https://news.ycombinator.com/item?id=31626508"/>
+        <updated>2022-06-05T00:05:42.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Architecture Notes: Fallacies of Distributed Systems]]></title>
+        <id>https://architecturenotes.co/fallacies-of-distributed-systems/</id>
+        <link href="https://architecturenotes.co/fallacies-of-distributed-systems/"/>
+        <updated>2022-06-04T23:19:49.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Xerox PARC staff on how they invented the future and how Xerox lost it (1985)]]></title>
+        <id>https://spectrum.ieee.org/xerox-parc</id>
+        <link href="https://spectrum.ieee.org/xerox-parc"/>
+        <updated>2022-06-04T23:11:07.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[为什么汽车不通过技术解决「把孩子遗忘在车里」这个问题？]]></title>
+        <id>https://daily.zhihu.com/story/9749252</id>
+        <link href="https://daily.zhihu.com/story/9749252"/>
+        <updated>2022-06-04T23:07:10.000Z</updated>
+        <summary type="html"><![CDATA[汽车奇谈高小强，消费级汽车歪评怪论，《养车防坑秘笈》作者。
+阅读原文
+
+解决方案近两年开始有了。
+目前车厂的解决方案做得最早的是通用，通用汽车在 2017 年开始装备 RSR（Rear Seat Reminder）后座提醒系统，目前已知国内销售的有凯迪拉克 ATS-L、雪佛兰探界者、别克昂科威等车型。
+▼ 别克昂科威上的后座提醒信息
+
+原理比较简单粗暴：行程中开启后门，就会认为后座有乘客或放了物品，熄火时仪表会显示「后排座椅提醒，检查后排座椅」字句及警报声，提醒车主后排遗留了乘客或物件。
+现代第四代胜达有 ROA 后排乘客提醒，原理稍微复杂些：带超声波传感器，能在锁车后检测是否还有孩子活动，如果发现就会通过鸣笛、Bluelink 信息推送到手机等方式提醒车主。
+
+日产在美国发布的新车也将搭载「后排乘客提醒」，并宣布日后所有四门车型都会搭载，但目前国内还没有消息。
+除了整车，安全座椅也有提醒功能，连接汽车 OBD 接口后，只要安全座椅扣上，汽车熄火时就会发出警报通知车主。
+Evenflo SensorSafe 儿童座椅警报器
+
+Cybex Sirona M 带警报器的儿童安全座椅
+
+还有更简单的附件，警报座垫
+Sunshine Baby iRemind 是一款柔软的感应垫，可以检测到仅仅一磅的重量，而其他人需要四到五磅才能注册。在将宝宝放入宝宝后立即发出哔哔声，以便您知道它已被激活，并且它与智能手机应用程序或密钥卡同步。如果您步行距离车辆超过 15 英尺，两者都会发出声音警报。
+
+问题里说到的道德风险的确存在。
+最大的问题是法律责任：如果你制造了这个产品，一旦它发生故障，没能防止孩子死亡的话，你就会面临巨额的法律诉讼。
+另外一个问题是只有很少人愿意买：大家都觉得「把孩子忘在车里」是不负责任的人才会犯的错误，不会发生在自己身上。（是不是跟当初不系安全带的人想法很像？）
+然而事实并不是大家想象的那样，详细的分析可以看我这个回答。
+目前美国参议院推出了 HOT CARS 法案，要求汽车强制配备后座提醒技术，以便在点火开关关闭后将儿童留在后座时提醒驾驶员。如果得到美国国会通过，将成为未来美国市场汽车的标准配置。
+阅读原文]]></summary>
+        <author>
+            <name>知乎日报</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[为什么许多游戏在存档时会提示「不要关闭电源」？]]></title>
+        <id>https://daily.zhihu.com/story/9749254</id>
+        <link href="https://daily.zhihu.com/story/9749254"/>
+        <updated>2022-06-04T23:07:03.000Z</updated>
+        <summary type="html"><![CDATA[也说，每天从有趣的角度回答一个问题。
+阅读原文
+
+产品开发有一句话「永远不要高估用户的理解能力」，尽量把他们当孩子。
+用户又有头铁呢，说三个有趣故事——
+1.「请按任意键继续」
+这句话现在大家已经比较常见了吧，曾经一度，它成为了打爆软件公司客服电话的问题。
+在开始不少软件公司都用了这句话「请按任意键继续（Please press any key to continue）」作为安装的引导语。
+但让人想不到的是，客服接到海量电话，询问哪个「KEY（键）」是「Any Key（任意键）」。
+不少用户认为，就像「Shift Key」、「Alt Key」、「Enter Key」一样，有一个「Any Key」在键盘的某处，只是他们没有找到，又担心错按了会导致安装失败，所以打爆了客服电话。
+在后面的版本中，不少公司把「任意键（Any Key）」的描述改为了「空格键」或「回车键」。避免麻烦。
+至今，你依然能在不少软件的引导中看到「请按某键继续」的提示。
+
+2.「按了没事，不按反而会停机的按钮」
+在不少运输设备、大型矿机等设备内，会有一种黄色的按键，称为「警惕按钮」。
+这个按钮的设计很奇怪，按了不会发生任何事，如果一定时间不按（比如 1 分钟）反而会停机。
+它的作用是保证操作者时刻在操作台内，并全神贯注。
+因为操作大型设备，依然可能出现驾驶者疏忽导致的瞌睡、不关机离岗刚问题。
+而这时候如果出现意外，将导致严重后果。
+所以就有了这种「按了没事，不按就停机」的反向设计按钮。
+与之相对的还有一种「防危按钮」。通常是大型轧机、冲压机等设备，在操作者的左右手各有一个距离很远的按钮，必须两个按钮同时按下才会启动。
+这是为了防止有的工人重复操作导致疲惫，一只手还在设备里面，另一只手就按下了启动。
+
+3.被当做「脚踏板」的鼠标。
+你可能用过无数次感觉习以为常的鼠标，想过它为什么设计成这个样子吗？
+中间的那个滚轮，很多人不怎么用，为什么现代鼠标几乎每款都带？
+
+设计上，在当年鼠标刚设计出来时候，不是这样的。而是大概这个样子。
+
+因为当年很多用户不习惯用鼠标，所以打开电脑根本不知道这个东西怎么用。
+还有给电脑公司客服打电话，设备中「脚踏板」踩坏了的。
+更多的人反应，这个东西分不出前后左右，使用起来很难。
+后来，设计人员为了让用户很方便知道「这个东西是手握的，且要握这个方向」设计了现代鼠标的样子。
+
+按键侧略低，除了舒适感，也让人知道是要手握的东西。
+一头大、一头略小，保证用户知道手握在哪头。
+滚轮，让人一眼就能知道前后不会拿反。
+相比之下，仅仅是提示「不要关机」真的已经不算什么了。
+阅读原文]]></summary>
+        <author>
+            <name>知乎日报</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[如何让大脑保持高速运行？]]></title>
+        <id>https://daily.zhihu.com/story/9749260</id>
+        <link href="https://daily.zhihu.com/story/9749260"/>
+        <updated>2022-06-04T23:06:59.000Z</updated>
+        <summary type="html"><![CDATA[倩Sur，医学博士、里根医院访问学者、赫尔辛基大学中心医院Fellow
+阅读原文
+
+读中学的时候就学过一句话——物质决定意识。
+对成人而言，占我们体重 2% 的大脑几乎要消耗掉我们身体 20% 的能量。事实上，我们的大脑大约有 1000 亿个神经元，如果你对 1000 亿没概念的话……想想如果有这么多钱，那是一个多么庞大的数字。毕竟有些人的先定个小目标：1 个亿。
+有研究显示：任何时候，我们的大脑都不能同时启动超过 2% 的神经元，超过这些，供应的葡萄糖会被迅速的消耗完，人就会昏过去。
+大脑是一个非常非常耗能的器官
+打个比方吧：
+当你在草原上看见一头大狮子，吓得不轻，想赶紧跑。这个过程中，首先是你的眼睛看到了大狮子，视觉信号上传至大脑视觉皮质，然后视皮质再与其他皮质部分联系，调出你既往对狮子的理解，然后这些皮质部分处理这些信息后认为这很危险，然后联系大脑皮质运动中枢，运动中枢发出「逃跑指令」，也就是将运动信号传导至身体的骨骼肌，感觉逃！同时，下丘脑也会督促内分泌腺分泌肾上腺素、胰高血糖素等激素帮助骨骼肌完成动作。
+从这个例子可以看出，大脑中数量巨大的神经元通过突触组成了精密的神经网络，这样我们身体可以在顷刻之间完成了感觉、运动、记忆、思考等一系列的活动。不管是动物还是植物，我们所有的活动都离不开能源。要进行复杂的运算，必定需要大量的能耗。
+对成人而言，占我们体重 2% 的大脑几乎要消耗掉我们身体 20%的能量。但是对儿童而言，这个数字达到了 50%！研究表明：3-8 岁时期的儿童，大脑开始快速发育，大脑各部位的神经元与神经元之间开始会大量形成新的突触连接，我们开始逐渐形成我们最基本的认知、推理、行为管理、抽象思维等等大脑高级功能，这时大脑发育消耗能量几乎占到了身体消耗能量的一半以上。所以有些妈妈可能会觉得这个时期的孩子吃得不少，还不长个子，因为能量都给他们用来长脑子了。
+大…]]></summary>
+        <author>
+            <name>知乎日报</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[为什么 11 年后，这届年轻人还这么爱琢磨《甄嬛传》？]]></title>
+        <id>https://daily.zhihu.com/story/9749267</id>
+        <link href="https://daily.zhihu.com/story/9749267"/>
+        <updated>2022-06-04T23:06:52.000Z</updated>
+        <summary type="html"><![CDATA[苏桃桃，关于影视 文学 和没有结局的故事
+阅读原文
+
+一部剧要值得琢磨，要满足三个基本要素
+
+服化道用心，耐看经看好看
+剧情用心，情节衔接自然流畅
+演员用心，和角色合二为一
+
+这三点说起来来简单，做起来难。
+以第一条为例，《甄嬛传》的服化道并不是高定款，而是继来自于隔壁剧组《苍穹之昴》，《苍穹之昴》的背景是晚清，服装头饰都相对奢华、精致，比如大拉翅就不是雍正时期的风格。但是化妆师并没有胡乱给演员做造型，而是尽量贴合各位演员的人物性格和人生阶段，给她们创造了很多经典形象，以至于甄嬛传之后，各位演员再也没有出过比《甄嬛传》更好看、更符合她们的妆造。
+比如在《甄嬛传》爆红之后，原班人马火速打造了《芈月传》，但里面的人物形象就远没有甄嬛传耐看、好看。
+这是孙俪，甄嬛传的造型师用弯眉修饰了孙俪的方脸，全眼眼妆去突出甄嬛的妩媚。
+
+这是华妃娘娘，妆容都还可以，主要的问题在头饰上，芈月传的头饰像个尖尖的小山压在头上。
+
+皇后娘娘没有参演《芈月传》，她参演了 2012 年的《山河泪》，饰演皇太极的皇后哲哲
+有的剧组真的不舍得给女演员调一个好看的唇色吗？
+
+祺贵人的扮演者出演了《独步天下》中的天下第一美人「东哥」
+同样是求情，没有「愚蠢却实在美丽」的瓜六娇俏可爱。
+
+安陵容的扮演者，这位姐姐不太爱演古装，后来转型去演现代剧了。
+
+很多美妆 UP 还出了专门的甄嬛传妆容教学。
+从剧情上来说，《甄嬛传》很清楚自己的长处和短处，它没有试图教育观众，或者为了水时长而胡乱加戏，它就是简简单单地讲了一个宫斗的故事。
+在《甄嬛传》之前，很多人心目中的宫廷剧是什么呢，是《还珠格格》是《宫锁珠帘》是《金枝欲孽》或者《宫心计》……
+但这些宫斗剧的核心其实都不是「宫斗」。
+它们要阐述的更多着墨于「人性」和「人」，里面宫斗手段是经不起仔细琢磨的。
+文艺作品，讲究的是百花齐放百家争鸣。所以《甄嬛传》另辟蹊径，呈现了一种全新的风格，那就是炫技流派，将全剧的主旨先定在「斗」上，以一种正剧风横空出世。
+这种剧情严谨且环环相扣，台词考究又意味深长的「炫技流」，看一遍肯定是不过瘾，三刷四刷保证才大概理清，像我这种喜欢写甄嬛传分析的，就得刷过一百遍以上。
+《甄嬛传》的原著，它最吸引人的地方就在于整个严密的剧情，从甄嬛入宫到斗华妃斗皇后斗皇帝，环环相扣步步惊心，草蛇灰线伏笔千里令人大呼过瘾。改编成电视剧后，导演和编剧很大胆也很巧妙把这个故事移栽到了雍正朝，既洗去了原著的浮华又保留了其宫斗的精华，让大家连连惊呼，哇，原来宫斗可以这么烧脑这么好看！同时剧组也弃用小鲜肉整容脸，大胆启用了一批有演技有态度的演员，尤其有几位的选角简直是绝了。
+甄嬛传占尽天时地利人和，是小说改编电视剧的一个极其完美的成功，原著导演演员编剧四者相辅相成，做到了各取其精华各去其糟粕，就让整个剧本一炮而红。
+在之后无论是如懿传还是芈月传还是延禧攻略，都没有再做到如此全民现象的成功。
+我不觉得拍摄宫斗剧宅斗剧题材就是什么贬低女性，中国有漫长的历史，女性是处于被压迫被禁锢的状态的，从后宫中反杀的女性题材也不少。看故事是要看内核不是看题材的，心眼不正的人，逆行者都能拍出娘道的范儿。
+甄嬛传原著最好看的就是宫斗，但是文笔就很拖沓矫情，改成电视剧后，各位演员的好演技也让剧本在原著的角度升华了。
+它的内核也很有意思。
+这里面没有一个女性是靠「宠爱」就能大杀四方获得一切。
+恰恰很多宠妃得宠的时候，就是她们的人生最危险的时候。
+甄嬛曾经说过，
+在后宫里想要得宠，就要猜准皇帝的心思。
+可是如果想要活着，就要猜中其他女人的心思。
+从女主甄嬛来说，她虽然也有玛丽苏的嫌疑，但和果郡王的感情甚至还「拖累」了女主搞事业，最后杀死皇帝也颇有点隐喻的味道。
+就算是最没有自我意识的安陵容，也是兢兢业业的提升自己练好技能。
+多说一句，我身为一个十级甄嬛学家，一半的粉丝都来自甄嬛传吧，我已经很久不写甄嬛的帖子了，就是因为真的卷不动了……
+阅读原文]]></summary>
+        <author>
+            <name>知乎日报</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[物理学「常量」有没有可能是极其缓慢变化的量？]]></title>
+        <id>https://daily.zhihu.com/story/9749276</id>
+        <link href="https://daily.zhihu.com/story/9749276"/>
+        <updated>2022-06-04T23:06:46.000Z</updated>
+        <summary type="html"><![CDATA[中科院物理所，没错，我就是那个物理所。
+阅读原文
+
+物理学常量真的是亘古不变的常数吗？有没有可能是含时变量呢？
+这不仅仅是一个脑洞，更是许多物理学家们所关心的问题，为此他们对小到原子大到类星体进行了测量。
+引力常数 G 与大数假说
+1687 年，牛顿在《自然哲学的数学原理》中发布了着名的万有引力定律：
+
+时至今日，万有引力定律已经成为高中物理课本上的基础知识，常数 G 被称为万有引力常数。但是，万有引力常数真的是常数吗？
+1938 年，英国物理学家狄拉克发现，两个基本作用力——万有引力和电磁力的比例，和宇宙的年龄，其数量级相近。狄拉克认为，这不一定仅仅是一个巧合，也许背后有很深刻的物理。于是狄拉克提出了大数假说，认为万有引力常数是时间变化的，并且构造了万有引力常数反比于时间的宇宙学模型。
+英国物理学家狄拉克，与薛定谔一同获得 1933 年诺贝尔物理学奖
+精细结构常数
+精细结构常数（如无特别声明，指电磁相互作用的精细结构常数，下同）是物理学中定义的一个无量纲常量，其表达式为：
+
+精细结构常数是一系列重要物理常数的组合，其中  是基本电荷， 是真空介电常数， 是普朗克常数， 是真空中的光速。
+根据 2014 年国际科技数据委员会 CODATA 的推荐值，  一般近似计算中，经常取 。
+精细结构常数是德国物理学家索末菲在分析氢原子光谱时提出的，最开始是为了简化计算，但在后续的研究中，物理学家逐渐发现了精细结构常数背后越来越多的物理意义。
+慕尼黑大学索末菲理论物理中心，索末菲塑像与精细结构常数
+精细结构常数是多个物理学常数的组合，其中基本电荷  来自四大相互作用之一的电磁相互作用，普朗克常数  来自量子力学，真空中的光速 来自相对论，精细结构常数可以描述电磁相互作用的耦合常数，它将几大物理学理论联系在了一起。
+费曼曾说：「这个数字自五十多年前发现以来一直是个谜。所有优秀的理论物理学…]]></summary>
+        <author>
+            <name>知乎日报</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[StopTheMadness – Take back your web browser]]></title>
+        <id>https://underpassapp.com/StopTheMadness/</id>
+        <link href="https://underpassapp.com/StopTheMadness/"/>
+        <updated>2022-06-04T22:39:34.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Ulstein X-BOW inverted bow]]></title>
+        <id>https://ulstein.com/innovations/x-bow</id>
+        <link href="https://ulstein.com/innovations/x-bow"/>
+        <updated>2022-06-04T22:10:15.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[DDR5 RAM Prices Crashed by 20% in May Alone]]></title>
+        <id>https://tech4gamers.com/ddr5-memory-prices/</id>
+        <link href="https://tech4gamers.com/ddr5-memory-prices/"/>
+        <updated>2022-06-04T22:00:15.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Planning Is for Doing]]></title>
+        <id>https://biggestfish.substack.com/p/planning-is-for-doing</id>
+        <link href="https://biggestfish.substack.com/p/planning-is-for-doing"/>
+        <updated>2022-06-04T21:56:32.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[How to stop USPS junk mail]]></title>
+        <id>https://consumer.ftc.gov/articles/how-stop-junk-mail</id>
+        <link href="https://consumer.ftc.gov/articles/how-stop-junk-mail"/>
+        <updated>2022-06-04T21:54:10.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Albert – open-source keyboard launcher for Linux]]></title>
+        <id>https://albertlauncher.github.io/</id>
+        <link href="https://albertlauncher.github.io/"/>
+        <updated>2022-06-04T21:45:14.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Painless Desktop containers for everyday development]]></title>
+        <id>https://dock.orion3.space/readme.htm</id>
+        <link href="https://dock.orion3.space/readme.htm"/>
+        <updated>2022-06-04T21:07:48.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Freshpaint (YC S19) is hiring engineers to build real-time data ingestion infra]]></title>
+        <id>https://jobs.ashbyhq.com/freshpaint/bfe56523-bff4-4ca3-936b-0ba15fb4e572</id>
+        <link href="https://jobs.ashbyhq.com/freshpaint/bfe56523-bff4-4ca3-936b-0ba15fb4e572"/>
+        <updated>2022-06-04T21:00:47.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Tesla won’t give drivers their own crash data without a court order (2018)]]></title>
+        <id>https://www.consumeraffairs.com/news/tesla-blames-drivers-who-wreck-its-cars-but-wont-hand-over-crash-data-without-a-court-order-053018.html</id>
+        <link href="https://www.consumeraffairs.com/news/tesla-blames-drivers-who-wreck-its-cars-but-wont-hand-over-crash-data-without-a-court-order-053018.html"/>
+        <updated>2022-06-04T21:00:09.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Do not combine footers and infinite scrolling]]></title>
+        <id>https://willfennel.com/posts/2022/06/04/do-not-combine-footers-and-infinite-scrolling.html</id>
+        <link href="https://willfennel.com/posts/2022/06/04/do-not-combine-footers-and-infinite-scrolling.html"/>
+        <updated>2022-06-04T20:50:50.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Ask HN: Anyone else quickly losing confidence in Amazon?]]></title>
+        <id>https://news.ycombinator.com/item?id=31624401</id>
+        <link href="https://news.ycombinator.com/item?id=31624401"/>
+        <updated>2022-06-04T19:52:32.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Have an old iPad lying around? You might be able to make it run Linux soon]]></title>
+        <id>https://arstechnica.com/gadgets/2022/06/developers-get-linux-up-and-running-on-old-ipad-air-2-hardware/</id>
+        <link href="https://arstechnica.com/gadgets/2022/06/developers-get-linux-up-and-running-on-old-ipad-air-2-hardware/"/>
+        <updated>2022-06-04T19:26:32.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[On Stretch Rap (and containers and shipping)]]></title>
+        <id>https://theprepared.org/features-feed/stretch-wrap</id>
+        <link href="https://theprepared.org/features-feed/stretch-wrap"/>
+        <updated>2022-06-04T19:12:34.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Solving the housing crisis requires fighting monopolies in construction (2020)]]></title>
+        <id>https://www.minneapolisfed.org/research/working-papers/solving-the-housing-crisis-will-require-fighting-monopolies-in-construction</id>
+        <link href="https://www.minneapolisfed.org/research/working-papers/solving-the-housing-crisis-will-require-fighting-monopolies-in-construction"/>
+        <updated>2022-06-04T18:48:50.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Japan tested a giant turbine that generates electricity using deep ocean current]]></title>
+        <id>https://www.thesciverse.com/2022/06/japan-tested-giant-turbine-that.html</id>
+        <link href="https://www.thesciverse.com/2022/06/japan-tested-giant-turbine-that.html"/>
+        <updated>2022-06-04T16:55:55.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Vectorized and performance-portable Quicksort]]></title>
+        <id>https://opensource.googleblog.com/2022/06/Vectorized%20and%20performance%20portable%20Quicksort.html</id>
+        <link href="https://opensource.googleblog.com/2022/06/Vectorized%20and%20performance%20portable%20Quicksort.html"/>
+        <updated>2022-06-04T16:48:11.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[The children of atomic bomb survivors: A genetic study]]></title>
+        <id>https://www.ncbi.nlm.nih.gov/books/NBK234265/</id>
+        <link href="https://www.ncbi.nlm.nih.gov/books/NBK234265/"/>
+        <updated>2022-06-04T16:19:41.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[The Power C Compiler]]></title>
+        <id>http://www.mixsoftware.com/product/powerc.htm</id>
+        <link href="http://www.mixsoftware.com/product/powerc.htm"/>
+        <updated>2022-06-04T15:27:27.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Ask HN: What is the best jurisdiction for internationally distributed teams?]]></title>
+        <id>https://news.ycombinator.com/item?id=31620700</id>
+        <link href="https://news.ycombinator.com/item?id=31620700"/>
+        <updated>2022-06-04T14:27:10.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[How is GNU `yes` so fast? (2017)]]></title>
+        <id>https://old.reddit.com/r/unix/comments/6gxduc/how_is_gnu_yes_so_fast/</id>
+        <link href="https://old.reddit.com/r/unix/comments/6gxduc/how_is_gnu_yes_so_fast/"/>
+        <updated>2022-06-04T11:20:03.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Show HN: GraphQL Client in the Terminal]]></title>
+        <id>https://github.com/eerimoq/gqt</id>
+        <link href="https://github.com/eerimoq/gqt"/>
+        <updated>2022-06-04T09:27:07.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[The Beauty of Unix Pipelines (2020)]]></title>
+        <id>https://prithu.dev/posts/unix-pipeline/</id>
+        <link href="https://prithu.dev/posts/unix-pipeline/"/>
+        <updated>2022-06-04T04:45:08.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[PiRogue – mobile forensic and network analysis]]></title>
+        <id>https://piroguetoolsuite.github.io/</id>
+        <link href="https://piroguetoolsuite.github.io/"/>
+        <updated>2022-06-04T03:56:46.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Web3 简述]]></title>
         <id>http://weekly.dockone.io/article/2434909</id>
@@ -211,6 +701,16 @@ by 但愿君 N 刷计划 9
         </author>
     </entry>
     <entry>
+        <title type="html"><![CDATA[Kimchi: The latest update to Mina's zero-knowledge proof system]]></title>
+        <id>https://cryptologie.net/article/554/kimchi-the-latest-update-to-minas-proof-system/</id>
+        <link href="https://cryptologie.net/article/554/kimchi-the-latest-update-to-minas-proof-system/"/>
+        <updated>2022-06-03T21:35:46.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[WorldWideWeb.app]]></title>
         <id>https://blog.iconfactory.com/2022/06/worldwideweb-part-2/</id>
         <link href="https://blog.iconfactory.com/2022/06/worldwideweb-part-2/"/>
@@ -355,6 +855,16 @@ by 但愿君 N 刷计划 9
         <id>https://github.com/s-macke/SAM</id>
         <link href="https://github.com/s-macke/SAM"/>
         <updated>2022-06-03T04:28:15.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Research Confirms Eastern Wyoming Paleoindian Site as Americas’ Oldest Mine]]></title>
+        <id>https://www.uwyo.edu/uw/news/2022/05/research-confirms-eastern-wyoming-paleoindian-site-as-americas-oldest-mine.html</id>
+        <link href="https://www.uwyo.edu/uw/news/2022/05/research-confirms-eastern-wyoming-paleoindian-site-as-americas-oldest-mine.html"/>
+        <updated>2022-06-03T04:18:32.000Z</updated>
         <summary type="html"><![CDATA[Comments]]></summary>
         <author>
             <name>Hacker News</name>
@@ -814,6 +1324,16 @@ Blaisdell 在做实验抱起一只鸽子带到跑步机上时，鸽子依旧在�
         </author>
     </entry>
     <entry>
+        <title type="html"><![CDATA[Abba and the rise of the work-from-home rock star]]></title>
+        <id>https://www.economist.com/culture/2022/05/27/abba-and-the-rise-of-the-work-from-home-rock-star</id>
+        <link href="https://www.economist.com/culture/2022/05/27/abba-and-the-rise-of-the-work-from-home-rock-star"/>
+        <updated>2022-06-02T15:09:44.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[Show HN: Svelvet – A component library for building interactive flow diagrams]]></title>
         <id>https://svelvet.io/</id>
         <link href="https://svelvet.io/"/>
@@ -828,6 +1348,16 @@ Blaisdell 在做实验抱起一只鸽子带到跑步机上时，鸽子依旧在�
         <id>http://ekeler.com/game-boy-camera-canon-ef-mount</id>
         <link href="http://ekeler.com/game-boy-camera-canon-ef-mount"/>
         <updated>2022-06-02T14:50:09.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Questions candidates can ask about equity compensation]]></title>
+        <id>https://www.holloway.com/g/equity-compensation/sections/questions-candidates-can-ask</id>
+        <link href="https://www.holloway.com/g/equity-compensation/sections/questions-candidates-can-ask"/>
+        <updated>2022-06-02T14:33:55.000Z</updated>
         <summary type="html"><![CDATA[Comments]]></summary>
         <author>
             <name>Hacker News</name>
@@ -14635,522 +15165,6 @@ NEDC 工况下燃料电池动力系统表现电堆及系统效率随电堆输出
         <id>https://umami.is/</id>
         <link href="https://umami.is/"/>
         <updated>2022-05-06T13:30:59.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Seed-firing drones are planting 40k trees every day to fight deforestation]]></title>
-        <id>https://www.euronews.com/green/2022/05/04/this-australian-start-up-wants-to-fight-deforestation-with-an-army-of-drones</id>
-        <link href="https://www.euronews.com/green/2022/05/04/this-australian-start-up-wants-to-fight-deforestation-with-an-army-of-drones"/>
-        <updated>2022-05-06T13:08:50.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Learning modern Linux: A handbook for the cloud native practitioner]]></title>
-        <id>https://www.oreilly.com/library/view/learning-modern-linux/9781098108939/</id>
-        <link href="https://www.oreilly.com/library/view/learning-modern-linux/9781098108939/"/>
-        <updated>2022-05-06T11:45:27.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Where do space, time and gravity come from?]]></title>
-        <id>https://www.quantamagazine.org/where-do-space-time-and-gravity-come-from-20220504/</id>
-        <link href="https://www.quantamagazine.org/where-do-space-time-and-gravity-come-from-20220504/"/>
-        <updated>2022-05-06T08:10:10.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Japanese Words in Neuromancer]]></title>
-        <id>https://jrogel.com/neuromancer-japanese-words/</id>
-        <link href="https://jrogel.com/neuromancer-japanese-words/"/>
-        <updated>2022-05-06T06:44:12.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Exporting Data from Old Gear Through LCD Sniffing]]></title>
-        <id>https://hackaday.com/2022/05/05/exporting-data-from-old-gear-through-lcd-sniffing/</id>
-        <link href="https://hackaday.com/2022/05/05/exporting-data-from-old-gear-through-lcd-sniffing/"/>
-        <updated>2022-05-06T06:27:14.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[PHP RFC: Deprecate ${} string interpolation]]></title>
-        <id>https://wiki.php.net/rfc/deprecate_dollar_brace_string_interpolation</id>
-        <link href="https://wiki.php.net/rfc/deprecate_dollar_brace_string_interpolation"/>
-        <updated>2022-05-06T04:36:37.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[“Crime Pays but Botany Doesn’t” crosses citizen science with environmentalism]]></title>
-        <id>https://www.outsideonline.com/culture/books-media/botany-joey-santore-youtube-crime-pays/</id>
-        <link href="https://www.outsideonline.com/culture/books-media/botany-joey-santore-youtube-crime-pays/"/>
-        <updated>2022-05-06T04:28:32.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Mygov is a ‘huge disappointment,’ key architect despairs]]></title>
-        <id>https://www.innovationaus.com/mygov-is-a-huge-disappointment-key-architect-despairs/</id>
-        <link href="https://www.innovationaus.com/mygov-is-a-huge-disappointment-key-architect-despairs/"/>
-        <updated>2022-05-05T23:29:12.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[颜色对人的食欲有影响吗？]]></title>
-        <id>https://daily.zhihu.com/story/9748320</id>
-        <link href="https://daily.zhihu.com/story/9748320"/>
-        <updated>2022-05-05T23:06:41.000Z</updated>
-        <summary type="html"><![CDATA[丁香医生，丁香医生，更懂健康
-阅读原文
-
-有影响。
-甚至，你可以通过更换餐具的颜色来减肥。
-接下来就发挥我灵魂画手的能力，给你康康，具体怎么操作。
-1.米饭爱好者，别用白瓷碗了
-
-「米饭爱好者」，是指那些有一万种方法消灭米饭的人。
-生鸡蛋酱油拌米饭、腐乳拌米饭、东北炸酱拌米饭，每一口都有碳水与谷氨酸钠之间碰撞擦出的火花。
-嗝……一个不小心，就吃多了……所以，如果想少吃点米饭，你应该选择——
-自己画的
-彩虹碗！！
-当然，并不是一定要选彩虹色的碗，而是除了白色之外的碗。
-美国康奈尔大学的一项研究证明：当食物的颜色与容器反差较大时，能让你吃得更少。
-反之，如果食物和容器的颜色相同或相近，食物与容器之间的边界就变得模糊了。如果用最常用的白瓷碗盛饭，你有可能在不知不觉间盛更多的米饭，并把所有的米饭都吃掉。
-别再用家里的白碗了，快买一个其他颜色的碗盛饭吧！
-但是……记得买个小碗，一定要买个——小碗！！！
-
-2. 两口吃一份面的人，换个小盘子吧
-
-对于爱吃面条的人来说，虽然每次都盛了满满一大盘子，结果吸溜了两口之后……咦我的面怎么吃光了？
-如果想少吃点面条，你应该选择——
-
-原理同米饭一样，只要选择与白面条颜色反差较大的容器，就能帮你少吃一点。
-赤橙黄绿青蓝紫任你选择！
-不过，还有一点也很重要：用个小盘子。有研究发现，在盛饭的时候，用大盘子的人比用小盘子的人多吃了 45 % 的食物。
-如果你还在用西餐盘子吃面，那不管选什么颜色都没用了。
-3. 无肉不欢的人，你可能需要它
-红肉含有丰富的血红素铁，具有很好的补血效果。
-
-但如果你最近恰好在减肥，需要控制红肉的摄入量的话，你应该选择——
-自己画的
-研究表明，蓝色都能够起到抑制食欲的作用。这是因为，蓝色在我们的食物体系中并不常见，人们在看到蓝色之后，也很难联想到食物。
-再往前追溯一下，在人类还在依靠打猎、挖野菜来生存的时候，无数次试错经验都告诉他们：蓝色的食物并不好吃，还可能有毒！
-所以，如果想少吃点肉的话，换套蓝色的餐具或许会有用。
-蓝色盘子还是现下最流行的冷淡北欧风，简直一举两得！
-
-最后，啃排骨的时候别太勤快，晚一点再收拾桌上吃剩的骨头！
-扔在桌上的骨头，能提醒自己已经吃了多少，让你对自己的进食量有更准确的感知。
-4. 吃菜困难人士， 1 天 1 斤菜不是梦
-对于「吃菜困难户」来说，蔬菜们各有各的「奇怪」和「难吃」。
-香菜？臭虫味啊……
-菠菜？又苦又涩。
-茼蒿？这是什么啊快点拿走啦！
-
-如果想多吃点蔬菜，你应该选择——
-
-自己画的
-和米饭、面条相反，如果选用一个绿色的盘子装绿色蔬菜，蔬菜和盘子的界限就变得模糊了。你很有可能在不知不觉间，就把盘子里的青菜吃光。
-根据 2016 年发布的居民膳食指南，每人每天最好能吃够 300 ～ 500 克蔬菜。
-作为一个没有妈妈在旁边逼着吃菜的成年人，绿色盘子或许能代替妈妈，帮你吃菜。
-别再嫌减脂沙拉吃不下去了，换个绿色的盘子试试！
-5. 饭后甜品爱好者，少糖也幸福
-女孩子都有 2 个胃，一个装正餐，一个装甜品和零食。但是对于正在减肥的女生来说，往往会自欺欺人地选择少少少少糖。
-
-如果一定要吃个少糖甜品，还想收获同样的幸福，你应该选择——
-
-呕……我自己画着画着都吐了
-绿色不仅仅能帮我们多吃蔬菜，还能够降低我们感受甜味的阈限。
-说得更明白一点，如果平时加 5 克糖才能让你感觉到有甜味的话，把盘子换成绿色之后，加 3 克糖也许就够了。
-买一个绿色的小碟子吃甜品吧，糖分减半，但快乐不减半。
-但是记得，不要用黄色的盘子哦！
-黄色会提高你的甜味阈限，让你觉得盘子里的甜品「还不够甜」。
-
-不过……
-我知道你吃甜品的时候，根本不会在乎盘子是什么颜色，那就允许你暂时享受吃甜品的快乐时光吧~
-毕竟，吃饱了才有力气减肥。
-阅读原文]]></summary>
-        <author>
-            <name>知乎日报</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[如何评价美剧《月光骑士》第六集（大结局）《众神与怪物》？]]></title>
-        <id>https://daily.zhihu.com/story/9748321</id>
-        <link href="https://daily.zhihu.com/story/9748321"/>
-        <updated>2022-05-05T23:06:36.000Z</updated>
-        <summary type="html"><![CDATA[MrBlueOwO，美剧 / 电影 / 音乐
-阅读原文
-
-
-1、
-就视效和动作设计而言，这一集还是值得肯定的，超出了我的预期。
-虽然大家在调侃与哥斯拉大战金刚、神奇女侠的“相似性”，但这段高潮打戏整体确实流畅许多，没什么违和感，能看到经费在燃烧（这集为啥只有四十二分钟，没钱烧了……）
-另外，和 15 年《哥斯拉》交相呼应的，仰视的视角、以及渺小的人和巨大「怪兽」的平行影像，挺震撼的（虽然那部哥斯拉评分不高，但的确是近年来最喜欢也是常常回看的一部怪兽电影）
-《哥斯拉》从倒下男主的视角，看到阿胖倒下《月骑》，从倒下男主的视角，看到孔苏倒下《哥斯拉》，惺惺相惜的「英雄」《月骑》，相同姿势倒下（有点妖娆，咳）
-但就剧情而言（嗯？有剧情？）
-事实再次证明，不要想太多（苦笑）：
-例如，
-❎假：前几集「失忆」的片段会在最后复盘
-✅真：没有复盘，甚至最后高潮还继续「失忆」呢，可真是省钱小妙招，全靠观众脑补。
-漫威：请发挥你们的想象力
-❎假：众神&欧西里斯和反派哈罗沆瀣一气
-✅真：他们只是单纯的蠢而已 ¯\_(ツ)_/¯
-
-❎假：众神与阿密特大战三百回合
-✅真：……（他们是审判者，不是战士¯\_(ツ)_/¯）
-确实没有这个必要好像也不怎么强嘛……
-以及虽然通过「别多想」原理、以及上一集解析提到的「违和时间」基本预测到的，但还是被本集毫无解释、一笔带过给稍稍惊到的：
-❎假：精神病院是现实，前四集只是幻想。
-✅真：只是马克脑海中的一个幻境罢了。
-不过，有趣的是，哈罗最后落脚的那个医院，走廊内景和马克冥界的走廊基本一致。说明冥界的场景可能也不是完全的凭空想象，还是有一些记忆的来源。
-
-除了第二集那张传单的记忆，更有可能的是，马克 / 史蒂文在母亲去世过后确实去了医院治疗，所以有了对应的场景记忆。只是史蒂文排除外界伤害的设定，让他忘记了那段回忆。而这段被「压制」的回忆，就在梦境般的冥界再次浮出水面了…]]></summary>
-        <author>
-            <name>知乎日报</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[为什么有的人喜欢阳光，每次有阳光的时候就会感到心情好，舒畅 ， 就好像没有了任何烦恼，很开心？]]></title>
-        <id>https://daily.zhihu.com/story/9748328</id>
-        <link href="https://daily.zhihu.com/story/9748328"/>
-        <updated>2022-05-05T23:06:31.000Z</updated>
-        <summary type="html"><![CDATA[耗子领袖
-阅读原文
-
-与大多数人想象中不同，喜欢阳光这件事，并不是纯粹的心理学效应，而是刻在包括人类在内的很多动物基因里的，是存在生物学依据的。
-阳光之所以让我们感觉愉悦，有两个机制在发挥作用。
-（1）紫外线照射皮肤产生内啡肽
-2014 年在《Cell》上发表了研究一篇研究，发现紫外线照射到皮肤可以诱导内啡肽（一种内源性阿片肽）分泌，并通过循环进入大脑，诱发奖赏效应。
-在该文中，David E.Fisher 研究团队发现，紫外线照射可以提高小鼠血液中内啡肽水平，并发挥镇痛作用。
-
-在长期经受强紫外线照射的小鼠上，可以看到一个翘尾巴的反应，这是一个典型的由μ阿片受体激活所介导的反应，在吗啡成瘾的小鼠中也经常能看到，说明血液中的升高的内啡肽确实发挥了生理效应。
-
-我们关心的是，小鼠会不会因为分泌内啡肽，而感到心情愉悦呢？
-答案是肯定的，条件位置偏爱实验发现，小鼠更偏爱曾经有过内啡肽注射经历的箱体，说明外周的内啡肽发挥了奖赏效应。
-
-（这篇文章的一个主要意义是紫外线照射可以缓解吗啡的戒断反应，可以用于戒毒，因为这不是我们这个回答的主要方向，所以就简单提一句）
-后续，作者找到紫外线诱发内啡肽分泌的具体机制：
-紫外线照射会上调表皮角朊细胞（keratinocytes）中的 p53 信号，继而诱导「促阿片 - 黑素细胞皮质素原」(pro-opiomelanocortin,简称 POMC）的合成，POMC 是内啡肽的前体物质，可以促进内啡肽的分泌，血液中升高的内啡肽可以跨过血脑屏障进入大脑，与奖赏环路中的阿片受体结合，并发挥奖赏效应。
-
-说了那么多，都是在耗子上发现的，人类是否也有同样的机制呢？
-也是有的。
-后续几年的数篇体外研究证实，紫外线照射到人类表皮中提取培养的角朊细胞，也会诱发内啡肽的分泌。
-尽管尚无在体数据，但我们可以推断，这一机制在人类身上应该也是发挥了作用的。
-这也解释了为什么有些欧美人白人晒黑成瘾，这不是我瞎编的，国内人可能很难理解，但在以所谓的小麦色为追求的白人群体里，在临床上真的发现有「紫外线成瘾」的人。
-
-有人可能会反驳：你这说的不对啊，我明明只要看到太阳就心情好，并不需要真的晒到太阳。
-首先，平时对防晒有过了解的朋友应该知道，只要是晴天，哪怕你没有直接暴露在阳光下，但其实也是会接受紫外线辐射的。
-其次，这不是还有一个机制没讲嘛。
-（2）强光通过视觉神经环路发挥抗抑郁效应
-暨南大学的任超然老师团队于 2019 年在《Neuron》发表研究，发现强光可以直接发挥抗抑郁作用。
-
-在这个研究中，一群特定视网膜神经节细胞（retina）在接受强光照射后，会投射到丘脑腹外侧膝状体 / 膝状体小叶（vLGN/IGL）的一群抑制性神经元中，这些神经元的激活可以选择性地抑制外侧僵核（LHb），从而起到抗抑郁的作用（背景知识：LHb 是近几年很火的一个抑郁相关核团，其兴奋性活动和抑郁症状密切相关）。
-环路示踪结果，单纯地觉得好看放上来的原文图
-注意，这个实验中给耗子用的光强是 3000 lux，而阳光的照度最大可达 100000 lux。
-尽管同样没有人类在体数据，但这条通路在进化上应该是保守的，我认为应该在人类上也是大概率成立的。
-综上，阳光的紫外线和强光本身都可以发挥抗抑郁，促进情绪的作用，这是我们喜欢阳光的最底层生理基础。
-这些机制也可以很好地解释为什么有些人会出现「季节性抑郁情绪」，以及为什么小青年们喜欢在深夜里、昏暗的灯光下无病呻吟。
-阅读原文]]></summary>
-        <author>
-            <name>知乎日报</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[怎么提高读书的效率呢？]]></title>
-        <id>https://daily.zhihu.com/story/9748335</id>
-        <link href="https://daily.zhihu.com/story/9748335"/>
-        <updated>2022-05-05T23:06:25.000Z</updated>
-        <summary type="html"><![CDATA[韩叙
-阅读原文
-
-总有朋友问我这样的问题：
-
-我的职业生涯遇到瓶颈了怎么办？感觉这几年一直在原地踏步。
-你的文章里总在说看本质，怎么做系统化思考，分析事情的本质呢？
-刚晋升为管理者，该怎么带团队呢，不知道从哪下手。
-工作越忙，压力越大，自己也越焦虑。怎么做好时间管理？怎么调整情绪呢？
-
-所有这些问题，都可以用一种方法来解决：持续和高效的阅读。
-没错，阅读确实没有直接去解决上述的具体问题，也很难有某一本书，可以给出完全适合自己的答案。
-很多时候，问题的根源并不在「所描述的问题本身」。
-比如职业生涯瓶颈是因为之前的知识和经验的积累，已经耗尽了，没办法把你带到更高的高度，需要补充更多的弹药。
-而现有的人脉和工作环境已经很固定，也没有像上学时那样系统学习的机会了。
-再比如，长期处于忙碌且焦虑的状态，工作填满了全部时间，没有个人生活，进入恶性循环。
-这时候就需要有一种方式，强迫调整个人时间安排，重构生活节奏，这样才能让自己慢下来、专注起来。
-还有很多类似问题，都可以被阅读化解。困难点在于，人对阅读收益的感知是相对后置的，属于偏长期价值。所以要从阅读中获得收获，首先要培养阅读的习惯。
-习惯的从无到有，是有过程的，操之过急只能会带来更大挫败。所以要接受这个过程，当然也有方法可以提高效率。
-培养阅读习惯，有两个关键点：马上去做和减少阻力。
-关键点一：马上去做
-我相信没人会否定阅读的价值，哪怕几乎不阅读的人。但为什么从心动到行动会有如此大的折损呢，从互联网思维角度来讲，就要提升这一步的转化。
-因为人们往往把这一步转化的周期拉得很长。
-比如当下看了我这篇文章，觉得很有道理，深受启发，而且也拿到了一些方法。心中已经跃跃欲试，但身体却很诚实的纹丝未动。心中暗下决心，这个周末一定要读起来。
-然后又想到，既然读书，肯定就要先买书，这就好像决定去健身，要先买装备是一样的。
-于是研究各种 kol 和榜单的…]]></summary>
-        <author>
-            <name>知乎日报</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[中国有哪些鲜为人知的地缘优势？]]></title>
-        <id>https://daily.zhihu.com/story/9748344</id>
-        <link href="https://daily.zhihu.com/story/9748344"/>
-        <updated>2022-05-05T23:06:19.000Z</updated>
-        <summary type="html"><![CDATA[龙牙，个人GZH：龙牙的一座山。
-阅读原文
-
-绝大多数人都知道喜马拉雅山是我国一道天然屏障，它背后的青藏高原一起组成一个天然阻隔，使我国免受西南方向外国威胁。然而因为缺乏一定军事常识，绝大多数人也不明白它到底是怎么阻隔的，为什么能够阻隔。
-从这一点来说，这个地缘优势其实鲜为人知。
-
-在喜马拉雅山南侧的卫星地图上你能够发现很多这种细小树枝一样的「毛刺」，这些小「毛刺」实际上是山脉南侧正在发育的河流。
-一条河流也是有自己的生命周期的，尽管非常长也非常不确定，不过确实有从小溪流长成大河的过程，这个过程中还有很多不确定因素，跟我们人类的成长差不多，有的人就能长成大人，有的半路夭折了。河流发育的基本条件是充沛的降水，没有水哪来的河呢？有了水之后，具体河会怎么生长就要看地形和其它地质条件了。
-喜马拉雅山是世界上最高同时也最年轻的山脉，南侧面对南亚次大陆，印度洋季风带来大量水汽会在其南侧变成降水。地球上降水量最大的区域之一就在这里，这个地区一个叫「乞拉朋齐」的地方曾经有录得年均降水量 12700 毫米，年最大降水量 22990 毫米，换句话说，这地方一年从天上掉下来的水有十几二十米深。
-作为参考，上海的年均降雨量是 1123 毫米，差 10 倍。
-同时这个地区的地形极为特殊，单位距离内海拔高差巨大，往往在 100 公里距离内，平均海拔从 6000 米以上降低到几十米。
-作为参考，青藏高原东侧有横断山作为过渡，北侧有昆仑山作为过渡，海拔下降并没有这么剧烈，基本上是呈梯度下降的趋势。
-再同时这个地区的地质条件非常特殊，南侧裸露岩石更多，青藏高原非常年轻，到现在地质抬升都还非常剧烈，在更为年轻的南侧土壤根本来不及风化出来，还有大量裸露的岩石直接就那么暴露在外面。
-作为参考，北侧相对而言土壤要厚的多，更冷、更干、更高的珠峰北侧因为土层厚可以开展大面积农耕。然而一个山头翻过去、同样属于中国的绒辖乡…]]></summary>
-        <author>
-            <name>知乎日报</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[瞎扯 · 如何正确地吐槽]]></title>
-        <id>https://daily.zhihu.com/story/9748312</id>
-        <link href="https://daily.zhihu.com/story/9748312"/>
-        <updated>2022-05-05T23:06:14.000Z</updated>
-        <summary type="html"><![CDATA[那些你身边年轻时疯狂攒钱的人最后都怎样了？
-
-福气男孩，也该我火了吧？
-阅读原文
-
-变成了疯狂攒钱的中年人。
-阅读原文
-
-如何看待台州 4 女子寻刺激开保时捷去菜地偷菜一人当场被抓，目前均被行拘?
-
-凯岩城永不陷落，威尔士能修卡那封，马恩岛和苏格兰也能
-阅读原文
-
-蚌埠住了，做了当年我在 QQ 空间里才能做的事。
-阅读原文
-
-哪些事情让你觉得「哇！还可以这么干」？
-
-知乎用户，生物民工
-阅读原文
-
-手机摄像头还能看红外射线，可以用来检查遥控器是否坏了。
-阅读原文
-
-一周读完一本书，坚持一年后会怎样？
-
-无畏MAX，独立思考，掌控主动!
-阅读原文
-
-会读完 52 本书。
-阅读原文
-
-为什么有人喜欢聊天后加「。。。」？
-
-mapple，胖过
-阅读原文
-
-这就得说这么个故事了。有人问大师：您为什么每说一句后面都要加「阿弥陀佛」。大师：老衲总不能说「呵呵」吧？
-阅读原文]]></summary>
-        <author>
-            <name>知乎日报</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[$35 sculpture found at an Austin Goodwill was looted from a museum during WWII]]></title>
-        <id>https://www.kut.org/life-arts/2022-05-04/so-the-35-sculpture-you-got-at-an-austin-goodwill-was-looted-from-a-museum-during-wwii-now-what</id>
-        <link href="https://www.kut.org/life-arts/2022-05-04/so-the-35-sculpture-you-got-at-an-austin-goodwill-was-looted-from-a-museum-during-wwii-now-what"/>
-        <updated>2022-05-05T22:56:07.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Being Acquired]]></title>
-        <id>https://www.csisoftware.com/about-us/being-acquired</id>
-        <link href="https://www.csisoftware.com/about-us/being-acquired"/>
-        <updated>2022-05-05T22:27:28.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Bugs that the Rust compiler catches for you]]></title>
-        <id>https://kerkour.com/bugs-rust-compiler-helps-prevent</id>
-        <link href="https://kerkour.com/bugs-rust-compiler-helps-prevent"/>
-        <updated>2022-05-05T21:02:36.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Skio (subscriptions for Shopify, easy ReCharge migrations) is hiring eng in NYC]]></title>
-        <id>https://skio.com/careers/</id>
-        <link href="https://skio.com/careers/"/>
-        <updated>2022-05-05T21:01:19.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Including “And. And. And. And. And.” in a Google doc causes it to crash]]></title>
-        <id>https://support.google.com/docs/thread/162510194/including-and-and-and-and-and-in-a-google-doc-causes-it-to-crash?hl=en</id>
-        <link href="https://support.google.com/docs/thread/162510194/including-and-and-and-and-and-in-a-google-doc-causes-it-to-crash?hl=en"/>
-        <updated>2022-05-05T20:25:03.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Knowledge is like a house of cards]]></title>
-        <id>https://fhur.me/posts/collapsing-knowledge</id>
-        <link href="https://fhur.me/posts/collapsing-knowledge"/>
-        <updated>2022-05-05T18:55:42.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[On Repl-Driven Programming (2020)]]></title>
-        <id>https://mikelevins.github.io/posts/2020-12-18-repl-driven/</id>
-        <link href="https://mikelevins.github.io/posts/2020-12-18-repl-driven/"/>
-        <updated>2022-05-05T18:54:56.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Lyrebird – a voice changer for Linux, written in GTK 3]]></title>
-        <id>https://github.com/lyrebird-voice-changer/lyrebird</id>
-        <link href="https://github.com/lyrebird-voice-changer/lyrebird"/>
-        <updated>2022-05-05T18:40:29.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Themes from Real World Crypto 2022]]></title>
-        <id>https://blog.trailofbits.com/2022/05/03/themes-from-real-world-crypto-2022/</id>
-        <link href="https://blog.trailofbits.com/2022/05/03/themes-from-real-world-crypto-2022/"/>
-        <updated>2022-05-05T18:28:56.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Show HN: Tetris, but silly]]></title>
-        <id>https://unit520.net/deadtrees/</id>
-        <link href="https://unit520.net/deadtrees/"/>
-        <updated>2022-05-05T16:33:13.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Tailscale Authentication for Nginx]]></title>
-        <id>https://tailscale.com/blog/tailscale-auth-nginx/</id>
-        <link href="https://tailscale.com/blog/tailscale-auth-nginx/"/>
-        <updated>2022-05-05T15:24:57.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[The D-Notice: A British Way of Censoring the Press]]></title>
-        <id>https://thedissenter.org/very-british-form-of-press-censorship/</id>
-        <link href="https://thedissenter.org/very-british-form-of-press-censorship/"/>
-        <updated>2022-05-05T14:53:43.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Moving a macOS window by clicking anywhere on it]]></title>
-        <id>https://mmazzarolo.com/blog/2022-04-16-drag-window-by-clicking-anywhere-on-macos/</id>
-        <link href="https://mmazzarolo.com/blog/2022-04-16-drag-window-by-clicking-anywhere-on-macos/"/>
-        <updated>2022-05-05T14:35:56.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[7GUIs]]></title>
-        <id>https://eugenkiss.github.io/7guis/tasks/</id>
-        <link href="https://eugenkiss.github.io/7guis/tasks/"/>
-        <updated>2022-05-05T14:29:31.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Mermaid: Create diagrams and visualizations using text and code]]></title>
-        <id>https://mermaid-js.github.io/mermaid/</id>
-        <link href="https://mermaid-js.github.io/mermaid/"/>
-        <updated>2022-05-05T14:27:02.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Shopify to Acquire Delivrr for $2.1B]]></title>
-        <id>https://news.shopify.com/oh-ship-shopify-to-acquire-deliverr-for-21b-building-the-future-of-global-logistics-for-independent-brands</id>
-        <link href="https://news.shopify.com/oh-ship-shopify-to-acquire-deliverr-for-21b-building-the-future-of-global-logistics-for-independent-brands"/>
-        <updated>2022-05-05T13:49:23.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Apple, Google and Microsoft Commit to Expanded Support for FIDO Standard]]></title>
-        <id>https://fidoalliance.org/apple-google-and-microsoft-commit-to-expanded-support-for-fido-standard-to-accelerate-availability-of-passwordless-sign-ins/</id>
-        <link href="https://fidoalliance.org/apple-google-and-microsoft-commit-to-expanded-support-for-fido-standard-to-accelerate-availability-of-passwordless-sign-ins/"/>
-        <updated>2022-05-05T13:13:25.000Z</updated>
         <summary type="html"><![CDATA[Comments]]></summary>
         <author>
             <name>Hacker News</name>
