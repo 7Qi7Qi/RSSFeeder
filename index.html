@@ -82,11 +82,915 @@
             data-action="toggle-accordions"
             title="Click to toggle the day, Ctrl + click to toggle all."
           >
-            <time class="daily-heading-toggle__weekday js-offset-weekday" data-offset-date=2022-06-19 datetime="2022-06-19T01:22:58.854Z">2022-06-19</time>
-            <time class="daily-heading-toggle__date js-offset-date" data-offset-date=2022-06-19 datetime="2022-06-19T01:22:58.854Z"></time>
+            <time class="daily-heading-toggle__weekday js-offset-weekday" data-offset-date=2022-06-20 datetime="2022-06-20T01:23:52.798Z">2022-06-20</time>
+            <time class="daily-heading-toggle__date js-offset-date" data-offset-date=2022-06-20 datetime="2022-06-20T01:23:52.798Z"></time>
           </button>
         </h2>
         <ul class="sources card">
+            <li class="card__section">
+              <section class="js-toggle-accordions-scope">
+                <h3 class="source-heading">
+                  <button
+                    class="source-heading__name"
+                    data-action="toggle-accordions"
+                    title="Click to toggle the source, Ctrl + click to toggle all."
+                  >DockOne.io</button>
+                  <a class="source-heading__link" href="http://weekly.dockone.io">Open</a>
+                </h3>
+                <section class="articles-per-source">
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="http://weekly.dockone.io/article/2434917"
+                        open
+                      >
+                        <summary class="article-expander__title">Airbnb 的微服务架构质量工程之旅</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="http://weekly.dockone.io/article/2434917">
+                          <div class="article-summary-box-inner media-object">
+                            <span class="media-object__text">
+                              <span>【编者的话】本文通过介绍 Airbnb 在将“纯微服务架构”改造为“Micro macroservices 架构”过程中，所采用的四个实践步骤：1）提供基础设施即代码以提高开发人员的生产力，2）明确所有权并通过工具和可观察性进行改进，3）定义由组织和方法支持的新架构，4）引入一个弃用工作组以加速迁移，详细阐述了质量工程（Quality Engineering）的增量迭代解决问题方法：1）定义问题，2）找到改进的解决方案，3）使用解决方案，4）提高解决方案采用率，5）处理解决方案的扩展挑战，为我们实践质量工程提供了一个很好的范例。
+
+
+
+
+实现平衡是一个永无止境的开始。
+当业务依赖软件质量和速度来生存时，这种平衡就更难维持了。
+许多公司都面临着持续快速交付高质量软件的挑战，这些软件通过质量工程限制生命周期。
+Airbnb 在加速和扩展其价值主张的过程中面临着众多挑战，尤其是其信息系统的发展过程。
+本文分享了 Airbnb 在质量工程方面的架构迭代之旅，并附有实用要点。参考文献可在文章末尾找到。
+关注 QE 社区以获取来自社区的更多质量工程信息。
+从单体应用到微服务，什么都没改变
+Airbnb 和许多软件公司一样，也是由一些积极进取的工程师发起构建最小可行产品以进入他们的市场从而发展起来的。
+该产品最初是单仓内的单体架构（在此处访问完整的 Airbnb 单仓旅程）。 Airbnb 在这种模式下从 2008 年开始发展，其功能由各小团队完成，小团队之间的依赖及其有限。
+
+
+
+
+但在 2017 年，这个集中式架构达到了它的极限：
+软件变更速度降低
+平行演进面临限制因素
+组件所有权混乱
+
+Airbnb 决定采用微服务。
+现有的单体应用被拆分为前台和后台（分别是为了速度的Hyperloop和为了稳定性的Treehouse）。 微服务出现在各自仓库中，而专门的服务迁移团队负责组件的转换。…</span>
+                                &ensp;<span class="article-reading-time">(&hairsp;1
+                                  min&hairsp;)</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                </section>
+              </section>
+            </li>
+            <li class="card__section">
+              <section class="js-toggle-accordions-scope">
+                <h3 class="source-heading">
+                  <button
+                    class="source-heading__name"
+                    data-action="toggle-accordions"
+                    title="Click to toggle the source, Ctrl + click to toggle all."
+                  >Hacker News</button>
+                  <a class="source-heading__link" href="https://news.ycombinator.com/">Open</a>
+                </h3>
+                <section class="articles-per-source">
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://learn.adacore.com/courses/whats-new-in-ada-2022/index.html"
+                        open
+                      >
+                        <summary class="article-expander__title">What&#x27;s New in Ada 2022</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://learn.adacore.com/courses/whats-new-in-ada-2022/index.html">
+                          <div class="article-summary-box-inner media-object">
+                              <img src="https://learn.adacore.com/_static/learn_meta_img.jpeg" loading="lazy" class="media-object__media article-image" />
+                            <span class="media-object__text">
+                              <span>Comments</span>
+                                &ensp;<span class="article-reading-time">(&hairsp;8
+                                  min&hairsp;)</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                </section>
+              </section>
+            </li>
+        </ul>
+      </section>
+      <section class="daily-content js-toggle-accordions-scope">
+        <h2 class="daily-heading">
+          <button
+            class="daily-heading-toggle"
+            data-action="toggle-accordions"
+            title="Click to toggle the day, Ctrl + click to toggle all."
+          >
+            <time class="daily-heading-toggle__weekday js-offset-weekday" data-offset-date=2022-06-19 datetime="2022-06-19T23:58:31.000Z">2022-06-19</time>
+            <time class="daily-heading-toggle__date js-offset-date" data-offset-date=2022-06-19 datetime="2022-06-19T23:58:31.000Z"></time>
+          </button>
+        </h2>
+        <ul class="sources card">
+            <li class="card__section">
+              <section class="js-toggle-accordions-scope">
+                <h3 class="source-heading">
+                  <button
+                    class="source-heading__name"
+                    data-action="toggle-accordions"
+                    title="Click to toggle the source, Ctrl + click to toggle all."
+                  >Hacker News</button>
+                  <a class="source-heading__link" href="https://news.ycombinator.com/">Open</a>
+                </h3>
+                <section class="articles-per-source">
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://www.teslarati.com/spacex-three-falcon-9-rocket-launches-36-hours/"
+                        open
+                      >
+                        <summary class="article-expander__title">SpaceX launches three Falcon 9 rockets in 36 hours</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://www.teslarati.com/spacex-three-falcon-9-rocket-launches-36-hours/">
+                          <div class="article-summary-box-inner media-object">
+                              <img src="https://www.teslarati.com/wp-content/uploads/2022/06/Starlink-4-19-SARah-1-Globalstar-F9-B1060-B1071-B1061-June-2022-Richard-Angle-SpaceX-1-c.jpg" loading="lazy" class="media-object__media article-image" />
+                            <span class="media-object__text">
+                              <span>Comments</span>
+                                &ensp;<span class="article-reading-time">(&hairsp;6
+                                  min&hairsp;)</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://www.ceda.com.au/ResearchAndPolicies/Research/Economy/World-Competitiveness-Yearbook-2022"
+                        open
+                      >
+                        <summary class="article-expander__title">Australia ranked 61/63 countries for entrepreneurship</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://www.ceda.com.au/ResearchAndPolicies/Research/Economy/World-Competitiveness-Yearbook-2022">
+                          <div class="article-summary-box-inner media-object">
+                              <img src="https://cedakenticomedia.blob.core.windows.net/cedamediacontainer/kentico/media/general/social media/wcy-2.png?ext&#x3D;.png" loading="lazy" class="media-object__media article-image" />
+                            <span class="media-object__text">
+                              <span>Comments</span>
+                                &ensp;<span class="article-reading-time">(&hairsp;4
+                                  min&hairsp;)</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://www.scottantipa.com/why-knotend"
+                        open
+                      >
+                        <summary class="article-expander__title">We need a flowchart editor that doesn&#x27;t give you carpal tunnel</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://www.scottantipa.com/why-knotend">
+                          <div class="article-summary-box-inner media-object">
+                            <span class="media-object__text">
+                              <span>Comments</span>
+                                &ensp;<span class="article-reading-time">(&hairsp;2
+                                  min&hairsp;)</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://www.youtube.com/watch?v&#x3D;b6URa-PTqfA"
+                        open
+                      >
+                        <summary class="article-expander__title">Will word processors start a home working revolution? (1979) [video]</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://www.youtube.com/watch?v&#x3D;b6URa-PTqfA">
+                          <div class="article-summary-box-inner media-object">
+                            <span class="media-object__text">
+                              <span>Comments</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://www.techdirt.com/2022/06/17/samsung-busted-for-cheating-tv-test-benchmarks/"
+                        open
+                      >
+                        <summary class="article-expander__title">Samsung Busted for Cheating TV Test Benchmarks</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://www.techdirt.com/2022/06/17/samsung-busted-for-cheating-tv-test-benchmarks/">
+                          <div class="article-summary-box-inner media-object">
+                              <img src="https://www.techdirt.com/wp-content/themes/techdirt/assets/images/td-rect-logo-white.png" loading="lazy" class="media-object__media article-image" />
+                            <span class="media-object__text">
+                              <span>Comments</span>
+                                &ensp;<span class="article-reading-time">(&hairsp;9
+                                  min&hairsp;)</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://alistapart.com/article/mobile-first-css-is-it-time-for-a-rethink/"
+                        open
+                      >
+                        <summary class="article-expander__title">Mobile-First CSS: Is It Time for a Rethink?</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://alistapart.com/article/mobile-first-css-is-it-time-for-a-rethink/">
+                          <div class="article-summary-box-inner media-object">
+                              <img src="https://i0.wp.com/alistapart.com/wp-content/uploads/2022/06/mobile-first-css-time-for-a-rethink.png?fit&#x3D;1200%2C752&amp;ssl&#x3D;1" loading="lazy" class="media-object__media article-image" />
+                            <span class="media-object__text">
+                              <span>Comments</span>
+                                &ensp;<span class="article-reading-time">(&hairsp;12
+                                  min&hairsp;)</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://theretrohour.com/road-rash-creator-randy-breen-ep331/"
+                        open
+                      >
+                        <summary class="article-expander__title">Road Rash creator Randy Breen [audio]</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://theretrohour.com/road-rash-creator-randy-breen-ep331/">
+                          <div class="article-summary-box-inner media-object">
+                              <img src="https://theretrohour.com/wp-content/uploads/2022/06/RoadRash_Hero.png" loading="lazy" class="media-object__media article-image" />
+                            <span class="media-object__text">
+                              <span>Comments</span>
+                                &ensp;<span class="article-reading-time">(&hairsp;7
+                                  min&hairsp;)</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://github.com/necroware/gameport-adapter"
+                        open
+                      >
+                        <summary class="article-expander__title">Show HN: Open source GamePort adapter to connect old DB15 joysticks to USB port</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://github.com/necroware/gameport-adapter">
+                          <div class="article-summary-box-inner media-object">
+                              <img src="https://opengraph.githubassets.com/8f5d1a97700f3882375ebc1b354b38e57228de481be04aedf578ca87fe5a952b/necroware/gameport-adapter" loading="lazy" class="media-object__media article-image" />
+                            <span class="media-object__text">
+                              <span>Comments</span>
+                                &ensp;<span class="article-reading-time">(&hairsp;8
+                                  min&hairsp;)</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://dansanderson.com/lab-notes/adding-a-feature-to-mega65/"
+                        open
+                      >
+                        <summary class="article-expander__title">Adding a Feature to the MEGA65</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://dansanderson.com/lab-notes/adding-a-feature-to-mega65/">
+                          <div class="article-summary-box-inner media-object">
+                              <img src="https://dansanderson.com/lab-notes/adding-a-feature-to-mega65/clrhome.jpeg" loading="lazy" class="media-object__media article-image" />
+                            <span class="media-object__text">
+                              <span>Comments</span>
+                                &ensp;<span class="article-reading-time">(&hairsp;9
+                                  min&hairsp;)</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://telegram.org/blog/700-million-and-premium"
+                        open
+                      >
+                        <summary class="article-expander__title">700M users and Premium</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://telegram.org/blog/700-million-and-premium">
+                          <div class="article-summary-box-inner media-object">
+                              <img src="https://telegram.org/file/464001006/1044e/ZDyna5YyQwE.51909/a7532c511d9bab9ea9" loading="lazy" class="media-object__media article-image" />
+                            <span class="media-object__text">
+                              <span>Comments</span>
+                                &ensp;<span class="article-reading-time">(&hairsp;6
+                                  min&hairsp;)</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="http://bannalia.blogspot.com/2022/06/advancing-state-of-art-for.html"
+                        open
+                      >
+                        <summary class="article-expander__title">Advancing the state of the art for std:unordered_map implementations</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="http://bannalia.blogspot.com/2022/06/advancing-state-of-art-for.html">
+                          <div class="article-summary-box-inner media-object">
+                              <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhDSQQoqH5c7LuFi_SzM70cCioPxDCUmtuUyb0aPkcjDCfMg_65498faqsJtxZ2mBlzpmdFwowHxXdTUzjqEtbK-fIeaZR9y26CXD8zXE4V89VJDUjZG9cRRhGyxrWiEKYa29qU78_zVa9wKD60tyGUIwImqKxkkYLXfjuio87uU3-fJwxXN9WuFuiH/w1200-h630-p-k-no-nu/bucket-groups.png" loading="lazy" class="media-object__media article-image" />
+                            <span class="media-object__text">
+                              <span>Comments</span>
+                                &ensp;<span class="article-reading-time">(&hairsp;13
+                                  min&hairsp;)</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://github.com/smmr-software/mabel"
+                        open
+                      >
+                        <summary class="article-expander__title">Show HN: Mabel – a fancy BitTorrent client for the terminal</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://github.com/smmr-software/mabel">
+                          <div class="article-summary-box-inner media-object">
+                              <img src="https://opengraph.githubassets.com/bee868a6f14dd7ec62a3b25988740ab7d73bab82cb313b373e97d09cba3d3b0e/smmr-software/mabel" loading="lazy" class="media-object__media article-image" />
+                            <span class="media-object__text">
+                              <span>Comments</span>
+                                &ensp;<span class="article-reading-time">(&hairsp;3
+                                  min&hairsp;)</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://www.ycombinator.com/companies/emerge-tools"
+                        open
+                      >
+                        <summary class="article-expander__title">Emerge Tools is building the future of mobile development, come join us</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://www.ycombinator.com/companies/emerge-tools">
+                          <div class="article-summary-box-inner media-object">
+                              <img src="https://bookface-images.s3.amazonaws.com/logos/951c5580d5432093d2a1f23a2ba9c548dceb5fe1.png?1633041436" loading="lazy" class="media-object__media article-image" />
+                            <span class="media-object__text">
+                              <span>Comments</span>
+                                &ensp;<span class="article-reading-time">(&hairsp;2
+                                  min&hairsp;)</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://reincubate.com/support/how-to/why-are-webcams-bad/"
+                        open
+                      >
+                        <summary class="article-expander__title">Webcams aren&#x27;t good enough</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://reincubate.com/support/how-to/why-are-webcams-bad/">
+                          <div class="article-summary-box-inner media-object">
+                              <img src="https://i.reincubate.com/c/webcams-are-bad.png" loading="lazy" class="media-object__media article-image" />
+                            <span class="media-object__text">
+                              <span>Comments</span>
+                                &ensp;<span class="article-reading-time">(&hairsp;28
+                                  min&hairsp;)</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://www.quantamagazine.org/the-brain-has-a-low-power-mode-that-blunts-our-senses-20220614/"
+                        open
+                      >
+                        <summary class="article-expander__title">The brain has a ‘low-power mode’ that blunts our senses</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://www.quantamagazine.org/the-brain-has-a-low-power-mode-that-blunts-our-senses-20220614/">
+                          <div class="article-summary-box-inner media-object">
+                              <img src="https://d2r55xnwy6nx47.cloudfront.net/uploads/2022/06/Low_energy_brain_1200_Social.jpg" loading="lazy" class="media-object__media article-image" />
+                            <span class="media-object__text">
+                              <span>Comments</span>
+                                &ensp;<span class="article-reading-time">(&hairsp;25
+                                  min&hairsp;)</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://www.sentinelone.com/blog/apples-macos-ventura-7-new-security-changes-to-be-aware-of/"
+                        open
+                      >
+                        <summary class="article-expander__title">Apple’s macOS Ventura – New Security Changes</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://www.sentinelone.com/blog/apples-macos-ventura-7-new-security-changes-to-be-aware-of/">
+                          <div class="article-summary-box-inner media-object">
+                              <img src="https://www.sentinelone.com/wp-content/uploads/2022/06/Apples-macOS-Ventura-7-New-Security-Changes-to-Be-Aware-Of-4.jpg" loading="lazy" class="media-object__media article-image" />
+                            <span class="media-object__text">
+                              <span>Comments</span>
+                                &ensp;<span class="article-reading-time">(&hairsp;14
+                                  min&hairsp;)</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://www.gamedeveloper.com/blogs/how-townscaper-works-a-story-four-games-in-the-making"
+                        open
+                      >
+                        <summary class="article-expander__title">How Townscaper Works: A Story Four Games in the Making</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://www.gamedeveloper.com/blogs/how-townscaper-works-a-story-four-games-in-the-making">
+                          <div class="article-summary-box-inner media-object">
+                              <img src="https://eu-images.contentstack.com/v3/assets/blt95b381df7c12c15d/blt387249e889b6cf17/624db7f5cac0bc2aebe9e711/Townscaper-5-1024x576.png" loading="lazy" class="media-object__media article-image" />
+                            <span class="media-object__text">
+                              <span>Comments</span>
+                                &ensp;<span class="article-reading-time">(&hairsp;97
+                                  min&hairsp;)</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://hackerone.com/reports/1379975"
+                        open
+                      >
+                        <summary class="article-expander__title">Playstation confirms chain of 5 vulnerabilities on PS4/PS5</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://hackerone.com/reports/1379975">
+                          <div class="article-summary-box-inner media-object">
+                              <img src="https://profile-photos.hackerone-user-content.com/variants/8uyqZE6d69UGEYq8qwzS4Z3Q/0621f211aae8984f02f017decf83d0064fe91a6a16b11f840ecf5b53ddb7b872" loading="lazy" class="media-object__media article-image" />
+                            <span class="media-object__text">
+                              <span>Comments</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://github.com/Florents-Tselai/WarcDB"
+                        open
+                      >
+                        <summary class="article-expander__title">Show HN: WarcDB: Web crawl data as SQLite databases</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://github.com/Florents-Tselai/WarcDB">
+                          <div class="article-summary-box-inner media-object">
+                              <img src="https://opengraph.githubassets.com/9f14420a20ca642b925354e77b2549aa4da64aeba60ed87f564b874014fa3c27/Florents-Tselai/WarcDB" loading="lazy" class="media-object__media article-image" />
+                            <span class="media-object__text">
+                              <span>Comments</span>
+                                &ensp;<span class="article-reading-time">(&hairsp;3
+                                  min&hairsp;)</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://tonsky.me/blog/disenchantment/"
+                        open
+                      >
+                        <summary class="article-expander__title">Software Disenchantment (2018)</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://tonsky.me/blog/disenchantment/">
+                          <div class="article-summary-box-inner media-object">
+                            <span class="media-object__text">
+                              <span>Comments</span>
+                                &ensp;<span class="article-reading-time">(&hairsp;10
+                                  min&hairsp;)</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://fonts.bunny.net/about"
+                        open
+                      >
+                        <summary class="article-expander__title">Bunny fonts – privacy respecting drop-in replacement for Google Fonts</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://fonts.bunny.net/about">
+                          <div class="article-summary-box-inner media-object">
+                            <span class="media-object__text">
+                              <span>Comments</span>
+                                &ensp;<span class="article-reading-time">(&hairsp;1
+                                  min&hairsp;)</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://utcc.utoronto.ca/~cks/space/blog/linux/TextAndFramebufferConsoles"
+                        open
+                      >
+                        <summary class="article-expander__title">Text consoles and framebuffer consoles in Linux</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://utcc.utoronto.ca/~cks/space/blog/linux/TextAndFramebufferConsoles">
+                          <div class="article-summary-box-inner media-object">
+                            <span class="media-object__text">
+                              <span>Comments</span>
+                                &ensp;<span class="article-reading-time">(&hairsp;2
+                                  min&hairsp;)</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://sourceless.org/posts/relearning-to-learn.html"
+                        open
+                      >
+                        <summary class="article-expander__title">Relearning to Learn</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://sourceless.org/posts/relearning-to-learn.html">
+                          <div class="article-summary-box-inner media-object">
+                            <span class="media-object__text">
+                              <span>Comments</span>
+                                &ensp;<span class="article-reading-time">(&hairsp;4
+                                  min&hairsp;)</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://interstellarprobe.jhuapl.edu/Mission-Architecture/"
+                        open
+                      >
+                        <summary class="article-expander__title">NASA/APL Interstellar Probe Mission Architecture</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://interstellarprobe.jhuapl.edu/Mission-Architecture/">
+                          <div class="article-summary-box-inner media-object">
+                            <span class="media-object__text">
+                              <span>Comments</span>
+                                &ensp;<span class="article-reading-time">(&hairsp;3
+                                  min&hairsp;)</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                </section>
+              </section>
+            </li>
+            <li class="card__section">
+              <section class="js-toggle-accordions-scope">
+                <h3 class="source-heading">
+                  <button
+                    class="source-heading__name"
+                    data-action="toggle-accordions"
+                    title="Click to toggle the source, Ctrl + click to toggle all."
+                  >知乎日报</button>
+                  <a class="source-heading__link" href="https://news-at.zhihu.com/api/4/stories/latest?client&#x3D;0">Open</a>
+                </h3>
+                <section class="articles-per-source">
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://daily.zhihu.com/story/9749777"
+                        open
+                      >
+                        <summary class="article-expander__title">什么电影的配乐在你看来是无法超越的经典？</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9749777">
+                          <div class="article-summary-box-inner media-object">
+                            <span class="media-object__text">
+                              <span>木易movie，媒体人/视频制作人
+阅读原文
+
+配乐之于电影，绝不是简单地营造氛围。
+好的电影配乐不是要在某个合适的时候让你拥有如临其境的身心体验，而是要把你“融化”，以至融入到电影的故事与人物的情绪之中。
+配乐让电影变得更加真实，同时也让电影变得更加魔幻。你肯定也曾经历过：当主角身处困难境地的时候，配乐的缓缓响起让你也仿佛置身于艰难；当主角遭遇悲伤的时候，配乐的渐渐响起让你也湿了眼眶很是受伤；当主角迈向成功的时候，配乐的激昂响起让你也突然兴奋异常；当主角收获幸福的时候，配乐的悠然响起让你也感到幸福在荡漾......。
+因为配乐的存在，即便没有一句对白，那种人物内心的真实感受和场景的魔幻呈现，都仿佛就在你身边，就在你周围，甚至就在你体内。电影配乐就像水一样，让电影变得富有灵性；像枝叶一样，让电影变得更加丰富。
+当然，好的电影配乐可以让电影变得更加富有魅力，而糟糕的配乐则可以让电影一败涂地。
+关键就在于，如何恰到好处的给电影伴上一段好配乐，让电影就此插上腾飞的翅膀。这是个技术活，但更多是一件艺术活，没有灵感不可怕，没有情感最可怕！
+在我看来，好的配乐必须发自真情，合乎情节，益于故事。
+一段好配乐不仅能让电影插上腾飞的翅膀，更能让电影得到某种程度上一般电影无法企及的升华。
+以下几部电影的配乐是我在谈及这一话题时能够迅速想到的，由于音乐版权的关系，无法一一提供试听链接，想要试听的不妨去一些音乐平台好好体验一下：
+1、《天空之城》：《天空の城ラピュタ》
+宫崎骏导演创作的动画电影《天空之城》是一部从故事、人物、画面到音乐都堪称完美的作品。整部电影既有浓烈的复古风格，又有天马行空的想象力。主人公巴鲁和希达一同经历的冒险，让我们能从中感知到真善美以及关于环保、和平的思考。久石让的电影音乐无疑给整部电影增添了令人惬意又难忘的颜色，值得反复聆听！
+
+2、《加勒比海盗》：《He&#x27;s A Pir…</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://daily.zhihu.com/story/9749786"
+                        open
+                      >
+                        <summary class="article-expander__title">消费主义是如何通过伪造文化来欺骗年轻人的？</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9749786">
+                          <div class="article-summary-box-inner media-object">
+                            <span class="media-object__text">
+                              <span>浅墨Victor，二级市场投资兼干货型煲汤作家。公众号「浅墨投资日记」
+阅读原文
+
+1. “买房”还是“买享受”
+有朋友回帖评论说“不落入消费主义陷阱，就是落入‘刚需’的买房还贷陷阱。同样是韭菜，反正都是被收割，不如让自己舒服一点，买点自己喜欢的商品或者服务，这可能也是文中一部分‘无产中产阶级’们看透以后的无奈之举吧”。
+大家集中讨论的第一个点是“花钱购买优质商品和服务”与“存钱买房”这两件事孰高孰低。
+在我看来，分析问题时，对立的二元论虽然简单，但是不太可取。因为它判定事物的标准非黑即白，而我们所处的世界往往有黑有白还有灰。二元论有很大的盲区。
+我的观点很简单。有两个：
+一、无论是存钱为将来买房，还是花钱为当下舒心，这就是人性的选择，都是合理的，没有哪一个选择值得被更多人批判。
+有人认为“有套房更重要”，所以他愿意牺牲买包买鞋买 SPA 的钱，为将来有套房作准备。有人认为“当下的体验更重要”或者“反正我也买不起房，还不如现在就享受享受”，这也无可厚非，甚至还带着很强烈的乐观主义心态。
+有钱难买爷高兴。只要有人选择现在，就有人选择将来。房子也是商品，花 500 万在北上广购置房产的人，和花 5 万买香奈儿的包的人，都是在消费，都不至于被批判。
+从国家的角度讲，消费是经济发展的三驾马车之一，只要消费了，无论 5 块还是 500 万，都是侠之大者，为国为民。
+在自己认同的消费内容之下，在自己认同的价值体系之下，如何消费是自己的选择，与他人无关。
+二、虽然如何消费是个人的选择，我仍呼吁大家合理消费。我批判的不是“消费主义”，而是营销洗脑和攀比炫耀下不合理的“消费主义”。
+简而言之，该买的还得买，不该买的就不买。
+什么叫“该买的”，什么叫“不该买的”？存钱在未来买房是对的么？花钱买当下的商品就是错的么？
+我的判断标准是：如果我购买这件商品，更少为别人，而更多为自己，那就买；如果我买…</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://daily.zhihu.com/story/9749792"
+                        open
+                      >
+                        <summary class="article-expander__title">《家有儿女》中刘星家有多富？</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9749792">
+                          <div class="article-summary-box-inner media-object">
+                            <span class="media-object__text">
+                              <span>知乎用户，微信公众号：为你写一个故事是个营销号。
+阅读原文
+
+许多年以后，面对酷暑高温，我依然能记得刘星带我见识世面的那个下午，他说：“你傻呀，有哈根达斯还吃什么中国破冰棍！”
+
+从此，我知道世界上有两种雪糕，一种叫哈根达斯，一种叫其他牌子。
+无论哪种雪糕，刘星在 2004 年想吃多少就能吃多少，《家有儿女》里的生活足够小康。
+但对于像我这样的普通人来说，当时完全达不到，现在依然难以望其项背。
+01.
+据一些网友推测，他们一家五口，住在西四环的“北京印象”，四室两厅两卫，大户型，200 平米左右。
+
+刘星、小雨的卧室摆满了各色玩具，小雪的房间配置了独立沙发与书柜，夫妻的主卧带着卫生间……
+这样的房子在当时怎么也得 60 万起步。
+相比之下，2004 年北京平均工资都不到 2400 元，即使是贷款买房的首付（假设是 30%），一般夫妻不吃不喝干三四十年才能凑足。
+
+如今房子网上报价 1700 多万，即使是贷款买房的首付，一般夫妻不吃不喝干三四百年才能凑足。
+
+换言之，越来越买不起。
+第二部的时候，正值北京炒房热，刘梅投资买房，新房买在北四环，如今也是千万元级别。
+
+其实无论哪个时代，能在首都坐拥两套大房的夫妻，绝不是普通家庭。
+有了宽敞明亮的空间，刘梅才能在开放式厨房里展现手艺，大伙儿才能享受顿顿五六个菜的伙食。
+
+你看，中餐上油焖大虾、红烧带鱼、小鸡炖蘑菇层出不穷，经常不重样。西餐上面包、吐司、鸡蛋、果酱、牛奶管够，注重营养搭配。
+
+在那个人人只想吃得饱的年月里，他们已经讲究吃得好了。
+而且还不是心血来潮。
+日常庆祝，来开瓶香槟，来只大闸蟹。渴了累了，找找家里的果汁，补充维生素。
+能吃多少，就有多少。
+因为他们买了冰箱，冰箱被塞得满满的，堪比哆啦 A 梦的“四次元空间口袋”，保障他们的饮食一如既往的好。
+
+如果腻了，那就换换口味呗。
+榴莲，他们想吃，每周都能吃上。金拱门，他…</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://daily.zhihu.com/story/9749787"
+                        open
+                      >
+                        <summary class="article-expander__title">男人成为父亲以后就会长大吗？</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9749787">
+                          <div class="article-summary-box-inner media-object">
+                            <span class="media-object__text">
+                              <span>刘畊宏willliu，我是刘畊宏willliu
+阅读原文
+
+如果从承担家庭责任、照顾三个孩子和老婆的角度来说，肯定会有成长啊！走在人生的必经路，从上学、到恋爱，再到成为丈夫、成为爸爸、以后还会成为爷爷，扮演好每一步的角色，就是在不断的长大嘛。
+不过在有了孩子以后，我反而觉得自己“变小”了，变得和我儿子女儿们一样小。因为我在学着用他们的角度理解问题的时候，总是能收获到意想不到的惊喜。
+
+17 年带着泡芙上节目之前，我也是很忐忑的。毕竟她那时候只有 4 岁，从来没吃过苦，在路上要是不适应就会跟我哭闹。
+结果她的表现意外的好，那时候选房子，选到了一个条件不怎么好的，我只能安慰她这是幸运的房子。（其实也在暗暗担心这要怎么住）没想到没一会她就很自然的接受了那个环境。我也才意识到，在小孩子心里，这些好坏都没有那么重要。
+后来我的心态也改变了不少：如果环境没办法选择，那就做好照顾她的爸爸~反而是孩子教会了我，如何放下成年人看待世界的思考方式。
+
+讲实话，不光大家喜欢这张照片，我自己都会存下来偶尔看一看。
+在镜头前面大家看见我和泡芙的相处模式，其实在家里和姗姗也是这样。不过对儿子还是有点不一样，男孩子嘛，肯定要让他养成比女孩子更坚强的性格。
+就比如我和 vivi 支持他留长头发捐给患癌小朋友这件事。
+其实对于一个男孩来说，留三年长发是很艰难的。比起不舒服，在被不知情的人误解、当成小女孩的时候他会很难过，所以也有好多次想放弃。
+而我和 vivi 作为父母，更是要保护他帮他解释，同时鼓励他把这件有意义的事情做下去。
+
+直到百人捐发的那一天，哥哥捐完头发以后，甚至带动了两个妹妹一起捐出了零花钱。让我特别深的感触到，坚持这么长时间的意义。
+原本是我们想教恩宇助人为乐，没想到我们又一次从他身上学到了更多，他的善良和坚持，甚至是他想退缩的眼泪，都是为人父母以后解锁到的宝贵财富。
+男人当了父亲一定是会成长，这一次，是和孩子一起成长。
+最后，也祝所有的爸爸们父亲节快乐~
+阅读原文</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://daily.zhihu.com/story/9749794"
+                        open
+                      >
+                        <summary class="article-expander__title">当猫在照镜子的时候它是否能意识到镜子里的那只猫是它自己？</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9749794">
+                          <div class="article-summary-box-inner media-object">
+                            <span class="media-object__text">
+                              <span>猫研所，猫咪知识精准科普平台
+阅读原文
+
+它们可能并不知道。
+不知大家有没有听过这样的都市传说：猫咪其实并不知道自己是猫，所以总在家里作威作福横行霸道，直到它照到镜子的那一刻——what？？？我 tm 居然是喵！！！
+然后喵生观都崩塌了，因此面对镜子，它们做出一系列匪夷所思的举动，
+比如这样：
+图自：Giphy
+这样：
+图自：Giphy
+那么，猫咪照镜子时知道那是它自己吗？
+很遗憾，猫咪可能并不知道！
+一，镜像测试实验
+奥尔巴尼大学心理学家 Gordon Gallup 于 1970 年做的一项名为”镜子测试”MSR——测试各种动物有没有自我意识中的试验中，猫咪没有通过。
+镜像测试的方法：
+在动物无意识的状态下（麻醉），在它们只能通过镜子看到的身体部分（通常在脸部或头部）做上 1-2 个不同颜色的标记。
+图自：istockphoto
+研究人员认为，如果动物清醒后，在镜子中看到自己的反射影像，并试图用触爪子触摸那个不同颜色的标记点，则该动物被判断为具有自我意识。
+通过这项测试的动物很少，只有类人猿，黑猩猩，倭黑猩猩，大猩猩和猩猩、宽吻海豚和虎鲸这样的鲸类动物、部分大象、喜鹊通过了测试。
+进行镜子测试的大象 图自：Chinadaily
+有的动物（如猴子、乌鸦）面对镜子时，可能变得困惑并且做出一些姿势，表现出对自我的类似部分理解或者好奇，但依旧不能算通过测试。
+图自：Gifsoup
+猫、狗、婴儿（18 个月以下）都没能通过测试。
+图自：Gifsoup
+虽然仅仅靠这个测试评判动物是否有“自我意识”这个概念还是比较片面的，但是它们似乎认不出镜子中的是自己。
+二，猫咪照镜子时眼里看到的究竟是什么？
+猫咪视力只有人的十分之一，平时更多依靠嗅觉和听觉辨别环境。
+人眼中的世界和猫咪眼中的世界 图自：China.news
+我们可以把自己当成猫咪想象一下，面对镜子时，你看见面前有一团模糊的影子在移动，却又闻不到它的味道。
+猫咪照镜子模拟图 图自：ek21
+
+三，猫咪照镜子时有什么表现？
+其实每只猫咪面对镜子的表现都是不一样的。
+魔镜魔镜告诉我，谁才是世界上最帅的猫咪？图片：网络
+
+冷漠型
+有的猫咪对镜子没有什么反应，会忽视掉镜子中反射的影像，直接走掉。
+防御型
+有的猫咪表现出焦虑、防御的姿态，弓背竖毛，做好了迎战的准备。
+图自：Giphy
+
+寻找型
+有的猫咪会试图绕到镜子后面找到“躲在”那里的小猫咪。
+ 图自：Giphy
+
+攻击型
+有的猫咪是攻击型，会选择进攻，疯狂地冲上去抓挠。
+ 图自：Giphy
+关于网友的讨论
+当然，也有人认为猫咪是十分聪明，能懂得镜子原理的。
+比如 Youtube 上有一段这样的视频，主人认为，自己的猫咪面对镜子时，仿佛意识到了对面镜子中的就是自己，摆出各种姿势验证。
+网友们纷纷表示：“哇！太可爱了！”“这或许是猫咪认知研究进步的一大步！”
+ 图自：youtube
+但随后，《Popular Science》提出，这只猫咪尾巴向下，身体直立，爪子在空中挥舞，正在试图威胁对抗对面的猫咪，也是一种焦虑、防御的姿态。因此并不是它认识到了镜子中的自己。
+虽然猫咪对于自己的样貌没有什么自我认知，但对于自己是家中老大这点，再确信不过（滑稽脸~
+图自网络
+
+资料来源：
+[1]https://cattime.com/trending/10853-why-do-cats-act-so-crazy-when-they-see-themselves-in-a-mirror
+[2]https://www.popsci.com/science/article/2013-04/cat-did-not-figure-out-how-mirrors-work
+[3]https://chaoticidealism.livejournal.com/124552.html
+阅读原文</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://daily.zhihu.com/story/9749797"
+                        open
+                      >
+                        <summary class="article-expander__title">瞎扯 · 如何正确地吐槽</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9749797">
+                          <div class="article-summary-box-inner media-object">
+                            <span class="media-object__text">
+                              <span>你身上有哪些遗传自「父亲」的特质？有什么想对他说的话？
+
+匿名用户
+阅读原文
+
+秃。 
+阅读原文
+
+中科院首次发现人类中耳由鱼鳃演变而来实物证据，这对研究人类进化有何帮助？
+
+如切如磋，未来在你脚下
+阅读原文
+
+看完以后，感觉我不能正常的钓鱼了。
+ 
+阅读原文
+
+《梦华录》张好好和池衙内为什么会分手？这类激情吵架分手，还能复合吗？
+
+张加憨
+阅读原文
+
+和平复合是本手，不复合是妙手，另寻新欢、狗血复合等是俗手。
+阅读原文
+
+儿子患网瘾，父亲用两年时间骑行大半个中国来反网络游戏也未能拯救儿子，如何能戒除网瘾？网瘾的本质是什么？
+
+伯牙，我的小鱼你醒了？还认识早晨吗？
+阅读原文
+
+一名男子用两年时间上网搜索几乎翻遍全网拯救骑瘾父亲以失败告终，你认为如何才能戒除骑瘾？骑瘾有何危害？
+●重大更新：版本迭代
+父亲患骑瘾，儿子用两年时间在全网水帖来反骑行也未能拯救因骑行而离家出走的父亲，如何能戒除骑瘾？骑瘾的本质是什么？
+阅读原文
+
+婴儿未经世事，为什么会做噩梦，在梦中哭醒呢?
+
+大北，·
+阅读原文
+
+小婴儿也有烦恼啊，比如：
+为什么妈妈今天抱着我才不到八百个小时就把我放下了？睡着了就不抱了？什么叫她歇一歇？没天理啊，我哭得伤心欲绝。
+我才二十斤妈妈为什么就非说她抱不动我了？哭的我泪眼婆娑。
+妈妈为什么不让我睡在她的大床上，我就不能挨着她睡觉吗？哭的我楚楚可怜。
+我的小床为什么有栏杆，为什么不能给我安排一个八百平米的大床让我随意翻滚。我直接就是鲤鱼打挺式暴哭。
+我感觉到饿了，我都哼唧了三秒钟了，为什么妈妈还是没有领会我的意思，她怎么啥都不懂！为什么冲奶粉喂我这点小事需要至少十秒钟那么久，想饿昏我这个大宝宝吗？我撒泼打滚哭的花枝乱颤。
+坐车的时候为什么不抱我了，安全座椅滚开啊！！我必须捶胸顿足的哭。
+怎么又给我打针了，什么叫疫苗？妈妈你是个叛徒吗？躺在护士站的操作台上，原地暴风哭泣。
+安抚奶嘴掉地上了怎么啦？就不能一秒钟之内洗干净塞回我的嘴里吗？急的我梨花带雨。
+头发就不能随意给我抓着玩吗？假哭一下看看妈妈的表现再说。
+妈妈有好几秒钟没关注我了，浅哭两声吸引一下她的注意力吧。
+睡得好好的，突然我就翻了个身趴在了床上，迷迷糊糊的醒来，我是谁？我在哪？我在干什么？我怎么醒了？我想睡觉，可是我不会往回翻身啊啊啊啊啊！妈妈怎么在睡觉，快来救我啊！呜哇哇哇哇哇哇……妈妈快来把我翻回去啊！！！！！！！！深夜泪奔，撕心裂肺。
+这个黑了吧唧的小老头是谁？他为什么要抱我？什么他说他是姥爷？撒谎，我姥爷不是白色的吗昨天我还见过他呢，什么叫晒了一天晒黑了？肯定是陌生人在骗我，这个怪老头到底是谁啊！妈妈快救我啊！我哭的肝肠寸断。
+我玩的好好的 / 睡得好好的，突然砰一声，吓死宝宝了，妈妈居然还在大笑，说些什么我放屁了什么的，我也听不懂。什么啊！宝宝吓着了妈妈还在笑！气死我了，咧嘴就哭。
+……
+嗯，这些应该都是我儿子平时攒下的噩梦素材吧……
+阅读原文</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                </section>
+              </section>
+            </li>
             <li class="card__section">
               <section class="js-toggle-accordions-scope">
                 <h3 class="source-heading">
@@ -200,6 +1104,26 @@ Clusto和各种各样处在组织缓冲区的软件。
                       <details
                         class="article-expander"
                         data-action="toggle-native-accordion"
+                        data-accordion-key="https://www.scientificamerican.com/article/how-parents-rsquo-trauma-leaves-biological-traces-in-children/"
+                        open
+                      >
+                        <summary class="article-expander__title">Parents’ trauma leaves biological traces in children</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://www.scientificamerican.com/article/how-parents-rsquo-trauma-leaves-biological-traces-in-children/">
+                          <div class="article-summary-box-inner media-object">
+                              <img src="https://static.scientificamerican.com/sciam/cache/file/299947E7-DB95-4565-A9DC4B6A5E9425D0.jpg" loading="lazy" class="media-object__media article-image" />
+                            <span class="media-object__text">
+                              <span>Comments</span>
+                                &ensp;<span class="article-reading-time">(&hairsp;24
+                                  min&hairsp;)</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
                         data-accordion-key="https://mawfig.github.io/2022/06/18/v-lang-in-2022.html"
                         open
                       >
@@ -287,6 +1211,26 @@ Clusto和各种各样处在组织缓冲区的软件。
                             <span class="media-object__text">
                               <span>Comments</span>
                                 &ensp;<span class="article-reading-time">(&hairsp;29
+                                  min&hairsp;)</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://www.bbc.com/news/magazine-38222271"
+                        open
+                      >
+                        <summary class="article-expander__title">Why houses in Bermuda have white stepped roofs</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://www.bbc.com/news/magazine-38222271">
+                          <div class="article-summary-box-inner media-object">
+                              <img src="https://ichef.bbci.co.uk/news/1024/branded_news/16A16/production/_92849629_b62j89.jpg" loading="lazy" class="media-object__media article-image" />
+                            <span class="media-object__text">
+                              <span>Comments</span>
+                                &ensp;<span class="article-reading-time">(&hairsp;20
                                   min&hairsp;)</span>
                             </span>
                           </div>
@@ -386,6 +1330,64 @@ Clusto和各种各样处在组织缓冲区的软件。
                             <span class="media-object__text">
                               <span>Comments</span>
                                 &ensp;<span class="article-reading-time">(&hairsp;1
+                                  min&hairsp;)</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://www.eater.com/22639428/the-secret-history-of-food-excerpt-ice-cream-history"
+                        open
+                      >
+                        <summary class="article-expander__title">How ice cream became the ultimate American comfort food (2021)</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://www.eater.com/22639428/the-secret-history-of-food-excerpt-ice-cream-history">
+                          <div class="article-summary-box-inner media-object">
+                              <img src="https://cdn.vox-cdn.com/thumbor/Ua1SchL2UgdNDWJLA9sd_gXiYAs&#x3D;/0x777:5929x3881/fit-in/1200x630/cdn.vox-cdn.com/uploads/chorus_asset/file/22809445/GettyImages_563937429.jpg" loading="lazy" class="media-object__media article-image" />
+                            <span class="media-object__text">
+                              <span>Comments</span>
+                                &ensp;<span class="article-reading-time">(&hairsp;14
+                                  min&hairsp;)</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://en.wikipedia.org/wiki/HAL/S"
+                        open
+                      >
+                        <summary class="article-expander__title">HAL/S Syntax</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://en.wikipedia.org/wiki/HAL/S">
+                          <div class="article-summary-box-inner media-object">
+                            <span class="media-object__text">
+                              <span>Comments</span>
+                                &ensp;<span class="article-reading-time">(&hairsp;4
+                                  min&hairsp;)</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="http://users.ece.cmu.edu/~ganger/712.fall02/papers/p761-thompson.pdf"
+                        open
+                      >
+                        <summary class="article-expander__title">Reflections on Trusting Trust (1984) [pdf]</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="http://users.ece.cmu.edu/~ganger/712.fall02/papers/p761-thompson.pdf">
+                          <div class="article-summary-box-inner media-object">
+                            <span class="media-object__text">
+                              <span>Comments</span>
+                                &ensp;<span class="article-reading-time">(&hairsp;21
                                   min&hairsp;)</span>
                             </span>
                           </div>
@@ -24723,103 +25725,6 @@ II.只有人类具有非线性（Non-linear workflows）思维
                         </a>
                       </details>
                     </article>
-                    <article>
-                      <details
-                        class="article-expander"
-                        data-action="toggle-native-accordion"
-                        data-accordion-key="https://rarehistoricalphotos.com/vintage-computer-ads/"
-                        open
-                      >
-                        <summary class="article-expander__title">Vintage computer ads</summary>
-                        <a class="article-summary-link article-summary-box-outer" href="https://rarehistoricalphotos.com/vintage-computer-ads/">
-                          <div class="article-summary-box-inner media-object">
-                              <img src="https://rarehistoricalphotos.com/wp-content/uploads/2022/05/vintage-computer-ads-small.jpg" loading="lazy" class="media-object__media article-image" />
-                            <span class="media-object__text">
-                              <span>Comments</span>
-                                &ensp;<span class="article-reading-time">(&hairsp;4
-                                  min&hairsp;)</span>
-                            </span>
-                          </div>
-                        </a>
-                      </details>
-                    </article>
-                    <article>
-                      <details
-                        class="article-expander"
-                        data-action="toggle-native-accordion"
-                        data-accordion-key="https://death.andgravity.com/f-re"
-                        open
-                      >
-                        <summary class="article-expander__title">The unreasonable effectiveness of f-strings and re.verbose</summary>
-                        <a class="article-summary-link article-summary-box-outer" href="https://death.andgravity.com/f-re">
-                          <div class="article-summary-box-inner media-object">
-                            <span class="media-object__text">
-                              <span>Comments</span>
-                                &ensp;<span class="article-reading-time">(&hairsp;5
-                                  min&hairsp;)</span>
-                            </span>
-                          </div>
-                        </a>
-                      </details>
-                    </article>
-                    <article>
-                      <details
-                        class="article-expander"
-                        data-action="toggle-native-accordion"
-                        data-accordion-key="https://homepages.inf.ed.ac.uk/wadler/papers/papers-we-love/reynolds-discoveries.pdf"
-                        open
-                      >
-                        <summary class="article-expander__title">The Discoveries of Continuation [pdf]</summary>
-                        <a class="article-summary-link article-summary-box-outer" href="https://homepages.inf.ed.ac.uk/wadler/papers/papers-we-love/reynolds-discoveries.pdf">
-                          <div class="article-summary-box-inner media-object">
-                            <span class="media-object__text">
-                              <span>Comments</span>
-                                &ensp;<span class="article-reading-time">(&hairsp;75
-                                  min&hairsp;)</span>
-                            </span>
-                          </div>
-                        </a>
-                      </details>
-                    </article>
-                    <article>
-                      <details
-                        class="article-expander"
-                        data-action="toggle-native-accordion"
-                        data-accordion-key="https://www.npr.org/2022/05/20/1100459262/giant-sinkhole-china-ancient-forest"
-                        open
-                      >
-                        <summary class="article-expander__title">Scientists discover an ancient forest inside a giant sinkhole in China</summary>
-                        <a class="article-summary-link article-summary-box-outer" href="https://www.npr.org/2022/05/20/1100459262/giant-sinkhole-china-ancient-forest">
-                          <div class="article-summary-box-inner media-object">
-                              <img src="https://media.npr.org/assets/img/2022/05/20/gettyimages-1210405986_wide-dddc2f2d3e5a9f7053002050026ed27b819d6711.jpg?s&#x3D;1400" loading="lazy" class="media-object__media article-image" />
-                            <span class="media-object__text">
-                              <span>Comments</span>
-                                &ensp;<span class="article-reading-time">(&hairsp;3
-                                  min&hairsp;)</span>
-                            </span>
-                          </div>
-                        </a>
-                      </details>
-                    </article>
-                    <article>
-                      <details
-                        class="article-expander"
-                        data-action="toggle-native-accordion"
-                        data-accordion-key="https://nvlabs.github.io/nvdiffrec/"
-                        open
-                      >
-                        <summary class="article-expander__title">Extracting Triangular 3D Models, Materials, and Lighting from Images</summary>
-                        <a class="article-summary-link article-summary-box-outer" href="https://nvlabs.github.io/nvdiffrec/">
-                          <div class="article-summary-box-inner media-object">
-                            <span class="media-object__text">
-                              <span>Comments</span>
-                                &ensp;<span class="article-reading-time">(&hairsp;2
-                                  min&hairsp;)</span>
-                            </span>
-                          </div>
-                        </a>
-                      </details>
-                    </article>
                 </section>
               </section>
             </li>
@@ -25099,888 +26004,10 @@ HIIT 最适合年轻，且有一定运动基础的人群，对身体素质的要
             </li>
         </ul>
       </section>
-      <section class="daily-content js-toggle-accordions-scope">
-        <h2 class="daily-heading">
-          <button
-            class="daily-heading-toggle"
-            data-action="toggle-accordions"
-            title="Click to toggle the day, Ctrl + click to toggle all."
-          >
-            <time class="daily-heading-toggle__weekday js-offset-weekday" data-offset-date=2022-05-20 datetime="2022-05-20T23:18:30.000Z">2022-05-20</time>
-            <time class="daily-heading-toggle__date js-offset-date" data-offset-date=2022-05-20 datetime="2022-05-20T23:18:30.000Z"></time>
-          </button>
-        </h2>
-        <ul class="sources card">
-            <li class="card__section">
-              <section class="js-toggle-accordions-scope">
-                <h3 class="source-heading">
-                  <button
-                    class="source-heading__name"
-                    data-action="toggle-accordions"
-                    title="Click to toggle the source, Ctrl + click to toggle all."
-                  >Hacker News</button>
-                  <a class="source-heading__link" href="https://news.ycombinator.com/">Open</a>
-                </h3>
-                <section class="articles-per-source">
-                    <article>
-                      <details
-                        class="article-expander"
-                        data-action="toggle-native-accordion"
-                        data-accordion-key="https://www.bikeblogordie.com/2016/11/what-ever-happened-to-scandium-bike.html"
-                        open
-                      >
-                        <summary class="article-expander__title">What Ever Happened to Scandium Bike Frames? (2016)</summary>
-                        <a class="article-summary-link article-summary-box-outer" href="https://www.bikeblogordie.com/2016/11/what-ever-happened-to-scandium-bike.html">
-                          <div class="article-summary-box-inner media-object">
-                              <img src="https://lh3.googleusercontent.com/blogger_img_proxy/ABLy4Ewi4lRA6xc5pbPzJs4fQsHIDjlIqpWflKPwn349H7nzGRtcV3-FbmDChmpc7kYdIFkEmTqXgPw5iMWKkZRt3EpQfQDUQQib1HRMIiBymzL6e2FE3wVgAkvV3ci6&#x3D;w1200-h630-p-k-no-nu" loading="lazy" class="media-object__media article-image" />
-                            <span class="media-object__text">
-                              <span>Comments</span>
-                            </span>
-                          </div>
-                        </a>
-                      </details>
-                    </article>
-                    <article>
-                      <details
-                        class="article-expander"
-                        data-action="toggle-native-accordion"
-                        data-accordion-key="https://pike.lysator.liu.se/"
-                        open
-                      >
-                        <summary class="article-expander__title">Pike Programming Language</summary>
-                        <a class="article-summary-link article-summary-box-outer" href="https://pike.lysator.liu.se/">
-                          <div class="article-summary-box-inner media-object">
-                            <span class="media-object__text">
-                              <span>Comments</span>
-                                &ensp;<span class="article-reading-time">(&hairsp;1
-                                  min&hairsp;)</span>
-                            </span>
-                          </div>
-                        </a>
-                      </details>
-                    </article>
-                    <article>
-                      <details
-                        class="article-expander"
-                        data-action="toggle-native-accordion"
-                        data-accordion-key="https://hpdevone.com/"
-                        open
-                      >
-                        <summary class="article-expander__title">HP Dev One Laptop with Pop _OS</summary>
-                        <a class="article-summary-link article-summary-box-outer" href="https://hpdevone.com/">
-                          <div class="article-summary-box-inner media-object">
-                              <img src="https://media.graphcms.com/resize&#x3D;width:1200,height:650,fit:clip/output&#x3D;quality:100/DrigIw5qRteRW6yHaG0r" loading="lazy" class="media-object__media article-image" />
-                            <span class="media-object__text">
-                              <span>Comments</span>
-                                &ensp;<span class="article-reading-time">(&hairsp;2
-                                  min&hairsp;)</span>
-                            </span>
-                          </div>
-                        </a>
-                      </details>
-                    </article>
-                    <article>
-                      <details
-                        class="article-expander"
-                        data-action="toggle-native-accordion"
-                        data-accordion-key="https://www.lanacion.com.ar/seguridad/falsetti-el-estafador-el-canillita-que-descubrio-el-algoritmo-para-crear-tarjetas-de-credito-y-nid20052022/"
-                        open
-                      >
-                        <summary class="article-expander__title">Credit Card Fraud and an Algorithm</summary>
-                        <a class="article-summary-link article-summary-box-outer" href="https://www.lanacion.com.ar/seguridad/falsetti-el-estafador-el-canillita-que-descubrio-el-algoritmo-para-crear-tarjetas-de-credito-y-nid20052022/">
-                          <div class="article-summary-box-inner media-object">
-                              <img src="https://resizer.glanacion.com/resizer/u2hYmwzCJm0AWHfyDozAmXL88wM&#x3D;/768x0/filters:format(webp):quality(80)/cloudfront-us-east-1.images.arcpublishing.com/lanacionar/K4PSIJX2RVGQRMBA7LU2TMOLLI.jpg" loading="lazy" class="media-object__media article-image" />
-                            <span class="media-object__text">
-                              <span>Comments</span>
-                                &ensp;<span class="article-reading-time">(&hairsp;4
-                                  min&hairsp;)</span>
-                            </span>
-                          </div>
-                        </a>
-                      </details>
-                    </article>
-                    <article>
-                      <details
-                        class="article-expander"
-                        data-action="toggle-native-accordion"
-                        data-accordion-key="https://nbailey.ca/post/radiation-monitor/"
-                        open
-                      >
-                        <summary class="article-expander__title">Monitor Radiation with a Raspberry Pi</summary>
-                        <a class="article-summary-link article-summary-box-outer" href="https://nbailey.ca/post/radiation-monitor/">
-                          <div class="article-summary-box-inner media-object">
-                            <span class="media-object__text">
-                              <span>Comments</span>
-                                &ensp;<span class="article-reading-time">(&hairsp;1
-                                  min&hairsp;)</span>
-                            </span>
-                          </div>
-                        </a>
-                      </details>
-                    </article>
-                    <article>
-                      <details
-                        class="article-expander"
-                        data-action="toggle-native-accordion"
-                        data-accordion-key="https://www.spectator.co.uk/article/does-an-unknown-extraordinarily-ancient-civilisation-lie-buried-under-eastern-turkey-"
-                        open
-                      >
-                        <summary class="article-expander__title">Ancient civilisation under eastern Turkey estimated to be 11k-13k years old</summary>
-                        <a class="article-summary-link article-summary-box-outer" href="https://www.spectator.co.uk/article/does-an-unknown-extraordinarily-ancient-civilisation-lie-buried-under-eastern-turkey-">
-                          <div class="article-summary-box-inner media-object">
-                              <img src="https://images.contentstack.io/v3/assets/bltf04078f3cf7a9c30/blt14bd00c549cc2c15/627900441eea9f0a2b6c21e3/iStock-1388619298.jpg" loading="lazy" class="media-object__media article-image" />
-                            <span class="media-object__text">
-                              <span>Comments</span>
-                                &ensp;<span class="article-reading-time">(&hairsp;11
-                                  min&hairsp;)</span>
-                            </span>
-                          </div>
-                        </a>
-                      </details>
-                    </article>
-                    <article>
-                      <details
-                        class="article-expander"
-                        data-action="toggle-native-accordion"
-                        data-accordion-key="https://github.com/quarkslab/conf-presentations/blob/master/CanSecWest-2022/When%20eBPF%20meets%20TLS.pdf"
-                        open
-                      >
-                        <summary class="article-expander__title">When eBPF meets TLS. Defeating TLS encryption with eBPF tricks [pdf]</summary>
-                        <a class="article-summary-link article-summary-box-outer" href="https://github.com/quarkslab/conf-presentations/blob/master/CanSecWest-2022/When%20eBPF%20meets%20TLS.pdf">
-                          <div class="article-summary-box-inner media-object">
-                              <img src="https://opengraph.githubassets.com/b66a9f023853816a418fd84531a9a769110327ae42234b1fe0276807720fb67f/quarkslab/conf-presentations" loading="lazy" class="media-object__media article-image" />
-                            <span class="media-object__text">
-                              <span>Comments</span>
-                                &ensp;<span class="article-reading-time">(&hairsp;1
-                                  min&hairsp;)</span>
-                            </span>
-                          </div>
-                        </a>
-                      </details>
-                    </article>
-                    <article>
-                      <details
-                        class="article-expander"
-                        data-action="toggle-native-accordion"
-                        data-accordion-key="http://beam-inc.org/abraham-lincoln-and-tsar-alexander-ii-part-i/"
-                        open
-                      >
-                        <summary class="article-expander__title">Abraham Lincoln and Tsar Alexander II</summary>
-                        <a class="article-summary-link article-summary-box-outer" href="http://beam-inc.org/abraham-lincoln-and-tsar-alexander-ii-part-i/">
-                          <div class="article-summary-box-inner media-object">
-                            <span class="media-object__text">
-                              <span>Comments</span>
-                                &ensp;<span class="article-reading-time">(&hairsp;4
-                                  min&hairsp;)</span>
-                            </span>
-                          </div>
-                        </a>
-                      </details>
-                    </article>
-                    <article>
-                      <details
-                        class="article-expander"
-                        data-action="toggle-native-accordion"
-                        data-accordion-key="https://people.ece.cornell.edu/land/courses/ece5760/FinalProjects/s2022/az292_kw456_lh479/az292_kw456_lh479/index.html"
-                        open
-                      >
-                        <summary class="article-expander__title">Bombe Machine on an FPGA</summary>
-                        <a class="article-summary-link article-summary-box-outer" href="https://people.ece.cornell.edu/land/courses/ece5760/FinalProjects/s2022/az292_kw456_lh479/az292_kw456_lh479/index.html">
-                          <div class="article-summary-box-inner media-object">
-                            <span class="media-object__text">
-                              <span>Comments</span>
-                                &ensp;<span class="article-reading-time">(&hairsp;17
-                                  min&hairsp;)</span>
-                            </span>
-                          </div>
-                        </a>
-                      </details>
-                    </article>
-                    <article>
-                      <details
-                        class="article-expander"
-                        data-action="toggle-native-accordion"
-                        data-accordion-key="https://fullstackeconomics.com/how-policy-punishes-disabled-people-who-save-more-than-2000/"
-                        open
-                      >
-                        <summary class="article-expander__title">Policy punishes disabled people who save more than $2k</summary>
-                        <a class="article-summary-link article-summary-box-outer" href="https://fullstackeconomics.com/how-policy-punishes-disabled-people-who-save-more-than-2000/">
-                          <div class="article-summary-box-inner media-object">
-                              <img src="https://fullstackeconomics.com/content/images/2022/05/46990818422_1cc73b6947_o.jpg" loading="lazy" class="media-object__media article-image" />
-                            <span class="media-object__text">
-                              <span>Comments</span>
-                                &ensp;<span class="article-reading-time">(&hairsp;6
-                                  min&hairsp;)</span>
-                            </span>
-                          </div>
-                        </a>
-                      </details>
-                    </article>
-                    <article>
-                      <details
-                        class="article-expander"
-                        data-action="toggle-native-accordion"
-                        data-accordion-key="https://www.servethehome.com/topton-intel-j4125-4x-i225-fanless-virtualized-firewall-appliance-review-pfsense-opnsense-proxmox-ve/"
-                        open
-                      >
-                        <summary class="article-expander__title">Fanless Intel J4125 4x I225 Virtualized Firewall Appliance Review</summary>
-                        <a class="article-summary-link article-summary-box-outer" href="https://www.servethehome.com/topton-intel-j4125-4x-i225-fanless-virtualized-firewall-appliance-review-pfsense-opnsense-proxmox-ve/">
-                          <div class="article-summary-box-inner media-object">
-                              <img src="https://www.servethehome.com/wp-content/uploads/2022/04/Topton-Intel-J4125-4x-i225-Firewall-Appliance-Angle.jpg" loading="lazy" class="media-object__media article-image" />
-                            <span class="media-object__text">
-                              <span>Comments</span>
-                                &ensp;<span class="article-reading-time">(&hairsp;18
-                                  min&hairsp;)</span>
-                            </span>
-                          </div>
-                        </a>
-                      </details>
-                    </article>
-                    <article>
-                      <details
-                        class="article-expander"
-                        data-action="toggle-native-accordion"
-                        data-accordion-key="https://twitter.com/albertxu__/status/1527703889104863232"
-                        open
-                      >
-                        <summary class="article-expander__title">An AI system for solving crossword puzzles that outperforms the best humans</summary>
-                        <a class="article-summary-link article-summary-box-outer" href="https://twitter.com/albertxu__/status/1527703889104863232">
-                          <div class="article-summary-box-inner media-object">
-                            <span class="media-object__text">
-                              <span>Comments</span>
-                                &ensp;<span class="article-reading-time">(&hairsp;1
-                                  min&hairsp;)</span>
-                            </span>
-                          </div>
-                        </a>
-                      </details>
-                    </article>
-                    <article>
-                      <details
-                        class="article-expander"
-                        data-action="toggle-native-accordion"
-                        data-accordion-key="https://www.youtube.com/watch?v&#x3D;DJ1HwuYBuss"
-                        open
-                      >
-                        <summary class="article-expander__title">I Bought a Minicomputer from 1980 – Part 1</summary>
-                        <a class="article-summary-link article-summary-box-outer" href="https://www.youtube.com/watch?v&#x3D;DJ1HwuYBuss">
-                          <div class="article-summary-box-inner media-object">
-                            <span class="media-object__text">
-                              <span>Comments</span>
-                            </span>
-                          </div>
-                        </a>
-                      </details>
-                    </article>
-                    <article>
-                      <details
-                        class="article-expander"
-                        data-action="toggle-native-accordion"
-                        data-accordion-key="https://news.ycombinator.com/item?id&#x3D;31450713"
-                        open
-                      >
-                        <summary class="article-expander__title">Ask HN: What to do about ‘Good at programming Bad at Leetcode’</summary>
-                        <a class="article-summary-link article-summary-box-outer" href="https://news.ycombinator.com/item?id&#x3D;31450713">
-                          <div class="article-summary-box-inner media-object">
-                            <span class="media-object__text">
-                              <span>Comments</span>
-                                &ensp;<span class="article-reading-time">(&hairsp;81
-                                  min&hairsp;)</span>
-                            </span>
-                          </div>
-                        </a>
-                      </details>
-                    </article>
-                    <article>
-                      <details
-                        class="article-expander"
-                        data-action="toggle-native-accordion"
-                        data-accordion-key="https://nschloe.github.io/2022/05/20/math-on-github.html"
-                        open
-                      >
-                        <summary class="article-expander__title">Math on GitHub: The Good, the Bad and the Ugly</summary>
-                        <a class="article-summary-link article-summary-box-outer" href="https://nschloe.github.io/2022/05/20/math-on-github.html">
-                          <div class="article-summary-box-inner media-object">
-                            <span class="media-object__text">
-                              <span>Comments</span>
-                                &ensp;<span class="article-reading-time">(&hairsp;4
-                                  min&hairsp;)</span>
-                            </span>
-                          </div>
-                        </a>
-                      </details>
-                    </article>
-                    <article>
-                      <details
-                        class="article-expander"
-                        data-action="toggle-native-accordion"
-                        data-accordion-key="https://www.yalelawjournal.org/feature/the-constitutionality-of-civil-forfeiture"
-                        open
-                      >
-                        <summary class="article-expander__title">The Constitutionality of Civil Forfeiture (2016)</summary>
-                        <a class="article-summary-link article-summary-box-outer" href="https://www.yalelawjournal.org/feature/the-constitutionality-of-civil-forfeiture">
-                          <div class="article-summary-box-inner media-object">
-                              <img src="http://yalelawjournal.org/assets/img/YLJ-social-01.png" loading="lazy" class="media-object__media article-image" />
-                            <span class="media-object__text">
-                              <span>Comments</span>
-                                &ensp;<span class="article-reading-time">(&hairsp;143
-                                  min&hairsp;)</span>
-                            </span>
-                          </div>
-                        </a>
-                      </details>
-                    </article>
-                    <article>
-                      <details
-                        class="article-expander"
-                        data-action="toggle-native-accordion"
-                        data-accordion-key="https://plant.jim-fx.com"
-                        open
-                      >
-                        <summary class="article-expander__title">Show HN: WebApp to Create 3D Plants</summary>
-                        <a class="article-summary-link article-summary-box-outer" href="https://plant.jim-fx.com">
-                          <div class="article-summary-box-inner media-object">
-                            <span class="media-object__text">
-                              <span>Comments</span>
-                            </span>
-                          </div>
-                        </a>
-                      </details>
-                    </article>
-                    <article>
-                      <details
-                        class="article-expander"
-                        data-action="toggle-native-accordion"
-                        data-accordion-key="https://venturebeat.com/2022/05/20/why-sqlite-may-become-foundational-for-digital-progress/"
-                        open
-                      >
-                        <summary class="article-expander__title">SQLite may become foundational for digital progress</summary>
-                        <a class="article-summary-link article-summary-box-outer" href="https://venturebeat.com/2022/05/20/why-sqlite-may-become-foundational-for-digital-progress/">
-                          <div class="article-summary-box-inner media-object">
-                              <img src="https://venturebeat.com/wp-content/uploads/2022/05/GettyImages-1329578860.jpg?w&#x3D;1200&amp;strip&#x3D;all" loading="lazy" class="media-object__media article-image" />
-                            <span class="media-object__text">
-                              <span>Comments</span>
-                                &ensp;<span class="article-reading-time">(&hairsp;6
-                                  min&hairsp;)</span>
-                            </span>
-                          </div>
-                        </a>
-                      </details>
-                    </article>
-                    <article>
-                      <details
-                        class="article-expander"
-                        data-action="toggle-native-accordion"
-                        data-accordion-key="https://howardchen.substack.com/p/this-amateur-programmer-fought-cancer"
-                        open
-                      >
-                        <summary class="article-expander__title">“Amateur” programmer fought cancer with 50 Nvidia Geforce 1080Ti</summary>
-                        <a class="article-summary-link article-summary-box-outer" href="https://howardchen.substack.com/p/this-amateur-programmer-fought-cancer">
-                          <div class="article-summary-box-inner media-object">
-                              <img src="https://substackcdn.com/image/fetch/w_1200,h_600,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F39e7a635-f246-4fc6-a226-ad07c9041e8f_600x696.jpeg" loading="lazy" class="media-object__media article-image" />
-                            <span class="media-object__text">
-                              <span>Comments</span>
-                                &ensp;<span class="article-reading-time">(&hairsp;8
-                                  min&hairsp;)</span>
-                            </span>
-                          </div>
-                        </a>
-                      </details>
-                    </article>
-                    <article>
-                      <details
-                        class="article-expander"
-                        data-action="toggle-native-accordion"
-                        data-accordion-key="https://github.com/formkit/auto-animate"
-                        open
-                      >
-                        <summary class="article-expander__title">Add motion to your web apps with a single line of code</summary>
-                        <a class="article-summary-link article-summary-box-outer" href="https://github.com/formkit/auto-animate">
-                          <div class="article-summary-box-inner media-object">
-                              <img src="https://repository-images.githubusercontent.com/491235501/1409bd0d-1d33-445a-9cf1-d59e951edb07" loading="lazy" class="media-object__media article-image" />
-                            <span class="media-object__text">
-                              <span>Comments</span>
-                                &ensp;<span class="article-reading-time">(&hairsp;2
-                                  min&hairsp;)</span>
-                            </span>
-                          </div>
-                        </a>
-                      </details>
-                    </article>
-                    <article>
-                      <details
-                        class="article-expander"
-                        data-action="toggle-native-accordion"
-                        data-accordion-key="https://flix.dev/"
-                        open
-                      >
-                        <summary class="article-expander__title">Flix – Safe, reliable, concise, and functional-first programming language</summary>
-                        <a class="article-summary-link article-summary-box-outer" href="https://flix.dev/">
-                          <div class="article-summary-box-inner media-object">
-                            <span class="media-object__text">
-                              <span>Comments</span>
-                            </span>
-                          </div>
-                        </a>
-                      </details>
-                    </article>
-                    <article>
-                      <details
-                        class="article-expander"
-                        data-action="toggle-native-accordion"
-                        data-accordion-key="https://www.amazon.science/publications/amazon-redshift-re-invented"
-                        open
-                      >
-                        <summary class="article-expander__title">Amazon Redshift re-invented</summary>
-                        <a class="article-summary-link article-summary-box-outer" href="https://www.amazon.science/publications/amazon-redshift-re-invented">
-                          <div class="article-summary-box-inner media-object">
-                              <img src="https://assets.amazon.science/dims4/default/8d8913b/2147483647/strip/true/crop/1200x630+0+0/resize/1200x630!/quality/90/?url&#x3D;http%3A%2F%2Famazon-topics-brightspot.s3.amazonaws.com%2Fscience%2F7c%2F4e%2Fd4e963d24f6c966def82a45d2bf1%2Famazon-science-og-image-squid.png" loading="lazy" class="media-object__media article-image" />
-                            <span class="media-object__text">
-                              <span>Comments</span>
-                                &ensp;<span class="article-reading-time">(&hairsp;17
-                                  min&hairsp;)</span>
-                            </span>
-                          </div>
-                        </a>
-                      </details>
-                    </article>
-                    <article>
-                      <details
-                        class="article-expander"
-                        data-action="toggle-native-accordion"
-                        data-accordion-key="https://www.vulture.com/2022/04/netflix-bad-decisions-have-caught-up-with-it.html"
-                        open
-                      >
-                        <summary class="article-expander__title">Netflix’s bad habits have caught up with it</summary>
-                        <a class="article-summary-link article-summary-box-outer" href="https://www.vulture.com/2022/04/netflix-bad-decisions-have-caught-up-with-it.html">
-                          <div class="article-summary-box-inner media-object">
-                              <img src="https://pyxis.nymag.com/v1/imgs/19e/651/570ee2169b3ad889a03d77106f52cb80a5-buffering-netflix-ozark-lede.1x.rsocial.w1200.jpg" loading="lazy" class="media-object__media article-image" />
-                            <span class="media-object__text">
-                              <span>Comments</span>
-                                &ensp;<span class="article-reading-time">(&hairsp;15
-                                  min&hairsp;)</span>
-                            </span>
-                          </div>
-                        </a>
-                      </details>
-                    </article>
-                    <article>
-                      <details
-                        class="article-expander"
-                        data-action="toggle-native-accordion"
-                        data-accordion-key="https://www.theregister.com/2022/05/19/intel_immersion_lab/"
-                        open
-                      >
-                        <summary class="article-expander__title">Intel plans immersion lab to chill its power-hungry chips</summary>
-                        <a class="article-summary-link article-summary-box-outer" href="https://www.theregister.com/2022/05/19/intel_immersion_lab/">
-                          <div class="article-summary-box-inner media-object">
-                              <img src="https://regmedia.co.uk/2022/05/19/intel_shutterstock.jpg" loading="lazy" class="media-object__media article-image" />
-                            <span class="media-object__text">
-                              <span>Comments</span>
-                                &ensp;<span class="article-reading-time">(&hairsp;9
-                                  min&hairsp;)</span>
-                            </span>
-                          </div>
-                        </a>
-                      </details>
-                    </article>
-                    <article>
-                      <details
-                        class="article-expander"
-                        data-action="toggle-native-accordion"
-                        data-accordion-key="http://www.cs.virginia.edu/~evans/cs655/readings/smalltalk.html"
-                        open
-                      >
-                        <summary class="article-expander__title">Design Principles Behind Smalltalk (1981)</summary>
-                        <a class="article-summary-link article-summary-box-outer" href="http://www.cs.virginia.edu/~evans/cs655/readings/smalltalk.html">
-                          <div class="article-summary-box-inner media-object">
-                            <span class="media-object__text">
-                              <span>Comments</span>
-                                &ensp;<span class="article-reading-time">(&hairsp;12
-                                  min&hairsp;)</span>
-                            </span>
-                          </div>
-                        </a>
-                      </details>
-                    </article>
-                    <article>
-                      <details
-                        class="article-expander"
-                        data-action="toggle-native-accordion"
-                        data-accordion-key="https://psmag.com/social-justice/confident-idiots-92793"
-                        open
-                      >
-                        <summary class="article-expander__title">We are all confident idiots (2014)</summary>
-                        <a class="article-summary-link article-summary-box-outer" href="https://psmag.com/social-justice/confident-idiots-92793">
-                          <div class="article-summary-box-inner media-object">
-                              <img src="https://psmag.com/.image/t_share/MTI3NTgyNTMzMTUwODk2MDk4/confident-idiot.jpg" loading="lazy" class="media-object__media article-image" />
-                            <span class="media-object__text">
-                              <span>Comments</span>
-                                &ensp;<span class="article-reading-time">(&hairsp;21
-                                  min&hairsp;)</span>
-                            </span>
-                          </div>
-                        </a>
-                      </details>
-                    </article>
-                    <article>
-                      <details
-                        class="article-expander"
-                        data-action="toggle-native-accordion"
-                        data-accordion-key="https://arxiv.org/abs/2203.08913"
-                        open
-                      >
-                        <summary class="article-expander__title">Memorizing Transformers</summary>
-                        <a class="article-summary-link article-summary-box-outer" href="https://arxiv.org/abs/2203.08913">
-                          <div class="article-summary-box-inner media-object">
-                            <span class="media-object__text">
-                              <span>Comments</span>
-                                &ensp;<span class="article-reading-time">(&hairsp;2
-                                  min&hairsp;)</span>
-                            </span>
-                          </div>
-                        </a>
-                      </details>
-                    </article>
-                    <article>
-                      <details
-                        class="article-expander"
-                        data-action="toggle-native-accordion"
-                        data-accordion-key="https://www.kaggle.com/sudalairajkumar/winning-solutions-of-kaggle-competitions"
-                        open
-                      >
-                        <summary class="article-expander__title">Winning solutions of Kaggle competitions</summary>
-                        <a class="article-summary-link article-summary-box-outer" href="https://www.kaggle.com/sudalairajkumar/winning-solutions-of-kaggle-competitions">
-                          <div class="article-summary-box-inner media-object">
-                            <span class="media-object__text">
-                              <span>Comments</span>
-                            </span>
-                          </div>
-                        </a>
-                      </details>
-                    </article>
-                    <article>
-                      <details
-                        class="article-expander"
-                        data-action="toggle-native-accordion"
-                        data-accordion-key="https://hai.stanford.edu/news/ambitious-brain-recordings-create-unprecedented-portrait-vision-action"
-                        open
-                      >
-                        <summary class="article-expander__title">Ambitious Brain Recordings Create Unprecedented Portrait of Vision in Action</summary>
-                        <a class="article-summary-link article-summary-box-outer" href="https://hai.stanford.edu/news/ambitious-brain-recordings-create-unprecedented-portrait-vision-action">
-                          <div class="article-summary-box-inner media-object">
-                              <img src="https://hai.stanford.edu/sites/default/files/news/teaser-images/brain%20neurons%20lighting%20up%20copy.jpg" loading="lazy" class="media-object__media article-image" />
-                            <span class="media-object__text">
-                              <span>Comments</span>
-                                &ensp;<span class="article-reading-time">(&hairsp;5
-                                  min&hairsp;)</span>
-                            </span>
-                          </div>
-                        </a>
-                      </details>
-                    </article>
-                    <article>
-                      <details
-                        class="article-expander"
-                        data-action="toggle-native-accordion"
-                        data-accordion-key="https://klarasystems.com/articles/evaluating-freebsd-current-for-production-use/"
-                        open
-                      >
-                        <summary class="article-expander__title">Evaluating FreeBSD Current for Production Use</summary>
-                        <a class="article-summary-link article-summary-box-outer" href="https://klarasystems.com/articles/evaluating-freebsd-current-for-production-use/">
-                          <div class="article-summary-box-inner media-object">
-                              <img src="https://i0.wp.com/klarasystems.com/wp-content/uploads/2022/05/AdobeStock_380794583.jpeg?fit&#x3D;1200%2C514&amp;ssl&#x3D;1" loading="lazy" class="media-object__media article-image" />
-                            <span class="media-object__text">
-                              <span>Comments</span>
-                                &ensp;<span class="article-reading-time">(&hairsp;10
-                                  min&hairsp;)</span>
-                            </span>
-                          </div>
-                        </a>
-                      </details>
-                    </article>
-                    <article>
-                      <details
-                        class="article-expander"
-                        data-action="toggle-native-accordion"
-                        data-accordion-key="https://github.com/sharkdp/fd"
-                        open
-                      >
-                        <summary class="article-expander__title">A simple, fast and user-friendly alternative to ‘find’</summary>
-                        <a class="article-summary-link article-summary-box-outer" href="https://github.com/sharkdp/fd">
-                          <div class="article-summary-box-inner media-object">
-                              <img src="https://opengraph.githubassets.com/83584f6d59921e1651b112a06e86293f76e8aa6e746f600401b281e80f81eb83/sharkdp/fd" loading="lazy" class="media-object__media article-image" />
-                            <span class="media-object__text">
-                              <span>Comments</span>
-                                &ensp;<span class="article-reading-time">(&hairsp;13
-                                  min&hairsp;)</span>
-                            </span>
-                          </div>
-                        </a>
-                      </details>
-                    </article>
-                    <article>
-                      <details
-                        class="article-expander"
-                        data-action="toggle-native-accordion"
-                        data-accordion-key="https://astralcodexten.substack.com/p/lavenders-game-silexan-for-anxiety"
-                        open
-                      >
-                        <summary class="article-expander__title">Lavender&#x27;s Game: Silexan for Anxiety</summary>
-                        <a class="article-summary-link article-summary-box-outer" href="https://astralcodexten.substack.com/p/lavenders-game-silexan-for-anxiety">
-                          <div class="article-summary-box-inner media-object">
-                              <img src="https://substackcdn.com/image/fetch/w_1200,h_600,c_limit,f_jpg,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F68d1dbfb-c939-41c8-a0f3-1e8dabd83a5f_2000x1417.webp" loading="lazy" class="media-object__media article-image" />
-                            <span class="media-object__text">
-                              <span>Comments</span>
-                                &ensp;<span class="article-reading-time">(&hairsp;7
-                                  min&hairsp;)</span>
-                            </span>
-                          </div>
-                        </a>
-                      </details>
-                    </article>
-                    <article>
-                      <details
-                        class="article-expander"
-                        data-action="toggle-native-accordion"
-                        data-accordion-key="https://fanac.org/fanzines/Cheap_Truth/"
-                        open
-                      >
-                        <summary class="article-expander__title">Bruce Sterling&#x27;s Cheap Truth zine (1983)</summary>
-                        <a class="article-summary-link article-summary-box-outer" href="https://fanac.org/fanzines/Cheap_Truth/">
-                          <div class="article-summary-box-inner media-object">
-                            <span class="media-object__text">
-                              <span>Comments</span>
-                                &ensp;<span class="article-reading-time">(&hairsp;1
-                                  min&hairsp;)</span>
-                            </span>
-                          </div>
-                        </a>
-                      </details>
-                    </article>
-                    <article>
-                      <details
-                        class="article-expander"
-                        data-action="toggle-native-accordion"
-                        data-accordion-key="https://dl.acm.org/"
-                        open
-                      >
-                        <summary class="article-expander__title">ACM Digital Library Archive is Open Access with 50 Years of Published Records</summary>
-                        <a class="article-summary-link article-summary-box-outer" href="https://dl.acm.org/">
-                          <div class="article-summary-box-inner media-object">
-                            <span class="media-object__text">
-                              <span>Comments</span>
-                                &ensp;<span class="article-reading-time">(&hairsp;12
-                                  min&hairsp;)</span>
-                            </span>
-                          </div>
-                        </a>
-                      </details>
-                    </article>
-                    <article>
-                      <details
-                        class="article-expander"
-                        data-action="toggle-native-accordion"
-                        data-accordion-key="https://consulting.drmaciver.com/code-review-quick-fixes/"
-                        open
-                      >
-                        <summary class="article-expander__title">Quick fixes to your code review workflow</summary>
-                        <a class="article-summary-link article-summary-box-outer" href="https://consulting.drmaciver.com/code-review-quick-fixes/">
-                          <div class="article-summary-box-inner media-object">
-                            <span class="media-object__text">
-                              <span>Comments</span>
-                                &ensp;<span class="article-reading-time">(&hairsp;9
-                                  min&hairsp;)</span>
-                            </span>
-                          </div>
-                        </a>
-                      </details>
-                    </article>
-                </section>
-              </section>
-            </li>
-            <li class="card__section">
-              <section class="js-toggle-accordions-scope">
-                <h3 class="source-heading">
-                  <button
-                    class="source-heading__name"
-                    data-action="toggle-accordions"
-                    title="Click to toggle the source, Ctrl + click to toggle all."
-                  >知乎日报</button>
-                  <a class="source-heading__link" href="https://news-at.zhihu.com/api/4/stories/latest?client&#x3D;0">Open</a>
-                </h3>
-                <section class="articles-per-source">
-                    <article>
-                      <details
-                        class="article-expander"
-                        data-action="toggle-native-accordion"
-                        data-accordion-key="https://daily.zhihu.com/story/9748825"
-                        open
-                      >
-                        <summary class="article-expander__title">为什么猫走路总是悄无声息，而狗走路就能听到声音？</summary>
-                        <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9748825">
-                          <div class="article-summary-box-inner media-object">
-                            <span class="media-object__text">
-                              <span>苏澄宇，动物科学 / 冷门问题收割者/看心情更新
-阅读原文
-
-猫走路悄无声息和「猫步」有很大关系，当然这也是有代价的，「猫步」得花更多的能量，牺牲更多效率……
-在进入正文前，得介绍一些走路的知识。
-人走路的时候，先抬起脚，同时臀部位置上升，动能储存为势能，达到最高点的时候，势能（PE）最大；当放下脚的时候，全部的势能转化为动能（KE），推动另一只脚向前，如此反复下去，就达到了能量转换的循环。
-这就类似于一种钟摆的机械能交换。理想情况下，如果 PE 和 KE 的涨落正好相反，并且幅度相同，那么系统的外部机械能总量保持不变，不需要任何能量输入来维持运动。
-在现实中，不可能回收所有的机械能，总会有损失。如果一种动物能够回收越多的机械能，那么它对能量的利用效率就越高，越节能。
-能量回收的计算方式
-不同的动物有不同的体态、不同的行走方式，这就导致了有的动物走路费力，有的走路省力。
-2004 年的研究中发现，狗在走路的时候可以恢复 70%的机械能。
-那猫呢？
-Daniel Schmitt 做了一个实验，找来了 6 只猫，让它们在一个 6 米长的跑道上自由行走，跑到上安装了测力板。同时，会在猫咪的肩、肘、腕 、髋、膝、踝和跖趾关节处做标记，拍摄猫咪在运动时关节的位置变化。收集数据后计算猫走路的势能和动能的变化。
-
-
-直接说结果，这些猫走路的时候，脚步间隔均匀稳定，平均可以恢复 17% 的能量，最大只有 37.9%，远远低于狗的 70%。
-也就说，猫咪的走路方式是非常不省力的，这就是走路悄咪咪的代价。在论文里，猫步也被称为隐身步态。
-猫走路省力和它步幅有一定关系。猫在悄咪咪走路的时候，会采取更多的蹲伏姿势，重心靠近地面，步幅更大。猫的步幅角度在 25% 左右，而之前的研究中，狗的只有 15%。
-不同动物的走路姿态
-研究观察到，步幅角度越大，能量回收效率越低。下图是能量回收效率和步幅角度的关系：
-
-相对于猫来说，狗跑的距离更远，在长途行走中需要节省能量；猫更倾向于跟踪猎物，安静才是关键，所以放弃了能量效率。
-另一个研究也可以从侧面说明一猫走路确实更费力。
-2014 年，科学家找了 24 只猫和 24 只狗，测试它们的前肢和后肢对地面的作用力。猫在向前推进的时候，对地面的垂直方向的力大约为 3.89 n/kg，狗只有 3.03 n/k。
-可以推测，不只是猫咪，所有的猫科动物都会牺牲能量效率，来获得更隐身的步态，提高捕获动物的概率。
-这只猫走路更可爱（因为猫猫和马在一起生活，所以走路有马的姿态……
-
-
-阅读原文</span>
-                            </span>
-                          </div>
-                        </a>
-                      </details>
-                    </article>
-                    <article>
-                      <details
-                        class="article-expander"
-                        data-action="toggle-native-accordion"
-                        data-accordion-key="https://daily.zhihu.com/story/9748832"
-                        open
-                      >
-                        <summary class="article-expander__title">乒乓球如何才能打败公园老头?</summary>
-                        <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9748832">
-                          <div class="article-summary-box-inner media-object">
-                            <span class="media-object__text">
-                              <span>又卷又平小小卢，乒乓球&amp;心理学话题预备优秀答主
-阅读原文
-
-打败公园老大爷有三大要义：扎实的搓球攻球基本功、灵活的步法、稳定的弧圈球技术。这三大要义你都没有，所以你根本无法打败公园老大爷。下面我将以「公园场域下知乎新手打赢本土乒乓球老大爷的机制与路径研究」为题，对年轻人如何突破公园老大爷展开研究，提出相应路径，并对题主提出针对性建议。
-摘要
-本文综合运用观察法、访谈法等质性研究的方法，先从公园老大爷的身体状态、技术特点等方面入手，对公园大爷进行了全面细致的分析，归纳出公园大爷的三大特点：自身移动范围小、回球角度变化大，擅长搓球，不擅长应对弧圈球；紧接着根据大爷的特点，提出打败公园老大爷的三大要义：扎实的搓球攻球基本功、灵活的步法和稳定的弧圈球技术，并予以详细论证；最后结合题主描述，有针对性地指出题主无法战胜公园老大爷的原因，并为题主提出针对性建议。本文的局限与展望列在最后。
-研究背景
-当前，全民健身成为新热潮。越来越多的老年人走出家门、青年人走出办公室、学生走出教室，开始进行各类体育锻炼。
-乒乓球作为我国的国球，以其技术性强、可玩性强、老少咸宜等特点，深受广大中老年人及年轻人的喜爱，成为了少有的适合不同年龄段选手同台竞技的运动项目。
-然而该项目中，不同年龄段的选手往往显现出极为不同的技术特点。年轻选手喜爱进攻，打法潇洒，喜欢发力，然而常常以快乐为主，不爱算球；而老年选手往往球风老辣，精于计算，变化多端，令许多年轻人闻风丧胆。其中最有代表性的形象就是遍布在全国各个公园里的「公园大爷」。
-
-新手遇到公园大爷往往会感到极度不适，常常莫名其妙就输掉了比赛，赛后信心大受打击。
-因此，为了缓解年轻一代对老年选手的恐惧，帮助广大年轻选手提振信心，树立技术自信，实现自立自强，很有必要针对这一现象进行系统深入的研究。本研究选取某知乎答主进行案例研究，并结合笔者前期的大量相关经验，探索…</span>
-                            </span>
-                          </div>
-                        </a>
-                      </details>
-                    </article>
-                    <article>
-                      <details
-                        class="article-expander"
-                        data-action="toggle-native-accordion"
-                        data-accordion-key="https://daily.zhihu.com/story/9748835"
-                        open
-                      >
-                        <summary class="article-expander__title">《瞬息全宇宙》为什么可以收获那么多好评？拍得好在哪儿？</summary>
-                        <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9748835">
-                          <div class="article-summary-box-inner media-object">
-                            <span class="media-object__text">
-                              <span>segelas，电影学硕士已毕业，但仍旧略懂皮毛
-阅读原文
-
-谈一谈个人的看法。
-借助多元宇宙，本片叙述了生活的价值：正视自己人生的不成功，以爱来确信人生的意义。
-前半部的人生，是围绕着「成功」的。「爸爸会喜欢看到你的事业」，「你知道他不会的」，以及伊芙琳在破旧洗衣店里应付账单的无力感，点出了这个核心信息。敷衍父亲、丈夫离心、疏忽女儿，都是因为「回避不成功的人生」而起，而家庭矛盾又导致了爱的弱化。此时，「爱」被「成功」影响，让位于它。导演强调了伊芙琳对于自我人生之失败的否定和躲避，对于其他「正确」人生之成功的希冀，并给出了负面的结论。
-在多重宇宙的概念之下，这有了独特的表现方式。在其他宇宙中，她或有着明星的富足生活，或与丈夫感情良好，因此说出了「想去了就不回来」的想法。躲入其他生活，本身便是对自身生活的逃避。而当电影给出反派角色：她的女儿时，她对生活的回避就更加落地了。其他宇宙中，她逼女儿做实验，并让后者意外地获得了穿越时空的能力，自己也亦步亦趋。这直接对等于「往日闪回」中体现的东西，是她获得的一次「重来一遍」机会，只需要借走其他宇宙中自己的人生。
-对于生活的不成功，她有意回避，而她自己也正是对青春期女儿进行吵骂式管教的严苛家长，同样地逼迫着女儿，加深着这种不成功的程度。此外，她与丈夫的关系也非常不好。这一切，加上赴美国时的希冀破灭，便构成了她逃避生活失败的理由。对于婚姻、事业、丈夫、父亲、女儿，自己生活里的所有不如意，第一部分里的她都抱着「用忙碌来逃避」的态度。
-本作给出了丰富的生活困扰因素，又与主题表达非常契合。从带上通信设备的一瞬间，伊芙琳穿越了无限时空，拥有了躲避自我现实的能力。而多元宇宙的分岔，则带来了她对现实生活不满而导致的「应该那么做就好了」的无用悔恨。我们对于往日的抱怨，生出了对「不那么做」的落魄现实的负面情绪。
-只有回归本我，拿出对自己—而非平行宇宙里的其…</span>
-                            </span>
-                          </div>
-                        </a>
-                      </details>
-                    </article>
-                    <article>
-                      <details
-                        class="article-expander"
-                        data-action="toggle-native-accordion"
-                        data-accordion-key="https://daily.zhihu.com/story/9748844"
-                        open
-                      >
-                        <summary class="article-expander__title">智慧、语言和文字，是否指向人类身上对应的独特基因？</summary>
-                        <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9748844">
-                          <div class="article-summary-box-inner media-object">
-                            <span class="media-object__text">
-                              <span>Clover青子，我青子又回来啦！
-阅读原文
-
-人类的出现，与以前漫长的岁月相比，仅是弹指一挥间，王朝与时代像火焰般变幻，古猿仍向空中的骨头棒还没落回地面就变成了宇宙。- 刘慈欣《三体》
-人类这一物种在自然界众多物种之中一点也不起眼。
-我们的速度不及绝大多数的大型哺乳动物，我们没有五彩绚烂的羽毛，我们的视觉和听觉在动物之中完全排不上号。
-一个史前人类，他刚刚开始认识工具，踏入进化为人的道路。《2001 太空漫游》
-作为一个人类意味着什么？我相信大家的第一反应无外乎以下几点：我们有语言，有创造力，有抽象思维和解决问题的能力。这一切都是我们这颗独特的大脑所带来的。虽然其他动物也能交流：蜜蜂会跳舞，鲸鱼会唱歌，只有人类有能力胜任规模复杂的语言，构筑起我们周围这个有意义的世界，甚至建造飞船飞向太空。
-甚至建造飞船飞向太空。《2001 太空漫游》
-人类是怎么变成现在这个样子的？在物种进化的过程中到底发生了什么？是哪一次随机的基因突变导致了早期人科动物长出最初的心理语言器官，附加在我们灵长目祖先的身体里？还是我们祖先的大脑内部发生了什么微妙的变化，使得它的功能突然提升？
-这些问题的答案并不完全清楚，但科学家还是找到了一些线索。
-首先要讲是其中最有名的基因：FOXP2。它最初于 1998 年被确定为英国 KE 家庭语言障碍的遗传原因，是第一个被发现与言语和语言相关的基因，后来被称为「语言基因」。
-故事是这样的。
-KE 家庭的孩子就读于伦敦西部的奥格尔特殊教育需求中心。到 20 世纪 80 年代末，这个家庭有 7 个孩子去那里上学。奥格尔了解到这家人三代都有语言障碍。他们的脸部下半部分表现出僵硬，大多数人不能完整地发一个单词的音。他们中的许多人有严重的口吃和有限的词汇量。奥格尔说服他们的家人进行医学研究，从 1987 年开始采集血液样本进行分析。
-KE 家族树，下划线的对象是被诊断为语言障…</span>
-                            </span>
-                          </div>
-                        </a>
-                      </details>
-                    </article>
-                    <article>
-                      <details
-                        class="article-expander"
-                        data-action="toggle-native-accordion"
-                        data-accordion-key="https://daily.zhihu.com/story/9748850"
-                        open
-                      >
-                        <summary class="article-expander__title">「慢性 ×× 炎」都无法根治吗？有哪些是可以治愈的？</summary>
-                        <a class="article-summary-link article-summary-box-outer" href="https://daily.zhihu.com/story/9748850">
-                          <div class="article-summary-box-inner media-object">
-                            <span class="media-object__text">
-                              <span>元宿six，医学干货｜病房故事｜护肤成分｜健康方式
-阅读原文
-
-慢性一词，原本从英文 chronic 翻译而来，中文翻做慢性的，长期的，难以治愈或根除的。如果只针对题主问的「慢性 XX 炎」，而非立足所有慢性病，那确实可以找到治愈的例子；如果是说「慢性病」，基本上是认为无法治愈。前者可以是某一器质性病变引起的症状，而后者趋向疾病的概念非特指某一种病，而是一类，定义里本身就将「难治愈」这个点归纳进去了，这里我们在后文扩展讨论。
-割以永治:道理很简单，情况很复杂
-虽然个人认为题主这个问题是不严谨的，但尚有讨论空间。打个比方，如果认为慢性炎症只是来自病变的组织和器官（实际慢性炎症跟众多的疾病有关，这里只是其中一种情况），那种不割也能忍忍，割了就好了的情况，那例子是有的。
-
-就举几个常见的例子。比如慢性阑尾炎，是指阑尾急性炎症消退后而遗留的阑尾慢性炎症病变，如管壁纤维结缔组织增生、管腔狭窄或闭塞、阑尾扭曲，与周围组织粘连等。从药物治疗角度而言，可以通过使用抗生素控制炎症，但由于阑尾是盲端，不能够完全消除炎症，而通过手术切除的方式就可以彻底解决。
-例如慢性扁桃体炎，这种疾病炎症的控制已经无法通过使用药物来达到痊愈的目的，只能够采取手术割掉扁桃体，从而达到治愈的目的。
-再比如慢性胆囊炎，由于结石，慢性感染，长期高脂饮食，引起慢性胆囊炎，病情迁延，通过排石抗感染等手段往往疗效欠佳，而通过胆囊切除手术就可以根治。
-上面这三个疾病都是以慢性疾病过程为特点的，表现为疾病病程长，常规治疗手段无法根治，但是它们并非不可治愈，通过手术治疗就可以根治。
-但是不要太天真，不是所有都能割的。
-毕竟这些手术的根治性接触会带来脏器或组织的失去，让你的病史中留下一句“某某器官切除术后”是小，关键还要考虑失去这个脏器对身体机能和心理的影响，如果是发生太重要的器官……比如在心脏、肺等
-当年至尊宝就拒绝了割以永治
-或…</span>
-                            </span>
-                          </div>
-                        </a>
-                      </details>
-                    </article>
-                </section>
-              </section>
-            </li>
-        </ul>
-      </section>
 
     <footer>
-      <a class="footer-link" href="https://github.com/7Qi7Qi/RSSFeeder/actions/runs/2522370593">
-        <time id="build-timestamp" datetime="2022-06-19T01:22:58.855Z">2022-06-19T01:22:58.855Z</time>
+      <a class="footer-link" href="https://github.com/7Qi7Qi/RSSFeeder/actions/runs/2525980665">
+        <time id="build-timestamp" datetime="2022-06-20T01:23:56.894Z">2022-06-20T01:23:56.894Z</time>
       </a>
       <a class="footer-link" href="https://github.com/osmoscraft/osmosfeed">osmosfeed 1.15.0</a>
     </footer>
