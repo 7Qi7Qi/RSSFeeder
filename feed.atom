@@ -2,10 +2,621 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://7qi7qi.github.io/RSSFeeder/index.html</id>
     <title>osmos::feed</title>
-    <updated>2022-06-23T01:12:41.640Z</updated>
+    <updated>2022-06-24T01:17:13.058Z</updated>
     <generator>osmosfeed 1.15.1</generator>
     <link rel="alternate" href="https://7qi7qi.github.io/RSSFeeder/index.html"/>
     <link rel="self" href="https://7qi7qi.github.io/RSSFeeder/feed.atom"/>
+    <entry>
+        <title type="html"><![CDATA[当我们谈论不可变基础设施时，我们在谈论什么]]></title>
+        <id>http://weekly.dockone.io/article/2434918</id>
+        <link href="http://weekly.dockone.io/article/2434918"/>
+        <updated>2022-06-24T01:17:11.285Z</updated>
+        <summary type="html"><![CDATA[午夜时分，电话响起，线上告急。你从千呼万钉中醒来，睡眼朦胧，手忙脚乱。
+恍惚之间，终于梳理清楚发生了什么，一个陈年老应用突然停机，消息堆积，系统停摆。而你就像一个下水道小工疏通马桶一般，大力出奇迹，重启机器，恢复服务。只见消息队列中的堆积事件一泻千里，警告消除。
+次日，你再也不想重现午夜凶铃，决定对系统进行永久性修复：加一个定时重启服务的脚本。
+斗转星移，许多时日过去了，你也在不同的角落加了无数的脚本，也好久没有半夜惊醒，甚至还能悠闲享受下午茶。但是，直到今天。
+今天，你们部门要降本增效，为了避免自己成为被砍掉的成本，你决定主动对线上的机器开刀：合并服务，裁撤机器。虽然你对机器上都部署了什么应用了然于胸，但是你已经不记得都有哪些脚手架支撑着应用的运转。
+重建环境难如登天，你又开始难眠了。
+变化的基础设施
+复杂、神秘而神奇的线上环境承载了半部都市传说，甚至有些公司的线上环境本身就是一本需要口耳相传的上古神话。
+我虽然没有看过沙漠下暴雨，但是看过没人说的清楚上面有什么的环境。我虽然没有看过大海亲吻鲨鱼，但是我看过重启再也起不来的机器。
+如果你能说清楚任何一台机器上都部署了什么应用，以及机器上服务之间的依赖关系是什么样子的，你已经击败了八成的玩家。而造成这种局面的根本原因就是基础设施的易变。
+新增一个服务时：“我找台机器部署一下”
+某一个服务出问题时：“我上机器改一下”
+需要对某个系统配置变更时：“我搞个脚本跑一跑”
+
+看似常规运维变更，有文档记录或者没有文档记录，每一个环境都是如此的别致和独一无二，再加上人员变动，造就了无数的“祖传秘技”。
+什么是不可变的基础设施
+容器在被广泛接受的同时，「不可变」也逐渐被潜移默化的接受。
+应用容器消亡之后，容器内的修改会随着容器一起不复存在，不要在容器内做修改就是最朴素的不可变理念。在程序启动阶段遇到问题，很少人还会把在容器内修修补补作为正经…]]></summary>
+        <author>
+            <name>Hypo</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[两军问题]]></title>
+        <id>http://weekly.dockone.io/article/2434908</id>
+        <link href="http://weekly.dockone.io/article/2434908"/>
+        <updated>2022-06-24T01:17:11.262Z</updated>
+        <summary type="html"><![CDATA[想象一下山谷中有一座城市。在山谷的两边，各有一支军队。左边的山上站着爱丽丝将军和她的军队；右边的山上是鲍勃将军和他的军队。爱丽丝和鲍勃都想占领这座城市，但双方都没有足够的军队单独行动。因此，爱丽丝和鲍勃必须同时攻打这座城市，这样才有机会拿下这座城市。
+
+
+
+然而，问题来了，爱丽丝和鲍勃只能经过山谷发送信息来交流。负责传递信息的信使有可能被城里的军队俘虏。同时，爱丽丝和鲍勃只有在确信对方会同时进攻的情况下才会真的发起进攻，那么，爱丽丝和鲍勃该如何协调他们的进攻呢？
+假设爱丽丝决定采取主动行动。她给鲍勃发送了一条信息，内容如下：
+“让我们在5月17日发起进攻。让信使把你的回复发过来。——爱丽丝”
+
+
+
+如果信使没能通过，爱丽丝就不会进攻，显然鲍勃也不会。如果消息到达鲍勃，他将发送他的回复：
+“好吧，就这么办。就在5月17日！——鲍勃。”
+
+
+
+现在是有趣的部分来了，鲍勃的回复是否能收到并不重要。不管怎样，鲍勃都不会攻击。记住，因为鲍勃只有在确信爱丽丝也会攻击的情况下才会进攻。鲍勃知道爱丽丝只有在得到他的回复后才会攻击，但是鲍勃不知道他的回复是否送到了爱丽丝那里。如果没有，她就不会进攻，如果他不带她进攻，他的军队就会全军覆没。因为鲍勃不知道他的信息是否收到了，所以他就这么等着，什么也不会发生。
+这种情况，我们能做点什么吗？来我们试着改一下策略，就是，让鲍勃要求爱丽丝发送确认信，表示她收到了他的回复。因此，发了这封信：
+“好吧，就这么办。是5月17日！同时，请你再发送另一封信来确保你收到了这封信。——鲍勃。”
+现在爱丽丝发送消息，鲍勃发送他的回复，爱丽丝准备发送她收到了他的回复的确认消息。但她意识到，她无法知道他是否会得到确认。如果他拿不到，他就不会进攻，她的军队就会被打败。所以她决定发出这样的信息：
+“我明白你的回答。请再发送一封信使来确认这个确认。——爱丽丝”
+总结一下，现在我…]]></summary>
+        <author>
+            <name>frankinbj</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[A common trap for people entering programming jobs]]></title>
+        <id>https://www.natemeyvis.com/a-common-trap-for-people-entering-programming-jobs.html</id>
+        <link href="https://www.natemeyvis.com/a-common-trap-for-people-entering-programming-jobs.html"/>
+        <updated>2022-06-23T23:58:09.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[为什么《人体损伤程度鉴定标准》定的轻伤要这么严重？]]></title>
+        <id>https://daily.zhihu.com/story/9749909</id>
+        <link href="https://daily.zhihu.com/story/9749909"/>
+        <updated>2022-06-23T23:07:52.000Z</updated>
+        <summary type="html"><![CDATA[死者代言人，为死者代言，替逝者发声。
+阅读原文
+
+因为法律意义上的“轻微伤、”“轻伤”、“重伤”，是根据法律需要而拟制的“法律概念”。
+并非一般生活中，日常口语表达中的“轻”“重”的含义。
+仅仅是使用了相同的“轻”“重”二字，但也确实因为同字但并不完全同义而带来了一些理解上的差异。
+说回提问的轻伤。
+根据《人体损伤程度鉴定标准》的内容：
+3 术语和定义
+3.1 重伤
+使人肢体残废、毁人容貌、丧失听觉、丧失视觉、丧失其他器官功能或者其他对于人身健康有重大伤害的损伤，包括重伤一级和重伤二级。
+3.2 轻伤
+使人肢体或者容貌损害，听觉、视觉或者其他器官功能部分障碍或者其他对于人身健康有中度伤害的损伤，包括轻伤一级和轻伤二级。
+3.3 轻微伤
+各种致伤因素所致的原发性损伤，造成组织器官结构轻微损害或者轻微功能障碍。
+可以看到，这里关于轻伤的定义中，实际使用的“中度伤害”这个解释，而非“轻度”。
+因此，从这个定义来讲，法律上的“轻伤”，实际想表达是“中伤”，但这么叫吧，就很奇怪。
+以及，为了承袭前一版老的损伤鉴定标准里的称呼，并且不与现行法律冲突，就保留了一直以来的习惯，还是叫“轻伤”。
+上面这个定义是轻伤的整体性定义。
+还是在《人体损伤鉴定程度标准》中的附录部分，给出一个原则性的内容：
+损伤程度等级划分原则
+A.1 重伤一级
+各种致伤因素所致的原发性损伤或者由原发性损伤引起的并发症，严重危及生命；遗留肢体严重残废或者重度容貌毁损；严重丧失听觉、视觉或者其他重要器官功能。
+A.2 重伤二级
+各种致伤因素所致的原发性损伤或者由原发性损伤引起的并发症，危及生命；遗留肢体残废或者轻度容貌毁损；丧失听觉、视觉或者其他重要器官功能。
+A.3 轻伤一级
+各种致伤因素所致的原发性损伤或者由原发性损伤引起的并发症，未危及生命；遗留组织器官结构、功能中度损害或者明显影响容貌。
+A.4 轻伤二级
+各种致伤因素所致的原发性损伤或者由原发性损伤引起的并发症，未危及生命；遗留组织器官结构、功能轻度损害或者影响容貌。
+A.5 轻微伤
+各种致伤因素所致的原发性损伤，造成组织器官结构轻微损害或者轻微功能障碍。
+可以看到，这里的原则性把握上，在“中伤”的轻伤内，针对轻伤一级和轻伤二级又有了不同的表述。
+轻伤一级，也就是轻伤范围内偏重的部分，使用的还是“中度损害”。
+而在轻伤二级，也就是轻伤范围内偏轻的部分，则使用了“轻度损害”。
+但，即便如此，在前面有详细的条款列举规定的情况下，这里的原则性把握只用于总体性理解，或者对于一些未在列举条款，但是需要寻找相近情况进行评价时使用。
+关于法律意义上的用词与日常生活理解的差异性，还可以体现在上述原则的“重伤”部分：
+A.1 重伤一级
+各种致伤因素所致的原发性损伤或者由原发性损伤引起的并发症，严重危及生命；遗留肢体严重残废或者重度容貌毁损；严重丧失听觉、视觉或者其他重要器官功能。
+A.2 重伤二级
+各种致伤因素所致的原发性损伤或者由原发性损伤引起的并发症，危及生命；遗留肢体残废或者轻度容貌毁损；丧失听觉、视觉或者其他重要器官功能。
+主要是两级的最后一部分。
+日常理解，“丧失听觉、视觉或者其他重要器官功能”，那就是聋了、瞎了等等。
+都“丧失”了嘛！
+但，在具体这个规定的场景中，还有“严重丧失听觉、视觉或者其他重要器官功能。”
+从这一条的“严重丧失”来看，上面那个“丧失”实为“部分丧失”。
+同时对照着具体条款而言，以听力举例：（这里为了方便对比，去掉了部分条款，以……代替）
+5.3 听器听力损伤
+5.3.1 重伤一级
+a)双耳听力障碍(≥91dB HL)。
+5.3.2 重伤二级
+a)一耳听力障碍(≥91dB HL)。
+b)一耳听力障碍(≥81dB HL)，另一耳听力障碍(≥41dB HL)。
+c)一耳听力障碍(≥81dB HL)，伴同侧前庭平衡功能障碍。
+d)双耳听力障碍(≥61dB HL)。
+……
+5.3.3 轻伤一级
+a)双耳听力障碍(≥41dB HL)。
+……
+5.3.4 轻伤二级
+……
+c)一耳听力障碍(≥41dB HL)。
+……
+5.3.5 轻微伤
+……
+c)外伤后听力减退。
+都是看听力，从重到轻是有一个逐渐变化的过程的。
+这种分级分段，也有利于落实到最后的量刑上，做出区分度来。
+最后总结一下，不能机械的用日常语言的“轻重”来理解法律概念上的“轻伤”“重伤”。
+既然法律最后要根据不同情况划分出给予惩罚的三六九来，那就必然需要严重程度有一个阶梯式的上升或下降与之对应。
+法律概念的“轻伤”，其实并不轻！！
+阅读原文]]></summary>
+        <author>
+            <name>知乎日报</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[为何昆虫不慎仰面朝天时若不及时翻身可能马上死亡？]]></title>
+        <id>https://daily.zhihu.com/story/9749918</id>
+        <link href="https://daily.zhihu.com/story/9749918"/>
+        <updated>2022-06-23T23:07:45.000Z</updated>
+        <summary type="html"><![CDATA[Mr-HH，细胞生物学/遗传学/普通生物学科普
+阅读原文
+
+正常情况下来说，当昆虫一个不小心碰到了「四脚朝天」的状态时，它们都会尽自己所能，尝试回正。一般状态下有三种方法：
+①拼命挣扎，挥动足部以改变重心，从而翻身；
+②借助道具，比如说利用自然环境中存在着各种各样的落叶、树枝之类的杂物；
+③会摆动翅膀的还会同时用上，弹着弹着就能顺利翻身了。
+
+当然，如果是在人类生活的环境中，比如说碰上了四周光滑的地板，要翻身可就要费点劲儿了。而且正如题主所说，如果始终还是翻不了身，那么它们将会面临以下的死亡命运——脱水、饥饿、被天敌捕食、被人类清理……
+如此看来，摔得个「四脚朝天」似乎是昆虫死亡的「因」。然而还有一些情况是，你确定这小虫子真的是「不小心」摔的，而不是自己「主动」摔的？
+正常虫子在行走的时候，会把自己的体重适当均匀地分配到六条腿上，以支撑身体的平衡。但对于一些濒死（衰老、生病）的虫子来说，血液流动停止，足部得不到血流的供应从而收缩、弯曲，随后身体便失去了平衡，一摔下就再也起不了身了，直至死亡[1]。
+
+还有一些情况，比如神经毒性的杀虫剂等，要么通过扰乱神经递质传递，使昆虫的脚失去控制；要么影响离子通道，导致神经系统过度兴奋，昆虫进入抽搐状态，摔倒翻身后，即便还会持续扭动，但是因为已经失去了对六只脚协调同步的能力，从而无法翻身直至死亡。
+所以对于这些情况下来说，虫子其实更多是因为「将死」了，才会「四脚朝天」的。
+——————————————
+除了上面说到的翻身方法之外，还有一些虫子有自己独特的技能，比如说叩甲科（Elateridae，Click beetle）的虫子，也就是很多人小时候玩过的磕头虫。
+叩甲的侧面（Wikipedia.org）
+叩甲的弹跳（By Wayne Alan Brenner）
+叩甲的厉害之处在于它可以不用借助六足，仅仅通过身体关节的弯曲，形成一个弹射器装置，从而抵抗重力向空中「发射」，并在空中剧烈旋转，再次落回地面时实现翻身。据研究，叩甲在空中弹射的距离可高达 30 厘米（差不多是其身长的 25 倍），期间可翻六个左右的跟斗[2]。
+弹射器装置的核心，在于叩甲前胸近腹端的边缘处有一个凸起，类似于「钉子」（Peg），这个「钉子」在紧张的情况下，通过头部关节的活动，可以卡进中胸腹板的一个凹槽处，通过摩擦力进行固定，形成一个「锁住」的状态。
+在即将实现跳跃的一瞬间，再通过关节运动，「钉子」被解锁，闩锁脱离弹性能量瞬间释放，使得身体重心向上，产生「弹跳」，从而实现翻身[3]。下面还有一个叩甲弹跳翻身的视频[4]。
+ 钉子在休息状态（ii）和卡进凹槽中形成锁住状态（i）的图示（图自参考文献 [3]）
+叩甲科昆虫的翻身技巧https://www.zhihu.com/video/1127892373631619072
+阅读原文]]></summary>
+        <author>
+            <name>知乎日报</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[地球磁场为什么会发生倒转？周期是多长？]]></title>
+        <id>https://daily.zhihu.com/story/9749920</id>
+        <link href="https://daily.zhihu.com/story/9749920"/>
+        <updated>2022-06-23T23:07:41.000Z</updated>
+        <summary type="html"><![CDATA[青铜马弓手，量一弓手，安敢乱言。
+阅读原文
+
+记得中学物理课，老师告诉我们：
+地球的磁北极在地理南极附近，磁南极在地理北极附近。
+我当时一脸茫然，也不敢多问。
+后来又知道，磁极位置不是固定的，地球磁场还会倒转。
+
+地磁场为什么会倒转？
+连爱因斯坦老同志都不知道，现今，21 世纪，仍然说不清楚。
+2005 年，Science 杂志纪念创刊 125 周年时，总结了人类面临的 125 个最重要的前沿科学问题，“地磁场极性为什么会发生倒转”位列其中。
+
+可见，“地磁场倒转机制”非常贴合此次圆桌的主题：向未来要答案。
+了解地磁场倒转之前，首先要知道地磁场的成因。
+很遗憾，地磁场成因也尚无定论。
+2020 年，美国国家研究理事会发布地球科学十年战略规划《时域地球：美国国家科学基金会地球科学十年远景（2020-2030）》，将“地球的内部磁场是如何产生的”列为 12 个引人瞩目的优先科学问题之首。
+
+但好歹还有个像模像样的假说模型↓
+一、地磁场的成因模型
+首先，如何制造出磁场？
+产生磁场的方式有两种：一是通过物质被磁化；二是通过电流的电磁感应，即电生磁。
+1.物质被磁化形成地磁场
+英国科学家 William Gilbert 曾提出过“永久磁化”假说，
+认为地球内部存在巨大的永磁体，并由此产生地磁场。
+
+“永久磁化”假说存在几个问题：
+（1）无法解释地磁场随时间的变化，以及地磁场极性倒转的特征；
+（2）地球内部的温度随深度增大而增高，在 400km 以下，地球内部的绝大部分区域的温度都在 1000°C 以上，这比所有已知矿物的居里温度（矿物超过此温度会退磁）都高，无法记录剩磁。
+因此， 地球内部不可能被永久磁化。
+2.电生磁——电动机模型
+假如地球内部存在一个发电机，是否能产生相应的地磁场呢？
+1919 年，Joseph Larmor 最早提出的可自维持的发电机模型，后来逐步发展出磁流体发…]]></summary>
+        <author>
+            <name>知乎日报</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[宠物猫狗可以吃生肉吗？吃生肉需要注意哪些问题？]]></title>
+        <id>https://daily.zhihu.com/story/9749928</id>
+        <link href="https://daily.zhihu.com/story/9749928"/>
+        <updated>2022-06-23T23:07:31.000Z</updated>
+        <summary type="html"><![CDATA[马海乐教授，食品与农产品深加工专家 江苏大学食品物理加工研究院院长
+
+猫狗作为宠物陪伴在主人身边时，它们的饮食问题一向是重中之重。大多数铲屎官会为爱宠精心挑选宠物粮和罐头等食物为宠物补充营养。
+但近年来，铲屎官们在了解了猫狗食肉的天性后，会认为未煮熟的生的动物产品对宠物猫狗来说更加适合其胃肠消化，因此以生肉为主的宠物粮变得更加受欢迎。
+简单来说，宠物猫狗吃生肉是完全可以的。这些食物由于脂肪含量高碳水化合物含量低可以被宠物猫狗高度消化，但是宠物猫狗在吃生肉方面要注意以下事项：
+ 
+第一点：防止致病微生物污染
+生的未煮熟的动物产品是否安全是首先要考虑的因素，尤其是生的动物产品极易受致病微生物污染，例如，沙门氏菌，金黄色葡萄球菌，致病性大肠杆菌，李斯特菌，副溶血性弧菌等，若保存不当会使微生物大量繁殖，使宠物面临消化道等疾病的风险。Morelli 等研究发现，网上出售的生肉狗食品微生物质量差，可能会达到较高的细菌污染水平，如果这些产品不能在家中妥善储存，细菌污染可能会进一步增加。
+一旦宠物猫狗吃到了不卫生的生肉产品，会对其健康造成严重的危害，存在一定的风险。
+
+ 
+第二点：营养的合理搭配
+对于宠物猫狗来说，只吃生肉无法满足它们的营养摄入，需要根据喂养的肉类合理搭配营养物质，例如适量补充米饭等富含碳水化合物的主食。提供富含维生素和矿物质的食物。吃肉的同时还需要补充动物的内脏，因为野生的状态下，动物会将捕猎后的猎物连同内脏一起吃掉，因此，最好定期补充动物内脏，保证营养均衡。
+
+第三点：饲喂带有鱼刺骨头的生肉时注意尺寸不宜过大
+对于猫狗饲喂鱼刺、骨头时，要注意饲喂的鱼刺骨头等的大小，以免尺寸过大，出现卡到嗓子、划破胃肠道等，严重者可危及到宠物猫狗的生命。宠物主人们要细心地对带有鱼刺骨头的生肉进行切分，方便宠物猫狗进食。
+
+虽然生肉对宠物猫狗来说可能更容易消化，但是宠物猫狗吃生肉也存在一定的风险。
+因此，宠物主人在喂食生肉时需更加谨慎，一定要注意以上三个方面的问题：
+首先要注意鉴别宠物食品的来源，仔细甄别生肉产品的质量是否过关、要怎样进行储存，防止微生物污染；
+其次饲喂过程注意营养搭配，只给宠物吃生肉并不能满足它们的营养需求，要配合多种营养物质实现营养均衡；
+最后，在使用骨类宠物食品时需注意尺寸不宜过大，不当的尺寸会对宠物猫狗的健康产生威胁。
+ 
+在宠物的饮食方面，铲屎官们可千万不能马虎！
+阅读原文]]></summary>
+        <author>
+            <name>知乎日报</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[为什么人们不喜欢被批评？]]></title>
+        <id>https://daily.zhihu.com/story/9749929</id>
+        <link href="https://daily.zhihu.com/story/9749929"/>
+        <updated>2022-06-23T23:07:22.000Z</updated>
+        <summary type="html"><![CDATA[KnowYourself，是戳穿系，不是治愈系。KY带你「关注自我和内心」。
+阅读原文
+
+因为即使是善意的批评，我们观点中的价值还是被否定了。有的时候，不喜欢被批评也是一种非理性的执着，会让我们掉进“固执”的漩涡。
+那些我们是在固执着些什么呢？一起来看看今天的文章吧～
+有些人格外固执，实质想要回避痛苦？
+为什么人和人的固执程度不同？这可以被“动机取向”所解释。
+不同的人有两种不同的倾向：有的人习惯着眼于寻求奖赏（reward-seeking），有的人习惯着眼于回避痛苦（pain-avoiding）。寻求奖赏的人是进步关注的（promotionfocus），更吸引他们的是那些未来可能会发生的好事；回避痛苦的人是阻碍关注的（preventionfocus）。他们希望能够获得更多的安全感和确定感，避免坏的事情发生。那些更想要回避痛苦的人，往往会是更固执的人。
+就像我们之前提到的“舒适区”的概念，不熟悉的事物永远是危险的。当面临对已有认知的挑战、面临改变的可能性时，一些人选择了固执，选择坚持自己原有的观点，不改变自己做的决定，不为外界的因素所影响。这样的行为，实质上是拒绝接受新鲜事物，这会给我们更高的稳定感，避免可能到来的阵痛。
+
+* 一些人认为“观点被否定”等于“自我价值被否定”。
+有一些人难以接受他人的意见或批评，因为他们需要回避的痛苦是“被质疑”这件事。这是因为，那些自尊心脆弱的人，常常无法将具体的事件和自我身份认同区分开来。当他人在就事件或观点进行争论时，他们会将他人的观点看成是对自己信念、价值的攻击，看成对他们本人的不认同(Parvez, 2014)。
+他们会认为，“我如果承认自己错 / 改变观点和决定，就说明我自己很笨 / 没有能力 / 没有价值。如果承认 Ta 是对的，那就说明 Ta 比我聪明，赢过了我。”因此，当自己的观点受到质疑，他们就会过度警觉，认为自己受到了威…]]></summary>
+        <author>
+            <name>知乎日报</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[瞎扯 · 如何正确地瞎扯]]></title>
+        <id>https://daily.zhihu.com/story/9749935</id>
+        <link href="https://daily.zhihu.com/story/9749935"/>
+        <updated>2022-06-23T23:07:17.000Z</updated>
+        <summary type="html"><![CDATA[入室后不偷任何东西，只把猫剃秃了犯法吗？
+
+那确实确实，真不错啊。
+阅读原文
+
+我家猫看了，拍着我肩膀和我说这男的得死刑。
+阅读原文
+
+为什么黑猫警长明明是一只奶牛猫，偏偏被叫做黑猫？
+
+呆蛙，汉服主题游戏《靖之元：东海》作者
+阅读原文
+
+眼睛瞪得像铜铃，
+射出闪电般的精明，
+耳朵竖得象天线，
+听的一切可疑的声音，
+你磨快了尖齿利爪到处巡行，
+你给我们带来了生活安宁。
+啊啊啊，奶牛猫警长，
+啊啊啊，奶牛猫警长，
+森林公民向你致敬，向你致敬，向你致敬！
+阅读原文
+
+如果两小时内必须要花掉 2 万元 ，你会选择怎么花掉？
+
+文艺范花样作死君，猫咪公社首席铲屎官/撸猫圣手/新乡市红旗区捡猫先进分子
+阅读原文
+
+“先把我的信用卡账单还一下。”
+“那剩下的呢？”
+“剩下的以后慢慢还吧……”
+阅读原文
+
+女朋友说我木鱼脑袋是什么意思？
+
+冬月，键盘侠/泥石流/讨厌娱乐圈/年过三十，已老勿扰
+阅读原文
+
+这是木鱼：
+
+这是木鱼脑袋：
+
+所以，这肯定是瞎扯……
+
+(^_^)
+阅读原文
+
+《西游记》中妖怪抓到唐僧，为什么不赶紧吃一口？这是不是最大的硬伤？
+
+笔如刀
+阅读原文
+
+如果你有一天得到了一个特别难获得的食材，你是随便炒着吃了还是看看攻略，买好调料?
+阅读原文]]></summary>
+        <author>
+            <name>知乎日报</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Dueling over Dual_EC_DRGB: Consequences of Corrupting a Standardization Process]]></title>
+        <id>https://harvardnsj.org/2022/06/dueling-over-dual_ec_drgb-the-consequences-of-corrupting-a-cryptographic-standardization-process/</id>
+        <link href="https://harvardnsj.org/2022/06/dueling-over-dual_ec_drgb-the-consequences-of-corrupting-a-cryptographic-standardization-process/"/>
+        <updated>2022-06-23T22:46:21.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Show HN: Nerd Crawler – monitoring original comic art sites so you don't have to]]></title>
+        <id>https://www.nerdcrawler.com/</id>
+        <link href="https://www.nerdcrawler.com/"/>
+        <updated>2022-06-23T22:10:24.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Advice for Academic Refugees]]></title>
+        <id>https://eigenrobot.substack.com/p/advice-for-academic-refugees</id>
+        <link href="https://eigenrobot.substack.com/p/advice-for-academic-refugees"/>
+        <updated>2022-06-23T20:28:56.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[One centimeter long bacterium discovered]]></title>
+        <id>https://www.science.org/doi/10.1126/science.abb3634</id>
+        <link href="https://www.science.org/doi/10.1126/science.abb3634"/>
+        <updated>2022-06-23T19:53:23.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[FTC action against Harley-Davidson and Westinghouse for limiting right to repair]]></title>
+        <id>https://www.ftc.gov/news-events/news/press-releases/2022/06/ftc-takes-action-against-harley-davidson-westinghouse-illegally-restricting-customers-right-repair-0</id>
+        <link href="https://www.ftc.gov/news-events/news/press-releases/2022/06/ftc-takes-action-against-harley-davidson-westinghouse-illegally-restricting-customers-right-repair-0"/>
+        <updated>2022-06-23T19:26:26.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Six things I do every time I start a Django project]]></title>
+        <id>https://brntn.me/blog/six-things-i-do-every-time-i-start-a-django-project/</id>
+        <link href="https://brntn.me/blog/six-things-i-do-every-time-i-start-a-django-project/"/>
+        <updated>2022-06-23T18:49:20.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Fuzzing rust-minidump for Embarrassment and Crashes – Part 2]]></title>
+        <id>https://hacks.mozilla.org/2022/06/fuzzing-rust-minidump-for-embarrassment-and-crashes/</id>
+        <link href="https://hacks.mozilla.org/2022/06/fuzzing-rust-minidump-for-embarrassment-and-crashes/"/>
+        <updated>2022-06-23T17:34:04.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Italian watchdog bans use of Google Analytics]]></title>
+        <id>https://www.gpdp.it/web/guest/home/docweb/-/docweb-display/docweb/9782874#english</id>
+        <link href="https://www.gpdp.it/web/guest/home/docweb/-/docweb-display/docweb/9782874#english"/>
+        <updated>2022-06-23T17:27:09.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[LinkedDataHub: The Knowledge Graph Notebook]]></title>
+        <id>https://github.com/AtomGraph/LinkedDataHub</id>
+        <link href="https://github.com/AtomGraph/LinkedDataHub"/>
+        <updated>2022-06-23T17:25:09.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Whatever happened to SHA-256 support in Git?]]></title>
+        <id>https://lwn.net/SubscriberLink/898522/9cf50ee3f96f90c1/</id>
+        <link href="https://lwn.net/SubscriberLink/898522/9cf50ee3f96f90c1/"/>
+        <updated>2022-06-23T16:47:45.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Unexpected solar weather is accelerating satellites' orbital decay]]></title>
+        <id>https://www.space.com/satellites-falling-off-sky-solar-weather</id>
+        <link href="https://www.space.com/satellites-falling-off-sky-solar-weather"/>
+        <updated>2022-06-23T16:36:59.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[The curious tale of a fake Carrier.app]]></title>
+        <id>https://googleprojectzero.blogspot.com/2022/06/curious-case-carrier-app.html</id>
+        <link href="https://googleprojectzero.blogspot.com/2022/06/curious-case-carrier-app.html"/>
+        <updated>2022-06-23T16:08:08.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Reverse Engineering Google Colab]]></title>
+        <id>https://dagshub.com/blog/reverse-engineering-google-colab/</id>
+        <link href="https://dagshub.com/blog/reverse-engineering-google-colab/"/>
+        <updated>2022-06-23T16:03:53.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Launch HN: Foster (YC W21) – Improve your writing with on-demand editing]]></title>
+        <id>https://www.foster.co/</id>
+        <link href="https://www.foster.co/"/>
+        <updated>2022-06-23T15:25:37.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[How safe is Zig?]]></title>
+        <id>https://www.scattered-thoughts.net/writing/how-safe-is-zig/</id>
+        <link href="https://www.scattered-thoughts.net/writing/how-safe-is-zig/"/>
+        <updated>2022-06-23T15:19:41.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[How Imagen Works]]></title>
+        <id>https://www.assemblyai.com/blog/how-imagen-actually-works/</id>
+        <link href="https://www.assemblyai.com/blog/how-imagen-actually-works/"/>
+        <updated>2022-06-23T14:45:32.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Diagram as Code]]></title>
+        <id>https://github.com/mingrammer/diagrams</id>
+        <link href="https://github.com/mingrammer/diagrams"/>
+        <updated>2022-06-23T14:43:33.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Hardening the registers: A cascading failure of edge induced fault tolerance]]></title>
+        <id>https://tech.target.com/blog/hardening-the-registers</id>
+        <link href="https://tech.target.com/blog/hardening-the-registers"/>
+        <updated>2022-06-23T14:20:13.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[How we built Hydrogen, a React framework for building custom storefronts]]></title>
+        <id>https://shopify.engineering/how-we-built-hydrogen</id>
+        <link href="https://shopify.engineering/how-we-built-hydrogen"/>
+        <updated>2022-06-23T14:18:13.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Ask HN: Does anybody still use bookmarking services?]]></title>
+        <id>https://news.ycombinator.com/item?id=31848210</id>
+        <link href="https://news.ycombinator.com/item?id=31848210"/>
+        <updated>2022-06-23T12:40:54.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Small Actions Make Great Leaders]]></title>
+        <id>https://hbr.org/2022/06/small-actions-make-great-leaders</id>
+        <link href="https://hbr.org/2022/06/small-actions-make-great-leaders"/>
+        <updated>2022-06-23T10:27:20.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Start all of your commands with a comma (2009)]]></title>
+        <id>https://rhodesmill.org/brandon/2009/commands-with-comma/</id>
+        <link href="https://rhodesmill.org/brandon/2009/commands-with-comma/"/>
+        <updated>2022-06-23T09:50:35.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[YaLM-100B: Pretrained language model with 100B parameters]]></title>
+        <id>https://github.com/yandex/YaLM-100B</id>
+        <link href="https://github.com/yandex/YaLM-100B"/>
+        <updated>2022-06-23T09:00:26.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Answering Questions about the PetaPi]]></title>
+        <id>https://www.jeffgeerling.com/blog/2022/answering-questions-about-petapi</id>
+        <link href="https://www.jeffgeerling.com/blog/2022/answering-questions-about-petapi"/>
+        <updated>2022-06-23T07:54:29.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Timeline of “foundational” advances in homotopy theory?]]></title>
+        <id>https://mathoverflow.net/questions/424853/timeline-of-foundational-advances-in-homotopy-theory</id>
+        <link href="https://mathoverflow.net/questions/424853/timeline-of-foundational-advances-in-homotopy-theory"/>
+        <updated>2022-06-23T06:47:39.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Schroedinger's streaming service just died]]></title>
+        <id>https://pluralistic.net/2022/06/21/early-adopters/#heads-i-win</id>
+        <link href="https://pluralistic.net/2022/06/21/early-adopters/#heads-i-win"/>
+        <updated>2022-06-23T06:10:53.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[OpenWRT based travel router on APU2D4 (2019)]]></title>
+        <id>https://teklager.se/en/knowledge-base/openwrt-based-travel-router-apu2d4/</id>
+        <link href="https://teklager.se/en/knowledge-base/openwrt-based-travel-router-apu2d4/"/>
+        <updated>2022-06-23T05:55:49.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Generally Intelligent (YC S17) Is Hiring Machine Learning Research Engineers]]></title>
         <id>https://news.ycombinator.com/item?id=31843932</id>
@@ -478,6 +1089,26 @@ cba的图标和名字为何可以如此土？
         <id>https://botblox.io/products/speblox-long</id>
         <link href="https://botblox.io/products/speblox-long"/>
         <updated>2022-06-22T11:21:03.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[State Machines in Ruby: An Introduction]]></title>
+        <id>https://blog.appsignal.com/2022/06/22/state-machines-in-ruby-an-introduction.html</id>
+        <link href="https://blog.appsignal.com/2022/06/22/state-machines-in-ruby-an-introduction.html"/>
+        <updated>2022-06-22T11:06:47.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Observations on 6 Years of Journaling]]></title>
+        <id>https://herman.bearblog.dev/years-of-journaling/</id>
+        <link href="https://herman.bearblog.dev/years-of-journaling/"/>
+        <updated>2022-06-22T05:26:21.000Z</updated>
         <summary type="html"><![CDATA[Comments]]></summary>
         <author>
             <name>Hacker News</name>
@@ -14593,515 +15224,6 @@ iPad 中有哪些可以学习的 apps？
         <id>https://github.com/blaze-init/blaze</id>
         <link href="https://github.com/blaze-init/blaze"/>
         <updated>2022-05-25T14:48:22.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Show HN: VideoMentions – Search YouTube based on the spoken words in videos]]></title>
-        <id>https://videomentions.com/search</id>
-        <link href="https://videomentions.com/search"/>
-        <updated>2022-05-25T13:10:03.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Ask HN: What game do you wish existed?]]></title>
-        <id>https://news.ycombinator.com/item?id=31503201</id>
-        <link href="https://news.ycombinator.com/item?id=31503201"/>
-        <updated>2022-05-25T11:50:35.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Go: Functional Options Are Slow]]></title>
-        <id>https://www.evanjones.ca/go-functional-options-slow.html</id>
-        <link href="https://www.evanjones.ca/go-functional-options-slow.html"/>
-        <updated>2022-05-25T03:44:29.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Show HN: Run Pi-hole on a local Kubernetes/K3s cluster]]></title>
-        <id>https://github.com/manibatra/kube-pihole</id>
-        <link href="https://github.com/manibatra/kube-pihole"/>
-        <updated>2022-05-24T23:51:11.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[为什么逛博物馆没走多远就觉得累，但逛街不会？]]></title>
-        <id>https://daily.zhihu.com/story/9748931</id>
-        <link href="https://daily.zhihu.com/story/9748931"/>
-        <updated>2022-05-24T23:06:50.000Z</updated>
-        <summary type="html"><![CDATA[螺旋真理，文物考古博物馆的专业知识普及者
-阅读原文
-
-0.这种现象专业上叫「博物馆疲劳（Museum Fatigue）」
-1.博物馆疲劳有两种定义：
-（1）在连续观察中，对展览的注意或兴趣系统性减少的有关现象的总和；观看展览中兴趣水平降低，精神或身体疲劳感增加或观看展览后觉得无聊的一种自我报告。——比特古德
-（2）观众在参观过程中逐渐出现的精力耗竭，注意力涣散，认识活动机能衰退和产生疲劳感的现象。——严建强
-2.「博物馆疲劳」影响因素：
-（1）参观展览的精神紧张节奏和展览契合度差，博物馆展览在设计中是考虑到博物馆疲劳的，所以信息密度和空间设计是有节奏的，一般在一段展品和知识点密集的段落后就会设置一个相对舒缓的段落或者空间，如果观众参观的节奏和这个节奏契合不上会加剧博物馆疲劳的出现时间；
-（2）展览观众休息区设计不合理，一般到了一个大的段落结束之后，展览应该设置一个观众休息区，往往以影片播放、长凳摆设等形式出现供观众休息，恢复「博物馆疲劳」。如果展览没有考虑观众休息问题就会使观众的「博物馆疲劳」无处释放，这样观众就会放弃参观。
-3.逛街和参观博物馆的不同是：
-（1）逛街在一个具体店铺里停留的时间有限。
-（2）逛街除了调动视觉之外，还可以通过进食、闻香等调动其它感觉来对冲单一化。
-（3）逛街可以自主选择休息，把疲劳积累特别是体力上的疲劳摊薄。
-阅读原文]]></summary>
-        <author>
-            <name>知乎日报</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[为什么左撇子比较少？是因为自然的抉择么？左撇子在竞争中存在劣势么？]]></title>
-        <id>https://daily.zhihu.com/story/9748934</id>
-        <link href="https://daily.zhihu.com/story/9748934"/>
-        <updated>2022-05-24T23:06:44.000Z</updated>
-        <summary type="html"><![CDATA[李雷，中科院生物学博士，丁香医生签约专家，腾讯医典科普官，科研人员
-阅读原文
-
-今天说说左撇子的那些事儿~~
-首先，题主感觉没错，的确左撇子属于少数派，下图就是一个调查数据
-
-然而，为什么左撇子会少呢？在生物学上是否存在解释，这是本文要解读的内容。
-这个世界上，关于左右手的使用偏好，是一个非常直观，也是备受关注的问题，诸如左右手的原因了，左右手的智商之类的。
-然而，由于左右手的复杂表型（5 种），以及不少人可以锻炼，诸如周伯通和郭靖，所以，左右手的原因还是在迷雾中。
-
-我们来讲一下这个问题。
-第一，什么是左撇子？
-左利手，俗称左撇子，是指更习惯用左手的人。世界上，习惯使用右手的人大概是85%-90%左右，所以，相对于用右手的人，左撇子是少数派。
-其实，在手的使用上，一般有五种分类：左手，基本用左手，两只手都能用，基本用右手，右手。世界上大部分人是基本用右手（也就是说并非纯粹右手）
-所以啊，跟着我一起唱：
-
-第二，左撇子形成的原因。
-目前对于左撇子的形成原因，主要认为是基因的原因。
-这点，相信大家也明白，很多左撇子，其实就是天生左，包括生活在右手的家庭里。
-所以估计有不少被强迫改过来的人，对于小时候家庭逼着用右手还记忆犹新吧。
-那么，到底是哪个基因影响了左撇子呢？
-牛津大学就有个叫 William Brandler 的人就在做这个。
-他们对 3300 名志愿者进行了研究，然后在分析了数十万个常见突变后，最后把跟惯用左右手锁定在了一个叫做 PCSK6 的基因上。
-这个基因是一个发育相关的基因，尤其是对身体左右不对称结构的发展起到了关键作用。如果把这个基因在小鼠内敲掉，那么，小鼠的器官就会涨到身体的一侧去。
-
-图中这个点点就是最关键的那个位置，位于PCSK6 基因上的rs7182874 突变是决定左撇子的关键突变。
-在 ensembl 里，这个突变的频率也比较符合我们的预期，纯合…]]></summary>
-        <author>
-            <name>知乎日报</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[我们身上流淌着哪些远古人类的基因？]]></title>
-        <id>https://daily.zhihu.com/story/9748938</id>
-        <link href="https://daily.zhihu.com/story/9748938"/>
-        <updated>2022-05-24T23:06:35.000Z</updated>
-        <summary type="html"><![CDATA[韩白鲤，会挽雕弓 | 人类星河
-阅读原文
-
-目前来看，共有 3 种远古人类和现代人祖先曾经发生过混血，在我们体内留下了基因烙印。
-其中有大家熟悉的尼安德特人（Neanderthals），以及他的姊妹丹尼索瓦人（Denisovans），还有 1 种则来自更远古的人类——神秘古人类（Archaic Homo，「ghost」）
-3 种古人类与现代人（Modern humans）混血的情况，注意箭头的位置、方向及时间 | GRAPHIC: VERNOT ET AL./SCIENCE, ADAPTED BY V. ALTOUNIN/SCIENCE; DATA: A. ROGERS AND S. SANKARARAMAN
-尼安德特人、丹尼索瓦人与现代人的混血证据比较直接，来自古 DNA 测序。
-但目前无法从更远古的人类祖先身上提取完整基因组——在热带或亚热带环境里，DNA 降解非常快速。
-因此，人类遗传学家发明了统计学工具，以此在现代人体内发现异常古老的 DNA。
-
-尼安德特人
-
-物种档案：生存于约 4-40 万年前，分布定居在欧亚大陆。拥有健壮的体格和粗短的四肢，平均身高约 165 厘米（男性）和 153 厘米（女性），脑容量平均约为 1600ml(男性) 和 1300ml(女性)，比现代人略大一些。
-混血年代：与现代人祖先在约 4.7-6.5 万年前发生混血。
-混血地点：欧亚大陆。
-混血比例：
-2010 年，在对克罗地亚 Vindija 的 3 个尼安德特人进行基因组测序后，Green 等人估计非洲以外现代人体内尼安德特人的基因比例为 1-4%。
-2013 年，Prüfer 等人估计混血比例为 1.5-2.1%，2017 年，又将该比例修正为 1.8-2.6%（大洋洲以外非非洲人）。
-值得一提的是，长久以来，大家都认为非洲人体内没有尼安德特人基因，在上面的表述中，我也用了「非洲以外…]]></summary>
-        <author>
-            <name>知乎日报</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[《暗夜行者》里余升海用火烧毒品是可行的吗？]]></title>
-        <id>https://daily.zhihu.com/story/9748948</id>
-        <link href="https://daily.zhihu.com/story/9748948"/>
-        <updated>2022-05-24T23:06:26.000Z</updated>
-        <summary type="html"><![CDATA[陈敏，不必对我写的东西耿耿于怀，如果觉得有错，那证明你是对的。
-阅读原文
-
-影视剧的常规操作，将毒品丢进熊熊烈火，可以让画面看起来更有「视觉震撼感」，但在现实世界，像《暗夜行者》里一样，直接站在火旁边烧海洛因，还一个一个丢进去，那只能说明其有自杀的倾向。
-
-当然，现实中也不是完全不能用火烧，例如在虎门销烟之前，也有「烟土拌桐油焚毁法」的传统销毁手法，即把鸦片浇上桐油再烧，不过一般是量不会小，且会选择在空旷的地方，放在专门建造的火炉里焚烧。
-
-林则徐之所以选择虎门销烟，而不是用传统的「烟土拌桐油焚毁法」，主要原因有两个，一是量非常大，总共 2376250 斤，直接用火烧，那等于是请周边居民免费抽鸦片；二是如此巨大的量，不可能完全烧尽，或多或少会有部分烟膏油渗入到土壤中。
-这些渗入土壤中的烟膏油，对于穷困潦倒的瘾君子来说，那可是天掉馅饼，因此在以往用「烟土拌桐油焚毁法」时，就会出现「吸毒者掘地取土，仍得烟膏十之二三」、「官府白天烧烟，百姓夜间挖土」的奇事。
-
-为了防止烟贩、瘾君子钻空子，林则徐就排除了烟土拌桐油焚毁法，而采用了海水浸泡，加入石灰的方式销烟。这种「海水浸化法」唯一的问题，就是短时间内会对近岸海洋生物造成伤害，但几日之后就可以自我净化干净了。
-到了现在，警察缴获毒品后，销毁是有一套严格的操作章程和流程，绝对不允许私自销毁，更不说自杀式的火烧，除了不安全因素外，也容易被人钻空子。
-现代销毒的具体流程：
-第一步：审批
-历经层层申报
-
-第二步：押运
-全程录音录像
-
-第三步：核对
-各个环节都有人监督
-
-第四步：销毁
-1100℃ 高温让毒品完全分解
-
-目前，我国普遍采用的是「二段式热解焚烧工艺」。二段式高温热解炉采用热力技术处理废物，最终使之分解并达到无害化。
-
-高温热解炉主燃室温度高于 850℃，二燃室温度达到 1100℃，毒品可以完全燃烧，是目前比较先进且使用范围广的一种医疗废物处置方式。整个过程的最终目标，当然是实现无害化处理，杜绝对环境的污染。
-当然，有时候为了宣传需求，也会出现用火烧的壮观场面，例如 2010 年 626 国际禁毒日，海关总署和黄埔海关就在东莞虎门就来一场「火烧毒品」的禁毒宣传，将此前查获的海洛因放在 8 个销毁炉中点火焚毁。
-
-当然，「活动仪式现场上用火烧毁只是部分毒品，考虑到火烧毒品带来的危害，本次要销毁的大多数毒品将运送到工厂，用高温焚化炉作无害化销毁处理，无残渣，无废气」，海关人员事后还是说明了情况。
-阅读原文]]></summary>
-        <author>
-            <name>知乎日报</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[什么是美拉德反应?]]></title>
-        <id>https://daily.zhihu.com/story/9748953</id>
-        <link href="https://daily.zhihu.com/story/9748953"/>
-        <updated>2022-05-24T23:06:16.000Z</updated>
-        <summary type="html"><![CDATA[食品研发与生产，食品伙伴网旗下同名公众号：食品研发与生产，分享食品研发干货。
-阅读原文
-
-1912 年法国化学家发现了美拉德反应（Maillardreaction）。近几十年来，美拉德反应（Maillardreaction）一直是食品化学、食品工艺学、营养学、香料化学等领域的研究热点。
-美拉德反应是加工食品中色泽和浓郁芳香的各种风味的主要来源，特别是对于一些传统的加工工艺过程，如对咖啡、可可豆的焙炒，饼干、面包的烘烤以及肉类食品的蒸煮中形成良好风味所不可缺少的化学反应。
-
-但同时由于生成这些风味物的前提物质大多来自食品中的营养成分，如糖类、蛋白质、脂肪以及核酸、维生素等，从营养学角度来说，食品在贮藏加工过程中发生风味物质的反应是不利的。
-反应不但使食品的营养成分受到损失，尤其是那些人体需要而自身不能合成或合成量远远不能满足人体需要的氨基酸、脂肪酸和维生素等得不到充分利用。当这些反应控制不当时，甚至还会生成抗营养的或有毒性的物质，如黑色素、稠环化合物等。
-因此对美拉德反应的机理进行深入的研究，有利于在食品贮藏与加工的过程中，控制食品的色泽、香味的变化或使其反应向着有利于色泽、香味生成的方向进行，减少营养价值的损失，增加有益产物的积累，从而提高食品的品质。
-01、美拉德反应化学
-美拉德反应按其本质而言是氨羰间的加缩反应，它可以在醛、酮、还原糖及脂肪氧化生成的羰基化合物与胺、氨基酸、肽、蛋白质甚至氨之间发生反应，其化学过程十分复杂。关于美拉德反应的反应过程，食品化学家 Hodge 在早年作出了初步的解释，认为美拉德反应可分成三个反应阶段。
-一、起始反应阶段
-美拉德反应初期阶段反应包括还原糖的羰基碳首先遭到氨基氮上孤对电子的亲核加成，接着失去水和闭环二形成葡基胺，如果还有过量的还原糖存在，就能进一步形成二葡基胺。葡基胺再经过 Amadori 重排而生成 1－氨基－2－酮糖。美拉德反…]]></summary>
-        <author>
-            <name>知乎日报</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[瞎扯 · 如何正确地吐槽]]></title>
-        <id>https://daily.zhihu.com/story/9748928</id>
-        <link href="https://daily.zhihu.com/story/9748928"/>
-        <updated>2022-05-24T23:06:12.000Z</updated>
-        <summary type="html"><![CDATA[不抽烟的人是如何看待抽烟的人的？
-
-咖喱鸡，整形外科
-阅读原文
-
-迟早有一天落到我们隔壁胸外科手上。
-阅读原文
-
-如何判断一个歌手是否「过气」？
-
-知乎用户，慈眉善目 智商为零 情商为负
-阅读原文
-
-就是记者会问他这些年在做什么的时候。
-阅读原文
-
-高速行车不能开内循环这是真的吗？
-
-牛死了还牛的不行，亲乌亲美派记得，我突然不反驳你，那是被拉黑了，有种来我这。
-阅读原文
-
-不，你不能开高速。
-阅读原文
-
-如何优雅地炫富？
-
-张含
-阅读原文
-
-博彩一直买国足赢~
-阅读原文
-
-奥运会运动员打群架，哪个项目的运动员胜算大？
-
-与风
-阅读原文
-
-韩国人胜算大。
-阅读原文]]></summary>
-        <author>
-            <name>知乎日报</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[How we fixed the ozone layer (2021)]]></title>
-        <id>https://www.worksinprogress.co/issue/how-we-fixed-the-ozone-layer/</id>
-        <link href="https://www.worksinprogress.co/issue/how-we-fixed-the-ozone-layer/"/>
-        <updated>2022-05-24T21:58:15.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[To learn more quickly, brain cells break their DNA (2021)]]></title>
-        <id>https://www.quantamagazine.org/brain-cells-break-their-dna-to-learn-more-quickly-20210830/</id>
-        <link href="https://www.quantamagazine.org/brain-cells-break-their-dna-to-learn-more-quickly-20210830/"/>
-        <updated>2022-05-24T21:52:00.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Tracking Heat Records in 400 U.S. Cities]]></title>
-        <id>https://pudding.cool/projects/heat-records/</id>
-        <link href="https://pudding.cool/projects/heat-records/"/>
-        <updated>2022-05-24T21:31:53.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[On rebooting: the unreasonable effectiveness of turning computers off and on]]></title>
-        <id>https://keunwoo.com/notes/rebooting/</id>
-        <link href="https://keunwoo.com/notes/rebooting/"/>
-        <updated>2022-05-24T21:08:16.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Tesorio (YC S15) Is Hiring Senior Quality Engineers, PMs, Recruiting Manager]]></title>
-        <id>https://www.tesorio.com/careers#job-openings</id>
-        <link href="https://www.tesorio.com/careers#job-openings"/>
-        <updated>2022-05-24T21:01:43.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[The Gödel Metric]]></title>
-        <id>https://en.wikipedia.org/wiki/G%C3%B6del_metric</id>
-        <link href="https://en.wikipedia.org/wiki/G%C3%B6del_metric"/>
-        <updated>2022-05-24T20:49:02.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Kids in the Hall: Comedy Punks]]></title>
-        <id>https://www.nytimes.com/2022/05/24/arts/television/kids-in-the-hall-documentary.html</id>
-        <link href="https://www.nytimes.com/2022/05/24/arts/television/kids-in-the-hall-documentary.html"/>
-        <updated>2022-05-24T20:09:16.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Leslie Lamport revolutionized computer science with math [video]]]></title>
-        <id>https://www.youtube.com/watch?v=rkZzg7Vowao</id>
-        <link href="https://www.youtube.com/watch?v=rkZzg7Vowao"/>
-        <updated>2022-05-24T19:55:35.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Data Science in Context – Peter Norvig's New Book]]></title>
-        <id>https://datascienceincontext.com/</id>
-        <link href="https://datascienceincontext.com/"/>
-        <updated>2022-05-24T19:51:10.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Fly Machines: An API for Fast-Booting VMs]]></title>
-        <id>https://fly.io/blog/fly-machines/</id>
-        <link href="https://fly.io/blog/fly-machines/"/>
-        <updated>2022-05-24T19:48:33.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Linode Managed Databases]]></title>
-        <id>https://www.linode.com/products/databases/</id>
-        <link href="https://www.linode.com/products/databases/"/>
-        <updated>2022-05-24T19:00:31.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Bugs are evolving to eat plastic, study finds]]></title>
-        <id>https://e360.yale.edu/digest/bugs-are-evolving-to-eat-plastic-study-finds</id>
-        <link href="https://e360.yale.edu/digest/bugs-are-evolving-to-eat-plastic-study-finds"/>
-        <updated>2022-05-24T18:31:14.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[YouTubeDrive: Store files as YouTube videos]]></title>
-        <id>https://github.com/dzhang314/YouTubeDrive</id>
-        <link href="https://github.com/dzhang314/YouTubeDrive"/>
-        <updated>2022-05-24T17:31:59.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Extracting TLS keys from an unwilling application (2020)]]></title>
-        <id>http://m1el.github.io/oculus-tls-extract/</id>
-        <link href="http://m1el.github.io/oculus-tls-extract/"/>
-        <updated>2022-05-24T17:13:07.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Why isn’t new technology making us more productive?]]></title>
-        <id>https://www.nytimes.com/2022/05/24/business/technology-productivity-economy.html</id>
-        <link href="https://www.nytimes.com/2022/05/24/business/technology-productivity-economy.html"/>
-        <updated>2022-05-24T17:02:02.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[How we put IPFS in Brave (2021)]]></title>
-        <id>https://blog.ipfs.io/2021-01-21-how-we-put-ipfs-in-brave/</id>
-        <link href="https://blog.ipfs.io/2021-01-21-how-we-put-ipfs-in-brave/"/>
-        <updated>2022-05-24T16:56:56.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Show HN: Muse 2.0 with local-first sync]]></title>
-        <id>https://museapp.com/memos/2022-05-dive-into-big-ideas-with-muse-2.0/</id>
-        <link href="https://museapp.com/memos/2022-05-dive-into-big-ideas-with-muse-2.0/"/>
-        <updated>2022-05-24T16:51:01.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Tell HN: Job interview canceled due to looming recession]]></title>
-        <id>https://news.ycombinator.com/item?id=31494417</id>
-        <link href="https://news.ycombinator.com/item?id=31494417"/>
-        <updated>2022-05-24T16:44:36.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Show HN: SymForce – Fast symbolic computation, code generation, and optimization]]></title>
-        <id>https://github.com/symforce-org/symforce</id>
-        <link href="https://github.com/symforce-org/symforce"/>
-        <updated>2022-05-24T16:38:31.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Stripe App Marketplace]]></title>
-        <id>https://marketplace.stripe.com/</id>
-        <link href="https://marketplace.stripe.com/"/>
-        <updated>2022-05-24T16:16:53.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Show HN: My free course for learning Imba]]></title>
-        <id>https://scrimba.com/learn/imba</id>
-        <link href="https://scrimba.com/learn/imba"/>
-        <updated>2022-05-24T15:21:07.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Racket Is an Acceptable Python (2019)]]></title>
-        <id>https://dustycloud.org/blog/racket-is-an-acceptable-python/</id>
-        <link href="https://dustycloud.org/blog/racket-is-an-acceptable-python/"/>
-        <updated>2022-05-24T15:16:17.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[California parents could soon sue for social media addiction]]></title>
-        <id>https://apnews.com/article/technology-california-government-and-politics-netflix-inc-f48601e13be547bf8b86aff42eed5124</id>
-        <link href="https://apnews.com/article/technology-california-government-and-politics-netflix-inc-f48601e13be547bf8b86aff42eed5124"/>
-        <updated>2022-05-24T15:14:44.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Cat S22 Flip Phone]]></title>
-        <id>https://www.catphones.com/en-us/cat-s22-flip/</id>
-        <link href="https://www.catphones.com/en-us/cat-s22-flip/"/>
-        <updated>2022-05-24T15:10:59.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Zoom: Remote Code Execution with XMPP Stanza Smuggling]]></title>
-        <id>https://bugs.chromium.org/p/project-zero/issues/detail?id=2254</id>
-        <link href="https://bugs.chromium.org/p/project-zero/issues/detail?id=2254"/>
-        <updated>2022-05-24T15:00:15.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Modern programming languages require generics]]></title>
-        <id>https://ayende.com/blog/197282-B/modern-programming-languages-require-generics</id>
-        <link href="https://ayende.com/blog/197282-B/modern-programming-languages-require-generics"/>
-        <updated>2022-05-24T13:58:09.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Symbian Source Code]]></title>
-        <id>https://github.com/SymbianSource</id>
-        <link href="https://github.com/SymbianSource"/>
-        <updated>2022-05-24T13:23:18.000Z</updated>
         <summary type="html"><![CDATA[Comments]]></summary>
         <author>
             <name>Hacker News</name>
