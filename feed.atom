@@ -2,10 +2,283 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://7qi7qi.github.io/RSSFeeder/index.html</id>
     <title>osmos::feed</title>
-    <updated>2022-07-24T01:43:53.988Z</updated>
+    <updated>2022-07-25T01:23:17.422Z</updated>
     <generator>osmosfeed 1.15.1</generator>
     <link rel="alternate" href="https://7qi7qi.github.io/RSSFeeder/index.html"/>
     <link rel="self" href="https://7qi7qi.github.io/RSSFeeder/feed.atom"/>
+    <entry>
+        <title type="html"><![CDATA[当我们谈论不可变基础设施时，我们在谈论什么]]></title>
+        <id>http://weekly.dockone.io/article/2434918</id>
+        <link href="http://weekly.dockone.io/article/2434918"/>
+        <updated>2022-07-25T01:23:13.249Z</updated>
+        <summary type="html"><![CDATA[午夜时分，电话响起，线上告急。你从千呼万钉中醒来，睡眼朦胧，手忙脚乱。
+恍惚之间，终于梳理清楚发生了什么，一个陈年老应用突然停机，消息堆积，系统停摆。而你就像一个下水道小工疏通马桶一般，大力出奇迹，重启机器，恢复服务。只见消息队列中的堆积事件一泻千里，警告消除。
+次日，你再也不想重现午夜凶铃，决定对系统进行永久性修复：加一个定时重启服务的脚本。
+斗转星移，许多时日过去了，你也在不同的角落加了无数的脚本，也好久没有半夜惊醒，甚至还能悠闲享受下午茶。但是，直到今天。
+今天，你们部门要降本增效，为了避免自己成为被砍掉的成本，你决定主动对线上的机器开刀：合并服务，裁撤机器。虽然你对机器上都部署了什么应用了然于胸，但是你已经不记得都有哪些脚手架支撑着应用的运转。
+重建环境难如登天，你又开始难眠了。
+变化的基础设施
+复杂、神秘而神奇的线上环境承载了半部都市传说，甚至有些公司的线上环境本身就是一本需要口耳相传的上古神话。
+我虽然没有看过沙漠下暴雨，但是看过没人说的清楚上面有什么的环境。我虽然没有看过大海亲吻鲨鱼，但是我看过重启再也起不来的机器。
+如果你能说清楚任何一台机器上都部署了什么应用，以及机器上服务之间的依赖关系是什么样子的，你已经击败了八成的玩家。而造成这种局面的根本原因就是基础设施的易变。
+新增一个服务时：“我找台机器部署一下”
+某一个服务出问题时：“我上机器改一下”
+需要对某个系统配置变更时：“我搞个脚本跑一跑”
+
+看似常规运维变更，有文档记录或者没有文档记录，每一个环境都是如此的别致和独一无二，再加上人员变动，造就了无数的“祖传秘技”。
+什么是不可变的基础设施
+容器在被广泛接受的同时，「不可变」也逐渐被潜移默化的接受。
+应用容器消亡之后，容器内的修改会随着容器一起不复存在，不要在容器内做修改就是最朴素的不可变理念。在程序启动阶段遇到问题，很少人还会把在容器内修修补补作为正经…]]></summary>
+        <author>
+            <name>Hypo</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[服务网格的eBPF ? 是的，但 Envoy Proxy 将继续存在]]></title>
+        <id>http://weekly.dockone.io/article/2434927</id>
+        <link href="http://weekly.dockone.io/article/2434927"/>
+        <updated>2022-07-25T01:23:13.237Z</updated>
+        <summary type="html"><![CDATA[服务网格的eBPF ? 是的，但 Envoy Proxy 将继续存在
+Solo.io 的目标是为我们的客户提供有关应用程序网络和服务连接相关的解决方案。早在10月，我们就宣布了使用 eBPF 增强我们的企业服务网格产品(Gloo Mesh Enterprise)的计划，以优化网络、可监测性和安全性方面的功能。eBPF在服务网格中能发挥多大的作用呢？服务代理的角色如何变化？在这篇博客中，我们将深入探讨eBPF在服务网格数据平面的作用以及各种数据层架构之间的权衡。
+告别服务代理？
+服务网格为服务提供复杂的应用网络行为，例如服务发现、流量路由、弹性（超时/重试/断路）、身份验证/授权、可监测性（日志记录/指标/跟踪）等。我们可以用 eBPF 将所有这些功能重写到内核中吗？
+简单回答：这将非常困难，可能不是正确的方法。eBPF 是一个事件处理模型，对它的运行方式有一些限制。你可以将 eBPF 模式视为内核的“功能即服务”。例如，在内核中安全执行之前，必须完全了解和验证 eBPF 执行路径。eBPF 程序不能有任意循环，其中的验证者不知道程序何时停止执行。简而言之，eBPF 是图灵不完整的。
+七层协议（如各种协议编码器、重试、数据头操作等）单独在 eBPF 中实现可能非常复杂，并且没有更好的内核原生支持。也许这种支持会有，但这可能需要数年时间，并且不会在旧版本上提供。在许多方面，eBPF 是 O(1) 复杂度的理想选择（例如检查数据包、操作一些数据位并在途中发送它）。实现像 HTTP/2 和 gRPC 这样的复杂协议可能是O(n)复杂度并且非常难以调试。那么这些7层功能可以驻留在哪里呢？
+Envoy 代理已成为服务网格实现的标准，并且对我们大多数客户所需的第七层功能有很好的支持。尽管 eBPF 和内核可用于改进网络的执行（短路最佳路径、卸载 TLS/mTLS、可监测性收集等），但复杂…]]></summary>
+        <author>
+            <name>jackbb</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[300% Increase in Boob Size on Comic Book Cover Art]]></title>
+        <id>https://blog.pricecharting.com/2022/07/300-increase-in-boob-size-on-comic-book.html</id>
+        <link href="https://blog.pricecharting.com/2022/07/300-increase-in-boob-size-on-comic-book.html"/>
+        <updated>2022-07-24T23:22:23.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Building a tiny little broken calculator with parser combinators]]></title>
+        <id>https://blog.jfo.click/building-a-tiny-little-broken-calculator-with-parser-combinators/</id>
+        <link href="https://blog.jfo.click/building-a-tiny-little-broken-calculator-with-parser-combinators/"/>
+        <updated>2022-07-24T22:44:22.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Why are McDonald’s Self Service Kiosks so hackable?]]></title>
+        <id>https://ghuntley.com/mcdonalds/</id>
+        <link href="https://ghuntley.com/mcdonalds/"/>
+        <updated>2022-07-24T22:03:39.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Datadog dashboard for the Texas power grid]]></title>
+        <id>https://p.datadoghq.com/sb/5c2fc00be-393be929c9c55c3b80b557d08c30787a?from_ts=1658093527470&amp;to_ts=1658698327470&amp;live=true</id>
+        <link href="https://p.datadoghq.com/sb/5c2fc00be-393be929c9c55c3b80b557d08c30787a?from_ts=1658093527470&amp;to_ts=1658698327470&amp;live=true"/>
+        <updated>2022-07-24T21:32:48.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[A self-contained AVR programmer using an Arduino Uno]]></title>
+        <id>https://blog.jgc.org/2022/07/a-self-contained-avr-programmer-using.html</id>
+        <link href="https://blog.jgc.org/2022/07/a-self-contained-avr-programmer-using.html"/>
+        <updated>2022-07-24T21:17:39.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[BuildZoom (better way to build custom homes) Is hiring a Product Manager]]></title>
+        <id>https://jobs.lever.co/buildzoom</id>
+        <link href="https://jobs.lever.co/buildzoom"/>
+        <updated>2022-07-24T21:06:45.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Library Writing Realizations (2015)]]></title>
+        <id>http://cbloomrants.blogspot.com/2015/09/library-writing-realizations.html</id>
+        <link href="http://cbloomrants.blogspot.com/2015/09/library-writing-realizations.html"/>
+        <updated>2022-07-24T20:43:07.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Oblique Strategies on GameBoy]]></title>
+        <id>https://nickyflowers.itch.io/osgb</id>
+        <link href="https://nickyflowers.itch.io/osgb"/>
+        <updated>2022-07-24T19:45:33.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Kubernetes for Developers Who Know How to Develop]]></title>
+        <id>https://blog.ali.dev/engineering/2022/01/13/k8s-for-developers/</id>
+        <link href="https://blog.ali.dev/engineering/2022/01/13/k8s-for-developers/"/>
+        <updated>2022-07-24T19:21:39.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Samsung asks for planning permission for 11 fabs in Texas]]></title>
+        <id>https://www.electronicsweekly.com/uncategorised/802190-2022-07/</id>
+        <link href="https://www.electronicsweekly.com/uncategorised/802190-2022-07/"/>
+        <updated>2022-07-24T18:43:07.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[DwarFS: A fast high compression read-only file system]]></title>
+        <id>https://github.com/mhx/dwarfs</id>
+        <link href="https://github.com/mhx/dwarfs"/>
+        <updated>2022-07-24T18:33:28.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[OpenXanadu]]></title>
+        <id>https://xanadu.com/xanademos/MoeJusteOrigins.html</id>
+        <link href="https://xanadu.com/xanademos/MoeJusteOrigins.html"/>
+        <updated>2022-07-24T17:18:18.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Standard Ebooks]]></title>
+        <id>https://standardebooks.org/</id>
+        <link href="https://standardebooks.org/"/>
+        <updated>2022-07-24T16:59:30.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Take more screenshots]]></title>
+        <id>https://alexwlchan.net/2022/07/screenshots/</id>
+        <link href="https://alexwlchan.net/2022/07/screenshots/"/>
+        <updated>2022-07-24T16:55:16.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Factor: A Practical Stack Language]]></title>
+        <id>https://factorcode.org/</id>
+        <link href="https://factorcode.org/"/>
+        <updated>2022-07-24T16:35:43.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[In Praise of Stacked PRs]]></title>
+        <id>https://benjamincongdon.me/blog/2022/07/17/In-Praise-of-Stacked-PRs/</id>
+        <link href="https://benjamincongdon.me/blog/2022/07/17/In-Praise-of-Stacked-PRs/"/>
+        <updated>2022-07-24T16:12:36.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Performance comparison: counting words in Python, C/C++, Awk, Rust, and more]]></title>
+        <id>https://benhoyt.com/writings/count-words/</id>
+        <link href="https://benhoyt.com/writings/count-words/"/>
+        <updated>2022-07-24T15:31:23.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Non-Obvious Docker Uses]]></title>
+        <id>https://matt-rickard.com/non-obvious-docker-uses/</id>
+        <link href="https://matt-rickard.com/non-obvious-docker-uses/"/>
+        <updated>2022-07-24T14:44:10.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Hexaflexagons [video] (2012)]]></title>
+        <id>https://www.youtube.com/watch?v=VIVIegSt81k&amp;list=PLaNzoFtkQ7rbt5ac9qdi76iNKuqZWQkB3</id>
+        <link href="https://www.youtube.com/watch?v=VIVIegSt81k&amp;list=PLaNzoFtkQ7rbt5ac9qdi76iNKuqZWQkB3"/>
+        <updated>2022-07-24T14:28:53.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[No evidence for nudging after adjusting for publication bias]]></title>
+        <id>https://www.pnas.org/doi/10.1073/pnas.2200300119</id>
+        <link href="https://www.pnas.org/doi/10.1073/pnas.2200300119"/>
+        <updated>2022-07-24T14:02:26.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Why GNU grep is fast (2010)]]></title>
+        <id>https://lists.freebsd.org/pipermail/freebsd-current/2010-August/019310.html</id>
+        <link href="https://lists.freebsd.org/pipermail/freebsd-current/2010-August/019310.html"/>
+        <updated>2022-07-24T13:46:58.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[At 88, Poker Legend Doyle Brunson Is Still Bluffing. Or Is He?]]></title>
+        <id>https://www.texasmonthly.com/arts-entertainment/doyle-brunson-poker-legend/</id>
+        <link href="https://www.texasmonthly.com/arts-entertainment/doyle-brunson-poker-legend/"/>
+        <updated>2022-07-24T13:04:43.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Show HN: Kvass, a personal key-value store]]></title>
+        <id>https://github.com/maxmunzel/kvass</id>
+        <link href="https://github.com/maxmunzel/kvass"/>
+        <updated>2022-07-24T11:05:49.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[How to Fold a Julia Fractal – A tale of numbers that like to turn (2013)]]></title>
         <id>https://acko.net/blog/how-to-fold-a-julia-fractal/</id>
@@ -237,6 +510,16 @@ Chrysina aurigans，图片取自网络
         </author>
     </entry>
     <entry>
+        <title type="html"><![CDATA[In Search of the Continuous Monument (2009)]]></title>
+        <id>https://blogs.ubc.ca/sciencefictionandthecity/2009/04/07/in-search-of-the-continuous-monument-or-the-grid-as-speculative-architecture/</id>
+        <link href="https://blogs.ubc.ca/sciencefictionandthecity/2009/04/07/in-search-of-the-continuous-monument-or-the-grid-as-speculative-architecture/"/>
+        <updated>2022-07-23T20:27:10.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[More invested in nuclear fusion in last 12 months than past decade]]></title>
         <id>https://www.growthbusiness.co.uk/more-invested-in-nuclear-fusion-in-last-12-months-than-past-decade-2560528/</id>
         <link href="https://www.growthbusiness.co.uk/more-invested-in-nuclear-fusion-in-last-12-months-than-past-decade-2560528/"/>
@@ -261,6 +544,16 @@ Chrysina aurigans，图片取自网络
         <id>https://mort.coffee/home/tar/</id>
         <link href="https://mort.coffee/home/tar/"/>
         <updated>2022-07-23T19:11:49.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Ted Gioia: The history of music innovation [video]]]></title>
+        <id>https://www.youtube.com/watch?v=dKr-nBrbl_g</id>
+        <link href="https://www.youtube.com/watch?v=dKr-nBrbl_g"/>
+        <updated>2022-07-23T18:19:40.000Z</updated>
         <summary type="html"><![CDATA[Comments]]></summary>
         <author>
             <name>Hacker News</name>
@@ -347,10 +640,60 @@ Chrysina aurigans，图片取自网络
         </author>
     </entry>
     <entry>
+        <title type="html"><![CDATA[Earthgrid aims to rewire the USA using super-cheap tunnel tech]]></title>
+        <id>https://newatlas.com/energy/earthgrid-tunnel-boring-robot/</id>
+        <link href="https://newatlas.com/energy/earthgrid-tunnel-boring-robot/"/>
+        <updated>2022-07-23T15:14:32.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Children's Railways of the Former USSR]]></title>
+        <id>http://www.dzd-ussr.ru/english/index.html</id>
+        <link href="http://www.dzd-ussr.ru/english/index.html"/>
+        <updated>2022-07-23T14:03:52.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[Are language models deprived of electric sleep?]]></title>
         <id>https://blog.cbs.dk/inframethodology/?p=5386</id>
         <link href="https://blog.cbs.dk/inframethodology/?p=5386"/>
         <updated>2022-07-23T13:38:57.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Usborne computer and coding books from the 1980s]]></title>
+        <id>https://usborne.com/us/books/computer-and-coding-books</id>
+        <link href="https://usborne.com/us/books/computer-and-coding-books"/>
+        <updated>2022-07-23T12:50:55.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Bison Roundup at Tallgrass Prairie Preserve (2021)]]></title>
+        <id>https://www.nature.org/en-us/about-us/where-we-work/united-states/oklahoma/stories-in-oklahoma/bison-round-up-at-tallgrass-prairie-preserve/</id>
+        <link href="https://www.nature.org/en-us/about-us/where-we-work/united-states/oklahoma/stories-in-oklahoma/bison-round-up-at-tallgrass-prairie-preserve/"/>
+        <updated>2022-07-23T12:38:33.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[StretchText]]></title>
+        <id>https://en.wikipedia.org/wiki/StretchText</id>
+        <link href="https://en.wikipedia.org/wiki/StretchText"/>
+        <updated>2022-07-23T12:30:05.000Z</updated>
         <summary type="html"><![CDATA[Comments]]></summary>
         <author>
             <name>Hacker News</name>
@@ -14505,465 +14848,6 @@ datad…]]></summary>
         <id>https://www.sdfo.org/gj/stories/flowersforalgernon.pdf</id>
         <link href="https://www.sdfo.org/gj/stories/flowersforalgernon.pdf"/>
         <updated>2022-06-25T14:43:42.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Whatever happened to the bee apocalypse?]]></title>
-        <id>http://backreaction.blogspot.com/2022/06/whatever-happened-to-bee-apocalypse.html</id>
-        <link href="http://backreaction.blogspot.com/2022/06/whatever-happened-to-bee-apocalypse.html"/>
-        <updated>2022-06-25T13:09:50.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[My awakening moment about how smartphones fragment our attention span]]></title>
-        <id>https://idratherbewriting.com/blog/awakening-moment-to-how-smartphones-fragment-our-attention/</id>
-        <link href="https://idratherbewriting.com/blog/awakening-moment-to-how-smartphones-fragment-our-attention/"/>
-        <updated>2022-06-25T12:45:42.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Xlite: Query Excel and Open Document spreadsheets as SQLite virtual tables]]></title>
-        <id>https://github.com/x2bool/xlite</id>
-        <link href="https://github.com/x2bool/xlite"/>
-        <updated>2022-06-25T12:34:51.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[A frog so small, it could not frog]]></title>
-        <id>https://www.theatlantic.com/science/archive/2022/06/pumpkin-toadlet-frogs-uncontrolled-landing-jumps/661262/</id>
-        <link href="https://www.theatlantic.com/science/archive/2022/06/pumpkin-toadlet-frogs-uncontrolled-landing-jumps/661262/"/>
-        <updated>2022-06-25T11:52:35.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[‘Wallets and eyeballs’: how eBay turned the internet into a marketplace]]></title>
-        <id>https://www.theguardian.com/technology/2022/jun/16/wallets-and-eyeballs-how-ebay-turned-the-internet-into-a-marketplace</id>
-        <link href="https://www.theguardian.com/technology/2022/jun/16/wallets-and-eyeballs-how-ebay-turned-the-internet-into-a-marketplace"/>
-        <updated>2022-06-25T11:45:14.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Frozen baby woolly mammoth discovered in Yukon gold fields]]></title>
-        <id>https://www.cbc.ca/news/canada/north/frozen-whole-baby-woolly-mammoth-yukon-gold-fields-1.6501128</id>
-        <link href="https://www.cbc.ca/news/canada/north/frozen-whole-baby-woolly-mammoth-yukon-gold-fields-1.6501128"/>
-        <updated>2022-06-25T11:35:21.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[The Seiko TV watch]]></title>
-        <id>https://sabukaru.online/articles/the-watch-for-which-james-bond-gave-up-his-rolex-the-seiko-tv-watch</id>
-        <link href="https://sabukaru.online/articles/the-watch-for-which-james-bond-gave-up-his-rolex-the-seiko-tv-watch"/>
-        <updated>2022-06-25T11:20:29.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Quantum Zeno Effect]]></title>
-        <id>https://en.wikipedia.org/wiki/Quantum_Zeno_effect</id>
-        <link href="https://en.wikipedia.org/wiki/Quantum_Zeno_effect"/>
-        <updated>2022-06-25T11:12:40.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Crystal's Interpreter (2021)]]></title>
-        <id>https://crystal-lang.org/2021/12/29/crystal-i.html</id>
-        <link href="https://crystal-lang.org/2021/12/29/crystal-i.html"/>
-        <updated>2022-06-25T05:00:26.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Arkansas Bill (2021) Establishing a Database for Tracking Women Seeking Abortion]]></title>
-        <id>https://trackbill.com/bill/arkansas-house-bill-1195-to-create-the-every-mom-matters-act-to-provide-healthcare-support-to-pregnant-women-in-arkansas-and-to-stabilize-families-and-reduce-the-number-of-abortions-performed-in-the-state/1982203/</id>
-        <link href="https://trackbill.com/bill/arkansas-house-bill-1195-to-create-the-every-mom-matters-act-to-provide-healthcare-support-to-pregnant-women-in-arkansas-and-to-stabilize-families-and-reduce-the-number-of-abortions-performed-in-the-state/1982203/"/>
-        <updated>2022-06-25T00:32:13.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[为什么奶茶里的料越加越多？]]></title>
-        <id>https://daily.zhihu.com/story/9749949</id>
-        <link href="https://daily.zhihu.com/story/9749949"/>
-        <updated>2022-06-24T23:06:10.000Z</updated>
-        <summary type="html"><![CDATA[福桃九分饱
-阅读原文
-
-这是奶茶吗？这是八宝粥吧。
-
-完全用不了吸管，赶紧给个勺儿。
-打开外卖软件想点杯奶茶喝喝，加料区的小料让我打开了新世界的大门。
-
-我这是点奶茶还是点粥呢？
-连李雪琴也发现了奶茶界的这一变化：
-
-从什么时候开始？奶茶变得一个比一个“有料”，一个比一个“八十八宝粥”？奶茶加料的历史，究竟有多么源远流长？饱妹查阅古籍、网上冲浪，最终为大家梳理出了这套奶茶加料学。
-P.S.
-不想看讲课的，直接拉到文末，奉送价值八十八杯奶茶的喝完小料实践教学。
-
-奶茶最早的灵魂伴侣，是“珍珠”——不是 tasaki，不是故宫娘娘们耳朵上的大东珠，而是奶茶中的珍珠。
-
-第一杯奶茶的具体出现时间，现在已经无从考证，但是，第一杯珍珠奶茶可以。
-第一种说法，珍珠的发明者是台中市春水堂的刘汉介先生。1983 年，店员突发奇想，将自己最爱的地方小吃“粉圆”加入奶茶当中，一开始并不被接受，后来被日本电视节目采访，逐步走红。刘汉介取“大珠小珠落玉盘”之义，将台湾传统甜品粉圆重新命名为“珍珠”。
-第二种说法，珍珠的发明者是台南市翰林茶馆涂宗和先生。老先生在鸭母寮市场见到售卖的白色粉圆，于是尝试着加入到奶茶中，一开始叫“翡翠珍珠绿”，茶底后从绿茶改为红茶，珍珠也改为黑色今貌。
-这两间店都没有申请专利权或商标权，珍珠奶茶像星星之火一般快速燎原，很快从宝岛一路登陆内地。
-© 新浪微博
-甚至在相当长一段时间，“珍珠奶茶”因为太过红火，已成了“奶茶”的别名——对于上海市民来说，没有珍珠的奶茶就是辣鸡。
-▲情景喜剧《老娘舅》阿庆阿美初登场时让人记忆犹新的台词
-
-珍珠之后，第二个成为奶茶伴侣的是椰果。
-
-我们无法考证椰果的具体出现年代，从已知的资料看，1995 年开始，椰果、果酱等奶茶开始出现，同时花果茶、花草茶也逐渐兴起。随后到 2000 年，自动封口机的出现，也让外带成为主流——逛街买杯椰果奶茶作伴的传…]]></summary>
-        <author>
-            <name>知乎日报</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[以前没手机玩的时候，大家都是怎么度过的？]]></title>
-        <id>https://daily.zhihu.com/story/9749958</id>
-        <link href="https://daily.zhihu.com/story/9749958"/>
-        <updated>2022-06-24T23:06:01.000Z</updated>
-        <summary type="html"><![CDATA[疯癫的A兵者
-阅读原文
-
-（超多图预警～长文预警～）
-勉强回答一下：
-小时候没智能手机，更没有 VR（虚拟现实）和 AR（增强现实），只有 R（纯粹现实），包括改装四驱车模型、摆多米诺骨牌、培养“电子宠物”、换装芭比娃娃、耍悠悠球、战斗陀螺、以及弹精灵 / 尺子 / 橡皮等等，其“肝”和“氪”的程度，甚至不亚于手机游戏，而且不少游戏都很“硬核”。
-
-
-迷你四驱车：又氪又肝还要技术的竞速游戏迷你四驱车“氪”的一面
-《四驱小子》——天皇巨星
-我说出来你们肯定不信，我 9 岁就感受到了“攒钱买车”的痛苦，记忆真的“刻骨铭心”。我人生最初的四辆车，估计永远不会忘记：天皇巨星（《四驱小子》主角的车）、魔鬼司令（《四驱兄弟》土方令）、疾速眼镜蛇（《四驱兄弟》三国藤吉）和先驱音速（《四驱兄弟》星马烈）……
-日本当时的官方赛事现场
-那个时候，班里再“馋嘴”的同学，也或多或少地学会了“勒紧裤腰带”过日子，因为那个时候大家觉得，男生可以没有女友，但是不可以没有自己的迷你四驱车……
-我们班最“富有”的同学，一个月才 20 元零用钱，我们都远远没有这个标准，而每一辆迷你四驱车，我们当时学校门口商店的价格是 35 元～50 元不等（《四驱小子》里面的车，最低可以 28 元），绝大多数我们想要的迷你四驱车都在 45 元上下。在那个年代，真不算便宜，对小学生来说，则是“天价”……
-图片源自网络，小时候实际接触田宫不多，奥迪双钻却天天打交道
-迷你四驱车“买车容易”而“改装难”，一些“增强型”配件的价格，甚至超越迷你四驱车本身价格，比如迷你四驱车马达：
-“魔王”马达，要 50 元
-“美洲豹”马达，要 25 元
-“捷豹”马达，要 15 元
-…………………………………………………………
-其余的导轮（主要是转弯用）、齿轮（车身内部）以及缓冲器（龙头 / 凤尾 / 大包围）相关配件，也需要自行购买，“裸车”就不算便…]]></summary>
-        <author>
-            <name>知乎日报</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[如何有效提高孩子的社交能力？]]></title>
-        <id>https://daily.zhihu.com/story/9749956</id>
-        <link href="https://daily.zhihu.com/story/9749956"/>
-        <updated>2022-06-24T23:05:57.000Z</updated>
-        <summary type="html"><![CDATA[玫瑶老师
-阅读原文
-
-以前人们总说孩子是一张白纸，但当我真正成为一个幼儿教育领域的工作者，10 年里接触到各种各样的孩子和家长，再加上养育自己孩子的经验，让我我越来越觉得：孩子生下来并非一张白纸。
-不同气质类型的孩子，有不同的社交方式。如果我们能看到他们个性的不同，针对性的给予合适的帮助一定会事半功倍。
-一、孩子不是一张白纸，每个孩子生而不同，社交方式也不同
-尽管后天家庭成长环境会极大的改变孩子，但是越来越多的科学研究证明，婴儿生下来，就已经带着许多与众不同的性格特点。
-比如我的朋友 Sara，有一对 5 岁的双胞胎，两个孩子从小在同样的家庭环境里成长，父母和周边环境也是一样的，但是两个孩子性格和社交方式截然不同。
-面同样的社交冲突，（比如被其他孩子抢玩具）姐姐是采取主动行动，她会一把抢过来，大声地说：这是我的，你不能抢我的玩具！而妹妹正好相反，遇上冲突，她的方式是嚎啕大哭，等待姐姐或者其他家人来帮忙。
-除了双胞胎，我们甚至可以在新生儿的身上看到不同气质类型的特点。养育两个孩子的妈妈一定深有体会：同一个妈妈生的两个孩子，怎么会如此不同？以前大宝是个高需求宝宝，对喝奶、睡觉、玩耍的环境要求很高。好不容易哄睡了，妈妈把孩子一放下，眼睛马上就睁开了。连一根针掉在地上的声音，都可以让他们再次醒来，必须得重新哄睡。
-而二宝却截然不同，他很容易有较固定的睡眠作息，就是我们常说的“天使宝宝”。孩子经常吃完奶了就呼呼大睡，醒来了也是笑眯眯很快乐的状态。
-而这些，都是孩子们生下来所带有的“先天气质”。
-气质类型有很多种流派，而最具有高水准研究水平的，应该属 19 世纪 60 年代由美国心理学家托马斯（A. Thomas）和儿童心理学家切斯(S.Chese)提出的。托马斯博士指出：
-每个孩子都是一个独立的个体，从出生下来的那一天起，就带着他独特的天生气质，展现出属于他自己的表达方式，与身边的每…]]></summary>
-        <author>
-            <name>知乎日报</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[每天什么都不想做，只想躺着待着，刷手机，该怎么办?]]></title>
-        <id>https://daily.zhihu.com/story/9749963</id>
-        <link href="https://daily.zhihu.com/story/9749963"/>
-        <updated>2022-06-24T23:05:49.000Z</updated>
-        <summary type="html"><![CDATA[Cecilia
-阅读原文
-
-1
-在我家，我负责「做饭」，我先生负责「洗碗」。
-他洗碗是这样的：
-洗锅，不洗锅底，不洗锅边，不洗锅盖；洗锅意味着「只洗锅里面的部分」，其余地方都是用水冲一下就行。
-
-他洗锅，但他不清扫灶台，也不会擦拭溅到墙面上的油污；对他来说，洗完锅，整个灶台就打扫完毕了。
-
-他洗碗，但他只洗空碗，哪怕一只大碗里面只剩一点饭菜了，他也不会翻到小碗里，只会把整个大碗和里面装的一点点食物一起放进冰箱。
-
-以至于每次他跟我说：「冰箱里没有位置了，放不下了！」的时候，我都能想到，冰箱里多半是这样的：
-
-2
-我把自己当做是「掌管」厨房的人，他把自己当做是在厨房「打工」的人。
-和题主的心态很像：
-找了一个工作，每天不需要做些什么，工资能够保证活着，时间久了，感觉自己颓废了，什么也不想做
-他不需要考虑买什么菜、怎么买划算、什么季节吃什么、什么品种好吃；
-他爱美食，但他的爱是「消费层面的爱」；但如果让他做饭，他只要能果腹就行。
-如果我出门一整天，他就凑合吃点面包、喝点牛奶，再叫个汉堡；
-如果我出门好几天，他就一日三餐去食堂；
-如果我出门一周以上，他可以一直不出门，直到把家里的存粮吃干净为止；下一次还不忘叮嘱我：「在家没有肉吃，你炖一锅，够我吃一周就行了……」
-3
-这一切的变化始于我们有了孩子。
-一个人的变化，从某种意义上来说，源于「被需要」。
-我家小萌刚诞生时，我整夜睡不好；他因为心疼我，半夜起来给孩子喂奶、换尿布——月子期间我们连月嫂都没请，正好他寒假，所以他一人照顾了我们母子两人。
-那时他说，一个人带一个娃太累了，绝对不可能持续——直到我们有了二胎。
-我怀小乖的时候得了妊娠期糖尿病，需要多散步、严格控糖，于是我需要自己一个人锻炼的时间，也和他们分开吃饭；困倦的时候我需要休息。他学会了自己一个人独自带小萌，照顾孩子的睡前时光，还能每天带出去。
-那时他说，一个人带一个娃刚刚好…]]></summary>
-        <author>
-            <name>知乎日报</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Goldman Raising $2B to Buy Distressed Celsius Assets]]></title>
-        <id>https://www.morningstar.com/news/dow-jones/202206247121/goldman-sachs-looks-to-raise-2-billion-to-buy-celsius-networks-assets-coindesk-says</id>
-        <link href="https://www.morningstar.com/news/dow-jones/202206247121/goldman-sachs-looks-to-raise-2-billion-to-buy-celsius-networks-assets-coindesk-says"/>
-        <updated>2022-06-24T22:41:21.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Computer Simulations of Proteins Help Unravel Why Chemotherapy Resistance Occurs]]></title>
-        <id>https://news.stonybrook.edu/university/computer-simulations-of-proteins-help-unravel-why-chemotherapy-resistance-occurs-2/</id>
-        <link href="https://news.stonybrook.edu/university/computer-simulations-of-proteins-help-unravel-why-chemotherapy-resistance-occurs-2/"/>
-        <updated>2022-06-24T22:04:51.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[How Bungie identified a mass sender of fake DMCA notices]]></title>
-        <id>https://torrentfreak.com/digital-trails-how-bungie-identified-a-mass-sender-of-fake-dmca-notices-220624/</id>
-        <link href="https://torrentfreak.com/digital-trails-how-bungie-identified-a-mass-sender-of-fake-dmca-notices-220624/"/>
-        <updated>2022-06-24T21:44:53.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[How to make a complete map of every thought you think (2003)]]></title>
-        <id>https://users.speakeasy.net/~lion/nb/html/</id>
-        <link href="https://users.speakeasy.net/~lion/nb/html/"/>
-        <updated>2022-06-24T19:48:49.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Artificial Photosynthesis in the Absence of Light]]></title>
-        <id>https://www.nature.com/articles/s43016-022-00530-x</id>
-        <link href="https://www.nature.com/articles/s43016-022-00530-x"/>
-        <updated>2022-06-24T19:13:25.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Crypto firm Bitpanda lays off around 20% of its people]]></title>
-        <id>https://blog.bitpanda.com/en/way-forward</id>
-        <link href="https://blog.bitpanda.com/en/way-forward"/>
-        <updated>2022-06-24T19:07:50.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[ffsend: A fully featured Firefox Send command line client]]></title>
-        <id>https://github.com/timvisee/ffsend</id>
-        <link href="https://github.com/timvisee/ffsend"/>
-        <updated>2022-06-24T19:05:37.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[How to find great practice systems design questions]]></title>
-        <id>https://www.hackpack.io/blog/great-practice-systems-design-questions</id>
-        <link href="https://www.hackpack.io/blog/great-practice-systems-design-questions"/>
-        <updated>2022-06-24T18:43:11.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Show HN: Easily Convert WARC (Web Archive) into Parquet, Then Query with DuckDB]]></title>
-        <id>https://github.com/maxcountryman/warc-parquet</id>
-        <link href="https://github.com/maxcountryman/warc-parquet"/>
-        <updated>2022-06-24T18:26:46.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Maccy is an open source lightweight and searchable clipboard manager for macOS]]></title>
-        <id>https://github.com/p0deje/Maccy</id>
-        <link href="https://github.com/p0deje/Maccy"/>
-        <updated>2022-06-24T18:23:51.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[What happened to the lab-leak hypothesis?]]></title>
-        <id>https://unherd.com/2022/06/what-happened-to-the-lab-leak-hypothesis/</id>
-        <link href="https://unherd.com/2022/06/what-happened-to-the-lab-leak-hypothesis/"/>
-        <updated>2022-06-24T17:55:11.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Bob Stanley’s pre-history of pop breathes life into a lost musical era]]></title>
-        <id>https://www.newstatesman.com/culture/books/book-of-the-day/2022/06/bob-stanley-lets-do-it-review-billy-bragg-birth-of-pop</id>
-        <link href="https://www.newstatesman.com/culture/books/book-of-the-day/2022/06/bob-stanley-lets-do-it-review-billy-bragg-birth-of-pop"/>
-        <updated>2022-06-24T17:26:35.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[The Key of Lisp (1987)]]></title>
-        <id>http://www.iment.com/maida/computer/lisp-ptrs/lp-i.1.40.htm</id>
-        <link href="http://www.iment.com/maida/computer/lisp-ptrs/lp-i.1.40.htm"/>
-        <updated>2022-06-24T17:20:53.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Flexport (YC W14) is hiring software engineers]]></title>
-        <id>https://flexport.com/careers</id>
-        <link href="https://flexport.com/careers"/>
-        <updated>2022-06-24T17:01:38.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[BrachioGraph – the cheapest, simplest possible pen-plotter]]></title>
-        <id>https://www.brachiograph.art/index.html</id>
-        <link href="https://www.brachiograph.art/index.html"/>
-        <updated>2022-06-24T15:54:08.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Goodbye Zachtronics]]></title>
-        <id>https://kotaku.com/zachtronics-farewell-goodbye-closing-eliza-last-call-bb-1849096767</id>
-        <link href="https://kotaku.com/zachtronics-farewell-goodbye-closing-eliza-last-call-bb-1849096767"/>
-        <updated>2022-06-24T15:42:51.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Motorola 6800]]></title>
-        <id>https://en.wikipedia.org/wiki/Motorola_6800</id>
-        <link href="https://en.wikipedia.org/wiki/Motorola_6800"/>
-        <updated>2022-06-24T15:39:37.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[What happened to giant hovercraft? [video]]]></title>
-        <id>https://www.youtube.com/watch?v=HnJLT8wFyhY</id>
-        <link href="https://www.youtube.com/watch?v=HnJLT8wFyhY"/>
-        <updated>2022-06-24T15:28:42.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Build a PinePhone App with Zig and Zgt]]></title>
-        <id>https://lupyuen.github.io/articles/pinephone</id>
-        <link href="https://lupyuen.github.io/articles/pinephone"/>
-        <updated>2022-06-24T15:03:59.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Raindrop: All-in-One Bookmark Manager]]></title>
-        <id>https://raindrop.io/</id>
-        <link href="https://raindrop.io/"/>
-        <updated>2022-06-24T15:02:45.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[SMS phishing is way too easy]]></title>
-        <id>https://www.bejarano.io/sms-phishing/</id>
-        <link href="https://www.bejarano.io/sms-phishing/"/>
-        <updated>2022-06-24T14:52:11.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[How to avoid being a secretary for engineers]]></title>
-        <id>https://idratherbewriting.com/2018/11/19/avoid-being-secretary-for-engineers/</id>
-        <link href="https://idratherbewriting.com/2018/11/19/avoid-being-secretary-for-engineers/"/>
-        <updated>2022-06-24T14:11:10.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Five planets are lining up in the sky in June and will peak tonight]]></title>
-        <id>https://www.cbsnews.com/news/planets-align-2022-five-mercury-venus-mars-jupiter-saturn-2022-06-24/</id>
-        <link href="https://www.cbsnews.com/news/planets-align-2022-five-mercury-venus-mars-jupiter-saturn-2022-06-24/"/>
-        <updated>2022-06-24T14:05:41.000Z</updated>
         <summary type="html"><![CDATA[Comments]]></summary>
         <author>
             <name>Hacker News</name>
