@@ -2,10 +2,564 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://7qi7qi.github.io/RSSFeeder/index.html</id>
     <title>osmos::feed</title>
-    <updated>2022-08-02T01:49:40.433Z</updated>
+    <updated>2022-08-03T01:39:55.167Z</updated>
     <generator>osmosfeed 1.15.1</generator>
     <link rel="alternate" href="https://7qi7qi.github.io/RSSFeeder/index.html"/>
     <link rel="self" href="https://7qi7qi.github.io/RSSFeeder/feed.atom"/>
+    <entry>
+        <title type="html"><![CDATA[大规模分布式系统中的级联故障]]></title>
+        <id>http://weekly.dockone.io/article/2434929</id>
+        <link href="http://weekly.dockone.io/article/2434929"/>
+        <updated>2022-08-03T01:38:48.392Z</updated>
+        <summary type="html"><![CDATA[互联网服务提供商面临快速增长挑战的同时还要管理不断增长的系统分布。尽管服务的可靠运行对 Google、Amazon 和 Co. 等公司来说非常重要，但它们的系统还是会一次又一次地出现故障，导致大量中断和糟糕的客户体验。举几个例子，比如受到影响的 Gmail（2012）、AWS DynamoDB（2015） 以及最近的 Facebook（2021）。在这种情况下，人们经常会遇到所谓的级联故障，导致超出普通系统故障的不良并发症。但是，考虑到他们的预算和技术知识，即使是在线业务的大玩家，为什么也不能完全避免这种故障呢？你可以为自己的系统使用哪些切实可行的风险缓解方法？
+这篇博文的目标是了解如何通过防止故障传播来提高大型分布式系统的弹性。
+级联故障
+级联故障是由于正反馈循环而随时间增加的故障。典型行为最初由单个节点或子系统故障触发。然后它会将负载分散到其他系统的节点上，这反过来又进一步增加系统故障的可能性，从而导致恶性循环或滚雪球效应。级联故障的重要性体现在三个方面：首先，它们可以在短时间内导致整个服务停机。其次，受影响的系统不会像处理常见的问题那样恢复正常，而是会逐渐恶化。最终要依赖人为干预才行。最后，在最坏的情况下，级联故障可能会在没有警告的情况下突然发生，因为负载分布和故障会迅速发生。
+尽管这篇博客主要关注点是分布式计算环境中的级联故障，但它们也可能发生在其他各种领域：例如电力传输、金融、生物学以及生态系统。因此，它们是一种相当普遍的现象，与自然界中发现的模式有些相似。为了更好地了解计算机科学中的级联故障是什么样的，让我们看一个具体的案例。
+案例研究：2015 年的 AWS DynamoDB 中断
+AWS DynamoDB 是一种高可扩展的非关系数据库服务，分布在多个数据中心，提供高度一致的读取操作和 ACID 事务。 它被 Netflix、Airbnb 和 IMDb 等多个…]]></summary>
+        <author>
+            <name>w9527</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[SFC宣布退出GitHub]]></title>
+        <id>http://weekly.dockone.io/article/2434922</id>
+        <link href="http://weekly.dockone.io/article/2434922"/>
+        <updated>2022-08-03T01:38:48.145Z</updated>
+        <summary type="html"><![CDATA[专注于自由与开源软件（FOSS）的非营利组织软件自由保护协会（SFC）表示，其已停止使用微软GitHub开展项目托管，并敦促其他软件开发者一同退出。
+在本周四发布的博文中，自由保护协会FOSS许可合规工程师Denver Gingerich及政策研究员Bradley M. Kuhn表示，GitHub在过去十年间，一直以FOSS开发领域的主导工具Git为核心开发界面搭配与社交功能。
+通过这种方式，GitHub成功将将FOSS贡献者们的努力导入了自己的专有生态系统。
+Gingerich和Kuhn怒斥，“我们将不再使用GitHub，并公布一项长期计划，帮助更多FOSS项目从GitHub上迁移出去。”
+他们还提到，自由保护协会未来也将拒绝接受那些无意从GitHub迁出的新成员项目。之前，该协会主要使用自托管Git repo管理软件项目，但同时也在使用GitHub存储repo镜像。
+自由保护协会还在网站上添加了Give Up on GitHub页面，并号召FOSS开发者们自愿转向其他代码托管服务。
+Gingerich与Kuhn表示，“虽然我们目前还不会强制要求成员项目开展迁移，但我们将拒绝接受那些无意从GitHub迁出的新成员项目。我们会提供资源，支持那些愿意迁出的成员项目，并尽一切所能提供帮助。”
+GitHub据称拥有约8300万用户和超过2亿个repo，其中大部分遵循开源许可。这项云托管服务还在宣传当中，着力强调自己面向开源开发的定位。
+而在自由保护协会看来，此次与GitHub彻底决裂的终极导火索，其实就是AI编码辅助工具GitHub Copilot的全面上线。该协会表示，GitHub这种利用FOSS代码训练模型、再将AI成果作为营利工具的行为“令以难以接受。”
+Copilot以OpenAI的Codex为基础，负责在开发者工作过程中推荐代码和函数。据GitHub的介绍，Copilot之所以拥有这样的能力，是因为它接受了“来自公开来源的自然语言文本和源代码的训练，包括GitHub上各公开repo中的代码。”
+Gingerich和Kuhn认为这种说法大有问题，因为微软和GitHub从来没讨论过在公共代码上训练AI系统可能产生的版权后果，Copilot为何只接受FOSS代码训练、而非受到版权保护的Windows代码的训练，以及是否应该向训练素材的软件许可及版权所有方征求意见。
+Kuhn之前就曾提到，他很担心Copilot的这一训练过程可能会引发法律风险，其他人也提出过类似的担忧。上周，设计师、程序员兼律师Matthew Butterick发表了一篇博文，表示他也认为Copilot的出现其实有违开源许可证要求。
+他写道，“Copilot完全切断了输入（即基于各类开源许可的代码）与输出（即Copilot算法生成的代码）之间的联系。因此，在经历了二十多年的折腾之后，微软终于把自己当年的胡话变成了现实，一手创造了「知识产权黑洞」。”
+但这些诉求尚未得到解决，而且恐怕直到迎来实际诉讼和判决后才会有定论。也有其他律师指出，GitHub的服务条款赋予了自身使用托管代码改进服务的权利。当然，微软和GitHub这方的法律专家坚持认定，自己并不需要受到许可证合规性的约束，而是把这份责任转嫁到了Copilot用户的身上。
+Copilot说明文档对此做出解释，“您有责任保障代码安全性和质量。我们建议您在使用由GitHub Copilot生成的代码时，采取与使用其他非亲自编写代码时相同的预防措施，包括严格测试、IP扫描及安全漏洞跟踪。”
+Gingerich和Kuhn则认为，GitHub在Copilot等问题上的表现，已经要比其他开源代码托管平台恶劣得多。
+他们强调，“我们也不相信亚马逊、Atlassian、GitLab或者其他营利性托管商就是什么道德完备的圣贤。但跟他们相比，GitHub的行为仍然要恶劣得多。GitHub此前就曾经多次忽视、不理会及/或贬低社区提出的投诉意见，我们只能敦促所有FOSS开发者尽快脱离GitHub。”
+微软和GitHub并没有立即回应置评请求。
+原文链接：Open source body quits GitHub, urges you to do the same]]></summary>
+        <author>
+            <name>尼古拉斯</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Capital One enters enterprise B2B software, new data management SaaS]]></title>
+        <id>https://www.capitalone.com/about/newsroom/capital-one-launches-capital-one-software/</id>
+        <link href="https://www.capitalone.com/about/newsroom/capital-one-launches-capital-one-software/"/>
+        <updated>2022-08-02T23:18:34.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[蚕豆病为什么可以吃别的豆，蚕豆中含有什么特殊的，医学原理是什么？]]></title>
+        <id>https://daily.zhihu.com/story/9751329</id>
+        <link href="https://daily.zhihu.com/story/9751329"/>
+        <updated>2022-08-02T23:06:54.000Z</updated>
+        <summary type="html"><![CDATA[Dr.VK，咳咳咳咳咳咳咳(　&gt;д&lt;)､;'.
+阅读原文
+
+这还用说么，蚕豆里当然有特殊的物质啦！（其他食物和药物虽然也会造成蚕豆病患者出现问题，本文暂不涉及。）
+简单来说就是：蚕豆中的蚕豆苷（vicine）和伴蚕豆嘧啶核苷（convicine）在我们消化道中水解产生蚕豆嘧啶（divicine）和异脲咪（isouramil），它们被吸收入血后产生大量氧自由基（ROS）。因为蚕豆病患者缺乏的酶造成中和 ROS 的能力降低，过多的 ROS 会破坏红细胞膜，于是引起溶血。
+下面简单说下具体的生理和生化过程：
+2. 我们吃进去的蚕豆需要经过我们的胃肠道消化才能吸收，而我们身体的化学消化过程实际上是利用水和消化酶去分解复杂大分子的水解过程。因为蚕豆中富含两种氨基嘧啶糖苷衍生物：蚕豆苷(vicine)和伴蚕豆嘧啶核苷（convicine），所以当我们消化蚕豆时，水解反应会出现在蚕豆 vicine 和 convicine 的葡萄糖与嘧啶环 C-5 上的羟基之间的
+
+- 糖苷键上（如下图 1：葡萄糖和嘧啶环结构，请结合图 2 比较），之后它们分别会生成蚕豆嘧啶（Divicine）和异脲咪（isouramil）（他们俩长下图这样！如下图 2：生成 divicine 和 isouramil 以及它们的互变异构形式和葡萄糖）。它们是蚕豆促进“蚕豆病”患者形成溶血的主要因素。
+图 1：嘧啶环结构
+图 1：葡萄糖结构
+图 2：From: Carlo Giuseppe Rizzello et al., Degradation of vicine, convicine and their aglycones during fermentation of faba bean flour, Scientific reports, 2016
+3. 这是因为，它们含有类似邻苯二酚的结构（如下图: 请…]]></summary>
+        <author>
+            <name>知乎日报</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[如何评价知音漫客漫画《零班编年史》，为什么现在都很难找得到了？]]></title>
+        <id>https://daily.zhihu.com/story/9751318</id>
+        <link href="https://daily.zhihu.com/story/9751318"/>
+        <updated>2022-08-02T23:06:49.000Z</updated>
+        <summary type="html"><![CDATA[彬帝，漫画爱好者，钟爱盘点类回答，致力于推荐优秀国漫
+阅读原文
+
+《零班编年史》可能是知音漫客中最符合我笑点的四格漫画了。其玩梗以及吐槽功力实属罕见。
+《零班编年史》于《知音漫客》2011 年的 Vol.196 萌刊开始连载，于 2015 年 6 月 18 日在《知音漫客》第 367 期正式完结。一共 43 话。
+作者是唐尼[1]，关于作者，我有且只有看过他的这部《零班编年史》，通常意义上来说，一部有趣的四格漫画，是可以无限期连载下去的，而《零班编年史》在当时最大的对手就是《浪漫传说》，人气方面一直徘徊在 10-15 名之间，因此最终不得不被腰斩。
+在完结之时，他在贴吧如此说道
+大意是，他画漫画是为了玩，他更愿意去服务那 10%真正喜欢动漫的读者，而不是随波逐流去画小说改，后续会在同人圈以及网络独立漫画发展。
+
+因此作者不再靠画漫画为生，而是凭借兴趣继续画漫画，不过偶尔也会出来恰饭哈哈哈，如果大家喜欢《零班》并且希望作者继续更新的，可以去支持一下
+
+但是作者在漫客上连载完结以后，为了给一直以来支持《零班》的读者一个答案，转到微博上继续画画，但是由于版权问题，因此不能出现《零班》字样，改为 DLC，感兴趣的可以去微博支持一下作者。
+微博名称：红色有角三联星[2]
+
+由于转到微博上，因此没有足够的经费支持上色，因此第一话画面如下
+
+不过作者了却了大部分读者的心愿，那就是纸箱君的真面目！
+
+回到这个问题，为啥如今看不到《零班编年史》的漫画了呢？
+因为在《零班》完结后，人气越来越低，因此《零班》由于版权[3]逐渐开始在各个漫画平台开始下架
+直到 2020 年，《零班》最后的平台漫客栈也下架了零班，《零班》从此开始走向绝版
+加之以当时《零班》的人气，不足以出单行本，所以也就没有单行本的网上资源了。
+目前能看到这漫画的，也就是一些经常跳出小广告的盗版漫画网站，以及向我这样喜欢收集漫画资源的老粉自己在网盘保存的资源[4]
+既然聊到这了，就顺便重温一下《零班编年史》这部生不逢时的作品
+这部四格搞笑漫画的最大的几个特点就是，吐槽、neta、
+随便举几个 neta 例子，那时 neta 做的最好的还是银他妈呢，《零班》多多少少有点放不开，大家可以自己看看这几张图究竟隐藏了多少彩蛋（不看注释的话）
+龙珠太阳拳
+北斗神拳
+辛德普
+皮卡丘
+拯救地球学院的五斗
+比克
+植物大战僵尸
+鸣人和黑猫
+高达
+圣斗士和更木剑八
+鸣人的九尾
+龙珠战斗服
+saber
+SD 经典名言
+黑子和樱木
+柯南黑衣人
+赛亚人
+蜡笔小新
+奥特曼和小怪兽
+哆啦 A 梦
+柯南
+蜘蛛侠
+初号机暴走
+除了让资深漫迷喜闻乐见的 neta 外，本作的吐槽也是非常给力，顺便举两个例子
+在差生眼中，70 分也是高分，而且是天才级别
+
+比赛结束后，安慰自己
+
+戴上眼镜变了一个人
+
+纸箱下面还是纸箱
+
+纸箱的真面目就是还有一个纸箱
+
+利用纸箱的俯视图来作弊
+
+在纸箱上写字＝纹身
+
+而作为故事的主线，简单概括一下就是
+在一群全是女性的学院之中，有一个特殊的“零班”，这个班级是由五名性格各异的男性组成，分别是纸箱君、霍金、东少、安键和我们的主角秋时雨，在这所女子学院发生的日常校园故事。
+按理来说，这种日常漫应该是没有尽头的，只要读者愿意看，作者应该就能无限画下去，然而结果是，这部作品后期由于人气不佳，导致在 43 话直接腰斩。
+
+在知音漫客上连载的最后一话 43 话中，纸箱君终于脱下纸箱露出真面目，而且也大放豪言，要开创零班的新纪元…无数的读者也都在期待着，然而，又有多少人还记得这个约定呢？
+中国漫画中又有多少作品因为同样的原因留下一大堆坑未填的呢？
+《零班编年史》不会是第一个，也不会是最后一个，但是作者已经尽了自己最大的努力，给了读者很多后续的答案…但是仍在执着追求答案的读者，又还剩多少呢？
+阅读原文]]></summary>
+        <author>
+            <name>知乎日报</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[80% 的孩子不愿意在幼儿园拉便便，原因是什么？]]></title>
+        <id>https://daily.zhihu.com/story/9751322</id>
+        <link href="https://daily.zhihu.com/story/9751322"/>
+        <updated>2022-08-02T23:06:43.000Z</updated>
+        <summary type="html"><![CDATA[云朵，育儿育己，专注分享育儿经验，在书中成长！
+阅读原文
+
+孩子不愿意在幼儿园里如厕这种情况还挺普遍，娴宝当时也遇到了类似的问题。
+探究原因，首先，肯定不是老师不愿意让孩子如厕，特别是拉便便，擦屁屁不麻烦，孩子憋不住拉到裤子里更麻烦，一般幼儿园里的老师都会隔段时间主动提醒孩子如厕，那更多的原因来自孩子自身。
+
+具体有以下几点：
+1、幼儿园的马桶和家里的不一样
+很多小朋友在家应该都有属于自己的小坐便器。但现在很多幼儿园里的厕所都是半开放式的，会有一排小蹲坑和小便器，这和家里的厕所环境不一样。或许，在如厕这块，孩子也有像认床一样的认马桶。
+2、对马桶的一种恐惧心理
+孩子会害怕马桶？是的。“我害怕掉进马桶里，被水冲走”娴宝曾这么说过。马桶那个大大的空洞，对孩子而言，确实是个恐怖的存在。而且，当按下按钮水充满后又被吸走的现象，虽好玩却也会让孩子充满想象，里面是不是藏有魔法？！
+3、没有人帮忙
+上幼儿园的孩子多半在 3 岁左右，相对年龄还是小，对于独立如厕还没有完全学会。特别是幼儿园里的蹲坑及小便器，对孩子来说还是比较陌生的。如何正确使用，他们还不太懂，又不能像在家一样有爸爸妈妈的帮忙。
+4、害怕被围观
+出于安全考虑，幼儿园的厕所都是不封闭的，没有独立的隔间。这样的如厕环境，在孩子看来，上厕所等于被小朋友围观，心理上应该容易会觉得不好意思。小便时还好，若是拉臭臭，可能还会有其他孩子起哄说好臭，这些玩笑话也会伤到孩子脆弱的心理。
+
+那孩子不愿意在幼儿园里如厕，该怎么办呢？
+1、积极的如厕心理建设
+陌生的环境，陌生的厕所，对于刚入园的孩子来说，是需要时间适应的。
+如果有机会，可以带孩子在入园参观时，由大人陪着体验下幼儿园的厕所，这是挺好的体验方式。如果没有或机会很少，孩子又不乐意去，就可以多带孩子去下公共洗手间，蹲坑、坐便都尝试下，让孩子熟悉不同种类厕所的入厕方式。
+这个期间，也可以同孩子耐心地讲解下洗手间的环境、男厕女厕的区分等，让孩子在意识上有个认识，就是每个地方的厕所都会有所不同。
+2、提前模拟幼儿园如厕环节
+和幼儿园的作息一样，在如厕环节，也有一定的时间段，比如课前、课后、饭前等。所以，在家里的这些时间段，可以给孩子一个如厕的提示，提醒孩子不用等着急了才上厕所。这样可以很好地减轻孩子如厕时的心理压力。
+3、借助绘本故事加深孩子对如厕的认识
+孩子每次上完厕所，特别是拉臭臭后，我们会不自觉地“调侃”句：便便好臭啊，便便好脏啊。这类语言还是不要出现了，因为长期使用这样的语言描述便便，孩子容易对便便产生抗拒。
+我们可以借助绘本故事来学习如何科学描述和观察记录自己的便便，这里推荐绘本《糊糊、臭臭、便便、球球》、《是谁在嗯嗯我的头上》、《大便战争》、《都是放屁惹的祸》、《皮皮放屁屁》等。
+4、玩游戏训练蹲坑
+对于习惯坐便的宝宝，蹲坑最大的挑战，就是蹲得太累了。
+由于蹲坑需要腿部力量的支撑，我们可以通过和孩子玩 “小兔蹦蹦跳”、玩“下蹲起身”、“走独木桥”、“金鸡单脚独立”等游戏，训练孩子的平衡能力，积蓄一些腿部力量。
+5、穿对衣服，好上厕所
+这点其实也挺重要，像背带裤、紧身裤、带拉链和纽扣的裤子、公主长裙……这些需要在大人协助下才能很好穿脱的衣裤，还是不要穿进幼儿园了，徒增孩子如厕的麻烦，可以穿比较宽松容易穿脱的衣服，如运动衣裤等。
+
+能提前准备的准备，能提前训练的训练，毕竟如厕也是孩子入园生活中的一大部分。不过，有一种现象也可以提前预知，就是即便做好了万全的准备，但娃一句玩忘了，也会让老师和家长措手不及。所以，在孩子的书包里多备一套换洗的衣裤，少些责备，才是正确的解决之道。愿每个孩子都能快乐入园，快乐如厕，养成良好的生活习惯，开启愉快的幼儿园生活。
+~~~~
+^_^，我是蚕豆麻麻，家有萌娃一枚，育儿育己，分享育儿经验，个人成长感悟，陪娃中快乐成长！
+阅读原文]]></summary>
+        <author>
+            <name>知乎日报</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[世界上都有哪些奇妙的博物馆？]]></title>
+        <id>https://daily.zhihu.com/story/9751325</id>
+        <link href="https://daily.zhihu.com/story/9751325"/>
+        <updated>2022-08-02T23:06:35.000Z</updated>
+        <summary type="html"><![CDATA[老伯逃，兴趣多时间少，各种深入浅出
+阅读原文
+
+回答里面大部分是国外的博物馆，事实的确如此，国内的博物馆大多都很理所当然，很难给到人奇妙的感觉
+但我还是有可以介绍的——
+
+位于黄山山脚下的徽州雕刻博物馆
+博物馆面积不大，里面展示了徽州著名的木雕、竹雕、石雕等多种精美的文物
+进馆的时候因为是雨雪天，全场只有我一个人，讲解员的热情简直可以把这 0 度的天气给驱散掉，二话不说直接就把我领进馆内一对一地进行讲解（免费）
+一切都跟其他博物馆经验很相似，直到……
+
+大家看看这座明代的石罗汉像，有发现到一些不一样的地方吗？
+公布答案：文物的前面是没有玻璃的！
+「为什么这个展柜没有玻璃，是坏了吗？」
+「不是啊，这是特意弄成这个样子的。」
+「那不就会有游客去触摸吗？」
+「我们就是想让游客去摸去感受。」
+「？？？这是可以的吗？？？」
+「当然，你快摸着试试！不用担心，摸吧！」
+
+这还是我人生中第一次在博物馆里面摸到了真正的文物，而且是在官方讲解员的催促下进行的。
+虽然是官方允许，但还是有一点负罪感，在我的印象中，文物是一种永远在玻璃后面的物件，不能摸，也不应该摸。
+「石刻类的文物根本就可以用手去摸的，它们都是能经历千年的文物，本来就历经风雨，游客摸那么几下根本不算什么。我们这么设计，就是希望大家能更加亲近这些祖先留下来的宝藏。」
+
+能摸的文物当然不止那一个，展出的石刻是全部都能摸。讲解员在讲解的过程中，都会用手直接在文物上比划、指点，比起其他地方的博物馆，这样的方式使我觉得自己和文物特别地近。
+
+那我就不客气了，能摸的我都摸了（
+
+石刻不怕摸我是懂的，然而这里连木雕都是敞开的状态……
+
+
+我就像一个对文物起色心的魔鬼，对着每一件文物“上下其手”
+
+「如果人太多，特别是小孩子太多，你们会加玻璃不让游客去摸吗？」
+「顽皮的孩子是有的，但真的让游客去触摸文物时你会发现，大家都会很珍惜文物，并不会对它们进行破坏。」
+「那文物有过损伤吗，我指真的遇上了素质特别不好的人。」
+「没有的，就算有触摸过分的人，只要简单提点一下后，都会很尊重这些文物，行为也会好起来。」
+————————————————————————————————————————————————
+过去，我们到国内外的各种博物馆，见得最多除了玻璃，就是“不能触摸文物”等字样。同时，在一些户外的历史景点，“到此一游”似乎成为了必定会出现的牛皮藓。似乎大家总有一个潜意识——部分国人就是不配去参观这些历史遗址、历史文物，所以各种保护措施也越来越严格。
+听我外公说，过去他们到故宫时是可以进入太和殿，甚至坐到龙椅上的，现在的游客已经全部被推到大殿门外，连伸手进去拍照都不被允许。
+过去，素质不好的人的确很多，但，时间过去了很多，或者，参观博物馆、历史遗址的人已经变得越来越好了。
+我很感谢徽州雕刻博物馆对我们游客的信任，使我有了这次独一无二的博物馆之旅。也希望未来能有更多博物馆，可以尝试一下对游客开放一些接触文物的权限。
+所谓近距离接触，真的比不上零距离的。
+————————————————————————————————————————————————
+最后大家到黄山时别只顾着爬山，也来看看这个有意思的博物馆吧。
+阅读原文]]></summary>
+        <author>
+            <name>知乎日报</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[哪些人改变了汽车发展的历史？]]></title>
+        <id>https://daily.zhihu.com/story/9751327</id>
+        <link href="https://daily.zhihu.com/story/9751327"/>
+        <updated>2022-08-02T23:06:31.000Z</updated>
+        <summary type="html"><![CDATA[张抗抗，电动汽车
+阅读原文
+
+百年汽车历史经历了多次行业变革，彻底改变了人类社会面貌。如此广阔宏伟的汽车史，要问哪些人产生过重大影响，那真是太多了，一下子不知道从谁讲起。
+有一个技巧，可以帮我们快速锁定那些改变行业进程的人 —— 观察全球汽车制造商前十名，找到那些以创始人命名的公司，例如：
+丰田汽车：丰田喜一郎(1894-1952)
+福特汽车：亨利·福特(1863-1947)
+本田汽车：本田宗一郎(1906-1991)
+梅赛德斯奔驰戴姆勒集团：卡尔·本茨(1844-1929)、戈特利·布戴姆勒(1834-1900)
+标致雪铁龙：阿尔芒·标致(1849-1915)、安德烈·雪铁龙(1878-1935)
+以创始人名字命名企业：丰田喜一郎、亨利·福特、本田宗一郎、卡尔·本茨、阿尔芒·标致
+这些人，哪一个不是响当当的人物？就算不是汽车爱好者，你应该对他们的大名也有所耳闻吧？我就不浪费笔墨，重复他们的传奇事迹了。
+大众旗下品牌的创始人埃托里·布加迪、费迪南德.保时捷、W.O.宾利
+这些汽车巨头中，通用汽车(General Motors Company)的命名显得与众不同 —— 既没有「通用」牌汽车，也很少有人知道它的创始人是谁。
+今天我们就来讲讲通用汽车创始人的故事 —— 威廉（比利）杜兰特（William “Billy” Durant）.
+
+杜兰特出生于 1861 年，外公是木材行业巨头，也是密歇根州的州长，地位很高也不差钱。这位出身显赫的少年，偏偏长得也很帅。按咱们世俗的想法，这位公子哥将远离困难挫折，享尽荣华富贵、拥有令人艳羡的人生。
+
+不过天生爱折腾的杜兰特 17 岁便离开学校，从卖木材到卖药品、雪茄、保险，积累了最初的财富，于 1886 年贷款 2000 美元创立马车制造公司。凭借过人的商业洞察与经营能力，杜兰特成为美国最大的马车生产商，年销售额超过 200 万美元。
+至此…]]></summary>
+        <author>
+            <name>知乎日报</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[瞎扯 · 如何正确地吐槽]]></title>
+        <id>https://daily.zhihu.com/story/9751330</id>
+        <link href="https://daily.zhihu.com/story/9751330"/>
+        <updated>2022-08-02T23:06:27.000Z</updated>
+        <summary type="html"><![CDATA[方便面是否应该禁止上高铁？
+
+Getwin，君子不器。
+阅读原文
+
+高铁上有人吃方便面，可否把高铁取消了，貌似也说得通。
+阅读原文
+
+为什么苍蝇停下来总会搓手？它们在做什么？
+
+萌菌冰雪灵，《附身是个什么玩意？》漫画作者
+阅读原文
+
+饭前便后要洗手。
+阅读原文
+
+泡面除了直接煮，还有什么神仙吃法？
+
+根正苗红爱国青年
+阅读原文
+
+煮熟了、晾干、再煮熟、再晾干，做九转泡面。
+阅读原文
+
+如何向孩子解释「为什么小鸟从不睡懒觉？」，睡懒觉是人类特有的吗？
+
+星澜，CFP持证狗/向往券商/自由行小咖
+阅读原文
+
+因为睡懒觉的小鸟你听不到。
+阅读原文
+
+如果你有凝视远方10秒，便可瞬移到你凝视的位置，你会用它干什么?
+
+gamerHusky，欢迎，又来查成分啦？
+阅读原文
+
+再也没法听课写东西了……
+阅读原文]]></summary>
+        <author>
+            <name>知乎日报</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Show HN: Property Trends Scraped from Zillow]]></title>
+        <id>https://trends.pillr.io/</id>
+        <link href="https://trends.pillr.io/"/>
+        <updated>2022-08-02T23:03:37.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Simplicity of IRC]]></title>
+        <id>https://susam.net/maze/wall/simplicity-of-irc.html</id>
+        <link href="https://susam.net/maze/wall/simplicity-of-irc.html"/>
+        <updated>2022-08-02T23:01:05.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[I still love PHP and JavaScript]]></title>
+        <id>https://the.scapegoat.dev/why-i-love-php-and-javascript/</id>
+        <link href="https://the.scapegoat.dev/why-i-love-php-and-javascript/"/>
+        <updated>2022-08-02T22:27:29.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Ask HN: Working in Tech for Climate]]></title>
+        <id>https://news.ycombinator.com/item?id=32324592</id>
+        <link href="https://news.ycombinator.com/item?id=32324592"/>
+        <updated>2022-08-02T21:39:03.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Finley (YC W21) is building out sales for its capital markets software]]></title>
+        <id>https://www.finleycms.com/careers/</id>
+        <link href="https://www.finleycms.com/careers/"/>
+        <updated>2022-08-02T21:00:15.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Leaving Facebook/Meta was the best thing we could do for the community]]></title>
+        <id>https://trino.io/blog/2022/08/02/leaving-facebook-meta-best-for-trino.html</id>
+        <link href="https://trino.io/blog/2022/08/02/leaving-facebook-meta-best-for-trino.html"/>
+        <updated>2022-08-02T20:16:55.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Robinhood lays off 23% of staff]]></title>
+        <id>https://www.wsj.com/articles/robinhood-lays-off-23-of-staff-11659471011</id>
+        <link href="https://www.wsj.com/articles/robinhood-lays-off-23-of-staff-11659471011"/>
+        <updated>2022-08-02T20:11:47.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Does my data fit in RAM?]]></title>
+        <id>https://yourdatafitsinram.net/</id>
+        <link href="https://yourdatafitsinram.net/"/>
+        <updated>2022-08-02T19:49:13.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[20B-parameter Alexa model sets new marks in few-shot learning]]></title>
+        <id>https://www.amazon.science/blog/20b-parameter-alexa-model-sets-new-marks-in-few-shot-learning</id>
+        <link href="https://www.amazon.science/blog/20b-parameter-alexa-model-sets-new-marks-in-few-shot-learning"/>
+        <updated>2022-08-02T18:52:30.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[North Korean Tactics (2020) [pdf]]]></title>
+        <id>https://irp.fas.org/doddir/army/atp7-100-2.pdf</id>
+        <link href="https://irp.fas.org/doddir/army/atp7-100-2.pdf"/>
+        <updated>2022-08-02T18:39:59.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Outside the safe operating space of a new planetary boundary for PFAS]]></title>
+        <id>https://pubs.acs.org/doi/10.1021/acs.est.2c02765</id>
+        <link href="https://pubs.acs.org/doi/10.1021/acs.est.2c02765"/>
+        <updated>2022-08-02T18:29:09.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[DALL·E 2 prompt book [pdf]]]></title>
+        <id>http://dallery.gallery/wp-content/uploads/2022/07/The-DALL%C2%B7E-2-prompt-book-v1.02.pdf</id>
+        <link href="http://dallery.gallery/wp-content/uploads/2022/07/The-DALL%C2%B7E-2-prompt-book-v1.02.pdf"/>
+        <updated>2022-08-02T18:14:03.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Chinchilla's Wild Implications]]></title>
+        <id>https://www.lesswrong.com/posts/6Fpvch8RR29qLEWNH/chinchilla-s-wild-implications</id>
+        <link href="https://www.lesswrong.com/posts/6Fpvch8RR29qLEWNH/chinchilla-s-wild-implications"/>
+        <updated>2022-08-02T17:14:23.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Introducing multitasking to Arduino]]></title>
+        <id>https://blog.arduino.cc/2022/08/02/introducing-multitasking-to-arduino/</id>
+        <link href="https://blog.arduino.cc/2022/08/02/introducing-multitasking-to-arduino/"/>
+        <updated>2022-08-02T16:22:49.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Elixir Livebook now as a desktop app]]></title>
+        <id>https://news.livebook.dev/introducing-the-livebook-desktop-app-4C8dpu</id>
+        <link href="https://news.livebook.dev/introducing-the-livebook-desktop-app-4C8dpu"/>
+        <updated>2022-08-02T16:08:36.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[I used DALL·E 2 to generate a logo]]></title>
+        <id>https://jacobmartins.com/posts/how-i-used-dalle2-to-generate-the-logo-for-octosql/</id>
+        <link href="https://jacobmartins.com/posts/how-i-used-dalle2-to-generate-the-logo-for-octosql/"/>
+        <updated>2022-08-02T16:06:13.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Future trains could provide carbon capture]]></title>
+        <id>https://spectrum.ieee.org/carbon-capture-2657738131</id>
+        <link href="https://spectrum.ieee.org/carbon-capture-2657738131"/>
+        <updated>2022-08-02T15:37:44.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Use one big server]]></title>
+        <id>https://specbranch.com/posts/one-big-server/</id>
+        <link href="https://specbranch.com/posts/one-big-server/"/>
+        <updated>2022-08-02T14:43:38.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Bumblebees kept in isolation make up for it by being more social later]]></title>
+        <id>https://www.princeton.edu/news/2022/07/12/bumblebees-kept-isolation-make-it-being-more-social-later</id>
+        <link href="https://www.princeton.edu/news/2022/07/12/bumblebees-kept-isolation-make-it-being-more-social-later"/>
+        <updated>2022-08-02T13:23:41.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Physicists come close to resolving the black hole information paradox (2020)]]></title>
+        <id>https://www.quantamagazine.org/the-most-famous-paradox-in-physics-nears-its-end-20201029/</id>
+        <link href="https://www.quantamagazine.org/the-most-famous-paradox-in-physics-nears-its-end-20201029/"/>
+        <updated>2022-08-02T13:18:09.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Airflow's Problem]]></title>
+        <id>https://stkbailey.substack.com/p/airflows-problem</id>
+        <link href="https://stkbailey.substack.com/p/airflows-problem"/>
+        <updated>2022-08-02T12:10:45.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Using Firecracker and Go to run short, untrusted code execution jobs (2021)]]></title>
+        <id>https://stanislas.blog/2021/08/firecracker/</id>
+        <link href="https://stanislas.blog/2021/08/firecracker/"/>
+        <updated>2022-08-02T12:01:53.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[eBPF、sidecars以及服务网格展望]]></title>
         <id>http://weekly.dockone.io/article/2434921</id>
@@ -825,6 +1379,16 @@ The African Elephant Status Report 2016 estimated a continental population of 41
         </author>
     </entry>
     <entry>
+        <title type="html"><![CDATA[The shadowy world of umbral calculus [video]]]></title>
+        <id>https://www.youtube.com/watch?v=D0EUFP7-P1M</id>
+        <link href="https://www.youtube.com/watch?v=D0EUFP7-P1M"/>
+        <updated>2022-07-31T22:15:49.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[Australian activist can't use encrypted apps, must let police access phone]]></title>
         <id>https://www.abc.net.au/news/science/2022-08-01/blockade-australia-technology-bail-conditions-encrypted-apps/101277038</id>
         <link href="https://www.abc.net.au/news/science/2022-08-01/blockade-australia-technology-bail-conditions-encrypted-apps/101277038"/>
@@ -935,6 +1499,16 @@ The African Elephant Status Report 2016 estimated a continental population of 41
         </author>
     </entry>
     <entry>
+        <title type="html"><![CDATA[The disproportionate influence of early tech decisions]]></title>
+        <id>https://brandur.org/fragments/early-tech-decisions</id>
+        <link href="https://brandur.org/fragments/early-tech-decisions"/>
+        <updated>2022-07-31T16:49:47.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[The Elusive Origin of Zero]]></title>
         <id>https://www.scientificamerican.com/article/the-elusive-origin-of-zero/</id>
         <link href="https://www.scientificamerican.com/article/the-elusive-origin-of-zero/"/>
@@ -955,6 +1529,16 @@ The African Elephant Status Report 2016 estimated a continental population of 41
         </author>
     </entry>
     <entry>
+        <title type="html"><![CDATA[What's wrong with how we train, hire, and motivate programmers [video]]]></title>
+        <id>https://danielbmarkham.com/the-rant/</id>
+        <link href="https://danielbmarkham.com/the-rant/"/>
+        <updated>2022-07-31T15:44:17.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[New Ghostscript PDF interpreter]]></title>
         <id>https://www.ghostscript.com/blog/pdfi.html</id>
         <link href="https://www.ghostscript.com/blog/pdfi.html"/>
@@ -969,6 +1553,26 @@ The African Elephant Status Report 2016 estimated a continental population of 41
         <id>https://www.apa.org/news/press/releases/2022/07/thoughts-mind-wander</id>
         <link href="https://www.apa.org/news/press/releases/2022/07/thoughts-mind-wander"/>
         <updated>2022-07-31T15:37:27.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Alternative wonders of the world]]></title>
+        <id>https://twitter.com/culturaltutor/status/1553472360434515973</id>
+        <link href="https://twitter.com/culturaltutor/status/1553472360434515973"/>
+        <updated>2022-07-31T14:35:41.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[PRR – a terminal tool for managing Pull Requests on GitHub]]></title>
+        <id>https://dxuuu.xyz/prr.html</id>
+        <link href="https://dxuuu.xyz/prr.html"/>
+        <updated>2022-07-31T14:21:43.000Z</updated>
         <summary type="html"><![CDATA[Comments]]></summary>
         <author>
             <name>Hacker News</name>
@@ -1009,6 +1613,26 @@ The African Elephant Status Report 2016 estimated a continental population of 41
         <id>http://web.archive.org/web/20020907183212/http://www-groups.dcs.st-and.ac.uk/history/HistTopics/Light_1.html</id>
         <link href="http://web.archive.org/web/20020907183212/http://www-groups.dcs.st-and.ac.uk/history/HistTopics/Light_1.html"/>
         <updated>2022-07-31T10:53:28.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[The high-stakes race to engineer new psychedelic drugs]]></title>
+        <id>https://www.wired.com/story/race-to-engineer-new-psychedelic-drugs/</id>
+        <link href="https://www.wired.com/story/race-to-engineer-new-psychedelic-drugs/"/>
+        <updated>2022-07-31T10:24:26.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[PEP 505 – None-aware operators (2015)]]></title>
+        <id>https://peps.python.org/pep-0505/</id>
+        <link href="https://peps.python.org/pep-0505/"/>
+        <updated>2022-07-31T10:09:53.000Z</updated>
         <summary type="html"><![CDATA[Comments]]></summary>
         <author>
             <name>Hacker News</name>
@@ -14642,458 +15266,6 @@ Jarvis Tse，特别爱吃云吞面
         <id>https://www.axios.com/2022/07/04/local-newspapers-news-deserts</id>
         <link href="https://www.axios.com/2022/07/04/local-newspapers-news-deserts"/>
         <updated>2022-07-04T13:43:43.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Police CyberAlarm Uses Alarming Cryptography]]></title>
-        <id>https://scottarc.blog/2022/07/04/police-cyberalarm-uses-alarming-cryptography/</id>
-        <link href="https://scottarc.blog/2022/07/04/police-cyberalarm-uses-alarming-cryptography/"/>
-        <updated>2022-07-04T11:34:17.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[A Journey into the Linux Scheduler]]></title>
-        <id>https://blog.maxgio.me/posts/linux-scheduler-journey/</id>
-        <link href="https://blog.maxgio.me/posts/linux-scheduler-journey/"/>
-        <updated>2022-07-04T11:31:59.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[The New American Micro-SaaS Dream]]></title>
-        <id>https://microfounder.com/blog/american-micro-saas-dream</id>
-        <link href="https://microfounder.com/blog/american-micro-saas-dream"/>
-        <updated>2022-07-04T11:00:56.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[I can’t believe that I can prove that it can sort]]></title>
-        <id>https://blog.adacore.com/i-cant-believe-that-i-can-prove-that-it-can-sort</id>
-        <link href="https://blog.adacore.com/i-cant-believe-that-i-can-prove-that-it-can-sort"/>
-        <updated>2022-07-04T10:24:38.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[A phone app called Lumenate claims to alter the brain’s rhythms (2021)]]></title>
-        <id>https://www.vice.com/en/article/g5b497/i-tried-lumenate-app-that-makes-you-trip-review</id>
-        <link href="https://www.vice.com/en/article/g5b497/i-tried-lumenate-app-that-makes-you-trip-review"/>
-        <updated>2022-07-04T08:01:45.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Number of pubs in England and Wales falls to record low]]></title>
-        <id>https://www.theguardian.com/business/2022/jul/04/number-of-pubs-in-england-and-wales-falls-to-record-low-covid-19-soaring-costs</id>
-        <link href="https://www.theguardian.com/business/2022/jul/04/number-of-pubs-in-england-and-wales-falls-to-record-low-covid-19-soaring-costs"/>
-        <updated>2022-07-04T07:47:30.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[The Sky Thief (2021)]]></title>
-        <id>https://www.rollingstone.com/culture/culture-features/beebo-russell-seattle-plane-theft-true-story-1187023/</id>
-        <link href="https://www.rollingstone.com/culture/culture-features/beebo-russell-seattle-plane-theft-true-story-1187023/"/>
-        <updated>2022-07-04T06:35:45.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Goodbye Medium, Hello Ghost: Why my blog is migrating from Medium to Ghost]]></title>
-        <id>https://cryptofireside.com/goodbye-medium-hello-ghost-57c9b6d7349e</id>
-        <link href="https://cryptofireside.com/goodbye-medium-hello-ghost-57c9b6d7349e"/>
-        <updated>2022-07-04T01:30:34.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Building a Sevenesque Roadster]]></title>
-        <id>http://sevenesque.com/</id>
-        <link href="http://sevenesque.com/"/>
-        <updated>2022-07-04T00:46:30.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[绝大多数中国人乳糖不耐，为什么无乳糖奶在中国并不普及？]]></title>
-        <id>https://daily.zhihu.com/story/9750251</id>
-        <link href="https://daily.zhihu.com/story/9750251"/>
-        <updated>2022-07-03T23:36:57.000Z</updated>
-        <summary type="html"><![CDATA[钱程，技术型吃货
-阅读原文
-
-我之前给不少乳糖不耐受的小伙伴们推荐过去乳糖牛奶（舒化奶），但最终真的被采纳并长期喝的人寥寥无几……
-据我分析原因有以下几个：
-1. 根本不知道有「去乳糖牛奶」这个品类
-感觉这个品类的消费者教育是不够的。而且早期宣传方向可能比较偏中老年人向。所以在我推荐的时候，画风一般是这样的：
-「其实你可以试试去乳糖牛奶啊。」
-「啊？还有去乳糖牛奶？」
-「有啊，超市里很常见的 舒化奶 就是一种去乳糖牛奶」
-「舒化奶不是给老年人喝的吗？这东西是去乳糖牛奶？从来没注意过哎！」
-而且目前市场上这个赛道的厂商不多，基本上除了两大巨头以外别的品牌很少，所以消费者的选择也不多。
-2. 真的去试了，但口味接受不能
-很多人试着喝了去乳糖牛奶，会觉得「味道很奇怪」。用我朋友的话说，有一种「假甜」，感觉像里面掺了一些甜味剂，奶味也没那么浓了。
-的确，市面上常见的去乳糖牛奶，是采用酶解法制作而成的。
-具体方法就是在制作过程中添加乳糖酶，将乳糖分解成葡萄糖和半乳糖。这样喝下去以后，葡萄糖和半乳糖都能很方便地被吸收，就不会有乳糖不耐受的问题了。
-
-但问题是，乳糖本身的甜度是很低的，但作为分解产物的葡萄糖和半乳糖，甜度都比乳糖高，而且高不少！
-
-所以这就造成了去乳糖牛奶喝着会有一股甜味，有的人可能喜欢，有的人就接受不能。
-其实也有技术能解决这一点，比如膜过滤。先用膜过滤除掉大部分的乳糖，再加乳糖酶，这样最终做出来的牛奶就完全没有甜味。但目前这个在国内还不是特别普及。
-很久以前写过关于这个技术的文章：
-钱程：乳糖不耐受怎么办？关于【去乳糖牛奶】的技术型科普
-3. 觉得经过加工、有添加、不是鲜奶、不天然
-目前市面大部分去乳糖牛奶都是常温奶，是经过了 UHT 超高温灭菌以后，利乐包常温保存的那种。常温奶相对于巴氏杀菌的低温奶（鲜奶），损失了一部分的口感，营养价值也略有降低（但影响不大）。
-所以，也有一部分人喝惯了低温奶，对常温奶就不是特别感冒。
-目前国内的去乳糖牛奶，由于添加了乳糖酶，有的品类可能还会加一些胶体（比如结冷胶），以及一些营养强化剂等，所以无法归入「纯牛奶」大类，只能归入法规标准中「调制乳」大类。
-因此，一部分人可能会觉得调制乳的配料表「不够简单，不够天然」，也不会去考虑。
-4. 可替代选择也不少
-虽然说中国人乳糖不耐受比例高，但其实大部分乳糖不耐受者也不是特别严重的那种，少量喝牛奶问题不大，只有大量空腹喝牛奶才会有胀气腹泻之类的症状（不然为啥鲜奶做的奶茶，拿铁很多人都爱喝而且非常热衷？）
-对于这部分人，本来就可以正常喝一些牛奶，没有必须要喝「去乳糖牛奶」的需求。
-就算是喝牛奶真的不舒服，他们可以选择喝酸奶。酸奶中的一部分乳糖被乳酸菌分解了，残留的乳糖会少一些，所以它相当于一种天然的「低乳糖乳制品」。大部分乳糖不耐受者适当喝一些酸奶，不会有太强烈的症状。
-所以市场上本来就存在很多替代品，「去乳糖牛奶」很难形成非常强的竞争优势。
-最后希望国内市场上能出现更多采用新技术、新工艺的「去乳糖牛奶」，丰富消费者的选择。
-阅读原文]]></summary>
-        <author>
-            <name>知乎日报</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Is the Ride over for Uber?]]></title>
-        <id>https://www.smartcompany.com.au/opinion/adam-schwab-is-the-ride-over-for-uber/</id>
-        <link href="https://www.smartcompany.com.au/opinion/adam-schwab-is-the-ride-over-for-uber/"/>
-        <updated>2022-07-03T23:27:55.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Why nobody ever wins the car at the mall (2018)]]></title>
-        <id>https://thehustle.co/why-nobody-ever-wins-the-mall-car-giveaway/</id>
-        <link href="https://thehustle.co/why-nobody-ever-wins-the-mall-car-giveaway/"/>
-        <updated>2022-07-03T23:20:09.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[研究嫦娥五号月壤用到了哪些高精尖科技，研究月壤与研究地球有什么关联？]]></title>
-        <id>https://daily.zhihu.com/story/9750260</id>
-        <link href="https://daily.zhihu.com/story/9750260"/>
-        <updated>2022-07-03T23:06:13.000Z</updated>
-        <summary type="html"><![CDATA[李献华
-阅读原文
-
-谢邀，知乎，北京科协。大家好，我是中国科学院地质与地球物理研究所、中国科学院院士李献华。
-机会总是留给准备好了的人，对于这次快速完成月壤定年研究，是因为我们的团队时刻准备着。我们团队领衔建设了中国科学院地质与地球物理研究所的离子探针实验室，研发出多项国际领先水平的微区原位同位素定年新技术、新方法。此次研究采用的我们自主研发的超高空间分辨率的定年和同位素分析技术均处于国际领先水平，这项技术也为珍贵地外样品年代学等研究提供了新的技术方法。
-
-嫦娥五号月壤研究主要用了以下几种方法：基于超高空间分辨率铀 - 铅（U-Pb）定年技术，对玄武岩岩屑中 50 余颗富铀矿物进行了年龄测定；基于超高空间分辨率同位素分析技术，证明了形成嫦娥五号玄武岩的月幔源区并不富集“克里普组分”；基于纳米离子探针分析技术，测定了样品中熔体包裹体和磷灰石的水含量和氢同位素组成。
-嫦娥五号月壤样品（玄武岩岩屑）的显微图像
-要确定一块岩石的绝对年龄，最精确的方法是放射性同位素定年，最好的样品就是含锆的矿物颗粒。之所以要寻找含锆矿物，是因为这种矿物形成时富集铀，但不含铅，因此离子探针测得的铅基本上都是放射成因的，可以获得可靠的同位素定年结果，因此寻找富铀的含锆矿物是确定年龄的重要环节。
-由于月球几乎是真空环境，表层月壤因为多次撞击而细碎。嫦娥五号月壤样品平均粒度大约只有 50 微米，只有少数岩屑粗一些，大约有几百微米，个别达到毫米级。我们的科研人员首先要在岩屑中寻找最适合铀 - 铅同位素定年的含铀矿物。这些矿物非常细小，一般只有 3-4 微米，很少超过 7、8 微米。精确测定这么细小矿物的年龄非常困难，需要用非常高精尖的测定技术。
-具体来说就是使用离子探针，将聚焦的一次离子束“打”到目标矿物上，对溅射出代表样品信息的二次离子进行分析。这个就像打靶一样，如果打到旁边了，将影响分析的精度和准确度。所…]]></summary>
-        <author>
-            <name>知乎日报</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[《甄嬛传》皇后「贤德大度」，为什么却得不到皇上的宠爱？]]></title>
-        <id>https://daily.zhihu.com/story/9750270</id>
-        <link href="https://daily.zhihu.com/story/9750270"/>
-        <updated>2022-07-03T23:06:07.000Z</updated>
-        <summary type="html"><![CDATA[悦微评剧，公众号：悦微评剧
-阅读原文
-
-皇后的问题在于过分自信。
-她总以为自己特别看得透男人，喜欢总结男人这些“不堪”的共性，还以此为理论依据讨好四大爷，结果却适得其反。
-01
-翊坤宫里的一场闹剧，让整个后宫的氛围瞬间降到了冰点。
-甄嬛小产了，华妃降位了，四大爷接连没了两个孩子，一个月都兴致恹恹不肯翻牌。
-
-后宫争宠一靠自身实力，二靠对手衬托。
-甄嬛和华妃的沉寂期就是皇后的大好机会。
-既然两个对手因为“不懂事”而惹恼了四大爷，那皇后若是能趁机彰显自己的“懂事”，就算换不来爱情，起码也能换来四大爷的信任和尊重吧！
-于是，皇后积极的排兵布阵，誓要夺回正室地位。
-但结果忙活了半天，还是只能眼见着甄嬛和华妃接连复宠，自己与四大爷的关系非但没有拉进，反而越来越不交心了。
-
-如此“贤德”的皇后究竟哪里得罪了四大爷？
-这还得从一场谈话开始说起。
-甄嬛刚小产那会，四大爷满心的苦闷无处诉说，只能经常到正经媳妇皇后宫里溜达溜达。
-可俗话说，伴君如伴虎。
-皇上心情不好的时候才是最考验嫔妃水平的时候。
-
-低水平的嫔妃，比如“巨人之母”齐二哈，三五句话就能让四大爷的心情雪上加霜；
-中等水平的嫔妃，比如苏妃，提着脑袋小心伺候总能等到四大爷自愈，让时间冲散一切；
-而高水平的嫔妃，比如甄嬛，能把“怂”字解释的天花乱坠，句句宽慰到四大爷的心坎上。
-那皇后算哪个段位呢？
-从四大爷拂袖而去的结果看，那肯定是跟齐二哈一个档次的。
-
-连最忠实的跟班剪秋都看不下去了，问她为什么哪壶不开提哪壶？
-可皇后却自信满满的甩出了一句标准句式：男人哪有不喜欢新鲜的。
-乍一看，皇后这话也没什么错。
-四大爷三宫六院，宠幸的嫔妃一个比一个年轻，自然是喜欢新鲜的。
-
-但她不明白男人并非完全冷漠无情的，贪新鲜也要正合时宜才行。
-咱四大爷虽然论是朝政来，是个六亲不认的狠角色；
-对女孩子，绝不是个喜新厌旧翻脸不认人的老色批。
-安陵容小产后，康…]]></summary>
-        <author>
-            <name>知乎日报</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[如果发明一种机器学习难以战胜人类的棋类规则，这种规则应该具备什么样的特点？]]></title>
-        <id>https://daily.zhihu.com/story/9750272</id>
-        <link href="https://daily.zhihu.com/story/9750272"/>
-        <updated>2022-07-03T23:06:01.000Z</updated>
-        <summary type="html"><![CDATA[宜城漫士，茶园咸鱼
-阅读原文
-
-这个问题乍一看是一个很荒唐的问题，但仔细咂摸有很多值得玩味的东西。
-首先需要在问题定义里明晰这样一件事：机器学习战胜人类很困难，这里的困难到底包不包含实现（Implementation）层面的的难度？
-很多高赞回答的本质其实都是在这个维度里设置“恶心”，比如让状态的记录变得棘手、棋盘的形状变得不规则、提高维度、增加环境的不确定性等等，其实充其量只是说“恶心恶心程序员”而已。这样设置规则本质上提升的是“代码复杂性”而不是问题本身的“计算复杂性”。代码复杂性诚然是 AI 进军一个具体问题的重要阻碍，但算不上是本质的阻碍。AlphaZero 乃至 MuZero 之类的工作已经表明，只要可以用 tensor 表征整个游戏，终究可以自己学着怎么理解这个游戏并优化策略的，都不是个事儿。
-所以，我认为这个问题更重要、更本质的方面应当是：假设我们有一个理想中的 Oracle，可以自动完成所有现实中代码层面的复杂难题，从机器学习（强化学习、深度学习等等）这个方法本质性的能力边界出发，是否可以找到一个简单的实例，使得解决这个问题（或者说达到与人类媲美的程度）是一个从计算本质上来讲困难的事情？
-“从计算上来讲本质困难的事情”在理论计算机科学中有一个现成的概念，就是 NP Hard 问题。大意是说，如果存在一个传统图灵机算法，可以在多项式于这个问题规模的时间里解决这个问题，那么就可以在多项式时间里解决任何一个非确定性图灵机(Non-deterministic Turing Machine)在多项式时间里解决的问题（NP problem）。
-说起来很抽象，举个 NP Hard 最简单的例子之一：
-Subset Sum 问题：给 n 个数字，判断是否可以把这 N 个数字分成两个集合，使得两边的和是相等的。
-这个问题看似简单，实则在复杂性的本质上，不存在比穷举所有
-
-个非…]]></summary>
-        <author>
-            <name>知乎日报</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[混动车真的好吗？维修保养比油车便宜吗？]]></title>
-        <id>https://daily.zhihu.com/story/9750281</id>
-        <link href="https://daily.zhihu.com/story/9750281"/>
-        <updated>2022-07-03T23:05:52.000Z</updated>
-        <summary type="html"><![CDATA[天马行空，车企资深工程师：读过研、留过洋，讲过课，带过言
-阅读原文
-
-先聊保养，混动车的保养是和燃油车差不多，甚至更便宜
-前提：车辆都是正常车辆，都是正常使用，处于恶劣工况或有质量问题的不在讨论范围。
-
-发动机相关保养周期可以适当延长。其逻辑在于混动车型的变工况主要依靠电机驱动，发动机一直处于稳定工况，而且发动机处于间歇启动的状态，开 1 万 km，混动车型发动机实际运行时间可能比燃油车少 20%-30%（估计），而且避开了对发动机非常不友好的大负荷和极低负荷。所以理论上更换机油、机滤的周期可以适当延长，比如 5000km/ 半年的变成 1 万 km/ 半年，1 万 km/ 半年变成 1.3 万 km/ 半年，有一些说明书会写明白，有一些说明说依然采用和燃油车一样的策略。与此同时，火花塞的保养周期可以大幅度延长，传统发动机负荷一直变化，平时驾驶比较激烈对火花塞考验较大，因此有些车企要求 2 万 km 换火花塞，或者 4 万 km 换。而混动工况很温和，对火花塞影响很小，更换火花塞周期可以延长，比如 8 万 km 检查一次等等。其他汽油滤清器、空气滤清器等保养周期和费用和燃油车类似。
-变速箱油更换周期可以延长。一般传统燃油车变速箱一直处于频繁换挡工况，即使有一些车企宣称是免维护变速箱，实际开 10 万 km 以上依然建议更换变速箱油，而更换变速箱油需要 1500-2000 元；混动车变速箱结构简单，比如 1 档 DHT，2 档 DHT，E-CVT 等，动力离合频率和换挡频率远低于燃油车，因此一般混动车型的变速箱保养周期更长。同样驾驶条件下，假如燃油车 6 万 km 需要更换变速箱油，那么混动车 10 万 km 更换也没有问题。
-
-刹车片更换周期更长，甚至生命周期不用更换。这点我深有感触，混动车型的制动主要靠电机反拖，这个制动力已经能够满足日常驾驶的绝大多数工况，因此刹车片基本不会介入。我的燃油车刹车片 10 万 km 换过，而家里的混动车开 20 万 km 刹车片依然有 4mm 的厚度，估计车开到报废也不用换。
-小电瓶非常耐用。传统燃油车的蓄电池是需要更换的，一般开 3-6 年需要更换一个，如果带启停功能的电瓶 BMS 控制策略做的不好，更换频率也许会更快。但是混动的小电瓶只是用来保证一些 12V 电器的正常工作，比如车门解锁等等，对发动机启动等等都是依靠动力电池，而且动力电池能够给小电瓶充电，因此小电瓶会非常耐用。
-混动相关零件理论上不需要保养。其实大家最关心的是混动多出来的系统，这部分在理想状态下是免维护的，比如电机、动力电池、逆变器等等，都不需要保养。
-再聊维修，混动的维修是非常贵的
-前面说的保养都处于正常的状态，混动保养是肯定比燃油车便宜。但是维修就反过来了。
-一个核心的逻辑：同等技术水平和质量管理水平下，越复杂的设备出现问题的概率必然高。
-混动系统的燃油动力部分受到工况的影响，质量会比燃油车好一点，但是多出来的混动系统结构复杂，且比较娇贵，出现问题的概率是比燃油车高的。以前我们燃油车出现问题怎么办？可以送去 4S 店修，很贵，也可以送到外面维修厂修，很便宜。因为燃油车大差不差，修理厂也掌握了经验和技术。但是混动的三电板块各家方案都不一样，都是专用件，而且涉及大量控制策略，副厂件安全隐患很高，传统修理厂是难以解决的，只能去 4S 店修理。一般厂家对三电板块提供 6 年甚至 10 年的质保，在质保期内大家不用担心，但是出了质保维修价格是很贵的。
-
-举个例子，混动电池 4S 店报价一般 1 万 -4 万，根据不同品牌容量有不同，比如下图奔驰 48V 轻混的小电池就要 4 万多（坑），丰田的电池 4S 店大概报价 2 万，比亚迪的电池容量极大，更换维修价格更贵。
-
-这个是一个风险点，不过现阶段消费者不需要过多在意，因为混动车型动力电池都提供比较长的质保，在质保期内出现问题厂家是兜底的。
-但是过了质保期怎么处理现在还不好说，因为市面上出了质保期的混动车还很少。。
-阅读原文]]></summary>
-        <author>
-            <name>知乎日报</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[瞎扯 · 如何正确地吐槽]]></title>
-        <id>https://daily.zhihu.com/story/9750300</id>
-        <link href="https://daily.zhihu.com/story/9750300"/>
-        <updated>2022-07-03T23:05:46.000Z</updated>
-        <summary type="html"><![CDATA[唱歌真的是七分天赋三分后天吗？
-
-杨水龙，喝琴不弹酒，弹酒不喝琴的吉他教师
-阅读原文
-
-7分天赋，3分后天。剩下90分就交给声乐老师了
-阅读原文
-
-两只猫猫打架应该介入嘛？
-
-阿公的大太阳
-阅读原文
-
-我一般是在旁边拱火的那种
-阅读原文
-
-租客失联房主上门发现房子已被卖，屋内住着陌生一家 4 口，案件后续发展如何？这种情况该如何维权？
-
-匿名用户
-阅读原文
-
-很震惊吗？
-千年以前，顾赵氏就把租来的茶馆抵押了呀。
-一看就是电视剧看少了，所以才震惊。
-阅读原文
-
-为什么蚂蚁怎么都摔不死？
-
-回眸一笑倒苍生，睡午觉大能力者
-阅读原文
-
-因为蚂蚁竞走十年了，身体很棒。
-阅读原文
-
-如果把你的一辈子拍成电视剧，你会取一个 什么名字？
-
-三观是什么，工程师
-阅读原文
-
-凡人传
-阅读原文]]></summary>
-        <author>
-            <name>知乎日报</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Gitlab Architecture Overview]]></title>
-        <id>https://docs.gitlab.com/ee/development/architecture.html</id>
-        <link href="https://docs.gitlab.com/ee/development/architecture.html"/>
-        <updated>2022-07-03T22:52:09.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Quantum mechanics and Tomb Raider (2007)]]></title>
-        <id>https://terrytao.wordpress.com/2007/02/26/quantum-mechanics-and-tomb-raider/</id>
-        <link href="https://terrytao.wordpress.com/2007/02/26/quantum-mechanics-and-tomb-raider/"/>
-        <updated>2022-07-03T20:47:49.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Pirate Library Mirror: Preserving 7TB of books (that are not in Libgen)]]></title>
-        <id>http://pilimi.org/blog-introducing.html</id>
-        <link href="http://pilimi.org/blog-introducing.html"/>
-        <updated>2022-07-03T20:39:29.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Understanding how others relate to you]]></title>
-        <id>https://www.bmj.com/content/377/bmj.o1548</id>
-        <link href="https://www.bmj.com/content/377/bmj.o1548"/>
-        <updated>2022-07-03T20:28:16.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[HNNotify.xyz: Subscribe to Your Hacker News Feed]]></title>
-        <id>https://hnnotify.xyz/</id>
-        <link href="https://hnnotify.xyz/"/>
-        <updated>2022-07-03T19:32:09.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Zetk: CLI utilities, fzf-based scripts, C++ lib for managing your Zettelkasten]]></title>
-        <id>https://gitlab.com/andrejr/zetk</id>
-        <link href="https://gitlab.com/andrejr/zetk"/>
-        <updated>2022-07-03T18:38:57.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Introduction to Computer Vision]]></title>
-        <id>https://blog.theos.ai/articles/introduction-to-computer-vision</id>
-        <link href="https://blog.theos.ai/articles/introduction-to-computer-vision"/>
-        <updated>2022-07-03T18:22:25.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Red Engine: modern scheduling framework for Python applications]]></title>
-        <id>https://red-engine.readthedocs.io/en/stable/index.html</id>
-        <link href="https://red-engine.readthedocs.io/en/stable/index.html"/>
-        <updated>2022-07-03T17:27:44.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Patterns (YC S21) Is hiring devs to help build low-code data modeling tools]]></title>
-        <id>https://www.ycombinator.com/companies/patterns</id>
-        <link href="https://www.ycombinator.com/companies/patterns"/>
-        <updated>2022-07-03T17:00:57.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Visualizing quantum mechanics in an interactive simulation]]></title>
-        <id>https://lab.quantumflytrap.com/lab</id>
-        <link href="https://lab.quantumflytrap.com/lab"/>
-        <updated>2022-07-03T15:10:38.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Why does iron deficiency cause fatigue, even in the absence of anemia?]]></title>
-        <id>https://twitter.com/tony_breu/status/1543311124560592898</id>
-        <link href="https://twitter.com/tony_breu/status/1543311124560592898"/>
-        <updated>2022-07-03T14:50:02.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[SwiftUI for Mac 2022]]></title>
-        <id>https://troz.net/post/2022/swiftui-mac-2022/</id>
-        <link href="https://troz.net/post/2022/swiftui-mac-2022/"/>
-        <updated>2022-07-03T14:32:18.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[The Sinking of Voyager]]></title>
-        <id>https://www.coppolacomment.com/2022/07/the-sinking-of-voyager.html</id>
-        <link href="https://www.coppolacomment.com/2022/07/the-sinking-of-voyager.html"/>
-        <updated>2022-07-03T13:56:24.000Z</updated>
         <summary type="html"><![CDATA[Comments]]></summary>
         <author>
             <name>Hacker News</name>
