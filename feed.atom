@@ -2,10 +2,501 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://7qi7qi.github.io/RSSFeeder/index.html</id>
     <title>osmos::feed</title>
-    <updated>2022-08-25T01:43:38.843Z</updated>
+    <updated>2022-08-26T01:45:11.787Z</updated>
     <generator>osmosfeed 1.15.1</generator>
     <link rel="alternate" href="https://7qi7qi.github.io/RSSFeeder/index.html"/>
     <link rel="self" href="https://7qi7qi.github.io/RSSFeeder/feed.atom"/>
+    <entry>
+        <title type="html"><![CDATA[最佳软件架构]]></title>
+        <id>http://weekly.dockone.io/article/2434928</id>
+        <link href="http://weekly.dockone.io/article/2434928"/>
+        <updated>2022-08-26T01:45:09.323Z</updated>
+        <summary type="html"><![CDATA[什么是软件架构？
+“系统设计”可以用来描述我在系统中定义的某些规则或设计的明确的模块？还是说，它就是我定义的具体的类和函数？
+如果我们从敏捷软件开发的角度来看软件架构，我们很快就会得出这样的结论：在实际实施之前，几乎不可能在详细级别上定义类和模块，因为需求可能会随着Sprint的进行而快速变化，而应用程序本身也会随着时间的推移而不断变化。
+那么，在开始正式实现软件系统之前，用来具象化我们将要开发的系统的软件架构到底是什么？
+根据Ralph Johnson的说法，软件架构被定义为：“架构是非常重要的东西，不管它是什么！”
+这个定义一开始肯定会让人清醒下来，然而它却蕴含着许多真理。
+一个软件架构基本上代表了一个软件团队所做的决定。它不是关于记录或画图，而是关于开发团队一起为软件设计做出的决定。软件开发者、设计者、产品经理因此在具体的架构决策上达成一致，如REST或GraphQL、Python或JavaScript、开发两个服务或只写一个服务。
+这也使软件架构师的角色有了完全不同的意义。你不是在黑暗的柜子里用UML和BPMN设计一个软件架构，然后把图交给软件团队。这个角色的目的是指出软件架构的不同观点，并与团队一起为软件架构做出决定，而不是替团队做出架构设计。毕竟，团队最终会实施它。
+那么，什么是最好的软件架构？
+有几种软件架构风格，如微服务或基于空间的架构。但顾名思义，它们只是可以用于决策的风格。
+这实际上很快就回答了什么是最好的软件架构的问题，从来没有最好的软件架构这一说。一个团队齐心协力、尽己所能地为这个软件考虑作出的决定，是为整个团队和软件需求所能给出的最佳软件架构。这是因为所有的团队资源都被用来让团队的每个个体都参与到决策过程中，以现有的人员开发出最好的架构。
+如果完全相同的需求提供给另一个团队，可能会做出完全不同的架构策略。然而，这些策略又会是整个团队的最佳决定。这是全体软件开发人员能够实现所要开发的软件的唯一方法。
+尽管如此，在我的职业生涯中，有一种架构风格是我所了解的，并且经得起时间的考验。最重要的是，我几乎没有再开发过不是这种架构风格的应用程序。
+我们谈论的是领域驱动的六边形架构，或者也叫领域驱动的六边形。这种架构风格是Eric Evans的领域驱动设计、Robert C. Martin的Clean Architecture和Clean Coder以及Alistair Cockburn的六边形架构（也叫Ports and Adapters）的混合体。在这里，来自知名程序员的不同概念被结合起来，以实现清晰的规则和清晰的应用结构，但仍将个别架构的决定，如REST或GraphQL，Python或NodeJS，留给团队。
+这里有一张领域驱动六边形的图片，它很好地说明了如何定义清晰的规则，但又为架构决策留下了足够的空间。
+
+
+
+领域驱动六边形：https://github.com/Sairyss/domain-driven-hexagon
+这可以用道路交通的一个例子来作比较。让道路上的每个人都遵守同样的规则，比让少数人遵守类似的规则，然后让其他人都跟着这少部分人来做要好。在道路交通中，人们做出什么样的决定取决于每个个体，但车流的方向却是明确规定的。那么，其实我们只要遵守最终得到的规则就好了。
+放到架构设计的案例中：从长远来看，整个团队对架构的“编排”比起团队中部分人对架构进行“协调”会具有更好的表现：这些人确实能够快速推动架构的决策和演进，但其余的团队成员却被忽略了。因此，从长远来看，协调得到的软件架构在长期的波动中无法承受简单的变更和较短的开发实施时间，而“编排”的软件架构即使最初会因为团队成员之前的高同步成本而变得迟缓，但持久地却能产生高效的结果，抵御波动。总的来说，相互之间的开发比相互之间的竞争要有趣得多。
+原文链接：The best software architecture（翻译：小灰灰）]]></summary>
+        <author>
+            <name>megrez</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[时隔一年，Linkerd 2.12正式发布]]></title>
+        <id>http://weekly.dockone.io/article/2434935</id>
+        <link href="http://weekly.dockone.io/article/2434935"/>
+        <updated>2022-08-26T01:45:09.303Z</updated>
+        <summary type="html"><![CDATA[时隔将近一年Linkerd 2.12终于发布了。这个庞大的版本为Linkerd引入了基于路由的策略，允许用户以完全零信任的方式定义和执行基于HTTP路由的授权策略。这些策略建立在Linkerd强大的工作负载身份之上，由双向TLS保护，并使用来自Kubernetes新Gateway API的类型进行配置。
+Linkerd 2.12是采用Gateway API作为核心配置机制的第一步。虽然这个API对于服务网格用例来说还不是很完美，但它为这个版本提供了一个强大的起点，我们乐观地认为它们会随着时间的推移而发展，以满足Linkerd的需求。重要的是，在Gateway API的基础上构建将使我们能够将特定于Linkerd的配置对象的数量保持在最低限度，即使我们引入了新功能——这可能是我们成为Kubernetes最简单和最轻的服务网格目标的重要组成部分。
+新版本还引入了访问日志记录，这是一个令人期待已久的功能，允许Linkerd生成Apache样式的请求日志。它增加了对iptables-nft的支持，并引入了许多其他改进和性能提升。
+Buoyant Cloud客户现在可以将他们的2.10+或更高版本的集群全自动升级到Linkerd 2.12，包括数据平面代理。（仅限商业和企业层。）
+新版本的发布包含了50多名贡献者的大量辛勤工作，其中包括Timescale、Adidas、Sourcegraph、Intel、Shopify、Red Hat等的工程师。特别感谢Agrim Prasad、Ahmed Al-Hulaibi、Aleksandr Tarasov、Alexander Berger、Ao Chen、Badis Merabet、Crevil (Bjørn)、Brian Dunnigan、Christian Schlotter、Dani Baeyens、David Symons、Dmitr…]]></summary>
+        <author>
+            <name>尼古拉斯</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Ask HN: What was life like before and after a baby]]></title>
+        <id>https://news.ycombinator.com/item?id=32602181</id>
+        <link href="https://news.ycombinator.com/item?id=32602181"/>
+        <updated>2022-08-26T01:15:01.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[SpaceX and T-Mobile to Connect Starlink Satellites to Cellphones in Remote U.S.]]></title>
+        <id>https://www.wsj.com/articles/spacex-and-t-mobile-to-connect-starlink-satellites-to-cellphones-in-remote-parts-of-u-s-11661473520</id>
+        <link href="https://www.wsj.com/articles/spacex-and-t-mobile-to-connect-starlink-satellites-to-cellphones-in-remote-parts-of-u-s-11661473520"/>
+        <updated>2022-08-26T00:35:42.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[SpaceX + T-Mobile Announcement: Increasing Connectivity from Space]]></title>
+        <id>https://twitter.com/SpaceX/status/1562954090996346880</id>
+        <link href="https://twitter.com/SpaceX/status/1562954090996346880"/>
+        <updated>2022-08-26T00:32:39.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[（公鸡天不亮就叫）公鸡为啥不嫌自己打鸣声音太吵？它聋吗？]]></title>
+        <id>https://daily.zhihu.com/story/9752160</id>
+        <link href="https://daily.zhihu.com/story/9752160"/>
+        <updated>2022-08-25T23:06:39.000Z</updated>
+        <summary type="html"><![CDATA[老牛头，古生物学/地质学/博物学
+阅读原文
+
+鸡当然不聋了，和人一样鸡也有耳朵，如果你吃过有鸡头的鸡或者鸡头的话，仔细观察一下，很容易就能找到鸡的耳朵。
+鸡的耳朵的位置，位于眼睛的后侧偏下方。图片来源：https://www.mcgill.ca/oss/article/did-you-know-nutrition/you-can-determine-colour-egg-looking-chickens-earlobe
+而且鸡也有鼓膜，中耳内部存在耳柱骨，类似哺乳动物的听小骨，将鼓膜的震动传导到内耳，在通过内耳转化为神经信号，让鸡能听见声音。
+哺乳动物（左）与鸟类（右）中耳的比较。图片来源：https://pseudonaturalist.blogspot.com/2019/04/blog-post.html
+那么公鸡打鸣声音那么大，它会不会吵到自己呢？
+首先，公鸡是应该是能听见自己打鸣的，根据 2017 年 12 月一项发表在《动物学》上的文章[1]，公鸡打鸣的声音强度在 1 米距离处平均超过 100 分贝，在距离最近的公鸡头部平均可达 130 分贝，最高可达 143.8 分贝，这么响的声音，公鸡自己应该是可以听到的。
+对于哺乳动物和鸟类来说，如果听到的声音强度超过 120 分贝，持续一段时间，就会造成内耳毛细胞的损伤或死亡，从而造成听力丧失。
+公鸡为了让自己的叫声不损伤自己的听力，在结构上和生理上有以下措施：
+1.公鸡的鼓膜在长嘴时会松弛
+在公鸡张开嘴的时候，它的方骨通过连接在鼓膜上的软组织，调整鼓膜的张力，让鼓膜变得更加松弛，从而降低鼓膜对于声音的敏感度。[2]
+方骨（蓝色）、软组织（粉色）、鼓膜（红色）、耳柱骨（绿色）。图片来源：https://royalsocietypublishing.org/doi/10.1098/rsos.171286
+2.公鸡的耳道在鸣叫时会关闭
+公鸡打鸣的时候，总是仰着头尽力将喙张至最大，这不仅有利于它们发出响亮的声音，也可以让它们的耳道发生关闭，这就像有人在它们的耳朵里塞了耳塞一样，而且耳道内的软组织会在耳道闭合的时候覆盖在鼓膜上，挡住至少一半的鼓膜，进一步减少鼓膜接收的声音。这两个措施大大降低了声音传导到鼓膜的强度。
+A、B，公鸡的喙闭合和张开时耳道（绿色）的轮廓。E，公鸡的喙闭合（透明）和张开（深绿色）时耳道的三维模型。可见在张开时耳道会闭合。图片来源：https://doi.org/10.1016/j.zool.2017.12.002
+3.毛细胞的快速恢复
+如果公鸡或者母鸡因为在其他公鸡打鸣的时候距离过近，不幸造成了内耳毛细胞的损伤，那这该怎么办呢？其实对于鸟类来说，这不是什么问题，因为它们可以再生受损的毛细胞，在 100 小时之内就可以完全恢复听力。
+相关科普：
+公鸡打鸣最大可达 130 分贝！它是如何承受高分贝音量的？秘密在这里→
+公鸡打鸣时为什么不会把自己震聋
+公鸡打鸣会把自己震聋吗？
+Why roosters don't go deaf from their own loud crowing
+How roosters protect themselves from their own deafening crows
+A rooster’s crow is as loud as a jet taking off 15 meters away. Here’s why it doesn’t go deaf
+相关文章：
+Sound attenuation in the ear of domestic chickens (Gallus gallus domesticus) as a result of beak opening | Royal Society Open Science
+Do high sound pressure levels of crowing in roosters necessitate passive mechanisms for protection against self-vocalization?
+The effect of craniokinesis on the middle ear of domestic chickens (Gallus gallus domesticus )
+阅读原文]]></summary>
+        <author>
+            <name>知乎日报</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[联邦学习是一个伪需求吗？]]></title>
+        <id>https://daily.zhihu.com/story/9752140</id>
+        <link href="https://daily.zhihu.com/story/9752140"/>
+        <updated>2022-08-25T23:06:32.000Z</updated>
+        <summary type="html"><![CDATA[知乎用户，机器学习 | 联邦学习 | AI布道
+阅读原文
+
+因为项目的原因，最近半年小鱼一直在进行联邦学习方面的调研和研究。
+题主关于联邦学习是否是伪需求的疑问，也是我一直以来的问题。因为我在这个领域还是萌新，所以仅分享一下看法，希望能抛砖引玉，和大家一起讨论。
+题主提到的“google 将手机上的数据拿来做机器学习”应该指的是联邦学习的开山之作[1]，这篇文章我个人认为不仅首提了联邦学习的一个商业落地应用（隐私保护前提下，在用户的手机上训练模型，来进行输入法下一词预测的任务[2]）。
+图源 Federated Learning for Mobile Keyboard Prediction
+图源 Federated Learning for Mobile Keyboard Prediction
+同时还明确指出了适用联邦学习的场景（当然后续几千篇的联邦学习论文大大拓展了适用场景，不过在此处先回顾一下谷歌这个工作的观点~）
+联邦学习场景的数据应具有以下特性：
+训练来自移动设备的真实数据比数据中心提供的代理数据具有明显的优势；
+数据是隐私敏感的或较大规模的，不需要仅出于训练模型的目的将其记录在数据中心；
+对于监督任务，可以从用户交互中自然地推断出数据的标签。
+许多移动设备上的智能应用存在满足上述标准的数据
+图像分类：预测哪些照片最有可能被分享出去
+语言模型：用于改善语音识别性能或触摸屏键盘上的文字输入效果
+它们同时满足上述三个特性：
+数据是敏感的： 用户的照片或键盘输入的文本；
+数据的分布也与代理数据提供的不同， 更有用户特点和优势；
+数据的标签也是可以直接获得的：比如用户的照片和输入的文字等本身就是带标签的；照片可以通过用户的交互操作进行打标签（删除、分享、查看）。
+同时，这两个任务都非常适合学习神经网络。
+图源 Communication-Efficient Learning…]]></summary>
+        <author>
+            <name>知乎日报</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[多地推出与景区实景结合剧本杀项目，该模式是昙花一现还是未来可期？]]></title>
+        <id>https://daily.zhihu.com/story/9752144</id>
+        <link href="https://daily.zhihu.com/story/9752144"/>
+        <updated>2022-08-25T23:06:25.000Z</updated>
+        <summary type="html"><![CDATA[德川咪咪，理性的人终能获得自由
+阅读原文
+
+谢 @知乎游戏 邀。景区 + 剧本杀的模式能不能成功，会走向何方，要看从哪个角度来评估。
+前两天正好在和我的好朋友黑黑 @Hiei 聊到这个话题。五六年前，我搞密室创业项目时认识了他。作为国内顶尖的实景游戏设计师，他从 2020 年开始接触这种景区剧本杀的文旅项目，甚至深度参与过好几个内容的打造。
+黑黑和我聊下来的初步结论是，这两年还没有出现一个景区剧本杀的成功案例，主要是因为商业模式不成立。一般来说，剧本杀和景区的「正道」都落在用户体验上：体验好，口碑佳，则能带动更多的客流，继而形成盈利能力。
+但是两者直接结合，就产生了很大的问题，主要包括：
+1、成本大幅度提升：无论是造景还是运营成本，在景区搞剧本杀都远高于城市。
+2、营收天花板有限：剧本杀单次开团一般不会超过 20 人，无法实现规模化。且基本没人会二次体验，因此不存在「回头客」。
+3、客单价上涨造成心理预期提升：一般来说景区剧本杀以三天两夜包住宿为噱头，客单价提升到 1500-3000 一次。同时玩家还会把「特地去一次景区」作为隐形成本计算在内。因此玩家对景区剧本杀的体验预期，远高于在本地城市的剧本杀。
+以口碑较好的如四川某古镇剧本杀为例，集合了专业化妆师妆造、沉浸式演出、餐饮、夜间灯光秀、摄影师随拍等各种卖点，单价为 1888 元，体验周期大约是半天，即使按照单次满员 16 人来算，总营收也就是 3 万出头。
+能赚钱吗？旺季估计能覆盖运营成本，淡季就是纯血亏，更别说前期还有造景成本了。
+三四年前，黑黑曾经邀请我去江南某古镇，体验他朋友打造的景区剧本杀项目。那个小镇算是探全国风气之先，当时项目组运作了一个谍战为主题的剧本，撑了没多久就倒闭了。因为景区玩剧本杀所产生的费用和时间成本太高了，除了骨灰级玩家外，很少有人愿意专门为之跑一趟（包括我最后也没去）——而全国的骨灰级玩家可能也就小几万人。
+而更多的景区里，剧本杀就是一层皮——玩家千里迢迢过去之后，发现到手的就是一盒角色卡，游戏体验非常简陋。
+那么，既然基本都是赔本生意，为何这两年景区剧本杀还是像雨后春笋一样冒出来？说明当我们在评估一种新模式的时候，并不能只从商业视角上来看。
+景区剧本杀这个现象的出现，往前可以追溯到当年在全国推行的文旅政策：中国 100 个特色小镇。当年，为了响应这个政策，全国各地出现了各种「特色小镇」。四五年前，当小镇纷纷建造落成之后，就面临了相同的情况：千篇一律，无人买单。
+「剧本杀」经明星大侦探兴起，作为年轻人喜欢的现象级游戏出圈后，也被各地的文旅系统关注到了，它便成为了许多冷门的「特色小镇」的救命稻草，也成为了盘活前期造景投入的新的政绩故事。
+事实上我们也能看到，国内能够成功落地的景区剧本杀项目，逃不开非遗、国风、红色故事这几大主题，因为这呼应着十四五规划中文旅板块的几大关键词。这也揭示了景区剧本杀真正的营收模式——它们都是 toG 的，买单方并不是用户，而是政府。
+理顺了这个逻辑，从业者大可以以此为切入点，找到商机，借剧本杀的热点赚两年快钱。但从长远来看，单纯将两者机械地嫁接，故事讲不长远，也无法真正解决「特色小镇」有景无实的问题。
+真正的解法还在于探索出真正的、具有全民性的沉浸式互动游戏景点的模式。怎么说呢，作为玩家还是期待着这些探索中，能够孕育出真正具有独特线下游戏价值的「西部世界」吧。
+阅读原文]]></summary>
+        <author>
+            <name>知乎日报</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[小朋友第一次去幼儿园，怎样让他能够比较容易接受幼儿园的环境？]]></title>
+        <id>https://daily.zhihu.com/story/9752153</id>
+        <link href="https://daily.zhihu.com/story/9752153"/>
+        <updated>2022-08-25T23:06:15.000Z</updated>
+        <summary type="html"><![CDATA[阿sir奶爸李大圣，地市局丨六块腹肌带娃奶爸丨国家二级心理咨询师
+阅读原文
+
+感谢亲子邀请！2500 字长篇干货来啦！建议点赞收藏，慢慢阅读！
+儿童去幼儿园的过程，其实就是他们最早的社会化过程。
+试想一下，假如把你投入到一个陌生环境中，
+你的情绪会有何变化？会不会也有些紧张、焦虑？
+那你是如何调节自身，快速适应环境的呢？
+实际上如果总结起来，不外乎以下几点：
+一、提供良好的物质环境和精神环境
+宽敞的活动空间、优美的环境布置、整洁的活动场地和充满生机的自然环境，
+对孩子情绪、情感的影响是非常明显的。有研究表明，如果长期生活在狭小的环境中，就会经常出现暴躁不安或封闭压抑的情绪，所以家长在为孩子选择幼儿园的时候，务必把好幼儿园的硬件关；
+
+另外我们也应该在孩子入园前半年左右开始有目的的带他多去公共场合活动，扩大他的交往范围和活动空间，帮助他主动寻找玩伴，多和其他孩子接触，引导他主动和别人交往。这样就避免还在在入园时面临形形色色的陌生老师、同伴时过于紧张、含蓄，不懂得如何表达自己的情感。
+二、拥有宽松和谐的交往氛围
+孩子与周围人的关系也是影响情绪、情感的重要因素。良好的师幼关系和同伴关系有助于幼儿形成积极的情绪、情感体验，使孩子喜欢上幼儿园；反之，则会反感上幼儿园，在幼儿园里也会感到孤独、寂寞，心情抑郁。
+因此，幼儿园的老师有义务为孩子们创设一种欢乐、融洽、友爱、互助的氛围；对于那些胆小儒弱的孩子，更要鼓励他们敢于表现自我，主动与人交往。家长也应该注意教育孩子在交往中培养互相关心、互相爱护、互相帮助的精神，让孩子学会分享快乐和同情别人的不幸；体验集体的温暖和真挚的友情，培养幼儿积极健康的情绪、情感。
+另外，良好的同伴关系也是健康成长的必需品：
+1、同伴可以满足儿童归属和爱的需要以及尊重的需要2、同伴交往为儿童提供了学习他人反应的机会3、同伴也是儿童特殊的信息渠道和参照框架4、同伴也…]]></summary>
+        <author>
+            <name>知乎日报</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[为什么南方的老鼠蟑螂蚊子等昆虫体型较大，而人类个体体型却低于北方？]]></title>
+        <id>https://daily.zhihu.com/story/9752157</id>
+        <link href="https://daily.zhihu.com/story/9752157"/>
+        <updated>2022-08-25T23:06:07.000Z</updated>
+        <summary type="html"><![CDATA[赵泠，遗迹是曾经讴歌繁荣的生命留下的缺页的梦。
+阅读原文
+
+因为题述的动物体型变化反映的不是“水土好”，而是平均气温和动物对热的不同反应。
+老鼠是体型较小的哺乳动物，身体表面积与体积的比值较大，散热相对容易、保热相对难，在寒冷、淋湿等情况下容易失温死亡。我国南方相对较高的平均气温、相对较多的食物供应有利于老鼠生存。在食物供应和天敌捕杀强度允许的情况下，老鼠的体型大一些，单位体重的保温难度会下降一些。
+蟑螂、蚊子是体型很小的节肢动物，代谢率与环境温度显著相关。气温在一定范围内升高，昆虫的生长速度会加快。在食物供应允许的情况下[1]，我国南方的昆虫更容易在寿命不延长的前提下达到更大的体型。而且，我国南方的一些大体型昆虫是从其他炎热地区搞来的入侵物种。
+人是体型相当大的哺乳动物，身体表面积与体积的比值较小，保热相对容易、散热相对难。在炎热地区，身高较矮的人比较容易散热。在寒冷地区，身高较高的人比较容易保暖。自古以来，我国南方地区夏季频繁出现高温天气。
+Credit: Matt Stiles/The Daily Viz. 澳大利亚的离群值主要来自欧洲入侵者而非原住民
+中国在上面的 2016 年统计图像里的位置跟人口分布有关。
+王铮, 夏海斌, 田园, 王魁, 花卉, 耿文均, 田丽, 郑保利, 赵金彩. 胡焕庸线存在性的大数据分析——中国人口分布特征的生态学及新经济地理学认识. 生态学报, 2019, 39(14): 5166-5177.
+马立广;曹彦荣;徐玖瑾;何建邦. 中国 102 个人群的身高与地理环境相关性研究[J]. 人类学学报, 2008, 27(03): 223-231.
+对人来说，在温度适中的环境里，较高的身高是一种有代价的性状。与体型相近而身高更低的人相比，高个子有更高的基础代谢、更多的营养物质消耗，在一定程度上加重全身各器官·组织的负担，在一定范围内降低身体的协调性，提高多种癌症的发病率。这些代价与高个子在捕食、自卫、求偶方面的好处和其他因素一起动态地影响人群中高个子的比例。
+一些研究显示高个子的人的预期寿命比矮个子的人要短[2]。研究人员考察了 35 年间收集的 5000 多篇论文、报告、书籍，对超过 145 项死亡率、预期寿命和长寿研究进行评估，选出 30 项研究进行回顾，显示“在其他因素相近的情况下，身高每增加 1 厘米关联到预期寿命减少半年”[3]。
+温度偏高会进一步增加高个子的代价。
+阅读原文]]></summary>
+        <author>
+            <name>知乎日报</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[瞎扯 · 如何正确地吐槽]]></title>
+        <id>https://daily.zhihu.com/story/9752162</id>
+        <link href="https://daily.zhihu.com/story/9752162"/>
+        <updated>2022-08-25T23:05:58.000Z</updated>
+        <summary type="html"><![CDATA[为什么可以说「我爸爸」、「我妈妈」，却不能说「我狗」？
+
+景观观
+阅读原文
+
+可能是因为「狗」也能做形容词吧（雾）。
+阅读原文
+
+有什么数学名词可以作为人名吗？
+
+风语者，多读，多看，多思考
+阅读原文
+
+数学名词起名字可能不太好起，但是你可以争取把名字变成数学名词o( ❛ᴗ❛ )o~
+阅读原文
+
+网络安全是一个好的专业吗？
+
+史中，浅黑科技创始人、主笔
+阅读原文
+
+各路大牛都说得很好，我补充一个网络安全专业的日常：
+
+
+
+阅读原文
+
+中文如何写出「伪日本语」？
+
+陈小圆，小红书Chen小圆様//公众号dr_yuuan
+阅读原文
+
+
+第二行这样更准确：
+ざん夸一夸，伝統料理の狗不理包ざ
+阅读原文
+
+领导对我说「你瘦了」该如何回答？
+
+杨满满minta，江湖有缘见
+阅读原文
+
+加班加的。
+阅读原文]]></summary>
+        <author>
+            <name>知乎日报</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Show HN: Devbox – Easy, predictable shells and containers]]></title>
+        <id>https://github.com/jetpack-io/devbox</id>
+        <link href="https://github.com/jetpack-io/devbox"/>
+        <updated>2022-08-25T22:35:06.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Soketi: Simple, Fast and Resilient open-source WebSockets server]]></title>
+        <id>https://soketi.app/</id>
+        <link href="https://soketi.app/"/>
+        <updated>2022-08-25T22:22:29.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Irata.online: A PLATO service for retro computing enthusiasts]]></title>
+        <id>https://irata.online/</id>
+        <link href="https://irata.online/"/>
+        <updated>2022-08-25T21:46:41.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Chez Scheme]]></title>
+        <id>https://github.com/cisco/ChezScheme</id>
+        <link href="https://github.com/cisco/ChezScheme"/>
+        <updated>2022-08-25T21:10:53.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[MQZiti – Zero Trust MQTT server and client]]></title>
+        <id>https://github.com/ekoby/mqziti</id>
+        <link href="https://github.com/ekoby/mqziti"/>
+        <updated>2022-08-25T19:55:27.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Launch HN: Artemis (YC S22) – Use comments to give code an interactive interface]]></title>
+        <id>https://news.ycombinator.com/item?id=32598603</id>
+        <link href="https://news.ycombinator.com/item?id=32598603"/>
+        <updated>2022-08-25T19:16:26.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[LastPass: Notice of Security Incident]]></title>
+        <id>https://blog.lastpass.com/2022/08/notice-of-recent-security-incident/</id>
+        <link href="https://blog.lastpass.com/2022/08/notice-of-recent-security-incident/"/>
+        <updated>2022-08-25T19:15:21.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Subscriptions are out, refills are in]]></title>
+        <id>https://bluepnume.medium.com/subscriptions-are-out-refills-are-in-311fd6e41e5e</id>
+        <link href="https://bluepnume.medium.com/subscriptions-are-out-refills-are-in-311fd6e41e5e"/>
+        <updated>2022-08-25T18:32:00.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Move Fast or Die: Key Startup Lessons]]></title>
+        <id>https://blog.southparkcommons.com/move-fast-or-die/</id>
+        <link href="https://blog.southparkcommons.com/move-fast-or-die/"/>
+        <updated>2022-08-25T18:20:24.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[YaCy – your own search engine]]></title>
+        <id>https://yacy.net/</id>
+        <link href="https://yacy.net/"/>
+        <updated>2022-08-25T17:47:26.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[What have we lost? – Demo of exotic OSes (2021) [video]]]></title>
+        <id>https://www.youtube.com/watch?v=7RNbIEJvjUA</id>
+        <link href="https://www.youtube.com/watch?v=7RNbIEJvjUA"/>
+        <updated>2022-08-25T17:04:37.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Contentedge (YC W17) is hiring engineers to build AI copywriting software]]></title>
+        <id>https://www.contentedge.com/?pg=jobs</id>
+        <link href="https://www.contentedge.com/?pg=jobs"/>
+        <updated>2022-08-25T17:01:06.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Guidance to make federally funded research freely available without delay]]></title>
+        <id>https://www.whitehouse.gov/ostp/news-updates/2022/08/25/ostp-issues-guidance-to-make-federally-funded-research-freely-available-without-delay/</id>
+        <link href="https://www.whitehouse.gov/ostp/news-updates/2022/08/25/ostp-issues-guidance-to-make-federally-funded-research-freely-available-without-delay/"/>
+        <updated>2022-08-25T16:33:31.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[A Graph-Based Firebase]]></title>
+        <id>https://stopa.io/post/296</id>
+        <link href="https://stopa.io/post/296"/>
+        <updated>2022-08-25T16:16:49.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Creativity requires solitude]]></title>
+        <id>https://dkb.show/post/creativity-requires-solitude</id>
+        <link href="https://dkb.show/post/creativity-requires-solitude"/>
+        <updated>2022-08-25T16:04:25.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[“Science must respect the dignity and rights of all humans”]]></title>
+        <id>https://www.nature.com/articles/s41562-022-01443-2</id>
+        <link href="https://www.nature.com/articles/s41562-022-01443-2"/>
+        <updated>2022-08-25T15:31:35.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Apple M2 Pro to use new 3nm process]]></title>
+        <id>https://www.cultofmac.com/788200/why-the-apple-m2-pro-processor-will-be-even-better-than-expected/</id>
+        <link href="https://www.cultofmac.com/788200/why-the-apple-m2-pro-processor-will-be-even-better-than-expected/"/>
+        <updated>2022-08-25T15:11:06.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Removal of Heroku free product plans]]></title>
+        <id>https://help.heroku.com/RSBRUH58/removal-of-heroku-free-product-plans-faq</id>
+        <link href="https://help.heroku.com/RSBRUH58/removal-of-heroku-free-product-plans-faq"/>
+        <updated>2022-08-25T14:58:24.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Orcas are breaking rudders off boats in Europe]]></title>
+        <id>https://www.smithsonianmag.com/smart-news/orcas-are-breaking-rudders-off-boats-in-europe-180980627/</id>
+        <link href="https://www.smithsonianmag.com/smart-news/orcas-are-breaking-rudders-off-boats-in-europe-180980627/"/>
+        <updated>2022-08-25T13:58:13.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[DuckDuckGo email protection beta now open]]></title>
+        <id>https://spreadprivacy.com/protect-your-inbox-with-duckduckgo-email-protection/</id>
+        <link href="https://spreadprivacy.com/protect-your-inbox-with-duckduckgo-email-protection/"/>
+        <updated>2022-08-25T12:16:16.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Lisp can be “hard” real time [pdf] (2000)]]></title>
+        <id>https://franz.com/services/conferences_seminars/jlugm00/conference/Talk14_takeuchi.pdf</id>
+        <link href="https://franz.com/services/conferences_seminars/jlugm00/conference/Talk14_takeuchi.pdf"/>
+        <updated>2022-08-25T11:56:31.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Kubernetes 1.25正式发布！]]></title>
         <id>http://weekly.dockone.io/article/2434934</id>
@@ -777,6 +1268,16 @@ Massimiliano Zampini. Does Food Color Influence Taste and Flavor Perception In H
         </author>
     </entry>
     <entry>
+        <title type="html"><![CDATA[Thinking as Computation (2011) [pdf]]]></title>
+        <id>https://www.cs.toronto.edu/~hector/PublicTCSlides.pdf</id>
+        <link href="https://www.cs.toronto.edu/~hector/PublicTCSlides.pdf"/>
+        <updated>2022-08-23T19:32:44.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[FreeBSD on the Framework Laptop]]></title>
         <id>https://xyinn.org/md/freebsd/framework_laptop</id>
         <link href="https://xyinn.org/md/freebsd/framework_laptop"/>
@@ -897,10 +1398,40 @@ Massimiliano Zampini. Does Food Color Influence Taste and Flavor Perception In H
         </author>
     </entry>
     <entry>
+        <title type="html"><![CDATA[Low-Background Steel (2018)]]></title>
+        <id>https://www.chemistryworld.com/podcasts/low-background-steel/3009874.article</id>
+        <link href="https://www.chemistryworld.com/podcasts/low-background-steel/3009874.article"/>
+        <updated>2022-08-23T08:08:42.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[The end of the manual transmission is near?]]></title>
         <id>https://www.popularmechanics.com/cars/a40900795/the-end-of-the-manual-transmission/</id>
         <link href="https://www.popularmechanics.com/cars/a40900795/the-end-of-the-manual-transmission/"/>
         <updated>2022-08-23T07:40:09.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Why there's no 'Dijon' in Dijon mustard]]></title>
+        <id>https://www.bbc.com/travel/article/20220816-why-theres-no-dijon-in-dijon-mustard</id>
+        <link href="https://www.bbc.com/travel/article/20220816-why-theres-no-dijon-in-dijon-mustard"/>
+        <updated>2022-08-23T06:07:52.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Superefficient solar desalination (2020)]]></title>
+        <id>https://cen.acs.org/environment/water/Superefficient-solar-desalination/98/web/2020/02</id>
+        <link href="https://cen.acs.org/environment/water/Superefficient-solar-desalination/98/web/2020/02"/>
+        <updated>2022-08-23T04:41:19.000Z</updated>
         <summary type="html"><![CDATA[Comments]]></summary>
         <author>
             <name>Hacker News</name>
@@ -1297,6 +1828,16 @@ STS-130 任务中，负责组装空间站的奋进号航天飞机的舷窗玻璃
         <id>https://www.world-nuclear-news.org/Articles/Application-submitted-for-US-molten-salt-research</id>
         <link href="https://www.world-nuclear-news.org/Articles/Application-submitted-for-US-molten-salt-research"/>
         <updated>2022-08-22T16:18:24.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[The top layer: a solution to z-index:10000]]></title>
+        <id>https://developer.chrome.com/blog/what-is-the-top-layer/</id>
+        <link href="https://developer.chrome.com/blog/what-is-the-top-layer/"/>
+        <updated>2022-08-22T16:17:33.000Z</updated>
         <summary type="html"><![CDATA[Comments]]></summary>
         <author>
             <name>Hacker News</name>
@@ -1817,6 +2358,16 @@ https://www.rd.com/list/depressed-cat/
         <id>http://wesclark.com/jw/sound_propagation.html</id>
         <link href="http://wesclark.com/jw/sound_propagation.html"/>
         <updated>2022-08-21T17:53:49.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Cybersecurity in 1989: Looking Back at Cliff Stoll's Classic the Cuckoo's Egg]]></title>
+        <id>https://www.lawfareblog.com/cybersecurity-1989-looking-back-cliff-stolls-classic-cuckoos-egg</id>
+        <link href="https://www.lawfareblog.com/cybersecurity-1989-looking-back-cliff-stolls-classic-cuckoos-egg"/>
+        <updated>2022-08-21T17:52:44.000Z</updated>
         <summary type="html"><![CDATA[Comments]]></summary>
         <author>
             <name>Hacker News</name>
@@ -14828,452 +15379,6 @@ c)空气悬架隔离噪声和减震表现佳。空气悬架的刚度可调整，
         <id>https://fly.io/blog/sqlite-internals-btree/</id>
         <link href="https://fly.io/blog/sqlite-internals-btree/"/>
         <updated>2022-07-27T13:55:54.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Embedding an EXE inside a .REG file with automatic execution]]></title>
-        <id>https://www.x86matthew.com/view_post?id=embed_exe_reg</id>
-        <link href="https://www.x86matthew.com/view_post?id=embed_exe_reg"/>
-        <updated>2022-07-27T12:55:51.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[&lt;article&gt; vs. &lt;section&gt;: How To Choose The Right One]]></title>
-        <id>https://www.smashingmagazine.com/2022/07/article-section-elements-accessibility/</id>
-        <link href="https://www.smashingmagazine.com/2022/07/article-section-elements-accessibility/"/>
-        <updated>2022-07-27T12:54:36.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[The History of ‘Ampersand’ (2020)]]></title>
-        <id>https://www.merriam-webster.com/words-at-play/the-history-of-ampersand</id>
-        <link href="https://www.merriam-webster.com/words-at-play/the-history-of-ampersand"/>
-        <updated>2022-07-27T12:06:46.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Nikon releases bug fix firmware update for the 10 year-old D7100 DSLR camera]]></title>
-        <id>https://nikonrumors.com/2022/07/26/nikon-released-new-firmware-update-for-the-almost-10-years-old-d7100-dslr-camera.aspx/</id>
-        <link href="https://nikonrumors.com/2022/07/26/nikon-released-new-firmware-update-for-the-almost-10-years-old-d7100-dslr-camera.aspx/"/>
-        <updated>2022-07-27T10:22:18.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[How to Stop Procrastinating on Your Goals by Using the “Seinfeld Strategy”]]></title>
-        <id>https://jamesclear.com/stop-procrastinating-seinfeld-strategy</id>
-        <link href="https://jamesclear.com/stop-procrastinating-seinfeld-strategy"/>
-        <updated>2022-07-27T00:03:04.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Python Is Portable]]></title>
-        <id>https://ahgamut.github.io/2021/07/13/ape-python/</id>
-        <link href="https://ahgamut.github.io/2021/07/13/ape-python/"/>
-        <updated>2022-07-26T23:44:46.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[《肖申克的救赎》到底救赎了什么？]]></title>
-        <id>https://daily.zhihu.com/story/9751073</id>
-        <link href="https://daily.zhihu.com/story/9751073"/>
-        <updated>2022-07-26T23:37:38.000Z</updated>
-        <summary type="html"><![CDATA[黄真真，世界很无趣，有趣的是我。
-阅读原文
-
-一、《肖申克的救赎》从“救赎”而起
-“救赎”在这部电影中，除了自我救赎，还有救赎他人：
-安迪、瑞德、老布、汤米的救赎，「人的救赎」
-肖申克监狱的救赎，「主体的救赎」
-希望的救赎，自由的救赎，人类灵魂的救赎「精神的救赎」。
-“救赎”作为影片的主题，更多地反映在安迪在唤起狱囚希望上的努力：他分享给大家啤酒，雕刻国际象棋，建立图书馆，播放《费加罗的婚礼》中的《今夜无人入睡》，教授汤米文化等等。
-然而抛开这些已经得到普世肯定的“碎片”，来探寻一些更为鲜活的“救赎”。
-不管这个电影是以何种救赎开始，第一重救赎都应该是瑞德来完成的。在所有人都认为自己无罪的时候，瑞德说他是“肖申克里唯一的罪犯”，这中间存在翻译的问题，英文更为巧妙：“only guilty man in Shawshank”，“Guilty”不仅仅指有罪，同时带有着内疚的色彩。（看一看西方的祷告词就会对这一点有别样的感触）。
-解读常把安迪的的救赎看得太重，但实际上我们很难去真正了解，安迪在刚刚入狱的时候有没有“我有罪”的想法，而瑞德不同。相比于其他把过错推给律师、他人的那些狱友们，他一出场，那种脸上的淡定就注定不同其他人，它告诉我们瑞德是那个已经完成自我救赎的人。
-关于安迪的第一重救赎应该是原谅妻子。
-很多人把安迪看做拯救者，认为他在整个电影中扮演的是一个自我救赎和救赎他人的角色，而我认为恰恰相反，对安迪这样的评价太神圣不可及，电影是一个理想化的产物，可是安迪绝对不是一个理想化的人物。
-他内向、不善言谈，忙于工作而忽略家人，甚至动过杀人的念头；而入狱之后他做假账，继而非法越狱、制造假身份、私吞黑金。
-安迪之所以做出这样的“救赎他人”的举动，往大了说是追求尊严、自由、希望，往小了说就是不愿意被同质化。仔细把这些行为一件件晾出来，我认为，“救”的意味要远远甚于“赎”。所以，对于安…]]></summary>
-        <author>
-            <name>知乎日报</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[你觉得螺蛳粉的灵魂 CP 是什么？]]></title>
-        <id>https://daily.zhihu.com/story/9751060</id>
-        <link href="https://daily.zhihu.com/story/9751060"/>
-        <updated>2022-07-26T23:06:10.000Z</updated>
-        <summary type="html"><![CDATA[卫小妖GOGOGO，｜爱写蔬菜分类和厨房原理的设计师｜聊美食聊人生
-阅读原文
-
-作为一个不是柳州人，但被柳州朋友安利了「螺狮粉 + 炸蛋」后，这波我果断站炸蛋！！
-第一次吃的时候，那种鸡蛋被油炸过后的油脂香，外加蓬松酥脆的质感在浸泡吸饱了螺蛳粉浓郁汤汁后软 fufu 的口感，让人沉沦！一口下去，口腔里爆汁的快乐！真的是太美妙了！个人感觉这种口感比起腐竹吸汁那种口感还要好吃~
-
-关键是我觉得其他 CP，比如当地人津津乐道的那些卤猪脚啊、鸭掌啊等等，如果自己在家做，都还挺麻烦的，但是炸蛋就不一样了，鸡蛋家家都有，想吃螺蛳粉时候，临时「炸」一个就可以了，非常简单~
-给大家分享下我自己做的炸蛋方法：
-拿一个鸡蛋直接打在碗里，蛋黄蛋清不用分离，虽然我看过分离版本，个人觉得没啥必要。用筷子搅散。
-
-
-
-接下来，可以继续用筷子疯狂搅散，直到鸡蛋液出现很多泡沫，如果不想那么累，可以用打蛋器搅打，这一步的目的，使蛋液中混合进来更多的空气，将来炸蛋会更加的蓬松酥脆。
-
-
-拿一个小锅，倒入油，小火。这个油量可以自己掌握。油越深效果越好，如果油少的话，鸡蛋液可能炸开的不是那么蓬松，但是也不打紧，毕竟如果弄一大锅油只是为了炸个鸡蛋，也挺麻烦的。所以大家看情况决定油量的多少就可以了。
-
-
-等观察到油锅起了青烟，就可以准备倒蛋液了。建议从稍微高点的地方，比如高出油锅表面 30cm 处，均匀的倒入蛋液，这样做的目的是为了蛋液和油接触后，有充分的接触时间，蛋液可以更全面的「炸开」
-
-
-记得一定是小火慢炸。用筷子把蛋花上大的泡泡戳破，等一面炸至定型，用筷子将「蛋花」翻个面，继续炸至金黄。大概每一个面 10s 就够了
-
-
-
-
-炸好火候后，控油捞出
-
-
-等螺蛳粉都煮好啦，放在粉上，可以用筷子扒拉扒拉成小块，埋进去汤里，吸饱了汤汁再吃，真的是美味啊
-
-
-
-虽然油炸蛋，有那么点罪恶，但是都吃螺蛳粉了，就不要再拘泥于这些热量了，热量都被油炸没了！所以热量是 0！！强烈建议大家都试试～
-阅读原文]]></summary>
-        <author>
-            <name>知乎日报</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[数学专业领域的人看《天才基本法》是什么感受？]]></title>
-        <id>https://daily.zhihu.com/story/9751066</id>
-        <link href="https://daily.zhihu.com/story/9751066"/>
-        <updated>2022-07-26T23:06:00.000Z</updated>
-        <summary type="html"><![CDATA[北花，人生如逆旅
-阅读原文
-
-没有看过原著，剧看到了 10 集，感触挺大的，来回答一下这个有些偏“数学”的问题，之后有想法了再继续更。先说说比较触动的点：
-“并不是数学全部的意义”
-第七集的时候，老林讲数学的发展，讲原始人对于数字的定义历程，理性的美从具象的事物中抽象出来，人类冠以计算计数之名，裹挟以代数结构的核。与其说自然中诞生了数学，我更愿意说数学本就属于自然吧，谁叫她竟能如此精巧呢。至于数学和奥数之间的关系，以及学习数学的意义，我想，先能做到尽量把数学还给自然吧。看着很多吹捧天才、鼓吹天赋的新闻仍然会引起轩然的“欢呼”，个人觉得媒体和社会都还没有做好“做好数学教育，做好数学研究”的准备。漫漫历史长河中，不只是珠穆朗玛峰，尼罗河这些值得赞叹，同样重要的应该还有那一隅的小河，那一抔细土吧。
-“你不会放弃数学的，对吗？”
-还有就是这句问林朝夕“你不会放弃数学的，对吗？”一听到这句话也确实怪复杂的。想到自己似乎也无数次问过自己这个问题。自己初中的时候完全没接触过竞赛，高中的时候高二半路“出家”，停课去追求数学（笑），我的高中属于是那种主抓高考的学校，所以就只能自己去大城市去学。
-不记得多少次质疑自己了，可能太多次了吧。听课的同桌比自己小三级，质疑自己，模拟题一道不会做，质疑自己，新学的知识点没听懂，质疑自己（哦天，太多了，列举不过来了）可是谁知道呢，自己曾经也是不知道哪里来的勇气，哭着（偷着）也参加了比赛，实战的一试不理想，最后竞赛生涯以省一收尾，当然还是有遗憾的，哪个竞赛生会不向往 CMO 呢（哈哈）。
-高三回归课堂，不想一心备考高考，偷闲的时候自己搞了一本张筑生的数学分析（现在觉得自己为啥这么头铁，入门非要看这个书）。后来大学读了数学系，又开始被一些朋友一些老师劝退，说数学学术研究很难走的，得想办法养活自己啊，不如转码 balabala 的话，于是又是无数次的质疑（哈哈）。可是，谁叫数学那么有魅力呢，可能那就是白月光的感觉吧。读到那些定义定理的联系，那些精妙的证明，那些公式背后的存在必然性，让我睡入了温床。朋友说我很有天赋，说实话我是不认的，比起做“裴之”，我更希望能做一个能更勇敢的“林朝夕”吧（虽然并不知道结局是怎么样的）。
-在我心里，数学不该是只属于天才的，甚至数学不属于任何人，数学是属于自然的，符号与公式、逻辑与定义让这份自然可以被人类理解和接近，我们大抵应该谦卑地欣赏数学，用一颗赤诚的心去刻画数学。数学与人类，生于自然，同于自然，愿以片刻的存在窥见某一瞬的永恒。
-“你不会放弃数学的，对吗”“嗯，不会”
-阅读原文]]></summary>
-        <author>
-            <name>知乎日报</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[如何看待新能源汽车的「天幕玻璃」只防晒不隔热，为什么这么反人类的设计还有那么多人追捧？]]></title>
-        <id>https://daily.zhihu.com/story/9751068</id>
-        <link href="https://daily.zhihu.com/story/9751068"/>
-        <updated>2022-07-26T23:05:54.000Z</updated>
-        <summary type="html"><![CDATA[凯凯，新车试驾 产品评述 油电双车主
-阅读原文
-
-你永远不知道车企揣着明白装糊涂的本事有多大，天幕玻璃就是典型。看完这个回答你会发现车企多会在营销上脱离用车体验玩文字游戏。
-
-天幕玻璃是一项供应商喜欢、车企喜欢、买车前喜欢，唯独买了车之后喜欢不起来的东西。车企宣传时怎么说的？
-超大面积全景天幕，超高红紫外线反射率，为你带来史无前例的通透感。
-有的车企甚至细化到参数，告诉你我家的天幕玻璃什么红外线阻隔率 99%，紫外线阻隔率 99%，可见光透射率 10%，完全不用担心晒伤晒黑诸如此类。但车企没告诉你的是，他们有多喜欢天幕玻璃。
-首先，天幕玻璃成本并没有你想象的那么高。
-这个世界上，不是什么都东西都越大越贵、越好看越贵，天幕玻璃就是其中之一。你要知道这东西的核心就是夹层玻璃，区别在于镀了多少层膜，少的 7 层，多的十几二十层。
-不过在车企眼中，天幕玻璃可是降成本的香饽饽。为啥？因为简单！要知道，不管是传统的单天窗还是全景天窗，都是要配备可开闭的机械结构的，需要布置按键、线束，机械结构既要能纵向抬升一定角度，又要配备前后平移的滑轨，还要考虑排水。
-而天幕玻璃呢？完全不需要这些，胶水打好，一整块玻璃往车顶一扣，搞定！天幕玻璃的安装工艺相比前挡风，并没有本质上的提升。且由于天幕玻璃都是不可开启的，什么按键啊线束啊滑轨啊统统免掉。实际上天幕玻璃的成本并不比传统天窗更高，甚至反而更低。因为单纯提升玻璃面积和镀膜，对成本的影响有限，一块平均性能的天幕玻璃成本在 1500~2000 元左右，而可开启全景天窗的成本普遍在 2000~4000 元。
-其次，天幕玻璃不容易被投诉。
-传统天窗由于机械结构的存在，难免滑轨里掉入异物，或者由于设计失误、零部件批次等问题，容易在使用中产生异响、不顺滑等情况，非常影像体验，属于客户投诉比较多的零部件。现在好了，换成天幕玻璃，胶粘得死死的，哪儿来的异响？就算烤头，你也不能说是虚假宣传或质量问题，毕竟车企只会宣传红紫外线可见光隔绝率，没有哪家会宣传暴晒 5 个小时后的车内温度和头顶空气温度。
-第三，简化供应链。
-简化供应链=降低成本。传统天窗的供应模式一般遵照：
-玻璃生产商→玻璃总成组装商→车企主机厂
-换成玻璃天幕，直接简化成：
-玻璃生产商→主机厂
-这就是为什么车企和玻璃生产商都喜欢天幕玻璃，少了一层中间环节，对两方都有利。
-第四，颜值高。
-这个必须承认，天幕玻璃确实更通透，更显档次，更有科技感，更帅，而天幕玻璃烤头的问题只有在深度使用中才有深刻体会。如此一来，这么一项成本并不很高、又能促成订单的东西，何乐而不为呢？
-第五，偷空间。
-新能源车型特别是纯电动车更爱用天幕玻璃，不光是提升科技感，还能偷出 3~5cm 的车顶厚度。归根结底，是电池包底置布局多少会占用车厢高度，而玻璃天幕正好可以把新能源车牺牲的这部分空间偷回来，这对于客户试驾体验促成订单非常重要。等于说人们最喜欢的两个方面，一个大窗户，一个大空间，玻璃天幕都能满足或弥补。
-接下来讲讲为什么天幕玻璃宣传参数这么好，可还是会烤头，这就是车企玩文字游戏的地方了。
-其实车企宣传的抗紫外线主要是告诉你不会被晒伤晒黑，而抗红外线确实对减缓车内升温速度有帮助，但决定车内体感温度的关键不只在这里。天幕玻璃最大的要害，是玻璃本身会在暴晒下温度飙升，高温的玻璃会通过热传导和热辐射，加热玻璃下方的空气。热空气由于密度较低，会一直盘绕在车顶附近，所以很多人即便开着空调，一样会觉得脑袋附近热热的，尤其是空调出风位置较低的后排。
-哪些人会对玻璃天幕不隔热更加敏感呢，显然是个子高的，或者个子不高但非常在意防晒，或者体质本身比较敏感的人群。
-传统单天窗或全景天窗为什么不烤头？很简单，它们多数都配备了天窗遮阳帘啊！但玻璃天幕由于面积太大，动辄 1.3㎡甚至 2㎡，很难再去布置电动遮阳帘了。再者，想想刚才说的，车企配天幕玻璃的根本目的是这东西成本有优势，我再弄个电动遮阳帘，一套按键、机械结构下来，那不打回原形了，初心何在？
-所以天幕玻璃能发展起来，简直就是坟头烧香——命太好！
-结构简单，无异响，投诉率低
-缩短供应链，玻璃生产商可以直接供货
-开发周期短，不用考虑可靠性、机械机构
-表层感知鲜明，消费者一拉车门就被帅到
-用车痛点隐晦，无法归咎于产品质量问题
-以上是我对玻璃天幕的看法，反正这东西好还是不好，归根结底买车的人说了算。目前行业的趋势是向着天幕玻璃走的，以后这类车只会越来越多。毕竟成本面前，只要不违反国标，别的一切让路。做生意嘛，不寒碜。
-阅读原文]]></summary>
-        <author>
-            <name>知乎日报</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[为什么有些童年是《数码宝贝》的人会认为童年是《喜羊羊》的孩子可怜？]]></title>
-        <id>https://daily.zhihu.com/story/9751059</id>
-        <link href="https://daily.zhihu.com/story/9751059"/>
-        <updated>2022-07-26T23:05:50.000Z</updated>
-        <summary type="html"><![CDATA[乌合之子，我们首先应该善良，其次要诚实，再次是以后永远不要相互遗忘。
-阅读原文
-
-感谢 A 老师的邀请，其实 A 老师的回答已经说得非常清楚了，那就是《家有儿女》片尾曲里的那句话“你的童年我的童年好像都一样，小小肩膀大大书包上呀上学堂”。
-是的，童年可能是“好像都一样”的，因为童年原本就和学校是衔接在一起的，只要是进入了现代职业教育，尤其是小学和中学教育，不管是什么年代的人，都会有相似的感受。但除此之外的童年就不一样了，现在的孩童已经不能如鲁迅在《从百草园到三味书屋》那里写得一般，与自然田野相嬉戏。既然无法做到“行路”，那就恐怕只剩下“读书”了，所谓读书、知人、行路、历事，这四样必备的旅途组成了每个人人生的全部。
-作为喜学家和数码宝贝爱好者，这两部作品我都看。
-《喜羊羊与灰太狼》的首集播出时间是 2005 年，而《数码宝贝大冒险》的首集播出时间是 1998 年，相差 7 年。其实变化是从 2002 年之后就开始了。
-除了众所周知的原因以外，我觉得还有以下几个原因。
-一、传播媒介的普及化。电视作为大件家用电器，由于生产效率的提升带来成本的下降，大众更加容易购买得上，于是电视慢慢进入到了更多的家庭。于是电视传递出来的动画作品，它的数量就被大幅度的增加了，而且孩子们的兴趣呢，也逐渐被稀释了，关键是有的比。
-1998 年前后，由于电视台引进的动画作品，大多是来自日本和欧美的制作比较精良的剧情也比较细致的作品，那么观众的第一印象感觉动画片，哦，原来是可以做成这样。但是 2005 年前后呢，这种单一的接受语言不一样了，然后我们一比较就发现，噢原来动画片还可以做成那样，本来没有觉得中国动画制作有多糟，对吧，真的是没有比较就没有伤害。
-虽然作为喜学家，但是我们也不得不承认，喜羊羊系列开头那几年的制作确实很粗糙，画面也粗糙，剧情也粗糙，反正总之啥都粗糙。你看到了 05 年前后的日本动画，你会…]]></summary>
-        <author>
-            <name>知乎日报</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[瞎扯 · 如何正确地吐槽]]></title>
-        <id>https://daily.zhihu.com/story/9751080</id>
-        <link href="https://daily.zhihu.com/story/9751080"/>
-        <updated>2022-07-26T23:05:43.000Z</updated>
-        <summary type="html"><![CDATA[为什么机械键盘宣传都有几千万次使用寿命，却经常有使用一两年就坏了？
-
-白鱼
-阅读原文
-
-可能你用法有问题，比如经常用来跪。
-阅读原文
-
-两人拿枪互指脑袋，一方突然开枪，另一方有时间反击吗？
-
-MAS，饮冰十年难凉热血！对所有废死派深恶痛绝！
-阅读原文
-
-如果一方是燕双鹰，另一方要么挂了，要么枪里没子弹。
-阅读原文
-
-有什么本地人不怎么吃，外地人却以为是「当地特产」的美食？
-
-亦心，求赞|小说|零食茶饮测评推荐|土木工程
-阅读原文
-
-
-
-
-阅读原文
-
-安全带这么重要，为什么不设计成不系车就无法启动？
-
-天马行空，车企资深工程师：读过研、留过洋，讲过课，带过言
-阅读原文
-
-喂，拖车吗？我的安全带坏了，车开不走了了。
-阅读原文
-
-今年蚊子明显感觉少了，是因为天气热的原因吗？
-
-好物果礼物，有同名公众号，方便看送礼指南！
-阅读原文
-
-你都不出去玩了，还想着蚊子出来玩吗！！
-阅读原文]]></summary>
-        <author>
-            <name>知乎日报</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Facebook's TikTok-like redesign marks sunset of social networking era]]></title>
-        <id>https://www.axios.com/2022/07/25/sunset-social-network-facebook-tiktok</id>
-        <link href="https://www.axios.com/2022/07/25/sunset-social-network-facebook-tiktok"/>
-        <updated>2022-07-26T23:00:03.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Twenty Years of Valgrind]]></title>
-        <id>https://nnethercote.github.io/2022/07/27/twenty-years-of-valgrind.html</id>
-        <link href="https://nnethercote.github.io/2022/07/27/twenty-years-of-valgrind.html"/>
-        <updated>2022-07-26T22:59:17.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Please save Hacker Lab]]></title>
-        <id>https://tombetthauser.github.io/save-hackerlab/</id>
-        <link href="https://tombetthauser.github.io/save-hackerlab/"/>
-        <updated>2022-07-26T22:52:06.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[For Centuries, English Bakers’ Biggest Customers Were Horses]]></title>
-        <id>https://www.atlasobscura.com/articles/what-is-horse-bread</id>
-        <link href="https://www.atlasobscura.com/articles/what-is-horse-bread"/>
-        <updated>2022-07-26T21:33:16.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[We don't know how to fix science]]></title>
-        <id>https://www.worksinprogress.co/issue/we-dont-know-how-to-fix-science/</id>
-        <link href="https://www.worksinprogress.co/issue/we-dont-know-how-to-fix-science/"/>
-        <updated>2022-07-26T21:23:55.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[EasyPost (YC S13) Is Hiring]]></title>
-        <id>https://www.easypost.com/careers</id>
-        <link href="https://www.easypost.com/careers"/>
-        <updated>2022-07-26T21:02:15.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Micron's 232-layer NAND enables 2TB flash chips that deliver data 50% faster]]></title>
-        <id>https://spectrum.ieee.org/micron-is-first-to-deliver-3d-flash-chips-with-more-than-200-layers</id>
-        <link href="https://spectrum.ieee.org/micron-is-first-to-deliver-3d-flash-chips-with-more-than-200-layers"/>
-        <updated>2022-07-26T20:54:24.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[A little trick to spam the spammers]]></title>
-        <id>https://misc.l3m.in/txt/spam.txt</id>
-        <link href="https://misc.l3m.in/txt/spam.txt"/>
-        <updated>2022-07-26T19:11:11.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[CircleCI Announces Support for Gitlab]]></title>
-        <id>https://circleci.com/blog/announcing-gitlab-support/</id>
-        <link href="https://circleci.com/blog/announcing-gitlab-support/"/>
-        <updated>2022-07-26T18:31:54.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Shipping Multi-Tenant SaaS Using Postgres Row-Level Security]]></title>
-        <id>https://www.thenile.dev/blog/multi-tenant-rls</id>
-        <link href="https://www.thenile.dev/blog/multi-tenant-rls"/>
-        <updated>2022-07-26T18:16:22.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Understanding modern Linux routing (and wg-quick)]]></title>
-        <id>https://ro-che.info/articles/2021-02-27-linux-routing</id>
-        <link href="https://ro-che.info/articles/2021-02-27-linux-routing"/>
-        <updated>2022-07-26T17:57:31.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Show HN: Blueboat is an all-in-one, multi-tenant serverless JavaScript runtime]]></title>
-        <id>https://blueboat.io/</id>
-        <link href="https://blueboat.io/"/>
-        <updated>2022-07-26T16:33:55.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[LiteFS a FUSE-based file system for replicating SQLite]]></title>
-        <id>https://github.com/superfly/litefs</id>
-        <link href="https://github.com/superfly/litefs"/>
-        <updated>2022-07-26T16:14:28.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Propagation of mistakes in papers]]></title>
-        <id>http://databasearchitects.blogspot.com/2018/06/propagation-of-mistakes-in-papers.html</id>
-        <link href="http://databasearchitects.blogspot.com/2018/06/propagation-of-mistakes-in-papers.html"/>
-        <updated>2022-07-26T16:03:10.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Matt King: Forever Our Wizard]]></title>
-        <id>https://meowwolf.com/articles/remembering-matt-king-co-founder-meow-wolf</id>
-        <link href="https://meowwolf.com/articles/remembering-matt-king-co-founder-meow-wolf"/>
-        <updated>2022-07-26T15:56:35.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Logistics, How Did They Do It, Part I: The Problem]]></title>
-        <id>https://acoup.blog/2022/07/15/collections-logistics-how-did-they-do-it-part-i-the-problem/</id>
-        <link href="https://acoup.blog/2022/07/15/collections-logistics-how-did-they-do-it-part-i-the-problem/"/>
-        <updated>2022-07-26T15:19:00.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[CosmicStrand: The discovery of a sophisticated UEFI firmware rootkit]]></title>
-        <id>https://securelist.com/cosmicstrand-uefi-firmware-rootkit/106973/</id>
-        <link href="https://securelist.com/cosmicstrand-uefi-firmware-rootkit/106973/"/>
-        <updated>2022-07-26T14:44:05.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Mullvad is now available on Amazon]]></title>
-        <id>https://mullvad.net/en/blog/2022/7/26/mullvad-is-now-available-on-amazon-us-se/</id>
-        <link href="https://mullvad.net/en/blog/2022/7/26/mullvad-is-now-available-on-amazon-us-se/"/>
-        <updated>2022-07-26T13:44:28.000Z</updated>
         <summary type="html"><![CDATA[Comments]]></summary>
         <author>
             <name>Hacker News</name>
