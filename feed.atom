@@ -2,10 +2,516 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://7qi7qi.github.io/RSSFeeder/index.html</id>
     <title>osmos::feed</title>
-    <updated>2022-09-18T01:59:36.812Z</updated>
+    <updated>2022-09-19T01:55:28.955Z</updated>
     <generator>osmosfeed 1.15.1</generator>
     <link rel="alternate" href="https://7qi7qi.github.io/RSSFeeder/index.html"/>
     <link rel="self" href="https://7qi7qi.github.io/RSSFeeder/feed.atom"/>
+    <entry>
+        <title type="html"><![CDATA[深入OpenTelemetry指标]]></title>
+        <id>http://weekly.dockone.io/article/2434942</id>
+        <link href="http://weekly.dockone.io/article/2434942"/>
+        <updated>2022-09-19T01:55:26.581Z</updated>
+        <summary type="html"><![CDATA[译注：在本文中，为理解的一致性，我们保留了OpenTelemetry的术语，不作翻译：包括但不限于Instrument、Measurement、Exemplar、Baggage、Context等。需要注意区分Measurement和Instrument的区别，前者指的是度量数据，而后者通常是指用于监测的代码和工具。
+OpenTelemetry是由云原生计算基金会（CNCF）托管的一个用于基础设施性能检测的开源可观测性框架。该项目在几乎所有主要的云供应商（AWS、Google、Microsoft）以及可观测性供应商（包括Timescale）的贡献下得到了极大的发展，以至于它成为按活跃度和贡献者排名第二的CNCF项目，仅次于Kubernetes本身。
+OpenTelemetry旨在为所有类型的可观测数据定义一个单一的标准（在OpenTelemetry的术语中被称作Signals信号），包括监控指标、日志和链路追踪。通过一系列的工具、库、API、SDK和exporters，OpenTelemetry从根本上简化了从服务中收集信号并将其发送到你所选用的后端服务的过程，为更多的用户和供应商打开了可观测性的大门。
+在设计OpenTelemetry指标标准时，有三个设计目标被采纳：
+提供将监控指标与其他类型的可观察性数据相连接的能力：要么是通过Exemplars在链路追踪和监控指标之间直接连接，要么是通过Baggage和Context提供与日志和链路追踪享有相同的相关元数据，间接地连接。
+允许从OpenCensus标准轻松迁移到OpenTelemetry标准。
+在可能的情况下提供对其他主要指标实现的全面支持。Prometheus和StatsD是专门适配的，能够完全支持：那些迁移到OpenTelemetry的用户可以看到与使用其原生客户端类似的结果。
+
+OpenTelemetry提供了一个…]]></summary>
+        <author>
+            <name>megrez</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[引入 Kubernetes 是过早优化的危险信号]]></title>
+        <id>http://weekly.dockone.io/article/2434941</id>
+        <link href="http://weekly.dockone.io/article/2434941"/>
+        <updated>2022-09-19T01:55:26.567Z</updated>
+        <summary type="html"><![CDATA[【编者的话】引入 Kubernetes 是过早优化的危险信号？且听听本文作者怎么说吧。
+如果你所在的企业引入了 Kubernetes，那么你们很有可能会把精力花在一些偏离主线的事情上。
+乍一听这句话可能会感觉到很奇怪，毕竟我们花了这么长的时间来布道和兜售 Kubernetes 的发行版以及咨询服务，致力于帮助人们能够更加充分地利用它，但是事情就是这样！你也许不应该针对你的产品使用 Kubernetes 以及其他一堆“酷”的东西。
+绝大多数的初创以及扩张阶段的企业在构建软件时都应该避免使用 Kubernetes 以及其他的一些过早优化。如果你所在的企业使用了 Kubernetes，那么你们很有可能会把精力花在一些偏离主线的事情上。你们可能已经跌入了过早优化的陷阱。
+请不要觉得这篇文章只是针对 Kubernetes。不是的。这篇文章针对的是工程师们在构建软件的过程中可能做出的所有过早优化。
+以下是我见过的一些例子：
+将 Kubernetes 用于一个应用（还是个 Web 应用）的企业；
+应用程序用到了不只一种语言。比如，后端用的是 Golang、Ruby 或者是 PHP 等语言，然后前端 Web 用的是 React 或者 Vue 等框架；
+没有用云服务来托管应用。比如可以用 Heroku、Vercel、Netlify 或者 Fly.io 等。对于绝大多数产品团队来说，如果他们必须组建一个运维或者基础架构团队的话，他们的解决方案也将会是过度设计的。
+
+试想一下，一个人在真正开始玩他的爱好之前花费了大量的时间和金钱为这个爱好挑选最好的装备。
+当然，这里面有一些观点是比较主观的。也许你知道你会长期坚持你的新爱好，而且你有一个朋友刚好是这方面的行家，他可以帮你挑选合适的装备。不得不说，我自己就很擅长为自己辩解为什么要挑选精英装备，尽管我可能永远不会真的注意到这其中的区别。
+好钢要用在刀…]]></summary>
+        <author>
+            <name>colstuwjx</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[人脑能承载多少知识?]]></title>
+        <id>https://daily.zhihu.com/story/9753124</id>
+        <link href="https://daily.zhihu.com/story/9753124"/>
+        <updated>2022-09-18T23:06:42.000Z</updated>
+        <summary type="html"><![CDATA[赵泠，遗迹是曾经讴歌繁荣的生命留下的缺页的梦。
+阅读原文
+
+按蛋白质构象的可变范围和误差，人脑中每个突触可存储约 4.7 比特信息[1]，整个人脑可储存约 910TB 信息。若有更多 talin 之类蛋白参与，这可以再增加至多三个数量级。
+过程参照：
+突触储存信息的容量是如何估算出来的？
+作为对比，2017 年整个互联网约有 500 万 TB 信息，可以覆盖那至多三个数量级的潜在误差。
+人脑的记忆并非永固，用得少的突触连接会被剪枝而遗忘。
+神经细胞不断有新的突触形成，也不断有旧的突触消失。动物受到外界刺激时，突触形成和消失的数量骤然增加。据观察，有些突触只存在几个小时，而另外一些则长时间存在并可能固定下来形成新的神经线路。
+人脑的这些容量并不都能拿来存储知识。研究表明一个人在每个特定领域可以掌握约 10 万个概念：
+世界级国际象棋大师约能掌握 10 万局棋谱；
+莎士比亚的词汇量约为 2.9 万，这些单词能表达的含义接近 10 万个；
+医疗机器的开发支持掌握 10 万个医学概念的机器可以达到同一个领域的人类医生九成的诊断效果。
+设每个专业方面的知识占一个普通人知识总量的 1%、每个概念需要 0.1MB 到 1MB 来储存，按照库兹韦尔在《奇点临近》里给出的估算[2]，一个普通人的知识总量约 1.13TB，距离 910TB 的硬盘容量限制还很遥远。
+看起来，记忆剪枝机制的存在不是因为硬盘容量限制。
+阅读原文]]></summary>
+        <author>
+            <name>知乎日报</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[南朝还有荆扬之争吗，荆扬之争什么时候退出历史的？]]></title>
+        <id>https://daily.zhihu.com/story/9753132</id>
+        <link href="https://daily.zhihu.com/story/9753132"/>
+        <updated>2022-09-18T23:06:34.000Z</updated>
+        <summary type="html"><![CDATA[丧心病狂刘老湿，会讲点儿故事，略懂点儿历史，稍有点儿意思。
+阅读原文
+
+东汉将天下分为十三州，其中益州、荆州、扬州三州位于南方，在唐代以前都属于较不发达地区，地广人稀，辖区广大。而自汉末三国以来，六朝偏安江南，基本上都以荆州与扬州为自己的基本盘，正所谓是“荆、扬二州，户口半天下”[1]。
+不过由于东晋南朝门阀政治的特殊格局，荆州与扬州之间的关系却谈不上有多和谐。东晋开国之后没过多久，王敦之乱就掀开了荆、扬对抗的序幕。此后两百余年，荆、扬二州频繁冲突，一国之内战火不断，而荆州处于长江上游，有地势之利，在早期的荆、扬之争中往往能够力压首都所在地的扬州。可等到南朝中后期，荆州被一再分割削弱，就再也没法重现往日荣光了，反而在荆、扬之争中处于弱势，这其中各种纷乱，聊起来颇为有趣。
+话说东汉末年分三国，有一个诸葛孔明在草庐里画了一个圈，跟刘备讲荆州这个地方日后一定要捏到手里，这里“北据汉、沔，利尽南海，东连吴会，西通巴、蜀，此用武之国”[2]。此后吴蜀两国围着荆州大打出手，最后孙吴不惜背刺关羽，总算是把这个地方给拿了下来。
+对偏安江南的六朝政权而言，长江附近山多水多，平原相对较少，而且大多集中于沿江一线。因此这些政权所占据的土地面积虽然看着挺大，可能开发利用的，却并不是很多。所以长江不仅是他们天然的屏障，更是这些国度的精华所在。荆州占据了长江的上游，假如控制在别人手中的话，万一哪天双方反目成仇，那么对手就可以顺流而下，直取要害。所以控制荆州，则扬州自然安全；失去荆州，则扬州必然危险，这几乎已经成为了魏晋南北朝时期所有人的共识。
+更要命的是荆州地处交通要害，乃是南朝与北方对抗的军事要冲，清代大儒顾炎武有言是“荆、襄者，天下之吭……无荆、襄不可以国”[3]。在淝水之战前夕，桓冲以地势阻挡秦军顺流而下，为下游的谢安创造了与苻坚对战的有利条件，充分说明了荆州在维护六朝政权中的重要作用。所以这样…]]></summary>
+        <author>
+            <name>知乎日报</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[如果宇宙中真的存在修真文明，我们有胜算吗？]]></title>
+        <id>https://daily.zhihu.com/story/9753136</id>
+        <link href="https://daily.zhihu.com/story/9753136"/>
+        <updated>2022-09-18T23:06:29.000Z</updated>
+        <summary type="html"><![CDATA[赵泠，遗迹是曾经讴歌繁荣的生命留下的缺页的梦。
+阅读原文
+
+如果宇宙中存在“修真文明”，人类和“修真文明”之间未必会发生冲突。如果发生冲突，人类的技术文明有极大胜算。
+首先，如果“宇宙中真的存在修真文明”这个前提成立，则自然规律允许修真，那么人类可以科学地研究、理解并掌握修真。即使人类的体质不适合修真，人类也可以制造修真机器，就像人类体质不适合在深海直接活动于是建造了深海潜水器那样。
+这建立在平庸原理的基础上。平庸原理是近现代科学哲学的一种观念，认为人类、地球、太阳系、银河系在宇宙中不处于任何特殊地位，没有任何特别的重要性，也不是什么“宇宙的渣滓”“贱民”或“罪人”。从哥白尼以来的哲学思辨和近年来的证据都支持这种观念[1]。
+其次，修真文明的境界未必有多高。人类社会的文艺作品里的设定攀比已经持续很多年了，几十年前的美国漫画就动用了高阶无穷，中国修仙小说也早就写过一堆“一念创世、一念灭世”。但是，境界不止是吹出来的，你描写的每一个具体情境都会体现角色的境界。倘若一个号称修真文明的集团修了半天都没脱离此世，还能跟人类在“宇宙中”相遇并发生要讨论“胜算”的冲突，那他们的修真水准是无法期待的，他们不被技术文明“一个照面便打成猪头”就算是不错了。
+例如“每个人都有核弹威力”的低级修仙团体，根本就不够一个可以宇航的技术文明打的，一触即溃。对实用的宇航技术意味着什么要有一定认识。
+虫洞：直径 1000 米的虫洞需要的负能量，基本相当于太阳系总质量，是跨越距离摧毁一切常规物质的混沌巨口。它可以从发动处延伸到对方恒星系里的任何位置，击杀任何常规天体、载具、生物，半条船都不需要上，对方非 FTL 文明就灰飞烟灭了。
+曲速：木星质量级别的负能量顶在船前方才能拖动 10 吨级的飞船超越光速，这船朝着敌方怼过去就可以捅穿一切常规物质了。非 FTL 文明的整个行星系统被湮灭大概都刹不住你一条 FTL …]]></summary>
+        <author>
+            <name>知乎日报</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Bitcoin is not a Store of Value]]></title>
+        <id>https://cryptostackers.substack.com/p/bitcoin-is-not-a-store-of-value</id>
+        <link href="https://cryptostackers.substack.com/p/bitcoin-is-not-a-store-of-value"/>
+        <updated>2022-09-18T23:06:23.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[青梅煮酒为什么要配青梅，并且要煮酒？]]></title>
+        <id>https://daily.zhihu.com/story/9753140</id>
+        <link href="https://daily.zhihu.com/story/9753140"/>
+        <updated>2022-09-18T23:06:22.000Z</updated>
+        <summary type="html"><![CDATA[foxwong，闲来没事，聊聊白酒
+阅读原文
+
+古时候的青梅煮酒，相当于现在喝酒时吃花生米。
+一、古代的酒为什么要煮？
+《红楼梦》第八回有这么一段：
+这里宝玉又说：“不必烫暖了，我只爱吃冷的。”薛姨妈忙道：“这可使不得，吃了冷酒，写字手打飐儿。”
+可见古时候一般不喝冷酒，都要煮的，但煮到什么程度呢？那要看装的是什么酒。
+1、如果是成品黄酒，那只加热到 60-70℃，放到酒桌旁边的樽里，然后再盛进酒杯里喝。这里的煮酒指的就是温酒，并不像吃火锅似的煮到沸腾。
+洛阳东汉墓 夫妻宴饮图
+上图是东汉墓里的壁画，可以看到右侧酒樽下并没有火在加热。乙醇（酒精）的沸点是 78℃，为了避免酒精过多蒸发，在温酒时一般只加热到 60-70℃之间。
+电视剧《三国演义》貂蝉把盏时把酒樽放到了席子上，也没有火炉，基本还原了汉代饮酒场景。
+貂蝉左手下面就是盛酒的樽
+现代喝的酒是白酒，是蒸馏后的酒，蒸馏时酒头、酒尾都要去掉，只要中间一段作为基酒。有邪杂味的低沸点物质（硫化氢、甲醛等）主要在酒头（大约 1-2 斤）里，蒸馏酒精时顺便减少了邪杂味和刺激感。而古代喝的酒是黄酒，酒精度不高，没有蒸馏工序，硫化氢等成分都在酒里面，为了喝着舒服一般需要温酒。
+2、煮酒也有煮沸了的喝法，但这种酒不是成品酒，而是有酒糟的酒，曹植写过一首诗叫《七启》：
+“盛以翠樽，酌以雕觞。浮蚁鼎沸，酷烈馨香。”
+“浮蚁”指的是发酵的米粒，也就是酒糟，煮沸后酒糟浮在酒上，闻起来特别的香。所以，煮沸的酒必须有酒糟，要不然没法喝。要不信你可以把啤酒煮熟试试，好像没人喝啤酒时喝温的。
+3、煮酒也是古代黄酒的一道杀菌工具，北宋朱肱在《北山酒经》记载了“煮酒”的方法，烧煮满盛酒的容器，然后再加蜡油密封（也有先封坛再加热的），为的是防止酒腐败。
+国家标准规定，酒精度在 10°上的才不用标保质期，汉朝、宋朝的酒都没有蒸馏过，酒精度低，想长期保存必须得煮酒杀菌，要不然 18 年的女儿红早就坏了。
+宋末元初方回的书《续古今考》记载：“今之煮酒，实则蒸，泥之季冬者佳。曰清酒，则未蒸者。”宋朝末年提到的煮酒实际上是蒸酒操作，没煮的叫做清酒。
+二、青梅煮酒是怎么回事？
+提到青梅煮酒这个词，想到的肯定是曹刘煮酒论英雄，他们煮酒时并没有把青梅放进酒里，《三国演义》原文是这样写的：
+（曹操说）“刚才看见树枝上梅子青青，忽然想起去年去征讨张绣时……现在看见这梅子，觉得不可不赏。又当酒正煮熟，所以邀请使君来小亭一会。”玄德心神方定。随至小亭，已经设还好杯盘：盘里放置着青梅，一樽煮酒。二人对坐，开怀畅饮。
+翻译翻译加粗的字：曹操看到酒正煮熟，看到了梅子，所以邀请刘备来聊天，酒席上青梅放在盘子里，酒放在酒樽里。
+
+当时的喝酒场景是这样的：喝一口酒、吃一口梅子，王允请吕布时也是这个场景，酒樽旁放的都是水果。
+相当于现在的喝一口酒、嚼几粒花生米，三国时期没有花生，花生在明朝时才传入我国。
+酒液上没有酒糟
+电视剧拍煮酒论英雄这一段时，把部分青梅也放进了酒樽里是不对的，那个时候还没这种吃法。青梅煮酒这种喝法的出现是在唐朝，流行起来是在宋朝。
+宋朝初年，丞相晏殊写过一句词：“青梅煮酒斗时新，天气欲残春。”意思是青梅煮酒是一种刚刚时兴的喝酒方式，之前大部分人喝酒时不吃青梅。
+即便三国演义要煮酒，酒里必须得有酒糟才行，要不然煮出来的酒很难喝。所以罗贯中写《三国演义》时犯了一个历史性的错误，把明朝的喝法代入了东汉。
+三、真正的青梅煮酒什么样？
+陆游写过一首诗“煮酒青梅次第尝”，注意“次第”二字，意思是喝酒时先尝煮酒，再吃青梅。
+宋朝谢逸的诗“谩摘青梅尝煮酒，旋煎白雪试新茶。”意思是采摘新鲜的青梅后拿去喝煮酒。
+欧阳修的诗“红泥煮酒尝青杏，犹向临流籍落花。“当时不一定是青梅煮酒，也可以是青杏煮酒。
+青梅煮酒一般在春末夏初，也就是农历的立夏前后，有宋代汪莘的诗为证：“牡丹未放荼蘼小，并入青梅煮酒时。”
+所以，自宋朝开始流行吃青梅喝煮酒。
+四、拿酸酸的青梅当下酒菜，为什么不吃熟了的梅子呢？
+《周礼》认为：“春发散，宜食酸以收敛。”药王孙思邈的《摄养论》说：
+“四月肝脏已病，心脏渐壮。宜增酸减苦，补肾助肝，调养胃气。”
+孙思邈认为农历 4 月肝脏有病，春季养生重在养肝，而恰好“酸入肝”，所以每年四月需要吃酸的东西用来补肝，顺便补补肾。
+酸的东西那么多，为什么非要吃青梅呢？《本草纲目》总结为：梅，花开于冬而果实成熟于夏，得到了木之全气，所以其味最酸。
+所以春季吃酸东西属于“自古以来”，不吃熟了的梅子、非要吃青梅就可以理解了。
+五、青梅煮酒这个成语是由 2 个词组成的——“青梅”和“煮酒”。
+理解关键在“煮”这个字，“煮”在这里不是动词，而是形容词。
+翻译一下就是：从宋朝开始，每年农历四月人们摘下还没有成熟的梅子，拿到酒宴上一边喝热酒、一边吃青梅。
+翻译的简练一点就是 4 个字：喝酒吃菜。
+阅读原文]]></summary>
+        <author>
+            <name>知乎日报</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[有哪些普通人很少听说，但在生活中很重要的化学元素？]]></title>
+        <id>https://daily.zhihu.com/story/9753144</id>
+        <link href="https://daily.zhihu.com/story/9753144"/>
+        <updated>2022-09-18T23:06:17.000Z</updated>
+        <summary type="html"><![CDATA[中国科普博览，我们科学家有话说
+阅读原文
+
+提名“镍”。
+图：镍在最新版元素周期表中的位置
+在中国西部的河西走廊，传承了两千年的“河西四郡”，已经扩增为现在的“河西五地市”。新增加的甘肃省金昌市，是因为金属元素——镍（符号 Ni）的矿藏开发而设立，被称为中国的“镍都”，并进入了地理课本。几十年里，金川镍矿对共和国工业建设做出了巨大的贡献。
+图：1992 年 8 月，中共中央总书记江泽民视察金川，题写“腾飞的镍都” 
+图：金川镍矿出产的关键金属元素 （图片来源：纪录片《河西走廊》）
+然而，在此前，整个二十世纪五十年代，中国是完完全全的缺镍国家。为何乾隆皇帝曾自豪地以“天朝上国，无所不有”来夸赞的中国，却独独缺少镍？镍和工业生产、人民的生活又有什么密切地联系呢？
+缺镍的那些年：流产的货币计划
+说起中国的矿产特征，一般来说就是单缺四样：“金银铜铁”。在中国 960 万平方公里的陆地面积上，这四样的矿也不是没有，但是矿石的品位和储量嘛，这么伤心的话题……我们还是回过头来说镍好了。
+在 1949 年新中国成立的时候，以及整个五十年代，中国是完完全全的缺镍的国家，缺到什么程度呢？让我们从清朝说起。
+19 世纪末，风雨飘摇中的大清朝为了续命，在大笔大笔赔银子的财政压力下酝酿了针对银本位的货币改革计划，其中就有使用镍币进入流通领域替代银、铜币的想法，还从英国伯明翰造币厂订购了少量镍币样币给慈禧和光绪“御览”。
+图：清朝镍币样币
+但是，在国外已进入流通领域的镍币在大清朝廷却遇到了前所未有的阻力，除掉那些利益集团和党争的因素外，一个非常重要且无法反驳的理由就是：当时的中国没有镍矿。一切镍币原材料及其加工设备都需要从外国进口，无论是成本还是国家安全都没有办法进行保证。因此，清廷引入镍币进行货币改革的计划就流产了，流散出去的样币现在成了收藏界的珍品，偶见于拍卖会场。
+白银、镍白铜傻傻分不清
+民国是…]]></summary>
+        <author>
+            <name>知乎日报</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[瞎扯 · 如何正确地吐槽]]></title>
+        <id>https://daily.zhihu.com/story/9753145</id>
+        <link href="https://daily.zhihu.com/story/9753145"/>
+        <updated>2022-09-18T23:06:10.000Z</updated>
+        <summary type="html"><![CDATA[知乎日报
+
+Q：15666666666 联通号码线上拍卖，起拍价 1366 万，话费余额 38 万，靓号如何评估价格？
+@狗窝里的跳蚤 ：这么好的号码，不用来做电话销售可惜了。
+Q：女朋友非要和我带一个耳机，怎么和她解释降噪功能真的会减弱？
+@Honstin Hui ：你没事吧？女朋友在旁边还要降噪？你们是不是不是很熟？
+Q：如何看待高速服务区餐厅里「老鼠在包子旁悠闲理毛」？高速服务区的卫生情况如何监督？
+@小新 ：难道是料理鼠王？
+Q：奇葩说给你带来了哪些好处？
+@储殷 ：的确让我变得更有涵养了。因为很多人认识你。 所以路上车被人撞了，一肚子怒火，也只有微笑。。。。。
+Q：为什么军人的肌肉会比普通健身爱好者的肌肉要硬?
+@emmmm ：冒昧的问一句，这是你摸过几个得到的数据？
+阅读原文]]></summary>
+        <author>
+            <name>知乎日报</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Tuned Mass Damper of Taipei 101]]></title>
+        <id>https://www.atlasobscura.com/places/tuned-mass-damper-of-taipei-101</id>
+        <link href="https://www.atlasobscura.com/places/tuned-mass-damper-of-taipei-101"/>
+        <updated>2022-09-18T22:31:14.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Figma: A Random Walk in Palo Alto]]></title>
+        <id>https://adamnash.blog/2022/09/16/figma-a-random-walk-in-palo-alto/</id>
+        <link href="https://adamnash.blog/2022/09/16/figma-a-random-walk-in-palo-alto/"/>
+        <updated>2022-09-18T21:52:44.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Flexport is hiring smart, gritty People who get stuff done]]></title>
+        <id>https://flexport.com/careers</id>
+        <link href="https://flexport.com/careers"/>
+        <updated>2022-09-18T21:00:43.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[An X11 Apologist Tries Wayland]]></title>
+        <id>https://artemis.sh/2022/09/18/wayland-from-an-x-apologist.html</id>
+        <link href="https://artemis.sh/2022/09/18/wayland-from-an-x-apologist.html"/>
+        <updated>2022-09-18T20:41:47.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[America’s most remarkable kid died in Newcastle, Utah]]></title>
+        <id>https://www.deseret.com/2022/8/22/23309244/cole-summers-died-newcastle-utah-warren-buffett-charlie-munger-bari-weiss-unschooled</id>
+        <link href="https://www.deseret.com/2022/8/22/23309244/cole-summers-died-newcastle-utah-warren-buffett-charlie-munger-bari-weiss-unschooled"/>
+        <updated>2022-09-18T19:56:14.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Not Perfect, Just Better]]></title>
+        <id>https://satfax.substack.com/p/not-perfect-just-better</id>
+        <link href="https://satfax.substack.com/p/not-perfect-just-better"/>
+        <updated>2022-09-18T19:49:20.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Hot Chips 34: AMD’s Instinct MI200 Architecture]]></title>
+        <id>https://chipsandcheese.com/2022/09/18/hot-chips-34-amds-instinct-mi200-architecture/</id>
+        <link href="https://chipsandcheese.com/2022/09/18/hot-chips-34-amds-instinct-mi200-architecture/"/>
+        <updated>2022-09-18T19:22:16.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[The Hyperinflation Gallery]]></title>
+        <id>https://lcamtuf.coredump.cx/hyper/</id>
+        <link href="https://lcamtuf.coredump.cx/hyper/"/>
+        <updated>2022-09-18T19:03:28.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[The $300B Google-Meta advertising duopoly is under attack]]></title>
+        <id>https://www.economist.com/business/2022/09/18/the-300bn-google-meta-advertising-duopoly-is-under-attack</id>
+        <link href="https://www.economist.com/business/2022/09/18/the-300bn-google-meta-advertising-duopoly-is-under-attack"/>
+        <updated>2022-09-18T18:17:04.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Hacker News stylized as a retro 90s macOS desktop]]></title>
+        <id>https://hackertosh.org/</id>
+        <link href="https://hackertosh.org/"/>
+        <updated>2022-09-18T17:56:46.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Measuring CPU core-to-core latency]]></title>
+        <id>https://github.com/nviennot/core-to-core-latency</id>
+        <link href="https://github.com/nviennot/core-to-core-latency"/>
+        <updated>2022-09-18T17:15:18.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Poor writing, not specialized concepts, drives difficulty with legal language]]></title>
+        <id>https://www.sciencedirect.com/science/article/pii/S0010027722000580</id>
+        <link href="https://www.sciencedirect.com/science/article/pii/S0010027722000580"/>
+        <updated>2022-09-18T16:50:41.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Sony Android TVs waste 25W in standby due to built-in Google Chromecast]]></title>
+        <id>https://www.avsforum.com/threads/sony-2015-xbr-55x850c-xbr-65x850c-xbr-75x850c-owners-club.1985298/page-765#post-61979548</id>
+        <link href="https://www.avsforum.com/threads/sony-2015-xbr-55x850c-xbr-65x850c-xbr-75x850c-owners-club.1985298/page-765#post-61979548"/>
+        <updated>2022-09-18T16:27:26.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[GCC's new fortification level: The gains and costs]]></title>
+        <id>https://developers.redhat.com/articles/2022/09/17/gccs-new-fortification-level</id>
+        <link href="https://developers.redhat.com/articles/2022/09/17/gccs-new-fortification-level"/>
+        <updated>2022-09-18T15:47:03.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[YouTubePluginReplacement.cpp: YouTube-specific code in WebKit]]></title>
+        <id>https://github.com/WebKit/WebKit/blob/main/Source/WebCore/Modules/plugins/YouTubePluginReplacement.cpp</id>
+        <link href="https://github.com/WebKit/WebKit/blob/main/Source/WebCore/Modules/plugins/YouTubePluginReplacement.cpp"/>
+        <updated>2022-09-18T15:05:30.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Trianglify.io – Low Poly Pattern Generator]]></title>
+        <id>https://trianglify.io/</id>
+        <link href="https://trianglify.io/"/>
+        <updated>2022-09-18T14:21:42.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[MiSTer FPGA: Recreate classic computers using modern hardware]]></title>
+        <id>https://mister-devel.github.io/MkDocs_MiSTer/</id>
+        <link href="https://mister-devel.github.io/MkDocs_MiSTer/"/>
+        <updated>2022-09-18T13:30:14.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[EmuTOS – Free OS for Atari ST and more]]></title>
+        <id>https://emutos.sourceforge.io/</id>
+        <link href="https://emutos.sourceforge.io/"/>
+        <updated>2022-09-18T13:03:46.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Meli – email client in the terminal, in the spirit of mutt]]></title>
+        <id>https://git.meli.delivery/meli/meli</id>
+        <link href="https://git.meli.delivery/meli/meli"/>
+        <updated>2022-09-18T13:00:14.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Finding the “second bug” in glibc’s condition variable]]></title>
+        <id>https://probablydance.com/2022/09/17/finding-the-second-bug-in-glibcs-condition-variable/</id>
+        <link href="https://probablydance.com/2022/09/17/finding-the-second-bug-in-glibcs-condition-variable/"/>
+        <updated>2022-09-18T12:55:10.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[The future of documentation at Canonical (2021)]]></title>
+        <id>https://ubuntu.com/blog/the-future-of-documentation-at-canonical</id>
+        <link href="https://ubuntu.com/blog/the-future-of-documentation-at-canonical"/>
+        <updated>2022-09-18T12:48:40.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[How to Bypass Cloudflare: A Comprehensive Guide]]></title>
+        <id>https://www.zenrows.com/blog/bypass-cloudflare</id>
+        <link href="https://www.zenrows.com/blog/bypass-cloudflare"/>
+        <updated>2022-09-18T11:59:58.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[The beginning of the Monte Carlo method (1987) [pdf]]]></title>
+        <id>https://lib-www.lanl.gov/cgi-bin/getfile?00326866.pdf</id>
+        <link href="https://lib-www.lanl.gov/cgi-bin/getfile?00326866.pdf"/>
+        <updated>2022-09-18T11:15:20.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Arm execs: We respect RISC-V but it's not a rival in the datacenter]]></title>
+        <id>https://www.theregister.com/2022/09/17/arm_riscv_datacenter_competiton/</id>
+        <link href="https://www.theregister.com/2022/09/17/arm_riscv_datacenter_competiton/"/>
+        <updated>2022-09-18T11:02:28.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Hg64: A 64-bit histogram data structure]]></title>
+        <id>https://dotat.at/@/2022-07-15-histogram.html</id>
+        <link href="https://dotat.at/@/2022-07-15-histogram.html"/>
+        <updated>2022-09-18T11:01:53.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Steps to designing an embedded software architecture, Step 1]]></title>
+        <id>https://www.embedded.com/5-steps-to-designing-an-embedded-software-architecture-step-1/</id>
+        <link href="https://www.embedded.com/5-steps-to-designing-an-embedded-software-architecture-step-1/"/>
+        <updated>2022-09-18T10:08:29.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Chem Lab Made Me a Better Dev]]></title>
+        <id>https://edweissman.com/chemistry.html</id>
+        <link href="https://edweissman.com/chemistry.html"/>
+        <updated>2022-09-18T09:52:11.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[How mechanics keep 50-year-old BART trains running: Windows 98, eBay, and scraps]]></title>
+        <id>https://www.mercurynews.com/2022/09/17/how-clever-mechanics-keep-50-year-old-bart-trains-running-windows-98-ebay-and-scraps/</id>
+        <link href="https://www.mercurynews.com/2022/09/17/how-clever-mechanics-keep-50-year-old-bart-trains-running-windows-98-ebay-and-scraps/"/>
+        <updated>2022-09-18T05:58:06.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Show HN: I may have created a new type of puzzle]]></title>
+        <id>http://www.dogbunnypuzzle.com/</id>
+        <link href="http://www.dogbunnypuzzle.com/"/>
+        <updated>2022-09-18T04:37:58.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Istio vs. Linkerd vs. Consul]]></title>
         <id>http://weekly.dockone.io/article/2434933</id>
@@ -14384,387 +14890,6 @@ Who need de Jong？开个玩笑。开局两连败（包括一场史诗级惨败�
         <id>https://supabase.com/blog/supabase-vault</id>
         <link href="https://supabase.com/blog/supabase-vault"/>
         <updated>2022-08-20T14:31:33.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[The Silence of Risk Management Victory]]></title>
-        <id>https://riskmusings.substack.com/p/the-silence-of-risk-management-victory</id>
-        <link href="https://riskmusings.substack.com/p/the-silence-of-risk-management-victory"/>
-        <updated>2022-08-20T13:46:46.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Instinctive sleeping and resting postures: an anthropological study (2000)]]></title>
-        <id>https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1119282/</id>
-        <link href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1119282/"/>
-        <updated>2022-08-20T12:20:47.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[How Does Shazam Work? Music Recognition Algorithms, Fingerprinting (2015)]]></title>
-        <id>https://www.toptal.com/algorithms/shazam-it-music-processing-fingerprinting-and-recognition</id>
-        <link href="https://www.toptal.com/algorithms/shazam-it-music-processing-fingerprinting-and-recognition"/>
-        <updated>2022-08-20T07:35:26.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[High-Speed Rail Board Completes Environmental Clearance in Northern California]]></title>
-        <id>https://hsr.ca.gov/2022/08/18/news-release-high-speed-rail-board-completes-environmental-clearance-in-northern-california/</id>
-        <link href="https://hsr.ca.gov/2022/08/18/news-release-high-speed-rail-board-completes-environmental-clearance-in-northern-california/"/>
-        <updated>2022-08-19T23:25:15.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Nvidia to Share New Details on Grace CPU, Hopper GPU, NVLink Switch, Jetson Orin]]></title>
-        <id>https://blogs.nvidia.com/blog/2022/08/19/grace-hopper-nvswitch-hot-chips/</id>
-        <link href="https://blogs.nvidia.com/blog/2022/08/19/grace-hopper-nvswitch-hot-chips/"/>
-        <updated>2022-08-19T23:24:31.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[如何评价电影《隐入尘烟》？]]></title>
-        <id>https://daily.zhihu.com/story/9751935</id>
-        <link href="https://daily.zhihu.com/story/9751935"/>
-        <updated>2022-08-19T23:07:59.000Z</updated>
-        <summary type="html"><![CDATA[若问行慢，写写电影，写写人
-阅读原文
-
-几天前和朋友谈起这部电影，我这样说：意识到是杰作，杰作是不需要评价的，只需要感受。后来想想，属于偷懒了。
-聊聊吧。
-李睿珺这样描述两个人物。
-这些年能从农村离开的青年人、中年人都走了，他们两个是因为各种原因走不出这片土地的人，又被两个家庭各自抛弃掉，他们被众人的目光区隔，只有很小的（生存）空间。
-因为他们所处的位置和环境，导致他们对比他们处境更低的动物植物有一种同理心。他能够理解比他命运更差的人和物的一系列的命运，这能够产生一个联结，好比他对麦子的理解。麦子被种下去，麦子是不是愿意被种下去？是不是愿意被收割？是不是愿意被变成面粉或者被当成种子？麦子没有选择。
-我没资格同情老四
-像老四这样的人，我们见过很多，也忽略过很多。平日里，我们不屑对他们投注太多目光。唯有在大荧幕上，远远望着他们时，我们的善良和耐心才能被勾出来。这是这部电影存在的意义之一。
-电影的起始时间是冬天，老四和贵英相遇。雪很大，棉袄很厚，看起来很冷，但最冷的不是冬天，是人心。
-贵英患尿失禁，且不能生育，对哥哥嫂子来说是耻辱，是累赘；老四木讷老实，是大龄单身男中年的代表，侄子结婚的日程都快排在他前面了。
-婚姻在农村里，成了解决他人闲言碎语的避风港。农村人面临的生存困境就是这样，怕被人笑话是他们的生存方向，人活一口气是他们的生存动力。
-人生大事，很多时候和幸福无关，准确地说，和处在婚姻里的两个人无关。和旁人有关，像老四和贵英这样的人，对他们的家人来说，结了婚就等于就卸下了一个包袱。眼不见为净，因为看着心烦。心烦和道德无关，和人性有关。他们忙着生存，没时间思考道德。道德是中间人的专属，太富的人，漠视道德；太穷的人，无视道德。
-按照传统的戏剧处理方式，老四帮助了“宝马男”张永福，该是他生命的转折点。不说感恩，感谢应当是有的。可惜没有。为什么？懒得讨论工业文明和农耕文明的对抗关系，…]]></summary>
-        <author>
-            <name>知乎日报</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[中国有哪些现存的宏伟至极的古建筑？]]></title>
-        <id>https://daily.zhihu.com/story/9751942</id>
-        <link href="https://daily.zhihu.com/story/9751942"/>
-        <updated>2022-08-19T23:07:50.000Z</updated>
-        <summary type="html"><![CDATA[游旭东，一个观察，不一定对
-阅读原文
-
-大家都在说山西，我推荐一个相对冷门的全国第一国保大县，河北蔚县。
-在机缘巧合停留蔚县前，我对此地一无所知。
-蔚县位于河北省张家口市的南端，首尾相接的太行与燕山两大山脉横亘在它和华北平原之间。位于北京到大同的 109 国道的中途。
-2022 年 7 月初，我骑摩托车从北京前往大同，中途遇雨，在蔚县停留。这场不经意的停留却变成了一场寻宝之旅。蔚县无愧历史文化名称的称号，对我这类访古爱好者而言，蔚县就是一座宝藏。
-蔚县灵岩寺藻井
-蔚县之地最初进入汉语的历史书写，是作为一个以畜牧为主，与中原地区保持着密切关系的小国，称作“代国”。公元前 5 世纪上半叶，代国被位居其南的赵国吞并，公元前 4 世纪后半，赵国在此设置代郡，公元前 3 世纪，秦灭六国，将疆土划分为三十六郡，代郡为其一。后经朝代更迭，代郡的范围屡有变化，直到 6 世纪，它作为北魏帝国北部边疆的一部分在戍边将士的起义战争中被彻底摧毁。8 世纪初，荒凉了近两百年之后，这里迎来了处于鼎盛时期的唐王朝的驻军，地名也从代郡变成了蔚州。直到 20 世纪初，蔚州改为县，即今天的蔚县。
-蔚县西大神堡
-我在蔚县的旅行时间短暂，只能以“国保”为线索。所谓国保，就是全国重点文物保护单位，是我国文物行政部门（国家文物局）对不可移动文物所核定的最高保护级别。
-蔚县作为一个人口仅 50 万人的小县，拥有 1610 多处文物遗存，22 处全国重点文物保护单位,被誉为全国第一国保文物大县，被文物古建界誉为全国罕见的“古建筑博物馆”。
-在蔚县的第一站是蔚州博物馆，当天几乎只有我一个游客，虽然博物馆有些区域仍然在布展，但不妨碍其丰富的馆藏对我的冲击。
-
-蔚州博物馆虽然只是一个县级博物馆，但其建筑面积达 13000 平方米，藏有古动物化石、陶器、瓷器、青铜器、书画、雕塑等各类馆藏文物 11194 件，其中珍贵文物 371 件。是河北省最早的县级博物馆。
-青铜彩绘雁鱼灯，西汉
-汉彩绘侍女烤肉串图陶灶
-唐绿釉贴花塔形莲座陶罐和唐绿釉凤首陶壶
-明代塑像
-离开蔚县博物馆后，我按国保名单，去看了几个重要的古建。时间有限，能看的不多。
-蔚县玉皇阁
-
-
-
-
-
-玉皇阁又称靖边楼，位于蔚县城北城垣上，明代建筑，1996 年被国务院公布为第四批全国重点文物保护单位。
-黑神话·悟空中的这个场景原型就是蔚县玉皇阁。
-
-蔚县真武庙
-
-
-
-始建年代不详，明、清重修，结合碑文记载推断，真武庙应为明洪武年间建筑，第六批国保。铁将军把门，只能在外部看看
-资料：真武庙前殿为穿心过殿。单檐悬山卷棚勾连搭式，面宽三间，进深三间，悬山为正五架分心中柱式，五架梁枋心绘“金龙牡丹”，前卷棚为四架梁，顶置椤锅椽，梁架均油饰。正殿位于院内正北为北极大殿。单檐歇山绿琉璃瓦顶，琉璃花脊，前抱厦，厦前砌宽敞的月台，高于院面 1.30 米。大殿面宽三间，进深五间。
-灵岩寺
-
-
-
-
-第六批国保，据《大同府志》记载：“蔚州灵岩寺元末毁，国朝正统六年敕赐重建”。经有关专家研究，灵岩寺现存的天王殿为元末、明初的建筑。大雄宝殿为庑殿顶、梁架结构、彩绘藻井具有明代典型的官式做法，应为大明正统六年英宗皇帝敕赐重建之物。灵岩寺系明正统年间“土木之变”的祸首——大太监王振奏请英宗所赐建，是蔚州名刹之一。藻井华丽、彩绘精细、殿宇辉宏、气势雄伟。
-南安寺塔
-
-相传创建于汉代，疑为北魏所建，第五批国保。塔位于寺院中央，供人参拜，北魏至辽代该寺香火旺盛。580 年（北周大象二年）建蔚州城时，南安寺塔以寺取名。南安寺曾为燕云名刹，历史悠久，所以，蔚县历来有“先有南安寺，后有蔚州城”的传说。
-南安寺塔地宫出土了大量文物，有辽代金座银佛、辽代千佛龛、辽代木塔、辽代天王像、须弥座双重檐金舍利塔、须弥座双重檐银舍利塔等。
-释迦寺
-
-
-第五批国保，释迦寺中有天王殿、中殿、卧佛殿等。具有元代的建筑特点。中殿面宽 3 间，建筑形式为单檐歇山布瓦顶。
-寺中有精美的藻井，但正在修缮，无法参观。
-卜北堡&玉泉寺
-
-
-建于明正统四年，第七批国保，正殿为等级最高的庑殿顶。紧邻王振故居，目前正在修缮。
-蔚州城墙
-
-
-始建于北周大象二年（公元 580 年），现存城墙为明洪武十年（公元 1377 年）重筑，第七批国保
-阅读原文]]></summary>
-        <author>
-            <name>知乎日报</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[CTP、CTB、CTC 是电池技术革新，还是一种无奈？]]></title>
-        <id>https://daily.zhihu.com/story/9751947</id>
-        <link href="https://daily.zhihu.com/story/9751947"/>
-        <updated>2022-08-19T23:07:45.000Z</updated>
-        <summary type="html"><![CDATA[小巾凡，汽车产品经理，公众号《Auto PMers》
-阅读原文
-
-我想题主一定不知道，很多实用性创新其实都是源于对当下的不满，而非主动科研创新。
-就像福特不满于造车成本太高，才引进了流水线生产；而斯隆不满于福特一款黑色 T 型车的垄断，才会开发多种车型来满足不同需求，从而推动汽车工业又向前走了一步。
-人类前进地脚步，其实多数都是被迫前行。
-是因为竞争的好胜心也好，还是因为唯恐落后的生存焦虑也罢，但总有一些人会按耐不住去改变，一定程度上便是推动社会前行。
-所以说，题主所谓的“是电池技术革新，还是一种无奈”，其实我认为都不重要，重要的是，无论是 CTP，还是 CTB/CTC，都是在推动电动汽车行业进步。
-不止步于此，才是最重要的。
-那么为什么说，无论是 CTP，还是 CTB/CTC，都是在推动电动汽车行业进步？
-其实大家都知道，电池包无论是成本，还是重量，都能占到整车的 30%-40%。尤其是这两年受原材料价格上涨，电池成本飙升，主机厂都是苦不堪言。
-电动车这种出道即红海的市场，白炽化竞争愈发厉害，主机厂想要活下去，压力不能都一股脑地传递给消费者，便只好打碎牙齿和血吞。
-而另外一方面，由于古早时期的电动汽车作为政策催生的早产儿，续航里程只能达到 200~300km，实际跑起来更是少得可怜，便被用户贴上了“电动汽车垃圾”的标签。再加上对于续航里程的焦虑，以及补能体系的完善程度的担忧，对于续航里程数字的追求对于大部分用户来说，就像买房子一样，那一定是预算里越大越好。
-那么对于主机厂或者供应商来说，能做的有什么？我们先以一款三元锂电池为例，看看成本占比情况。
-图片来源于《中金：从“麒麟电池”看动力电池结构演化趋势》
-那么这里面，三元电芯占比 84%，电池 PACK 占比 16%。
-电芯是汽车电气化率先启动的一个领域，从下面这张图可以看出，横坐标是体积比能，纵坐标是质量比能。从 201…]]></summary>
-        <author>
-            <name>知乎日报</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[汉堡里有荤有素，为什么还被认为是不健康的？]]></title>
-        <id>https://daily.zhihu.com/story/9751956</id>
-        <link href="https://daily.zhihu.com/story/9751956"/>
-        <updated>2022-08-19T23:07:37.000Z</updated>
-        <summary type="html"><![CDATA[维他，关注饮食和微量营养补充对健康的影响
-阅读原文
-
-我不需要再多说汉堡包含有精制碳水，饱和脂肪，烤的过程增加多环胺类致癌物，红肉吃多增加氧化三甲胺 TMAO,如果加一块培根还增加损伤 DNA 的亚硝基化合物，而且所有红肉都含 N- 乙酰神经氨酸（Neu5Ac）导致慢性炎症...... 我们只需要直接看人类临床研究，究竟吃了汉堡我们身体会产生什么反应？
-糖尿病患者很多时只盯着碳水和餐后血糖，经常忽略了食物的质量和脂肪的成分。 2014 年一项交叉临床试验，[1] 让 50 名 2 型糖尿病患者，和 50 名健康对照组，吃两种不同的汉堡包组合的食物，卡路里都一样，但一种是普通的汉堡，另一种是没有肉的素食汉堡包。 在吃普通汉堡后，两组受试者的餐后甘油三酯的升高幅度，比素食汉堡显着较高，而糖尿病患者的餐后氧化应激反应也更强烈，胰岛素抵抗（餐后胰岛素持续在高位）也显着变差。所以尽管碳水和卡路里都一样，吃肉类汉堡对糖尿病患者的健康非常不友好。没有代谢性障碍，包括糖尿病的患者，吃汉堡包不会到影响健康的阈值，偶尔吃是可以的。
-
-说汉堡包是导致健康问题的“罪犯”是很难证据确凿的，因为汉堡包“犯案”都是团伙行事，团伙中还有炸薯条和含糖的汽水。对 24 名健康受试者的交叉临床试验，[2] 汉堡团伙有炸薯条，也有汽水或含糖果汁。研究发现，无论吃巨无霸汉堡，还是植物汉堡，餐后都降低了血流介导的舒张(FMD)，而 FMD 反映血管内皮功能。无论什么汉堡，含糖饮料一起，都增加心血管病风险。
-
-少吃点汉堡薯条对健康有益，但偶尔想吃，怎样可以减少对健康的压力？ 2013 年 UCLA 医学院的一项交叉临床试验，[3] 22 名健康受试者，分别吃普通的汉堡（只加盐），和添加了含多酚类的香料（11.25g 香料，包括丁香、牛至、肉桂、迷迭香、姜、黑胡椒、红椒粉、大蒜）的汉堡。 发现添加了香料的汉堡，对比普通只…]]></summary>
-        <author>
-            <name>知乎日报</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[有哪些关于音乐的事实，不了解音乐的人不会相信？]]></title>
-        <id>https://daily.zhihu.com/story/9751961</id>
-        <link href="https://daily.zhihu.com/story/9751961"/>
-        <updated>2022-08-19T23:07:30.000Z</updated>
-        <summary type="html"><![CDATA[周雨思-音乐审美，知名音乐博主；音乐审美通识教育践行者
-阅读原文
-
-“如何快速听懂古典音乐，到底需不需要学习乐理？”“如何判断哪个版本的演奏水平更好？怎样快速提升音乐鉴赏力？”
-很多爱乐者在最初喜欢上音乐时，都喜欢在网络上搜索一些“攻略”来帮助自己更好地入门，但殊不知，那些所谓的前人经验，其实并不一定非常科学；当然，也有不少从小就在音乐陪伴下长大的朋友，同样被一些根深蒂固的错误观念影响至今。
-今天，我们就来总结一下大家在听音乐或学音乐时，经常陷入的六大误区。
-误区一：学乐理是听懂音乐的基础
-很多初学者最常陷入的误区，便是过于看重乐理的重要性。
-不少专业人士都会特别强调乐理的重要性，认为不学乐理是没有办法真正理解音乐的。这就导致那些对音乐产生兴趣的人在开始系统学习时，第一步就选择了学习乐理，但对音乐的热情也几乎就止步于乐理了。事实上，学乐理其实更多是创作者应该追求的事，而听众和音乐爱好者最需要提升的并不是创作能力而是鉴赏能力。
-
-音乐自始至终，是一种听觉的艺术。听音乐，更依赖的是耳朵，是人类的感受力。而人类对音乐、对情绪的感知力是与生俱来。
-这也是为什么，很多从未接触过乐理的小朋友会对音乐有强烈的反应；并不懂乐理的托尔斯泰听完柴可夫斯基的演奏会泪流面满。
-音乐在诞生之初，就是给整个人类欣赏的，并不仅仅针对受过专业训练的群体。很多人执着于音乐中的乐理和专业性，却忽略了音乐原本就是一种面向全人类的共同语言。
-特别是在古典音乐圈，不少人认为只有具备专业知识才能听懂，将古典乐变成了小一部分人才能走进的圈子，这其实是一种“画地为牢”，已然违背了音乐的本质，否认了古典音乐同样是人类情感表达载体的事实。
-误区二：想象力是虚的，听懂音乐靠技巧
-说完感受力，我们再聊一下音乐中的想象力。不少所谓的圈内人士，认为想象力是一个非常抽象的概念，抓不住摸不着，只能随缘去感悟，没有规律可言。在这些人的误导…]]></summary>
-        <author>
-            <name>知乎日报</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Electric Vehicles as a Subscription]]></title>
-        <id>https://www.autonomy.com/</id>
-        <link href="https://www.autonomy.com/"/>
-        <updated>2022-08-19T21:48:54.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Digger – Back and Digitally Remastered (1998)]]></title>
-        <id>http://www.digger.org/</id>
-        <link href="http://www.digger.org/"/>
-        <updated>2022-08-19T21:37:25.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Seeing Like a State, Progress and Poverty, and Owning Land]]></title>
-        <id>http://www.loukidelis.com/on-land-ownership.html</id>
-        <link href="http://www.loukidelis.com/on-land-ownership.html"/>
-        <updated>2022-08-19T21:26:41.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Ask HN: Why is there no performant remote desktop for Mac/Linux?]]></title>
-        <id>https://news.ycombinator.com/item?id=32526108</id>
-        <link href="https://news.ycombinator.com/item?id=32526108"/>
-        <updated>2022-08-19T21:25:27.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[App Store doesn't accept “too simple” apps]]></title>
-        <id>https://notes.alinpanaitiu.com/Dealing%20with%20App%20Store%20rejections</id>
-        <link href="https://notes.alinpanaitiu.com/Dealing%20with%20App%20Store%20rejections"/>
-        <updated>2022-08-19T21:20:58.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Inappbrowser.com – see what JavaScript gets injected through an in-app browser]]></title>
-        <id>https://krausefx.com//blog/announcing-inappbrowsercom-see-what-javascript-commands-get-executed-in-an-in-app-browser</id>
-        <link href="https://krausefx.com//blog/announcing-inappbrowsercom-see-what-javascript-commands-get-executed-in-an-in-app-browser"/>
-        <updated>2022-08-19T21:16:35.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[John Carmack's new AGI company, Keen Technologies, has raised a $20M round]]></title>
-        <id>https://twitter.com/ID_AA_Carmack/status/1560728042959507457</id>
-        <link href="https://twitter.com/ID_AA_Carmack/status/1560728042959507457"/>
-        <updated>2022-08-19T20:46:09.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[640by480: Instagram Clone for Vintage Digital Cameras]]></title>
-        <id>https://www.640by480.com/</id>
-        <link href="https://www.640by480.com/"/>
-        <updated>2022-08-19T20:44:48.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Being-Doing Balance over Work-Life Balance]]></title>
-        <id>https://jeanhsu.substack.com/p/being-doing-balance-over-work-life</id>
-        <link href="https://jeanhsu.substack.com/p/being-doing-balance-over-work-life"/>
-        <updated>2022-08-19T19:43:58.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Resolving an Unusual WiFi Issue]]></title>
-        <id>https://blog.ando.fyi/posts/diagnosing-an-unsual-wifi-issue/</id>
-        <link href="https://blog.ando.fyi/posts/diagnosing-an-unsual-wifi-issue/"/>
-        <updated>2022-08-19T18:48:25.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Crumb Circuit Simulator]]></title>
-        <id>https://www.crumbsim.com/</id>
-        <link href="https://www.crumbsim.com/"/>
-        <updated>2022-08-19T18:36:51.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Apple’s Use of AppKit, Mac Catalyst and SwiftUI in macOS]]></title>
-        <id>https://blog.timac.org/2022/0818-state-of-appkit-catalyst-swiftui-mac/</id>
-        <link href="https://blog.timac.org/2022/0818-state-of-appkit-catalyst-swiftui-mac/"/>
-        <updated>2022-08-19T18:25:01.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[“Quantum-Safe” Crypto Hacked by 10-Year-Old PC]]></title>
-        <id>https://spectrum.ieee.org/quantum-safe-encryption-hacked</id>
-        <link href="https://spectrum.ieee.org/quantum-safe-encryption-hacked"/>
-        <updated>2022-08-19T17:07:02.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Advanced Bash-Scripting Guide (2014)]]></title>
-        <id>https://tldp.org/LDP/abs/html/</id>
-        <link href="https://tldp.org/LDP/abs/html/"/>
-        <updated>2022-08-19T16:28:03.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Removing HTTP/2 Server Push from Chrome]]></title>
-        <id>https://developer.chrome.com/blog/removing-push/</id>
-        <link href="https://developer.chrome.com/blog/removing-push/"/>
-        <updated>2022-08-19T16:17:15.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[A lab pursuing de-extinction of the thylacine partners with a genetics company]]></title>
-        <id>https://www.unimelb.edu.au/newsroom/news/2022/august/lab-takes-giant-leap-toward-thylacine-de-extinction-with-colossal-genetic-engineering-technology-partnership2</id>
-        <link href="https://www.unimelb.edu.au/newsroom/news/2022/august/lab-takes-giant-leap-toward-thylacine-de-extinction-with-colossal-genetic-engineering-technology-partnership2"/>
-        <updated>2022-08-19T15:39:43.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Show HN: SineRider - A game about love, math, and graphing built by teenagers]]></title>
-        <id>https://sinerider.com/</id>
-        <link href="https://sinerider.com/"/>
-        <updated>2022-08-19T14:29:02.000Z</updated>
         <summary type="html"><![CDATA[Comments]]></summary>
         <author>
             <name>Hacker News</name>
