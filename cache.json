@@ -741,72 +741,6 @@
           "title": "瞎扯 · 如何正确地吐槽",
           "itunes": {},
           "imageUrl": null
-        },
-        {
-          "id": "https://daily.zhihu.com/story/9752679",
-          "author": null,
-          "description": "彬彧渊然，反极权主义，反威权主义，略微悲观的自由主义者和人本主义者\n阅读原文\n\n经典的 nature v. nurture 的心理学研究问题。\n事实上，直到近几年，我们所有关于性格是遗传更多还是后天更多的研究结果都来自双胞胎研究。当然，双胞胎研究的重心不止在性格，还有身体构造 / 素质、行为模式和表型。这一研究利用基因完全相同的同卵双胞胎的不同来估计遗传和后天环境分别对其个体的影响大小，也可以利用约一半的基因完全相同的异卵双胞胎来进行估算。\n心理学研究史上最有名的双胞胎研究案例就是美国明尼苏达大学心理学教授 Thomas J. Bouchard Jr.从 1979 年到 1999 年间进行的「分开抚养的双胞胎研究」。[1]这一研究着重于双胞胎之间的性状差异——身高、体重、智商、语言能力等，并探索不同的后天环境（双胞胎都是随机收养的）对拥有相同基因的人（同卵双胞胎）的影响有多大。\nThomas J. Bouchard Jr.\n这就是一个控制变量的实验：假设同卵双胞胎的后天环境相似度为零，那么所有性状上的差异都可以归结于后天的影响。比如根据这一假设，这一研究发现同卵双胞胎之间的智商差异大约在 30%左右，因此得出智商的 70%遗传率的结论。\n但是这个假设真的靠得住吗？分开抚养的同卵双胞胎的后天环境的相似度真的为零吗？事实并非如此。比如两人都曾去过游乐场，对其中的游乐设施可能都会感到开心，两人会有极为相似的情感反应；比如两人都曾去过百货超市，对里面琳琅满目的商品都会感到讶异；比如两人都上过学，学习环境（比如每个班的人数、男女比例、课程设置）也可能非常相似。这一基本假设被推翻后，整个实验的方法论就不再可靠了。因此，这一研究和类似研究的结论都不可照单全收。\n我们继续看这类研究的发现。对性格的遗传的研究发现大约 15-55%的性格不同来自于遗传。[2]对应所谓的「五大性格特质模型」，我…",
-          "link": "https://daily.zhihu.com/story/9752679",
-          "publishedOn": "2022-09-07T23:07:53.000Z",
-          "wordCount": null,
-          "title": "性格是否是遗传的？",
-          "itunes": {},
-          "imageUrl": null
-        },
-        {
-          "id": "https://daily.zhihu.com/story/9752686",
-          "author": null,
-          "description": "木头龙，开了个新专栏，收录些老回答\n阅读原文\n\n很简单，普及速度赶不上 SSD 价格下降的速度。\n首先要说的是 SSD 给 HDD 当缓存其实是很有效的。以现代文件系统的数据组织结构，小容量闪存对于提升机械硬盘的随机文件访问速度的确是非常有帮助的。原理在于大部分文件系统是树型结构，要访问一个具体文件的物理存储位置，往往需要七八次甚至十数次的单线程单队列 4K 随机访问。因为机械硬盘的机械结构，定位到一个具体扇区平均需要 10ms 甚至更长时间的延迟，导致访问一个文件需要 0.1 秒甚至更多。而闪存因为是全电子操作，这个定位延迟可以缩短到数十μs 甚至数μs，几百倍的性能提升。如果把文件系统结构相关的元数据(Metadata)存储在闪存上作为机械硬盘的缓存，访问一个文件只需要定位一次，也可以获得十多倍的性能提升。更详细的解释，可以参看我之前写过的文章：\n为什么说固态硬盘的 4K 性能很重要？\n比较普及的用闪存作为机械硬盘缓存的技术，我认为应该是 2007 年 Windows Vista 推出时的 ReadyBoost。不过 ReadyBoost 用的闪存设备是 U 盘，一方面当时只有 USB 2.0（USB 3.0 在 2008 年才发布，支持 USB 3.0 的 Sandy Bridge 平台 2011 年才上市），持续写入速度还没硬盘快；另一方面 ReadyBoost 要求的 4K 随机读取 2.5 MB/s，十多年能符合这个要求的 U 盘可不便宜。所以 ReadyBoost 从来没有真正普及过。\n而支持 USB 3.0 的 Sandy Bridge 平台上市时，Z68 就支持 Smart Respones Technology(SRT，智能响应技术)。但 Z68 主板的高昂价格对 SRT 普及造成了障碍；到了 Ivy Bridge 平台也只是下放到次高端的 H77 主板…",
-          "link": "https://daily.zhihu.com/story/9752686",
-          "publishedOn": "2022-09-07T23:07:48.000Z",
-          "wordCount": null,
-          "title": "SSD 充当 HDD 缓存的技术，为什么没有被广泛运用？",
-          "itunes": {},
-          "imageUrl": null
-        },
-        {
-          "id": "https://daily.zhihu.com/story/9752694",
-          "author": null,
-          "description": "三川啦啦啦，热爱数学怕做题，只为好玩费心机。\n阅读原文\n\n\n我将问题修改一下：除脱裤子之外，不存在一种连续移动的方式，使得左右裤腿互换位置。\n显然题主的问题是以上命题的推论。\n由于我们能做的只是将裤管曲面（见上图）的边界三个连通分支（分别同胚于圆）贴着两腿、腰臀移动（想象人的两腿、腰无限长），例如卷裤腿边，边卷边移动，我们可以将其视为同伦变换，这说明这三个圆只能在裤管曲面上运动。所以问题的拓扑学表述是：左右两个裤腿边缘是否同伦，即其中一个能否可以在裤管模型上连续形变到另一个。\n但是我们知道，两个裤腿边缘岂止不同伦，它们甚至都不同调！（只有算上腰口，它们三个依定向相加，才是零调的）。\n所以这种方式一定不存在。\n补充一下拓扑细节：\n在 3 维空间中挖去同顶点的三条射线，同伦于裤管曲面：\n\n三个圆分别套在三条射线\n\n上，在上述空间内连续形变。\n感谢评论区老哥 @图腾 补充。\n注：同胚、同伦、同调三者关系：前者可以推出后者，后者推不出前者。这就是用同调证明的依据。关于同调，我之前写过一篇文章三川啦啦啦：定向角度看同调群（一）\n看到题主又补充了裙子，这个拓扑结构就更简单了。\n裙子一般而言同胚于平环（忽略裙子上可能会有的洞洞），而平环同伦于圆。把人的躯干抽象为一根两端无限延伸的柱子，圆 - 裙子就是在三维空间挖去这样的柱子内连续形变。\n啪，沿着这根柱子的方向一压缩，这个空间同伦于平面挖去原点，后者又同伦于圆……\n所以圆 - 裙子在同伦型为圆的空间中连续形变，实际上就是圆到圆自身的连续映射，由 Hopf 定理，这种映射可以由映射度\n\n完全分类：\n\n也就是说，你把裙子爱转几圈转几圈，正着转反着转，转到原地起飞都可以。\n最后回答一下题主的问题：当把裤腰旋转 180 度，会发生什么？\n学过复变的人知道，当你绕含有两个奇点的区域一周积分，相当于你绕两个奇点各转一圈。也就是说，你只能两圈两圈地转。如果只转 180 度——半圈，那么相当于绕两个奇点各半圈。复变和上同调的关系密切，我就不展开了。\n现在这个裤腰口相当于大圆，两个绕奇点的小圆（与大圆反向）相当于裤腿边。所以“把裤腰旋转 180 度”只会——裤子裂开。\n阅读原文",
-          "link": "https://daily.zhihu.com/story/9752694",
-          "publishedOn": "2022-09-07T23:07:40.000Z",
-          "wordCount": null,
-          "title": "为什么裤子前后穿反了不能通过“把裤腰旋转180度”的方式调整（而裙子可以）？",
-          "itunes": {},
-          "imageUrl": null
-        },
-        {
-          "id": "https://daily.zhihu.com/story/9752704",
-          "author": null,
-          "description": "知乎用户，专怼反问句 | 爱坐火车的铁路工程师，爱写程序的码农\n阅读原文\n\n声明：该回答不涉及二维码和 NFC 的优劣，仅仅对形成目前局面做一些个人的分析和解释\n需要理解一个东西流行不流行，并不完全是因为好或者坏决定，而和路径依赖以及历史包袱有关\n以下是原回答\n基础设施不同\n在法国商业 pos 机的普及率几乎是 100%，包括摆摊的\n基本上西欧应该都有这个水准，在这个 pos 普及率下，移动支付是以作为信用卡外延，确切是非接触支付的外延形式出现的，二维码和这种支付方式既不兼容，也没有独特的突出优点。\n非接触支付在欧洲 2010 年前后开始普及，我 08 年到法国的时候已经有相当多的 pos 机带上了非接触支付功能（机器上有一个闪付的标记），虽然彼时银行卡并没有正式开通这个功能，所以当年正式有这个功能的时候，非接触支付基本已经直接到处可用了，而后来的 ApplePay 等手机支付做得只是将这个功能继承到个人终端里面。\n中国支付码能流行的两个原因：\n前期支付宝因为网购而已经成为线上支付的准基础设施\n商用 POS 机存在覆盖盲点，银行卡的使用场景没有涉及到生活的方方面面\n所以当线上的支付宝向线下突破的时候，自然采用的是另外一套更适合自身的支付逻辑\n补充回答\n如果要细究，这个回答应该从电子商务的出现开始\n我是国内从电子商务出现时就开始使用各种支付的，经历了前支付宝时代，支付宝时代和移动支付时代，并且在国外生活了十多年，我觉得我比大多人更了解其中的来龙去脉。\n我记得 2000 年我第一次在网上交易，是在个人网站上放了 8848 的点击付费广告内容，当时这个从这个业务里面我有 100 元左右的收入，当时我的收款方式是邮政支票，8848 将费用结算后开了一张邮政支票邮寄给我，然后我去邮局取兑的。\n2001 年前后招商银行开通了信用卡在线支付业务，当时我用我家人的招商卡给自己的网站购买域名…",
-          "link": "https://daily.zhihu.com/story/9752704",
-          "publishedOn": "2022-09-07T23:07:36.000Z",
-          "wordCount": null,
-          "title": "为何扫码支付在中国流行，在发达国家被排斥？",
-          "itunes": {},
-          "imageUrl": null
-        },
-        {
-          "id": "https://daily.zhihu.com/story/9752712",
-          "author": null,
-          "description": "知乎用户\n阅读原文\n\n看看现在的欧洲就大概知道部分未来的状况了，毕竟它们走过的路我们正在全盘复制。\n很多人言及西方国家的普通住宅好像就是家家户户都是带花园和游泳池的 BIG HOUSE，这真的是一个非常大的误区。在欧洲已经住了十年，美英法德意奥等国的很多城市市区郊区都考察过，想起来小时候在国内看着周围开始大量兴建高层住宅，才发现熟悉的场景在六十多年前的欧洲也差不多嘛。\n西方国家中，美加澳新等主要移民国家的城市，尤其是美国，除开纽约与芝加哥等最早建设摩天楼的城市外，其余绝大部分城市都是以紧凑的高密度办公区域为核心，四周为蔓延开来无边无际的别墅居住区。（当然这也是最符合大家印象中的“西方人住宅模式”）。加澳新大致相同，因此不在讨论范围内。\n日本作为西方成员里的亚洲国家，流行的“一户建”就不用多说了，人口高度集中的东京一些区域现在也在修建少量的高层塔式住宅（虽然户型烂但毕竟不是市场主流），同样不在讨论范围内。\n剩下的就是英法德意为代表的老欧洲国家了，也就是我要稍微细说的部分。地狭人稠的欧洲城市化区域，新大陆式的 BIG HOUSE 在这里根本不是常见景象，中国现在大兴土木高层住宅的现象在半个世纪前的老欧洲同样上演过，并持续了将近二十余年。虽然一些动机并非完全相同，文化环境也各异，但是了解它们现在的处境有助于我们对未来进行合理的推测，尽管看起来并不乐观。\n我先简单介绍下欧洲高层住宅热潮的历史背景，至于哪些因素和我们相契合以及哪些不同，各位自有判断。\n其实欧洲修高层住宅的理论基础二战前就出现了，1922 年柯布西耶就推出了在当时看简直疯狂的“明日之城”的计划，市中心 24 座 60 层的摩天住宅可容纳四十万居民，后来陆续的 Plan Voisin（瓦赞计划）就恨不得把巴黎市中心一铲子全部推平了盖高楼，最后就到了二十年代末的“光辉城市”，虽然还是要让人住高楼，但更讲究城市布局和分区了，…",
-          "link": "https://daily.zhihu.com/story/9752712",
-          "publishedOn": "2022-09-07T23:07:31.000Z",
-          "wordCount": null,
-          "title": "现在大量 33 层的高层住宅未来怎么拆迁？拆得动吗？",
-          "itunes": {},
-          "imageUrl": null
-        },
-        {
-          "id": "https://daily.zhihu.com/story/9752719",
-          "author": null,
-          "description": "知乎日报，带你正确地逛知乎\n\nQ：一游戏设计师用 AI 工具作画拿一等奖惹怒真人艺术家，主办方将正常颁奖，AI 技术发展会带来哪些影响？\n@临时 ：以后甲方也能参赛了。\nQ：作为一个内行，都干过哪些显得很外行的事情？\n@匿名用户：作为一个律师，吵架完全吵不过女朋友。\nQ：如果光论官职的话，是「齐天大圣」官大还是「斗战胜佛」官大？\n@静静的流浪猫 ：一个是「爵位」，一个是「学位」。\nQ：哪一个瞬间你觉得自己应该离职了？\n@银教授 ：收到工资到账短信的那一瞬间。\nQ：每分钟翻倍的铜锣烧多久可以装满整个宇宙？\n@龙傲天的好朋友 ：我们先假设它第一分钟是一个，到第二分钟就是两个了。\n然后我一分钟内吃两个。\n阅读原文",
-          "link": "https://daily.zhihu.com/story/9752719",
-          "publishedOn": "2022-09-07T23:07:24.000Z",
-          "wordCount": null,
-          "title": "瞎扯 · 如何正确地吐槽",
-          "itunes": {},
-          "imageUrl": null
         }
       ]
     },
@@ -963,6 +897,256 @@
       "siteUrl": "https://news.ycombinator.com/",
       "articles": [
         {
+          "id": "https://jcs.org/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://jcs.org/",
+          "publishedOn": "2022-10-08T00:11:29.000Z",
+          "wordCount": 1217,
+          "title": "C Programming on System 6",
+          "imageUrl": null
+        },
+        {
+          "id": "https://www.riken.jp/en/news_pubs/research_news/rr/20221004_1/index.html",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.riken.jp/en/news_pubs/research_news/rr/20221004_1/index.html",
+          "publishedOn": "2022-10-07T23:24:48.000Z",
+          "wordCount": 930,
+          "title": "Far-ultraviolet LED designed to kill bacteria and viruses without harming humans",
+          "imageUrl": "https://www.riken.jp/news-pubs-en/research-news-en/2022-research-en/RRFY202223.jpg"
+        },
+        {
+          "id": "https://www.statnews.com/2022/10/06/health-data-information-blocking-records/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.statnews.com/2022/10/06/health-data-information-blocking-records/",
+          "publishedOn": "2022-10-07T22:44:48.000Z",
+          "wordCount": 3073,
+          "title": "Patients can now access all their health records digitally",
+          "imageUrl": "https://www.statnews.com/wp-content/uploads/2022/10/AdobeStock_32818403-1024x576.jpeg"
+        },
+        {
+          "id": "https://www.cell.com/current-biology/fulltext/S0960-9822(22)01449-X?_returnURL=https%3A%2F%2Flinkinghub.elsevier.com%2Fretrieve%2Fpii%2FS096098222201449X%3Fshowall%3Dtrue",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.cell.com/current-biology/fulltext/S0960-9822(22)01449-X?_returnURL=https%3A%2F%2Flinkinghub.elsevier.com%2Fretrieve%2Fpii%2FS096098222201449X%3Fshowall%3Dtrue",
+          "publishedOn": "2022-10-07T22:30:22.000Z",
+          "wordCount": 18346,
+          "title": "Retinoid restores eye-specific brain responses in mice with retinal degeneration",
+          "imageUrl": "https://www.cell.com/cms/asset/b7fa7be3-f952-40a6-9200-bc35123379fd/fx1.jpg"
+        },
+        {
+          "id": "https://irreal.org/blog/?p=10864",
+          "author": null,
+          "description": "Comments",
+          "link": "https://irreal.org/blog/?p=10864",
+          "publishedOn": "2022-10-07T22:09:03.000Z",
+          "wordCount": 1350,
+          "title": "Is the FSF Fighting the Previous War?",
+          "imageUrl": null
+        },
+        {
+          "id": "https://onemileatatime.com/news/lufthansa-bans-airtags/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://onemileatatime.com/news/lufthansa-bans-airtags/",
+          "publishedOn": "2022-10-07T22:07:59.000Z",
+          "wordCount": 7407,
+          "title": "Lufthansa bans AirTags in checked luggage",
+          "imageUrl": "https://cdn.onemileatatime.com/wp-content/uploads/2021/10/Lufthansa-First-Class-747-8-87.jpeg"
+        },
+        {
+          "id": "https://simplifier.neocities.org/4x4.html",
+          "author": null,
+          "description": "Comments",
+          "link": "https://simplifier.neocities.org/4x4.html",
+          "publishedOn": "2022-10-07T22:02:09.000Z",
+          "wordCount": 216,
+          "title": "4x4 ASCII Font",
+          "imageUrl": null
+        },
+        {
+          "id": "https://oisinmoran.com/quinetweet",
+          "author": null,
+          "description": "Comments",
+          "link": "https://oisinmoran.com/quinetweet",
+          "publishedOn": "2022-10-07T21:48:20.000Z",
+          "wordCount": 2335,
+          "title": "How I Made a Self-Quoting Tweet",
+          "imageUrl": null
+        },
+        {
+          "id": "https://stevemorse.org/hebrewcalendar/hebrewcalendar.htm",
+          "author": null,
+          "description": "Comments",
+          "link": "https://stevemorse.org/hebrewcalendar/hebrewcalendar.htm",
+          "publishedOn": "2022-10-07T20:46:29.000Z",
+          "wordCount": 6669,
+          "title": "Jewish Calendar Demystified (2007)",
+          "imageUrl": null
+        },
+        {
+          "id": "https://www.aleksandrhovhannisyan.com/blog/overzealous-destructuring/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.aleksandrhovhannisyan.com/blog/overzealous-destructuring/",
+          "publishedOn": "2022-10-07T18:48:29.000Z",
+          "wordCount": 2816,
+          "title": "Overzealous Destructuring",
+          "imageUrl": "https://www.aleksandrhovhannisyan.com/assets/images/JUvs1LdaBG-1600.jpeg"
+        },
+        {
+          "id": "https://cloud.google.com/blog/products/storage-data-transfer/new-gcloud-storage-cli-for-your-data-transfers",
+          "author": null,
+          "description": "Comments",
+          "link": "https://cloud.google.com/blog/products/storage-data-transfer/new-gcloud-storage-cli-for-your-data-transfers",
+          "publishedOn": "2022-10-07T18:31:49.000Z",
+          "wordCount": 155,
+          "title": "Gcloud storage: up to 94% faster data transfers for Cloud Storage",
+          "imageUrl": "https://cloud.google.com/blog/static/assets/GCP_Twitter_Card-2000×1000.png"
+        },
+        {
+          "id": "https://www.atomicheritage.org/history/nuclear-close-calls-able-archer-83",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.atomicheritage.org/history/nuclear-close-calls-able-archer-83",
+          "publishedOn": "2022-10-07T18:30:56.000Z",
+          "wordCount": 2619,
+          "title": "Nuclear Close Calls: Able Archer 83 (2018)",
+          "imageUrl": "https://www.atomicheritage.org/sites/default/files/Autumn%20Forge%20Map.jpg"
+        },
+        {
+          "id": "http://muezza.ca/thoughts/favourite_computer/",
+          "author": null,
+          "description": "Comments",
+          "link": "http://muezza.ca/thoughts/favourite_computer/",
+          "publishedOn": "2022-10-07T18:14:00.000Z",
+          "wordCount": 607,
+          "title": "My Favourite Computer, an Old Mac",
+          "imageUrl": null
+        },
+        {
+          "id": "https://upchieve.welcomekit.co/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://upchieve.welcomekit.co/",
+          "publishedOn": "2022-10-07T17:00:23.000Z",
+          "wordCount": 545,
+          "title": "UPchieve (YC W21) is hiring a tech lead and senior engineers",
+          "imageUrl": "https://cdn.welcometothejungle.co/uploads/website/cover/9325/162585/upchieve.png"
+        },
+        {
+          "id": "https://www.algolia.com/blog/ai/vectors-vs-hashes/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.algolia.com/blog/ai/vectors-vs-hashes/",
+          "publishedOn": "2022-10-07T16:59:11.000Z",
+          "wordCount": 8255,
+          "title": "Vectors are over, hashes are the future",
+          "imageUrl": "https://res.cloudinary.com/hilnmyskv/image/upload/q_auto,f_auto/v1665082993/Algolia_com_Blog_assets/Featured_images/ai/vectors-vs-hashes/eqvuyiymxc9uakfklr0n.jpg"
+        },
+        {
+          "id": "https://jetbrains.github.io/ring-ui/master/index.html",
+          "author": null,
+          "description": "Comments",
+          "link": "https://jetbrains.github.io/ring-ui/master/index.html",
+          "publishedOn": "2022-10-07T16:57:15.000Z",
+          "wordCount": 134,
+          "title": "JetBrains Ring UI",
+          "imageUrl": null
+        },
+        {
+          "id": "https://undark.org/2022/10/07/interview-why-mastering-language-is-so-difficult-for-ai/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://undark.org/2022/10/07/interview-why-mastering-language-is-so-difficult-for-ai/",
+          "publishedOn": "2022-10-07T16:43:12.000Z",
+          "wordCount": 4156,
+          "title": "Why Mastering Language Is So Difficult for AI",
+          "imageUrl": "https://undark.org/wp-content/uploads/2022/10/GettyImages-1355827275_edit.jpg"
+        },
+        {
+          "id": "http://qnx.puslapiai.lt/qnxdemo/qnx_demo_disk.htm",
+          "author": null,
+          "description": "Comments",
+          "link": "http://qnx.puslapiai.lt/qnxdemo/qnx_demo_disk.htm",
+          "publishedOn": "2022-10-07T16:40:48.000Z",
+          "wordCount": 1468,
+          "title": "The QNX Demo Disk: a full xNix OS, with GUI and browser, on just 1 1.4MB floppy",
+          "imageUrl": null
+        },
+        {
+          "id": "https://lastweekin.ai/p/the-ai-scaling-hypothesis",
+          "author": null,
+          "description": "Comments",
+          "link": "https://lastweekin.ai/p/the-ai-scaling-hypothesis",
+          "publishedOn": "2022-10-07T16:29:04.000Z",
+          "wordCount": 6403,
+          "title": "The AI Scaling Hypothesis",
+          "imageUrl": "https://substackcdn.com/image/fetch/w_1200,h_600,c_limit,f_jpg,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F88b01f2b-e8ea-4ea5-9bc5-afa9a68d9120_1600x955.png"
+        },
+        {
+          "id": "http://ratfactor.com/rss-club/school-vs-wikipedia",
+          "author": null,
+          "description": "Comments",
+          "link": "http://ratfactor.com/rss-club/school-vs-wikipedia",
+          "publishedOn": "2022-10-07T15:33:00.000Z",
+          "wordCount": 664,
+          "title": "School vs. Wikipedia",
+          "imageUrl": null
+        },
+        {
+          "id": "https://www.noahlebovic.com/aws-doesnt-make-sense-for-scientific-computing/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.noahlebovic.com/aws-doesnt-make-sense-for-scientific-computing/",
+          "publishedOn": "2022-10-07T15:28:50.000Z",
+          "wordCount": 1274,
+          "title": "AWS doesn't make sense for scientific computing",
+          "imageUrl": null
+        },
+        {
+          "id": "https://mortalkombat.plus/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://mortalkombat.plus/",
+          "publishedOn": "2022-10-07T14:49:04.000Z",
+          "wordCount": 5369,
+          "title": "Mortal Kombat+",
+          "imageUrl": null
+        },
+        {
+          "id": "https://datanarratives.com/blog/notion-headless-cms/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://datanarratives.com/blog/notion-headless-cms/",
+          "publishedOn": "2022-10-07T14:14:33.000Z",
+          "wordCount": 1766,
+          "title": "Using Notion as a headless CMS for our blog",
+          "imageUrl": "https://fileupload.fullstackdata.workers.dev/paper-cloud.webp"
+        },
+        {
+          "id": "https://twitter.com/chadloder/status/1577880638044020736",
+          "author": null,
+          "description": "Comments",
+          "link": "https://twitter.com/chadloder/status/1577880638044020736",
+          "publishedOn": "2022-10-07T12:51:09.000Z",
+          "wordCount": 399,
+          "title": "Gmail 2FA causes the homeless to permanently lose access 3 times a year",
+          "imageUrl": null
+        },
+        {
+          "id": "https://ashfurrow.com/blog/mastodon-technology-shutdown/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://ashfurrow.com/blog/mastodon-technology-shutdown/",
+          "publishedOn": "2022-10-07T12:08:10.000Z",
+          "wordCount": 1335,
+          "title": "Mastodon.technology Shutdown",
+          "imageUrl": "https://ashfurrow.com/static/1442b0e55f78513f511d626541ab3f90/background.png"
+        },
+        {
           "id": "https://news.ycombinator.com/item?id=33116230",
           "author": null,
           "description": "Comments",
@@ -1020,6 +1204,16 @@
           "publishedOn": "2022-10-06T22:20:25.000Z",
           "wordCount": null,
           "title": "Dormant spores decide to wake-up by counting in their sleep using electricity",
+          "imageUrl": null
+        },
+        {
+          "id": "https://statmodeling.stat.columbia.edu/2022/10/05/not-frequentist-enough/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://statmodeling.stat.columbia.edu/2022/10/05/not-frequentist-enough/",
+          "publishedOn": "2022-10-06T21:35:40.000Z",
+          "wordCount": 3431,
+          "title": "Not Frequentist Enough",
           "imageUrl": null
         },
         {
@@ -1393,6 +1587,16 @@
           "imageUrl": null
         },
         {
+          "id": "https://www.billboard.com/pro/cd-history-music-business-format-40-years/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.billboard.com/pro/cd-history-music-business-format-40-years/",
+          "publishedOn": "2022-10-05T13:05:10.000Z",
+          "wordCount": 12197,
+          "title": "The CD’s Rise in the Music Business: An Oral History",
+          "imageUrl": "https://www.billboard.com/wp-content/uploads/2022/09/cd-store-shopping-2022-billboard-pro-1260.jpg?w=1024"
+        },
+        {
           "id": "https://github.com/crodjer/watchman",
           "author": null,
           "description": "Comments",
@@ -1433,6 +1637,16 @@
           "imageUrl": "https://opengraph.githubassets.com/f67a06c7e2a477514880dcb492748dcafabdcd909649fc47bd2bcc9dc8c9ed90/parvardegr/sharing"
         },
         {
+          "id": "https://www.servethehome.com/cheapest-10gbe-8-port-switch-tp-link-tl-st1008f-review/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.servethehome.com/cheapest-10gbe-8-port-switch-tp-link-tl-st1008f-review/",
+          "publishedOn": "2022-10-05T12:24:37.000Z",
+          "wordCount": 7279,
+          "title": "Cheapest 10GbE 8-Port Switch TP-Link TL-ST1008F Review",
+          "imageUrl": "https://www.servethehome.com/wp-content/uploads/2022/06/TP-Link-TL-ST1008F-External-Ports-Angle-1.jpg"
+        },
+        {
           "id": "https://www.fratellowatches.com/evolution-of-the-casio-g-shock-watches/",
           "author": null,
           "description": "Comments",
@@ -1451,6 +1665,16 @@
           "wordCount": 4190,
           "title": "The end of classical Computer Science is coming",
           "imageUrl": "https://miro.medium.com/max/1024/1*15mUtVeoHDgphYZXoq7vfg.png"
+        },
+        {
+          "id": "https://omniglot.com/conscripts/fakoo.htm",
+          "author": null,
+          "description": "Comments",
+          "link": "https://omniglot.com/conscripts/fakoo.htm",
+          "publishedOn": "2022-10-05T07:12:13.000Z",
+          "wordCount": 2044,
+          "title": "The Fakoo Alphabet",
+          "imageUrl": "https://www.omniglot.com/images/logos/omniglot_thumbnail.jpg"
         },
         {
           "id": "https://blog.archive.org/2022/10/04/internet-archive-seeks-donations-of-materials-to-build-a-digital-library-of-amateur-radio-and-communications/",
@@ -1701,6 +1925,16 @@
           "wordCount": 9550,
           "title": "Using machine learning to predict the leads that close",
           "imageUrl": "https://outfunnel.com/wp-content/uploads/2022/10/Predictive-Lead-Scoring-MC-PD-Outfunnel.png"
+        },
+        {
+          "id": "https://www.phoronix.com/review/amd-zen4-spectrev2",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.phoronix.com/review/amd-zen4-spectrev2",
+          "publishedOn": "2022-10-04T12:39:00.000Z",
+          "wordCount": 1482,
+          "title": "AMD Ryzen 7000 Series performs better with Spectre V2 Mitigations enabled",
+          "imageUrl": null
         },
         {
           "id": "https://worldofmatthew.com/technology/amazon-itunes-deception/",
@@ -9161,386 +9395,6 @@
           "wordCount": 1693,
           "title": "Fresh 1.1 – Automatic JSX, plugins, DevTools, and more",
           "imageUrl": "https://deno.com/fresh-1.1/ogp.png"
-        },
-        {
-          "id": "https://rosie.land/posts/stop-measuring-community-engagement/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://rosie.land/posts/stop-measuring-community-engagement/",
-          "publishedOn": "2022-09-08T13:13:38.000Z",
-          "wordCount": 2879,
-          "title": "Stop measuring community engagement",
-          "imageUrl": "https://rosie.land/content/images/2022/09/communityengagement.png"
-        },
-        {
-          "id": "https://www.ringerhq.com/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.ringerhq.com/",
-          "publishedOn": "2022-09-08T12:45:25.000Z",
-          "wordCount": 506,
-          "title": "Show HN: Ringer – Get and provide expert help on Open Source Software",
-          "imageUrl": "https://vizilio.com/generators/twitter-card?url=https://www.ringerhq.com/?v=1"
-        },
-        {
-          "id": "https://dl.acm.org/doi/10.1145/3132747.3132763",
-          "author": null,
-          "description": "Comments",
-          "link": "https://dl.acm.org/doi/10.1145/3132747.3132763",
-          "publishedOn": "2022-09-08T12:26:46.000Z",
-          "wordCount": 2336,
-          "title": "My VM is lighter (and safer) than your container (2017)",
-          "imageUrl": "https://dl.acm.org/cms/asset/40e846f1-617d-4920-9978-476aa73fcd0f/3132747.cover.jpg"
-        },
-        {
-          "id": "https://looria.com/reddit/overview",
-          "author": null,
-          "description": "Comments",
-          "link": "https://looria.com/reddit/overview",
-          "publishedOn": "2022-09-08T12:25:59.000Z",
-          "wordCount": 20587,
-          "title": "Reddit's favorite products in one place",
-          "imageUrl": "https://looria.com/og.png"
-        },
-        {
-          "id": "https://www.theatlantic.com/science/archive/2022/09/why-cats-purr-vocalization-science/671358/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.theatlantic.com/science/archive/2022/09/why-cats-purr-vocalization-science/671358/",
-          "publishedOn": "2022-09-08T12:14:00.000Z",
-          "wordCount": 3591,
-          "title": "Purring is a love language no human can speak",
-          "imageUrl": "https://cdn.theatlantic.com/thumbor/xsyanjdEPK8pVC9v9kipsiNQAZo=/0x204:4792x2700/1200x625/media/img/mt/2022/09/Cat_purr_1/original.jpg"
-        },
-        {
-          "id": "https://ergodox-ez.com/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://ergodox-ez.com/",
-          "publishedOn": "2022-09-08T11:39:18.000Z",
-          "wordCount": 3056,
-          "title": "ErgodoxE EZ – an ergonomic keyboard with open source firmware",
-          "imageUrl": "https://cdn.shopify.com/s/files/1/1152/3264/files/logo.png?height=628&pad_color=ffffff&v=1526648004&width=1200"
-        },
-        {
-          "id": "https://joshcollinsworth.com/blog/self-fulfilling-prophecy-of-react",
-          "author": null,
-          "description": "Comments",
-          "link": "https://joshcollinsworth.com/blog/self-fulfilling-prophecy-of-react",
-          "publishedOn": "2022-09-08T10:03:07.000Z",
-          "wordCount": 4510,
-          "title": "The self-fulfilling prophecy of React",
-          "imageUrl": "https://joshcollinsworth.com/images/post_images/self-fulfilling-react.png"
-        },
-        {
-          "id": "https://futurism.com/neoscope/scientists-genetic-mutations-every-astronaut-blood-sample",
-          "author": null,
-          "description": "Comments",
-          "link": "https://futurism.com/neoscope/scientists-genetic-mutations-every-astronaut-blood-sample",
-          "publishedOn": "2022-09-08T09:37:10.000Z",
-          "wordCount": 3477,
-          "title": "Scientists found genetic mutations in every astronaut blood sample they studied",
-          "imageUrl": "https://wp-assets.futurism.com/2022/09/scientists-genetic-mutations-every-astronaut-blood-sample.jpg"
-        },
-        {
-          "id": "https://www.atlasobscura.com/articles/bedouin-desert-tracking-negev",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.atlasobscura.com/articles/bedouin-desert-tracking-negev",
-          "publishedOn": "2022-09-08T05:27:09.000Z",
-          "wordCount": 6754,
-          "title": "How A Bedouin Tracker Sees the Desert",
-          "imageUrl": "https://img.atlasobscura.com/-BAgq-F0yFGszFLcooXbdiXhrlnYbVVfOycJrzsQF34/rt:fit/w:600/q:81/sm:1/scp:1/ar:1/aHR0cHM6Ly9hdGxh/cy1kZXYuczMuYW1h/em9uYXdzLmNvbS91/cGxvYWRzL2Fzc2V0/cy8xNDRmNjdiMGY0/YmZmMzJjMDNfMjAy/MjA4MDVfMTgyOTU4/LmpwZw.jpg"
-        },
-        {
-          "id": "https://pipewrenchmag.com/the-film-projectionist/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://pipewrenchmag.com/the-film-projectionist/",
-          "publishedOn": "2022-09-08T05:24:04.000Z",
-          "wordCount": 2437,
-          "title": "The Projectionist: On the best job that no longer exists",
-          "imageUrl": "https://pipewrenchmag.com/wp-content/uploads/2022/01/jason-leung-GUEybhB53KA-unsplash-scaled.jpg"
-        },
-        {
-          "id": "https://www.johndcook.com/blog/2012/09/25/ramanujans-factorial-approximation/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.johndcook.com/blog/2012/09/25/ramanujans-factorial-approximation/",
-          "publishedOn": "2022-09-08T03:32:35.000Z",
-          "wordCount": 2099,
-          "title": "Ramanujan Factorial Approximation (2012)",
-          "imageUrl": null
-        },
-        {
-          "id": "https://www.frontiersin.org/articles/10.3389/fpsyg.2022.955594/full",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.frontiersin.org/articles/10.3389/fpsyg.2022.955594/full",
-          "publishedOn": "2022-09-08T01:32:56.000Z",
-          "wordCount": 15747,
-          "title": "What if consciousness is not an emergent property of the brain?",
-          "imageUrl": "https://www.frontiersin.org/files/MyHome%20Article%20Library/955594/955594_Thumb_400.jpg"
-        },
-        {
-          "id": "https://kevinbasset.medium.com/why-havent-pwas-killed-native-apps-yet-29beca4425fa",
-          "author": null,
-          "description": "Comments",
-          "link": "https://kevinbasset.medium.com/why-havent-pwas-killed-native-apps-yet-29beca4425fa",
-          "publishedOn": "2022-09-08T01:31:16.000Z",
-          "wordCount": 4111,
-          "title": "Why haven’t PWAs killed native apps yet?",
-          "imageUrl": "https://miro.medium.com/max/1024/1*7t_0PITuquU7MO4UsBAdLw.jpeg"
-        },
-        {
-          "id": "https://www.tdpain.net/blog/a-year-of-reading",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.tdpain.net/blog/a-year-of-reading",
-          "publishedOn": "2022-09-08T01:20:32.000Z",
-          "wordCount": 1019,
-          "title": "I Tracked Everything I Read on the Internet for a Year",
-          "imageUrl": null
-        },
-        {
-          "id": "https://www.nytimes.com/2022/09/07/arts/music/alice-coltrane-jazz-music.html",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.nytimes.com/2022/09/07/arts/music/alice-coltrane-jazz-music.html",
-          "publishedOn": "2022-09-07T22:48:21.000Z",
-          "wordCount": null,
-          "title": "Minutes That Will Make You Love Alice Coltrane",
-          "imageUrl": null
-        },
-        {
-          "id": "https://gist.github.com/moyix/46b7d7fdb9e100dad866821793b08058",
-          "author": null,
-          "description": "Comments",
-          "link": "https://gist.github.com/moyix/46b7d7fdb9e100dad866821793b08058",
-          "publishedOn": "2022-09-07T22:43:22.000Z",
-          "wordCount": 947,
-          "title": "The Ffast and the Furious",
-          "imageUrl": "https://github.githubassets.com/images/modules/gists/gist-og-image.png"
-        },
-        {
-          "id": "https://unstructed.tech/2022/09/07/your-attention-span-is-being-robbed/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://unstructed.tech/2022/09/07/your-attention-span-is-being-robbed/",
-          "publishedOn": "2022-09-07T21:30:19.000Z",
-          "wordCount": 3208,
-          "title": "Our attention span is being robbed",
-          "imageUrl": "https://unstructed.tech/wp-content/uploads/2022/09/image.png"
-        },
-        {
-          "id": "https://bikebiz.com/peloton-riding-is-planets-most-energy-efficient-locomotion-finds-new-research/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://bikebiz.com/peloton-riding-is-planets-most-energy-efficient-locomotion-finds-new-research/",
-          "publishedOn": "2022-09-07T21:26:57.000Z",
-          "wordCount": 10154,
-          "title": "Riding in a peloton is the most energy efficient locomotion, finds new research",
-          "imageUrl": "https://149764339.v2.pressablecdn.com/wp-content/uploads/terracotta.jpg"
-        },
-        {
-          "id": "https://daily.jstor.org/why-companies-are-so-interested-in-your-myers-briggs-type/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://daily.jstor.org/why-companies-are-so-interested-in-your-myers-briggs-type/",
-          "publishedOn": "2022-09-07T20:23:50.000Z",
-          "wordCount": 2316,
-          "title": "Why companies are interested in Myers-Briggs types",
-          "imageUrl": "http://daily.jstor.org/wp-content/uploads/2022/09/why_companies_are_so_interested_in_your_myers_briggs_type_1050x700.jpg"
-        },
-        {
-          "id": "https://www.quantamagazine.org/how-claude-shannons-concept-of-entropy-quantifies-information-20220906/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.quantamagazine.org/how-claude-shannons-concept-of-entropy-quantifies-information-20220906/",
-          "publishedOn": "2022-09-07T20:07:48.000Z",
-          "wordCount": 4923,
-          "title": "Shannon Entropy Imposes Fundamental Limits on Communication",
-          "imageUrl": "https://d2r55xnwy6nx47.cloudfront.net/uploads/2022/09/Shannon-Entropy_1200_Social.png"
-        },
-        {
-          "id": "https://www.shiningscience.com/2022/09/korean-nuclear-fusion-reactor-achieves.html",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.shiningscience.com/2022/09/korean-nuclear-fusion-reactor-achieves.html",
-          "publishedOn": "2022-09-07T19:58:27.000Z",
-          "wordCount": 6887,
-          "title": "Korean nuclear fusion reactor achieves 100M°C for 30 seconds",
-          "imageUrl": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiR-1dLGmiItH_QzbjfL0BxzR2RLlAYQH3naSGzZubiP7zdi5ueT8w3Wjcw0rVnsZiRD8tfx8zDnHy-TwcMbvc-ock6cZfE2bJFOBptd0RntjwQ5Fig7iG0c1yFwujgHLmxipwr5ar4G5RVEaDBdMhcQSZO6TDloQWysAl5uY6vRrutY_Xas1aAaD3U/w1600/SEI_123307213.jpg"
-        },
-        {
-          "id": "https://perfectpacman.com/2022/09/06/new-technical-analysis/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://perfectpacman.com/2022/09/06/new-technical-analysis/",
-          "publishedOn": "2022-09-07T19:06:24.000Z",
-          "wordCount": 10203,
-          "title": "New technical analysis confirms the evidence against Billy Mitchell",
-          "imageUrl": null
-        },
-        {
-          "id": "https://sec.report/Document/0001366868-22-000059/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://sec.report/Document/0001366868-22-000059/",
-          "publishedOn": "2022-09-07T19:04:15.000Z",
-          "wordCount": 13205,
-          "title": "Globalstar SEC filing, Apple to use 85% of its satellite network capacity",
-          "imageUrl": null
-        },
-        {
-          "id": "https://www.apple.com/iphone-14-pro/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.apple.com/iphone-14-pro/",
-          "publishedOn": "2022-09-07T19:02:25.000Z",
-          "wordCount": 9009,
-          "title": "Emergency SOS via satellite is included for free with iPhone 14 Pro for 2 years",
-          "imageUrl": "https://www.apple.com/v/iphone-14-pro/a/images/meta/iphone-14-pro_overview__e2a7u9jy63ma_og.png?202209051325"
-        },
-        {
-          "id": "https://www.apple.com/ios/ios-16/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.apple.com/ios/ios-16/",
-          "publishedOn": "2022-09-07T18:53:48.000Z",
-          "wordCount": 3699,
-          "title": "iOS 16 Available September 12th",
-          "imageUrl": "https://www.apple.com/v/ios/ios-16/a/images/meta/ios-16__cmgttiucwhiu_og.png?202209021349"
-        },
-        {
-          "id": "https://www.apple.com/airpods-pro/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.apple.com/airpods-pro/",
-          "publishedOn": "2022-09-07T18:35:22.000Z",
-          "wordCount": 4007,
-          "title": "AirPods Pro (2nd Generation)",
-          "imageUrl": "https://www.apple.com/v/airpods-pro/g/images/meta/og__eui2mpgzwyaa_overview.png?202209051325"
-        },
-        {
-          "id": "https://github.com/gorhill/uBlock/commit/a559f5f2715c58fea4de09330cf3d06194ccc897",
-          "author": null,
-          "description": "Comments",
-          "link": "https://github.com/gorhill/uBlock/commit/a559f5f2715c58fea4de09330cf3d06194ccc897",
-          "publishedOn": "2022-09-07T18:25:03.000Z",
-          "wordCount": 2441,
-          "title": "“UBO Minus (MV3)” – An Experimental uBlock Origin Build for Manifest V3",
-          "imageUrl": "https://opengraph.githubassets.com/3aa4587e56f9fc293f235819be83993559af31f7c39634d7bce06446063017d3/gorhill/uBlock/commit/a559f5f2715c58fea4de09330cf3d06194ccc897"
-        },
-        {
-          "id": "https://letsencrypt.org/2022/09/07/new-life-for-crls.html",
-          "author": null,
-          "description": "Comments",
-          "link": "https://letsencrypt.org/2022/09/07/new-life-for-crls.html",
-          "publishedOn": "2022-09-07T18:07:34.000Z",
-          "wordCount": 1511,
-          "title": "A New Life for Certificate Revocation Lists",
-          "imageUrl": null
-        },
-        {
-          "id": "http://tycho.sytes.net/TinyClock/",
-          "author": null,
-          "description": "Comments",
-          "link": "http://tycho.sytes.net/TinyClock/",
-          "publishedOn": "2022-09-07T17:25:22.000Z",
-          "wordCount": 182,
-          "title": "Show HN: TinyClock – a tiny true 5-arch universal Mac OS X single-binary GUI app",
-          "imageUrl": null
-        },
-        {
-          "id": "https://github.com/python/cpython/issues/95778",
-          "author": null,
-          "description": "Comments",
-          "link": "https://github.com/python/cpython/issues/95778",
-          "publishedOn": "2022-09-07T17:03:55.000Z",
-          "wordCount": 5789,
-          "title": "Prevent DoS by large int-str conversions",
-          "imageUrl": "https://opengraph.githubassets.com/e0a0f1ad397af91764fb250582c5dde2511bdb980877bbe5b98cb60c2d4776f7/python/cpython/issues/95778"
-        },
-        {
-          "id": "https://github.blog/2022-09-07-research-quantifying-github-copilots-impact-on-developer-productivity-and-happiness/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://github.blog/2022-09-07-research-quantifying-github-copilots-impact-on-developer-productivity-and-happiness/",
-          "publishedOn": "2022-09-07T17:01:46.000Z",
-          "wordCount": 2291,
-          "title": "Quantifying GitHub Copilot’s impact on developer productivity and happiness",
-          "imageUrl": "https://github.blog/wp-content/uploads/2022/06/Copilot.jpeg"
-        },
-        {
-          "id": "https://news.ycombinator.com/item?id=32753205",
-          "author": null,
-          "description": "Comments",
-          "link": "https://news.ycombinator.com/item?id=32753205",
-          "publishedOn": "2022-09-07T17:01:16.000Z",
-          "wordCount": 642,
-          "title": "Laylo (YC S20) Is Hiring a Full Stack Engineer to Grow “Salesforce” for Creators",
-          "imageUrl": null
-        },
-        {
-          "id": "https://www.washingtonpost.com/us-policy/2022/09/07/irs-free-efile-biden/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.washingtonpost.com/us-policy/2022/09/07/irs-free-efile-biden/",
-          "publishedOn": "2022-09-07T16:53:29.000Z",
-          "wordCount": 7158,
-          "title": "IRS will look into setting up a free e-filing system",
-          "imageUrl": "https://www.washingtonpost.com/wp-apps/imrs.php?src=https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/AC5RMLFPQ4I6ZHN5BVDATVCMDQ.jpg&w=1440"
-        },
-        {
-          "id": "https://zserge.com/posts/zig-the-small-language/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://zserge.com/posts/zig-the-small-language/",
-          "publishedOn": "2022-09-07T16:00:44.000Z",
-          "wordCount": 1446,
-          "title": "Zig, the Small Language",
-          "imageUrl": "https://zserge.com/logo.png"
-        },
-        {
-          "id": "https://pypi.org/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://pypi.org/",
-          "publishedOn": "2022-09-07T15:05:52.000Z",
-          "wordCount": 383,
-          "title": "Pypi.org is running a survey on the state of Python packaging",
-          "imageUrl": "https://pypi.org/static/images/twitter.6fecba6f.jpg"
-        },
-        {
-          "id": "https://www.ycombinator.com/blog/meet-the-yc-summer-2022-batch/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.ycombinator.com/blog/meet-the-yc-summer-2022-batch/",
-          "publishedOn": "2022-09-07T15:01:12.000Z",
-          "wordCount": 3472,
-          "title": "The YC Summer 2022 Batch",
-          "imageUrl": "https://www.ycombinator.com/blog/content/images/2022/09/ycombinator_announcement_1200x603-1.png"
-        },
-        {
-          "id": "https://news.ycombinator.com/item?id=32751071",
-          "author": null,
-          "description": "Comments",
-          "link": "https://news.ycombinator.com/item?id=32751071",
-          "publishedOn": "2022-09-07T14:27:37.000Z",
-          "wordCount": 8908,
-          "title": "Tell HN: Otter.ai bot recording meetings without consent",
-          "imageUrl": null
-        },
-        {
-          "id": "https://fly.io/blog/sqlite-virtual-machine/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://fly.io/blog/sqlite-virtual-machine/",
-          "publishedOn": "2022-09-07T13:55:15.000Z",
-          "wordCount": 2708,
-          "title": "How the SQLite virtual machine works",
-          "imageUrl": "https://fly.io/blog/2022-09-07/cover.jpg"
         }
       ]
     }
