@@ -2,10 +2,310 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://7qi7qi.github.io/RSSFeeder/index.html</id>
     <title>osmos::feed</title>
-    <updated>2022-10-19T01:46:59.923Z</updated>
+    <updated>2022-10-20T01:48:43.378Z</updated>
     <generator>osmosfeed 1.15.1</generator>
     <link rel="alternate" href="https://7qi7qi.github.io/RSSFeeder/index.html"/>
     <link rel="self" href="https://7qi7qi.github.io/RSSFeeder/feed.atom"/>
+    <entry>
+        <title type="html"><![CDATA[深入OpenTelemetry指标]]></title>
+        <id>http://weekly.dockone.io/article/2434942</id>
+        <link href="http://weekly.dockone.io/article/2434942"/>
+        <updated>2022-10-20T01:48:03.496Z</updated>
+        <summary type="html"><![CDATA[译注：在本文中，为理解的一致性，我们保留了OpenTelemetry的术语，不作翻译：包括但不限于Instrument、Measurement、Exemplar、Baggage、Context等。需要注意区分Measurement和Instrument的区别，前者指的是度量数据，而后者通常是指用于监测的代码和工具。
+OpenTelemetry是由云原生计算基金会（CNCF）托管的一个用于基础设施性能检测的开源可观测性框架。该项目在几乎所有主要的云供应商（AWS、Google、Microsoft）以及可观测性供应商（包括Timescale）的贡献下得到了极大的发展，以至于它成为按活跃度和贡献者排名第二的CNCF项目，仅次于Kubernetes本身。
+OpenTelemetry旨在为所有类型的可观测数据定义一个单一的标准（在OpenTelemetry的术语中被称作Signals信号），包括监控指标、日志和链路追踪。通过一系列的工具、库、API、SDK和exporters，OpenTelemetry从根本上简化了从服务中收集信号并将其发送到你所选用的后端服务的过程，为更多的用户和供应商打开了可观测性的大门。
+在设计OpenTelemetry指标标准时，有三个设计目标被采纳：
+提供将监控指标与其他类型的可观察性数据相连接的能力：要么是通过Exemplars在链路追踪和监控指标之间直接连接，要么是通过Baggage和Context提供与日志和链路追踪享有相同的相关元数据，间接地连接。
+允许从OpenCensus标准轻松迁移到OpenTelemetry标准。
+在可能的情况下提供对其他主要指标实现的全面支持。Prometheus和StatsD是专门适配的，能够完全支持：那些迁移到OpenTelemetry的用户可以看到与使用其原生客户端类似的结果。
+
+OpenTelemetry提供了一个…]]></summary>
+        <author>
+            <name>megrez</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[引入 Kubernetes 是过早优化的危险信号]]></title>
+        <id>http://weekly.dockone.io/article/2434941</id>
+        <link href="http://weekly.dockone.io/article/2434941"/>
+        <updated>2022-10-20T01:48:03.484Z</updated>
+        <summary type="html"><![CDATA[【编者的话】引入 Kubernetes 是过早优化的危险信号？且听听本文作者怎么说吧。
+如果你所在的企业引入了 Kubernetes，那么你们很有可能会把精力花在一些偏离主线的事情上。
+乍一听这句话可能会感觉到很奇怪，毕竟我们花了这么长的时间来布道和兜售 Kubernetes 的发行版以及咨询服务，致力于帮助人们能够更加充分地利用它，但是事情就是这样！你也许不应该针对你的产品使用 Kubernetes 以及其他一堆“酷”的东西。
+绝大多数的初创以及扩张阶段的企业在构建软件时都应该避免使用 Kubernetes 以及其他的一些过早优化。如果你所在的企业使用了 Kubernetes，那么你们很有可能会把精力花在一些偏离主线的事情上。你们可能已经跌入了过早优化的陷阱。
+请不要觉得这篇文章只是针对 Kubernetes。不是的。这篇文章针对的是工程师们在构建软件的过程中可能做出的所有过早优化。
+以下是我见过的一些例子：
+将 Kubernetes 用于一个应用（还是个 Web 应用）的企业；
+应用程序用到了不只一种语言。比如，后端用的是 Golang、Ruby 或者是 PHP 等语言，然后前端 Web 用的是 React 或者 Vue 等框架；
+没有用云服务来托管应用。比如可以用 Heroku、Vercel、Netlify 或者 Fly.io 等。对于绝大多数产品团队来说，如果他们必须组建一个运维或者基础架构团队的话，他们的解决方案也将会是过度设计的。
+
+试想一下，一个人在真正开始玩他的爱好之前花费了大量的时间和金钱为这个爱好挑选最好的装备。
+当然，这里面有一些观点是比较主观的。也许你知道你会长期坚持你的新爱好，而且你有一个朋友刚好是这方面的行家，他可以帮你挑选合适的装备。不得不说，我自己就很擅长为自己辩解为什么要挑选精英装备，尽管我可能永远不会真的注意到这其中的区别。
+好钢要用在刀…]]></summary>
+        <author>
+            <name>colstuwjx</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[The Mystery of 355/113]]></title>
+        <id>http://davidbau.com/archives/2010/03/14/the_mystery_of_355113.html</id>
+        <link href="http://davidbau.com/archives/2010/03/14/the_mystery_of_355113.html"/>
+        <updated>2022-10-20T01:15:25.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[PostgresML is 8-40x faster than Python HTTP microservices]]></title>
+        <id>https://postgresml.org/blog/postgresml-is-8x-faster-than-python-http-microservices/</id>
+        <link href="https://postgresml.org/blog/postgresml-is-8x-faster-than-python-http-microservices/"/>
+        <updated>2022-10-20T00:45:32.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[NIH blocks access to genetics database if research enters “forbidden” territory]]></title>
+        <id>https://www.city-journal.org/nih-blocks-access-to-genetics-database</id>
+        <link href="https://www.city-journal.org/nih-blocks-access-to-genetics-database"/>
+        <updated>2022-10-20T00:38:23.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[We are still early with the cloud]]></title>
+        <id>https://erikbern.com/2022/10/19/we-are-still-early-with-the-cloud.html</id>
+        <link href="https://erikbern.com/2022/10/19/we-are-still-early-with-the-cloud.html"/>
+        <updated>2022-10-19T23:26:13.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[A Geometrically Natural Uncomputable Function (2008)]]></title>
+        <id>https://xorshammer.com/2008/09/04/a-geometrically-natural-uncomputable-function/</id>
+        <link href="https://xorshammer.com/2008/09/04/a-geometrically-natural-uncomputable-function/"/>
+        <updated>2022-10-19T22:04:53.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Glamorous Toolkit: Moldable development environment]]></title>
+        <id>https://gtoolkit.com/</id>
+        <link href="https://gtoolkit.com/"/>
+        <updated>2022-10-19T20:25:41.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[My PhD Genealogy]]></title>
+        <id>http://robots.stanford.edu/genealogy</id>
+        <link href="http://robots.stanford.edu/genealogy"/>
+        <updated>2022-10-19T20:08:56.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[EasyList is in trouble and so are many ad blockers]]></title>
+        <id>https://adguard.com/en/blog/easylist-filter-problem-help.html</id>
+        <link href="https://adguard.com/en/blog/easylist-filter-problem-help.html"/>
+        <updated>2022-10-19T19:02:09.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Wait vs. Interrupt Culture]]></title>
+        <id>http://benjaminrosshoffman.com/wait-vs-interrupt-culture/</id>
+        <link href="http://benjaminrosshoffman.com/wait-vs-interrupt-culture/"/>
+        <updated>2022-10-19T18:53:56.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[How to use a watch as a compass]]></title>
+        <id>https://www.citizenwatch-global.com/support/exterior/direction.html</id>
+        <link href="https://www.citizenwatch-global.com/support/exterior/direction.html"/>
+        <updated>2022-10-19T18:23:31.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[NASA’s Webb takes star-filled portrait of Pillars of Creation]]></title>
+        <id>https://www.nasa.gov/feature/goddard/2022/nasa-s-webb-takes-star-filled-portrait-of-pillars-of-creation/</id>
+        <link href="https://www.nasa.gov/feature/goddard/2022/nasa-s-webb-takes-star-filled-portrait-of-pillars-of-creation/"/>
+        <updated>2022-10-19T18:18:46.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Why most published research findings are false (2005)]]></title>
+        <id>https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.0020124</id>
+        <link href="https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.0020124"/>
+        <updated>2022-10-19T17:39:56.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[The Soviet Union’s Nuclear Icebreakers]]></title>
+        <id>https://asianometry.substack.com/p/the-soviet-unions-nuclear-icebreakers</id>
+        <link href="https://asianometry.substack.com/p/the-soviet-unions-nuclear-icebreakers"/>
+        <updated>2022-10-19T17:03:50.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Kill Bill – Open-Source Subscription Billing and Payments Platform]]></title>
+        <id>https://github.com/killbill/killbill</id>
+        <link href="https://github.com/killbill/killbill"/>
+        <updated>2022-10-19T15:26:16.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[The smash and grab of Kroger-Albertsons]]></title>
+        <id>https://mattstoller.substack.com/p/the-smash-and-grab-of-kroger-albertsons</id>
+        <link href="https://mattstoller.substack.com/p/the-smash-and-grab-of-kroger-albertsons"/>
+        <updated>2022-10-19T15:24:03.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Replit Mobile App]]></title>
+        <id>https://blog.replit.com/mobile-app</id>
+        <link href="https://blog.replit.com/mobile-app"/>
+        <updated>2022-10-19T15:14:43.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[The Telefunken RA 770 Analog Computer]]></title>
+        <id>http://www.analogmuseum.org/english/collection/telefunken/ra770/</id>
+        <link href="http://www.analogmuseum.org/english/collection/telefunken/ra770/"/>
+        <updated>2022-10-19T14:42:09.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Inside the Proton]]></title>
+        <id>https://www.quantamagazine.org/inside-the-proton-the-most-complicated-thing-imaginable-20221019/</id>
+        <link href="https://www.quantamagazine.org/inside-the-proton-the-most-complicated-thing-imaginable-20221019/"/>
+        <updated>2022-10-19T14:22:21.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Why modifying gravity doesn’t add up]]></title>
+        <id>https://bigthink.com/starts-with-a-bang/modifying-gravity/</id>
+        <link href="https://bigthink.com/starts-with-a-bang/modifying-gravity/"/>
+        <updated>2022-10-19T13:40:45.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Wargame: LaTeX package to prepare hex'n'counter wargames]]></title>
+        <id>https://ctan.org/pkg/wargame</id>
+        <link href="https://ctan.org/pkg/wargame"/>
+        <updated>2022-10-19T13:24:19.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Show HN: I made a new AI colorizer]]></title>
+        <id>https://palette.fm/</id>
+        <link href="https://palette.fm/"/>
+        <updated>2022-10-19T13:00:56.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Write better error messages]]></title>
+        <id>https://wix-ux.com/when-life-gives-you-lemons-write-better-error-messages-46c5223e1a2f</id>
+        <link href="https://wix-ux.com/when-life-gives-you-lemons-write-better-error-messages-46c5223e1a2f"/>
+        <updated>2022-10-19T12:27:18.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Part of the long-lost star catalogue of Hipparchus found in medieval parchment]]></title>
+        <id>https://www.nature.com/articles/d41586-022-03296-1</id>
+        <link href="https://www.nature.com/articles/d41586-022-03296-1"/>
+        <updated>2022-10-19T11:43:51.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Forgotten Employee (2002)]]></title>
+        <id>https://sites.google.com/site/forgottenemployee/</id>
+        <link href="https://sites.google.com/site/forgottenemployee/"/>
+        <updated>2022-10-19T08:40:24.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Public Randomness and Randomness Beacons]]></title>
+        <id>https://a16zcrypto.com/public-randomness-and-randomness-beacons/</id>
+        <link href="https://a16zcrypto.com/public-randomness-and-randomness-beacons/"/>
+        <updated>2022-10-19T05:48:49.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[The Rise of ‘Luxury Surveillance’]]></title>
+        <id>https://www.theatlantic.com/technology/archive/2022/10/amazon-tracking-devices-surveillance-state/671772/</id>
+        <link href="https://www.theatlantic.com/technology/archive/2022/10/amazon-tracking-devices-surveillance-state/671772/"/>
+        <updated>2022-10-19T02:23:43.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Just for Fun. No, really.]]></title>
         <id>https://justforfunnoreally.dev/</id>
@@ -61,6 +361,16 @@
         <id>https://www.usenix.org/conference/nsdi22/presentation/gibson</id>
         <link href="https://www.usenix.org/conference/nsdi22/presentation/gibson"/>
         <updated>2022-10-18T22:15:16.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Ammonia combustion engines: latest research (2021)]]></title>
+        <id>https://www.ammoniaenergy.org/articles/ammonia-combustion-engines-latest-research/</id>
+        <link href="https://www.ammoniaenergy.org/articles/ammonia-combustion-engines-latest-research/"/>
+        <updated>2022-10-18T22:09:11.000Z</updated>
         <summary type="html"><![CDATA[Comments]]></summary>
         <author>
             <name>Hacker News</name>
@@ -131,6 +441,16 @@
         <id>https://www.youtube.com/watch?v=8Ab3ArE8W3s</id>
         <link href="https://www.youtube.com/watch?v=8Ab3ArE8W3s"/>
         <updated>2022-10-18T18:27:31.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[A lot of what is known about pirates is not true (2017)]]></title>
+        <id>https://www.neh.gov/humanities/2017/winter/feature/lot-what-known-about-pirates-not-true-and-lot-what-true-not-known</id>
+        <link href="https://www.neh.gov/humanities/2017/winter/feature/lot-what-known-about-pirates-not-true-and-lot-what-true-not-known"/>
+        <updated>2022-10-18T17:54:09.000Z</updated>
         <summary type="html"><![CDATA[Comments]]></summary>
         <author>
             <name>Hacker News</name>
@@ -241,6 +561,16 @@
         <id>https://www.quantamagazine.org/mathematicians-surprised-by-hidden-fibonacci-numbers-20221017/</id>
         <link href="https://www.quantamagazine.org/mathematicians-surprised-by-hidden-fibonacci-numbers-20221017/"/>
         <updated>2022-10-18T11:28:51.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Pipe Viewer]]></title>
+        <id>http://www.ivarch.com/programs/pv.shtml</id>
+        <link href="http://www.ivarch.com/programs/pv.shtml"/>
+        <updated>2022-10-18T09:15:05.000Z</updated>
         <summary type="html"><![CDATA[Comments]]></summary>
         <author>
             <name>Hacker News</name>
@@ -8467,561 +8797,6 @@ SPIFFE和SPIRE于2018年进入CNCF Sandbox，并于2020年转入孵化器，期�
         <id>https://github.com/gorhill/uBlock/blob/master/platform/mv3/description/en.md</id>
         <link href="https://github.com/gorhill/uBlock/blob/master/platform/mv3/description/en.md"/>
         <updated>2022-09-20T13:50:09.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[DRUIDS: Datadog Reusable User Interface Design System]]></title>
-        <id>https://druids.datadoghq.com/?ref=hackernews</id>
-        <link href="https://druids.datadoghq.com/?ref=hackernews"/>
-        <updated>2022-09-20T13:42:42.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[React I love you, but you're bringing me down]]></title>
-        <id>https://marmelab.com/blog/2022/09/20/react-i-love-you.html</id>
-        <link href="https://marmelab.com/blog/2022/09/20/react-i-love-you.html"/>
-        <updated>2022-09-20T13:38:44.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Tell HN: Somebody implemented something I wrote a blog about]]></title>
-        <id>https://news.ycombinator.com/item?id=32911299</id>
-        <link href="https://news.ycombinator.com/item?id=32911299"/>
-        <updated>2022-09-20T13:22:48.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Germany's blanket data retention law is illegal, EU top court says]]></title>
-        <id>https://www.reuters.com/technology/indiscriminate-data-retention-is-illegal-eu-top-court-says-2022-09-20/</id>
-        <link href="https://www.reuters.com/technology/indiscriminate-data-retention-is-illegal-eu-top-court-says-2022-09-20/"/>
-        <updated>2022-09-20T13:17:46.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Launch HN: Spinach.io (YC W22) – Better daily standups]]></title>
-        <id>https://news.ycombinator.com/item?id=32911232</id>
-        <link href="https://news.ycombinator.com/item?id=32911232"/>
-        <updated>2022-09-20T13:16:23.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[What I’ve learned from users]]></title>
-        <id>http://paulgraham.com/users.html</id>
-        <link href="http://paulgraham.com/users.html"/>
-        <updated>2022-09-20T13:13:50.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Ask HN: How does your company handle late running projects?]]></title>
-        <id>https://news.ycombinator.com/item?id=32911083</id>
-        <link href="https://news.ycombinator.com/item?id=32911083"/>
-        <updated>2022-09-20T13:03:46.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Hash collisions and exploitations – Instant MD5 collision]]></title>
-        <id>https://github.com/corkami/collisions</id>
-        <link href="https://github.com/corkami/collisions"/>
-        <updated>2022-09-20T11:07:02.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[I spent two years trying to do what Backstage does for free]]></title>
-        <id>https://stackoverflow.blog/2022/09/19/i-spent-two-years-trying-to-do-what-backstage-does-for-free/</id>
-        <link href="https://stackoverflow.blog/2022/09/19/i-spent-two-years-trying-to-do-what-backstage-does-for-free/"/>
-        <updated>2022-09-20T09:01:43.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Apache Shenyu Project Graduates]]></title>
-        <id>https://github.com/apache/shenyu</id>
-        <link href="https://github.com/apache/shenyu"/>
-        <updated>2022-09-20T07:32:39.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Kubernetes线上实战训练营（10月班）]]></title>
-        <id>http://weekly.dockone.io/article/2434943</id>
-        <link href="http://weekly.dockone.io/article/2434943"/>
-        <updated>2022-09-20T01:49:46.185Z</updated>
-        <summary type="html"><![CDATA[现在以Kubernetes为代表的容器技术已经非常普及了，很多云计算及容器厂商也提供了基于Kubernetes的服务。
-但是在Kubernetes自学的过程中还是会遇到各种各样的问题，主要原因还是Kubernetes入门容易，深入却很难，而自学又不系统，且缺乏实际操作。
-分布式实验室推出的《Kubernetes线上实战训练营》，通过4天线上培训，3个课后大作业，30天课后辅导，让你通过实战掌握Kubernetes，最后讲解CKA考试，让有想考CKA的同学顺利通过认证。]]></summary>
-        <author>
-            <name>李颖杰</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Public buses across country quietly adding microphones to record conversations]]></title>
-        <id>https://www.wired.com/2012/12/public-bus-audio-surveillance/</id>
-        <link href="https://www.wired.com/2012/12/public-bus-audio-surveillance/"/>
-        <updated>2022-09-20T01:29:53.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Faster CPython 3.12 Plan]]></title>
-        <id>https://github.com/faster-cpython/ideas/wiki/Workflow-for-3.12-cycle</id>
-        <link href="https://github.com/faster-cpython/ideas/wiki/Workflow-for-3.12-cycle"/>
-        <updated>2022-09-20T00:33:57.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Azure CTO: “It's time to halt starting any new projects in C/C++”]]></title>
-        <id>https://twitter.com/markrussinovich/status/1571995117233504257</id>
-        <link href="https://twitter.com/markrussinovich/status/1571995117233504257"/>
-        <updated>2022-09-20T00:07:24.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Show HN: Figr.app – a multi-user, notepad style calculator (desktop app)]]></title>
-        <id>https://www.figr.app/</id>
-        <link href="https://www.figr.app/"/>
-        <updated>2022-09-19T23:57:18.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Jqp: A TUI playground for exploring jq]]></title>
-        <id>https://github.com/noahgorstein/jqp</id>
-        <link href="https://github.com/noahgorstein/jqp"/>
-        <updated>2022-09-19T23:22:37.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[人静止提着物体不做功，那为什么会感到累？]]></title>
-        <id>https://daily.zhihu.com/story/9753154</id>
-        <link href="https://daily.zhihu.com/story/9753154"/>
-        <updated>2022-09-19T23:07:15.000Z</updated>
-        <summary type="html"><![CDATA[瞻云，科普人
-阅读原文
-
-人虽然没有对外做功，但你的肌肉一直都在做功。
-肌肉如何做功？
-先来看看肌肉的结构：
-
-肌细胞中存在很多肌原纤维，约 1μm 粗细，是骨骼肌的收缩单位。
-肌原纤维又分成两个结构：
-粗肌丝——肌球蛋白组成
-细肌丝——肌动蛋白组成
-两种肌丝交叉排列，纵向视角分成「明、H、M、暗」各带。
-Z 线之内的整个结构被称为肌节：
-不难发现，大量肌节串联成肌原纤维，然后肌原纤维又并联成整个肌肉组织。
-注意，这是平面图，从剖面图可以看出，1 跟粗肌丝周围分布着 6 根细丝，又或者说是每 3 根粗肌丝就包裹着一根细肌丝：
-
-通过粗肌丝 + 细肌丝的组成，整根肌原纤维形成了一种特殊的弹性收缩结构：
-虽然肌原纤维各个结构都具有弹性，但整根纤维的收缩和舒张主要通过，细肌丝在粗肌丝间滑行而完成。
-细肌丝往中间的 M 线滑行，完成收缩动作。
-往外部滑行，则完成舒张动作。
-肌肉的收缩过程，本质上就是一个生化反应过程：
-
-当神经信号传达到肌细胞，肌细胞的肌质网会释放钙离子到肌节中。
-在钙离子的作用下，细肌丝上的肌动蛋白结合位点便会暴露出来。这时，粗肌丝上的肌球蛋白就会通过横桥（肌球蛋白上突出的头部）与肌动蛋白结合。
-
-随后肌球蛋白就会利用 ATP 的能量，发生形变，然后拉动细肌丝滑行。
-粗肌丝拉着细肌丝滑行一段距离后，随着 ATP 提供的能量耗尽，肌球蛋白和肌动蛋白会再次分开，然后再继续结合，利用 ATP 中的能量，发生下一次形变。
-在不断结合→形变→分开的循环过程中，肌丝之间完成滑动，整个肌肉系统完成舒张或收缩。
-所以，活化横桥的数目，决定了整个肌肉力量的大小。
-整个肌节的收缩周期
-我们知道，当我们提着重物时，宏观上来说，重物的重力和我们肌肉力量是相等的。
-但是在的微观上，这个力量却是处在一个动态平衡的状态：
-每当粗肌丝消耗 ATP，拉着细肌丝往上发生细微的形变后，在横桥断开的瞬间，外部张力又会把细肌丝拉回原处。如果此时不再提供张力，肌丝就会继续拉长。
-所谓要保持原位，横桥又得再次活化，消耗 ATP 拉着细肌丝发生细微形变。
-随后又回到原位，如此循环往复。
-利用高速透视摄像机，可以拍到肌肉微弱的高频震动。
-为什么我们感受不到这个形变过程中呢？因为肌球蛋白小至 160nm，哪怕整个肌节的长度都只有 2~3μm，远远小于我们感知的变化东西。
-除此之外，由于肌原纤维是并联关系，当某一根肌原纤维上的横桥去活化时，还有其它的肌原纤维处于活化状态，这也可以弱化震动幅度，使得宏观上看起来位置不变。
-例如，在水柱顶球的小实验中，小球相对静止在空中，便是通过水不断产生的冲量维持的。水牺牲掉的动能，其实是用在了小球细微的势能变化上。
-肌肉提物耗能，原理其实是相似的。微观上的势能反复变化，最终会完全转化成热能。
-总之，为了持续提供提起重物的张力，横桥在反复结合断开的过程中，会不断地消耗 ATP。
-肌肉中储存的 ATP 是有限的，很快就会消费干净。不过肌肉中还储存着另外一种高能高能磷酸化合物—— 磷酸肌酸，它提供的能量比 ATP 还稍多一些。
-我们知道，ATP 供能之后会脱掉一个磷酸基变成 ADP。
-而磷酸肌酸可以向 ADP 提供磷酸基，从而再次形成 ATP，以继续给肌肉供能。
-肌肉中磷酸肌酸含量比较丰富，是 ATP 的 3～4 倍，所以可以让肌肉张力维持足够长的时间。
-但随着磷酸肌酸殆尽，ATP 供应不足，活化的横桥越来越少，就会逐渐脱力，肌肉会发生不自主的颤抖。当活化横桥数目完全不足支撑时，自然就会彻底脱力，重物掉落在地。
-肌肉里的磷酸肌酸和 ATP 都耗尽后，你自然会感到十分劳累。
-当处于休息状态，肌肉中磷酸肌酸和 ATP，会通过葡萄糖以及其它营养物质的转化然后恢复。磷酸肌酸的储备，同样由 ATP 来合成。实质上，二者在肌肉中处于一个动态转化的状态。
-
-不难发现，当我们拎着重物赶路时，期间稍微休息和完全不休息，虽然总消耗差异不大，但整个行程的劳累感的差异会十分巨大。
-当然，当拎重物的总时间过长时，也会大量消耗人体的总能量储备，从而让整个人体处于重度疲劳状态。
-肌肉一用力就释放大量热量，其实反应出来的是动物肌肉系统的低效。
-人体运动效率一般在 10%~30%，也就是说运动时肌肉消耗 100 大卡的热量，仅仅只有 30 大卡转化成了动能，多达 70 大卡的能量最终都转化成了热量。
-当人处在静息受力的状态时，动能为零，则 100%转化成了热量。
-总之，并不是拎着重物需要人体释放热量，而是维持肌肉张力的状态，不得不浪费能量，然后这些能量最终会以热量的形式释放出去。
-阅读原文]]></summary>
-        <author>
-            <name>知乎日报</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[有什么和“生命都会死亡”一样的基础规则，可以帮助我们对生命意义进行思考?]]></title>
-        <id>https://daily.zhihu.com/story/9753164</id>
-        <link href="https://daily.zhihu.com/story/9753164"/>
-        <updated>2022-09-19T23:07:09.000Z</updated>
-        <summary type="html"><![CDATA[赵泠，遗迹是曾经讴歌繁荣的生命留下的缺页的梦。
-阅读原文
-
-生命是物质·能量·信息的运动模式，其基本能力是自我组装，以此在时空中留存有组织的信息。你可以将生命理解为自然选择塑造的信息[1]。
-相关推论：
-自我组装的能力是构成生物的分子就具备的，不是演化的产物。
-新陈代谢、生长、繁殖都是自我组装的产物。
-突变是在留存过程中和自我组装过程中出现的、未被自我组装能力完全修复的错误。
-突变引起演化。演化没有目的，是留存信息的副产品。
-生物没有高级·低级之分。
-留存信息的目的是永远留存下去。这可以表述为：活着的目的是永远活着。
-相关推论：
-衰老和死亡不是机制，不是演化产生的，而是在生物的自我组装能力不足以完全修复损伤时发生的信息组织度崩溃。“生命都会死亡”不是基础规则。这有两层含义：
-1.生命可以没有自然寿命限制。这在地球生物圈里的一部分物种身上已经得到了验证。
-过去十年里，生物学界已经确认衰老不是普遍现象。现实中水螅纲多个物种没有自然寿命限制[2]，包括常见的绿水螅。实验证明它们个体的死亡率和繁殖能力与时间没有关联，不会衰老，体内含有大量干细胞，受到不致命的伤害后可以再生。刺胞动物里还有能在身体严重受损（看起来死亡）时用少量的干细胞再生出整个身体（甚至数量还能增加）的海月水母之流，根本不需要谈未必能“从成年逆转到幼体”地循环多少次的灯塔水母。不过，一些人在错误地传播“灯塔水母只能循环一次”的模因——在日本的实验室里灯塔水母已经循环过9～10 次。
-粘孢子虫是满足一些人幻想的“全身都是癌细胞的生物会长生不老”之朴素理念的多细胞寄生生物。它们的细胞大抵严重缺失抑癌基因，但是可以分化和配合而不是胡乱增殖搞死自己。有些学者怀疑它们压根就是古代刺胞动物身上的癌细胞独立出来形成的物种[3]（多倍体西瓜激怒，海拉细胞欢喜），但这在演化上非常困难，这种东西本身也难以找到化石证据，目前没说服力。
-2…]]></summary>
-        <author>
-            <name>知乎日报</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[外行对你熟知的领域有哪些误解？]]></title>
-        <id>https://daily.zhihu.com/story/9753168</id>
-        <link href="https://daily.zhihu.com/story/9753168"/>
-        <updated>2022-09-19T23:07:02.000Z</updated>
-        <summary type="html"><![CDATA[王瑞恩，老王力气大无穷，双手举起纸灯笼
-阅读原文
-
-作为一名实习的检察官，我入职以后才发现自己对于这个职业长期存在错误的理解。
-我的领导（国外叫“supervisor”）对我说，“要记得，你不是任何人所雇佣的律师，你代表的是‘国家’的利益，而不是受害者的利益，
-开始我并不明白，帮受害者讨回公道，为弱者撑腰，这难道不是检察官的职责所在吗？尽管是国家发饷，但这也不妨碍自己为受害者代言啊。再者，国家难道不是站在犯罪行为的受害者一边嘛，具体代表谁，为谁说话，又有什么区别。
-但实际做过一些个案子，才意识到“代表国家，而非受害者”并不是一句虚言。
-有时受害者会请求我们从轻量刑，最常见的是家庭暴力犯罪，
-在美国，家暴案件的量刑一般会附加”禁制令“（no contact order），禁止被告与受害者有任何接触。这里的”接触"不仅包括见面，也包括电话，短信，社交媒体留言，甚至通过他人带话也包括在列。违反禁制令本身就是一种犯罪行为。
-相当一部分的案件中，家庭暴力的受害者本人会请求我们在量刑时取消禁制令这一条，最主要的原因有二，
-一是施暴者同时也是家中主要经济来源，迫于现实无可奈何；
-而是被害者认为施暴者只是一时酒后乱性 / 吸毒后乱性，认为其本质上仍是个好人。
-我有一次问起领导（这样有点生硬，不知道如何表述，大概是想说“老司机”），既然被告都这样说了，为什么不满足其要求呢？
-对曰：“你知道吗，全美国有超过 60%受害者为女性的杀人案中，凶手都是死者的家庭成员，你能冒这个风险吗？”
-然而，这也不是说对于受害者的请求检方就不闻不问，
-在充分和受害者交流后，我们也可能转而向法院要求在被告完成相关心理辅导和反家庭暴力培训课程后考虑取消禁制令，
-但不论如何，我们都会明确告诉提出要求的受害者，”我们不是您所雇佣的律师，因此并没有义务完全听从您的要求。我们所代表的是公众利益，而不是个人的诉求“
-同样地，有时受害者要求从重处罚，但检方也没有义务尽然听从受害者的要求，
-有时，被告会通过认罪协议获得较轻的刑罚，相当多的时候由入狱服刑变成接受缓刑，
-对此经常有受害者表示不满，认为怎能不把这样的人关进监狱呢？
-对此，我个人的理解是:
-刑法的目的的确有复仇的成分，但另一方面，也有教化和改造的作用，
-刑法的追求的确是正义，但正义不是不计代价的，动用公共资源本身就需要成本。如果被告没有通过认罪协议来尽早终结一场刑事诉讼的话，随后跟着的就是有陪审团的审判（jury trial）；如果被告被关押在监狱而非接受缓刑的话，相应地就是监狱配套设施建设和管理人员的招募，而这些，都是黄金万两。
-正义无价，这是很好的追求，但现实所迫，火烧眉毛，也只能顾当下，只能胡萝卜加大棒并施，既让犯罪分子付出代价，也为社会节约一点资源，故有了通过认罪协议来换取从轻发落这一笔买卖。
-
-在这幅统计图中，绿色部分表示美国
-1980-2010
-年间被关押在监狱中的人数，而橙色部分表示在监狱外服缓刑的人数，可以看到橙色部分的显著增长，
-的确，经济不好了，监狱都关不起了，刑法也要向现实利益低头。
-除了增加缓刑比例，优先关押重刑犯之外（犯人一进一出成本较高，而关押期间相对单位时间成本较低，关押期间犯人在狱内的消费还可以为监狱创收），相当一部分洲还允许私人企业投资经营监狱，真正将监狱做成一个产业。我所在的明尼苏达州在这一方面相对保守，监狱创收能力有限，因此还需要靠缓刑来疏导。
-我曾经以为，检察官就是惩恶扬善，为被害者代言，
-但至少在美国，检察官这项职业，所代表的还是”公众利益”，
-所谓利益，正如上文所说，一是保障公众安全，而非顺从个人要求，二是考虑现实利益，算一算经济账。
-阅读原文]]></summary>
-        <author>
-            <name>知乎日报</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[你相册中最舍不得删的一张「饭照」是哪张？吃的什么食物，有什么故事？]]></title>
-        <id>https://daily.zhihu.com/story/9753174</id>
-        <link href="https://daily.zhihu.com/story/9753174"/>
-        <updated>2022-09-19T23:06:53.000Z</updated>
-        <summary type="html"><![CDATA[呵呵笋的小煮艺，用美食温暖你的心和胃
-阅读原文
-
-人的口味变化多端，唯有记忆深处的味蕾不曾有过改变，不然也不会有这么一句话叫：味至浓时是故乡。
-说起来，我有一手好厨艺，全都来源我的奶奶。
-我的奶奶是个典型的上海老太太，她做的一手好菜，对于制作糕点和面食也很在行。
-我一直坚信全世界只有奶奶的饭菜最可口，而我的厨艺还不及奶奶的千分之一。奶奶的美味好吃到我觉得酒店里的饭菜都不如她做的香，厉害到就算她只给我冲一碗盐开水我也觉得是美味的。这大概是因为爱吧，我很爱我的奶奶。
-从小我在她身边长大，日积月累对于吃食也有了自己的理解。小时候，我经常在灶台边看奶奶做饭，每当做糕点或面食时，奶奶也喜欢让我尝试。所以，虽然没有实践过，好像这些美食记忆都深深的印在了我的脑海中。奶奶家的厨房并不大，但却有一个大大的灶台，而奶奶就是在这样一个小小的灶披间里为我做出了一道道或精美或家常的美味，这张照片也成为了我最最喜爱的一张美食照。
-
-在上海，春卷作为特色，其做法历史悠久，一般有甜咸两种口味。甜口春卷里面包的是豆沙馅，而咸口春卷通常以【黄芽菜香菇肉丝馅】为代表，这个馅老上海人还管它叫烂糊肉丝馅。黄芽菜就是大白菜，黄芽菜和肉丝的组合也是我们家最喜欢的春卷搭配之一，每年春天奶奶总要做上个五六七八次吧。
-
-薄如纸片的面皮包入新鲜蔬菜炒成的馅料，下油锅一炸，金黄的春卷外脆里软，吃时再蘸点香醋以帮助解腻。一口咬下去，外皮香脆，里面馅料软软的冒着热气，配合酸酸的醋，别具风味。
-
-我们家青团做的最好的当属我的奶奶，每年清明前夕，她都会亲自去田间摘取最嫩的艾草，做上一大锅的艾草青团，一部分自己吃，一部分送亲友，还有一部分当然是用来祭祀祖先。大概老一辈人做菜都不需要配比，随手一抓总是刚刚好。奶奶的青团分为红豆沙馅和传统的雪菜笋干肉丝馅，而我独爱【雪菜笋干肉丝馅】，色泽翠绿，细腻香甜，一口下去满嘴清香。只要一想到奶奶的青团口…]]></summary>
-        <author>
-            <name>知乎日报</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[什么叫「好」的词曲，「好」的编曲，「好」的混音，「好」的音色...如何定义「好」？]]></title>
-        <id>https://daily.zhihu.com/story/9753175</id>
-        <link href="https://daily.zhihu.com/story/9753175"/>
-        <updated>2022-09-19T23:06:49.000Z</updated>
-        <summary type="html"><![CDATA[Kevin Hwang，搞音乐的
-阅读原文
-
-我常和家人、老师、朋友、学生讨论这个问题。常识来说，「好」是肯定无法定义的，但是主观表达是否到位，这件事，在大家心里都是有一杆秤、一把尺的。
-在现代化唱片工业中，无论企划、词曲、编曲、录音、混音、母带、宣发，任何一个环节，其实都是在为这件艺术品做自己的那一份工作，而大家共同努力，就是为了让更多的人觉得「好」
-当我们听音乐，我们听的是什么？这是大概个哲学问题。同样，我们也可以想一想，当我拿着一份乐谱或者一份歌词的打印稿，来跟你大谈特谈这首音乐多么的好听，从哲学的角度来说，这事儿不成立，因为音乐建立在发声的基础上，才是我们共同的认知。
-所以，好的词曲，我认为，首先是传唱。简单的说，那就是耐听好学，简单易记。要说写这样的词曲有什么技术，那其实都是非常马后炮的，因为你并不能确定地预见自己的作品能不能传唱或大红大紫。所以很多时候，我们研究终止式，研究诗词格律，把词曲咬合做到极致，把唱腔咬字做到最细，都是在经验学的基础上，做更多的努力。但其实很多时候人们公认的好歌，这些技术其实仅在底层逻辑，而这个好的词曲，本身做的一件事，叫做「真诚」
-没错，在你有了这些技术，作为底层逻辑的时候，极尽真诚地写作，想必它就是更趋向于大家认可的「好」了。
-编曲与混音，是工业时代的技术工种，自古以来，编曲师的工作其实就是作曲家自己在编写总谱的时候做的事情，或是写好了框架缩谱然后交予助理，在自己的指导意见下完善创作。所以词曲本身的指导意义非常重要，它引导编曲找到适合的配器、律动、和声排列等等。
-我认为好的编曲一定是和词曲完全一体的，就是当你觉得，这个歌离开了这个编曲，你在清唱的时候脑子里依旧需要这个伴奏来辅助，那它一定就是一个成功的编曲，也就是「好」的编曲。无论我们做什么样子的音色设计、律动设计、分段配器层次、和声重配等等，在主要的部分我们都是为了让词曲更为直达听众，而不是为了秀我们作为编曲师有多高超的技巧。
-混音也是同理。我曾经做过一个比喻，编曲师就是配菜师，而混音师就是大厨，他要用自己的理解做好这道菜，同时也要照顾你的理解，也就是他会让你吃起这道菜来有熟悉又欣喜的感受，才是一个好大厨。混音师也是这样，当我们作为混音师，拿到编曲和录音素材，我们需要让它有更为动听的听感，才能让这个数字艺术品更具传播性，更具持久性。所以在混音母带环节，我认为的好，就是审美与技术上的好，当作品能让你在大部分听音场景下耐心的听下去，它就是「好」的。
-综上，我们都认可音乐的「好」是一个主观评价，但是我们大约也都承认，人们对于艺术作品有一个审美中线，耳朵并不会骗你。
-大概就是这样。
-阅读原文]]></summary>
-        <author>
-            <name>知乎日报</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[瞎扯 · 如何正确地吐槽]]></title>
-        <id>https://daily.zhihu.com/story/9753177</id>
-        <link href="https://daily.zhihu.com/story/9753177"/>
-        <updated>2022-09-19T23:06:42.000Z</updated>
-        <summary type="html"><![CDATA[知乎日报
-
-Q：如何看待七匹狼公子与特步公主联姻？这类小说情节般的「豪门联姻」能给企业带来什么？
-@夏飞 ：这新 logo 不就来了吗：
-
-Q：如何看待网传重庆易联购预售 iPhone 14 后携数千万巨款跑路？消费者的钱还追得回来吗？
-@间歇性失智症 ：第一眼看成了易建联……我还以为 CBA 发不出工资了。
-Q：为何宁愿南水北调，却不用海水淡化呢？
-@务工人员 ：你问这个问题的时候肯定没想到，若干年后，有一个叫日本的国家，往太平洋倾倒核废水吧。
-Q：你听过最酷的一句话是哪句？说这句话的人也一样酷么？
-@银教授 ：「钱的事你不用担心。」
-Q：那些花几百、上千块钱买副耳机的人是什么心态？
-@郭小羊 ：因为买不起上万的。。。
-阅读原文]]></summary>
-        <author>
-            <name>知乎日报</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[‘Serial’ case: Adnan Syed released, conviction tossed]]></title>
-        <id>https://apnews.com/article/baltimore-adnan-syed-hae-min-lee-024f739b28b33cf50e76c50d640c0882</id>
-        <link href="https://apnews.com/article/baltimore-adnan-syed-hae-min-lee-024f739b28b33cf50e76c50d640c0882"/>
-        <updated>2022-09-19T20:26:26.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Mrs. Bundy (2015)]]></title>
-        <id>https://themorningnews.org/article/mrs.-bundy</id>
-        <link href="https://themorningnews.org/article/mrs.-bundy"/>
-        <updated>2022-09-19T20:20:10.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[What we learned after I deleted the main production database by mistake]]></title>
-        <id>https://medium.com/@hugo.oliveira.rocha/what-we-learned-after-i-deleted-the-main-production-database-by-mistake-13c0a5815de5</id>
-        <link href="https://medium.com/@hugo.oliveira.rocha/what-we-learned-after-i-deleted-the-main-production-database-by-mistake-13c0a5815de5"/>
-        <updated>2022-09-19T20:19:27.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Stable Diffusion Text-Prompt-Based Inpainting – Replace Hair, Fashion]]></title>
-        <id>https://github.com/amrrs/stable-diffusion-prompt-inpainting</id>
-        <link href="https://github.com/amrrs/stable-diffusion-prompt-inpainting"/>
-        <updated>2022-09-19T20:03:24.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Apple is top funder of lobby group that says it represents small developers]]></title>
-        <id>https://arstechnica.com/tech-policy/2022/09/apple-is-top-funder-of-lobby-group-that-says-it-represents-small-developers/</id>
-        <link href="https://arstechnica.com/tech-policy/2022/09/apple-is-top-funder-of-lobby-group-that-says-it-represents-small-developers/"/>
-        <updated>2022-09-19T19:53:30.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[I accidentally started a movement – Policing the Police by scraping court data]]></title>
-        <id>https://news.ycombinator.com/item?id=32902945</id>
-        <link href="https://news.ycombinator.com/item?id=32902945"/>
-        <updated>2022-09-19T19:42:21.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[There is no “software supply chain”]]></title>
-        <id>https://iliana.fyi/blog/software-supply-chain/</id>
-        <link href="https://iliana.fyi/blog/software-supply-chain/"/>
-        <updated>2022-09-19T19:41:17.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[2-in-1 calculator app adds up to surprise hit for retired engineer]]></title>
-        <id>https://mainichi.jp/english/articles/20220916/p2a/00m/0sc/017000c</id>
-        <link href="https://mainichi.jp/english/articles/20220916/p2a/00m/0sc/017000c"/>
-        <updated>2022-09-19T19:07:40.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[R. Crumb Means Some Offense]]></title>
-        <id>https://www.nytimes.com/2022/09/15/t-magazine/r-crumb.html</id>
-        <link href="https://www.nytimes.com/2022/09/15/t-magazine/r-crumb.html"/>
-        <updated>2022-09-19T19:05:03.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Ask HN: Does Hacker News still do in person meet ups?]]></title>
-        <id>https://news.ycombinator.com/item?id=32902293</id>
-        <link href="https://news.ycombinator.com/item?id=32902293"/>
-        <updated>2022-09-19T18:49:50.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[1Hz CPU made in Minecraft running Minecraft at 0.1fps [video]]]></title>
-        <id>https://www.youtube.com/watch?v=-BP7DhHTU-I</id>
-        <link href="https://www.youtube.com/watch?v=-BP7DhHTU-I"/>
-        <updated>2022-09-19T17:41:52.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Meticulous (YC S21) Is Hiring #3 Founding Engineer in London]]></title>
-        <id>https://news.ycombinator.com/item?id=32900942</id>
-        <link href="https://news.ycombinator.com/item?id=32900942"/>
-        <updated>2022-09-19T17:00:01.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[AI Seamless Texture Generator Built-In to Blender]]></title>
-        <id>https://github.com/carson-katri/dream-textures</id>
-        <link href="https://github.com/carson-katri/dream-textures"/>
-        <updated>2022-09-19T16:50:41.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Disentangling the facts from the hype of quantum computing]]></title>
-        <id>https://spectrum.ieee.org/ieee-quantum-week</id>
-        <link href="https://spectrum.ieee.org/ieee-quantum-week"/>
-        <updated>2022-09-19T16:05:09.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[I’m a productive programmer with a memory of a fruit fly]]></title>
-        <id>https://hynek.me/articles/productive-fruit-fly-programmer/</id>
-        <link href="https://hynek.me/articles/productive-fruit-fly-programmer/"/>
-        <updated>2022-09-19T16:04:47.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Postgres Data Flow]]></title>
-        <id>https://www.crunchydata.com/blog/postgres-data-flow</id>
-        <link href="https://www.crunchydata.com/blog/postgres-data-flow"/>
-        <updated>2022-09-19T16:01:48.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Compact electron accelerator reaches new speeds with nothing but light]]></title>
-        <id>https://phys.org/news/2022-09-compact-electron.html</id>
-        <link href="https://phys.org/news/2022-09-compact-electron.html"/>
-        <updated>2022-09-19T15:29:37.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Why kids are afraid to ask for help]]></title>
-        <id>https://www.scientificamerican.com/article/why-kids-are-afraid-to-ask-for-help/</id>
-        <link href="https://www.scientificamerican.com/article/why-kids-are-afraid-to-ask-for-help/"/>
-        <updated>2022-09-19T15:25:50.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Apple’s iPhone 14 Redesign for Repair]]></title>
-        <id>https://www.ifixit.com/News/64865/iphone-14-teardown</id>
-        <link href="https://www.ifixit.com/News/64865/iphone-14-teardown"/>
-        <updated>2022-09-19T15:15:18.000Z</updated>
         <summary type="html"><![CDATA[Comments]]></summary>
         <author>
             <name>Hacker News</name>
