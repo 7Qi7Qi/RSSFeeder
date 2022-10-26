@@ -12,6 +12,16 @@
       "siteUrl": "http://weekly.dockone.io",
       "articles": [
         {
+          "id": "http://weekly.dockone.io/article/2434949",
+          "author": "frankinbj",
+          "description": "分布式计算的谬误是由L Peter Deutsch和Sun Microsystems公司的其他人所提出的一组断言，他们描述了不熟悉分布式应用程序的程序员总是会做出的一些错误的假设。\n微服务的大规模普及迫使越来越多的工程师意识到这些错误的认识给他们的系统带来多么大的影响。\n我们经常会看到一些人在讨论系统设计的时候，忽视或者淡化这8个谬误。\n\n\n\n下面我来介绍一下这些谬误以及一些潜在的消减措施，希望大家能感兴趣。\n网络是可靠的\n\n\n\n\n为了构建一个可靠的系统，你必须理解并接受任何一种通信都可能会失败的事实。因此，我们需要为系统设计出一种方法来处理这种潜在的错误沟通。所以，最终需要用到重传，而且它可以有多种形式。\n存储再转发（store and forward）就是这样一种模型。我们不直接将数据发送到下游服务器，而是将其存储在本地或其他地方，这也提供了能从灾难场景下恢复的保障。\n有很多产品属于这种技术，如RabbitMQ，ActiveMQ以及来自云厂商的各种专有解决方案。\n网络是零延迟的\n\n\n\n\n图片的左边是在现代系统中直接访问内存的时间，右边是在世界各地往返所需的时间。\n我喜欢把延迟看作是完成任何请求的严格开销。传递的消息可以很大，也可以很小，而延迟是不变的。与带宽不同，延迟通常与光速和通信距离（或物理路径）有关。所以两个系统之间的物理距离在这里起着重要的作用。\n延迟是无处不在的。它发生在所有的通讯中。理想情况下，这种开销应该尽可能小。延迟的场景和从车上卸货非常相似，就是说，从厨房到车上的时间就是延迟。你是想一趟尽可能多地拿东西，还是想每次只拿一个东西，花几百次往返把车上的东西都卸下来？\n带宽是无限的\n\n\n\n\n假设持续无限制地增加信道上的数据大小，这显然是个很大的错误。这种情况只有在某种通讯彻底占满带宽与此同时无法扩容时才会出现。\n我第一次遇到这个问题是我不小心将主页所需的有效…",
+          "link": "http://weekly.dockone.io/article/2434949",
+          "publishedOn": "2022-10-26T01:39:15.335Z",
+          "wordCount": 274,
+          "title": "图解分布式计算的8大谬误",
+          "imageUrl": null
+        },
+        {
           "id": "http://weekly.dockone.io/article/2434944",
           "author": "Andy_Lee",
           "description": "专门为云原生软件构建可持续生态系统的云原生计算基金会（CNCF）今天宣布，SPIFFE与SPIRE项目已经正式毕业。这一消息，也让CNCF的毕业项目总数由16个增加至18个。\n面向所有人的安全生产身份框架（SPIFFE）能够为现代生产环境中的各种工作负载提供安全身份，消除了机密信息的共享需求，有望成为更高级别的平台中立安全控制方案的实现基础。SPIRE（SPIFFE运行时环境）则负责在各种平台上实现SPIFFE规范，并强制发布身份的多因素证明。\nChris Aniszczyk解释称，“安全一直是云原生生态系统中一大迫切话题，因为目前我们所看到并使用的大多数架构，在设计构建中并未考虑到如今的大规模与零信任云原生环境。现代应用程序开发需要一种标准化、更加安全的工作负载身份形式，而SPIFEE/SPIRE就很好地满足了这方面需求。很高兴能看到这些项目得到大力支持，随着更多组织步入保护云原生架构的新时代，相信SPIFFE/SPIRE的普及度还将进一步提升。”\nSPIFFE和SPIRE于2018年进入CNCF Sandbox，并于2020年转入孵化器，期间市场份额迎来显著增长。当下，这两个项目已经愈发得到各行业最终用户的青睐，包括Anthem、GitHub、Netflix、Niantic、Pinterest以及Uber。多家全球重量级技术提供商利用它们构建起更高层次的产品和服务，并将其与Envoy、gRPC、Istio、Kubernetes、Sigstore及Tekton等同样发展势头迅猛的开源项目集成起来。\n“SPIFFE与SPIRE项目的发展令人肃然起敬。如今，SPIFFE已经建立起惊人的影响力和使用规模，正在帮助那些每月承载数十亿活跃用户的全球最大超级计算机和社交平台改善安全水平。而展望未来，我又觉得当下这一切只能算刚刚起步……”\n——Evan Gilman，SPIFFE/SP…",
@@ -130,16 +140,6 @@
           "wordCount": 356,
           "title": "Acorn：用于Kubernetes的轻量级且可移植的PaaS",
           "imageUrl": null
-        },
-        {
-          "id": "http://weekly.dockone.io/article/2434945",
-          "author": "w9527",
-          "description": "什么是 Redis？\nRedis（“REmote DIctionary Service”）是一个开源的键值对数据库服务器。\nRedis 更准确的描述是一个数据结构服务器。Redis 的这种特殊性质让它在开发人员中很受欢迎。\n\n\n\nRedis不是通过迭代或者排序方式处理数据，而是一开始就按照数据结构方式组织。早期，它的使用很像 Memcached，但随着 Redis 的改进，它在许多其他用例中变得可行，包括发布-订阅机制、流（streaming）和队列。\n\n\n\n主要来说，Redis 是一个内存数据库，用作另一个“真实”数据库（如 MySQL 或 PostgreSQL）前面的缓存，以帮助提高应用程序性能。它通过利用内存的高速访问速度，从而减轻核心应用程序数据库的负载，例如：\n不经常更改且经常被请求的数据\n任务关键性较低且经常变动的数据\n\n上述数据的示例可以包括会话或数据缓存以及仪表板的排行榜或汇总分析。\n\n\n\n但是，对于许多用例场景，Redis 都可以提供足够的保证，可以将其用作成熟的主数据库。再加上 Redis 插件及其各种高可用性（HA）设置，Redis 作为数据库对于某些场景和工作负载变得非常有用。\n另一个重要方面是 Redis 模糊了缓存和数据存储之间的界限。这里要理解的重要一点是，相比于使用 SSD 或 HDD 作为存储的传统数据库，读取和操作内存中数据的速度要快得多。\n\n\n\n最初，Redis 最常被比作 Memcached，后者当时缺乏任何非易失性持久化。\n这是当前两个缓存之间的功能细分。\n\n\n\n虽然现在拥有多种配置方式将数据持久化到磁盘，但当时首次引入持久化时，Redis 是使用快照方式，通过异步拷贝内存中的数据方式来做持久化。不幸的是，这种机制的缺点是可能会在快照之间丢失数据。\nRedis 自 2009 年成立到现在已经变的很成熟。我们将介绍它的大部分架构和拓扑…",
-          "link": "http://weekly.dockone.io/article/2434945",
-          "publishedOn": "2022-09-26T01:48:19.746Z",
-          "wordCount": 624,
-          "title": "深入理解 Redis",
-          "imageUrl": null
         }
       ]
     },
@@ -148,6 +148,276 @@
       "feedUrl": "https://news.ycombinator.com/rss",
       "siteUrl": "https://news.ycombinator.com/",
       "articles": [
+        {
+          "id": "https://blog.google/products/search/a-new-search-tool-to-help-control-your-online-presence/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://blog.google/products/search/a-new-search-tool-to-help-control-your-online-presence/",
+          "publishedOn": "2022-10-26T00:37:01.000Z",
+          "wordCount": 1545,
+          "title": "How to request removal of your contact info from Google search results",
+          "imageUrl": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Privacy_v1_2096x11922x_rT7bStb.max-1300x1300.png"
+        },
+        {
+          "id": "https://dynomight.net/are-tests-irrelevant/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://dynomight.net/are-tests-irrelevant/",
+          "publishedOn": "2022-10-26T00:16:21.000Z",
+          "wordCount": 3369,
+          "title": "The irrelevance of test scores is greatly exaggerated",
+          "imageUrl": "https://dynomight.net/img/tests/room.jpg"
+        },
+        {
+          "id": "https://www.microsoft.com/en-us/investor/earnings/FY-2023-Q1/press-release-webcast",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.microsoft.com/en-us/investor/earnings/FY-2023-Q1/press-release-webcast",
+          "publishedOn": "2022-10-26T00:13:59.000Z",
+          "wordCount": 3240,
+          "title": "Microsoft FY23 Q1 Earnings",
+          "imageUrl": null
+        },
+        {
+          "id": "https://www.automl.org/tabpfn-a-transformer-that-solves-small-tabular-classification-problems-in-a-second/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.automl.org/tabpfn-a-transformer-that-solves-small-tabular-classification-problems-in-a-second/",
+          "publishedOn": "2022-10-25T22:58:31.000Z",
+          "wordCount": 1782,
+          "title": "TabPFN: Transformer Solves Small Tabular Classification in a Second",
+          "imageUrl": null
+        },
+        {
+          "id": "https://luqman.ca/blog/multi-kernel-drifting/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://luqman.ca/blog/multi-kernel-drifting/",
+          "publishedOn": "2022-10-25T22:36:01.000Z",
+          "wordCount": 2357,
+          "title": "Multi-Kernel Drifting",
+          "imageUrl": "https://luqman.ca/blog/multi-kernel-drifting/images/multi-track-drifting-meme.jpg"
+        },
+        {
+          "id": "https://bitmovin.com/google-adds-hevc-support-chrome/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://bitmovin.com/google-adds-hevc-support-chrome/",
+          "publishedOn": "2022-10-25T22:32:47.000Z",
+          "wordCount": 1733,
+          "title": "Google added HEVC support in Chrome",
+          "imageUrl": "https://bitmovin.com/wp-content/uploads/2022/09/Bitmovin_HEVC_Support_Blog-1024x537.jpg"
+        },
+        {
+          "id": "https://github.com/7thSamurai/steganography",
+          "author": null,
+          "description": "Comments",
+          "link": "https://github.com/7thSamurai/steganography",
+          "publishedOn": "2022-10-25T22:21:55.000Z",
+          "wordCount": 1371,
+          "title": "Show HN: Encrypt and hide files inside images",
+          "imageUrl": "https://opengraph.githubassets.com/dae70e31ce18cd9dab5586477a09eef767141d65e9955f5d2989a52610aa43cd/7thSamurai/steganography"
+        },
+        {
+          "id": "https://iapps.courts.state.ny.us/fbem/DocumentDisplayServlet?documentId=JK5E3gx5XV1/ku37jnWR_PLUS_w==&system=prod&TSPD_101_R0=08533cd43fab2000edb19601c775225bb3f6399e467eba468d5199c578db439f849eb7e40f10149908fdb0d7a514480063155165f24217998870310adf4e840d6f2dc7e02b7b4af121d79ec670c4468d9bd049aca6bd09e1e6afd8e75126fd352e140d96c7de44a910dd0fd70c45a64765c0ad37a316ee13",
+          "author": null,
+          "description": "Comments",
+          "link": "https://iapps.courts.state.ny.us/fbem/DocumentDisplayServlet?documentId=JK5E3gx5XV1/ku37jnWR_PLUS_w==&system=prod&TSPD_101_R0=08533cd43fab2000edb19601c775225bb3f6399e467eba468d5199c578db439f849eb7e40f10149908fdb0d7a514480063155165f24217998870310adf4e840d6f2dc7e02b7b4af121d79ec670c4468d9bd049aca6bd09e1e6afd8e75126fd352e140d96c7de44a910dd0fd70c45a64765c0ad37a316ee13",
+          "publishedOn": "2022-10-25T21:51:33.000Z",
+          "wordCount": 54186,
+          "title": "NY Supreme Court reinstates NYC's fired unvaccinated employees, orders backpay",
+          "imageUrl": null
+        },
+        {
+          "id": "https://abc.xyz/investor/static/pdf/2022Q3_alphabet_earnings_release.pdf",
+          "author": null,
+          "description": "Comments",
+          "link": "https://abc.xyz/investor/static/pdf/2022Q3_alphabet_earnings_release.pdf",
+          "publishedOn": "2022-10-25T20:02:34.000Z",
+          "wordCount": 16310,
+          "title": "Alphabet Earnings Report Q3 2022 [pdf]",
+          "imageUrl": null
+        },
+        {
+          "id": "https://www.hrdive.com/news/employers-may-need-to-prioritize-retention-over-hiring-study-suggests/632540/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.hrdive.com/news/employers-may-need-to-prioritize-retention-over-hiring-study-suggests/632540/",
+          "publishedOn": "2022-10-25T19:20:29.000Z",
+          "wordCount": 4728,
+          "title": "Employers should prioritize retention over hiring, study suggests",
+          "imageUrl": "https://www.hrdive.com/imgproxy/Fs7rLG43uOBRBcTx6XI1LVgFLNd0yQBH7HVIkHF_KoI/g:ce/rs:fill:770:364:0/bG9jYWw6Ly8vZGl2ZWltYWdlLzc3MHgzNjRfVjFfZ1ZnU2hGcS5qcGc.jpg"
+        },
+        {
+          "id": "https://wadcmd.com/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://wadcmd.com/",
+          "publishedOn": "2022-10-25T18:10:01.000Z",
+          "wordCount": 12,
+          "title": "Wad Commander: Play Doom I and II in the Browser",
+          "imageUrl": "/launch.e0b28da6.png"
+        },
+        {
+          "id": "https://blog.southparkcommons.com/startup-engineering-hiring-anti-patterns/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://blog.southparkcommons.com/startup-engineering-hiring-anti-patterns/",
+          "publishedOn": "2022-10-25T18:01:16.000Z",
+          "wordCount": 1570,
+          "title": "Startup engineering hiring anti-patterns (2021)",
+          "imageUrl": "https://blog.southparkcommons.com/content/images/max/1200/1-DmuFyAafmAOTs1cln4qP6w.png"
+        },
+        {
+          "id": "https://vercel.com/blog/turbopack",
+          "author": null,
+          "description": "Comments",
+          "link": "https://vercel.com/blog/turbopack",
+          "publishedOn": "2022-10-25T17:35:28.000Z",
+          "wordCount": 1398,
+          "title": "Turbopack, the successor to Webpack",
+          "imageUrl": "https://assets.vercel.com/image/upload/contentful/image/e5382hct74si/7BttWlDN0aYE7Hmjdeu7yR/f7141661521c8c12b2fa5b0ac4dd7536/Turbopack.png"
+        },
+        {
+          "id": "https://news.ycombinator.com/item?id=33333584",
+          "author": null,
+          "description": "Comments",
+          "link": "https://news.ycombinator.com/item?id=33333584",
+          "publishedOn": "2022-10-25T17:27:16.000Z",
+          "wordCount": 3523,
+          "title": "Launch HN: Paigo (YC S22) – Measure and bill SaaS customers based on usage",
+          "imageUrl": null
+        },
+        {
+          "id": "https://runpee.com/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://runpee.com/",
+          "publishedOn": "2022-10-25T16:51:26.000Z",
+          "wordCount": 3852,
+          "title": "An app that tells you the best time to run and pee during a movie",
+          "imageUrl": "https://i0.wp.com/runpee.com/wp-content/uploads/2019/12/RunPee_clapper_w-tag_no-bg_1000.png?fit=1000%2C1000&ssl=1"
+        },
+        {
+          "id": "https://spectrum.ieee.org/passive-radar-with-sdr",
+          "author": null,
+          "description": "Comments",
+          "link": "https://spectrum.ieee.org/passive-radar-with-sdr",
+          "publishedOn": "2022-10-25T16:43:19.000Z",
+          "wordCount": 12064,
+          "title": "Build a passive radar with software-defined radio",
+          "imageUrl": "https://spectrum.ieee.org/media-library/a-flat-building-rooftop-with-a-chimney-stack-in-the-distance-through-the-tops-of-some-trees-the-top-of-the-empire-state-building-is-visible-a-directional-antenna-is-mounted-on-the-stack-pointed-towards-the-empire-state-building-while-another-antenna-points-in-the-opposite-direction-cables-connect-the-antenna-to-a-battery-pack-krakenrf-radio-and-a-raspberry-pi-on-the-roof.png?id=32001671&width=1200&height=600&coordinates=0%2C79%2C0%2C620"
+        },
+        {
+          "id": "https://www.su.se/english/news/vasa-s-sister-ship-%C3%A4pplet-found-a-unique-historical-discovery-1.633118",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.su.se/english/news/vasa-s-sister-ship-%C3%A4pplet-found-a-unique-historical-discovery-1.633118",
+          "publishedOn": "2022-10-25T16:40:51.000Z",
+          "wordCount": 2210,
+          "title": "Vasa's sister ship Äpplet found",
+          "imageUrl": "https://www.su.se/polopoly_fs/1.633088!/image/image.jpg"
+        },
+        {
+          "id": "https://jeremykun.com/2015/04/06/markov-chain-monte-carlo-without-all-the-bullshit/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://jeremykun.com/2015/04/06/markov-chain-monte-carlo-without-all-the-bullshit/",
+          "publishedOn": "2022-10-25T16:04:34.000Z",
+          "wordCount": 9492,
+          "title": "Markov chain Monte Carlo without the bullshit (2015)",
+          "imageUrl": "https://jeremykun.com/wp-content/uploads/2015/04/screen-shot-2015-04-07-at-6-55-39-pm.png"
+        },
+        {
+          "id": "https://www.ycombinator.com/blog/how-to-maintain-engineering-velocity-as-you-scale",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.ycombinator.com/blog/how-to-maintain-engineering-velocity-as-you-scale",
+          "publishedOn": "2022-10-25T16:00:08.000Z",
+          "wordCount": 15789,
+          "title": "How to maintain engineering velocity as you scale",
+          "imageUrl": "https://www.ycombinator.com/blog/content/images/2022/10/BlogTwitter-Image-Template-2.jpeg"
+        },
+        {
+          "id": "https://admiralcloudberg.medium.com/the-case-of-the-missing-fuel-the-story-of-the-stockport-air-disaster-74685ae96cb3",
+          "author": null,
+          "description": "Comments",
+          "link": "https://admiralcloudberg.medium.com/the-case-of-the-missing-fuel-the-story-of-the-stockport-air-disaster-74685ae96cb3",
+          "publishedOn": "2022-10-25T15:17:20.000Z",
+          "wordCount": 15248,
+          "title": "The Case of the Missing Fuel: The story of the Stockport air disaster",
+          "imageUrl": "https://miro.medium.com/max/615/0*j6bjIl242L_M8hAM.jpg"
+        },
+        {
+          "id": "https://kristoff.it/blog/zig-self-hosted-now-what/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://kristoff.it/blog/zig-self-hosted-now-what/",
+          "publishedOn": "2022-10-25T15:06:12.000Z",
+          "wordCount": 1490,
+          "title": "Zig Is Self-Hosted Now, What's Next?",
+          "imageUrl": "https://krisoff.it/logo.png"
+        },
+        {
+          "id": "https://www.clockworkpi.com/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.clockworkpi.com/",
+          "publishedOn": "2022-10-25T14:45:00.000Z",
+          "wordCount": 7744,
+          "title": "ClockworkPi – uConsole, “fantasy console” for indie game developers",
+          "imageUrl": "https://static.wixstatic.com/media/3833f7_8e7b6ce90eab434e88e5493978caeb85%7Emv2.png/v1/fit/w_2500,h_1330,al_c/3833f7_8e7b6ce90eab434e88e5493978caeb85%7Emv2.png"
+        },
+        {
+          "id": "https://dejanmarketing.com/competitor-hack/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://dejanmarketing.com/competitor-hack/",
+          "publishedOn": "2022-10-25T14:37:02.000Z",
+          "wordCount": 1207,
+          "title": "I recorded user behaviour on my competitor’s websites (2018)",
+          "imageUrl": "https://dejanmarketing.com/wp-content/uploads/2018/08/step-1.png"
+        },
+        {
+          "id": "https://github.com/runvnc/dadsresume",
+          "author": null,
+          "description": "Comments",
+          "link": "https://github.com/runvnc/dadsresume",
+          "publishedOn": "2022-10-25T14:25:15.000Z",
+          "wordCount": 583,
+          "title": "My dad's resume and skills from 1980",
+          "imageUrl": "https://opengraph.githubassets.com/b3d57248a48ae3c7e6c4d65047c68664fd353e1b5eb49b1c3d851e3b16972083/runvnc/dadsresume"
+        },
+        {
+          "id": "http://incise.org/tinywm.html",
+          "author": null,
+          "description": "Comments",
+          "link": "http://incise.org/tinywm.html",
+          "publishedOn": "2022-10-25T14:20:46.000Z",
+          "wordCount": 1901,
+          "title": "TinyWM – A tiny window manager in around 50 lines of C",
+          "imageUrl": null
+        },
+        {
+          "id": "https://engineering.fb.com/2022/10/24/android/android-java-kotlin-migration/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://engineering.fb.com/2022/10/24/android/android-java-kotlin-migration/",
+          "publishedOn": "2022-10-25T12:19:41.000Z",
+          "wordCount": 3647,
+          "title": "From zero to 10M lines of Kotlin",
+          "imageUrl": "https://engineering.fb.com/wp-content/uploads/2022/10/Eng-Blog-Self-Serve-Hero-Images-DEBUGGING-201-Orange.jpg"
+        },
+        {
+          "id": "https://blog.trailofbits.com/2022/10/25/sqlite-vulnerability-july-2022-library-api/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://blog.trailofbits.com/2022/10/25/sqlite-vulnerability-july-2022-library-api/",
+          "publishedOn": "2022-10-25T11:40:43.000Z",
+          "wordCount": 6724,
+          "title": "Stranger Strings: An exploitable flaw in SQLite",
+          "imageUrl": "https://blog.trailofbits.com/wp-content/uploads/2022/10/binary_ninja_101822-1024x1001.png"
+        },
         {
           "id": "https://arstechnica.com/cars/2022/10/new-jersey-politicians-want-to-ban-subscriptions-for-car-hardware/",
           "author": null,
@@ -317,6 +587,16 @@
           "wordCount": 2593,
           "title": "Available Today: Windows Dev Kit 2023 a.k.a. Project Volterra",
           "imageUrl": "https://blogs.windows.com/wp-content/uploads/prod/sites/3/2022/10/Ports_Final-1-scaled.jpg"
+        },
+        {
+          "id": "https://old.reddit.com/r/interactivefiction/comments/ycf8ol/gpt3_does_an_astonishingly_good_job_creating_both/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://old.reddit.com/r/interactivefiction/comments/ycf8ol/gpt3_does_an_astonishingly_good_job_creating_both/",
+          "publishedOn": "2022-10-24T16:19:42.000Z",
+          "wordCount": 4285,
+          "title": "GPT-3 can create both sides of an Interactive Fiction transcript",
+          "imageUrl": "https://www.redditstatic.com/new-icon.png"
         },
         {
           "id": "https://every-door.app/",
@@ -697,6 +977,16 @@
           "wordCount": 350,
           "title": "News Music Search Archive",
           "imageUrl": null
+        },
+        {
+          "id": "https://www.damninteresting.com/the-solitude-of-alexander-selkirk/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.damninteresting.com/the-solitude-of-alexander-selkirk/",
+          "publishedOn": "2022-10-22T21:44:45.000Z",
+          "wordCount": 7700,
+          "title": "The Solitude of Alexander Selkirk (2007)",
+          "imageUrl": "https://damn-8791.kxcdn.com/wp-content/uploads/2007/10/bleak.gif"
         },
         {
           "id": "https://www.cnx-software.com/2022/10/22/10-cents-ch32v003-risc-v-mcu-offers-2kb-sram-16kb-flash-in-sop8-to-qfn20-packages/",
@@ -1087,6 +1377,16 @@
           "wordCount": 3,
           "title": "Show HN: Restfox – Open source lightweight alternative to Postman",
           "imageUrl": null
+        },
+        {
+          "id": "https://www.old-computers.com/museum/computer.asp?st=1&c=334",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.old-computers.com/museum/computer.asp?st=1&c=334",
+          "publishedOn": "2022-10-21T11:55:46.000Z",
+          "wordCount": 2008,
+          "title": "NEC PC 8201A",
+          "imageUrl": "https://www.old-computers.com/museum/photos/nec_pc8201a_1.jpg"
         },
         {
           "id": "https://pyinfra.com/",
@@ -8667,336 +8967,6 @@
           "wordCount": 6049,
           "title": "Nvidia in the Valley",
           "imageUrl": "https://i0.wp.com/stratechery.com/wp-content/uploads/2022/09/nvidia-2.png?fit=1200%2C675&ssl=1"
-        },
-        {
-          "id": "https://blog.cloudflare.com/the-first-zero-trust-sim/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://blog.cloudflare.com/the-first-zero-trust-sim/",
-          "publishedOn": "2022-09-26T13:14:19.000Z",
-          "wordCount": null,
-          "title": "Zero Trust SIM",
-          "imageUrl": null
-        },
-        {
-          "id": "https://saveall.ai/blog/learning-is-remembering",
-          "author": null,
-          "description": "Comments",
-          "link": "https://saveall.ai/blog/learning-is-remembering",
-          "publishedOn": "2022-09-26T12:55:24.000Z",
-          "wordCount": 1124,
-          "title": "Learning Is Remembering",
-          "imageUrl": "https://m.media-amazon.com/images/I/818VKlNYj+L._AC_SL1500_.jpg"
-        },
-        {
-          "id": "https://phoode.com/blog/norman-rockwell-golden-age-food-illustration/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://phoode.com/blog/norman-rockwell-golden-age-food-illustration/",
-          "publishedOn": "2022-09-26T12:55:16.000Z",
-          "wordCount": 5349,
-          "title": "Norman Rockwell and the golden age of classic food illustration (2019)",
-          "imageUrl": "https://phoode.com/blog/wp-content/uploads/2019/01/Norman-Rockwell-Niblets-corn-advertisement-1944.jpg"
-        },
-        {
-          "id": "https://archaeology.ky.gov/Find-a-Site/Pages/default.aspx",
-          "author": null,
-          "description": "Comments",
-          "link": "https://archaeology.ky.gov/Find-a-Site/Pages/default.aspx",
-          "publishedOn": "2022-09-26T12:54:50.000Z",
-          "wordCount": 2072,
-          "title": "Discover Kentucky Archaeology",
-          "imageUrl": null
-        },
-        {
-          "id": "https://www.radioworld.com/news-and-business/programming-and-sales/library-of-congress-acquires-entirety-of-jim-metzners-work",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.radioworld.com/news-and-business/programming-and-sales/library-of-congress-acquires-entirety-of-jim-metzners-work",
-          "publishedOn": "2022-09-26T12:53:33.000Z",
-          "wordCount": 2551,
-          "title": "Library of Congress Acquires Entirety of Jim Metzner's Work",
-          "imageUrl": "https://www.radioworld.com/wp-content/uploads/2022/09/Jim-Metzner-2.jpg"
-        },
-        {
-          "id": "https://www.instructables.com/Soldering-Wires-Heres-a-Better-Way/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.instructables.com/Soldering-Wires-Heres-a-Better-Way/",
-          "publishedOn": "2022-09-26T12:35:11.000Z",
-          "wordCount": 3209,
-          "title": "Soldering Wires – Here's a different way",
-          "imageUrl": "https://content.instructables.com/ORIG/F05/8XCV/KZ7C3T1P/F058XCVKZ7C3T1P.jpg?auto=webp&frame=1"
-        },
-        {
-          "id": "https://rasterscroll.com/mdgraphics/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://rasterscroll.com/mdgraphics/",
-          "publishedOn": "2022-09-26T11:20:41.000Z",
-          "wordCount": 1627,
-          "title": "A Guide to the Graphics of the Sega Mega Drive / Genesis",
-          "imageUrl": null
-        },
-        {
-          "id": "https://rasterscroll.com/the-birth-of-seven-force/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://rasterscroll.com/the-birth-of-seven-force/",
-          "publishedOn": "2022-09-26T11:20:07.000Z",
-          "wordCount": 6409,
-          "title": "Hideyuki Suganami and the Birth of Seven Force",
-          "imageUrl": null
-        },
-        {
-          "id": "https://giuliomagnifico.blog/tips/2022/09/25/macos-wallpaper-huge-cache.html",
-          "author": null,
-          "description": "Comments",
-          "link": "https://giuliomagnifico.blog/tips/2022/09/25/macos-wallpaper-huge-cache.html",
-          "publishedOn": "2022-09-26T08:29:20.000Z",
-          "wordCount": 1180,
-          "title": "macOS keeps a huge wallpapers cache",
-          "imageUrl": null
-        },
-        {
-          "id": "https://www.wiley.com/en-us/Typographic+Web+Design:+How+to+Think+Like+a+Typographer+in+HTML+and+CSS-p-9781119976875",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.wiley.com/en-us/Typographic+Web+Design:+How+to+Think+Like+a+Typographer+in+HTML+and+CSS-p-9781119976875",
-          "publishedOn": "2022-09-26T07:42:27.000Z",
-          "wordCount": null,
-          "title": "Typographic Web Design: How to Think Like a Typographer in HTML and CSS (2011)",
-          "imageUrl": null
-        },
-        {
-          "id": "https://fabiensanglard.net/ccps/index.html",
-          "author": null,
-          "description": "Comments",
-          "link": "https://fabiensanglard.net/ccps/index.html",
-          "publishedOn": "2022-09-26T06:24:29.000Z",
-          "wordCount": 1875,
-          "title": "CCPS, a Capcom CPS-1 SDK",
-          "imageUrl": null
-        },
-        {
-          "id": "https://www.saminiir.com/gems-from-man-page-trenches/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.saminiir.com/gems-from-man-page-trenches/",
-          "publishedOn": "2022-09-26T05:26:58.000Z",
-          "wordCount": 517,
-          "title": "Gems from the man page trenches (2016)",
-          "imageUrl": "http://www.saminiir.com/img/logo2.png"
-        },
-        {
-          "id": "https://www.chemistryworld.com/news/benzenes-bond-lengths-corrected/4016266.article",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.chemistryworld.com/news/benzenes-bond-lengths-corrected/4016266.article",
-          "publishedOn": "2022-09-26T05:05:53.000Z",
-          "wordCount": 11888,
-          "title": "Benzene’s bond lengths corrected",
-          "imageUrl": "https://d2cbg94ubxgsnp.cloudfront.net/Pictures/1024x536/7/1/3/521713_GettyImages-932729704_crop.jpg"
-        },
-        {
-          "id": "https://marionteniade.substack.com/p/the-unmagicking-of-disney",
-          "author": null,
-          "description": "Comments",
-          "link": "https://marionteniade.substack.com/p/the-unmagicking-of-disney",
-          "publishedOn": "2022-09-26T01:20:59.000Z",
-          "wordCount": 3677,
-          "title": "The Unmagicking of Disney",
-          "imageUrl": "https://substackcdn.com/image/fetch/w_1200,h_600,c_limit,f_jpg,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F82723a8d-9f51-4851-bd81-61214c1a4f52_1280x720.png"
-        },
-        {
-          "id": "https://jooonas.medium.com/offline-map-test-on-apple-watch-ultra-3b73541cec52",
-          "author": null,
-          "description": "Comments",
-          "link": "https://jooonas.medium.com/offline-map-test-on-apple-watch-ultra-3b73541cec52",
-          "publishedOn": "2022-09-26T00:42:40.000Z",
-          "wordCount": 3439,
-          "title": "Offline map test on Apple Watch Ultra for hiking",
-          "imageUrl": "https://miro.medium.com/max/1200/1*y4LRneQNoDGW6AeUuTpodQ.jpeg"
-        },
-        {
-          "id": "https://unencumberedbyfacts.com/2019/01/24/jmap-its-like-imap-but-not-really/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://unencumberedbyfacts.com/2019/01/24/jmap-its-like-imap-but-not-really/",
-          "publishedOn": "2022-09-26T00:32:55.000Z",
-          "wordCount": 3409,
-          "title": "JMAP: It’s Like IMAP but Not Really",
-          "imageUrl": "https://s0.wp.com/i/blank.jpg"
-        },
-        {
-          "id": "https://voidpapers.substack.com/p/voidpapers-time-clocks-and-the-ordering",
-          "author": null,
-          "description": "Comments",
-          "link": "https://voidpapers.substack.com/p/voidpapers-time-clocks-and-the-ordering",
-          "publishedOn": "2022-09-26T00:26:33.000Z",
-          "wordCount": 2806,
-          "title": "Exploring Time and Order in Distributed Systems",
-          "imageUrl": "https://substackcdn.com/image/fetch/w_1200,h_600,c_limit,f_jpg,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F1dfbf0d3-84df-4051-913c-50601ab78173_2187x1640.png"
-        },
-        {
-          "id": "https://arxiv.org/abs/2205.12425",
-          "author": null,
-          "description": "Comments",
-          "link": "https://arxiv.org/abs/2205.12425",
-          "publishedOn": "2022-09-26T00:14:17.000Z",
-          "wordCount": 754,
-          "title": "Katara: Synthesizing CRDTs with Verified Lifting",
-          "imageUrl": null
-        },
-        {
-          "id": "https://lethain.com/downturn-career-decisions/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://lethain.com/downturn-career-decisions/",
-          "publishedOn": "2022-09-25T22:47:19.000Z",
-          "wordCount": 1470,
-          "title": "Downturn Career Decisions",
-          "imageUrl": "https://lethain.com/static/author.png"
-        },
-        {
-          "id": "https://github.com/rochus-keller/LeanQt",
-          "author": null,
-          "description": "Comments",
-          "link": "https://github.com/rochus-keller/LeanQt",
-          "publishedOn": "2022-09-25T22:39:16.000Z",
-          "wordCount": 1407,
-          "title": "LeanQt – a stripped-down Qt version easy to build from source and to inte (cont)",
-          "imageUrl": "https://opengraph.githubassets.com/9fe4106dfb79a12155a4fb77888a1cf839a3a3f0c9a1563649432f5537f0f064/rochus-keller/LeanQt"
-        },
-        {
-          "id": "https://www.bedelstein.com/post/mcmaster-carr",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.bedelstein.com/post/mcmaster-carr",
-          "publishedOn": "2022-09-25T22:21:52.000Z",
-          "wordCount": 16102,
-          "title": "Mcmaster.com is the best e-commerce site I've ever used",
-          "imageUrl": "https://static.wixstatic.com/media/04d5b7_3f986ef8004a483d90d6aaaf43d13f94~mv2.png/v1/fit/w_1000%2Ch_1000%2Cal_c/file.png"
-        },
-        {
-          "id": "https://muted.io/guitar-chords/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://muted.io/guitar-chords/",
-          "publishedOn": "2022-09-25T22:03:15.000Z",
-          "wordCount": 1748,
-          "title": "Show HN: A Little Tool to Visualize Guitar Chords",
-          "imageUrl": null
-        },
-        {
-          "id": "https://www.ethswarm.org/The-Book-of-Swarm.pdf",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.ethswarm.org/The-Book-of-Swarm.pdf",
-          "publishedOn": "2022-09-25T21:20:01.000Z",
-          "wordCount": 315573,
-          "title": "The Book of Swarm (2020) [pdf]",
-          "imageUrl": null
-        },
-        {
-          "id": "https://www.bedelstein.com/post/the-curious-design-of-skateboard-trucks",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.bedelstein.com/post/the-curious-design-of-skateboard-trucks",
-          "publishedOn": "2022-09-25T19:50:37.000Z",
-          "wordCount": 17122,
-          "title": "The Curious Design of Skateboard Trucks",
-          "imageUrl": "https://static.wixstatic.com/media/04d5b7_6d1029257bd2421d90771b21ddba8624~mv2.png/v1/fit/w_898%2Ch_898%2Cal_c/file.png"
-        },
-        {
-          "id": "https://twitter.com/foone/status/1572260363764400129",
-          "author": null,
-          "description": "Comments",
-          "link": "https://twitter.com/foone/status/1572260363764400129",
-          "publishedOn": "2022-09-25T19:38:28.000Z",
-          "wordCount": 390,
-          "title": "Someday aliens will land and all will be fine until we explain our calendar",
-          "imageUrl": null
-        },
-        {
-          "id": "https://scholars-stage.org/tradition-is-smarter-than-you-are/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://scholars-stage.org/tradition-is-smarter-than-you-are/",
-          "publishedOn": "2022-09-25T19:17:46.000Z",
-          "wordCount": 6751,
-          "title": "Tradition is Smarter (2018)",
-          "imageUrl": "https://149512802.v2.pressablecdn.com/wp-content/uploads/2018/08/cassava2.png"
-        },
-        {
-          "id": "https://paliparan.com/2022/09/25/train-travel-uk-foreigners-perspective/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://paliparan.com/2022/09/25/train-travel-uk-foreigners-perspective/",
-          "publishedOn": "2022-09-25T19:05:44.000Z",
-          "wordCount": 4496,
-          "title": "Train Travel in the UK: A Foreigner’s Perspective",
-          "imageUrl": "https://paliparan.com/wp-content/uploads/2022/09/lner-train.jpg"
-        },
-        {
-          "id": "https://fabiensanglard.net/cpsb/index.html",
-          "author": null,
-          "description": "Comments",
-          "link": "https://fabiensanglard.net/cpsb/index.html",
-          "publishedOn": "2022-09-25T19:05:03.000Z",
-          "wordCount": 652,
-          "title": "The Book of CP-System",
-          "imageUrl": null
-        },
-        {
-          "id": "https://github.com/jefflomax/word-writer-6-commodore-64",
-          "author": null,
-          "description": "Comments",
-          "link": "https://github.com/jefflomax/word-writer-6-commodore-64",
-          "publishedOn": "2022-09-25T18:57:56.000Z",
-          "wordCount": 945,
-          "title": "Word Writer 6 Commodore 64 Source Code",
-          "imageUrl": "https://opengraph.githubassets.com/7b5345eadd67acfa5ee4e4ea5dd7dbb997f7111d169d26e4553654af9c18cb9e/jefflomax/word-writer-6-commodore-64"
-        },
-        {
-          "id": "http://annas-blog.org/blog-3x-new-books.html",
-          "author": null,
-          "description": "Comments",
-          "link": "http://annas-blog.org/blog-3x-new-books.html",
-          "publishedOn": "2022-09-25T16:24:13.000Z",
-          "wordCount": 589,
-          "title": "3x new books added to the Pirate Library Mirror",
-          "imageUrl": null
-        },
-        {
-          "id": "https://gist.github.com/JoeyBurzynski/617fb6201335779f8424ad9528b72c41",
-          "author": null,
-          "description": "Comments",
-          "link": "https://gist.github.com/JoeyBurzynski/617fb6201335779f8424ad9528b72c41",
-          "publishedOn": "2022-09-25T15:04:35.000Z",
-          "wordCount": 1046,
-          "title": "58 bytes of CSS to look great nearly everywhere",
-          "imageUrl": "https://github.githubassets.com/images/modules/gists/gist-og-image.png"
-        },
-        {
-          "id": "https://pdfgrep.org/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://pdfgrep.org/",
-          "publishedOn": "2022-09-25T14:38:50.000Z",
-          "wordCount": 123,
-          "title": "Pdfgrep – a commandline utility to search text in PDF files",
-          "imageUrl": null
-        },
-        {
-          "id": "https://www.angstronomics.com/p/ps5-refresh-oberon-plus",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.angstronomics.com/p/ps5-refresh-oberon-plus",
-          "publishedOn": "2022-09-25T14:28:29.000Z",
-          "wordCount": 2198,
-          "title": "PS5 Refresh: Oberon Plus",
-          "imageUrl": "https://substackcdn.com/image/fetch/w_1200,h_600,c_limit,f_jpg,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2Fd9e852a5-0222-48cd-ae3a-50bfb07d8862_1920x1440.jpeg"
         }
       ]
     }
