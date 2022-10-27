@@ -2,10 +2,329 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://7qi7qi.github.io/RSSFeeder/index.html</id>
     <title>osmos::feed</title>
-    <updated>2022-10-26T01:39:20.374Z</updated>
+    <updated>2022-10-27T01:27:27.924Z</updated>
     <generator>osmosfeed 1.15.1</generator>
     <link rel="alternate" href="https://7qi7qi.github.io/RSSFeeder/index.html"/>
     <link rel="self" href="https://7qi7qi.github.io/RSSFeeder/feed.atom"/>
+    <entry>
+        <title type="html"><![CDATA[深入理解 Redis]]></title>
+        <id>http://weekly.dockone.io/article/2434945</id>
+        <link href="http://weekly.dockone.io/article/2434945"/>
+        <updated>2022-10-27T01:27:26.598Z</updated>
+        <summary type="html"><![CDATA[什么是 Redis？
+Redis（“REmote DIctionary Service”）是一个开源的键值对数据库服务器。
+Redis 更准确的描述是一个数据结构服务器。Redis 的这种特殊性质让它在开发人员中很受欢迎。
+
+
+
+Redis不是通过迭代或者排序方式处理数据，而是一开始就按照数据结构方式组织。早期，它的使用很像 Memcached，但随着 Redis 的改进，它在许多其他用例中变得可行，包括发布-订阅机制、流（streaming）和队列。
+
+
+
+主要来说，Redis 是一个内存数据库，用作另一个“真实”数据库（如 MySQL 或 PostgreSQL）前面的缓存，以帮助提高应用程序性能。它通过利用内存的高速访问速度，从而减轻核心应用程序数据库的负载，例如：
+不经常更改且经常被请求的数据
+任务关键性较低且经常变动的数据
+
+上述数据的示例可以包括会话或数据缓存以及仪表板的排行榜或汇总分析。
+
+
+
+但是，对于许多用例场景，Redis 都可以提供足够的保证，可以将其用作成熟的主数据库。再加上 Redis 插件及其各种高可用性（HA）设置，Redis 作为数据库对于某些场景和工作负载变得非常有用。
+另一个重要方面是 Redis 模糊了缓存和数据存储之间的界限。这里要理解的重要一点是，相比于使用 SSD 或 HDD 作为存储的传统数据库，读取和操作内存中数据的速度要快得多。
+
+
+
+最初，Redis 最常被比作 Memcached，后者当时缺乏任何非易失性持久化。
+这是当前两个缓存之间的功能细分。
+
+
+
+虽然现在拥有多种配置方式将数据持久化到磁盘，但当时首次引入持久化时，Redis 是使用快照方式，通过异步拷贝内存中的数据方式来做持久化。不幸的是，这种机制的缺点是可能会在快照之间丢失数据。
+Redis 自 2009 年成立到现在已经变的很成熟。我们将介绍它的大部分架构和拓扑…]]></summary>
+        <author>
+            <name>w9527</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[An ode to that “coffee friend”]]></title>
+        <id>https://tiramisu.bearblog.dev/coffee-gift/</id>
+        <link href="https://tiramisu.bearblog.dev/coffee-gift/"/>
+        <updated>2022-10-27T00:54:55.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Show HN: I solved my New Tab page]]></title>
+        <id>https://startertab.com/</id>
+        <link href="https://startertab.com/"/>
+        <updated>2022-10-27T00:45:21.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[MIT campus is planning on mostly remaining permanently closed to the public]]></title>
+        <id>https://twitter.com/jack_b_reid/status/1556735206547066880</id>
+        <link href="https://twitter.com/jack_b_reid/status/1556735206547066880"/>
+        <updated>2022-10-26T23:59:47.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Galactic settlement of low-mass stars as a resolution to the Fermi paradox]]></title>
+        <id>https://arxiv.org/abs/2210.10656</id>
+        <link href="https://arxiv.org/abs/2210.10656"/>
+        <updated>2022-10-26T22:26:16.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Emulator Performance: WebAssembly vs. JavaScript (2021)]]></title>
+        <id>http://8bitworkshop.com/docs/posts/2021/webassembly-vs-javascript-emulator-performance.html</id>
+        <link href="http://8bitworkshop.com/docs/posts/2021/webassembly-vs-javascript-emulator-performance.html"/>
+        <updated>2022-10-26T21:56:07.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Vim After 15 Years (2017)]]></title>
+        <id>https://blog.langworth.com/vim3</id>
+        <link href="https://blog.langworth.com/vim3"/>
+        <updated>2022-10-26T21:39:21.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Video gaming may be associated with better cognitive performance in children]]></title>
+        <id>https://nida.nih.gov/news-events/news-releases/2022/10/video-gaming-may-be-associated-with-better-cognitive-performance-in-children</id>
+        <link href="https://nida.nih.gov/news-events/news-releases/2022/10/video-gaming-may-be-associated-with-better-cognitive-performance-in-children"/>
+        <updated>2022-10-26T20:54:31.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Unreal Tournament 99 running on WASM (2017)]]></title>
+        <id>https://icculus.org/ut99-emscripten/</id>
+        <link href="https://icculus.org/ut99-emscripten/"/>
+        <updated>2022-10-26T20:54:17.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[The United States’ Unamendable Constitution]]></title>
+        <id>https://www.newyorker.com/culture/annals-of-inquiry/the-united-states-unamendable-constitution</id>
+        <link href="https://www.newyorker.com/culture/annals-of-inquiry/the-united-states-unamendable-constitution"/>
+        <updated>2022-10-26T20:28:37.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Lego Is Discontinuing Mindstorms]]></title>
+        <id>https://www.brickfanatics.com/lego-discontinuing-mindstorms-end-of-2022/</id>
+        <link href="https://www.brickfanatics.com/lego-discontinuing-mindstorms-end-of-2022/"/>
+        <updated>2022-10-26T20:10:23.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Meta Earning Results Q3 2022 [pdf]]]></title>
+        <id>https://s21.q4cdn.com/399680738/files/doc_news/Meta-Reports-Third-Quarter-2022-Results-2022.pdf</id>
+        <link href="https://s21.q4cdn.com/399680738/files/doc_news/Meta-Reports-Third-Quarter-2022-Results-2022.pdf"/>
+        <updated>2022-10-26T20:10:07.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Tesla faces U.S. criminal probe over self-driving claims]]></title>
+        <id>https://www.reuters.com/legal/exclusive-tesla-faces-us-criminal-probe-over-self-driving-claims-sources-2022-10-26/</id>
+        <link href="https://www.reuters.com/legal/exclusive-tesla-faces-us-criminal-probe-over-self-driving-claims-sources-2022-10-26/"/>
+        <updated>2022-10-26T19:44:17.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[TCP Connection Repair]]></title>
+        <id>https://lwn.net/Articles/495304/</id>
+        <link href="https://lwn.net/Articles/495304/"/>
+        <updated>2022-10-26T19:38:39.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[SiriSpy – iOS bug allowed apps to eavesdrop on your conversations with Siri]]></title>
+        <id>https://rambo.codes/posts/2022-10-25-sirispy-ios-bug-allowed-apps-to-eavesdrop</id>
+        <link href="https://rambo.codes/posts/2022-10-25-sirispy-ios-bug-allowed-apps-to-eavesdrop"/>
+        <updated>2022-10-26T19:11:57.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Spreading deadly pathogens under the disguise of popular music]]></title>
+        <id>https://arxiv.org/abs/2210.03688</id>
+        <link href="https://arxiv.org/abs/2210.03688"/>
+        <updated>2022-10-26T19:08:42.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Phar Lap FrontRunner – The Winning DOS Desktop for Windows]]></title>
+        <id>https://computeradsfromthepast.substack.com/p/phar-lap-frontrunner</id>
+        <link href="https://computeradsfromthepast.substack.com/p/phar-lap-frontrunner"/>
+        <updated>2022-10-26T18:12:59.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Ivy (YC W23) are hiring engineers to help unify ML]]></title>
+        <id>https://www.ycombinator.com/companies/ivy/jobs</id>
+        <link href="https://www.ycombinator.com/companies/ivy/jobs"/>
+        <updated>2022-10-26T17:45:25.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Decompilation of Deus Ex: Human Revolution]]></title>
+        <id>https://github.com/rrika/cdcEngineDXHR</id>
+        <link href="https://github.com/rrika/cdcEngineDXHR"/>
+        <updated>2022-10-26T16:59:18.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Launch HN: Idemeum (YC S21) – Passwordless access to apps and infrastructure]]></title>
+        <id>https://news.ycombinator.com/item?id=33346183</id>
+        <link href="https://news.ycombinator.com/item?id=33346183"/>
+        <updated>2022-10-26T16:39:01.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[The currency of the new economy won't be money, but attention (1997)]]></title>
+        <id>https://www.wired.com/1997/12/es-attention/</id>
+        <link href="https://www.wired.com/1997/12/es-attention/"/>
+        <updated>2022-10-26T16:20:46.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Writing systemd units that stop gracefully before shutdown]]></title>
+        <id>https://www.psdn.io/posts/systemd-shutdown-unit/</id>
+        <link href="https://www.psdn.io/posts/systemd-shutdown-unit/"/>
+        <updated>2022-10-26T16:14:21.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Disabling the Intel Management Engine]]></title>
+        <id>https://wiki.gentoo.org/wiki/User:Sakaki/Sakaki%27s_EFI_Install_Guide/Disabling_the_Intel_Management_Engine</id>
+        <link href="https://wiki.gentoo.org/wiki/User:Sakaki/Sakaki%27s_EFI_Install_Guide/Disabling_the_Intel_Management_Engine"/>
+        <updated>2022-10-26T15:19:17.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[IOx: InfluxData’s New Storage Engine]]></title>
+        <id>https://www.influxdata.com/blog/influxdb-engine/</id>
+        <link href="https://www.influxdata.com/blog/influxdb-engine/"/>
+        <updated>2022-10-26T14:51:58.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Pixar almost deleted Toy Story 2 (2012)]]></title>
+        <id>https://thenextweb.com/news/how-pixars-toy-story-2-was-deleted-twice-once-by-technology-and-again-for-its-own-good</id>
+        <link href="https://thenextweb.com/news/how-pixars-toy-story-2-was-deleted-twice-once-by-technology-and-again-for-its-own-good"/>
+        <updated>2022-10-26T14:47:37.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[I Fell 15,000 Feet and Lived (2009)]]></title>
+        <id>https://uss-la-ca135.org/60/1960Judkins-Knott.html</id>
+        <link href="https://uss-la-ca135.org/60/1960Judkins-Knott.html"/>
+        <updated>2022-10-26T14:41:06.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Show HN: SadServers – Test your Linux troubleshooting skills]]></title>
+        <id>https://sadservers.com/</id>
+        <link href="https://sadservers.com/"/>
+        <updated>2022-10-26T14:22:17.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Making AnimationEvent safe for the CoreCLR garbage collector]]></title>
+        <id>https://blog.unity.com/technology/making-animationevent-safe-for-the-coreclr-garbage-collector</id>
+        <link href="https://blog.unity.com/technology/making-animationevent-safe-for-the-coreclr-garbage-collector"/>
+        <updated>2022-10-26T08:40:24.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Elites tried to monopolize hunting]]></title>
+        <id>https://thereader.mitpress.mit.edu/when-elites-tried-to-monopolize-hunting/</id>
+        <link href="https://thereader.mitpress.mit.edu/when-elites-tried-to-monopolize-hunting/"/>
+        <updated>2022-10-26T04:08:34.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[图解分布式计算的8大谬误]]></title>
         <id>http://weekly.dockone.io/article/2434949</id>
@@ -556,10 +875,30 @@
         </author>
     </entry>
     <entry>
+        <title type="html"><![CDATA[Australia's Weird Little Time Zone]]></title>
+        <id>https://www.howderfamily.com/blog/australias-weird-little-time-zone/</id>
+        <link href="https://www.howderfamily.com/blog/australias-weird-little-time-zone/"/>
+        <updated>2022-10-24T14:18:54.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[Launch HN: Noloco (YC S21) – Build internal tools from data without code]]></title>
         <id>https://noloco.io/</id>
         <link href="https://noloco.io/"/>
         <updated>2022-10-24T13:58:57.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[No Safe Efficient Ways to Do Three-Way String Comparisons in Go]]></title>
+        <id>https://go101.org/blog/2022-10-01-three-way-string-comparison.html</id>
+        <link href="https://go101.org/blog/2022-10-01-three-way-string-comparison.html"/>
+        <updated>2022-10-24T13:34:30.000Z</updated>
         <summary type="html"><![CDATA[Comments]]></summary>
         <author>
             <name>Hacker News</name>
@@ -8769,336 +9108,6 @@ Isovalent公司CEO Dan Wendlandt解释道，“我们的客户主要是企业和
         <id>https://css-tricks.com/named-element-ids-can-be-referenced-as-javascript-globals/</id>
         <link href="https://css-tricks.com/named-element-ids-can-be-referenced-as-javascript-globals/"/>
         <updated>2022-09-27T14:30:57.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Gas Leak in the Baltic Sea]]></title>
-        <id>https://www.forsvaret.dk/en/news/2022/gas-leak-in-the-baltic-sea/</id>
-        <link href="https://www.forsvaret.dk/en/news/2022/gas-leak-in-the-baltic-sea/"/>
-        <updated>2022-09-27T13:23:37.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Harrison Bergeron (1961)]]></title>
-        <id>https://archive.org/details/HarrisonBergeron</id>
-        <link href="https://archive.org/details/HarrisonBergeron"/>
-        <updated>2022-09-27T13:16:27.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Workerd: Open-source Cloudflare workers runtime]]></title>
-        <id>https://blog.cloudflare.com/workerd-open-source-workers-runtime/</id>
-        <link href="https://blog.cloudflare.com/workerd-open-source-workers-runtime/"/>
-        <updated>2022-09-27T13:01:05.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Making Python fast – Adventures with mypyc]]></title>
-        <id>https://blog.meadsteve.dev/programming/2022/09/27/making-python-fast-for-free/</id>
-        <link href="https://blog.meadsteve.dev/programming/2022/09/27/making-python-fast-for-free/"/>
-        <updated>2022-09-27T12:42:24.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Show HN: Get conversational practice in over 20 languages by talking to an AI]]></title>
-        <id>https://talk.quazel.com/chat/try</id>
-        <link href="https://talk.quazel.com/chat/try"/>
-        <updated>2022-09-27T09:18:36.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[The Troublesome Legacy of the Early Romantics]]></title>
-        <id>https://www.newyorker.com/magazine/2022/10/03/the-troublesome-legacy-of-the-early-romantics-andrea-wulf-magnificent-rebels</id>
-        <link href="https://www.newyorker.com/magazine/2022/10/03/the-troublesome-legacy-of-the-early-romantics-andrea-wulf-magnificent-rebels"/>
-        <updated>2022-09-27T04:21:27.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Why Feelings of Guilt May Signal Leadership Potential]]></title>
-        <id>https://www.gsb.stanford.edu/insights/why-feelings-guilt-may-signal-leadership-potential</id>
-        <link href="https://www.gsb.stanford.edu/insights/why-feelings-guilt-may-signal-leadership-potential"/>
-        <updated>2022-09-27T01:14:33.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Physicists Rewrite a Quantum Rule That Clashes with Our Universe]]></title>
-        <id>https://www.quantamagazine.org/physicists-rewrite-a-quantum-rule-that-clashes-with-our-universe-20220926/</id>
-        <link href="https://www.quantamagazine.org/physicists-rewrite-a-quantum-rule-that-clashes-with-our-universe-20220926/"/>
-        <updated>2022-09-27T00:45:06.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Experimenting a New Syntax to Write SVG]]></title>
-        <id>https://yuanchuan.dev/experimenting-a-new-syntax-to-write-svg</id>
-        <link href="https://yuanchuan.dev/experimenting-a-new-syntax-to-write-svg"/>
-        <updated>2022-09-26T23:56:16.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Ignite – Use Firecracker VMs with Docker images]]></title>
-        <id>https://github.com/weaveworks/ignite</id>
-        <link href="https://github.com/weaveworks/ignite"/>
-        <updated>2022-09-26T23:50:13.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Zurich hack 2022 Denotational Design]]></title>
-        <id>https://jappie.me/zurich-hack-2022-denotational-design.html</id>
-        <link href="https://jappie.me/zurich-hack-2022-denotational-design.html"/>
-        <updated>2022-09-26T23:34:24.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[HDD Clicker – HDD Sound Simulator]]></title>
-        <id>https://www.retrokits.de/index.php/hdd-clicker-hdd-sound-simulator-v0-1/</id>
-        <link href="https://www.retrokits.de/index.php/hdd-clicker-hdd-sound-simulator-v0-1/"/>
-        <updated>2022-09-26T22:44:24.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Only Persistent Login]]></title>
-        <id>http://avodonosov.blogspot.com/2022/09/google-login-dialog-does-not-have.html</id>
-        <link href="http://avodonosov.blogspot.com/2022/09/google-login-dialog-does-not-have.html"/>
-        <updated>2022-09-26T22:33:14.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Httpt: A Probe-Resistant Proxy – Usenix]]></title>
-        <id>https://www.usenix.org/conference/foci20/presentation/frolov</id>
-        <link href="https://www.usenix.org/conference/foci20/presentation/frolov"/>
-        <updated>2022-09-26T22:27:53.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Enhance: a web standards-based HTML framework]]></title>
-        <id>https://enhance.dev/docs/</id>
-        <link href="https://enhance.dev/docs/"/>
-        <updated>2022-09-26T20:22:24.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Isolates, microVMs, and WebAssembly]]></title>
-        <id>https://notes.crmarsh.com/isolates-microvms-and-webassembly</id>
-        <link href="https://notes.crmarsh.com/isolates-microvms-and-webassembly"/>
-        <updated>2022-09-26T20:20:15.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Katakana, Hiragana, and Unicode]]></title>
-        <id>https://www.johndcook.com/blog/2022/09/25/katakana-hiragana-unicode/</id>
-        <link href="https://www.johndcook.com/blog/2022/09/25/katakana-hiragana-unicode/"/>
-        <updated>2022-09-26T20:11:23.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Pathologies of the attention economy]]></title>
-        <id>https://theconvivialsociety.substack.com/p/the-pathologies-of-the-attention</id>
-        <link href="https://theconvivialsociety.substack.com/p/the-pathologies-of-the-attention"/>
-        <updated>2022-09-26T20:05:19.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Dear Chess World]]></title>
-        <id>https://twitter.com/MagnusCarlsen/status/1574482694406565888</id>
-        <link href="https://twitter.com/MagnusCarlsen/status/1574482694406565888"/>
-        <updated>2022-09-26T19:45:32.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Go runtime: 4 years later]]></title>
-        <id>https://go.dev/blog/go119runtime</id>
-        <link href="https://go.dev/blog/go119runtime"/>
-        <updated>2022-09-26T19:25:29.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Explained from scratch: private information retrieval and homomorphic encryption]]></title>
-        <id>https://blintzbase.com/posts/pir-and-fhe-from-scratch/</id>
-        <link href="https://blintzbase.com/posts/pir-and-fhe-from-scratch/"/>
-        <updated>2022-09-26T19:25:15.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[CTO Should Be Technical]]></title>
-        <id>https://blog.southparkcommons.com/your-cto-should-actually-be-technical/</id>
-        <link href="https://blog.southparkcommons.com/your-cto-should-actually-be-technical/"/>
-        <updated>2022-09-26T19:19:31.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Augments Are Speech]]></title>
-        <id>https://noahnorman.substack.com/p/augments-are-speech</id>
-        <link href="https://noahnorman.substack.com/p/augments-are-speech"/>
-        <updated>2022-09-26T19:15:42.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Outdated vs. Complete: In defense of apps that don’t need updates]]></title>
-        <id>https://vivqu.com/blog/2022/09/25/outdated-apps/</id>
-        <link href="https://vivqu.com/blog/2022/09/25/outdated-apps/"/>
-        <updated>2022-09-26T19:13:01.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Deployment and infrastructure for a bootstrapped webapp with 150k monthly visits]]></title>
-        <id>https://casparwre.de/blog/webapp-python-deployment/</id>
-        <link href="https://casparwre.de/blog/webapp-python-deployment/"/>
-        <updated>2022-09-26T19:08:21.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Why we moved from AWS RDS to Postgres in Kubernetes]]></title>
-        <id>https://nhost.io/blog/individual-postgres-instances</id>
-        <link href="https://nhost.io/blog/individual-postgres-instances"/>
-        <updated>2022-09-26T18:15:00.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[How to 3D-Print One of the Strongest Stainless Steels]]></title>
-        <id>https://www.nist.gov/news-events/news/2022/09/researchers-uncover-how-3d-print-one-strongest-stainless-steels</id>
-        <link href="https://www.nist.gov/news-events/news/2022/09/researchers-uncover-how-3d-print-one-strongest-stainless-steels"/>
-        <updated>2022-09-26T17:49:51.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[An early disruption event is starting for the Polar Vortex]]></title>
-        <id>https://www.severe-weather.eu/global-weather/polar-vortex-early-disruptive-event-winter-influence-united-states-europe-fa/</id>
-        <link href="https://www.severe-weather.eu/global-weather/polar-vortex-early-disruptive-event-winter-influence-united-states-europe-fa/"/>
-        <updated>2022-09-26T17:38:57.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Does Someone Know My Name?]]></title>
-        <id>https://blogs.loc.gov/now-see-hear/2022/09/does-someone-know-my-name-mystery-photos/</id>
-        <link href="https://blogs.loc.gov/now-see-hear/2022/09/does-someone-know-my-name-mystery-photos/"/>
-        <updated>2022-09-26T15:20:41.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Launch HN: Prequel (YC W21) – Sync data to your customer’s data warehouse]]></title>
-        <id>https://news.ycombinator.com/item?id=32984103</id>
-        <link href="https://news.ycombinator.com/item?id=32984103"/>
-        <updated>2022-09-26T15:07:19.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Playstation 2 Architecture]]></title>
-        <id>https://www.copetti.org/writings/consoles/playstation-2/</id>
-        <link href="https://www.copetti.org/writings/consoles/playstation-2/"/>
-        <updated>2022-09-26T15:05:29.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Zen4's AVX512 Teardown]]></title>
-        <id>https://www.mersenneforum.org/showthread.php?p=614191</id>
-        <link href="https://www.mersenneforum.org/showthread.php?p=614191"/>
-        <updated>2022-09-26T14:17:55.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Nvidia in the Valley]]></title>
-        <id>https://stratechery.com/2022/nvidia-in-the-valley/</id>
-        <link href="https://stratechery.com/2022/nvidia-in-the-valley/"/>
-        <updated>2022-09-26T14:09:08.000Z</updated>
         <summary type="html"><![CDATA[Comments]]></summary>
         <author>
             <name>Hacker News</name>
