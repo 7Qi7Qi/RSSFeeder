@@ -12,6 +12,16 @@
       "siteUrl": "http://weekly.dockone.io",
       "articles": [
         {
+          "id": "http://weekly.dockone.io/article/2434950",
+          "author": "新牛哥",
+          "description": "【编者的话】十二因素应用方法是由 Adam Wiggins 提出的构建 SaaS 应用的方法。本文介绍这个方法的演变过程，我们今天还能学习它的地方，以及它如何改变了过去的状况。\n你经常会听说软件开发和部署将变得更美好。这一趋势的当前轮回是 Heroku。不要误会我的意思，Heroku 令人难以置信，它带来了一种编写 Web 应用和部署分布式系统的新方法。他们肯定做对了很多。即使10年之后的今天，我们仍在努力实现同样的开发便利性。\nHeroku 的联合创始人 Adam Wiggins 有一篇著名文章， 12 因素应用方法，它总结了许多有用并且我确信使得构建 Heroku 更有趣和有益的想法。\n在这篇文章中，我想回顾一下 Adam 所涵盖的 12 个因素中的每一个，它们是如何演变的，我们今天可以从它们身上学到什么，以及它们如何改变了过去的状态。\n代码库\n\n\n\n\n这个建议刚提出时，类似 GitHub 这样的东西才刚刚起步，代码版本控制也并不常见。这可能看起来很残酷，但这是事实。我记得刚开始时必须处理 Subversion 的问题。\n代码库与其应用之间的关系显著增长，包括从测试到部署的所有内容。然而，仍然存在高度争议的一点是是否需要单仓。\n如果有多个代码库，它就不是一个应用——它是一个分布式系统。分布式系统中的每个组件都是一个应用，每个组件都可以单独遵守十二因素。\n尤其是在以微服务为中心的世界中，维护多个代码库所需的所有开销都可能令人厌烦。\n依赖项\n\n\n\n\n我不确定你们中有多少人曾经在 Ansible 和 Puppet 等软件可用之前处理过依赖系统。尽管如此，操作系统和各种版本的库之间的特殊性绝对是一场噩梦。\n这个因素抓住了关键，最终在很大程度上使得依赖可以被视为一个已解决的问题。\n通过引入各种清单文件，我们的应用可以以一致和准确的方式重新构建。此外，像 Bazel 这样的构建工具…",
+          "link": "http://weekly.dockone.io/article/2434950",
+          "publishedOn": "2022-10-31T01:49:53.096Z",
+          "wordCount": 351,
+          "title": "12因素应用方法重新审视",
+          "imageUrl": null
+        },
+        {
           "id": "http://weekly.dockone.io/article/2434945",
           "author": "w9527",
           "description": "什么是 Redis？\nRedis（“REmote DIctionary Service”）是一个开源的键值对数据库服务器。\nRedis 更准确的描述是一个数据结构服务器。Redis 的这种特殊性质让它在开发人员中很受欢迎。\n\n\n\nRedis不是通过迭代或者排序方式处理数据，而是一开始就按照数据结构方式组织。早期，它的使用很像 Memcached，但随着 Redis 的改进，它在许多其他用例中变得可行，包括发布-订阅机制、流（streaming）和队列。\n\n\n\n主要来说，Redis 是一个内存数据库，用作另一个“真实”数据库（如 MySQL 或 PostgreSQL）前面的缓存，以帮助提高应用程序性能。它通过利用内存的高速访问速度，从而减轻核心应用程序数据库的负载，例如：\n不经常更改且经常被请求的数据\n任务关键性较低且经常变动的数据\n\n上述数据的示例可以包括会话或数据缓存以及仪表板的排行榜或汇总分析。\n\n\n\n但是，对于许多用例场景，Redis 都可以提供足够的保证，可以将其用作成熟的主数据库。再加上 Redis 插件及其各种高可用性（HA）设置，Redis 作为数据库对于某些场景和工作负载变得非常有用。\n另一个重要方面是 Redis 模糊了缓存和数据存储之间的界限。这里要理解的重要一点是，相比于使用 SSD 或 HDD 作为存储的传统数据库，读取和操作内存中数据的速度要快得多。\n\n\n\n最初，Redis 最常被比作 Memcached，后者当时缺乏任何非易失性持久化。\n这是当前两个缓存之间的功能细分。\n\n\n\n虽然现在拥有多种配置方式将数据持久化到磁盘，但当时首次引入持久化时，Redis 是使用快照方式，通过异步拷贝内存中的数据方式来做持久化。不幸的是，这种机制的缺点是可能会在快照之间丢失数据。\nRedis 自 2009 年成立到现在已经变的很成熟。我们将介绍它的大部分架构和拓扑…",
@@ -148,6 +158,246 @@
       "feedUrl": "https://news.ycombinator.com/rss",
       "siteUrl": "https://news.ycombinator.com/",
       "articles": [
+        {
+          "id": "https://www.theverge.com/2022/10/30/23431931/twitter-paid-verification-elon-musk-blue-monthly-subscription",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.theverge.com/2022/10/30/23431931/twitter-paid-verification-elon-musk-blue-monthly-subscription",
+          "publishedOn": "2022-10-31T01:03:58.000Z",
+          "wordCount": 6885,
+          "title": "Twitter is planning to start charging $20 per month for verification",
+          "imageUrl": "https://cdn.vox-cdn.com/thumbor/ugTL9Rk_QEY24e0-fD8UH1OQX20=/0x0:3000x2000/1200x628/filters:focal(1500x1000:1501x1001)/cdn.vox-cdn.com/uploads/chorus_asset/file/23951435/acastro_STK050_09.jpg"
+        },
+        {
+          "id": "https://www.smithsonianmag.com/science-nature/english-sparkling-wines-challenge-supremacy-champagne-francethanks-climate-change-180974057/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.smithsonianmag.com/science-nature/english-sparkling-wines-challenge-supremacy-champagne-francethanks-climate-change-180974057/",
+          "publishedOn": "2022-10-30T23:34:12.000Z",
+          "wordCount": 2031,
+          "title": "English Sparkling Wines Challenge the Supremacy of Champagne, via Climate Change",
+          "imageUrl": "https://th-thumbnailer.cdn-si-edu.com/j6GeaZzAL7W3GYPbjYjnzfNTDXg=/fit-in/1600x0/https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer/16/90/16902675-2c20-4ca8-96f5-6adc951592bc/__-__01.jpg"
+        },
+        {
+          "id": "https://chromium-review.googlesource.com/c/chromium/src/+/3988999",
+          "author": null,
+          "description": "Comments",
+          "link": "https://chromium-review.googlesource.com/c/chromium/src/+/3988999",
+          "publishedOn": "2022-10-30T23:01:21.000Z",
+          "wordCount": 108,
+          "title": "Google set to deprecate JPEG XL support in Chrome 110",
+          "imageUrl": null
+        },
+        {
+          "id": "http://leethomson.myzen.co.uk/Star_Trek/1_Original_Series/Star_Trek_Pitch.pdf",
+          "author": null,
+          "description": "Comments",
+          "link": "http://leethomson.myzen.co.uk/Star_Trek/1_Original_Series/Star_Trek_Pitch.pdf",
+          "publishedOn": "2022-10-30T22:57:30.000Z",
+          "wordCount": 6793,
+          "title": "Star Trek (1964) [pdf]",
+          "imageUrl": null
+        },
+        {
+          "id": "https://github.com/ShaunLawrie/PwshPaint",
+          "author": null,
+          "description": "Comments",
+          "link": "https://github.com/ShaunLawrie/PwshPaint",
+          "publishedOn": "2022-10-30T22:29:24.000Z",
+          "wordCount": 657,
+          "title": "PwshPaint: A pixel art editor for the terminal in PowerShell",
+          "imageUrl": "https://opengraph.githubassets.com/494f926ab2e37cd1a8effe71f26b3f1d8ac3a92e8644cc543081c7778d110dfc/ShaunLawrie/PwshPaint"
+        },
+        {
+          "id": "https://atproto.com/guides/overview",
+          "author": null,
+          "description": "Comments",
+          "link": "https://atproto.com/guides/overview",
+          "publishedOn": "2022-10-30T22:12:12.000Z",
+          "wordCount": 1527,
+          "title": "AT Protocol Overview",
+          "imageUrl": "https://atproto.com/img/default-social-card.jpg"
+        },
+        {
+          "id": "https://github.com/ent/ent",
+          "author": null,
+          "description": "Comments",
+          "link": "https://github.com/ent/ent",
+          "publishedOn": "2022-10-30T21:16:39.000Z",
+          "wordCount": 1073,
+          "title": "Ent: An Entity Framework for Go",
+          "imageUrl": "https://opengraph.githubassets.com/84b703f9f3bac61bd28f83c09093531794bf94a85bc4bd40a3f0608394f9809a/ent/ent"
+        },
+        {
+          "id": "http://oldvcr.blogspot.com/2022/10/if-one-guis-not-enough-for-your-sparc.html",
+          "author": null,
+          "description": "Comments",
+          "link": "http://oldvcr.blogspot.com/2022/10/if-one-guis-not-enough-for-your-sparc.html",
+          "publishedOn": "2022-10-30T20:58:35.000Z",
+          "wordCount": 9315,
+          "title": "If one GUI's not enough for your SPARC workstation, try four",
+          "imageUrl": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi4BfWallJovYaOWWplSiqfcEyBddy9Cc6bhN84eDaL74PkG4N5PTrtOuL1jYNRExSezNGawHpBpu_IMxmPv4v1NzDKGHcqA0RfcdCXTZKzC_9pUJUfXdSYg7hXpzzdGd4qupXzaefLVah2fVK666uFzIJvyUa5Sx6hg5GFEWPHs5BbsKt31Rp94asu/w1200-h630-p-k-no-nu/IMG_20221009_172547.jpg"
+        },
+        {
+          "id": "https://martenframework.com/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://martenframework.com/",
+          "publishedOn": "2022-10-30T20:22:30.000Z",
+          "wordCount": 555,
+          "title": "Marten: a Crystal web framework",
+          "imageUrl": null
+        },
+        {
+          "id": "https://theintercept.com/2022/10/28/iran-protests-phone-surveillance/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://theintercept.com/2022/10/28/iran-protests-phone-surveillance/",
+          "publishedOn": "2022-10-30T20:07:25.000Z",
+          "wordCount": 10257,
+          "title": "How Iran can track and control protesters’ phones: hacked documents",
+          "imageUrl": "https://theintercept.com/wp-uploads/sites/1/2022/10/GettyImages-1243377054-FB.jpg"
+        },
+        {
+          "id": "https://github.com/susam/hello",
+          "author": null,
+          "description": "Comments",
+          "link": "https://github.com/susam/hello",
+          "publishedOn": "2022-10-30T20:07:09.000Z",
+          "wordCount": 1057,
+          "title": "A 23-byte “hello, world” program assembled with DEBUG.EXE in MS-DOS",
+          "imageUrl": "https://opengraph.githubassets.com/3d10a5d6769363069fcdd1c0ea1abfe55f6a5650667453b907eeb869b714051d/susam/hello"
+        },
+        {
+          "id": "https://twitodon.com/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://twitodon.com/",
+          "publishedOn": "2022-10-30T19:22:49.000Z",
+          "wordCount": 805,
+          "title": "Find your Twitter friends on Mastodon",
+          "imageUrl": null
+        },
+        {
+          "id": "https://www.theguardian.com/technology/2022/oct/29/privacy-problem-tech-enhancing-data-political-legal",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.theguardian.com/technology/2022/oct/29/privacy-problem-tech-enhancing-data-political-legal",
+          "publishedOn": "2022-10-30T19:18:09.000Z",
+          "wordCount": 5643,
+          "title": "Techniques which allow the sharing of data whilst keeping it secure",
+          "imageUrl": "https://i.guim.co.uk/img/media/cb74a6f377a5fd92493768f49f81f3086990d189/0_0_5000_3000/master/5000.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdG8tZGVmYXVsdC5wbmc&enable=upscale&s=a9841966e2c03549798e989f2d9498a5"
+        },
+        {
+          "id": "https://www.youtube.com/watch?v=_W1JBAfV4Io",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.youtube.com/watch?v=_W1JBAfV4Io",
+          "publishedOn": "2022-10-30T18:18:03.000Z",
+          "wordCount": null,
+          "title": "Why Tesla removed radar and ultrasonic sensors [video]",
+          "imageUrl": null
+        },
+        {
+          "id": "https://fs.blog/reversible-irreversible-decisions/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://fs.blog/reversible-irreversible-decisions/",
+          "publishedOn": "2022-10-30T18:15:18.000Z",
+          "wordCount": 2122,
+          "title": "Reversible and irreversible decisions (2018)",
+          "imageUrl": "https://149664534.v2.pressablecdn.com/wp-content/uploads/2018/04/Reversible-Irreversible-Decisions.png"
+        },
+        {
+          "id": "https://jfhr.me/optimizing-images-with-the-html-picture-tag/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://jfhr.me/optimizing-images-with-the-html-picture-tag/",
+          "publishedOn": "2022-10-30T18:14:51.000Z",
+          "wordCount": 1483,
+          "title": "Optimizing images with the HTML &lt;picture&gt; tag",
+          "imageUrl": "https://jfhr.me/assets/apple-icon-180.png"
+        },
+        {
+          "id": "https://github.com/ballerine-io/ballerine",
+          "author": null,
+          "description": "Comments",
+          "link": "https://github.com/ballerine-io/ballerine",
+          "publishedOn": "2022-10-30T18:08:37.000Z",
+          "wordCount": 2477,
+          "title": "Show HN: Open-source user onboarding and KYC flow made with Svelte (~50kb)",
+          "imageUrl": "https://repository-images.githubusercontent.com/544592629/18584a18-4278-4dbe-bfda-8fd77faa17ba"
+        },
+        {
+          "id": "https://quizgecko.com/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://quizgecko.com/",
+          "publishedOn": "2022-10-30T18:04:32.000Z",
+          "wordCount": 75,
+          "title": "Show HN: Generate quiz questions using AI",
+          "imageUrl": "http://quizgecko.com/images/header.png"
+        },
+        {
+          "id": "https://www.withdiode.com/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.withdiode.com/",
+          "publishedOn": "2022-10-30T17:51:19.000Z",
+          "wordCount": 329,
+          "title": "Diode: Build, program, and simulate hardware projects in the browser",
+          "imageUrl": null
+        },
+        {
+          "id": "https://dynomight.net/hot-water/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://dynomight.net/hot-water/",
+          "publishedOn": "2022-10-30T17:48:57.000Z",
+          "wordCount": 4802,
+          "title": "Re-using the heat in bathwater in Britain",
+          "imageUrl": "https://dynomight.net/img/hot-water/tub.jpg"
+        },
+        {
+          "id": "https://bytecellar.com/2022/10/29/an-apple-ii-tale-told-complete-by-the-late-tony-diaz/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://bytecellar.com/2022/10/29/an-apple-ii-tale-told-complete-by-the-late-tony-diaz/",
+          "publishedOn": "2022-10-30T14:09:45.000Z",
+          "wordCount": 3690,
+          "title": "An Apple II Tale",
+          "imageUrl": "https://bytecellar.com/wp-content/uploads/2022/10/TonyD_IRC_zoom_900w.jpg"
+        },
+        {
+          "id": "https://jvns.ca/blog/things-your-manager-might-not-know/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://jvns.ca/blog/things-your-manager-might-not-know/",
+          "publishedOn": "2022-10-30T12:51:19.000Z",
+          "wordCount": 2954,
+          "title": "Things your manager might not know (2021)",
+          "imageUrl": null
+        },
+        {
+          "id": "https://github.com/carefree0910/carefree-creator",
+          "author": null,
+          "description": "Comments",
+          "link": "https://github.com/carefree0910/carefree-creator",
+          "publishedOn": "2022-10-30T12:32:34.000Z",
+          "wordCount": 5069,
+          "title": "Show HN: AI magics meet Infinite draw board",
+          "imageUrl": "https://repository-images.githubusercontent.com/536013043/389986f9-74d0-4795-a928-a7f15f1416dc"
+        },
+        {
+          "id": "https://sschueller.github.io/posts/wiring-a-home-with-fiber/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://sschueller.github.io/posts/wiring-a-home-with-fiber/",
+          "publishedOn": "2022-10-30T11:39:44.000Z",
+          "wordCount": 1604,
+          "title": "Wiring my home with fiber",
+          "imageUrl": "https://sschueller.github.io/network-diagram"
+        },
         {
           "id": "https://www.nature.com/articles/s41467-022-34113-y",
           "author": null,
@@ -389,6 +639,16 @@
           "imageUrl": null
         },
         {
+          "id": "https://daily.jstor.org/walking-streetlamps-for-hire-in-seventeenth-century-london/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://daily.jstor.org/walking-streetlamps-for-hire-in-seventeenth-century-london/",
+          "publishedOn": "2022-10-29T04:07:47.000Z",
+          "wordCount": 2084,
+          "title": "Walking streetlamps for hire in seventeenth-century London",
+          "imageUrl": "https://daily.jstor.org/wp-content/uploads/2022/10/walking_streetlamps_for_hire_in_seventeenth_century_london_alt_1050x700.jpg"
+        },
+        {
           "id": "https://github.com/soundshader/soundshader.github.io/blob/master/acf-v2/README.md",
           "author": null,
           "description": "Comments",
@@ -416,6 +676,16 @@
           "publishedOn": "2022-10-28T23:33:07.000Z",
           "wordCount": 2744,
           "title": "How the Neanderthals became the Basques (2002)",
+          "imageUrl": null
+        },
+        {
+          "id": "https://community.spiceworks.com/topic/2251762-powerline-adapters-the-security-threat",
+          "author": null,
+          "description": "Comments",
+          "link": "https://community.spiceworks.com/topic/2251762-powerline-adapters-the-security-threat",
+          "publishedOn": "2022-10-28T22:10:44.000Z",
+          "wordCount": 6013,
+          "title": "Powerline Adapters – the security threat (2020)",
           "imageUrl": null
         },
         {
@@ -689,6 +959,16 @@
           "imageUrl": "https://scx2.b-cdn.net/gfx/news/hires/2022/first-ever-study-shows.jpg"
         },
         {
+          "id": "http://wiki.winterthur.org/wiki/Poison_Book_Project",
+          "author": null,
+          "description": "Comments",
+          "link": "http://wiki.winterthur.org/wiki/Poison_Book_Project",
+          "publishedOn": "2022-10-28T09:43:04.000Z",
+          "wordCount": 3453,
+          "title": "Poison Book Project",
+          "imageUrl": null
+        },
+        {
           "id": "https://www.mistys-internet.website/blog/blog/2022/10/27/how-i-dumped-an-arcade-game-for-mame/",
           "author": null,
           "description": "Comments",
@@ -817,6 +1097,16 @@
           "wordCount": 28503,
           "title": "Towards the next generation of XNU memory safety: kalloc_type",
           "imageUrl": "/assets/image/seo-image.jpg"
+        },
+        {
+          "id": "https://faa-tfm-aid.nianet.org/challenge-details/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://faa-tfm-aid.nianet.org/challenge-details/",
+          "publishedOn": "2022-10-27T18:13:54.000Z",
+          "wordCount": 3082,
+          "title": "FAA Traffic Flow Management Design Challenge",
+          "imageUrl": null
         },
         {
           "id": "https://pypi.org/project/specialist/",
@@ -1017,6 +1307,16 @@
           "wordCount": 7643,
           "title": "Programming Portals",
           "imageUrl": "https://maggieappleton.com/images/og/991c0d1a0b4615db298793719a54a595.png"
+        },
+        {
+          "id": "https://www.nytimes.com/2022/10/26/books/best-philip-k-dick-novels.html",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.nytimes.com/2022/10/26/books/best-philip-k-dick-novels.html",
+          "publishedOn": "2022-10-27T03:18:51.000Z",
+          "wordCount": null,
+          "title": "The Essential Philip K. Dick",
+          "imageUrl": null
         },
         {
           "id": "https://tiramisu.bearblog.dev/coffee-gift/",
@@ -8577,436 +8877,6 @@
           "wordCount": 3738,
           "title": "Researchers successfully convert methane gas into liquid methanol",
           "imageUrl": "https://scitechdaily.com/images/Abstract-Biochemistry-Origin-of-life-Concept.gif"
-        },
-        {
-          "id": "http://www.columbia.edu/~ks20/FE-Notes/4700-07-Notes-GR.pdf",
-          "author": null,
-          "description": "Comments",
-          "link": "http://www.columbia.edu/~ks20/FE-Notes/4700-07-Notes-GR.pdf",
-          "publishedOn": "2022-10-01T13:02:48.000Z",
-          "wordCount": 4682,
-          "title": "Gambler’s Ruin Problem [pdf]",
-          "imageUrl": null
-        },
-        {
-          "id": "https://lycheeorg.github.io/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://lycheeorg.github.io/",
-          "publishedOn": "2022-10-01T13:00:34.000Z",
-          "wordCount": 468,
-          "title": "Lychee – Self-hosted photo-management done right",
-          "imageUrl": "https://LycheeOrg.github.io/assets/images/og.jpg"
-        },
-        {
-          "id": "https://scrib.am/the-articles/transhumanism",
-          "author": null,
-          "description": "Comments",
-          "link": "https://scrib.am/the-articles/transhumanism",
-          "publishedOn": "2022-10-01T12:55:43.000Z",
-          "wordCount": 2006,
-          "title": "Becoming Cyborgs, Opportunities and Challenges",
-          "imageUrl": "https://super-static-assets.s3.amazonaws.com/28994c7f-cfd2-4efd-b6a0-f91ce8dcac71/uploads/cover/ac752f63-a6a1-47ee-8bcd-84f6041ff648.png"
-        },
-        {
-          "id": "https://www.spectator.co.uk/article/an-old-encyclopaedia-britannica-is-a-work-to-cherish",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.spectator.co.uk/article/an-old-encyclopaedia-britannica-is-a-work-to-cherish",
-          "publishedOn": "2022-10-01T12:45:25.000Z",
-          "wordCount": 2545,
-          "title": "An old Encyclopaedia Britannica is a work to cherish",
-          "imageUrl": "https://images.contentstack.io/v3/assets/bltf04078f3cf7a9c30/bltcecb32a4aa59e283/630f0b096d8c6c5c58850d04/Encyclopaedia-(Alamy).jpg"
-        },
-        {
-          "id": "https://developers.facebook.com/blog/post/2022/09/27/signals-in-prod-dangers-and-pitfalls/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://developers.facebook.com/blog/post/2022/09/27/signals-in-prod-dangers-and-pitfalls/",
-          "publishedOn": "2022-10-01T12:44:42.000Z",
-          "wordCount": 10218,
-          "title": "Signals in Prod: Dangers and Pitfalls",
-          "imageUrl": null
-        },
-        {
-          "id": "https://www.shawntabrizi.com/aad/does-company-x-have-an-azure-active-directory-tenant/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.shawntabrizi.com/aad/does-company-x-have-an-azure-active-directory-tenant/",
-          "publishedOn": "2022-10-01T12:44:25.000Z",
-          "wordCount": 721,
-          "title": "Does Company ‘X’ have an Azure Active Directory Tenant?",
-          "imageUrl": null
-        },
-        {
-          "id": "https://letterstoanewdeveloper.com/2022/01/17/you-will-ask-many-many-questions/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://letterstoanewdeveloper.com/2022/01/17/you-will-ask-many-many-questions/",
-          "publishedOn": "2022-10-01T12:43:59.000Z",
-          "wordCount": 2733,
-          "title": "You will ask many, many questions",
-          "imageUrl": "https://letterstoanewdeveloper.files.wordpress.com/2022/01/quino-al-4snuchpic8c-unsplash.jpg?w=1200"
-        },
-        {
-          "id": "https://forward.com/news/7669/the-raw-truth-about-lox/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://forward.com/news/7669/the-raw-truth-about-lox/",
-          "publishedOn": "2022-10-01T12:34:25.000Z",
-          "wordCount": 3047,
-          "title": "The Raw Truth About Lox",
-          "imageUrl": "https://forwardsite.wpengine.com/wp-content/themes/studio-simpatico/svgs/logo.svg"
-        },
-        {
-          "id": "https://nvnt.substack.com/p/solo-founder-dilemma-ceo-or-cto",
-          "author": null,
-          "description": "Comments",
-          "link": "https://nvnt.substack.com/p/solo-founder-dilemma-ceo-or-cto",
-          "publishedOn": "2022-10-01T12:23:55.000Z",
-          "wordCount": 3910,
-          "title": "Solo founder dilemma; CEO or CTO?",
-          "imageUrl": "https://substackcdn.com/image/fetch/w_1200,h_600,c_limit,f_jpg,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F7e62a4a0-4b60-4763-8875-2aef3f3a23a0_557x448.png"
-        },
-        {
-          "id": "https://www.economist.com/science-and-technology/2022/09/28/keeping-trains-apart-is-crucial-to-safety",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.economist.com/science-and-technology/2022/09/28/keeping-trains-apart-is-crucial-to-safety",
-          "publishedOn": "2022-10-01T11:46:53.000Z",
-          "wordCount": 6952,
-          "title": "A new way of keeping trains apart uses magnetic signals in the tracks",
-          "imageUrl": "https://www.economist.com/img/b/1280/720/90/media-assets/image/20221001_STP001.jpg"
-        },
-        {
-          "id": "https://jitsi.org/blog/enhanced-noise-suppression-in-jitsi-meet/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://jitsi.org/blog/enhanced-noise-suppression-in-jitsi-meet/",
-          "publishedOn": "2022-10-01T11:28:00.000Z",
-          "wordCount": 1938,
-          "title": "Enhanced noise suppression in Jitsi Meet",
-          "imageUrl": "https://jitsi.org/wp-content/uploads/2022/07/pexels-jerson-vargas-4765390.jpg"
-        },
-        {
-          "id": "https://theconvivialsociety.substack.com/p/impoverished-emotional-lives",
-          "author": null,
-          "description": "Comments",
-          "link": "https://theconvivialsociety.substack.com/p/impoverished-emotional-lives",
-          "publishedOn": "2022-10-01T10:38:32.000Z",
-          "wordCount": 3198,
-          "title": "Impoverished Emotional Lives",
-          "imageUrl": "https://substackcdn.com/image/fetch/w_1200,h_600,c_limit,f_jpg,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F074c6296-3c12-4a3c-9097-567ac92907be_256x256.png"
-        },
-        {
-          "id": "https://www.ianvisits.co.uk/articles/the-city-of-londons-oldest-document-is-currently-on-public-display-57746/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.ianvisits.co.uk/articles/the-city-of-londons-oldest-document-is-currently-on-public-display-57746/",
-          "publishedOn": "2022-10-01T07:33:41.000Z",
-          "wordCount": 3236,
-          "title": "The City of London’s oldest document is currently on public display",
-          "imageUrl": "https://www.ianvisits.co.uk/articles/wp-content/uploads/2022/09/guildhall-heritage-gallery-04.jpg"
-        },
-        {
-          "id": "https://lilium.com/jet",
-          "author": null,
-          "description": "Comments",
-          "link": "https://lilium.com/jet",
-          "publishedOn": "2022-10-01T07:30:55.000Z",
-          "wordCount": 677,
-          "title": "The Lilium Jet",
-          "imageUrl": "https://lilium.com/files/redaktion/refresh_feb2021/socialmedia/lilium_thumbnail_website.jpg"
-        },
-        {
-          "id": "https://bam.kalzumeus.com/archive/markets-in-power/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://bam.kalzumeus.com/archive/markets-in-power/",
-          "publishedOn": "2022-10-01T06:24:33.000Z",
-          "wordCount": 3210,
-          "title": "Markets in Power",
-          "imageUrl": null
-        },
-        {
-          "id": "https://bigthink.com/the-present/attention-economy-science-damaged/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://bigthink.com/the-present/attention-economy-science-damaged/",
-          "publishedOn": "2022-10-01T04:42:31.000Z",
-          "wordCount": 2540,
-          "title": "The 'attention economy' corrupts science",
-          "imageUrl": "https://bigthink.com/wp-content/uploads/2022/09/babies-3.jpg?resize=1200,630"
-        },
-        {
-          "id": "https://bok.idpro.org/article/id/85/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://bok.idpro.org/article/id/85/",
-          "publishedOn": "2022-10-01T03:18:33.000Z",
-          "wordCount": 4779,
-          "title": "Identity and Access Management Workforce Planning",
-          "imageUrl": "https://bok.idpro.org/article/id/85/file/653/"
-        },
-        {
-          "id": "https://www.nytimes.com/2022/09/08/books/review/super-infinite-katherine-rundell.html",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.nytimes.com/2022/09/08/books/review/super-infinite-katherine-rundell.html",
-          "publishedOn": "2022-10-01T03:08:50.000Z",
-          "wordCount": null,
-          "title": "The Libertine’s Voice: The Life and Love Poems of John Donne",
-          "imageUrl": null
-        },
-        {
-          "id": "https://arstechnica.com/gaming/2022/09/youtube-age-restriction-quagmire-exposed-by-78-minute-mega-man-documentary/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://arstechnica.com/gaming/2022/09/youtube-age-restriction-quagmire-exposed-by-78-minute-mega-man-documentary/",
-          "publishedOn": "2022-10-01T00:16:58.000Z",
-          "wordCount": 1727,
-          "title": "YouTube age-restriction quagmire exposed by 78-minute Mega Man documentary",
-          "imageUrl": "https://cdn.arstechnica.net/wp-content/uploads/2022/09/mega-man-2-death-sprite-760x380.jpg"
-        },
-        {
-          "id": "https://www.economist.com/science-and-technology/2022/09/28/becoming-a-father-shrinks-your-cerebrum",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.economist.com/science-and-technology/2022/09/28/becoming-a-father-shrinks-your-cerebrum",
-          "publishedOn": "2022-09-30T23:53:09.000Z",
-          "wordCount": 7071,
-          "title": "Becoming a father shrinks your cerebrum",
-          "imageUrl": "https://www.economist.com/img/b/1280/720/90/media-assets/image/20221001_STP503.jpg"
-        },
-        {
-          "id": "https://tylercipriani.com/blog/2022/09/30/githubs-missing-merge-option/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://tylercipriani.com/blog/2022/09/30/githubs-missing-merge-option/",
-          "publishedOn": "2022-09-30T23:26:48.000Z",
-          "wordCount": 895,
-          "title": "GitHub's Missing Merge Option",
-          "imageUrl": null
-        },
-        {
-          "id": "https://h4ck1ng.google/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://h4ck1ng.google/",
-          "publishedOn": "2022-09-30T22:49:30.000Z",
-          "wordCount": 70,
-          "title": "H4CK1NG G00GL3",
-          "imageUrl": "https://gweb-h4ck1ng-g00gl3.uc.r.appspot.com/assets/share.png"
-        },
-        {
-          "id": "https://www.magicleap.com/en-us/magic-leap-2-video",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.magicleap.com/en-us/magic-leap-2-video",
-          "publishedOn": "2022-09-30T22:42:19.000Z",
-          "wordCount": 2593,
-          "title": "Magic Leap 2: The most immersive AR platform for enterprise",
-          "imageUrl": null
-        },
-        {
-          "id": "https://florentcrivello.com/co-founding-considered-harmful/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://florentcrivello.com/co-founding-considered-harmful/",
-          "publishedOn": "2022-09-30T22:36:10.000Z",
-          "wordCount": 3353,
-          "title": "Co-Founding Considered Harmful",
-          "imageUrl": null
-        },
-        {
-          "id": "https://news.ycombinator.com/item?id=33041514",
-          "author": null,
-          "description": "Comments",
-          "link": "https://news.ycombinator.com/item?id=33041514",
-          "publishedOn": "2022-09-30T22:19:57.000Z",
-          "wordCount": 224,
-          "title": "Ask HN: What Happened to SixthSense by Pranav Misty",
-          "imageUrl": null
-        },
-        {
-          "id": "https://theevilskeleton.gitlab.io/2022/09/30/the-fedora-project-remains-community-driven.html",
-          "author": null,
-          "description": "Comments",
-          "link": "https://theevilskeleton.gitlab.io/2022/09/30/the-fedora-project-remains-community-driven.html",
-          "publishedOn": "2022-09-30T21:49:06.000Z",
-          "wordCount": 752,
-          "title": "The Fedora Project Remains Community Driven",
-          "imageUrl": "/assets/logo-256x256.png"
-        },
-        {
-          "id": "https://opensource.googleblog.com/2022/09/lyra-v2-a-better-faster-and-more-versatile-speech-codec.html",
-          "author": null,
-          "description": "Comments",
-          "link": "https://opensource.googleblog.com/2022/09/lyra-v2-a-better-faster-and-more-versatile-speech-codec.html",
-          "publishedOn": "2022-09-30T21:35:24.000Z",
-          "wordCount": 6042,
-          "title": "Lyra V2 – a better, faster, and more versatile speech codec",
-          "imageUrl": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEga8Po-mwjqaOyRyhPnVQpokdRMiOCkQkswM_jHx-XYncxeqKL_o8OhNyFlllE5Kfntx9tSvIVj9E8ZNqUWofiW4n-RpiopBH-w91w5OM__-qHubpJJwtWWzBzFUy4xu3w7ZjTgLwOz0CSJg7NCnQldIN2FD1TCfLgOr2Gx7X_r9FLxSJy-HdUP5dos/w1200-h630-p-k-no-nu/Camp%20Compose%20(6).png"
-        },
-        {
-          "id": "https://www.cloud.com/news/press-release.html",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.cloud.com/news/press-release.html",
-          "publishedOn": "2022-09-30T21:12:31.000Z",
-          "wordCount": 1564,
-          "title": "Citrix acquired and merged with Tibco for $16.5B",
-          "imageUrl": null
-        },
-        {
-          "id": "https://www.ycombinator.com/companies/airmyne/jobs/4F7mJr4-chemical-engineer",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.ycombinator.com/companies/airmyne/jobs/4F7mJr4-chemical-engineer",
-          "publishedOn": "2022-09-30T21:00:28.000Z",
-          "wordCount": 1299,
-          "title": "AirMyne (YC W22) is hiring a chemical engineer in Berkeley, CA",
-          "imageUrl": "https://bookface-images.s3.amazonaws.com/logos/94b3cd448e89a727f5de8ece8f7c3c9490de33ff.png?1648238814"
-        },
-        {
-          "id": "https://www.sfgate.com/obscuresf/article/oldest-webcam-watches-san-francisco-17467544.php",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.sfgate.com/obscuresf/article/oldest-webcam-watches-san-francisco-17467544.php",
-          "publishedOn": "2022-09-30T20:39:52.000Z",
-          "wordCount": 6917,
-          "title": "'A fluke': The oldest webcam is still watching over San Francisco",
-          "imageUrl": "https://s.hdnux.com/photos/01/27/54/33/22988503/5/rawImage.jpg"
-        },
-        {
-          "id": "https://constructionphysics.substack.com/p/why-are-nuclear-power-construction-c3c",
-          "author": null,
-          "description": "Comments",
-          "link": "https://constructionphysics.substack.com/p/why-are-nuclear-power-construction-c3c",
-          "publishedOn": "2022-09-30T19:28:33.000Z",
-          "wordCount": 9581,
-          "title": "Why are nuclear power construction costs so high? Part III – the nuclear navy",
-          "imageUrl": "https://substackcdn.com/image/fetch/w_1200,h_600,c_limit,f_jpg,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F58242519-fb90-44dd-ba39-107651a6c74d_766x556.png"
-        },
-        {
-          "id": "https://felixkreuk.github.io/text2audio_arxiv_samples/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://felixkreuk.github.io/text2audio_arxiv_samples/",
-          "publishedOn": "2022-09-30T19:02:18.000Z",
-          "wordCount": 683,
-          "title": "AudioGen: Textually Guided Audio Generation",
-          "imageUrl": null
-        },
-        {
-          "id": "https://www.biographic.com/the-saguaro-solution/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.biographic.com/the-saguaro-solution/",
-          "publishedOn": "2022-09-30T18:32:15.000Z",
-          "wordCount": 8892,
-          "title": "The Saguaro Solution: Can replanting cacti restore an ecosystem ravaged by fire?",
-          "imageUrl": "https://www.biographic.com/wp-content/uploads/2022/08/040719_Cresteds_4686_-1.jpg"
-        },
-        {
-          "id": "https://www.biorxiv.org/content/10.1101/2022.09.29.509744v1",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.biorxiv.org/content/10.1101/2022.09.29.509744v1",
-          "publishedOn": "2022-09-30T18:10:23.000Z",
-          "wordCount": 1105,
-          "title": "Semantic reconstruction of continuous language from non-invasive brain recording",
-          "imageUrl": "https://www.biorxiv.org/sites/default/files/images/biorxiv_logo_homepage7-5-small.png"
-        },
-        {
-          "id": "https://www.cnn.com/videos/cnnmoney/2018/09/19/how-marzipan-is-made-lon-orig.cnn",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.cnn.com/videos/cnnmoney/2018/09/19/how-marzipan-is-made-lon-orig.cnn",
-          "publishedOn": "2022-09-30T17:47:06.000Z",
-          "wordCount": 30796,
-          "title": "How roasted almonds become marzipan (2018)",
-          "imageUrl": "https://cdn.cnn.com/cnnnext/dam/assets/180920095359-marzipan-niederegger-super-tease.jpg"
-        },
-        {
-          "id": "https://www.ghostlystock.com/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.ghostlystock.com/",
-          "publishedOn": "2022-09-30T17:45:21.000Z",
-          "wordCount": 118,
-          "title": "Show HN: Stock Photos Using Stable Diffusion",
-          "imageUrl": null
-        },
-        {
-          "id": "https://adguard-vpn.com/en/blog/vpn-built-browser-microsoft.html",
-          "author": null,
-          "description": "Comments",
-          "link": "https://adguard-vpn.com/en/blog/vpn-built-browser-microsoft.html",
-          "publishedOn": "2022-09-30T16:44:16.000Z",
-          "wordCount": 2202,
-          "title": "Microsoft bakes a VPN into Edge and turns it on",
-          "imageUrl": "https://adguard-vpn.com/content/images/2022/09/microsoft_big.jpg"
-        },
-        {
-          "id": "https://en.wikipedia.org/wiki/Xerox_914",
-          "author": null,
-          "description": "Comments",
-          "link": "https://en.wikipedia.org/wiki/Xerox_914",
-          "publishedOn": "2022-09-30T16:43:35.000Z",
-          "wordCount": 1492,
-          "title": "Xerox 914",
-          "imageUrl": "https://upload.wikimedia.org/wikipedia/en/b/b7/Xerox_914.jpg"
-        },
-        {
-          "id": "https://www.medtronicdiabetes.com/customer-support/product-and-service-updates/notice19-letter",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.medtronicdiabetes.com/customer-support/product-and-service-updates/notice19-letter",
-          "publishedOn": "2022-09-30T16:29:34.000Z",
-          "wordCount": 4019,
-          "title": "Medtronic's MiniMed 600 insulin pumps potentially at risk of compromise",
-          "imageUrl": null
-        },
-        {
-          "id": "https://payloadspace.com/fcc-approves-5-year-satellite-deorbiting-rule/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://payloadspace.com/fcc-approves-5-year-satellite-deorbiting-rule/",
-          "publishedOn": "2022-09-30T15:41:27.000Z",
-          "wordCount": 1166,
-          "title": "FCC Approves 5 Year Satellite Deorbiting Rule",
-          "imageUrl": "https://payloadspace.com/wp-content/uploads/2022/09/debris.jpeg"
-        },
-        {
-          "id": "https://github.com/leeoniya/uFuzzy",
-          "author": null,
-          "description": "Comments",
-          "link": "https://github.com/leeoniya/uFuzzy",
-          "publishedOn": "2022-09-30T14:44:49.000Z",
-          "wordCount": 2377,
-          "title": "Show HN: uFuzzy.js – A tiny, efficient fuzzy search that doesn't suck",
-          "imageUrl": "https://opengraph.githubassets.com/3d42a7e7acaf19e9f56c4df02272249094cd1b70e80484d52338da9741407c2c/leeoniya/uFuzzy"
-        },
-        {
-          "id": "https://simonwillison.net/2022/Sep/30/action-transcription/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://simonwillison.net/2022/Sep/30/action-transcription/",
-          "publishedOn": "2022-09-30T14:31:29.000Z",
-          "wordCount": 1455,
-          "title": "A tool for capturing captions and transcripts from online videos",
-          "imageUrl": "https://static.simonwillison.net/static/2022/action-transcription-card.jpg"
-        },
-        {
-          "id": "https://reclaimthenet.org/us-government-plans-to-develop-ai-that-can-unmask-anonymous-writers/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://reclaimthenet.org/us-government-plans-to-develop-ai-that-can-unmask-anonymous-writers/",
-          "publishedOn": "2022-09-30T13:59:35.000Z",
-          "wordCount": 1682,
-          "title": "US Government plans to develop AI that can unmask anonymous writers",
-          "imageUrl": "https://reclaimthenet.org/wp-content/uploads/2022/09/writing-ai.jpg"
         }
       ]
     }
