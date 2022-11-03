@@ -12,6 +12,16 @@
       "siteUrl": "http://weekly.dockone.io",
       "articles": [
         {
+          "id": "http://weekly.dockone.io/article/2434946",
+          "author": "新牛哥",
+          "description": "【编者的话】本文是作者在 FLOPS 2022 会议上的演讲，正如标题所言，重点分享了使用Liquid Haskell语言集成验证系统来构建可靠的分布式系统的有趣的探索经历，目标是希望程序员能够机械地指定和验证分布式系统的真实、可执行实现的正确性属性，而且是使用集成到他们用于实现的相同通用、工业强度编程语言中的验证功能来做到这一点。目前来看使用Liquid Haskell能做到，但是仍然有很大的改进空间。\n今年 5 月，我在FLOPS 2022 会议上发表了开幕主题演讲（我的第一次主题演讲！） 。我谈到了我们小组在使用 Liquid Haskell 验证分布式系统的正确性方面所做的工作。\n这是我的 FLOPS 演讲稿。一些幻灯片包含在下面，我也发布了完整的幻灯片。\n早上好\n\n\n\n\n早上好，FLOPS！我是 Lindsey Kuper。我是加州大学圣克鲁兹分校的助理教授。\n非常感谢 Atsushi 和 Michael 以及整个 FLOPS 组织团队邀请我在 FLOPS 上发言，以及他们组织这次活动的工作。就个人而言，FLOPS 是我第一次有论文被拒绝的会议，那是在 2010 年我刚开始读研究生的时候。所以今天被邀请做这个演讲，我感到特别荣幸。\n这个演讲是关于我最近非常兴奋的事情，即使用现代语言集成验证工具来帮助我们构建保证按预期工作的分布式系统的潜力，这些保证不仅适用于模型，还适用于真实运行的代码。\n在本次演讲的开始部分，我将解释我所说的“分布式系统”的含义以及它们所面临的具体挑战。然后简单介绍一下 Liquid Haskell 语言集成的验证系统。最后，探险记：我将分享我和我的学生和合作者一直在这个领域开展的两个项目的一些亮点。\n那么，让我们从讨论分布式系统开始吧！\n什么是分布式系统？\n\n\n\n\n想象一些独立的机器通过网络相互传递消息进行通信。它们可能相距很近或相距很远，但我…",
+          "link": "http://weekly.dockone.io/article/2434946",
+          "publishedOn": "2022-11-03T01:25:06.633Z",
+          "wordCount": 1018,
+          "title": "我的 FLOPS 2022 主题演讲：“使用 Liquid Haskell 构建可靠分布式系统的探险记”",
+          "imageUrl": null
+        },
+        {
           "id": "http://weekly.dockone.io/article/2434950",
           "author": "新牛哥",
           "description": "【编者的话】十二因素应用方法是由 Adam Wiggins 提出的构建 SaaS 应用的方法。本文介绍这个方法的演变过程，我们今天还能学习它的地方，以及它如何改变了过去的状况。\n你经常会听说软件开发和部署将变得更美好。这一趋势的当前轮回是 Heroku。不要误会我的意思，Heroku 令人难以置信，它带来了一种编写 Web 应用和部署分布式系统的新方法。他们肯定做对了很多。即使10年之后的今天，我们仍在努力实现同样的开发便利性。\nHeroku 的联合创始人 Adam Wiggins 有一篇著名文章， 12 因素应用方法，它总结了许多有用并且我确信使得构建 Heroku 更有趣和有益的想法。\n在这篇文章中，我想回顾一下 Adam 所涵盖的 12 个因素中的每一个，它们是如何演变的，我们今天可以从它们身上学到什么，以及它们如何改变了过去的状态。\n代码库\n\n\n\n\n这个建议刚提出时，类似 GitHub 这样的东西才刚刚起步，代码版本控制也并不常见。这可能看起来很残酷，但这是事实。我记得刚开始时必须处理 Subversion 的问题。\n代码库与其应用之间的关系显著增长，包括从测试到部署的所有内容。然而，仍然存在高度争议的一点是是否需要单仓。\n如果有多个代码库，它就不是一个应用——它是一个分布式系统。分布式系统中的每个组件都是一个应用，每个组件都可以单独遵守十二因素。\n尤其是在以微服务为中心的世界中，维护多个代码库所需的所有开销都可能令人厌烦。\n依赖项\n\n\n\n\n我不确定你们中有多少人曾经在 Ansible 和 Puppet 等软件可用之前处理过依赖系统。尽管如此，操作系统和各种版本的库之间的特殊性绝对是一场噩梦。\n这个因素抓住了关键，最终在很大程度上使得依赖可以被视为一个已解决的问题。\n通过引入各种清单文件，我们的应用可以以一致和准确的方式重新构建。此外，像 Bazel 这样的构建工具…",
@@ -148,6 +158,256 @@
       "feedUrl": "https://news.ycombinator.com/rss",
       "siteUrl": "https://news.ycombinator.com/",
       "articles": [
+        {
+          "id": "https://github.com/apenwarr/blip",
+          "author": null,
+          "description": "Comments",
+          "link": "https://github.com/apenwarr/blip",
+          "publishedOn": "2022-11-03T00:52:43.000Z",
+          "wordCount": 1884,
+          "title": "Blip: A tool for seeing your Internet latency",
+          "imageUrl": "https://opengraph.githubassets.com/8dd7bb3021976428a0890db9dc374cab9e62855ab418deee6715f085f533e1b3/apenwarr/blip"
+        },
+        {
+          "id": "https://productivityreport.org/2017/02/06/the-workplace-is-rigged-to-favor-morning-people/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://productivityreport.org/2017/02/06/the-workplace-is-rigged-to-favor-morning-people/",
+          "publishedOn": "2022-11-03T00:46:00.000Z",
+          "wordCount": 5269,
+          "title": "The Workplace Is Rigged to Favor Morning People",
+          "imageUrl": "https://productivityreportorg.files.wordpress.com/2017/02/aaron-jacobs.jpg"
+        },
+        {
+          "id": "https://awealthofcommonsense.com/2022/11/why-todays-inflation-is-not-a-repeat-of-the-1970s/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://awealthofcommonsense.com/2022/11/why-todays-inflation-is-not-a-repeat-of-the-1970s/",
+          "publishedOn": "2022-11-03T00:45:39.000Z",
+          "wordCount": 2792,
+          "title": "Why Today’s Inflation Is Not a Repeat of the 1970s",
+          "imageUrl": null
+        },
+        {
+          "id": "https://src-bin.com/an-aws-account-just-for-getting-into-other-aws-accounts/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://src-bin.com/an-aws-account-just-for-getting-into-other-aws-accounts/",
+          "publishedOn": "2022-11-03T00:32:12.000Z",
+          "wordCount": 1853,
+          "title": "An AWS account just for getting into other AWS accounts",
+          "imageUrl": "https://src-bin.com/img/apple-touch-icon.png"
+        },
+        {
+          "id": "https://www.justice.gov/opa/pr/justice-department-announces-takedown-nationwide-catalytic-converter-theft-ring",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.justice.gov/opa/pr/justice-department-announces-takedown-nationwide-catalytic-converter-theft-ring",
+          "publishedOn": "2022-11-03T00:15:34.000Z",
+          "wordCount": 2062,
+          "title": "Justice Dept Announces Takedown of Nationwide Catalytic Converter Theft Ring",
+          "imageUrl": "https://www.justice.gov/sites/all/modules/features/doj_sharing/images/doj-seal-fb.jpg"
+        },
+        {
+          "id": "https://github.com/apache/age",
+          "author": null,
+          "description": "Comments",
+          "link": "https://github.com/apache/age",
+          "publishedOn": "2022-11-03T00:09:00.000Z",
+          "wordCount": 1258,
+          "title": "Apache Age, a PostgreSQL Extension with Graph Database Functionality",
+          "imageUrl": "https://opengraph.githubassets.com/e5839904efda44b51a729beb9e959b80ad7645e372cc2169137b6933eb6c6165/apache/age"
+        },
+        {
+          "id": "https://www.economist.com/leaders/2022/11/02/american-society-is-so-focused-on-race-that-it-is-blind-to-class",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.economist.com/leaders/2022/11/02/american-society-is-so-focused-on-race-that-it-is-blind-to-class",
+          "publishedOn": "2022-11-02T23:09:02.000Z",
+          "wordCount": 6665,
+          "title": "American society is so focused on race that it is blind to class",
+          "imageUrl": "https://www.economist.com/img/b/1280/720/90/media-assets/image/20221105_LDP002.jpg"
+        },
+        {
+          "id": "https://briancallahan.net/blog/20220704.html",
+          "author": null,
+          "description": "Comments",
+          "link": "https://briancallahan.net/blog/20220704.html",
+          "publishedOn": "2022-11-02T22:10:29.000Z",
+          "wordCount": 1387,
+          "title": "Next C compiler is a D compiler: Introducing DMD's ImportC",
+          "imageUrl": null
+        },
+        {
+          "id": "https://www.laphamsquarterly.org/roundtable/vast-and-innumerable-throngs-ancient-dead",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.laphamsquarterly.org/roundtable/vast-and-innumerable-throngs-ancient-dead",
+          "publishedOn": "2022-11-02T21:32:28.000Z",
+          "wordCount": 3038,
+          "title": "Vast and innumerable throngs of the ancient dead",
+          "imageUrl": "https://www.laphamsquarterly.org/sites/default/files/styles/thumbnail/public/physician_header.jpg?itok=xy8WGNxx"
+        },
+        {
+          "id": "https://fairinternetreport.com/research/facebook-meta-submarine-cable-ownership",
+          "author": null,
+          "description": "Comments",
+          "link": "https://fairinternetreport.com/research/facebook-meta-submarine-cable-ownership",
+          "publishedOn": "2022-11-02T21:02:09.000Z",
+          "wordCount": null,
+          "title": "Facebook (Meta) international cable expansion: animated map",
+          "imageUrl": null
+        },
+        {
+          "id": "https://cree-led.com/news/photophyll-select/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://cree-led.com/news/photophyll-select/",
+          "publishedOn": "2022-11-02T20:08:11.000Z",
+          "wordCount": 2489,
+          "title": "Cree releases LEDs designed for horticulture",
+          "imageUrl": "https://cree-led.com/wp-content/uploads/2022/11/NEWS-Photophyll-Select-landing-page-3.15x3.png"
+        },
+        {
+          "id": "https://words.filippo.io/dispatches/openssl-punycode/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://words.filippo.io/dispatches/openssl-punycode/",
+          "publishedOn": "2022-11-02T18:06:55.000Z",
+          "wordCount": 2225,
+          "title": "Why did the OpenSSL punycode vulnerability happen?",
+          "imageUrl": null
+        },
+        {
+          "id": "https://github.com/microsoft/TypeScript/pull/51387",
+          "author": null,
+          "description": "Comments",
+          "link": "https://github.com/microsoft/TypeScript/pull/51387",
+          "publishedOn": "2022-11-02T17:49:05.000Z",
+          "wordCount": 8841,
+          "title": "PR that converts the TypeScript repo from namespaces to modules",
+          "imageUrl": "https://opengraph.githubassets.com/1088157533cd7e6c1689e70f850c93170439b325a41f8684782b821d12e02863/microsoft/TypeScript/pull/51387"
+        },
+        {
+          "id": "https://github.com/Olde-Skuul/doom3do",
+          "author": null,
+          "description": "Comments",
+          "link": "https://github.com/Olde-Skuul/doom3do",
+          "publishedOn": "2022-11-02T17:44:47.000Z",
+          "wordCount": 1185,
+          "title": "Doom3do: DOOM for the 3DO",
+          "imageUrl": "https://opengraph.githubassets.com/6572b267e5dc839b4b494e5ae385aa704128922232e08cb2ef046a78ae307782/Olde-Skuul/doom3do"
+        },
+        {
+          "id": "https://boards.greenhouse.io/substack/jobs/4006118005?gh_src=hn",
+          "author": null,
+          "description": "Comments",
+          "link": "https://boards.greenhouse.io/substack/jobs/4006118005?gh_src=hn",
+          "publishedOn": "2022-11-02T17:16:41.000Z",
+          "wordCount": 1773,
+          "title": "Substack (YC W18) is hiring data analysts",
+          "imageUrl": "https://s5-recruiting.cdn.greenhouse.io/external_greenhouse_job_boards/logos/400/121/800/original/substack_logo_(2).jpg?1647036415"
+        },
+        {
+          "id": "https://cohost.org/jamesmunns/post/167078-systems-engineering",
+          "author": null,
+          "description": "Comments",
+          "link": "https://cohost.org/jamesmunns/post/167078-systems-engineering",
+          "publishedOn": "2022-11-02T16:57:31.000Z",
+          "wordCount": 8596,
+          "title": "Systems Engineering, or \"why james gets paid\"",
+          "imageUrl": "https://staging.cohostcdn.org/avatar/3655-b2955e8d-11f6-4c51-8318-85e34c7aac56-profile.jpg"
+        },
+        {
+          "id": "https://blog.phylum.io/phylum-discovers-dozens-more-pypi-packages-attempting-to-deliver-w4sp-stealer-in-ongoing-supply-chain-attack",
+          "author": null,
+          "description": "Comments",
+          "link": "https://blog.phylum.io/phylum-discovers-dozens-more-pypi-packages-attempting-to-deliver-w4sp-stealer-in-ongoing-supply-chain-attack",
+          "publishedOn": "2022-11-02T16:39:15.000Z",
+          "wordCount": 5246,
+          "title": "Dozens of malicious PyPI packages discovered targeting developers",
+          "imageUrl": "https://blog.phylum.io/hubfs/image%20%287%29-1.png#keepProtocol"
+        },
+        {
+          "id": "https://getaegis.app/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://getaegis.app/",
+          "publishedOn": "2022-11-02T16:32:06.000Z",
+          "wordCount": 689,
+          "title": "Aegis Authenticator – Secure 2FA App for Android",
+          "imageUrl": null
+        },
+        {
+          "id": "https://join-lemmy.org/news/2022-11-02-_First_release_of_LemmyBB",
+          "author": null,
+          "description": "Comments",
+          "link": "https://join-lemmy.org/news/2022-11-02-_First_release_of_LemmyBB",
+          "publishedOn": "2022-11-02T16:29:17.000Z",
+          "wordCount": 478,
+          "title": "LemmyBB, a federated bulletin board",
+          "imageUrl": null
+        },
+        {
+          "id": "https://steamknight.itch.io/neonnoir",
+          "author": null,
+          "description": "Comments",
+          "link": "https://steamknight.itch.io/neonnoir",
+          "publishedOn": "2022-11-02T16:06:37.000Z",
+          "wordCount": 1308,
+          "title": "NEONnoir is a hybrid point-and-click adventure/visual novel game for the Amiga",
+          "imageUrl": "https://img.itch.zone/aW1nLzEwNDE4NDk3LnBuZw==/original/uxDF%2FN.png"
+        },
+        {
+          "id": "https://writings.stephenwolfram.com/2019/02/seeking-the-productive-life-some-details-of-my-personal-infrastructure/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://writings.stephenwolfram.com/2019/02/seeking-the-productive-life-some-details-of-my-personal-infrastructure/",
+          "publishedOn": "2022-11-02T15:57:35.000Z",
+          "wordCount": 16511,
+          "title": "Seeking the productive life: Some details of my personal infrastructure (2019)",
+          "imageUrl": null
+        },
+        {
+          "id": "https://grafana.com/blog/2022/11/02/announcing-grafana-phlare-oss-continuous-profiling-database/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://grafana.com/blog/2022/11/02/announcing-grafana-phlare-oss-continuous-profiling-database/",
+          "publishedOn": "2022-11-02T15:28:26.000Z",
+          "wordCount": 1725,
+          "title": "Phlare: open-source database for continuous profiling at scale",
+          "imageUrl": "https://grafana.com/static/assets/meta/grafana-phlare-oss-continuous-profiling-meta.png"
+        },
+        {
+          "id": "https://infiniteconversation.com/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://infiniteconversation.com/",
+          "publishedOn": "2022-11-02T15:21:32.000Z",
+          "wordCount": 115,
+          "title": "An AI generated, never-ending discussion between Werner Herzog and Slavoj ŽIžek",
+          "imageUrl": "https://infiniteconversation.com/img/infinite_conversation.jpg"
+        },
+        {
+          "id": "https://blogs.scientificamerican.com/sa-visual/why-are-so-many-babies-born-around-8-00-a-m/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://blogs.scientificamerican.com/sa-visual/why-are-so-many-babies-born-around-8-00-a-m/",
+          "publishedOn": "2022-11-02T13:47:57.000Z",
+          "wordCount": 1784,
+          "title": "Why are so many babies born around 8:00 AM? (2017)",
+          "imageUrl": "https://static.scientificamerican.com/blogs/cache/file/253EC221-2FF1-4648-86F8433466AC2638.png"
+        },
+        {
+          "id": "https://blog.apnic.net/2022/11/02/openbsd-packet-filter-tools/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://blog.apnic.net/2022/11/02/openbsd-packet-filter-tools/",
+          "publishedOn": "2022-11-02T06:26:15.000Z",
+          "wordCount": 5620,
+          "title": "A few of my favourite things about the OpenBSD Packet Filter tools",
+          "imageUrl": "https://blog.apnic.net/wp-content/uploads/2022/10/BSD_PF_FT.png"
+        },
         {
           "id": "https://www.apple.com/support/systemstatus/",
           "author": null,
@@ -419,6 +679,36 @@
           "imageUrl": "https://opengraph.githubassets.com/9cf5f4e6999fe749d35941114a95429718f09387d6be8e5f0d05f1522b327731/jamealg/KT-companion"
         },
         {
+          "id": "https://brr.fyi/posts/laundry-at-the-end-of-the-world",
+          "author": null,
+          "description": "Comments",
+          "link": "https://brr.fyi/posts/laundry-at-the-end-of-the-world",
+          "publishedOn": "2022-11-01T12:36:06.000Z",
+          "wordCount": 451,
+          "title": "Laundry at the End of the World",
+          "imageUrl": null
+        },
+        {
+          "id": "https://www.therpf.com/forums/threads/halloween-go-for-launch.334717/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.therpf.com/forums/threads/halloween-go-for-launch.334717/",
+          "publishedOn": "2022-11-01T09:44:49.000Z",
+          "wordCount": 6237,
+          "title": "Halloween: Go For Launch (2020)",
+          "imageUrl": "https://www.therpf.com/forums/styles/default/mps_default/logo-og.png"
+        },
+        {
+          "id": "https://www.tweag.io/blog/2022-11-01-hard-user-separation-with-nixos/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.tweag.io/blog/2022-11-01-hard-user-separation-with-nixos/",
+          "publishedOn": "2022-11-01T09:21:10.000Z",
+          "wordCount": 4242,
+          "title": "Hard User Separation with NixOS",
+          "imageUrl": "https://tweag.io/logo.png"
+        },
+        {
           "id": "https://semiengineering.com/chip-design-shifts-as-fundamental-laws-run-out-of-steam/",
           "author": null,
           "description": "Comments",
@@ -509,6 +799,16 @@
           "imageUrl": "https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2F505283a/MediaObjects/41586_2014_Article_BF505283a_Figb_HTML.jpg"
         },
         {
+          "id": "https://medium.com/@kentbeck_7670/cloud-development-environments-tame-complexity-by-reducing-state-4a154ea7959f",
+          "author": null,
+          "description": "Comments",
+          "link": "https://medium.com/@kentbeck_7670/cloud-development-environments-tame-complexity-by-reducing-state-4a154ea7959f",
+          "publishedOn": "2022-10-31T21:14:24.000Z",
+          "wordCount": 2644,
+          "title": "Cloud development environments tame complexity by reducing state",
+          "imageUrl": null
+        },
+        {
           "id": "https://news.ycombinator.com/item?id=33413124",
           "author": null,
           "description": "Comments",
@@ -547,6 +847,16 @@
           "wordCount": 4100,
           "title": "Nascar driver stuns to qualify for championship with GameCube move",
           "imageUrl": "https://images.nintendolife.com/7851ccc63d2a1/1280x720.jpg"
+        },
+        {
+          "id": "https://twitter.com/shubroski/status/1587136794797244417",
+          "author": null,
+          "description": "Comments",
+          "link": "https://twitter.com/shubroski/status/1587136794797244417",
+          "publishedOn": "2022-10-31T19:45:13.000Z",
+          "wordCount": 399,
+          "title": "Demo of =GPT3() as a spreadsheet feature",
+          "imageUrl": null
         },
         {
           "id": "https://brr.fyi/posts/wastewater-plant",
@@ -8627,336 +8937,6 @@
           "wordCount": 7448,
           "title": "ClickHouse Cloud is now in Public Beta",
           "imageUrl": null
-        },
-        {
-          "id": "https://outfunnel.com/predictive-lead-scoring-lessons/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://outfunnel.com/predictive-lead-scoring-lessons/",
-          "publishedOn": "2022-10-04T12:42:08.000Z",
-          "wordCount": 9550,
-          "title": "Using machine learning to predict the leads that close",
-          "imageUrl": "https://outfunnel.com/wp-content/uploads/2022/10/Predictive-Lead-Scoring-MC-PD-Outfunnel.png"
-        },
-        {
-          "id": "https://www.phoronix.com/review/amd-zen4-spectrev2",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.phoronix.com/review/amd-zen4-spectrev2",
-          "publishedOn": "2022-10-04T12:39:00.000Z",
-          "wordCount": 1482,
-          "title": "AMD Ryzen 7000 Series performs better with Spectre V2 Mitigations enabled",
-          "imageUrl": null
-        },
-        {
-          "id": "https://worldofmatthew.com/technology/amazon-itunes-deception/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://worldofmatthew.com/technology/amazon-itunes-deception/",
-          "publishedOn": "2022-10-04T11:05:52.000Z",
-          "wordCount": 1357,
-          "title": "The deception of “buying” digital movies",
-          "imageUrl": null
-        },
-        {
-          "id": "https://t-ravis.com/post/doc/what_color_is_your_markup/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://t-ravis.com/post/doc/what_color_is_your_markup/",
-          "publishedOn": "2022-10-04T10:38:29.000Z",
-          "wordCount": 3020,
-          "title": "What color is your markup?",
-          "imageUrl": null
-        },
-        {
-          "id": "https://thoughtfulatlas.bearblog.dev/leonardo-syndrome/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://thoughtfulatlas.bearblog.dev/leonardo-syndrome/",
-          "publishedOn": "2022-10-04T08:50:02.000Z",
-          "wordCount": 1186,
-          "title": "Leonardo Syndrome",
-          "imageUrl": null
-        },
-        {
-          "id": "https://chan.co.za/how-fateful",
-          "author": null,
-          "description": "Comments",
-          "link": "https://chan.co.za/how-fateful",
-          "publishedOn": "2022-10-04T07:29:39.000Z",
-          "wordCount": 13470,
-          "title": "How fateful?",
-          "imageUrl": null
-        },
-        {
-          "id": "https://www.goodtimes.sc/recording-the-grateful-dead-the-culture-of-tapers/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.goodtimes.sc/recording-the-grateful-dead-the-culture-of-tapers/",
-          "publishedOn": "2022-10-04T01:42:45.000Z",
-          "wordCount": 24193,
-          "title": "Recording the Grateful Dead: The Culture of Tapers",
-          "imageUrl": "https://www.goodtimes.sc/wp-content/uploads/sites/10/2022/09/ARC082_GratefulDead_ProductShots-03-942x1024.jpg"
-        },
-        {
-          "id": "https://www.wsj.com/articles/walgreens-turns-to-prescription-filling-robots-to-free-up-pharmacists-11664713243",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.wsj.com/articles/walgreens-turns-to-prescription-filling-robots-to-free-up-pharmacists-11664713243",
-          "publishedOn": "2022-10-04T00:41:19.000Z",
-          "wordCount": 5019,
-          "title": "Walgreens Turns to Prescription-Filling Robots to Free Up Pharmacists",
-          "imageUrl": "https://images.wsj.net/im-634651/social"
-        },
-        {
-          "id": "https://www.nytimes.com/2022/10/03/arts/music/les-rallizes-denudes.html",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.nytimes.com/2022/10/03/arts/music/les-rallizes-denudes.html",
-          "publishedOn": "2022-10-04T00:20:03.000Z",
-          "wordCount": null,
-          "title": "Unraveling One of Rock’s Deepest Mysteries: Les Rallizes Dénudés",
-          "imageUrl": null
-        },
-        {
-          "id": "https://blog.cotten.io/that-time-we-burned-down-players-houses-in-ultima-online-7e556618c8f0?gi=d16a5fbc3623",
-          "author": null,
-          "description": "Comments",
-          "link": "https://blog.cotten.io/that-time-we-burned-down-players-houses-in-ultima-online-7e556618c8f0?gi=d16a5fbc3623",
-          "publishedOn": "2022-10-03T21:58:44.000Z",
-          "wordCount": 7040,
-          "title": "We Burned Down Players’ Houses in Ultima Online",
-          "imageUrl": "https://miro.medium.com/max/1200/1*A4ceavp9FCDSql6meIhrTw.jpeg"
-        },
-        {
-          "id": "https://hckrnews.com/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://hckrnews.com/",
-          "publishedOn": "2022-10-03T21:35:32.000Z",
-          "wordCount": 1244,
-          "title": "Hckr news – Hacker News sorted by time",
-          "imageUrl": null
-        },
-        {
-          "id": "https://news.ycombinator.com/item?id=33073638",
-          "author": null,
-          "description": "Comments",
-          "link": "https://news.ycombinator.com/item?id=33073638",
-          "publishedOn": "2022-10-03T21:00:53.000Z",
-          "wordCount": 588,
-          "title": "Meticulous (YC S21) Is Hiring #3 Founding Engineer in London",
-          "imageUrl": null
-        },
-        {
-          "id": "https://www.jasonshen.com/120/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.jasonshen.com/120/",
-          "publishedOn": "2022-10-03T18:58:22.000Z",
-          "wordCount": 3728,
-          "title": "From Burned Out Tech CEO to Amazon Warehouse Associate",
-          "imageUrl": "https://www.jasonshen.com/content/images/2022/09/D0A072B0-C55C-4EB7-82B0-F5E6383E9965.png"
-        },
-        {
-          "id": "https://www.nature.com/articles/d41586-022-02874-7",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.nature.com/articles/d41586-022-02874-7",
-          "publishedOn": "2022-10-03T18:32:28.000Z",
-          "wordCount": 5168,
-          "title": "The Brain on Psychedelics",
-          "imageUrl": "https://media.nature.com/lw1024/magazine-assets/d41586-022-02874-7/d41586-022-02874-7_23498056.jpg"
-        },
-        {
-          "id": "https://github.com/Cryptogenic/PS5-4.03-Kernel-Exploit",
-          "author": null,
-          "description": "Comments",
-          "link": "https://github.com/Cryptogenic/PS5-4.03-Kernel-Exploit",
-          "publishedOn": "2022-10-03T18:06:39.000Z",
-          "wordCount": 1756,
-          "title": "PS5 4.03 Kernel Exploit",
-          "imageUrl": "https://opengraph.githubassets.com/6f2a07167c05cc6d9385b0cdfdef14d61aa04e7a38d0a2a021af90b6d04fd1c5/Cryptogenic/PS5-4.03-Kernel-Exploit"
-        },
-        {
-          "id": "https://engineeringmedia.com/books",
-          "author": null,
-          "description": "Comments",
-          "link": "https://engineeringmedia.com/books",
-          "publishedOn": "2022-10-03T17:51:25.000Z",
-          "wordCount": 400,
-          "title": "The Fundamentals of Control Theory",
-          "imageUrl": "http://static1.squarespace.com/static/5b2d76525cfd790c4a218093/t/5e6c025c6f379e1858688b43/1584136799463/EM_Badge_Black.png?format=1500w"
-        },
-        {
-          "id": "https://ianleslie.substack.com/p/paul-mccartneys-freakish-memory",
-          "author": null,
-          "description": "Comments",
-          "link": "https://ianleslie.substack.com/p/paul-mccartneys-freakish-memory",
-          "publishedOn": "2022-10-03T17:49:24.000Z",
-          "wordCount": 6465,
-          "title": "Paul McCartney's Freakish Memory",
-          "imageUrl": "https://substackcdn.com/image/fetch/w_1200,h_600,c_limit,f_jpg,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2Fb84e4497-1485-4017-8a90-740d20307039_976x690.jpeg"
-        },
-        {
-          "id": "https://www.cockroachlabs.com/blog/raft-is-so-fetch/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.cockroachlabs.com/blog/raft-is-so-fetch/",
-          "publishedOn": "2022-10-03T17:48:19.000Z",
-          "wordCount": 2199,
-          "title": "Raft Is So Fetch: The Raft Consensus Algorithm Explained Through Mean Girls",
-          "imageUrl": "https://www.cockroachlabs.com/img/screen-shot-2022-10-03-at-7.25.38-am.png?auto=format,compress"
-        },
-        {
-          "id": "https://wired.me/technology/all-you-need-to-know-about-the-technology-behind-bella-hadids-spray-on-dress/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://wired.me/technology/all-you-need-to-know-about-the-technology-behind-bella-hadids-spray-on-dress/",
-          "publishedOn": "2022-10-03T17:47:16.000Z",
-          "wordCount": 1974,
-          "title": "The technology behind Bella Hadid’s spray-on dress",
-          "imageUrl": "https://wired.me/wp-content/uploads/2022/10/Bella-Hadid-fabrican-LEAD.jpeg"
-        },
-        {
-          "id": "https://interiorai.com/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://interiorai.com/",
-          "publishedOn": "2022-10-03T17:32:10.000Z",
-          "wordCount": 3757,
-          "title": "Interior AI autofills photo of room with CG furniture/art",
-          "imageUrl": "https://interiorai.com/assets/styles/tropical.png?1664576457"
-        },
-        {
-          "id": "https://github.com/jamii/hytradboi-jam-2022",
-          "author": null,
-          "description": "Comments",
-          "link": "https://github.com/jamii/hytradboi-jam-2022",
-          "publishedOn": "2022-10-03T16:56:59.000Z",
-          "wordCount": 3664,
-          "title": "Goal: Pass all 4259065 tests in sqllogictest in 1 week",
-          "imageUrl": "https://opengraph.githubassets.com/9159a0c854b03aa1d70867a2d341d4e190291dbec6fa4218c088cba543fddd39/jamii/hytradboi-jam-2022"
-        },
-        {
-          "id": "https://www.wsj.com/articles/why-lyft-is-eating-ubers-dust-11664597545",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.wsj.com/articles/why-lyft-is-eating-ubers-dust-11664597545",
-          "publishedOn": "2022-10-03T16:50:37.000Z",
-          "wordCount": 5922,
-          "title": "Post-pandemic, the battle between Uber and Lyft is looking more one-sided",
-          "imageUrl": "https://images.wsj.net/im-633072/social"
-        },
-        {
-          "id": "https://adguard.com/en/blog/apple-tracking-ads-business.html",
-          "author": null,
-          "description": "Comments",
-          "link": "https://adguard.com/en/blog/apple-tracking-ads-business.html",
-          "publishedOn": "2022-10-03T16:24:28.000Z",
-          "wordCount": 4615,
-          "title": "Apple’s ad business set to boom on the back of its own anti-tracking crackdown",
-          "imageUrl": "https://adguard.com/content/images/2022/09/apple_big.jpg"
-        },
-        {
-          "id": "https://src-bin.com/you-should-have-lots-of-aws-accounts/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://src-bin.com/you-should-have-lots-of-aws-accounts/",
-          "publishedOn": "2022-10-03T16:14:25.000Z",
-          "wordCount": 2360,
-          "title": "Have lots of AWS accounts",
-          "imageUrl": "https://src-bin.com/img/apple-touch-icon.png"
-        },
-        {
-          "id": "https://wasmlabs.dev/articles/apache-mod-wasm/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://wasmlabs.dev/articles/apache-mod-wasm/",
-          "publishedOn": "2022-10-03T15:34:27.000Z",
-          "wordCount": 1702,
-          "title": "mod_wasm: Run WebAssembly with Apache",
-          "imageUrl": "https://wasmlabs.dev/static/images/articles/apache-mod-wasm/og.png"
-        },
-        {
-          "id": "https://news.ycombinator.com/item?id=33068421",
-          "author": null,
-          "description": "Comments",
-          "link": "https://news.ycombinator.com/item?id=33068421",
-          "publishedOn": "2022-10-03T15:00:29.000Z",
-          "wordCount": 50405,
-          "title": "Ask HN: Who is hiring? (October 2022)",
-          "imageUrl": null
-        },
-        {
-          "id": "https://news.ycombinator.com/item?id=33068418",
-          "author": null,
-          "description": "Comments",
-          "link": "https://news.ycombinator.com/item?id=33068418",
-          "publishedOn": "2022-10-03T15:00:27.000Z",
-          "wordCount": 18153,
-          "title": "Ask HN: Who wants to be hired? (October 2022)",
-          "imageUrl": null
-        },
-        {
-          "id": "https://gcaptain.com/shrinking-mississippi-river-puts-american-farm-trade-at-risks/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://gcaptain.com/shrinking-mississippi-river-puts-american-farm-trade-at-risks/",
-          "publishedOn": "2022-10-03T14:55:58.000Z",
-          "wordCount": 1965,
-          "title": "Shrinking Mississippi River Puts American Farm Trade at Risks",
-          "imageUrl": "https://gcaptain.com/wp-content/uploads/2018/09/shutterstock_276685682.jpg"
-        },
-        {
-          "id": "https://janellsihay.com/i-need-structure-in-my-life/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://janellsihay.com/i-need-structure-in-my-life/",
-          "publishedOn": "2022-10-03T14:55:04.000Z",
-          "wordCount": 594,
-          "title": "I need structure in my life",
-          "imageUrl": "https://d2pn8kiwq2w21t.cloudfront.net/original_images/jpegPIA23645.jpg"
-        },
-        {
-          "id": "https://eden.bearblog.dev/the-schizoid-difference/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://eden.bearblog.dev/the-schizoid-difference/",
-          "publishedOn": "2022-10-03T14:54:27.000Z",
-          "wordCount": 1742,
-          "title": "The Schizoid Difference",
-          "imageUrl": null
-        },
-        {
-          "id": "https://www.sapiens.org/archaeology/farming-simulator-anthropology/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.sapiens.org/archaeology/farming-simulator-anthropology/",
-          "publishedOn": "2022-10-03T14:52:20.000Z",
-          "wordCount": 2405,
-          "title": "The Anthropology of Farming Simulator",
-          "imageUrl": "https://www.sapiens.org/app/uploads/2022/09/04_Kids-Play-Farm-Sim-e1664261728158.jpg"
-        },
-        {
-          "id": "https://javalin.io/news/javalin-5.0.0-stable.html",
-          "author": null,
-          "description": "Comments",
-          "link": "https://javalin.io/news/javalin-5.0.0-stable.html",
-          "publishedOn": "2022-10-03T14:30:09.000Z",
-          "wordCount": 1876,
-          "title": "Show HN: I finished v5 of a JVM framework I've spent spent half a decade making",
-          "imageUrl": "https://javalin.io/img/javalin.png"
-        },
-        {
-          "id": "https://supabase.com/blog/postgres-wasm",
-          "author": null,
-          "description": "Comments",
-          "link": "https://supabase.com/blog/postgres-wasm",
-          "publishedOn": "2022-10-03T14:25:58.000Z",
-          "wordCount": 11165,
-          "title": "Postgres WASM",
-          "imageUrl": "https://supabase.com/images/blog/postgres-wasm/postgres-wasm.jpg"
         }
       ]
     }
