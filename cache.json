@@ -12,6 +12,16 @@
       "siteUrl": "http://weekly.dockone.io",
       "articles": [
         {
+          "id": "http://weekly.dockone.io/article/2434948",
+          "author": "ylzhang",
+          "description": "【编者的话】Kubernetes是银弹吗？它解决了什么问题？对于公司和个人的搭建系统，单机应用和大规模系统都一定要使用容器和Kubernetes吗？Globality的机器学习副总裁用自己的经验总结了自己认识Kubernetes的过程，他从评估、入门、成本、操作等几个方面记录了自己从对Kubernetes的认识过程，并讲述了自己的心得体会。下文是作者关于此的笔记。\n我曾认为自己是一个强烈 Kubernetes 怀疑论者。无论是做项目还是初创公司，裸机系统始终是我的首选。包括运行此博客的堆栈环境，称它为堆栈甚至可能有些夸张，其实它只是一个持续集成（CI）工具链，主机上有 Nginx 配置。但它可以处理惊人的并发负载，并且托管成本低。它每月只需 10 美元，完全可与托管成本高出两个数量级的企业博客平台并驾齐驱。\n过早的优化可能是万恶之源，但过早的规模化也是如此。我认为公司过早地设计复杂架构会导致很多问题，例如开发者需要面对复杂的系统，这样也会导致用户不稳定。而且我认为带有简单服务器的 monorepo 应该作为项目的起点。这时只需运行一个基本的 Docker 实例，并且可以最大程度上减少无尽依赖，确保你的远程配置可在本地开发机器上重现即可。一旦系统面对更高的流量，可以选择租用更强大的服务器。如果还不能解决问题，请部署一个简单的负载均衡器，路由到几个后端设备。在早期可以做到而且应该是这样。\n虽然我正是这么做的，但最近负载均衡系统后面用于几个辅助项目的一台物理服务器已满足不了我的要求——大部分时间里它是空闲的，但突发状态下则需要几十个带有 GPU 的虚拟机。这迫使我不得不采用更复杂的服务器管理解决方案。在为使用 Kubernetes 构建了几个月之后，我必须承认我一天一天就爱上了它。\n第一天：走近尝试\n我已经在裸机上有一个完整运行的后端应用程序。我真的要用不同的产品重新设计我堆栈的…",
+          "link": "http://weekly.dockone.io/article/2434948",
+          "publishedOn": "2022-11-17T01:18:01.436Z",
+          "wordCount": 647,
+          "title": "爱上Kubernetes",
+          "imageUrl": null
+        },
+        {
           "id": "http://weekly.dockone.io/article/2434947",
           "author": "李颖杰",
           "description": "云原生是2013年被提出来的，经过8年的发展，现在可以说是最火热的技术了，在技术领域的地位业内基本上已经形成了普遍共识。\n阿里、字节、腾讯等大厂都在业务云原生化，这起到了带头作用；而Kubernetes等技术的应用在节约成本方面也确实带来了好处，这让很多之前观望的中小型公司也投身到云原生建设中。\n大公司带头，小公司跟进；互联网公司带头，传统公司跟进的现状导致了公司对工程师的要求是必须掌握一定的云原生技术。换句话说，想找一份薪资可观的工作，或者想在面试的时候能脱颖而出，云原生技术成了必备技能。\n现在推荐你一本书——《怎么理解云原生？》，这是一本通过拆解云原生全景图来讲解云原生技术的书，希望学习本书能帮助你掌握云原生技术。  \n扫码免费领取电子书\n\n\n\n本书第一章首先将云原生全景图拆解开，对整个全景图进行综述：\n\n\n\n第二章节到第五章节，把按照应用层、运行时层、编排和管理层、应用程序定义和开发层进行了介绍，并且每一层按类别进行了拆分，非常详细的解读了云原生技术。\n比如第二章应用层的介绍如下：\n\n\n\n每一章又分为不同的类别，每个类别从是什么、解决的问题、如何解决问题和对应的工具等方面做了阐述。\n第六和七章分别介绍了贯穿4层的两列工具：可观察和分析工具与平台类工具。\n存储是重点，本书中也做了详细介绍：\n\n\n\n网络可以说是Kubernetes的重中之重，书中也有详细说明：\n\n\n\n监控是生产系统中必不可少的一环，是系统稳定运行的重要基础，作为重点，同样在本书中进行了详细的描述：\n\n\n\nCI/CD内容也有重点介绍：\n\n\n\n整本书从横纵两个方向，有条理的讲述了云原生全景图，让你了解每个类代表的内容，轻松傲游于全景图中，牢牢掌握云原生相关技术。\n扫码免费领取电子书",
@@ -109,6 +119,256 @@
       "siteUrl": "https://news.ycombinator.com/",
       "articles": [
         {
+          "id": "https://mathoverflow.net/questions/207321/how-did-cole-factor-267-1-in-1903",
+          "author": null,
+          "description": "Comments",
+          "link": "https://mathoverflow.net/questions/207321/how-did-cole-factor-267-1-in-1903",
+          "publishedOn": "2022-11-16T23:49:10.000Z",
+          "wordCount": 4003,
+          "title": "How did Cole factor 26^7−1 in 1903?",
+          "imageUrl": "https://cdn.sstatic.net/Sites/mathoverflow/Img/apple-touch-icon@2.png?v=f1c9606b77ff"
+        },
+        {
+          "id": "https://joel.tools/codegen/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://joel.tools/codegen/",
+          "publishedOn": "2022-11-16T23:36:23.000Z",
+          "wordCount": 4203,
+          "title": "AI found a bug in my code",
+          "imageUrl": null
+        },
+        {
+          "id": "https://danfitdegree.hashnode.dev/nothing-has-ever-angered-me-more-than-the-google-play-team",
+          "author": null,
+          "description": "Comments",
+          "link": "https://danfitdegree.hashnode.dev/nothing-has-ever-angered-me-more-than-the-google-play-team",
+          "publishedOn": "2022-11-16T23:22:52.000Z",
+          "wordCount": 16928,
+          "title": "Two weeks of dealing with Google as a developer",
+          "imageUrl": "https://hashnode.com/utility/r?url=https%3A%2F%2Fcdn.hashnode.com%2Fres%2Fhashnode%2Fimage%2Fupload%2Fv1668635658829%2Fb5c5bEWy6.jpg%3Fw%3D1200%26auto%3Dcompress%2Cformat%26format%3Dwebp%26fm%3Dpng"
+        },
+        {
+          "id": "https://mind-vis.github.io/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://mind-vis.github.io/",
+          "publishedOn": "2022-11-16T23:11:56.000Z",
+          "wordCount": 401,
+          "title": "Reconstructing images a person sees via non-invasive brain scans",
+          "imageUrl": null
+        },
+        {
+          "id": "https://www.instructables.com/Clear-Snow-the-Laziest-Way-Imaginable/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.instructables.com/Clear-Snow-the-Laziest-Way-Imaginable/",
+          "publishedOn": "2022-11-16T22:01:22.000Z",
+          "wordCount": 3594,
+          "title": "Clear snow the laziest way",
+          "imageUrl": "https://content.instructables.com/FCP/4RGY/HRN4GVRF/FCP4RGYHRN4GVRF.gif?auto=webp&frame=1"
+        },
+        {
+          "id": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-third-quarter-fiscal-2023",
+          "author": null,
+          "description": "Comments",
+          "link": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-third-quarter-fiscal-2023",
+          "publishedOn": "2022-11-16T21:24:41.000Z",
+          "wordCount": 5043,
+          "title": "Nvidia Earning Results Q3 2023",
+          "imageUrl": "http://nvidianews.nvidia.com/media/sites/219/images/social-image.jpg"
+        },
+        {
+          "id": "https://news.ycombinator.com/item?id=33630503",
+          "author": null,
+          "description": "Comments",
+          "link": "https://news.ycombinator.com/item?id=33630503",
+          "publishedOn": "2022-11-16T21:00:20.000Z",
+          "wordCount": 580,
+          "title": "Meticulous (YC S21) is hiring engineer #3 in London",
+          "imageUrl": null
+        },
+        {
+          "id": "https://www.cpsc.gov/Newsroom/News-Releases/2023/CPSC-Warns-Consumers-to-Stop-Using-Onewheel-Self-Balancing-Electric-Skateboards-Due-to-Ejection-Hazard-At-Least-Four-Deaths-and-Multiple-Injuries-Reported",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.cpsc.gov/Newsroom/News-Releases/2023/CPSC-Warns-Consumers-to-Stop-Using-Onewheel-Self-Balancing-Electric-Skateboards-Due-to-Ejection-Hazard-At-Least-Four-Deaths-and-Multiple-Injuries-Reported",
+          "publishedOn": "2022-11-16T20:41:45.000Z",
+          "wordCount": 1233,
+          "title": "CPSC calls for full recall of all Onewheel self-balancing electric skateboards",
+          "imageUrl": "https://www.cpsc.gov/s3fs-public/2022-10/Default_SocialLink_RingLogo.png"
+        },
+        {
+          "id": "https://www.youtube.com/watch?v=sV0cR_Nhac0",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.youtube.com/watch?v=sV0cR_Nhac0",
+          "publishedOn": "2022-11-16T20:39:01.000Z",
+          "wordCount": null,
+          "title": "Robot treats 500k plants per hour with 95% less chemicals [video]",
+          "imageUrl": null
+        },
+        {
+          "id": "https://github.com/teslamotors/liblithium",
+          "author": null,
+          "description": "Comments",
+          "link": "https://github.com/teslamotors/liblithium",
+          "publishedOn": "2022-11-16T20:29:33.000Z",
+          "wordCount": 1157,
+          "title": "Liblithium: A lightweight and portable cryptography library",
+          "imageUrl": "https://opengraph.githubassets.com/0e4d1b3fc99036883535b52abc3a63c75640af788525add54d9ff0cc6cb7717b/teslamotors/liblithium"
+        },
+        {
+          "id": "https://www.science.org/content/article/crypto-company-s-collapse-strands-scientists",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.science.org/content/article/crypto-company-s-collapse-strands-scientists",
+          "publishedOn": "2022-11-16T20:06:47.000Z",
+          "wordCount": 2355,
+          "title": "FTX's collapse strands scientists",
+          "imageUrl": "https://www.science.org/do/10.1126/science.adf8153/abs/_20221114_on_ftx_failure_bankman_fried.jpg"
+        },
+        {
+          "id": "https://pomochat.com/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://pomochat.com/",
+          "publishedOn": "2022-11-16T19:14:54.000Z",
+          "wordCount": 449,
+          "title": "Show HN: Pomodoro with friends",
+          "imageUrl": "https://pomochat.com/favicon.png"
+        },
+        {
+          "id": "https://tomforb.es/infosys-leaked-fulladminaccess-aws-keys-on-pypi-for-over-a-year/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://tomforb.es/infosys-leaked-fulladminaccess-aws-keys-on-pypi-for-over-a-year/",
+          "publishedOn": "2022-11-16T18:58:16.000Z",
+          "wordCount": 987,
+          "title": "Infosys leaked FullAdminAccess AWS keys on PyPI for over a year",
+          "imageUrl": null
+        },
+        {
+          "id": "https://spectrum.ieee.org/nasa-artemis-science",
+          "author": null,
+          "description": "Comments",
+          "link": "https://spectrum.ieee.org/nasa-artemis-science",
+          "publishedOn": "2022-11-16T18:30:47.000Z",
+          "wordCount": 9906,
+          "title": "A small fleet of CubeStats joins three mannequins, fungus, algae on Artemis-1",
+          "imageUrl": "https://spectrum.ieee.org/media-library/an-orange-survival-space-suit-reclines-inside-of-a-a-cramped-space-capsule.jpg?id=31363012&width=1200&height=600&coordinates=0%2C155%2C0%2C155"
+        },
+        {
+          "id": "https://www.narrative.bi/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.narrative.bi/",
+          "publishedOn": "2022-11-16T18:23:35.000Z",
+          "wordCount": 2106,
+          "title": "Show HN: Narrative BI – Actionable analytics for growth teams",
+          "imageUrl": "https://assets-webflow.narrative.bi/5edf3eeece4c854c7119209b/619e67713a08069be9443749_og-main.png"
+        },
+        {
+          "id": "https://daniel.do/article/laying-myself-off-from-amazon/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://daniel.do/article/laying-myself-off-from-amazon/",
+          "publishedOn": "2022-11-16T18:00:13.000Z",
+          "wordCount": 2078,
+          "title": "Laying myself off from Amazon",
+          "imageUrl": null
+        },
+        {
+          "id": "https://www.allthingsdistributed.com/2022/11/amazon-1998-distributed-computing-manifesto.html",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.allthingsdistributed.com/2022/11/amazon-1998-distributed-computing-manifesto.html",
+          "publishedOn": "2022-11-16T16:03:52.000Z",
+          "wordCount": 4033,
+          "title": "Amazon’s distributed computing manifesto (1998)",
+          "imageUrl": "https://www.allthingsdistributed.com/images/dcm-workflow-hi-res.jpg"
+        },
+        {
+          "id": "http://zxnext.narod.ru/manuals/Basic_Programming.pdf",
+          "author": null,
+          "description": "Comments",
+          "link": "http://zxnext.narod.ru/manuals/Basic_Programming.pdf",
+          "publishedOn": "2022-11-16T15:25:51.000Z",
+          "wordCount": 44268,
+          "title": "ZX Spectrum BASIC programming (1983) [pdf]",
+          "imageUrl": null
+        },
+        {
+          "id": "https://www.frontiersin.org/articles/10.3389/fpsyg.2015.01100/full",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.frontiersin.org/articles/10.3389/fpsyg.2015.01100/full",
+          "publishedOn": "2022-11-16T14:56:20.000Z",
+          "wordCount": 17737,
+          "title": "Psychological and psychiatric terms to avoid",
+          "imageUrl": "https://www.frontiersin.org/files/MyHome%20Article%20Library/147581/147581_Thumb_400.jpg"
+        },
+        {
+          "id": "https://ploomber.io/blog/experiment-tracking/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://ploomber.io/blog/experiment-tracking/",
+          "publishedOn": "2022-11-16T14:55:56.000Z",
+          "wordCount": 9416,
+          "title": "Who needs MLflow when you have SQLite?",
+          "imageUrl": "https://ploomber.io/images/blog/experiment-tracking/header.png"
+        },
+        {
+          "id": "https://evernote.com/blog/evernote-next-move-joining-bending-spoons/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://evernote.com/blog/evernote-next-move-joining-bending-spoons/",
+          "publishedOn": "2022-11-16T14:23:31.000Z",
+          "wordCount": 1801,
+          "title": "Evernote to be acquired by Bending Spoons",
+          "imageUrl": "https://s24953.pcdn.co/blog/wp-content/uploads/2022/11/Evernote_BendingSpoons_hero.png"
+        },
+        {
+          "id": "https://www.theguardian.com/world/2022/nov/15/hand-of-irulegi-ancient-spanish-artefact-rewrites-history-of-basque-language",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.theguardian.com/world/2022/nov/15/hand-of-irulegi-ancient-spanish-artefact-rewrites-history-of-basque-language",
+          "publishedOn": "2022-11-16T13:50:24.000Z",
+          "wordCount": 4968,
+          "title": "Hand of Irulegi: ancient artefact could help trace origins of Basque language",
+          "imageUrl": "https://i.guim.co.uk/img/media/3086172435209c82367f73cad44e7d0cef6d6e1c/0_373_2775_1665/master/2775.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc&enable=upscale&s=306cda15be2823010489976200c9ed76"
+        },
+        {
+          "id": "https://news.ycombinator.com/item?id=33622295",
+          "author": null,
+          "description": "Comments",
+          "link": "https://news.ycombinator.com/item?id=33622295",
+          "publishedOn": "2022-11-16T13:03:16.000Z",
+          "wordCount": 19516,
+          "title": "Ask HN: Anyone go through Montessori education until age 12 (end of grade 6)?",
+          "imageUrl": null
+        },
+        {
+          "id": "https://www.nature.com/articles/d41586-022-03693-6",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.nature.com/articles/d41586-022-03693-6",
+          "publishedOn": "2022-11-16T11:36:43.000Z",
+          "wordCount": 3317,
+          "title": "Overhyping hydrogen as a fuel",
+          "imageUrl": "https://media.nature.com/lw1024/magazine-assets/d41586-022-03693-6/d41586-022-03693-6_23708964.jpg"
+        },
+        {
+          "id": "https://os.mbed.com/docs/mbed-os/v6.15/apis/LoRa-tutorial.html",
+          "author": null,
+          "description": "Comments",
+          "link": "https://os.mbed.com/docs/mbed-os/v6.15/apis/LoRa-tutorial.html",
+          "publishedOn": "2022-11-16T11:34:07.000Z",
+          "wordCount": 3722,
+          "title": "Building a private LoRa network (2017)",
+          "imageUrl": null
+        },
+        {
           "id": "https://www.traveloffpath.com/americans-will-have-to-provide-biometrics-and-pay-fee-traveling-to-the-u-k-from-2023/",
           "author": null,
           "description": "Comments",
@@ -147,6 +407,26 @@
           "wordCount": 5701,
           "title": "The Bucks can’t wear cream uniforms because they interfere with digital ads",
           "imageUrl": "https://substackcdn.com/image/fetch/w_1200,h_600,c_limit,f_jpg,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2Fd0600805-09c8-437e-9e3f-998804ba39f2_2166x1608.png"
+        },
+        {
+          "id": "https://www.newyorker.com/magazine/2019/04/08/the-day-the-dinosaurs-died",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.newyorker.com/magazine/2019/04/08/the-day-the-dinosaurs-died",
+          "publishedOn": "2022-11-15T21:39:30.000Z",
+          "wordCount": 65810,
+          "title": "The day the dinosaurs died (2019)",
+          "imageUrl": "https://media.newyorker.com/photos/5c9d265802c93412cad6e295/16:9/w_1280,c_limit/190408_r34032.jpg"
+        },
+        {
+          "id": "https://www.spiked-online.com/2022/11/14/the-twilight-of-nietzsche/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.spiked-online.com/2022/11/14/the-twilight-of-nietzsche/",
+          "publishedOn": "2022-11-15T20:19:28.000Z",
+          "wordCount": 1773,
+          "title": "The Twilight of Nietzsche",
+          "imageUrl": "https://www.spiked-online.com/wp-content/uploads/2022/11/nietzsche-1536x864.jpg"
         },
         {
           "id": "https://www.youtube.com/watch?v=851U557j6HE",
@@ -249,6 +529,16 @@
           "imageUrl": "https://scx2.b-cdn.net/gfx/news/hires/2022/researchers-devise-rev.jpg"
         },
         {
+          "id": "https://www.youtube.com/watch?v=MYqCWxdM4ww",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.youtube.com/watch?v=MYqCWxdM4ww",
+          "publishedOn": "2022-11-15T16:42:40.000Z",
+          "wordCount": null,
+          "title": "Electric ferry uses a long extension cord [video]",
+          "imageUrl": null
+        },
+        {
           "id": "https://galactica.org/",
           "author": null,
           "description": "Comments",
@@ -299,6 +589,16 @@
           "imageUrl": null
         },
         {
+          "id": "https://spectrum.ieee.org/the-inside-story-of-texas-instruments-biggest-blunder-the-tms9900-microprocessor",
+          "author": null,
+          "description": "Comments",
+          "link": "https://spectrum.ieee.org/the-inside-story-of-texas-instruments-biggest-blunder-the-tms9900-microprocessor",
+          "publishedOn": "2022-11-15T13:07:48.000Z",
+          "wordCount": 14199,
+          "title": "Texas Instruments’ Biggest Blunder: The TMS9900 Microprocessor (2017)",
+          "imageUrl": "https://spectrum.ieee.org/media-library/tms9900-chip.jpg?id=25583258&width=1200&height=600&coordinates=0%2C77%2C0%2C78"
+        },
+        {
           "id": "https://www.apple.com/newsroom/2022/11/emergency-sos-via-satellite-available-today-on-iphone-14-lineup/",
           "author": null,
           "description": "Comments",
@@ -317,6 +617,16 @@
           "wordCount": 2181,
           "title": "I record myself on audio 24x7 and use an AI to process the information",
           "imageUrl": "http://roberdam.com/assets/images/whisper3.png"
+        },
+        {
+          "id": "http://blog.computationalcomplexity.org/2022/11/who-first-thought-of-notion-of.html",
+          "author": null,
+          "description": "Comments",
+          "link": "http://blog.computationalcomplexity.org/2022/11/who-first-thought-of-notion-of.html",
+          "publishedOn": "2022-11-15T11:45:02.000Z",
+          "wordCount": 5433,
+          "title": "Who first thought of the notion of Polynomial Time?",
+          "imageUrl": null
         },
         {
           "id": "https://pluralistic.net/2022/11/15/public-immutable-crimes/#andy-greenberg",
@@ -8617,306 +8927,6 @@
           "wordCount": 3042,
           "title": "Syntax Design (2014)",
           "imageUrl": null
-        },
-        {
-          "id": "https://www.statnews.com/2022/10/17/boston-university-researchers-testing-of-lab-made-version-of-covid-virus-draws-government-scrutiny/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.statnews.com/2022/10/17/boston-university-researchers-testing-of-lab-made-version-of-covid-virus-draws-government-scrutiny/",
-          "publishedOn": "2022-10-18T12:47:42.000Z",
-          "wordCount": 2848,
-          "title": "Researchers’ tests of lab-made version of Covid virus draw scrutiny",
-          "imageUrl": "https://www.statnews.com/wp-content/uploads/2020/03/49655855721_0ed2931742_o-1024x576.jpg"
-        },
-        {
-          "id": "https://stratechery.com/2022/microsoft-full-circle/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://stratechery.com/2022/microsoft-full-circle/",
-          "publishedOn": "2022-10-18T12:36:41.000Z",
-          "wordCount": 4793,
-          "title": "Microsoft Full Circle",
-          "imageUrl": "https://149384716.v2.pressablecdn.com/wp-content/uploads/2013/07/hierachryneedsdevices.jpg"
-        },
-        {
-          "id": "https://www.quantamagazine.org/mathematicians-surprised-by-hidden-fibonacci-numbers-20221017/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.quantamagazine.org/mathematicians-surprised-by-hidden-fibonacci-numbers-20221017/",
-          "publishedOn": "2022-10-18T11:28:51.000Z",
-          "wordCount": 5218,
-          "title": "Mathematicians Discover the Fibonacci Numbers Hiding in Strange Spaces",
-          "imageUrl": "https://d2r55xnwy6nx47.cloudfront.net/uploads/2022/10/Infinite-Staircases_1200_Social.webp"
-        },
-        {
-          "id": "http://www.ivarch.com/programs/pv.shtml",
-          "author": null,
-          "description": "Comments",
-          "link": "http://www.ivarch.com/programs/pv.shtml",
-          "publishedOn": "2022-10-18T09:15:05.000Z",
-          "wordCount": 1336,
-          "title": "Pipe Viewer",
-          "imageUrl": null
-        },
-        {
-          "id": "https://alecmuffett.com/article/16257",
-          "author": null,
-          "description": "Comments",
-          "link": "https://alecmuffett.com/article/16257",
-          "publishedOn": "2022-10-18T08:47:47.000Z",
-          "wordCount": 5190,
-          "title": "Abuse prevention is tradecraft",
-          "imageUrl": "https://alecmuffett.com/wp-content/uploads/2022/08/Screenshot-2022-08-07-at-21.01.47.png"
-        },
-        {
-          "id": "https://hakaimagazine.com/features/somethings-jellyfishy-in-the-state-of-italy/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://hakaimagazine.com/features/somethings-jellyfishy-in-the-state-of-italy/",
-          "publishedOn": "2022-10-18T02:24:56.000Z",
-          "wordCount": 3521,
-          "title": "Something’s jellyfishy in the state of Italy",
-          "imageUrl": "https://hakaimagazine.com/wp-content/uploads/facebook-jellyfish-future.jpg"
-        },
-        {
-          "id": "http://annas-blog.org/blog-how-to-become-a-pirate-archivist.html",
-          "author": null,
-          "description": "Comments",
-          "link": "http://annas-blog.org/blog-how-to-become-a-pirate-archivist.html",
-          "publishedOn": "2022-10-17T23:07:19.000Z",
-          "wordCount": 3525,
-          "title": "How to become a pirate archivist",
-          "imageUrl": "http://annas-blog.org/party-guy.png"
-        },
-        {
-          "id": "https://githubcopilotinvestigation.com/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://githubcopilotinvestigation.com/",
-          "publishedOn": "2022-10-17T22:30:08.000Z",
-          "wordCount": 2292,
-          "title": "GitHub Copi­lot inves­ti­ga­tion",
-          "imageUrl": "https://githubcopilotinvestigation.com/img/og-image.gif"
-        },
-        {
-          "id": "https://waxy.org/2022/09/ai-data-laundering-how-academic-and-nonprofit-researchers-shield-tech-companies-from-accountability/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://waxy.org/2022/09/ai-data-laundering-how-academic-and-nonprofit-researchers-shield-tech-companies-from-accountability/",
-          "publishedOn": "2022-10-17T21:26:02.000Z",
-          "wordCount": 2090,
-          "title": "AI Data Laundering",
-          "imageUrl": "https://waxy.org/wp-content/uploads/2022/09/image-6-1024x452.png"
-        },
-        {
-          "id": "https://ioactive.com/reverse-engineers-perspective-on-the-boeing-787-51-days-airworthiness-directive/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://ioactive.com/reverse-engineers-perspective-on-the-boeing-787-51-days-airworthiness-directive/",
-          "publishedOn": "2022-10-17T20:59:34.000Z",
-          "wordCount": 4029,
-          "title": "Reverse Engineer’s Perspective on the Boeing 787 ‘51 days’ Directive",
-          "imageUrl": "https://ioactive.com/wp-content/uploads/2020/05/image002.png"
-        },
-        {
-          "id": "https://www.hydro-international.com/content/news/seabed-2030-almost-25-of-world-s-seafloor-now-mapped",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.hydro-international.com/content/news/seabed-2030-almost-25-of-world-s-seafloor-now-mapped",
-          "publishedOn": "2022-10-17T20:37:49.000Z",
-          "wordCount": 1890,
-          "title": "Almost 25% of world’s seafloor now mapped",
-          "imageUrl": "https://www.hydro-international.com/cache/f/a/c/9/f/fac9fb37b0bb6689d7396bd2b3db2a638c3ae72f.jpeg"
-        },
-        {
-          "id": "https://dagster.io/blog/web-workers-performance-issue",
-          "author": null,
-          "description": "Comments",
-          "link": "https://dagster.io/blog/web-workers-performance-issue",
-          "publishedOn": "2022-10-17T20:35:11.000Z",
-          "wordCount": 2126,
-          "title": "Counterintuitive web worker behavior",
-          "imageUrl": "https://dagster.io/posts/web-workers-performance-issue/dagster-web-workers-blog-cover.jpg"
-        },
-        {
-          "id": "https://educatedguesswork.org/posts/traffic-relaying/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://educatedguesswork.org/posts/traffic-relaying/",
-          "publishedOn": "2022-10-17T20:31:04.000Z",
-          "wordCount": 5169,
-          "title": "How to hide your IP address",
-          "imageUrl": "https://educatedguesswork.org/img/consumer-vpn.png"
-        },
-        {
-          "id": "https://news.ycombinator.com/item?id=33238708",
-          "author": null,
-          "description": "Comments",
-          "link": "https://news.ycombinator.com/item?id=33238708",
-          "publishedOn": "2022-10-17T19:53:20.000Z",
-          "wordCount": 8178,
-          "title": "Ask HN: Have you ever heard of users demonstrating against software?",
-          "imageUrl": null
-        },
-        {
-          "id": "https://github.com/madler/pigz",
-          "author": null,
-          "description": "Comments",
-          "link": "https://github.com/madler/pigz",
-          "publishedOn": "2022-10-17T19:19:16.000Z",
-          "wordCount": 975,
-          "title": "pigz: A parallel implementation of gzip for multi-core machines",
-          "imageUrl": "https://opengraph.githubassets.com/43611142d1ffb511cdf62f59a0b3b12f95b9861e53e002f662ae83b20a765424/madler/pigz"
-        },
-        {
-          "id": "https://sensebridge.net/projects/northpaw/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://sensebridge.net/projects/northpaw/",
-          "publishedOn": "2022-10-17T18:50:05.000Z",
-          "wordCount": 623,
-          "title": "North Paw",
-          "imageUrl": null
-        },
-        {
-          "id": "https://ddkang.github.io/papers/2022/viva-cidr.pdf",
-          "author": null,
-          "description": "Comments",
-          "link": "https://ddkang.github.io/papers/2022/viva-cidr.pdf",
-          "publishedOn": "2022-10-17T18:33:49.000Z",
-          "wordCount": 17961,
-          "title": "Viva: An End-to-End System for Interactive Video Analytics [pdf]",
-          "imageUrl": null
-        },
-        {
-          "id": "https://godotengine.org/article/emulating-double-precision-gpu-render-large-worlds",
-          "author": null,
-          "description": "Comments",
-          "link": "https://godotengine.org/article/emulating-double-precision-gpu-render-large-worlds",
-          "publishedOn": "2022-10-17T17:55:35.000Z",
-          "wordCount": 1982,
-          "title": "Emulating double precision on the GPU to render large worlds",
-          "imageUrl": "https://godotengine.org/storage/app/uploads/public/634/d8d/43e/634d8d43e5bd4838492470.png"
-        },
-        {
-          "id": "https://download.swift.org/docs/assets/generics.pdf",
-          "author": null,
-          "description": "Comments",
-          "link": "https://download.swift.org/docs/assets/generics.pdf",
-          "publishedOn": "2022-10-17T17:34:58.000Z",
-          "wordCount": 17934,
-          "title": "Compiling Swift Generics [pdf]",
-          "imageUrl": null
-        },
-        {
-          "id": "https://www.crunchydata.com/blog/a-look-at-postgres-15-merge-command-with-examples",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.crunchydata.com/blog/a-look-at-postgres-15-merge-command-with-examples",
-          "publishedOn": "2022-10-17T17:22:29.000Z",
-          "wordCount": 1955,
-          "title": "Postgres 15 Merge Command with Examples",
-          "imageUrl": "https://imagedelivery.net/lPM0ntuwQfh8VQgJRu0mFg/06015135-21b8-4be7-8522-5c49dfe5ab00/public"
-        },
-        {
-          "id": "https://blogs.ischool.berkeley.edu/w231/2019/10/14/does-cashless-society-discriminate-against-the-poor-and-elderly/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://blogs.ischool.berkeley.edu/w231/2019/10/14/does-cashless-society-discriminate-against-the-poor-and-elderly/",
-          "publishedOn": "2022-10-17T17:21:23.000Z",
-          "wordCount": 1086,
-          "title": "Does cashless society discriminate against the poor and elderly? (2019)",
-          "imageUrl": null
-        },
-        {
-          "id": "https://tigyog.app/d/H7XOvXvC_x/r/goedel-s-first-incompleteness-theorem",
-          "author": null,
-          "description": "Comments",
-          "link": "https://tigyog.app/d/H7XOvXvC_x/r/goedel-s-first-incompleteness-theorem",
-          "publishedOn": "2022-10-17T17:00:49.000Z",
-          "wordCount": 7606,
-          "title": "Gödel’s first incompleteness theorem – an interactive tutorial",
-          "imageUrl": "https://tigyog.app/images/icon-512.png"
-        },
-        {
-          "id": "https://www.ics.uci.edu/~eppstein/junkyard/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.ics.uci.edu/~eppstein/junkyard/",
-          "publishedOn": "2022-10-17T16:30:36.000Z",
-          "wordCount": 124,
-          "title": "The Geometry Junkyard",
-          "imageUrl": null
-        },
-        {
-          "id": "https://crates.io/crates/rg",
-          "author": null,
-          "description": "Comments",
-          "link": "https://crates.io/crates/rg",
-          "publishedOn": "2022-10-17T15:53:41.000Z",
-          "wordCount": null,
-          "title": "“You meant to install ripgrep”",
-          "imageUrl": null
-        },
-        {
-          "id": "https://notado.substack.com/p/how-flyio-and-tailscale-saved-notado",
-          "author": null,
-          "description": "Comments",
-          "link": "https://notado.substack.com/p/how-flyio-and-tailscale-saved-notado",
-          "publishedOn": "2022-10-17T15:37:10.000Z",
-          "wordCount": 7091,
-          "title": "How Fly.io and Tailscale Saved Notado",
-          "imageUrl": "https://substackcdn.com/image/fetch/w_1200,h_600,c_limit,f_jpg,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2Fcdb8ad74-1f92-4b98-a78f-f5bf1f458137_1840x1166.png"
-        },
-        {
-          "id": "https://paulosman.me/2022/10/17/being-on-a-board/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://paulosman.me/2022/10/17/being-on-a-board/",
-          "publishedOn": "2022-10-17T15:28:20.000Z",
-          "wordCount": 1916,
-          "title": "Being on a board as an employee",
-          "imageUrl": null
-        },
-        {
-          "id": "https://www.paddleyourownkanoo.com/2022/10/14/american-airlines-is-trying-to-stop-a-popular-iphone-app-thats-become-a-must-have-for-its-flight-attendants/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.paddleyourownkanoo.com/2022/10/14/american-airlines-is-trying-to-stop-a-popular-iphone-app-thats-become-a-must-have-for-its-flight-attendants/",
-          "publishedOn": "2022-10-17T14:29:35.000Z",
-          "wordCount": 6455,
-          "title": "American Airlines is trying to stop a popular app used by flight attendants",
-          "imageUrl": "https://www.paddleyourownkanoo.com/wp-content/uploads/2021/07/shutterstock_1579943791-scaled.jpg"
-        },
-        {
-          "id": "https://datafinnovation.medium.com/stablecoin-mechanics-2-tether-celsius-15c9ecdaaacd",
-          "author": null,
-          "description": "Comments",
-          "link": "https://datafinnovation.medium.com/stablecoin-mechanics-2-tether-celsius-15c9ecdaaacd",
-          "publishedOn": "2022-10-17T14:24:10.000Z",
-          "wordCount": 3486,
-          "title": "Stablecoin Mechanics 2: Tether-Celsius",
-          "imageUrl": "https://miro.medium.com/max/1144/1*cCbiKA9bE7KEjfw-YY8X2A.png"
-        },
-        {
-          "id": "https://twitter.com/Foone/status/1581643197427523584",
-          "author": null,
-          "description": "Comments",
-          "link": "https://twitter.com/Foone/status/1581643197427523584",
-          "publishedOn": "2022-10-17T14:10:31.000Z",
-          "wordCount": 399,
-          "title": "Never trust a system that seems to be working",
-          "imageUrl": null
-        },
-        {
-          "id": "https://ruky.me/2022/10/17/codeberg-a-github-alternative-from-europe/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://ruky.me/2022/10/17/codeberg-a-github-alternative-from-europe/",
-          "publishedOn": "2022-10-17T13:43:31.000Z",
-          "wordCount": 1974,
-          "title": "Codeberg: A GitHub alternative from Europe",
-          "imageUrl": "https://ruky.me/wp-content/uploads/2020/12/15A7DE22-2C11-4D5A-A2EE-9CCE51B929B5.jpeg"
         }
       ]
     }
