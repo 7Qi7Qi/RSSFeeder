@@ -90,26 +90,6 @@
           "wordCount": 259,
           "title": "Kubernetes线上实战训练营（10月班）",
           "imageUrl": null
-        },
-        {
-          "id": "http://weekly.dockone.io/article/2434942",
-          "author": "megrez",
-          "description": "译注：在本文中，为理解的一致性，我们保留了OpenTelemetry的术语，不作翻译：包括但不限于Instrument、Measurement、Exemplar、Baggage、Context等。需要注意区分Measurement和Instrument的区别，前者指的是度量数据，而后者通常是指用于监测的代码和工具。\nOpenTelemetry是由云原生计算基金会（CNCF）托管的一个用于基础设施性能检测的开源可观测性框架。该项目在几乎所有主要的云供应商（AWS、Google、Microsoft）以及可观测性供应商（包括Timescale）的贡献下得到了极大的发展，以至于它成为按活跃度和贡献者排名第二的CNCF项目，仅次于Kubernetes本身。\nOpenTelemetry旨在为所有类型的可观测数据定义一个单一的标准（在OpenTelemetry的术语中被称作Signals信号），包括监控指标、日志和链路追踪。通过一系列的工具、库、API、SDK和exporters，OpenTelemetry从根本上简化了从服务中收集信号并将其发送到你所选用的后端服务的过程，为更多的用户和供应商打开了可观测性的大门。\n在设计OpenTelemetry指标标准时，有三个设计目标被采纳：\n提供将监控指标与其他类型的可观察性数据相连接的能力：要么是通过Exemplars在链路追踪和监控指标之间直接连接，要么是通过Baggage和Context提供与日志和链路追踪享有相同的相关元数据，间接地连接。\n允许从OpenCensus标准轻松迁移到OpenTelemetry标准。\n在可能的情况下提供对其他主要指标实现的全面支持。Prometheus和StatsD是专门适配的，能够完全支持：那些迁移到OpenTelemetry的用户可以看到与使用其原生客户端类似的结果。\n\nOpenTelemetry提供了一个…",
-          "link": "http://weekly.dockone.io/article/2434942",
-          "publishedOn": "2022-10-20T01:48:03.496Z",
-          "wordCount": 627,
-          "title": "深入OpenTelemetry指标",
-          "imageUrl": null
-        },
-        {
-          "id": "http://weekly.dockone.io/article/2434941",
-          "author": "colstuwjx",
-          "description": "【编者的话】引入 Kubernetes 是过早优化的危险信号？且听听本文作者怎么说吧。\n如果你所在的企业引入了 Kubernetes，那么你们很有可能会把精力花在一些偏离主线的事情上。\n乍一听这句话可能会感觉到很奇怪，毕竟我们花了这么长的时间来布道和兜售 Kubernetes 的发行版以及咨询服务，致力于帮助人们能够更加充分地利用它，但是事情就是这样！你也许不应该针对你的产品使用 Kubernetes 以及其他一堆“酷”的东西。\n绝大多数的初创以及扩张阶段的企业在构建软件时都应该避免使用 Kubernetes 以及其他的一些过早优化。如果你所在的企业使用了 Kubernetes，那么你们很有可能会把精力花在一些偏离主线的事情上。你们可能已经跌入了过早优化的陷阱。\n请不要觉得这篇文章只是针对 Kubernetes。不是的。这篇文章针对的是工程师们在构建软件的过程中可能做出的所有过早优化。\n以下是我见过的一些例子：\n将 Kubernetes 用于一个应用（还是个 Web 应用）的企业；\n应用程序用到了不只一种语言。比如，后端用的是 Golang、Ruby 或者是 PHP 等语言，然后前端 Web 用的是 React 或者 Vue 等框架；\n没有用云服务来托管应用。比如可以用 Heroku、Vercel、Netlify 或者 Fly.io 等。对于绝大多数产品团队来说，如果他们必须组建一个运维或者基础架构团队的话，他们的解决方案也将会是过度设计的。\n\n试想一下，一个人在真正开始玩他的爱好之前花费了大量的时间和金钱为这个爱好挑选最好的装备。\n当然，这里面有一些观点是比较主观的。也许你知道你会长期坚持你的新爱好，而且你有一个朋友刚好是这方面的行家，他可以帮你挑选合适的装备。不得不说，我自己就很擅长为自己辩解为什么要挑选精英装备，尽管我可能永远不会真的注意到这其中的区别。\n好钢要用在刀…",
-          "link": "http://weekly.dockone.io/article/2434941",
-          "publishedOn": "2022-10-20T01:48:03.484Z",
-          "wordCount": 372,
-          "title": "引入 Kubernetes 是过早优化的危险信号",
-          "imageUrl": null
         }
       ]
     },
@@ -118,6 +98,276 @@
       "feedUrl": "https://news.ycombinator.com/rss",
       "siteUrl": "https://news.ycombinator.com/",
       "articles": [
+        {
+          "id": "https://devblogs.microsoft.com/oldnewthing/20221115-00/?p=107399",
+          "author": null,
+          "description": "Comments",
+          "link": "https://devblogs.microsoft.com/oldnewthing/20221115-00/?p=107399",
+          "publishedOn": "2022-11-18T23:44:13.000Z",
+          "wordCount": 4442,
+          "title": "How Windows decide whether your computer has limited or full Internet access",
+          "imageUrl": "https://devblogs.microsoft.com/oldnewthing/wp-content/uploads/sites/38/2019/02/ShowCover.jpg"
+        },
+        {
+          "id": "https://reactiverse.io/es4x/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://reactiverse.io/es4x/",
+          "publishedOn": "2022-11-18T23:44:06.000Z",
+          "wordCount": 188,
+          "title": "es4x, a server framework on top of GraalJS and Vert.x",
+          "imageUrl": null
+        },
+        {
+          "id": "https://en.wikipedia.org/wiki/The_Centipede%27s_Dilemma",
+          "author": null,
+          "description": "Comments",
+          "link": "https://en.wikipedia.org/wiki/The_Centipede%27s_Dilemma",
+          "publishedOn": "2022-11-18T22:52:12.000Z",
+          "wordCount": 1246,
+          "title": "The Centipede’s Dilemma",
+          "imageUrl": null
+        },
+        {
+          "id": "https://cedwards.xyz/use-this-kernel-parameter-in-your-kiosk/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://cedwards.xyz/use-this-kernel-parameter-in-your-kiosk/",
+          "publishedOn": "2022-11-18T22:51:43.000Z",
+          "wordCount": 378,
+          "title": "Use this kernel parameter in your kiosk",
+          "imageUrl": null
+        },
+        {
+          "id": "https://freesubtitles.ai/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://freesubtitles.ai/",
+          "publishedOn": "2022-11-18T22:33:41.000Z",
+          "wordCount": 945,
+          "title": "Show HN: I made a free transcription service powered by Whisper AI",
+          "imageUrl": null
+        },
+        {
+          "id": "https://www.nytimes.com/2022/11/18/technology/elizabeth-holmes-sentence-theranos.html",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.nytimes.com/2022/11/18/technology/elizabeth-holmes-sentence-theranos.html",
+          "publishedOn": "2022-11-18T22:22:42.000Z",
+          "wordCount": null,
+          "title": "Elizabeth Holmes is sentenced to more than 11 years for fraud",
+          "imageUrl": null
+        },
+        {
+          "id": "https://robbreport.com/motors/cars/manual-transmission-electric-vehicles-future-1234774864/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://robbreport.com/motors/cars/manual-transmission-electric-vehicles-future-1234774864/",
+          "publishedOn": "2022-11-18T22:02:24.000Z",
+          "wordCount": 5559,
+          "title": "The stick shift might survive the electric revolution",
+          "imageUrl": "https://robbreport.com/wp-content/uploads/2022/04/supramanual04.jpg?w=681&h=383&crop=1"
+        },
+        {
+          "id": "https://www.user.tu-berlin.de/mhaug/fast-typesetting-incremental-compilation.pdf",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.user.tu-berlin.de/mhaug/fast-typesetting-incremental-compilation.pdf",
+          "publishedOn": "2022-11-18T21:29:07.000Z",
+          "wordCount": 82366,
+          "title": "Fast Typesetting with Incremental Compilation [pdf]",
+          "imageUrl": null
+        },
+        {
+          "id": "https://www.utilitydive.com/news/us-can-reach-100-clean-power-by-2035-doe-finds-but-tough-reliability-and/635874/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.utilitydive.com/news/us-can-reach-100-clean-power-by-2035-doe-finds-but-tough-reliability-and/635874/",
+          "publishedOn": "2022-11-18T21:12:37.000Z",
+          "wordCount": 7616,
+          "title": "US can reach 100% clean power by 2035, DOE finds",
+          "imageUrl": "https://www.utilitydive.com/imgproxy/pdMZznTmfhqV6jBa5xZy9usvIikFxOMfEtCazhZZJe4/g:ce/rs:fill:770:364:0/bG9jYWw6Ly8vZGl2ZWltYWdlL0dldHR5SW1hZ2VzLTEzMzU2NzE3MjEuanBn.jpg"
+        },
+        {
+          "id": "https://trevorklee.substack.com/p/things-ive-noticed-while-visiting",
+          "author": null,
+          "description": "Comments",
+          "link": "https://trevorklee.substack.com/p/things-ive-noticed-while-visiting",
+          "publishedOn": "2022-11-18T20:21:59.000Z",
+          "wordCount": 5944,
+          "title": "Things I've noticed while visiting the ICU",
+          "imageUrl": "https://substackcdn.com/image/fetch/w_1200,h_600,c_limit,f_jpg,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F924d217e-12e9-4fd7-811e-83a2da2a05ec_1440x900.png"
+        },
+        {
+          "id": "https://www.youtube.com/watch?v=5dl4EQ5d47U",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.youtube.com/watch?v=5dl4EQ5d47U",
+          "publishedOn": "2022-11-18T20:21:03.000Z",
+          "wordCount": null,
+          "title": "The thinnest video on YouTube [video]",
+          "imageUrl": null
+        },
+        {
+          "id": "https://www.thecgo.org/research/the-decentralized-web-and-the-future-of-section-230/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.thecgo.org/research/the-decentralized-web-and-the-future-of-section-230/",
+          "publishedOn": "2022-11-18T19:56:00.000Z",
+          "wordCount": 9619,
+          "title": "The decentralized web and the future of Section 230",
+          "imageUrl": "https://www.thecgo.org/wp-content/uploads/2020/05/fb-preview.png"
+        },
+        {
+          "id": "https://www.macrumors.com/2022/11/18/vmware-fusion-13-apple-silicon-macs/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.macrumors.com/2022/11/18/vmware-fusion-13-apple-silicon-macs/",
+          "publishedOn": "2022-11-18T19:51:19.000Z",
+          "wordCount": 3364,
+          "title": "VMware Fusion 13 – native support for Apple Silicon Macs",
+          "imageUrl": "https://images.macrumors.com/t/X5poVvFs27L1_BKCRtX2JnCfWa8=/1950x/article-new/2022/11/fusion-13.jpg"
+        },
+        {
+          "id": "https://www.nytimes.com/2022/11/17/science/retired-nuclear-bombs-b83.html",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.nytimes.com/2022/11/17/science/retired-nuclear-bombs-b83.html",
+          "publishedOn": "2022-11-18T19:27:30.000Z",
+          "wordCount": null,
+          "title": "The surprising afterlife of unwanted atom bombs",
+          "imageUrl": null
+        },
+        {
+          "id": "https://hackaday.com/2022/11/18/faceless-clock-makes-your-think-twice-about-how-it-works/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://hackaday.com/2022/11/18/faceless-clock-makes-your-think-twice-about-how-it-works/",
+          "publishedOn": "2022-11-18T19:14:01.000Z",
+          "wordCount": 2361,
+          "title": "Faceless clock makes you think twice about how it works",
+          "imageUrl": "https://hackaday.com/wp-content/uploads/2022/11/1280x720-vtime0_42-take2022-11-17-13.40.53.png"
+        },
+        {
+          "id": "https://jay.gooby.org/2022/05/06/use-a-basic-gmail-account-to-send-mail-as-with-a-domain-that-uses-cloudflare-email-routing",
+          "author": null,
+          "description": "Comments",
+          "link": "https://jay.gooby.org/2022/05/06/use-a-basic-gmail-account-to-send-mail-as-with-a-domain-that-uses-cloudflare-email-routing",
+          "publishedOn": "2022-11-18T19:02:20.000Z",
+          "wordCount": 1081,
+          "title": "Use a custom domain to send emails with Gmail using Cloudflare email routing",
+          "imageUrl": "https://jay.gooby.org/images/cards/2022-05-06-use-a-basic-gmail-account-to-send-mail-as-with-a-domain-that-uses-cloudflare-email-routing.png"
+        },
+        {
+          "id": "https://www.zdnet.com/article/intels-new-deepfake-detector-can-spot-a-real-or-fake-video-based-on-blood-flow-in-video-pixels/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.zdnet.com/article/intels-new-deepfake-detector-can-spot-a-real-or-fake-video-based-on-blood-flow-in-video-pixels/",
+          "publishedOn": "2022-11-18T18:47:36.000Z",
+          "wordCount": 12150,
+          "title": "Deepfake detector can spot a real or fake video based on blood flow in pixels",
+          "imageUrl": "https://www.zdnet.com/a/img/resize/c7216bc6c55df3e816e66ff280e940c823d8f034/2022/03/07/2cd77796-f78b-4744-a9b6-f36c73108dba/facial-recognition.jpg?auto=webp&fit=crop&height=675&width=1200"
+        },
+        {
+          "id": "https://news.ycombinator.com/item?id=33659852",
+          "author": null,
+          "description": "Comments",
+          "link": "https://news.ycombinator.com/item?id=33659852",
+          "publishedOn": "2022-11-18T18:47:33.000Z",
+          "wordCount": 19316,
+          "title": "Ask HN: What is the most impactful thing you've built?",
+          "imageUrl": null
+        },
+        {
+          "id": "https://twitter.com/elonmusk/status/1593673339826212864",
+          "author": null,
+          "description": "Comments",
+          "link": "https://twitter.com/elonmusk/status/1593673339826212864",
+          "publishedOn": "2022-11-18T18:36:23.000Z",
+          "wordCount": 399,
+          "title": "“Negative/hate tweets will be max deboosted and demonetized”",
+          "imageUrl": null
+        },
+        {
+          "id": "https://www.nature.com/articles/d41586-022-03783-5",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.nature.com/articles/d41586-022-03783-5",
+          "publishedOn": "2022-11-18T17:44:34.000Z",
+          "wordCount": 3390,
+          "title": "The leap second’s time is up: world votes to stop pausing clocks",
+          "imageUrl": "https://media.nature.com/lw1024/magazine-assets/d41586-022-03783-5/d41586-022-03783-5_23726540.jpg"
+        },
+        {
+          "id": "https://mojojs.org/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://mojojs.org/",
+          "publishedOn": "2022-11-18T16:13:39.000Z",
+          "wordCount": 558,
+          "title": "Mojo.js is a port of Perl's Mojolicious to TypeScript",
+          "imageUrl": null
+        },
+        {
+          "id": "https://vickiboykis.com/2022/11/18/some-notes-on-the-stable-diffusion-safety-filter/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://vickiboykis.com/2022/11/18/some-notes-on-the-stable-diffusion-safety-filter/",
+          "publishedOn": "2022-11-18T16:10:33.000Z",
+          "wordCount": 1740,
+          "title": "Some notes on the Stable Diffusion safety filter",
+          "imageUrl": "https://veekaybee.github.io/images/logo.png"
+        },
+        {
+          "id": "https://posterity.life/automations/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://posterity.life/automations/",
+          "publishedOn": "2022-11-18T15:07:05.000Z",
+          "wordCount": 652,
+          "title": "Show HN: Posterity Automations – Get things done from the afterlife",
+          "imageUrl": "https://posterity.life/automations/cover-0.jpg"
+        },
+        {
+          "id": "https://phys.org/news/2022-11-earth-ronnagrams-metric-prefixes-voted.html",
+          "author": null,
+          "description": "Comments",
+          "link": "https://phys.org/news/2022-11-earth-ronnagrams-metric-prefixes-voted.html",
+          "publishedOn": "2022-11-18T14:52:51.000Z",
+          "wordCount": 1955,
+          "title": "Earth now weighs six ronnagrams: New metric prefixes voted in",
+          "imageUrl": "https://scx2.b-cdn.net/gfx/news/2022/the-earths-mass-can-no.jpg"
+        },
+        {
+          "id": "https://mapoftheuniverse.net/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://mapoftheuniverse.net/",
+          "publishedOn": "2022-11-18T14:49:41.000Z",
+          "wordCount": 1591,
+          "title": "Map of the observable universe",
+          "imageUrl": null
+        },
+        {
+          "id": "https://www.okapi.wiki/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.okapi.wiki/",
+          "publishedOn": "2022-11-18T13:23:08.000Z",
+          "wordCount": 4124,
+          "title": "Okapi – A micro web framework for Haskell",
+          "imageUrl": null
+        },
+        {
+          "id": "https://www.filosofiaesoterica.com/the-nothingness-of-personality/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.filosofiaesoterica.com/the-nothingness-of-personality/",
+          "publishedOn": "2022-11-18T07:50:37.000Z",
+          "wordCount": 3636,
+          "title": "The Nothingness of Personality (1922)",
+          "imageUrl": "https://www.filosofiaesoterica.com/wp-content/uploads/2017/02/The-Nothingness-of-Personality-SEM-MOLD.png"
+        },
         {
           "id": "https://tailscale.com/blog/introducing-tailscale-funnel/",
           "author": null,
@@ -357,6 +607,16 @@
           "wordCount": 434,
           "title": "The Unison language – a new approach to Distributed programming",
           "imageUrl": "https://unison-lang.org/assets/unison-social.png"
+        },
+        {
+          "id": "https://github.com/vangberg/foreign-dispatch/tree/main/autocomplete",
+          "author": null,
+          "description": "Comments",
+          "link": "https://github.com/vangberg/foreign-dispatch/tree/main/autocomplete",
+          "publishedOn": "2022-11-17T12:05:52.000Z",
+          "wordCount": 496,
+          "title": "Show HN: Text editor with inline English-German dictionary",
+          "imageUrl": "https://opengraph.githubassets.com/42ba692584413989c0f4dd080be00a16e54a25ed6d6092ac7e8bf99b0a9487d1/vangberg/foreign-dispatch"
         },
         {
           "id": "https://mathoverflow.net/questions/207321/how-did-cole-factor-267-1-in-1903",
@@ -607,6 +867,16 @@
           "wordCount": 19516,
           "title": "Ask HN: Anyone go through Montessori education until age 12 (end of grade 6)?",
           "imageUrl": null
+        },
+        {
+          "id": "https://github.com/quoll/asami",
+          "author": null,
+          "description": "Comments",
+          "link": "https://github.com/quoll/asami",
+          "publishedOn": "2022-11-16T12:19:58.000Z",
+          "wordCount": 2960,
+          "title": "Asami: A flexible graph store in Clojure",
+          "imageUrl": "https://opengraph.githubassets.com/c5e119fdfb676813c723be7459d397f5951f7f2d4a5ec00e684910c73b83863d/quoll/asami"
         },
         {
           "id": "https://susam.net/maze/web-golden.html",
@@ -8567,356 +8837,6 @@
           "wordCount": 1177,
           "title": "Building Transformers from Neurons and Astrocytes",
           "imageUrl": "https://www.biorxiv.org/sites/default/files/images/biorxiv_logo_homepage7-5-small.png"
-        },
-        {
-          "id": "https://arxiv.org/html/nlin/0004007",
-          "author": null,
-          "description": "Comments",
-          "link": "https://arxiv.org/html/nlin/0004007",
-          "publishedOn": "2022-10-20T13:14:40.000Z",
-          "wordCount": 9425,
-          "title": "A Century of Controversy over the Foundations of Mathematics (2000)",
-          "imageUrl": null
-        },
-        {
-          "id": "https://stackoverflow.blog/2022/10/20/introducing-the-overflow-offline-project/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://stackoverflow.blog/2022/10/20/introducing-the-overflow-offline-project/",
-          "publishedOn": "2022-10-20T13:13:48.000Z",
-          "wordCount": 2134,
-          "title": "The Overflow Offline project",
-          "imageUrl": "https://149351115.v2.pressablecdn.com/wp-content/uploads/2022/10/stack-overflow-offline-blog.png"
-        },
-        {
-          "id": "https://www.newscientist.com/article/2343044-tuna-use-sharks-as-back-scratchers-despite-risk-of-being-eaten/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.newscientist.com/article/2343044-tuna-use-sharks-as-back-scratchers-despite-risk-of-being-eaten/",
-          "publishedOn": "2022-10-20T12:47:08.000Z",
-          "wordCount": 3403,
-          "title": "Tuna use sharks as back scratchers despite risk of being eaten",
-          "imageUrl": "https://images.newscientist.com/wp-content/uploads/2022/10/19171619/SEI_130171162.jpg"
-        },
-        {
-          "id": "https://www.pentestpartners.com/security-blog/social-engineering-dos-and-donts/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.pentestpartners.com/security-blog/social-engineering-dos-and-donts/",
-          "publishedOn": "2022-10-20T12:16:57.000Z",
-          "wordCount": 1716,
-          "title": "Social Engineering Dos and Don'ts",
-          "imageUrl": null
-        },
-        {
-          "id": "https://aip.scitation.org/doi/pdf/10.1063/5.0085362",
-          "author": null,
-          "description": "Comments",
-          "link": "https://aip.scitation.org/doi/pdf/10.1063/5.0085362",
-          "publishedOn": "2022-10-20T11:47:20.000Z",
-          "wordCount": 146837,
-          "title": "On Oreology, the fracture and flow of “milk's favorite cookie",
-          "imageUrl": null
-        },
-        {
-          "id": "https://www.voys.co.za/blog/how-google-is-forcing-us-to-make-our-open-source-app-worse/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.voys.co.za/blog/how-google-is-forcing-us-to-make-our-open-source-app-worse/",
-          "publishedOn": "2022-10-20T11:45:07.000Z",
-          "wordCount": 1386,
-          "title": "Google is forcing us to make our open source VoIP app worse",
-          "imageUrl": "https://www.voys.co/app/uploads/sites/8/2022/10/Google_3.jpg"
-        },
-        {
-          "id": "https://www.washingtonpost.com/wp-srv/politics/special/clinton/stories/pizza121998.htm",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.washingtonpost.com/wp-srv/politics/special/clinton/stories/pizza121998.htm",
-          "publishedOn": "2022-10-20T11:35:17.000Z",
-          "wordCount": 636,
-          "title": "Washington Pizza Index (1998)",
-          "imageUrl": null
-        },
-        {
-          "id": "https://modarchive.org/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://modarchive.org/",
-          "publishedOn": "2022-10-20T11:30:29.000Z",
-          "wordCount": null,
-          "title": "The Mod Archive",
-          "imageUrl": null
-        },
-        {
-          "id": "https://semiengineering.com/whats-different-about-next-gen-transistors/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://semiengineering.com/whats-different-about-next-gen-transistors/",
-          "publishedOn": "2022-10-20T11:25:44.000Z",
-          "wordCount": 5025,
-          "title": "What's different about next-gen transistors",
-          "imageUrl": "https://semiengineering.com/wp-content/uploads/Fig01_Zhao_nanosheet_transistors.jpg"
-        },
-        {
-          "id": "https://tigyog.app/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://tigyog.app/",
-          "publishedOn": "2022-10-20T10:27:27.000Z",
-          "wordCount": 1274,
-          "title": "TigYog",
-          "imageUrl": null
-        },
-        {
-          "id": "https://www.theatlantic.com/magazine/archive/1897/07/the-future-of-rural-new-england/636155/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.theatlantic.com/magazine/archive/1897/07/the-future-of-rural-new-england/636155/",
-          "publishedOn": "2022-10-20T09:08:43.000Z",
-          "wordCount": 13154,
-          "title": "The Future of Rural New England (1897)",
-          "imageUrl": null
-        },
-        {
-          "id": "https://www.smithsonianmag.com/innovation/how-susan-kare-designed-user-friendly-icons-for-first-macintosh-180973286/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.smithsonianmag.com/innovation/how-susan-kare-designed-user-friendly-icons-for-first-macintosh-180973286/",
-          "publishedOn": "2022-10-20T06:10:24.000Z",
-          "wordCount": 2335,
-          "title": "Susan Kare designed user-friendly icons for the first Macintosh (2019)",
-          "imageUrl": "https://th-thumbnailer.cdn-si-edu.com/jaYZtiHA3Zh2tgDaCBWJQV3_Czs=/fit-in/1600x0/https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer/1a/ff/1aff6159-3eb3-4a66-8eeb-e95bdc7f46b3/susankare.jpg"
-        },
-        {
-          "id": "http://davidbau.com/archives/2010/03/14/the_mystery_of_355113.html",
-          "author": null,
-          "description": "Comments",
-          "link": "http://davidbau.com/archives/2010/03/14/the_mystery_of_355113.html",
-          "publishedOn": "2022-10-20T01:15:25.000Z",
-          "wordCount": 4802,
-          "title": "The Mystery of 355/113",
-          "imageUrl": null
-        },
-        {
-          "id": "https://postgresml.org/blog/postgresml-is-8x-faster-than-python-http-microservices/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://postgresml.org/blog/postgresml-is-8x-faster-than-python-http-microservices/",
-          "publishedOn": "2022-10-20T00:45:32.000Z",
-          "wordCount": 2510,
-          "title": "PostgresML is 8-40x faster than Python HTTP microservices",
-          "imageUrl": "https://postgresml.org/images/logos/logo-small.png"
-        },
-        {
-          "id": "https://www.city-journal.org/nih-blocks-access-to-genetics-database",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.city-journal.org/nih-blocks-access-to-genetics-database",
-          "publishedOn": "2022-10-20T00:38:23.000Z",
-          "wordCount": 1959,
-          "title": "NIH blocks access to genetics database if research enters “forbidden” territory",
-          "imageUrl": "https://media4.manhattan-institute.org/sites/cj/files/nih-blocks-access-to-genetics-database.jpg"
-        },
-        {
-          "id": "https://erikbern.com/2022/10/19/we-are-still-early-with-the-cloud.html",
-          "author": null,
-          "description": "Comments",
-          "link": "https://erikbern.com/2022/10/19/we-are-still-early-with-the-cloud.html",
-          "publishedOn": "2022-10-19T23:26:13.000Z",
-          "wordCount": 4289,
-          "title": "We are still early with the cloud",
-          "imageUrl": "https://erikbern.com/assets/locomotive.jpeg"
-        },
-        {
-          "id": "https://xorshammer.com/2008/09/04/a-geometrically-natural-uncomputable-function/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://xorshammer.com/2008/09/04/a-geometrically-natural-uncomputable-function/",
-          "publishedOn": "2022-10-19T22:04:53.000Z",
-          "wordCount": 3063,
-          "title": "A Geometrically Natural Uncomputable Function (2008)",
-          "imageUrl": "https://s0.wp.com/i/blank.jpg"
-        },
-        {
-          "id": "https://www.jefftk.com/p/vertical-flutes",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.jefftk.com/p/vertical-flutes",
-          "publishedOn": "2022-10-19T21:35:21.000Z",
-          "wordCount": 1986,
-          "title": "Vertical Flutes",
-          "imageUrl": null
-        },
-        {
-          "id": "https://gtoolkit.com/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://gtoolkit.com/",
-          "publishedOn": "2022-10-19T20:25:41.000Z",
-          "wordCount": 1124,
-          "title": "Glamorous Toolkit: Moldable development environment",
-          "imageUrl": "https://gtoolkit.com//assets/pictures/gtr-home.png"
-        },
-        {
-          "id": "http://robots.stanford.edu/genealogy",
-          "author": null,
-          "description": "Comments",
-          "link": "http://robots.stanford.edu/genealogy",
-          "publishedOn": "2022-10-19T20:08:56.000Z",
-          "wordCount": 9107,
-          "title": "My PhD Genealogy",
-          "imageUrl": null
-        },
-        {
-          "id": "https://phys.org/news/2022-10-evidence-carnivores.html",
-          "author": null,
-          "description": "Comments",
-          "link": "https://phys.org/news/2022-10-evidence-carnivores.html",
-          "publishedOn": "2022-10-19T19:53:50.000Z",
-          "wordCount": 2130,
-          "title": "Increasing evidence that bears are not carnivores",
-          "imageUrl": "https://scx2.b-cdn.net/gfx/news/hires/2018/bear.jpg"
-        },
-        {
-          "id": "https://phys.org/news/2022-10-black-hole-extreme.html",
-          "author": null,
-          "description": "Comments",
-          "link": "https://phys.org/news/2022-10-black-hole-extreme.html",
-          "publishedOn": "2022-10-19T19:51:49.000Z",
-          "wordCount": 2010,
-          "title": "'Wobbling black hole' most extreme example ever detected",
-          "imageUrl": "https://scx2.b-cdn.net/gfx/news/hires/2022/black-hole-1.jpg"
-        },
-        {
-          "id": "https://adguard.com/en/blog/easylist-filter-problem-help.html",
-          "author": null,
-          "description": "Comments",
-          "link": "https://adguard.com/en/blog/easylist-filter-problem-help.html",
-          "publishedOn": "2022-10-19T19:02:09.000Z",
-          "wordCount": 2395,
-          "title": "EasyList is in trouble and so are many ad blockers",
-          "imageUrl": "https://adguard.com/content/images/2022/10/help_big-1.jpg"
-        },
-        {
-          "id": "http://benjaminrosshoffman.com/wait-vs-interrupt-culture/",
-          "author": null,
-          "description": "Comments",
-          "link": "http://benjaminrosshoffman.com/wait-vs-interrupt-culture/",
-          "publishedOn": "2022-10-19T18:53:56.000Z",
-          "wordCount": 2823,
-          "title": "Wait vs. Interrupt Culture",
-          "imageUrl": "https://s0.wp.com/i/blank.jpg"
-        },
-        {
-          "id": "https://www.citizenwatch-global.com/support/exterior/direction.html",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.citizenwatch-global.com/support/exterior/direction.html",
-          "publishedOn": "2022-10-19T18:23:31.000Z",
-          "wordCount": 365,
-          "title": "How to use a watch as a compass",
-          "imageUrl": ""
-        },
-        {
-          "id": "https://www.nasa.gov/feature/goddard/2022/nasa-s-webb-takes-star-filled-portrait-of-pillars-of-creation/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.nasa.gov/feature/goddard/2022/nasa-s-webb-takes-star-filled-portrait-of-pillars-of-creation/",
-          "publishedOn": "2022-10-19T18:18:46.000Z",
-          "wordCount": 282,
-          "title": "NASA’s Webb takes star-filled portrait of Pillars of Creation",
-          "imageUrl": "http://www.nasa.gov/sites/default/files/thumbnails/image/stsci-01gfnn3pwjmy4rqxkz585bc4qh.png"
-        },
-        {
-          "id": "https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.0020124",
-          "author": null,
-          "description": "Comments",
-          "link": "https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.0020124",
-          "publishedOn": "2022-10-19T17:39:56.000Z",
-          "wordCount": 7364,
-          "title": "Why most published research findings are false (2005)",
-          "imageUrl": "https://journals.plos.org/plosmedicine/article/figure/image?id=10.1371/journal.pmed.0020124.g002&size=inline"
-        },
-        {
-          "id": "https://asianometry.substack.com/p/the-soviet-unions-nuclear-icebreakers",
-          "author": null,
-          "description": "Comments",
-          "link": "https://asianometry.substack.com/p/the-soviet-unions-nuclear-icebreakers",
-          "publishedOn": "2022-10-19T17:03:50.000Z",
-          "wordCount": 5167,
-          "title": "The Soviet Union’s Nuclear Icebreakers",
-          "imageUrl": "https://substackcdn.com/image/youtube/w_728,c_limit/jdXs3QhMpS8"
-        },
-        {
-          "id": "https://github.com/killbill/killbill",
-          "author": null,
-          "description": "Comments",
-          "link": "https://github.com/killbill/killbill",
-          "publishedOn": "2022-10-19T15:26:16.000Z",
-          "wordCount": 1287,
-          "title": "Kill Bill – Open-Source Subscription Billing and Payments Platform",
-          "imageUrl": "https://opengraph.githubassets.com/e420e22d944ad72b35c5717fd287a21840f150d1a1c6923162272ca5c7eac848/killbill/killbill"
-        },
-        {
-          "id": "https://mattstoller.substack.com/p/the-smash-and-grab-of-kroger-albertsons",
-          "author": null,
-          "description": "Comments",
-          "link": "https://mattstoller.substack.com/p/the-smash-and-grab-of-kroger-albertsons",
-          "publishedOn": "2022-10-19T15:24:03.000Z",
-          "wordCount": 5210,
-          "title": "The smash and grab of Kroger-Albertsons",
-          "imageUrl": "https://substackcdn.com/image/fetch/w_1200,h_600,c_limit,f_jpg,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2Fa383dcf8-419e-4d0e-b963-4bb831599d6b_997x697.png"
-        },
-        {
-          "id": "https://blog.replit.com/mobile-app",
-          "author": null,
-          "description": "Comments",
-          "link": "https://blog.replit.com/mobile-app",
-          "publishedOn": "2022-10-19T15:14:43.000Z",
-          "wordCount": null,
-          "title": "Replit Mobile App",
-          "imageUrl": null
-        },
-        {
-          "id": "http://www.analogmuseum.org/english/collection/telefunken/ra770/",
-          "author": null,
-          "description": "Comments",
-          "link": "http://www.analogmuseum.org/english/collection/telefunken/ra770/",
-          "publishedOn": "2022-10-19T14:42:09.000Z",
-          "wordCount": 3573,
-          "title": "The Telefunken RA 770 Analog Computer",
-          "imageUrl": null
-        },
-        {
-          "id": "https://www.quantamagazine.org/inside-the-proton-the-most-complicated-thing-imaginable-20221019/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.quantamagazine.org/inside-the-proton-the-most-complicated-thing-imaginable-20221019/",
-          "publishedOn": "2022-10-19T14:22:21.000Z",
-          "wordCount": 6616,
-          "title": "Inside the Proton",
-          "imageUrl": "https://d2r55xnwy6nx47.cloudfront.net/uploads/2022/10/PROTON_1200_Social.webp"
-        },
-        {
-          "id": "https://bigthink.com/starts-with-a-bang/modifying-gravity/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://bigthink.com/starts-with-a-bang/modifying-gravity/",
-          "publishedOn": "2022-10-19T13:40:45.000Z",
-          "wordCount": 5019,
-          "title": "Why modifying gravity doesn’t add up",
-          "imageUrl": "https://bigthink.com/wp-content/uploads/2021/12/https___specials-images.forbesimg.com_imageserve_5a2f2361a7ea4307394759e7_The-formation-of-cosmic-structure-is-dependent-on-how-normal-and-dark-matter_960x0.jpg?resize=960,630"
-        },
-        {
-          "id": "https://ctan.org/pkg/wargame",
-          "author": null,
-          "description": "Comments",
-          "link": "https://ctan.org/pkg/wargame",
-          "publishedOn": "2022-10-19T13:24:19.000Z",
-          "wordCount": 354,
-          "title": "Wargame: LaTeX package to prepare hex'n'counter wargames",
-          "imageUrl": null
         }
       ]
     }
