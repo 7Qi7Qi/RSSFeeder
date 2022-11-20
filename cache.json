@@ -12,6 +12,26 @@
       "siteUrl": "http://weekly.dockone.io",
       "articles": [
         {
+          "id": "http://weekly.dockone.io/article/2434941",
+          "author": "colstuwjx",
+          "description": "【编者的话】引入 Kubernetes 是过早优化的危险信号？且听听本文作者怎么说吧。\n如果你所在的企业引入了 Kubernetes，那么你们很有可能会把精力花在一些偏离主线的事情上。\n乍一听这句话可能会感觉到很奇怪，毕竟我们花了这么长的时间来布道和兜售 Kubernetes 的发行版以及咨询服务，致力于帮助人们能够更加充分地利用它，但是事情就是这样！你也许不应该针对你的产品使用 Kubernetes 以及其他一堆“酷”的东西。\n绝大多数的初创以及扩张阶段的企业在构建软件时都应该避免使用 Kubernetes 以及其他的一些过早优化。如果你所在的企业使用了 Kubernetes，那么你们很有可能会把精力花在一些偏离主线的事情上。你们可能已经跌入了过早优化的陷阱。\n请不要觉得这篇文章只是针对 Kubernetes。不是的。这篇文章针对的是工程师们在构建软件的过程中可能做出的所有过早优化。\n以下是我见过的一些例子：\n将 Kubernetes 用于一个应用（还是个 Web 应用）的企业；\n应用程序用到了不只一种语言。比如，后端用的是 Golang、Ruby 或者是 PHP 等语言，然后前端 Web 用的是 React 或者 Vue 等框架；\n没有用云服务来托管应用。比如可以用 Heroku、Vercel、Netlify 或者 Fly.io 等。对于绝大多数产品团队来说，如果他们必须组建一个运维或者基础架构团队的话，他们的解决方案也将会是过度设计的。\n\n试想一下，一个人在真正开始玩他的爱好之前花费了大量的时间和金钱为这个爱好挑选最好的装备。\n当然，这里面有一些观点是比较主观的。也许你知道你会长期坚持你的新爱好，而且你有一个朋友刚好是这方面的行家，他可以帮你挑选合适的装备。不得不说，我自己就很擅长为自己辩解为什么要挑选精英装备，尽管我可能永远不会真的注意到这其中的区别。\n好钢要用在刀…",
+          "link": "http://weekly.dockone.io/article/2434941",
+          "publishedOn": "2022-11-20T01:22:50.397Z",
+          "wordCount": 371,
+          "title": "引入 Kubernetes 是过早优化的危险信号",
+          "imageUrl": null
+        },
+        {
+          "id": "http://weekly.dockone.io/article/2434942",
+          "author": "megrez",
+          "description": "译注：在本文中，为理解的一致性，我们保留了OpenTelemetry的术语，不作翻译：包括但不限于Instrument、Measurement、Exemplar、Baggage、Context等。需要注意区分Measurement和Instrument的区别，前者指的是度量数据，而后者通常是指用于监测的代码和工具。\nOpenTelemetry是由云原生计算基金会（CNCF）托管的一个用于基础设施性能检测的开源可观测性框架。该项目在几乎所有主要的云供应商（AWS、Google、Microsoft）以及可观测性供应商（包括Timescale）的贡献下得到了极大的发展，以至于它成为按活跃度和贡献者排名第二的CNCF项目，仅次于Kubernetes本身。\nOpenTelemetry旨在为所有类型的可观测数据定义一个单一的标准（在OpenTelemetry的术语中被称作Signals信号），包括监控指标、日志和链路追踪。通过一系列的工具、库、API、SDK和exporters，OpenTelemetry从根本上简化了从服务中收集信号并将其发送到你所选用的后端服务的过程，为更多的用户和供应商打开了可观测性的大门。\n在设计OpenTelemetry指标标准时，有三个设计目标被采纳：\n提供将监控指标与其他类型的可观察性数据相连接的能力：要么是通过Exemplars在链路追踪和监控指标之间直接连接，要么是通过Baggage和Context提供与日志和链路追踪享有相同的相关元数据，间接地连接。\n允许从OpenCensus标准轻松迁移到OpenTelemetry标准。\n在可能的情况下提供对其他主要指标实现的全面支持。Prometheus和StatsD是专门适配的，能够完全支持：那些迁移到OpenTelemetry的用户可以看到与使用其原生客户端类似的结果。\n\nOpenTelemetry提供了一个…",
+          "link": "http://weekly.dockone.io/article/2434942",
+          "publishedOn": "2022-11-20T01:22:50.384Z",
+          "wordCount": 626,
+          "title": "深入OpenTelemetry指标",
+          "imageUrl": null
+        },
+        {
           "id": "http://weekly.dockone.io/article/2434948",
           "author": "ylzhang",
           "description": "【编者的话】Kubernetes是银弹吗？它解决了什么问题？对于公司和个人的搭建系统，单机应用和大规模系统都一定要使用容器和Kubernetes吗？Globality的机器学习副总裁用自己的经验总结了自己认识Kubernetes的过程，他从评估、入门、成本、操作等几个方面记录了自己从对Kubernetes的认识过程，并讲述了自己的心得体会。下文是作者关于此的笔记。\n我曾认为自己是一个强烈 Kubernetes 怀疑论者。无论是做项目还是初创公司，裸机系统始终是我的首选。包括运行此博客的堆栈环境，称它为堆栈甚至可能有些夸张，其实它只是一个持续集成（CI）工具链，主机上有 Nginx 配置。但它可以处理惊人的并发负载，并且托管成本低。它每月只需 10 美元，完全可与托管成本高出两个数量级的企业博客平台并驾齐驱。\n过早的优化可能是万恶之源，但过早的规模化也是如此。我认为公司过早地设计复杂架构会导致很多问题，例如开发者需要面对复杂的系统，这样也会导致用户不稳定。而且我认为带有简单服务器的 monorepo 应该作为项目的起点。这时只需运行一个基本的 Docker 实例，并且可以最大程度上减少无尽依赖，确保你的远程配置可在本地开发机器上重现即可。一旦系统面对更高的流量，可以选择租用更强大的服务器。如果还不能解决问题，请部署一个简单的负载均衡器，路由到几个后端设备。在早期可以做到而且应该是这样。\n虽然我正是这么做的，但最近负载均衡系统后面用于几个辅助项目的一台物理服务器已满足不了我的要求——大部分时间里它是空闲的，但突发状态下则需要几十个带有 GPU 的虚拟机。这迫使我不得不采用更复杂的服务器管理解决方案。在为使用 Kubernetes 构建了几个月之后，我必须承认我一天一天就爱上了它。\n第一天：走近尝试\n我已经在裸机上有一个完整运行的后端应用程序。我真的要用不同的产品重新设计我堆栈的…",
@@ -80,16 +100,6 @@
           "wordCount": 277,
           "title": "CNCF宣布SPIFFE与SPIRE项目正式毕业",
           "imageUrl": null
-        },
-        {
-          "id": "http://weekly.dockone.io/article/2434943",
-          "author": "李颖杰",
-          "description": "现在以Kubernetes为代表的容器技术已经非常普及了，很多云计算及容器厂商也提供了基于Kubernetes的服务。\n但是在Kubernetes自学的过程中还是会遇到各种各样的问题，主要原因还是Kubernetes入门容易，深入却很难，而自学又不系统，且缺乏实际操作。\n分布式实验室推出的《Kubernetes线上实战训练营》，通过4天线上培训，3个课后大作业，30天课后辅导，让你通过实战掌握Kubernetes，最后讲解CKA考试，让有想考CKA的同学顺利通过认证。",
-          "link": "http://weekly.dockone.io/article/2434943",
-          "publishedOn": "2022-10-21T01:35:31.416Z",
-          "wordCount": 259,
-          "title": "Kubernetes线上实战训练营（10月班）",
-          "imageUrl": null
         }
       ]
     },
@@ -98,6 +108,216 @@
       "feedUrl": "https://news.ycombinator.com/rss",
       "siteUrl": "https://news.ycombinator.com/",
       "articles": [
+        {
+          "id": "https://interestingengineering.com/innovation/digging-10-miles-geothermal-energy",
+          "author": null,
+          "description": "Comments",
+          "link": "https://interestingengineering.com/innovation/digging-10-miles-geothermal-energy",
+          "publishedOn": "2022-11-19T23:21:24.000Z",
+          "wordCount": 4294,
+          "title": "Digging 10 miles underground could yield enough geothermal energy to power Earth",
+          "imageUrl": "https://inteng-storage-us.s3.amazonaws.com/2022/11/19/image/jpeg/8TwTYdc9MTdCbydFOHxe53c0iFI4RmutVYoty02V.jpg"
+        },
+        {
+          "id": "https://www.thisiscolossal.com/2014/05/color-book/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.thisiscolossal.com/2014/05/color-book/",
+          "publishedOn": "2022-11-19T22:36:53.000Z",
+          "wordCount": 1707,
+          "title": "271 years before Pantone, every color imaginable in an 800-page book",
+          "imageUrl": "https://www.thisiscolossal.com/wp-content/uploads/2014/05/colors-1.jpg"
+        },
+        {
+          "id": "https://github.com/jart/blink",
+          "author": null,
+          "description": "Comments",
+          "link": "https://github.com/jart/blink",
+          "publishedOn": "2022-11-19T22:25:49.000Z",
+          "wordCount": 1072,
+          "title": "Tiniest x86-64-Linux emulator",
+          "imageUrl": "https://opengraph.githubassets.com/380b709da68854e373639dd79f9b80bf388c3ee63eb98e09f94be703f6dda7a0/jart/blink"
+        },
+        {
+          "id": "https://github.com/jafarlihi/rssnix",
+          "author": null,
+          "description": "Comments",
+          "link": "https://github.com/jafarlihi/rssnix",
+          "publishedOn": "2022-11-19T22:13:01.000Z",
+          "wordCount": 708,
+          "title": "Show HN: Rssnix – Unix-style filesystem-based RSS/Atom/JSON Feed fetcher/reader",
+          "imageUrl": "https://opengraph.githubassets.com/e9856ffc84770e82dfa918c68ec090d8d7e9dcad55edb726a7b66a0320a2d1d0/jafarlihi/rssnix"
+        },
+        {
+          "id": "http://annas-blog.org/putting-5,998,794-books-on-ipfs.html",
+          "author": null,
+          "description": "Comments",
+          "link": "http://annas-blog.org/putting-5,998,794-books-on-ipfs.html",
+          "publishedOn": "2022-11-19T22:00:06.000Z",
+          "wordCount": 1811,
+          "title": "Putting Z-Library on IPFS",
+          "imageUrl": null
+        },
+        {
+          "id": "https://news.ycombinator.com/item?id=33675112",
+          "author": null,
+          "description": "Comments",
+          "link": "https://news.ycombinator.com/item?id=33675112",
+          "publishedOn": "2022-11-19T21:45:50.000Z",
+          "wordCount": 8520,
+          "title": "Ask HN: What is the thing you've built that you regret the most?",
+          "imageUrl": null
+        },
+        {
+          "id": "https://www.forth.com/starting-forth/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.forth.com/starting-forth/",
+          "publishedOn": "2022-11-19T20:46:27.000Z",
+          "wordCount": 3820,
+          "title": "Starting FORTH (1981) [pdf]",
+          "imageUrl": "https://www.forth.com/wp-content/uploads/2018/02/Starting-FORTH-Cover-FB.jpg"
+        },
+        {
+          "id": "https://sebastiancarlos.medium.com/how-i-quit-my-programmer-job-to-become-a-chicken-b733c20680b1",
+          "author": null,
+          "description": "Comments",
+          "link": "https://sebastiancarlos.medium.com/how-i-quit-my-programmer-job-to-become-a-chicken-b733c20680b1",
+          "publishedOn": "2022-11-19T19:37:44.000Z",
+          "wordCount": 950,
+          "title": "I quit my programmer job to become a chicken",
+          "imageUrl": "https://miro.medium.com/max/1200/1*sOTdxXHW8Qy2ZZojQe9_Dw.png"
+        },
+        {
+          "id": "http://blog.pkh.me/p/35-investigating-why-steam-started-picking-a-random-font.html",
+          "author": null,
+          "description": "Comments",
+          "link": "http://blog.pkh.me/p/35-investigating-why-steam-started-picking-a-random-font.html",
+          "publishedOn": "2022-11-19T19:12:05.000Z",
+          "wordCount": 560,
+          "title": "Investigating why Steam started picking a random font",
+          "imageUrl": null
+        },
+        {
+          "id": "https://tasshin.com/blog/strategy-101/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://tasshin.com/blog/strategy-101/",
+          "publishedOn": "2022-11-19T18:54:28.000Z",
+          "wordCount": 4060,
+          "title": "Strategy 101: An introduction to power",
+          "imageUrl": "https://tasshin.com/wp-content/uploads/2019/06/word-image-3.png"
+        },
+        {
+          "id": "https://syntopikon.substack.com/p/an-interview-with-mickey-petersen",
+          "author": null,
+          "description": "Comments",
+          "link": "https://syntopikon.substack.com/p/an-interview-with-mickey-petersen",
+          "publishedOn": "2022-11-19T18:28:54.000Z",
+          "wordCount": 5690,
+          "title": "An Interview with Mickey Petersen, Author of Mastering Emacs",
+          "imageUrl": "https://substackcdn.com/image/fetch/w_1200,h_600,c_limit,f_jpg,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2Fdbfc8c37-b81f-4779-97cb-276b5503215d_460x459.jpeg"
+        },
+        {
+          "id": "https://workerbox.net/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://workerbox.net/",
+          "publishedOn": "2022-11-19T18:25:24.000Z",
+          "wordCount": 374,
+          "title": "Show HN: Run unsafe user generated JavaScript in the browser",
+          "imageUrl": null
+        },
+        {
+          "id": "https://www.theverge.com/2022/11/18/23466094/hyundai-ioniq-6-us-debut-laas-range-features-ev",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.theverge.com/2022/11/18/23466094/hyundai-ioniq-6-us-debut-laas-range-features-ev",
+          "publishedOn": "2022-11-19T18:15:32.000Z",
+          "wordCount": 10800,
+          "title": "Hyundai’s Ioniq 6 EV makes its US debut",
+          "imageUrl": "https://cdn.vox-cdn.com/thumbor/pi9Whfwm70tgL_TatncjseFvvJk=/449x142:7712x5110/1200x628/filters:focal(4466x2889:4467x2890)/cdn.vox-cdn.com/uploads/chorus_asset/file/24210192/53127_2022LosAngelesAutoShowPressConferenceIONIQ6.jpg"
+        },
+        {
+          "id": "https://claymcleod.dev/blog/2022-11-19-consider-working-on-genomics.html",
+          "author": null,
+          "description": "Comments",
+          "link": "https://claymcleod.dev/blog/2022-11-19-consider-working-on-genomics.html",
+          "publishedOn": "2022-11-19T15:56:11.000Z",
+          "wordCount": 600,
+          "title": "Consider working on genomics",
+          "imageUrl": null
+        },
+        {
+          "id": "https://github.com/pwk4m1/TinyBIOS",
+          "author": null,
+          "description": "Comments",
+          "link": "https://github.com/pwk4m1/TinyBIOS",
+          "publishedOn": "2022-11-19T15:27:05.000Z",
+          "wordCount": 589,
+          "title": "TinyBIOS – A minimalist open-source BIOS project for fun",
+          "imageUrl": "https://opengraph.githubassets.com/d61e93e4d2111db2ca98cdc27b9bcbb50849d4af0d11b2bb8effd9cd9ade5742/pwk4m1/TinyBIOS"
+        },
+        {
+          "id": "https://rpdillon.net/redbean-tiddlywiki-saver.html",
+          "author": null,
+          "description": "Comments",
+          "link": "https://rpdillon.net/redbean-tiddlywiki-saver.html",
+          "publishedOn": "2022-11-19T14:30:19.000Z",
+          "wordCount": 815,
+          "title": "Redbean Tiddlywiki Saver",
+          "imageUrl": null
+        },
+        {
+          "id": "https://easylang.online/ide/#tut=1",
+          "author": null,
+          "description": "Comments",
+          "link": "https://easylang.online/ide/#tut=1",
+          "publishedOn": "2022-11-19T14:27:25.000Z",
+          "wordCount": 863,
+          "title": "Show HN: Easylang – A browser-based first programming language",
+          "imageUrl": null
+        },
+        {
+          "id": "http://www.helenos.org/",
+          "author": null,
+          "description": "Comments",
+          "link": "http://www.helenos.org/",
+          "publishedOn": "2022-11-19T14:10:18.000Z",
+          "wordCount": 408,
+          "title": "HelenOS: a microkernel-based, multiserver OS from scratch",
+          "imageUrl": "http://www.helenos.org/chrome/site/screenshot.png"
+        },
+        {
+          "id": "https://www.edbatista.com/2022/10/leader-as-shock-absorber.html",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.edbatista.com/2022/10/leader-as-shock-absorber.html",
+          "publishedOn": "2022-11-19T12:39:43.000Z",
+          "wordCount": 640,
+          "title": "Leader as shock absorber",
+          "imageUrl": "https://edbatista.typepad.com/.a/6a00d8341e62fd53ef02ae6fb29d91200c-600wi"
+        },
+        {
+          "id": "https://blog.jgc.org/2022/11/restoring-my-commodore-p50-calculator.html",
+          "author": null,
+          "description": "Comments",
+          "link": "https://blog.jgc.org/2022/11/restoring-my-commodore-p50-calculator.html",
+          "publishedOn": "2022-11-19T10:58:13.000Z",
+          "wordCount": 3626,
+          "title": "Restoring my Commodore P50 calculator with a little solder and a 3D printer",
+          "imageUrl": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiIUo36pxXVbnqMI_EKzfqoaAHGuoNjJyR4CCYXm-td7C3ywCkCCwmcrG1Sg7R6wR6hFO4UUwyzfOWEh9RHleDAJDr1NZ4evoGoNfkiE2pWfBzmdDmwlorgZ2ZqxnphjcYFg2jKslkIRBwdCDOwWb4iN9Qhdhx3pqJiE11cvdWZwQIMsi-kbsU/w1200-h630-p-k-no-nu/commodore1.jpg"
+        },
+        {
+          "id": "https://mosquitocapital.substack.com/p/the-mystery-blips",
+          "author": null,
+          "description": "Comments",
+          "link": "https://mosquitocapital.substack.com/p/the-mystery-blips",
+          "publishedOn": "2022-11-19T10:28:56.000Z",
+          "wordCount": 3171,
+          "title": "Mystery Blips",
+          "imageUrl": "https://substackcdn.com/image/fetch/w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F93d11dfd-26f5-4f02-ad2a-2d6eaca5d638_400x400.png"
+        },
         {
           "id": "https://devblogs.microsoft.com/oldnewthing/20221115-00/?p=107399",
           "author": null,
@@ -299,6 +519,16 @@
           "imageUrl": "https://media.nature.com/lw1024/magazine-assets/d41586-022-03783-5/d41586-022-03783-5_23726540.jpg"
         },
         {
+          "id": "https://www.thenation.com/article/culture/john-donne-biography-super-rundell/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.thenation.com/article/culture/john-donne-biography-super-rundell/",
+          "publishedOn": "2022-11-18T17:41:16.000Z",
+          "wordCount": 9932,
+          "title": "The Enigma of John Donne",
+          "imageUrl": "https://www.thenation.com/wp-content/uploads/2022/10/Donne-death_mask-207KB-getty.jpg"
+        },
+        {
           "id": "https://mojojs.org/",
           "author": null,
           "description": "Comments",
@@ -329,6 +559,16 @@
           "imageUrl": "https://posterity.life/automations/cover-0.jpg"
         },
         {
+          "id": "https://blog.trailofbits.com/2022/11/15/python-wheels-abi-abi3audit/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://blog.trailofbits.com/2022/11/15/python-wheels-abi-abi3audit/",
+          "publishedOn": "2022-11-18T15:01:39.000Z",
+          "wordCount": 4874,
+          "title": "ABI compatibility in Python: How hard could it be?",
+          "imageUrl": "https://blog.trailofbits.com/wp-content/uploads/2022/11/microx-1024x406.png"
+        },
+        {
           "id": "https://phys.org/news/2022-11-earth-ronnagrams-metric-prefixes-voted.html",
           "author": null,
           "description": "Comments",
@@ -337,6 +577,16 @@
           "wordCount": 1955,
           "title": "Earth now weighs six ronnagrams: New metric prefixes voted in",
           "imageUrl": "https://scx2.b-cdn.net/gfx/news/2022/the-earths-mass-can-no.jpg"
+        },
+        {
+          "id": "https://devenv.sh/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://devenv.sh/",
+          "publishedOn": "2022-11-18T14:52:34.000Z",
+          "wordCount": 1354,
+          "title": "Devenv.sh: Fast and reproducible developer environments using Nix",
+          "imageUrl": "https://devenv.sh/assets/images/social/index.png"
         },
         {
           "id": "https://mapoftheuniverse.net/",
@@ -349,6 +599,36 @@
           "imageUrl": null
         },
         {
+          "id": "https://openlibrary.org/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://openlibrary.org/",
+          "publishedOn": "2022-11-18T14:45:17.000Z",
+          "wordCount": 1250,
+          "title": "Open Library",
+          "imageUrl": null
+        },
+        {
+          "id": "http://bannalia.blogspot.com/2022/11/inside-boostunorderedflatmap.html",
+          "author": null,
+          "description": "Comments",
+          "link": "http://bannalia.blogspot.com/2022/11/inside-boostunorderedflatmap.html",
+          "publishedOn": "2022-11-18T13:37:26.000Z",
+          "wordCount": 5669,
+          "title": "Inside boost::unordered_flat_map",
+          "imageUrl": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgCm7Mjoizsg_qsNOTa1nU3YIjPDdarUGBnuxC9eiMMXtR4zWnnWXLQLE3RGgXN203SLJcIJfGM7a25uOLapGYJtmcOIeU8yXkrhDM1bK1LmxYESoY_fPohrGtPQuggjHgivzVWDVfqND1ZvYv1MSBexyBMyZFFyN7VPsRt5opZfLlo1m2rZyLEpQ0_/w1200-h630-p-k-no-nu/probe.png"
+        },
+        {
+          "id": "https://blog.natalie.ee/posts/building-dynamic-vrchat-world/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://blog.natalie.ee/posts/building-dynamic-vrchat-world/",
+          "publishedOn": "2022-11-18T13:30:55.000Z",
+          "wordCount": 6795,
+          "title": "Building a Dynamic VRChat World",
+          "imageUrl": null
+        },
+        {
           "id": "https://www.okapi.wiki/",
           "author": null,
           "description": "Comments",
@@ -357,6 +637,26 @@
           "wordCount": 4124,
           "title": "Okapi – A micro web framework for Haskell",
           "imageUrl": null
+        },
+        {
+          "id": "https://andrewhuth.substack.com/p/dont-hide-things-that-didnt-go-perfectly",
+          "author": null,
+          "description": "Comments",
+          "link": "https://andrewhuth.substack.com/p/dont-hide-things-that-didnt-go-perfectly",
+          "publishedOn": "2022-11-18T13:17:03.000Z",
+          "wordCount": 1409,
+          "title": "Don't hide things that didn't go perfectly",
+          "imageUrl": "https://substackcdn.com/image/fetch/w_256,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F37552abe-bec0-49b2-aba5-e71feb2a918a_1280x1280.png"
+        },
+        {
+          "id": "https://blog.kellybrazil.com/2019/12/05/microservice-security-design-patterns-for-kubernetes-part-1/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://blog.kellybrazil.com/2019/12/05/microservice-security-design-patterns-for-kubernetes-part-1/",
+          "publishedOn": "2022-11-18T11:44:52.000Z",
+          "wordCount": 2477,
+          "title": "Microservice security design patterns for Kubernetes (2019)",
+          "imageUrl": "https://i0.wp.com/blog.kellybrazil.com/wp-content/uploads/2019/12/secure-microservices-2792026613-1575504975370.jpg?fit=554%2C488&ssl=1"
         },
         {
           "id": "https://www.filosofiaesoterica.com/the-nothingness-of-personality/",
@@ -8407,436 +8707,6 @@
           "wordCount": 1705,
           "title": "Leveraging mispriced AWS spot instances",
           "imageUrl": "https://pauley.me/media/icon_hued7ea68c5f2c88cbaef3e76ccb59a769_765272_512x512_fill_lanczos_center_3.png"
-        },
-        {
-          "id": "https://norvig.com/21-days.html",
-          "author": null,
-          "description": "Comments",
-          "link": "https://norvig.com/21-days.html",
-          "publishedOn": "2022-10-21T13:09:11.000Z",
-          "wordCount": 2742,
-          "title": "Teach Yourself Programming in Ten Years (1998)",
-          "imageUrl": null
-        },
-        {
-          "id": "https://web.dev/state-of-css-2022/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://web.dev/state-of-css-2022/",
-          "publishedOn": "2022-10-21T12:52:03.000Z",
-          "wordCount": 7244,
-          "title": "State of CSS",
-          "imageUrl": "https://web-dev.imgix.net/image/vS06HQ1YTsbMKSFTIPl2iogUQP73/iOfuipzyniP6aec4cOss.png?auto=format&fit=max&w=1200&fm=auto"
-        },
-        {
-          "id": "https://www.technologyreview.com/2022/10/21/1062001/spacex-starlink-signals-reverse-engineered-gps/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.technologyreview.com/2022/10/21/1062001/spacex-starlink-signals-reverse-engineered-gps/",
-          "publishedOn": "2022-10-21T12:18:19.000Z",
-          "wordCount": 6287,
-          "title": "Starlink signals can be reverse-engineered to work like GPS",
-          "imageUrl": "https://wp.technologyreview.com/wp-content/uploads/2022/10/52368290810_8214dd2e40_crop.jpeg?resize=1200,600"
-        },
-        {
-          "id": "https://restfox.dev/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://restfox.dev/",
-          "publishedOn": "2022-10-21T12:06:31.000Z",
-          "wordCount": 3,
-          "title": "Show HN: Restfox – Open source lightweight alternative to Postman",
-          "imageUrl": null
-        },
-        {
-          "id": "https://www.old-computers.com/museum/computer.asp?st=1&c=334",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.old-computers.com/museum/computer.asp?st=1&c=334",
-          "publishedOn": "2022-10-21T11:55:46.000Z",
-          "wordCount": 2008,
-          "title": "NEC PC 8201A",
-          "imageUrl": "https://www.old-computers.com/museum/photos/nec_pc8201a_1.jpg"
-        },
-        {
-          "id": "https://pyinfra.com/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://pyinfra.com/",
-          "publishedOn": "2022-10-21T11:42:15.000Z",
-          "wordCount": 282,
-          "title": "Pyinfra automates infrastructure super fast at scale",
-          "imageUrl": null
-        },
-        {
-          "id": "https://www.tweag.io/blog/2022-10-20-bazel-example-servant-elm-1/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.tweag.io/blog/2022-10-20-bazel-example-servant-elm-1/",
-          "publishedOn": "2022-10-21T09:04:55.000Z",
-          "wordCount": 5032,
-          "title": "Converting a polyglot project build to Bazel",
-          "imageUrl": "https://tweag.io/logo.png"
-        },
-        {
-          "id": "https://van-magazine.com/mag/stanislavski-on-opera/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://van-magazine.com/mag/stanislavski-on-opera/",
-          "publishedOn": "2022-10-21T06:41:35.000Z",
-          "wordCount": 8681,
-          "title": "Method Singing",
-          "imageUrl": "https://van-magazine.com/wp-content/uploads/2022/06/stanislavski-method-acting-opera1.jpg"
-        },
-        {
-          "id": "https://www.sagiodev.com/blog/lessons_learned_app_launch/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.sagiodev.com/blog/lessons_learned_app_launch/",
-          "publishedOn": "2022-10-21T04:15:24.000Z",
-          "wordCount": 1059,
-          "title": "Things I did before app launch and what I wish I had done",
-          "imageUrl": "https://sagiodev.com/blog/img/notionkeylaunch_cover.png"
-        },
-        {
-          "id": "https://www.laphamsquarterly.org/roundtable/calamities-others",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.laphamsquarterly.org/roundtable/calamities-others",
-          "publishedOn": "2022-10-21T01:37:25.000Z",
-          "wordCount": 2362,
-          "title": "The Calamities of Others: An ancient historian aims for the big picture",
-          "imageUrl": "https://www.laphamsquarterly.org/sites/default/files/styles/thumbnail/public/images/roundtable/polybiusteaser.jpg?itok=pwxzUtAu"
-        },
-        {
-          "id": "https://boards.greenhouse.io/hightouch/jobs/4580317004",
-          "author": null,
-          "description": "Comments",
-          "link": "https://boards.greenhouse.io/hightouch/jobs/4580317004",
-          "publishedOn": "2022-10-21T01:00:38.000Z",
-          "wordCount": 1320,
-          "title": "Hightouch (YC S19) Is Hiring an Engineering Manager",
-          "imageUrl": "https://s4-recruiting.cdn.greenhouse.io/external_greenhouse_job_boards/logos/400/141/000/original/logo.png?1616060076"
-        },
-        {
-          "id": "https://sfstandard.com/criminal-justice/nearly-half-of-san-franciscans-have-been-victims-of-theft-new-poll-says/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://sfstandard.com/criminal-justice/nearly-half-of-san-franciscans-have-been-victims-of-theft-new-poll-says/",
-          "publishedOn": "2022-10-21T00:41:34.000Z",
-          "wordCount": 2199,
-          "title": "Nearly Half of San Franciscans Have Been Victims of Theft, New Poll Says",
-          "imageUrl": "https://sfstandard.com/wp-content/uploads/2021/10/breakins-21-1110x690.jpg"
-        },
-        {
-          "id": "https://www.nytimes.com/2022/10/19/science/bubonic-plague-black-death-genetic-protection.html",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.nytimes.com/2022/10/19/science/bubonic-plague-black-death-genetic-protection.html",
-          "publishedOn": "2022-10-20T23:58:09.000Z",
-          "wordCount": null,
-          "title": "How the ‘Black Death’ Left Its Genetic Mark on Future Generations",
-          "imageUrl": null
-        },
-        {
-          "id": "https://bitmovin.com/av1-playback-support/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://bitmovin.com/av1-playback-support/",
-          "publishedOn": "2022-10-20T23:03:42.000Z",
-          "wordCount": 3034,
-          "title": "Current state of AV1 codec playback support – Oct '22",
-          "imageUrl": "https://bitmovin.com/wp-content/uploads/2022/10/Bitmovin_Blog_The_State_of_AV1_Playback_2022_UPDATED-1024x537.jpg"
-        },
-        {
-          "id": "https://news.st-andrews.ac.uk/archive/chimpanzees-synchronise-their-steps-just-like-humans/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://news.st-andrews.ac.uk/archive/chimpanzees-synchronise-their-steps-just-like-humans/",
-          "publishedOn": "2022-10-20T22:47:33.000Z",
-          "wordCount": 1490,
-          "title": "Chimpanzees synchronise their steps just like humans",
-          "imageUrl": null
-        },
-        {
-          "id": "https://www.bbc.com/news/business-63319010",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.bbc.com/news/business-63319010",
-          "publishedOn": "2022-10-20T22:46:38.000Z",
-          "wordCount": 4844,
-          "title": "Amazon's Jeff Bezos in economy warning: 'Batten down hatches'",
-          "imageUrl": "https://ichef.bbci.co.uk/news/1024/branded_news/98E0/production/_127263193_gettyimages-1329731718.jpg"
-        },
-        {
-          "id": "https://astronomy.stackexchange.com/questions/23378/is-this-photocomposition-of-andromedas-galaxy-and-the-moon-accurate",
-          "author": null,
-          "description": "Comments",
-          "link": "https://astronomy.stackexchange.com/questions/23378/is-this-photocomposition-of-andromedas-galaxy-and-the-moon-accurate",
-          "publishedOn": "2022-10-20T22:33:02.000Z",
-          "wordCount": 2248,
-          "title": "Size of Andromeda galaxy compared to the Moon",
-          "imageUrl": "https://cdn.sstatic.net/Sites/astronomy/Img/apple-touch-icon@2.png?v=46633b7672b0"
-        },
-        {
-          "id": "https://github.com/rbaron/b-parasite",
-          "author": null,
-          "description": "Comments",
-          "link": "https://github.com/rbaron/b-parasite",
-          "publishedOn": "2022-10-20T21:52:45.000Z",
-          "wordCount": 1273,
-          "title": "A Bluetooth Low Energy (BLE) soil moisture sensor",
-          "imageUrl": "https://opengraph.githubassets.com/e5b235b2a307ac9c73dfbe919a0965db69c212ad30cc7cac2ac357833e853317/rbaron/b-parasite"
-        },
-        {
-          "id": "https://stopscanningme.eu/en/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://stopscanningme.eu/en/",
-          "publishedOn": "2022-10-20T21:37:56.000Z",
-          "wordCount": 1030,
-          "title": "Stop Scanning Me",
-          "imageUrl": "https://stopscanningme.eu/img/CSAR-campaign-featured.png"
-        },
-        {
-          "id": "https://mouha.be/sha-3-buffer-overflow/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://mouha.be/sha-3-buffer-overflow/",
-          "publishedOn": "2022-10-20T21:34:55.000Z",
-          "wordCount": 1441,
-          "title": "SHA-3 Buffer Overflow",
-          "imageUrl": null
-        },
-        {
-          "id": "https://get.netatmo.com/hksv-en/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://get.netatmo.com/hksv-en/",
-          "publishedOn": "2022-10-20T21:33:32.000Z",
-          "wordCount": null,
-          "title": "Why our Smart Video Doorbell will not be able to support HomeKit Secure Video",
-          "imageUrl": null
-        },
-        {
-          "id": "https://fasterthanli.me/articles/the-http-crash-course-nobody-asked-for",
-          "author": null,
-          "description": "Comments",
-          "link": "https://fasterthanli.me/articles/the-http-crash-course-nobody-asked-for",
-          "publishedOn": "2022-10-20T20:58:54.000Z",
-          "wordCount": 18303,
-          "title": "The HTTP crash course nobody asked for",
-          "imageUrl": "https://fasterthanli.me/img/logo-square.png"
-        },
-        {
-          "id": "https://www.anthropocenemagazine.org/2022/03/barceolona-style-superblocks-a-surprising-number-of-cities-greener/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.anthropocenemagazine.org/2022/03/barceolona-style-superblocks-a-surprising-number-of-cities-greener/",
-          "publishedOn": "2022-10-20T19:52:15.000Z",
-          "wordCount": 3806,
-          "title": "Barcelona-style “superblocks” could make cities greener and less car-centric",
-          "imageUrl": "https://www.anthropocenemagazine.org/wp-content/uploads/2022/03/Barcelona-superblocks2.jpg"
-        },
-        {
-          "id": "https://huggingface.co/runwayml/stable-diffusion-v1-5/discussions/1",
-          "author": null,
-          "description": "Comments",
-          "link": "https://huggingface.co/runwayml/stable-diffusion-v1-5/discussions/1",
-          "publishedOn": "2022-10-20T19:12:10.000Z",
-          "wordCount": 2576,
-          "title": "Stability.ai sent a take down request to Runway ML's SD v1.5 citing IP Leak",
-          "imageUrl": "https://huggingface.co/front/thumbnails/v2-2.png"
-        },
-        {
-          "id": "https://www.biorxiv.org/content/10.1101/2022.10.18.512756v1",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.biorxiv.org/content/10.1101/2022.10.18.512756v1",
-          "publishedOn": "2022-10-20T19:11:16.000Z",
-          "wordCount": 1045,
-          "title": "Endonuclease fingerprint indicates a synthetic origin of SARS-CoV-2?",
-          "imageUrl": "https://www.biorxiv.org/sites/default/files/images/biorxiv_logo_homepage7-5-small.png"
-        },
-        {
-          "id": "https://openrct2.org/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://openrct2.org/",
-          "publishedOn": "2022-10-20T18:54:17.000Z",
-          "wordCount": 146,
-          "title": "OpenRCT2: Open-source implementation of RollerCoaster Tycoon 2 with new features",
-          "imageUrl": "https://openrct2.org/assets/images/logos/icon_x512.png"
-        },
-        {
-          "id": "https://www.3m.com/3M/en_US/p/d/b40068300/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.3m.com/3M/en_US/p/d/b40068300/",
-          "publishedOn": "2022-10-20T18:43:51.000Z",
-          "wordCount": 4897,
-          "title": "3M Glass Cloth Tape 361",
-          "imageUrl": null
-        },
-        {
-          "id": "https://radleybalko.substack.com/p/yet-another-scientific-body-has-debunked",
-          "author": null,
-          "description": "Comments",
-          "link": "https://radleybalko.substack.com/p/yet-another-scientific-body-has-debunked",
-          "publishedOn": "2022-10-20T18:26:33.000Z",
-          "wordCount": 3235,
-          "title": "Another scientific body has debunked bitemark analysis",
-          "imageUrl": "https://substackcdn.com/image/fetch/w_1200,h_600,c_limit,f_jpg,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F41ffc61c-fd0b-447c-a0c8-e44110942242_5184x3456.jpeg"
-        },
-        {
-          "id": "https://www.hackster.io/news/this-novel-mechanical-neural-network-architected-material-learns-to-respond-to-its-environment-ad68bdcf2d7b",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.hackster.io/news/this-novel-mechanical-neural-network-architected-material-learns-to-respond-to-its-environment-ad68bdcf2d7b",
-          "publishedOn": "2022-10-20T17:56:51.000Z",
-          "wordCount": 1734,
-          "title": "A Mechanical Neural Network Learns to Respond to Its Environment",
-          "imageUrl": "https://hackster.imgix.net/uploads/attachments/1511602/_ds6YlufnWp.blob?auto=compress%2Cformat&w=600&h=450&fit=min"
-        },
-        {
-          "id": "https://news.rice.edu/news/2022/new-motorcycle-lighting-design-could-save-lives",
-          "author": null,
-          "description": "Comments",
-          "link": "https://news.rice.edu/news/2022/new-motorcycle-lighting-design-could-save-lives",
-          "publishedOn": "2022-10-20T17:40:08.000Z",
-          "wordCount": 1679,
-          "title": "New motorcycle lighting design could save lives",
-          "imageUrl": "https://news.rice.edu/sites/g/files/bxs2656/files/2022-10/jwf_5720_gar_copy.jpg"
-        },
-        {
-          "id": "https://tech.fb.com/artificial-intelligence/2022/10/ai-translation-unwritten-language/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://tech.fb.com/artificial-intelligence/2022/10/ai-translation-unwritten-language/",
-          "publishedOn": "2022-10-20T17:34:01.000Z",
-          "wordCount": 1902,
-          "title": "AI translates Hokkien, an unwritten language, for the first time",
-          "imageUrl": "https://tech.fb.com/wp-content/uploads/2022/10/Hokkien-hero.jpg?w=604"
-        },
-        {
-          "id": "https://lists.gnu.org/archive/html/emacs-devel/2022-10/msg01609.html",
-          "author": null,
-          "description": "Comments",
-          "link": "https://lists.gnu.org/archive/html/emacs-devel/2022-10/msg01609.html",
-          "publishedOn": "2022-10-20T17:33:34.000Z",
-          "wordCount": 316,
-          "title": "Eglot has landed on master: Emacs now has a built-in LSP client",
-          "imageUrl": null
-        },
-        {
-          "id": "https://krebsonsecurity.com/2022/10/battle-with-bots-prompts-mass-purge-of-amazon-apple-employee-accounts-on-linkedin/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://krebsonsecurity.com/2022/10/battle-with-bots-prompts-mass-purge-of-amazon-apple-employee-accounts-on-linkedin/",
-          "publishedOn": "2022-10-20T17:23:41.000Z",
-          "wordCount": 2272,
-          "title": "Battle with bots prompts purge of Amazon, Apple employee accounts on LinkedIn",
-          "imageUrl": null
-        },
-        {
-          "id": "https://nabla.typearture.com/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://nabla.typearture.com/",
-          "publishedOn": "2022-10-20T16:05:01.000Z",
-          "wordCount": 460,
-          "title": "Nabla – Isometric Color Font",
-          "imageUrl": null
-        },
-        {
-          "id": "https://tailscale.com/blog/magicdns/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://tailscale.com/blog/magicdns/",
-          "publishedOn": "2022-10-20T15:55:26.000Z",
-          "wordCount": 1392,
-          "title": "MagicDNS is generally available",
-          "imageUrl": "https://tailscale.com/blog/magicdns/social.png"
-        },
-        {
-          "id": "https://www.blackmagicdesign.com/media/release/20221020-02",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.blackmagicdesign.com/media/release/20221020-02",
-          "publishedOn": "2022-10-20T15:37:19.000Z",
-          "wordCount": 844,
-          "title": "DaVinci Resolve for iPad",
-          "imageUrl": null
-        },
-        {
-          "id": "https://github.com/Wamphyre/BSD-XFCE",
-          "author": null,
-          "description": "Comments",
-          "link": "https://github.com/Wamphyre/BSD-XFCE",
-          "publishedOn": "2022-10-20T15:26:28.000Z",
-          "wordCount": 890,
-          "title": "BSD-XFCE installs macOS-like XFCE enviroment on FreeBSD",
-          "imageUrl": "https://opengraph.githubassets.com/2eed578aad39b483927a5251db79592a533d6f8b67a6f36a84966b2009945ad7/Wamphyre/BSD-XFCE"
-        },
-        {
-          "id": "https://www.scanofthemonth.com/scans/batteries",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.scanofthemonth.com/scans/batteries",
-          "publishedOn": "2022-10-20T15:11:20.000Z",
-          "wordCount": 3280,
-          "title": "CT scans of batteries",
-          "imageUrl": "https://assets.website-files.com/6202f89a2c14fae9e9222dc3/634d9c61c8ceabafa89288a8_og-image-batteries.png"
-        },
-        {
-          "id": "https://thereader.mitpress.mit.edu/freeman-dyson-and-me/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://thereader.mitpress.mit.edu/freeman-dyson-and-me/",
-          "publishedOn": "2022-10-20T14:52:56.000Z",
-          "wordCount": 5662,
-          "title": "Freeman Dyson and me",
-          "imageUrl": "https://thereader.mitpress.mit.edu/wp-content/uploads/2022/10/dyson-and-bernstein-edited.jpg"
-        },
-        {
-          "id": "https://www.foxy.io/blog/cloudfront-vs-cloudflare-and-how-to-reduce-response-times-for-both-by-35/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.foxy.io/blog/cloudfront-vs-cloudflare-and-how-to-reduce-response-times-for-both-by-35/",
-          "publishedOn": "2022-10-20T14:45:15.000Z",
-          "wordCount": 2785,
-          "title": "CloudFront vs. Cloudflare, and how to reduce response times for both (2021)",
-          "imageUrl": "https://www.foxy.io/blog/wp-content/uploads/cloudflare-cloudfront.jpg"
-        },
-        {
-          "id": "https://techcrunch.com/2022/10/20/india-fines-google-162-million-for-anti-competitive-practices-on-android/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://techcrunch.com/2022/10/20/india-fines-google-162-million-for-anti-competitive-practices-on-android/",
-          "publishedOn": "2022-10-20T14:40:25.000Z",
-          "wordCount": 8005,
-          "title": "India fines Google $162M for anti-competitive practices on Android",
-          "imageUrl": "https://techcrunch.com/wp-content/uploads/2019/09/GettyImages-942662750.jpg?resize=1200,800"
-        },
-        {
-          "id": "https://ubuntu.com/blog/canonical-releases-ubuntu-22-10-kinetic-kudu",
-          "author": null,
-          "description": "Comments",
-          "link": "https://ubuntu.com/blog/canonical-releases-ubuntu-22-10-kinetic-kudu",
-          "publishedOn": "2022-10-20T14:28:33.000Z",
-          "wordCount": 1530,
-          "title": "Ubuntu 22.10 Kinetic Kudu",
-          "imageUrl": "https://ubuntu.com/wp-content/uploads/02fa/clean_desktop1.png"
-        },
-        {
-          "id": "https://www.biorxiv.org/content/10.1101/2022.10.12.511910v1",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.biorxiv.org/content/10.1101/2022.10.12.511910v1",
-          "publishedOn": "2022-10-20T14:28:03.000Z",
-          "wordCount": 1177,
-          "title": "Building Transformers from Neurons and Astrocytes",
-          "imageUrl": "https://www.biorxiv.org/sites/default/files/images/biorxiv_logo_homepage7-5-small.png"
         }
       ]
     }

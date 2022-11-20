@@ -2,10 +2,260 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://7qi7qi.github.io/RSSFeeder/index.html</id>
     <title>osmos::feed</title>
-    <updated>2022-11-19T01:20:24.695Z</updated>
+    <updated>2022-11-20T01:22:52.508Z</updated>
     <generator>osmosfeed 1.15.1</generator>
     <link rel="alternate" href="https://7qi7qi.github.io/RSSFeeder/index.html"/>
     <link rel="self" href="https://7qi7qi.github.io/RSSFeeder/feed.atom"/>
+    <entry>
+        <title type="html"><![CDATA[引入 Kubernetes 是过早优化的危险信号]]></title>
+        <id>http://weekly.dockone.io/article/2434941</id>
+        <link href="http://weekly.dockone.io/article/2434941"/>
+        <updated>2022-11-20T01:22:50.397Z</updated>
+        <summary type="html"><![CDATA[【编者的话】引入 Kubernetes 是过早优化的危险信号？且听听本文作者怎么说吧。
+如果你所在的企业引入了 Kubernetes，那么你们很有可能会把精力花在一些偏离主线的事情上。
+乍一听这句话可能会感觉到很奇怪，毕竟我们花了这么长的时间来布道和兜售 Kubernetes 的发行版以及咨询服务，致力于帮助人们能够更加充分地利用它，但是事情就是这样！你也许不应该针对你的产品使用 Kubernetes 以及其他一堆“酷”的东西。
+绝大多数的初创以及扩张阶段的企业在构建软件时都应该避免使用 Kubernetes 以及其他的一些过早优化。如果你所在的企业使用了 Kubernetes，那么你们很有可能会把精力花在一些偏离主线的事情上。你们可能已经跌入了过早优化的陷阱。
+请不要觉得这篇文章只是针对 Kubernetes。不是的。这篇文章针对的是工程师们在构建软件的过程中可能做出的所有过早优化。
+以下是我见过的一些例子：
+将 Kubernetes 用于一个应用（还是个 Web 应用）的企业；
+应用程序用到了不只一种语言。比如，后端用的是 Golang、Ruby 或者是 PHP 等语言，然后前端 Web 用的是 React 或者 Vue 等框架；
+没有用云服务来托管应用。比如可以用 Heroku、Vercel、Netlify 或者 Fly.io 等。对于绝大多数产品团队来说，如果他们必须组建一个运维或者基础架构团队的话，他们的解决方案也将会是过度设计的。
+
+试想一下，一个人在真正开始玩他的爱好之前花费了大量的时间和金钱为这个爱好挑选最好的装备。
+当然，这里面有一些观点是比较主观的。也许你知道你会长期坚持你的新爱好，而且你有一个朋友刚好是这方面的行家，他可以帮你挑选合适的装备。不得不说，我自己就很擅长为自己辩解为什么要挑选精英装备，尽管我可能永远不会真的注意到这其中的区别。
+好钢要用在刀…]]></summary>
+        <author>
+            <name>colstuwjx</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[深入OpenTelemetry指标]]></title>
+        <id>http://weekly.dockone.io/article/2434942</id>
+        <link href="http://weekly.dockone.io/article/2434942"/>
+        <updated>2022-11-20T01:22:50.384Z</updated>
+        <summary type="html"><![CDATA[译注：在本文中，为理解的一致性，我们保留了OpenTelemetry的术语，不作翻译：包括但不限于Instrument、Measurement、Exemplar、Baggage、Context等。需要注意区分Measurement和Instrument的区别，前者指的是度量数据，而后者通常是指用于监测的代码和工具。
+OpenTelemetry是由云原生计算基金会（CNCF）托管的一个用于基础设施性能检测的开源可观测性框架。该项目在几乎所有主要的云供应商（AWS、Google、Microsoft）以及可观测性供应商（包括Timescale）的贡献下得到了极大的发展，以至于它成为按活跃度和贡献者排名第二的CNCF项目，仅次于Kubernetes本身。
+OpenTelemetry旨在为所有类型的可观测数据定义一个单一的标准（在OpenTelemetry的术语中被称作Signals信号），包括监控指标、日志和链路追踪。通过一系列的工具、库、API、SDK和exporters，OpenTelemetry从根本上简化了从服务中收集信号并将其发送到你所选用的后端服务的过程，为更多的用户和供应商打开了可观测性的大门。
+在设计OpenTelemetry指标标准时，有三个设计目标被采纳：
+提供将监控指标与其他类型的可观察性数据相连接的能力：要么是通过Exemplars在链路追踪和监控指标之间直接连接，要么是通过Baggage和Context提供与日志和链路追踪享有相同的相关元数据，间接地连接。
+允许从OpenCensus标准轻松迁移到OpenTelemetry标准。
+在可能的情况下提供对其他主要指标实现的全面支持。Prometheus和StatsD是专门适配的，能够完全支持：那些迁移到OpenTelemetry的用户可以看到与使用其原生客户端类似的结果。
+
+OpenTelemetry提供了一个…]]></summary>
+        <author>
+            <name>megrez</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Digging 10 miles underground could yield enough geothermal energy to power Earth]]></title>
+        <id>https://interestingengineering.com/innovation/digging-10-miles-geothermal-energy</id>
+        <link href="https://interestingengineering.com/innovation/digging-10-miles-geothermal-energy"/>
+        <updated>2022-11-19T23:21:24.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[271 years before Pantone, every color imaginable in an 800-page book]]></title>
+        <id>https://www.thisiscolossal.com/2014/05/color-book/</id>
+        <link href="https://www.thisiscolossal.com/2014/05/color-book/"/>
+        <updated>2022-11-19T22:36:53.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Tiniest x86-64-Linux emulator]]></title>
+        <id>https://github.com/jart/blink</id>
+        <link href="https://github.com/jart/blink"/>
+        <updated>2022-11-19T22:25:49.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Show HN: Rssnix – Unix-style filesystem-based RSS/Atom/JSON Feed fetcher/reader]]></title>
+        <id>https://github.com/jafarlihi/rssnix</id>
+        <link href="https://github.com/jafarlihi/rssnix"/>
+        <updated>2022-11-19T22:13:01.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Putting Z-Library on IPFS]]></title>
+        <id>http://annas-blog.org/putting-5,998,794-books-on-ipfs.html</id>
+        <link href="http://annas-blog.org/putting-5,998,794-books-on-ipfs.html"/>
+        <updated>2022-11-19T22:00:06.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Ask HN: What is the thing you've built that you regret the most?]]></title>
+        <id>https://news.ycombinator.com/item?id=33675112</id>
+        <link href="https://news.ycombinator.com/item?id=33675112"/>
+        <updated>2022-11-19T21:45:50.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Starting FORTH (1981) [pdf]]]></title>
+        <id>https://www.forth.com/starting-forth/</id>
+        <link href="https://www.forth.com/starting-forth/"/>
+        <updated>2022-11-19T20:46:27.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[I quit my programmer job to become a chicken]]></title>
+        <id>https://sebastiancarlos.medium.com/how-i-quit-my-programmer-job-to-become-a-chicken-b733c20680b1</id>
+        <link href="https://sebastiancarlos.medium.com/how-i-quit-my-programmer-job-to-become-a-chicken-b733c20680b1"/>
+        <updated>2022-11-19T19:37:44.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Investigating why Steam started picking a random font]]></title>
+        <id>http://blog.pkh.me/p/35-investigating-why-steam-started-picking-a-random-font.html</id>
+        <link href="http://blog.pkh.me/p/35-investigating-why-steam-started-picking-a-random-font.html"/>
+        <updated>2022-11-19T19:12:05.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Strategy 101: An introduction to power]]></title>
+        <id>https://tasshin.com/blog/strategy-101/</id>
+        <link href="https://tasshin.com/blog/strategy-101/"/>
+        <updated>2022-11-19T18:54:28.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[An Interview with Mickey Petersen, Author of Mastering Emacs]]></title>
+        <id>https://syntopikon.substack.com/p/an-interview-with-mickey-petersen</id>
+        <link href="https://syntopikon.substack.com/p/an-interview-with-mickey-petersen"/>
+        <updated>2022-11-19T18:28:54.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Show HN: Run unsafe user generated JavaScript in the browser]]></title>
+        <id>https://workerbox.net/</id>
+        <link href="https://workerbox.net/"/>
+        <updated>2022-11-19T18:25:24.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Hyundai’s Ioniq 6 EV makes its US debut]]></title>
+        <id>https://www.theverge.com/2022/11/18/23466094/hyundai-ioniq-6-us-debut-laas-range-features-ev</id>
+        <link href="https://www.theverge.com/2022/11/18/23466094/hyundai-ioniq-6-us-debut-laas-range-features-ev"/>
+        <updated>2022-11-19T18:15:32.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Consider working on genomics]]></title>
+        <id>https://claymcleod.dev/blog/2022-11-19-consider-working-on-genomics.html</id>
+        <link href="https://claymcleod.dev/blog/2022-11-19-consider-working-on-genomics.html"/>
+        <updated>2022-11-19T15:56:11.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[TinyBIOS – A minimalist open-source BIOS project for fun]]></title>
+        <id>https://github.com/pwk4m1/TinyBIOS</id>
+        <link href="https://github.com/pwk4m1/TinyBIOS"/>
+        <updated>2022-11-19T15:27:05.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Redbean Tiddlywiki Saver]]></title>
+        <id>https://rpdillon.net/redbean-tiddlywiki-saver.html</id>
+        <link href="https://rpdillon.net/redbean-tiddlywiki-saver.html"/>
+        <updated>2022-11-19T14:30:19.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Show HN: Easylang – A browser-based first programming language]]></title>
+        <id>https://easylang.online/ide/#tut=1</id>
+        <link href="https://easylang.online/ide/#tut=1"/>
+        <updated>2022-11-19T14:27:25.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[HelenOS: a microkernel-based, multiserver OS from scratch]]></title>
+        <id>http://www.helenos.org/</id>
+        <link href="http://www.helenos.org/"/>
+        <updated>2022-11-19T14:10:18.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Leader as shock absorber]]></title>
+        <id>https://www.edbatista.com/2022/10/leader-as-shock-absorber.html</id>
+        <link href="https://www.edbatista.com/2022/10/leader-as-shock-absorber.html"/>
+        <updated>2022-11-19T12:39:43.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Restoring my Commodore P50 calculator with a little solder and a 3D printer]]></title>
+        <id>https://blog.jgc.org/2022/11/restoring-my-commodore-p50-calculator.html</id>
+        <link href="https://blog.jgc.org/2022/11/restoring-my-commodore-p50-calculator.html"/>
+        <updated>2022-11-19T10:58:13.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Mystery Blips]]></title>
+        <id>https://mosquitocapital.substack.com/p/the-mystery-blips</id>
+        <link href="https://mosquitocapital.substack.com/p/the-mystery-blips"/>
+        <updated>2022-11-19T10:28:56.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[How Windows decide whether your computer has limited or full Internet access]]></title>
         <id>https://devblogs.microsoft.com/oldnewthing/20221115-00/?p=107399</id>
@@ -207,6 +457,16 @@
         </author>
     </entry>
     <entry>
+        <title type="html"><![CDATA[The Enigma of John Donne]]></title>
+        <id>https://www.thenation.com/article/culture/john-donne-biography-super-rundell/</id>
+        <link href="https://www.thenation.com/article/culture/john-donne-biography-super-rundell/"/>
+        <updated>2022-11-18T17:41:16.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[Mojo.js is a port of Perl's Mojolicious to TypeScript]]></title>
         <id>https://mojojs.org/</id>
         <link href="https://mojojs.org/"/>
@@ -237,10 +497,30 @@
         </author>
     </entry>
     <entry>
+        <title type="html"><![CDATA[ABI compatibility in Python: How hard could it be?]]></title>
+        <id>https://blog.trailofbits.com/2022/11/15/python-wheels-abi-abi3audit/</id>
+        <link href="https://blog.trailofbits.com/2022/11/15/python-wheels-abi-abi3audit/"/>
+        <updated>2022-11-18T15:01:39.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[Earth now weighs six ronnagrams: New metric prefixes voted in]]></title>
         <id>https://phys.org/news/2022-11-earth-ronnagrams-metric-prefixes-voted.html</id>
         <link href="https://phys.org/news/2022-11-earth-ronnagrams-metric-prefixes-voted.html"/>
         <updated>2022-11-18T14:52:51.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Devenv.sh: Fast and reproducible developer environments using Nix]]></title>
+        <id>https://devenv.sh/</id>
+        <link href="https://devenv.sh/"/>
+        <updated>2022-11-18T14:52:34.000Z</updated>
         <summary type="html"><![CDATA[Comments]]></summary>
         <author>
             <name>Hacker News</name>
@@ -257,10 +537,60 @@
         </author>
     </entry>
     <entry>
+        <title type="html"><![CDATA[Open Library]]></title>
+        <id>https://openlibrary.org/</id>
+        <link href="https://openlibrary.org/"/>
+        <updated>2022-11-18T14:45:17.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Inside boost::unordered_flat_map]]></title>
+        <id>http://bannalia.blogspot.com/2022/11/inside-boostunorderedflatmap.html</id>
+        <link href="http://bannalia.blogspot.com/2022/11/inside-boostunorderedflatmap.html"/>
+        <updated>2022-11-18T13:37:26.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Building a Dynamic VRChat World]]></title>
+        <id>https://blog.natalie.ee/posts/building-dynamic-vrchat-world/</id>
+        <link href="https://blog.natalie.ee/posts/building-dynamic-vrchat-world/"/>
+        <updated>2022-11-18T13:30:55.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[Okapi – A micro web framework for Haskell]]></title>
         <id>https://www.okapi.wiki/</id>
         <link href="https://www.okapi.wiki/"/>
         <updated>2022-11-18T13:23:08.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Don't hide things that didn't go perfectly]]></title>
+        <id>https://andrewhuth.substack.com/p/dont-hide-things-that-didnt-go-perfectly</id>
+        <link href="https://andrewhuth.substack.com/p/dont-hide-things-that-didnt-go-perfectly"/>
+        <updated>2022-11-18T13:17:03.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Microservice security design patterns for Kubernetes (2019)]]></title>
+        <id>https://blog.kellybrazil.com/2019/12/05/microservice-security-design-patterns-for-kubernetes-part-1/</id>
+        <link href="https://blog.kellybrazil.com/2019/12/05/microservice-security-design-patterns-for-kubernetes-part-1/"/>
+        <updated>2022-11-18T11:44:52.000Z</updated>
         <summary type="html"><![CDATA[Comments]]></summary>
         <author>
             <name>Hacker News</name>
@@ -8523,448 +8853,6 @@ SPIFFE和SPIRE于2018年进入CNCF Sandbox，并于2020年转入孵化器，期�
         <id>https://pauley.me/post/2022/spot-instance-pricing/</id>
         <link href="https://pauley.me/post/2022/spot-instance-pricing/"/>
         <updated>2022-10-21T13:33:19.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Teach Yourself Programming in Ten Years (1998)]]></title>
-        <id>https://norvig.com/21-days.html</id>
-        <link href="https://norvig.com/21-days.html"/>
-        <updated>2022-10-21T13:09:11.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[State of CSS]]></title>
-        <id>https://web.dev/state-of-css-2022/</id>
-        <link href="https://web.dev/state-of-css-2022/"/>
-        <updated>2022-10-21T12:52:03.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Starlink signals can be reverse-engineered to work like GPS]]></title>
-        <id>https://www.technologyreview.com/2022/10/21/1062001/spacex-starlink-signals-reverse-engineered-gps/</id>
-        <link href="https://www.technologyreview.com/2022/10/21/1062001/spacex-starlink-signals-reverse-engineered-gps/"/>
-        <updated>2022-10-21T12:18:19.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Show HN: Restfox – Open source lightweight alternative to Postman]]></title>
-        <id>https://restfox.dev/</id>
-        <link href="https://restfox.dev/"/>
-        <updated>2022-10-21T12:06:31.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[NEC PC 8201A]]></title>
-        <id>https://www.old-computers.com/museum/computer.asp?st=1&amp;c=334</id>
-        <link href="https://www.old-computers.com/museum/computer.asp?st=1&amp;c=334"/>
-        <updated>2022-10-21T11:55:46.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Pyinfra automates infrastructure super fast at scale]]></title>
-        <id>https://pyinfra.com/</id>
-        <link href="https://pyinfra.com/"/>
-        <updated>2022-10-21T11:42:15.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Converting a polyglot project build to Bazel]]></title>
-        <id>https://www.tweag.io/blog/2022-10-20-bazel-example-servant-elm-1/</id>
-        <link href="https://www.tweag.io/blog/2022-10-20-bazel-example-servant-elm-1/"/>
-        <updated>2022-10-21T09:04:55.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Method Singing]]></title>
-        <id>https://van-magazine.com/mag/stanislavski-on-opera/</id>
-        <link href="https://van-magazine.com/mag/stanislavski-on-opera/"/>
-        <updated>2022-10-21T06:41:35.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Things I did before app launch and what I wish I had done]]></title>
-        <id>https://www.sagiodev.com/blog/lessons_learned_app_launch/</id>
-        <link href="https://www.sagiodev.com/blog/lessons_learned_app_launch/"/>
-        <updated>2022-10-21T04:15:24.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[The Calamities of Others: An ancient historian aims for the big picture]]></title>
-        <id>https://www.laphamsquarterly.org/roundtable/calamities-others</id>
-        <link href="https://www.laphamsquarterly.org/roundtable/calamities-others"/>
-        <updated>2022-10-21T01:37:25.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Kubernetes线上实战训练营（10月班）]]></title>
-        <id>http://weekly.dockone.io/article/2434943</id>
-        <link href="http://weekly.dockone.io/article/2434943"/>
-        <updated>2022-10-21T01:35:31.416Z</updated>
-        <summary type="html"><![CDATA[现在以Kubernetes为代表的容器技术已经非常普及了，很多云计算及容器厂商也提供了基于Kubernetes的服务。
-但是在Kubernetes自学的过程中还是会遇到各种各样的问题，主要原因还是Kubernetes入门容易，深入却很难，而自学又不系统，且缺乏实际操作。
-分布式实验室推出的《Kubernetes线上实战训练营》，通过4天线上培训，3个课后大作业，30天课后辅导，让你通过实战掌握Kubernetes，最后讲解CKA考试，让有想考CKA的同学顺利通过认证。]]></summary>
-        <author>
-            <name>李颖杰</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Hightouch (YC S19) Is Hiring an Engineering Manager]]></title>
-        <id>https://boards.greenhouse.io/hightouch/jobs/4580317004</id>
-        <link href="https://boards.greenhouse.io/hightouch/jobs/4580317004"/>
-        <updated>2022-10-21T01:00:38.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Nearly Half of San Franciscans Have Been Victims of Theft, New Poll Says]]></title>
-        <id>https://sfstandard.com/criminal-justice/nearly-half-of-san-franciscans-have-been-victims-of-theft-new-poll-says/</id>
-        <link href="https://sfstandard.com/criminal-justice/nearly-half-of-san-franciscans-have-been-victims-of-theft-new-poll-says/"/>
-        <updated>2022-10-21T00:41:34.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[How the ‘Black Death’ Left Its Genetic Mark on Future Generations]]></title>
-        <id>https://www.nytimes.com/2022/10/19/science/bubonic-plague-black-death-genetic-protection.html</id>
-        <link href="https://www.nytimes.com/2022/10/19/science/bubonic-plague-black-death-genetic-protection.html"/>
-        <updated>2022-10-20T23:58:09.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Current state of AV1 codec playback support – Oct '22]]></title>
-        <id>https://bitmovin.com/av1-playback-support/</id>
-        <link href="https://bitmovin.com/av1-playback-support/"/>
-        <updated>2022-10-20T23:03:42.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Chimpanzees synchronise their steps just like humans]]></title>
-        <id>https://news.st-andrews.ac.uk/archive/chimpanzees-synchronise-their-steps-just-like-humans/</id>
-        <link href="https://news.st-andrews.ac.uk/archive/chimpanzees-synchronise-their-steps-just-like-humans/"/>
-        <updated>2022-10-20T22:47:33.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Amazon's Jeff Bezos in economy warning: 'Batten down hatches']]></title>
-        <id>https://www.bbc.com/news/business-63319010</id>
-        <link href="https://www.bbc.com/news/business-63319010"/>
-        <updated>2022-10-20T22:46:38.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Size of Andromeda galaxy compared to the Moon]]></title>
-        <id>https://astronomy.stackexchange.com/questions/23378/is-this-photocomposition-of-andromedas-galaxy-and-the-moon-accurate</id>
-        <link href="https://astronomy.stackexchange.com/questions/23378/is-this-photocomposition-of-andromedas-galaxy-and-the-moon-accurate"/>
-        <updated>2022-10-20T22:33:02.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[A Bluetooth Low Energy (BLE) soil moisture sensor]]></title>
-        <id>https://github.com/rbaron/b-parasite</id>
-        <link href="https://github.com/rbaron/b-parasite"/>
-        <updated>2022-10-20T21:52:45.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Stop Scanning Me]]></title>
-        <id>https://stopscanningme.eu/en/</id>
-        <link href="https://stopscanningme.eu/en/"/>
-        <updated>2022-10-20T21:37:56.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[SHA-3 Buffer Overflow]]></title>
-        <id>https://mouha.be/sha-3-buffer-overflow/</id>
-        <link href="https://mouha.be/sha-3-buffer-overflow/"/>
-        <updated>2022-10-20T21:34:55.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Why our Smart Video Doorbell will not be able to support HomeKit Secure Video]]></title>
-        <id>https://get.netatmo.com/hksv-en/</id>
-        <link href="https://get.netatmo.com/hksv-en/"/>
-        <updated>2022-10-20T21:33:32.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[The HTTP crash course nobody asked for]]></title>
-        <id>https://fasterthanli.me/articles/the-http-crash-course-nobody-asked-for</id>
-        <link href="https://fasterthanli.me/articles/the-http-crash-course-nobody-asked-for"/>
-        <updated>2022-10-20T20:58:54.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Barcelona-style “superblocks” could make cities greener and less car-centric]]></title>
-        <id>https://www.anthropocenemagazine.org/2022/03/barceolona-style-superblocks-a-surprising-number-of-cities-greener/</id>
-        <link href="https://www.anthropocenemagazine.org/2022/03/barceolona-style-superblocks-a-surprising-number-of-cities-greener/"/>
-        <updated>2022-10-20T19:52:15.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Stability.ai sent a take down request to Runway ML's SD v1.5 citing IP Leak]]></title>
-        <id>https://huggingface.co/runwayml/stable-diffusion-v1-5/discussions/1</id>
-        <link href="https://huggingface.co/runwayml/stable-diffusion-v1-5/discussions/1"/>
-        <updated>2022-10-20T19:12:10.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Endonuclease fingerprint indicates a synthetic origin of SARS-CoV-2?]]></title>
-        <id>https://www.biorxiv.org/content/10.1101/2022.10.18.512756v1</id>
-        <link href="https://www.biorxiv.org/content/10.1101/2022.10.18.512756v1"/>
-        <updated>2022-10-20T19:11:16.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[OpenRCT2: Open-source implementation of RollerCoaster Tycoon 2 with new features]]></title>
-        <id>https://openrct2.org/</id>
-        <link href="https://openrct2.org/"/>
-        <updated>2022-10-20T18:54:17.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[3M Glass Cloth Tape 361]]></title>
-        <id>https://www.3m.com/3M/en_US/p/d/b40068300/</id>
-        <link href="https://www.3m.com/3M/en_US/p/d/b40068300/"/>
-        <updated>2022-10-20T18:43:51.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Another scientific body has debunked bitemark analysis]]></title>
-        <id>https://radleybalko.substack.com/p/yet-another-scientific-body-has-debunked</id>
-        <link href="https://radleybalko.substack.com/p/yet-another-scientific-body-has-debunked"/>
-        <updated>2022-10-20T18:26:33.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[A Mechanical Neural Network Learns to Respond to Its Environment]]></title>
-        <id>https://www.hackster.io/news/this-novel-mechanical-neural-network-architected-material-learns-to-respond-to-its-environment-ad68bdcf2d7b</id>
-        <link href="https://www.hackster.io/news/this-novel-mechanical-neural-network-architected-material-learns-to-respond-to-its-environment-ad68bdcf2d7b"/>
-        <updated>2022-10-20T17:56:51.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[New motorcycle lighting design could save lives]]></title>
-        <id>https://news.rice.edu/news/2022/new-motorcycle-lighting-design-could-save-lives</id>
-        <link href="https://news.rice.edu/news/2022/new-motorcycle-lighting-design-could-save-lives"/>
-        <updated>2022-10-20T17:40:08.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[AI translates Hokkien, an unwritten language, for the first time]]></title>
-        <id>https://tech.fb.com/artificial-intelligence/2022/10/ai-translation-unwritten-language/</id>
-        <link href="https://tech.fb.com/artificial-intelligence/2022/10/ai-translation-unwritten-language/"/>
-        <updated>2022-10-20T17:34:01.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Eglot has landed on master: Emacs now has a built-in LSP client]]></title>
-        <id>https://lists.gnu.org/archive/html/emacs-devel/2022-10/msg01609.html</id>
-        <link href="https://lists.gnu.org/archive/html/emacs-devel/2022-10/msg01609.html"/>
-        <updated>2022-10-20T17:33:34.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Battle with bots prompts purge of Amazon, Apple employee accounts on LinkedIn]]></title>
-        <id>https://krebsonsecurity.com/2022/10/battle-with-bots-prompts-mass-purge-of-amazon-apple-employee-accounts-on-linkedin/</id>
-        <link href="https://krebsonsecurity.com/2022/10/battle-with-bots-prompts-mass-purge-of-amazon-apple-employee-accounts-on-linkedin/"/>
-        <updated>2022-10-20T17:23:41.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Nabla – Isometric Color Font]]></title>
-        <id>https://nabla.typearture.com/</id>
-        <link href="https://nabla.typearture.com/"/>
-        <updated>2022-10-20T16:05:01.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[MagicDNS is generally available]]></title>
-        <id>https://tailscale.com/blog/magicdns/</id>
-        <link href="https://tailscale.com/blog/magicdns/"/>
-        <updated>2022-10-20T15:55:26.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[DaVinci Resolve for iPad]]></title>
-        <id>https://www.blackmagicdesign.com/media/release/20221020-02</id>
-        <link href="https://www.blackmagicdesign.com/media/release/20221020-02"/>
-        <updated>2022-10-20T15:37:19.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[BSD-XFCE installs macOS-like XFCE enviroment on FreeBSD]]></title>
-        <id>https://github.com/Wamphyre/BSD-XFCE</id>
-        <link href="https://github.com/Wamphyre/BSD-XFCE"/>
-        <updated>2022-10-20T15:26:28.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[CT scans of batteries]]></title>
-        <id>https://www.scanofthemonth.com/scans/batteries</id>
-        <link href="https://www.scanofthemonth.com/scans/batteries"/>
-        <updated>2022-10-20T15:11:20.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Freeman Dyson and me]]></title>
-        <id>https://thereader.mitpress.mit.edu/freeman-dyson-and-me/</id>
-        <link href="https://thereader.mitpress.mit.edu/freeman-dyson-and-me/"/>
-        <updated>2022-10-20T14:52:56.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[CloudFront vs. Cloudflare, and how to reduce response times for both (2021)]]></title>
-        <id>https://www.foxy.io/blog/cloudfront-vs-cloudflare-and-how-to-reduce-response-times-for-both-by-35/</id>
-        <link href="https://www.foxy.io/blog/cloudfront-vs-cloudflare-and-how-to-reduce-response-times-for-both-by-35/"/>
-        <updated>2022-10-20T14:45:15.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[India fines Google $162M for anti-competitive practices on Android]]></title>
-        <id>https://techcrunch.com/2022/10/20/india-fines-google-162-million-for-anti-competitive-practices-on-android/</id>
-        <link href="https://techcrunch.com/2022/10/20/india-fines-google-162-million-for-anti-competitive-practices-on-android/"/>
-        <updated>2022-10-20T14:40:25.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Ubuntu 22.10 Kinetic Kudu]]></title>
-        <id>https://ubuntu.com/blog/canonical-releases-ubuntu-22-10-kinetic-kudu</id>
-        <link href="https://ubuntu.com/blog/canonical-releases-ubuntu-22-10-kinetic-kudu"/>
-        <updated>2022-10-20T14:28:33.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Building Transformers from Neurons and Astrocytes]]></title>
-        <id>https://www.biorxiv.org/content/10.1101/2022.10.12.511910v1</id>
-        <link href="https://www.biorxiv.org/content/10.1101/2022.10.12.511910v1"/>
-        <updated>2022-10-20T14:28:03.000Z</updated>
         <summary type="html"><![CDATA[Comments]]></summary>
         <author>
             <name>Hacker News</name>
