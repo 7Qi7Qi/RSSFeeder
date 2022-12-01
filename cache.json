@@ -12,6 +12,16 @@
       "siteUrl": "http://weekly.dockone.io",
       "articles": [
         {
+          "id": "http://weekly.dockone.io/article/2434950",
+          "author": "新牛哥",
+          "description": "【编者的话】十二因素应用方法是由 Adam Wiggins 提出的构建 SaaS 应用的方法。本文介绍这个方法的演变过程，我们今天还能学习它的地方，以及它如何改变了过去的状况。\n你经常会听说软件开发和部署将变得更美好。这一趋势的当前轮回是 Heroku。不要误会我的意思，Heroku 令人难以置信，它带来了一种编写 Web 应用和部署分布式系统的新方法。他们肯定做对了很多。即使10年之后的今天，我们仍在努力实现同样的开发便利性。\nHeroku 的联合创始人 Adam Wiggins 有一篇著名文章， 12 因素应用方法，它总结了许多有用并且我确信使得构建 Heroku 更有趣和有益的想法。\n在这篇文章中，我想回顾一下 Adam 所涵盖的 12 个因素中的每一个，它们是如何演变的，我们今天可以从它们身上学到什么，以及它们如何改变了过去的状态。\n代码库\n\n\n\n\n这个建议刚提出时，类似 GitHub 这样的东西才刚刚起步，代码版本控制也并不常见。这可能看起来很残酷，但这是事实。我记得刚开始时必须处理 Subversion 的问题。\n代码库与其应用之间的关系显著增长，包括从测试到部署的所有内容。然而，仍然存在高度争议的一点是是否需要单仓。\n如果有多个代码库，它就不是一个应用——它是一个分布式系统。分布式系统中的每个组件都是一个应用，每个组件都可以单独遵守十二因素。\n尤其是在以微服务为中心的世界中，维护多个代码库所需的所有开销都可能令人厌烦。\n依赖项\n\n\n\n\n我不确定你们中有多少人曾经在 Ansible 和 Puppet 等软件可用之前处理过依赖系统。尽管如此，操作系统和各种版本的库之间的特殊性绝对是一场噩梦。\n这个因素抓住了关键，最终在很大程度上使得依赖可以被视为一个已解决的问题。\n通过引入各种清单文件，我们的应用可以以一致和准确的方式重新构建。此外，像 Bazel 这样的构建工具…",
+          "link": "http://weekly.dockone.io/article/2434950",
+          "publishedOn": "2022-12-01T01:19:20.125Z",
+          "wordCount": 351,
+          "title": "12因素应用方法重新审视",
+          "imageUrl": null
+        },
+        {
           "id": "http://weekly.dockone.io/article/2434945",
           "author": "w9527",
           "description": "什么是 Redis？\nRedis（“REmote DIctionary Service”）是一个开源的键值对数据库服务器。\nRedis 更准确的描述是一个数据结构服务器。Redis 的这种特殊性质让它在开发人员中很受欢迎。\n\n\n\nRedis不是通过迭代或者排序方式处理数据，而是一开始就按照数据结构方式组织。早期，它的使用很像 Memcached，但随着 Redis 的改进，它在许多其他用例中变得可行，包括发布-订阅机制、流（streaming）和队列。\n\n\n\n主要来说，Redis 是一个内存数据库，用作另一个“真实”数据库（如 MySQL 或 PostgreSQL）前面的缓存，以帮助提高应用程序性能。它通过利用内存的高速访问速度，从而减轻核心应用程序数据库的负载，例如：\n不经常更改且经常被请求的数据\n任务关键性较低且经常变动的数据\n\n上述数据的示例可以包括会话或数据缓存以及仪表板的排行榜或汇总分析。\n\n\n\n但是，对于许多用例场景，Redis 都可以提供足够的保证，可以将其用作成熟的主数据库。再加上 Redis 插件及其各种高可用性（HA）设置，Redis 作为数据库对于某些场景和工作负载变得非常有用。\n另一个重要方面是 Redis 模糊了缓存和数据存储之间的界限。这里要理解的重要一点是，相比于使用 SSD 或 HDD 作为存储的传统数据库，读取和操作内存中数据的速度要快得多。\n\n\n\n最初，Redis 最常被比作 Memcached，后者当时缺乏任何非易失性持久化。\n这是当前两个缓存之间的功能细分。\n\n\n\n虽然现在拥有多种配置方式将数据持久化到磁盘，但当时首次引入持久化时，Redis 是使用快照方式，通过异步拷贝内存中的数据方式来做持久化。不幸的是，这种机制的缺点是可能会在快照之间丢失数据。\nRedis 自 2009 年成立到现在已经变的很成熟。我们将介绍它的大部分架构和拓扑…",
@@ -139,6 +149,276 @@
       "siteUrl": "https://news.ycombinator.com/",
       "articles": [
         {
+          "id": "https://zerforschung.org/posts/hive-en/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://zerforschung.org/posts/hive-en/",
+          "publishedOn": "2022-12-01T00:13:20.000Z",
+          "wordCount": 568,
+          "title": "Warning: Do not use Hive Social",
+          "imageUrl": "https://zerforschung.org/p/hive/hive-header.jpg"
+        },
+        {
+          "id": "https://github.com/chr15m/bugout",
+          "author": null,
+          "description": "Comments",
+          "link": "https://github.com/chr15m/bugout",
+          "publishedOn": "2022-11-30T23:06:31.000Z",
+          "wordCount": 1318,
+          "title": "Bugout: Browser-to-browser networking built on WebTorrent",
+          "imageUrl": "https://repository-images.githubusercontent.com/144239267/4d985700-74db-11e9-9238-c7461ba9ef20"
+        },
+        {
+          "id": "https://www.gimp.org/news/2022/11/21/gimp-27-birthday/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.gimp.org/news/2022/11/21/gimp-27-birthday/",
+          "publishedOn": "2022-11-30T21:59:46.000Z",
+          "wordCount": 615,
+          "title": "GIMP Turns 27",
+          "imageUrl": "https://www.gimp.org/news/2022/11/21/gimp-27-birthday//gimp-27th-birthday.jpg"
+        },
+        {
+          "id": "https://news.ycombinator.com/item?id=33807621",
+          "author": null,
+          "description": "Comments",
+          "link": "https://news.ycombinator.com/item?id=33807621",
+          "publishedOn": "2022-11-30T21:01:22.000Z",
+          "wordCount": 582,
+          "title": "Meticulous (YC S21) Is Hiring #3 Founding Engineer in London",
+          "imageUrl": null
+        },
+        {
+          "id": "https://www.coindesk.com/layer2/2022/11/30/ftxs-collapse-was-a-crime-not-an-accident/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.coindesk.com/layer2/2022/11/30/ftxs-collapse-was-a-crime-not-an-accident/",
+          "publishedOn": "2022-11-30T20:35:30.000Z",
+          "wordCount": 10686,
+          "title": "FTX’s collapse was a crime, not an accident",
+          "imageUrl": "https://www.coindesk.com/resizer/pZGwkNYrUgcxJqFZiN_Ah1AAClA=/1200x628/center/middle/cloudfront-us-east-1.images.arcpublishing.com/coindesk/WOGSG5X3MFGABO324AEIHA2TLI.jpg"
+        },
+        {
+          "id": "https://www.math.columbia.edu/~woit/wordpress/?p=13181",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.math.columbia.edu/~woit/wordpress/?p=13181",
+          "publishedOn": "2022-11-30T20:28:50.000Z",
+          "wordCount": 3211,
+          "title": "This Week's Hype",
+          "imageUrl": null
+        },
+        {
+          "id": "https://blog.google/threat-analysis-group/new-details-on-commercial-spyware-vendor-variston/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://blog.google/threat-analysis-group/new-details-on-commercial-spyware-vendor-variston/",
+          "publishedOn": "2022-11-30T20:26:31.000Z",
+          "wordCount": 2512,
+          "title": "New details on commercial spyware vendor Variston",
+          "imageUrl": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/TAG_Social_Share_Card.max-800x800.jpg"
+        },
+        {
+          "id": "https://blog.lastpass.com/2022/11/notice-of-recent-security-incident/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://blog.lastpass.com/2022/11/notice-of-recent-security-incident/",
+          "publishedOn": "2022-11-30T20:03:29.000Z",
+          "wordCount": 1791,
+          "title": "Lastpass Security Incident",
+          "imageUrl": "https://blog.lastpass.com/wp-content/uploads/sites/20/2022/08/iStock-621574390-1-scaled.jpg"
+        },
+        {
+          "id": "https://medium.com/microsoft-design/the-feelings-monster-building-a-character-with-all-the-feels-331b5b871fd1",
+          "author": null,
+          "description": "Comments",
+          "link": "https://medium.com/microsoft-design/the-feelings-monster-building-a-character-with-all-the-feels-331b5b871fd1",
+          "publishedOn": "2022-11-30T19:39:29.000Z",
+          "wordCount": 4543,
+          "title": "The Feelings Monster: building a character with all the feels",
+          "imageUrl": "https://miro.medium.com/max/1200/1*WYqyJdna9XJns8ruzMZpwA.png"
+        },
+        {
+          "id": "https://souffle-lang.github.io/index.html",
+          "author": null,
+          "description": "Comments",
+          "link": "https://souffle-lang.github.io/index.html",
+          "publishedOn": "2022-11-30T19:39:10.000Z",
+          "wordCount": 245,
+          "title": "Soufflé: A Datalog Synthesis Tool for Static Analysis",
+          "imageUrl": null
+        },
+        {
+          "id": "https://github.com/ericchiang/pup",
+          "author": null,
+          "description": "Comments",
+          "link": "https://github.com/ericchiang/pup",
+          "publishedOn": "2022-11-30T18:55:16.000Z",
+          "wordCount": 1552,
+          "title": "Pup: Parsing HTML at the command line",
+          "imageUrl": "https://opengraph.githubassets.com/6c04b18fc669b949d75be744bd79f45fd7398795651ab91f4053645f8f5d5a7f/ericchiang/pup"
+        },
+        {
+          "id": "https://blog.readyset.io/bounds-checks/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://blog.readyset.io/bounds-checks/",
+          "publishedOn": "2022-11-30T18:38:30.000Z",
+          "wordCount": 2604,
+          "title": "How much does Rust's bounds checking cost?",
+          "imageUrl": "https://blog.readyset.io/content/images/2022/11/Box-2.png"
+        },
+        {
+          "id": "https://www.reuters.com/technology/spotify-ceo-renews-attack-apple-after-musks-salvo-2022-11-30/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.reuters.com/technology/spotify-ceo-renews-attack-apple-after-musks-salvo-2022-11-30/",
+          "publishedOn": "2022-11-30T18:24:28.000Z",
+          "wordCount": 4399,
+          "title": "Spotify CEO renews attack on Apple after Musk's salvo",
+          "imageUrl": "https://www.reuters.com/resizer/eaGtPGQCFrd_deFKlxeqleC39cE=/1200x628/smart/filters:quality(80)/cloudfront-us-east-2.images.arcpublishing.com/reuters/3ENTEOHF3VIRRNICTKZYCYNK54.jpg"
+        },
+        {
+          "id": "https://openai.com/blog/chatgpt/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://openai.com/blog/chatgpt/",
+          "publishedOn": "2022-11-30T18:08:01.000Z",
+          "wordCount": 3607,
+          "title": "OpenAI ChatGPT: Optimizing language models for dialogue",
+          "imageUrl": "https://openai.com/content/images/2022/11/ChatGPT.jpg"
+        },
+        {
+          "id": "https://www.lumafield.com/article/is-this-toner-half-empty-or-half-full",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.lumafield.com/article/is-this-toner-half-empty-or-half-full",
+          "publishedOn": "2022-11-30T18:00:42.000Z",
+          "wordCount": 13772,
+          "title": "CT scan shows there's still lots of toner left in an “empty” cartridge",
+          "imageUrl": "https://images.prismic.io/lumafield/c28037ba-3bbb-4448-8022-158ca7b35c43_Frame+18.png?auto=compress,format"
+        },
+        {
+          "id": "https://ericlippert.com/2022/11/30/a-long-expected-update/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://ericlippert.com/2022/11/30/a-long-expected-update/",
+          "publishedOn": "2022-11-30T17:36:09.000Z",
+          "wordCount": 4903,
+          "title": "The last three years of my work will be permanently abandoned",
+          "imageUrl": "https://ericlippert.files.wordpress.com/2022/11/315430000_10166816399390203_290434576549125796_n.jpg"
+        },
+        {
+          "id": "https://doordash.news/company/teamupdate/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://doordash.news/company/teamupdate/",
+          "publishedOn": "2022-11-30T16:54:01.000Z",
+          "wordCount": 2647,
+          "title": "DoorDash lays off 1250 employees",
+          "imageUrl": "https://doordash.news/wp-content/uploads/2022/07/DoorDash_icon_RGB.jpg"
+        },
+        {
+          "id": "https://notes.normally.com/cookieless-unique-visitor-counts/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://notes.normally.com/cookieless-unique-visitor-counts/",
+          "publishedOn": "2022-11-30T16:04:48.000Z",
+          "wordCount": 1066,
+          "title": "Using a date-modified header to detect unique visitors without using cookies",
+          "imageUrl": "https://notes.normally.com/content/images/2022/11/notes-unique-visitors-twitter-1.png"
+        },
+        {
+          "id": "https://brettscott.substack.com/p/casino-chip-cashless-society",
+          "author": null,
+          "description": "Comments",
+          "link": "https://brettscott.substack.com/p/casino-chip-cashless-society",
+          "publishedOn": "2022-11-30T15:24:26.000Z",
+          "wordCount": 10488,
+          "title": "The Casino-Chip Society",
+          "imageUrl": "https://substackcdn.com/image/fetch/w_1200,h_600,c_limit,f_jpg,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F65404f2b-81ce-452c-8e9d-f028b1f20323_2778x2778.png"
+        },
+        {
+          "id": "https://news.ycombinator.com/item?id=33801314",
+          "author": null,
+          "description": "Comments",
+          "link": "https://news.ycombinator.com/item?id=33801314",
+          "publishedOn": "2022-11-30T14:37:36.000Z",
+          "wordCount": 3604,
+          "title": "Launch HN: Patterns (YC S21) – A much faster way to build and deploy data apps",
+          "imageUrl": null
+        },
+        {
+          "id": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6542665/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6542665/",
+          "publishedOn": "2022-11-30T14:30:56.000Z",
+          "wordCount": 14595,
+          "title": "The persistent and pervasive impact of bullying in childhood and adolescence",
+          "imageUrl": "https://www.ncbi.nlm.nih.gov/corehtml/pmc/pmcgifs/pmc-logo-share.png?_=0"
+        },
+        {
+          "id": "https://about.gitlab.com/blog/2022/11/30/introducing-gitlab-dedicated/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://about.gitlab.com/blog/2022/11/30/introducing-gitlab-dedicated/",
+          "publishedOn": "2022-11-30T14:10:04.000Z",
+          "wordCount": 1133,
+          "title": "Gitlab Dedicated – our new single-tenant SaaS offering",
+          "imageUrl": "https://about.gitlab.com/images/blogimages/screenshot-2022-11-30-at-7.49.51-am.png"
+        },
+        {
+          "id": "https://foundersatwork.posthaven.com/grow-the-puzzle-around-you",
+          "author": null,
+          "description": "Comments",
+          "link": "https://foundersatwork.posthaven.com/grow-the-puzzle-around-you",
+          "publishedOn": "2022-11-30T12:37:48.000Z",
+          "wordCount": 3895,
+          "title": "Grow the Puzzle Around You",
+          "imageUrl": "https://phaven-prod.s3.amazonaws.com/files/image_part/asset/2099198/DUrX_NAb6X8LJx4sJ7078isPVJw/large_Table_2.jpg"
+        },
+        {
+          "id": "https://lunatic.solutions/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://lunatic.solutions/",
+          "publishedOn": "2022-11-30T12:33:02.000Z",
+          "wordCount": 618,
+          "title": "Lunatic is an Erlang-inspired runtime for WebAssembly",
+          "imageUrl": "https://lunatic.solutions/static/lunatic-logo-01b6c0a7ae6b4f4a6fffa073bc636b14.png"
+        },
+        {
+          "id": "https://github.com/jgosar/mine-city-2000",
+          "author": null,
+          "description": "Comments",
+          "link": "https://github.com/jgosar/mine-city-2000",
+          "publishedOn": "2022-11-30T11:57:54.000Z",
+          "wordCount": 1349,
+          "title": "Convert SimCity 2000 cities into Minecraft worlds",
+          "imageUrl": "https://opengraph.githubassets.com/3f03a4291e050ecdbc7904d3cd58626011a31c345588d323b6722c9d83ae995a/jgosar/mine-city-2000"
+        },
+        {
+          "id": "https://www.inkandswitch.com/inkbase/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.inkandswitch.com/inkbase/",
+          "publishedOn": "2022-11-30T11:55:54.000Z",
+          "wordCount": 9470,
+          "title": "Inkbase: Programmable Ink",
+          "imageUrl": "https://www.inkandswitch.com/inkbase/static/social-image--16x9--1024w.jpg"
+        },
+        {
+          "id": "https://fly.io/blog/how-we-built-fly-postgres/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://fly.io/blog/how-we-built-fly-postgres/",
+          "publishedOn": "2022-11-30T09:11:45.000Z",
+          "wordCount": 3145,
+          "title": "How We Built Fly Postgres",
+          "imageUrl": "https://fly.io/blog/2022-11-29/keepers-proxies-thumbnail.jpg"
+        },
+        {
           "id": "https://www.wyldcard.io/blog/introducing-wyldcard",
           "author": null,
           "description": "Comments",
@@ -207,6 +487,16 @@
           "wordCount": 4502,
           "title": "How Stuff Gets eXposed",
           "imageUrl": null
+        },
+        {
+          "id": "https://blog.sunfishcode.online/measuring-system-interface-complexity/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://blog.sunfishcode.online/measuring-system-interface-complexity/",
+          "publishedOn": "2022-11-29T21:51:19.000Z",
+          "wordCount": 861,
+          "title": "Measuring System Interface Complexity",
+          "imageUrl": ""
         },
         {
           "id": "https://www.nps.gov/havo/learn/nature/peles-hair.htm",
@@ -347,6 +637,16 @@
           "wordCount": 4177,
           "title": "Tales of the M1 GPU",
           "imageUrl": "https://asahilinux.org/img/AsahiLinux_logomark_256px.png"
+        },
+        {
+          "id": "https://www.nytimes.com/2019/10/28/dining/widows-cooking-grief.html",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.nytimes.com/2019/10/28/dining/widows-cooking-grief.html",
+          "publishedOn": "2022-11-29T15:47:00.000Z",
+          "wordCount": null,
+          "title": "For many widows, the hardest part is mealtime (2019)",
+          "imageUrl": null
         },
         {
           "id": "https://www.polarsignals.com/blog/posts/2022/11/29/profiling-without-frame-pointers/",
@@ -8367,316 +8667,6 @@
           "wordCount": 1007,
           "title": "Show HN: I made an offline-ready hiking trail companion app",
           "imageUrl": "https://opengraph.githubassets.com/9cf5f4e6999fe749d35941114a95429718f09387d6be8e5f0d05f1522b327731/jamealg/KT-companion"
-        },
-        {
-          "id": "https://brr.fyi/posts/laundry-at-the-end-of-the-world",
-          "author": null,
-          "description": "Comments",
-          "link": "https://brr.fyi/posts/laundry-at-the-end-of-the-world",
-          "publishedOn": "2022-11-01T12:36:06.000Z",
-          "wordCount": 451,
-          "title": "Laundry at the End of the World",
-          "imageUrl": null
-        },
-        {
-          "id": "https://robboat.com/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://robboat.com/",
-          "publishedOn": "2022-11-01T12:04:18.000Z",
-          "wordCount": 205,
-          "title": "Robb Oat is a robot software engineer",
-          "imageUrl": "https://cdn.jsdelivr.net/gh/robb-oat/server@56b9dcb8e4023dbc4ce4e23adb7578df4d6bce0e/robboat/static/social.png"
-        },
-        {
-          "id": "https://en.wikipedia.org/wiki/CORDIC",
-          "author": null,
-          "description": "Comments",
-          "link": "https://en.wikipedia.org/wiki/CORDIC",
-          "publishedOn": "2022-11-01T11:19:24.000Z",
-          "wordCount": 7905,
-          "title": "CORDIC",
-          "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Sinus_und_Kosinus_am_Einheitskreis_1.svg/1200px-Sinus_und_Kosinus_am_Einheitskreis_1.svg.png"
-        },
-        {
-          "id": "https://www.therpf.com/forums/threads/halloween-go-for-launch.334717/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.therpf.com/forums/threads/halloween-go-for-launch.334717/",
-          "publishedOn": "2022-11-01T09:44:49.000Z",
-          "wordCount": 6237,
-          "title": "Halloween: Go For Launch (2020)",
-          "imageUrl": "https://www.therpf.com/forums/styles/default/mps_default/logo-og.png"
-        },
-        {
-          "id": "https://www.tweag.io/blog/2022-11-01-hard-user-separation-with-nixos/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.tweag.io/blog/2022-11-01-hard-user-separation-with-nixos/",
-          "publishedOn": "2022-11-01T09:21:10.000Z",
-          "wordCount": 4242,
-          "title": "Hard User Separation with NixOS",
-          "imageUrl": "https://tweag.io/logo.png"
-        },
-        {
-          "id": "https://semiengineering.com/chip-design-shifts-as-fundamental-laws-run-out-of-steam/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://semiengineering.com/chip-design-shifts-as-fundamental-laws-run-out-of-steam/",
-          "publishedOn": "2022-11-01T01:27:55.000Z",
-          "wordCount": 6697,
-          "title": "Chip Design Shifts as Fundamental Laws Run Out of Steam",
-          "imageUrl": "https://semiengineering.com/wp-content/uploads/Picture1-2.png"
-        },
-        {
-          "id": "https://turbo.build/blog/turbopack-benchmarks",
-          "author": null,
-          "description": "Comments",
-          "link": "https://turbo.build/blog/turbopack-benchmarks",
-          "publishedOn": "2022-11-01T00:28:28.000Z",
-          "wordCount": 1663,
-          "title": "Turbopack Performance Benchmarks",
-          "imageUrl": "https://turbo.build/images/blog/turbopack-benchmarks/twitter-card.png"
-        },
-        {
-          "id": "https://www.britishmuseum.org/blog/caring-only-known-full-kakapo-feather-cloak-world",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.britishmuseum.org/blog/caring-only-known-full-kakapo-feather-cloak-world",
-          "publishedOn": "2022-10-31T23:18:22.000Z",
-          "wordCount": null,
-          "title": "Caring for the only full kākāpō feather cloak in the world Show image caption",
-          "imageUrl": null
-        },
-        {
-          "id": "https://www.theverge.com/2022/10/31/23428862/arc-browser-web-company-darin-fisher",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.theverge.com/2022/10/31/23428862/arc-browser-web-company-darin-fisher",
-          "publishedOn": "2022-10-31T23:02:38.000Z",
-          "wordCount": 9973,
-          "title": "The Browser Company’s Darin Fisher thinks it’s time to reinvent the browser",
-          "imageUrl": "https://cdn.vox-cdn.com/thumbor/PEATIA7wfMUPq6kn8cMDx-x_1hE=/0x0:1600x1065/1200x628/filters:focal(800x533:801x534)/cdn.vox-cdn.com/uploads/chorus_asset/file/24149689/image1.jpg"
-        },
-        {
-          "id": "https://github.com/ema/pets",
-          "author": null,
-          "description": "Comments",
-          "link": "https://github.com/ema/pets",
-          "publishedOn": "2022-10-31T22:41:24.000Z",
-          "wordCount": 1365,
-          "title": "A configuration management system for pets, not cattle",
-          "imageUrl": "https://opengraph.githubassets.com/819eb65c4a2e0418c0a4e08f67d15eece4ee262644d7d27709a9f22b3894a771/ema/pets"
-        },
-        {
-          "id": "https://nicheless.blog/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://nicheless.blog/",
-          "publishedOn": "2022-10-31T22:23:31.000Z",
-          "wordCount": 449,
-          "title": "Nicheless is a micro-blogging platform for raw, unfiltered thoughts",
-          "imageUrl": "https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2Fs3.amazonaws.com%2Fappforest_uf%2Ff1664792686506x777420082313867000%2FTL_New.png?w=&h=&auto=compress&dpr=1&fit=max"
-        },
-        {
-          "id": "https://developers.yubico.com/python-fido2/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://developers.yubico.com/python-fido2/",
-          "publishedOn": "2022-10-31T21:41:50.000Z",
-          "wordCount": 605,
-          "title": "Python-FIDO2",
-          "imageUrl": null
-        },
-        {
-          "id": "https://www.akselmo.dev/2022/10/31/I-made-outlines-for-KDE-Breeze.html",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.akselmo.dev/2022/10/31/I-made-outlines-for-KDE-Breeze.html",
-          "publishedOn": "2022-10-31T21:22:21.000Z",
-          "wordCount": 1459,
-          "title": "I made outlines for KDE Breeze window decoration",
-          "imageUrl": null
-        },
-        {
-          "id": "https://www.nature.com/articles/505283a",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.nature.com/articles/505283a",
-          "publishedOn": "2022-10-31T21:14:36.000Z",
-          "wordCount": 4585,
-          "title": "Gross domestic product is a misleading measure of national success",
-          "imageUrl": "https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2F505283a/MediaObjects/41586_2014_Article_BF505283a_Figb_HTML.jpg"
-        },
-        {
-          "id": "https://medium.com/@kentbeck_7670/cloud-development-environments-tame-complexity-by-reducing-state-4a154ea7959f",
-          "author": null,
-          "description": "Comments",
-          "link": "https://medium.com/@kentbeck_7670/cloud-development-environments-tame-complexity-by-reducing-state-4a154ea7959f",
-          "publishedOn": "2022-10-31T21:14:24.000Z",
-          "wordCount": 2644,
-          "title": "Cloud development environments tame complexity by reducing state",
-          "imageUrl": null
-        },
-        {
-          "id": "https://news.ycombinator.com/item?id=33413124",
-          "author": null,
-          "description": "Comments",
-          "link": "https://news.ycombinator.com/item?id=33413124",
-          "publishedOn": "2022-10-31T21:06:06.000Z",
-          "wordCount": 7798,
-          "title": "Ask HN: What piece of code/codebase blew your mind when you saw it?",
-          "imageUrl": null
-        },
-        {
-          "id": "https://flexport.com/careers",
-          "author": null,
-          "description": "Comments",
-          "link": "https://flexport.com/careers",
-          "publishedOn": "2022-10-31T21:00:36.000Z",
-          "wordCount": 8354,
-          "title": "Flexport (YC W14) Is Hiring Software Engineers",
-          "imageUrl": "https://images.ctfassets.net/92fo1e671z6m/1jQu6T1XfkcBMcTa3ED361/312141f8eb96199be0c2ae6d3ed92369/Flexport_LP_Standard_Meta_IMG.jpeg?w=478&h=250&fl=progressive&q=50&fm=jpg"
-        },
-        {
-          "id": "https://brr.fyi/posts/sms-mfa",
-          "author": null,
-          "description": "Comments",
-          "link": "https://brr.fyi/posts/sms-mfa",
-          "publishedOn": "2022-10-31T20:46:02.000Z",
-          "wordCount": 3170,
-          "title": "SMS Multifactor Authentication in Antarctica",
-          "imageUrl": null
-        },
-        {
-          "id": "https://www.nintendolife.com/news/2022/10/random-nascar-driver-stuns-to-qualify-for-championship-with-gamecube-move",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.nintendolife.com/news/2022/10/random-nascar-driver-stuns-to-qualify-for-championship-with-gamecube-move",
-          "publishedOn": "2022-10-31T20:40:47.000Z",
-          "wordCount": 4100,
-          "title": "Nascar driver stuns to qualify for championship with GameCube move",
-          "imageUrl": "https://images.nintendolife.com/7851ccc63d2a1/1280x720.jpg"
-        },
-        {
-          "id": "https://twitter.com/shubroski/status/1587136794797244417",
-          "author": null,
-          "description": "Comments",
-          "link": "https://twitter.com/shubroski/status/1587136794797244417",
-          "publishedOn": "2022-10-31T19:45:13.000Z",
-          "wordCount": 399,
-          "title": "Demo of =GPT3() as a spreadsheet feature",
-          "imageUrl": null
-        },
-        {
-          "id": "https://brr.fyi/posts/wastewater-plant",
-          "author": null,
-          "description": "Comments",
-          "link": "https://brr.fyi/posts/wastewater-plant",
-          "publishedOn": "2022-10-31T18:43:17.000Z",
-          "wordCount": 750,
-          "title": "The McMurdo Wastewater Treatment Plant",
-          "imageUrl": null
-        },
-        {
-          "id": "https://www.explainpaper.com/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.explainpaper.com/",
-          "publishedOn": "2022-10-31T18:33:01.000Z",
-          "wordCount": 93,
-          "title": "Show HN: Explainpaper  – Explain jargon in academic papers with GPT-3",
-          "imageUrl": null
-        },
-        {
-          "id": "https://news.ycombinator.com/item?id=33409891",
-          "author": null,
-          "description": "Comments",
-          "link": "https://news.ycombinator.com/item?id=33409891",
-          "publishedOn": "2022-10-31T18:02:33.000Z",
-          "wordCount": 10527,
-          "title": "Ask HN: Have you set up a procedure to disclose your passwords in case of death?",
-          "imageUrl": null
-        },
-        {
-          "id": "https://ericwbailey.website/published/aria-label-is-a-code-smell/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://ericwbailey.website/published/aria-label-is-a-code-smell/",
-          "publishedOn": "2022-10-31T17:38:26.000Z",
-          "wordCount": 2500,
-          "title": "Aria-label is a code smell",
-          "imageUrl": "https://ericwbailey.website/img/posts/aria-label-is-a-code-smell/share-image-facebook.png"
-        },
-        {
-          "id": "http://annas-blog.org/blog-isbndb-dump-how-many-books-are-preserved-forever.html",
-          "author": null,
-          "description": "Comments",
-          "link": "http://annas-blog.org/blog-isbndb-dump-how-many-books-are-preserved-forever.html",
-          "publishedOn": "2022-10-31T16:58:08.000Z",
-          "wordCount": 1744,
-          "title": "ISBNdb dump – how many books are preserved forever?",
-          "imageUrl": "http://annas-blog.org/preservation-slider.png"
-        },
-        {
-          "id": "https://www.quantamagazine.org/why-mathematicians-study-knots-20221031/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.quantamagazine.org/why-mathematicians-study-knots-20221031/",
-          "publishedOn": "2022-10-31T16:37:47.000Z",
-          "wordCount": 5901,
-          "title": "Why mathematicians study knots",
-          "imageUrl": "https://d2r55xnwy6nx47.cloudfront.net/uploads/2022/10/Knots_1200_Social2.webp"
-        },
-        {
-          "id": "https://github.com/japiirainen/fp",
-          "author": null,
-          "description": "Comments",
-          "link": "https://github.com/japiirainen/fp",
-          "publishedOn": "2022-10-31T16:11:30.000Z",
-          "wordCount": 1238,
-          "title": "Show HN: A small, weird and unpractical programming language",
-          "imageUrl": "https://opengraph.githubassets.com/cdd11ddeaf485eaea714b2680a7b4f55d89d20981e3d8b282f839d12b58cb35a/japiirainen/fp"
-        },
-        {
-          "id": "https://replit.com/site/ghostwriter",
-          "author": null,
-          "description": "Comments",
-          "link": "https://replit.com/site/ghostwriter",
-          "publishedOn": "2022-10-31T15:29:58.000Z",
-          "wordCount": null,
-          "title": "Replit's in-browser coding AI",
-          "imageUrl": null
-        },
-        {
-          "id": "https://garry.blog/mailbag-sausage-men/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://garry.blog/mailbag-sausage-men/",
-          "publishedOn": "2022-10-31T14:43:04.000Z",
-          "wordCount": 5450,
-          "title": "Mailbag: Sausage Men",
-          "imageUrl": "https://garry.blog/wp-content/uploads/2022/08/image-7.png"
-        },
-        {
-          "id": "https://remix.run/blog/remixing-shopify",
-          "author": null,
-          "description": "Comments",
-          "link": "https://remix.run/blog/remixing-shopify",
-          "publishedOn": "2022-10-31T14:16:01.000Z",
-          "wordCount": 945,
-          "title": "Remix web framework aquired by Shopify",
-          "imageUrl": "https://remix.run/img/social?slug=remixing-shopify&siteUrl=https%3A%2F%2Fremix.run&title=Remixing+Shopify&authorName=Michael+Jackson&authorTitle=Co-Founder%2C+CEO&date=October+31st%2C+2022"
-        },
-        {
-          "id": "https://www.washingtonpost.com/business/2022/10/31/productivity-down-employers-worried-recession/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.washingtonpost.com/business/2022/10/31/productivity-down-employers-worried-recession/",
-          "publishedOn": "2022-10-31T13:26:34.000Z",
-          "wordCount": 8345,
-          "title": "U.S. workers have gotten less productive – no one is sure why",
-          "imageUrl": "https://www.washingtonpost.com/wp-apps/imrs.php?src=https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/ZLP6VGSBZQI63DDOSODL27GYEY.jpg&w=1440"
         }
       ]
     }
