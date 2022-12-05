@@ -12,6 +12,16 @@
       "siteUrl": "http://weekly.dockone.io",
       "articles": [
         {
+          "id": "http://weekly.dockone.io/article/2434954",
+          "author": "megrez",
+          "description": "Prometheus vs. OpenTelemetry指标: 共同点\n这两个系统都允许你收集和转换指标（尽管Open Telemetry作为一个转换管道要灵活得多）。然而，回顾以前的文章，我们需要记住一个重要的区别。Prometheus是一个可观测性工具（包括收集、存储和查询），它使用的指标模型是为适应自己的需要而设计的。\n另一方面，OpenTelemetry的指标组件将许多不同的数据模型转化为一个单一的框架（提供无存储或查询的集合）。这些核心差异反映了系统的复杂性：Prometheus是一个直接的模型，通常以文本形式暴露出来，而OpenTelemetry是由三种模型组成的更复杂的系列，使用二进制格式进行传输。\n这两个系统也允许通过SDK进行代码级的监控，但OpenTelemetry也专注于支持自动埋点，尽可能不会侵入应用程序。\n那么，你可以创建的指标之间有什么重叠？本质上，OpenTelemetry允许表示所有Prometheus指标类型（Counters、Gauges、Summaries和Histograms）。尽管如此，Prometheus仍然不能表示OpenTelemetry指标的某些配置，包括Delta表示法和指数Histograms（尽管这些将很快在Prometheus中被支持），以及整数数值类型。\n换句话说，Prometheus指标是OpenTelemetry指标的一个严格子集。\n主要区别\n虽然内部模型的工作方式有一些差异，但从开发者的角度来看，两者之间的实际差异更多是与生态系统有关。\nPrometheus提供指标收集、存储和查询。它通常通过一个简单的爬虫系统收集指标，从主机中提取数据。Prometheus数据库存储这些数据，然后你可以用Prometheus查询语言PromQL来查询。Prometheus数据库可以处理大量的数据，但它并不是正式意义上的长期存…",
+          "link": "http://weekly.dockone.io/article/2434954",
+          "publishedOn": "2022-12-05T01:05:47.878Z",
+          "wordCount": 866,
+          "title": "Prometheus vs. OpenTelemetry Metrics: 完全指南",
+          "imageUrl": null
+        },
+        {
           "id": "http://weekly.dockone.io/article/2434946",
           "author": "新牛哥",
           "description": "【编者的话】本文是作者在 FLOPS 2022 会议上的演讲，正如标题所言，重点分享了使用Liquid Haskell语言集成验证系统来构建可靠的分布式系统的有趣的探索经历，目标是希望程序员能够机械地指定和验证分布式系统的真实、可执行实现的正确性属性，而且是使用集成到他们用于实现的相同通用、工业强度编程语言中的验证功能来做到这一点。目前来看使用Liquid Haskell能做到，但是仍然有很大的改进空间。\n今年 5 月，我在FLOPS 2022 会议上发表了开幕主题演讲（我的第一次主题演讲！） 。我谈到了我们小组在使用 Liquid Haskell 验证分布式系统的正确性方面所做的工作。\n这是我的 FLOPS 演讲稿。一些幻灯片包含在下面，我也发布了完整的幻灯片。\n早上好\n\n\n\n\n早上好，FLOPS！我是 Lindsey Kuper。我是加州大学圣克鲁兹分校的助理教授。\n非常感谢 Atsushi 和 Michael 以及整个 FLOPS 组织团队邀请我在 FLOPS 上发言，以及他们组织这次活动的工作。就个人而言，FLOPS 是我第一次有论文被拒绝的会议，那是在 2010 年我刚开始读研究生的时候。所以今天被邀请做这个演讲，我感到特别荣幸。\n这个演讲是关于我最近非常兴奋的事情，即使用现代语言集成验证工具来帮助我们构建保证按预期工作的分布式系统的潜力，这些保证不仅适用于模型，还适用于真实运行的代码。\n在本次演讲的开始部分，我将解释我所说的“分布式系统”的含义以及它们所面临的具体挑战。然后简单介绍一下 Liquid Haskell 语言集成的验证系统。最后，探险记：我将分享我和我的学生和合作者一直在这个领域开展的两个项目的一些亮点。\n那么，让我们从讨论分布式系统开始吧！\n什么是分布式系统？\n\n\n\n\n想象一些独立的机器通过网络相互传递消息进行通信。它们可能相距很近或相距很远，但我…",
@@ -149,6 +159,256 @@
       "siteUrl": "https://news.ycombinator.com/",
       "articles": [
         {
+          "id": "https://jackiebavaro.substack.com/p/hot-take-google-has-a-company-strategy",
+          "author": null,
+          "description": "Comments",
+          "link": "https://jackiebavaro.substack.com/p/hot-take-google-has-a-company-strategy",
+          "publishedOn": "2022-12-04T23:55:17.000Z",
+          "wordCount": 4235,
+          "title": "Google has a company strategy, not a product strategy",
+          "imageUrl": "https://substackcdn.com/image/fetch/w_1200,h_600,c_limit,f_jpg,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F806b6d9d-9aff-4d27-85e1-3d49f742d37c_6000x4000.jpeg"
+        },
+        {
+          "id": "https://www.thepilot.com/news/emergency-declared-and-curfew-ordered-following-moore-power-grid-attack/article_b3b19780-7370-11ed-865d-c78d0de5d921.html",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.thepilot.com/news/emergency-declared-and-curfew-ordered-following-moore-power-grid-attack/article_b3b19780-7370-11ed-865d-c78d0de5d921.html",
+          "publishedOn": "2022-12-04T23:27:58.000Z",
+          "wordCount": 13678,
+          "title": "Emergency declared and curfew imposed following North Carolina power grid attack",
+          "imageUrl": "https://bloximages.newyork1.vip.townnews.com/thepilot.com/content/tncms/assets/v3/editorial/5/c0/5c0cce58-741c-11ed-8859-cfb375a52f6b/638d1415a26c3.image.jpg?crop=1000%2C525%2C0%2C37&resize=1000%2C525&order=crop%2Cresize"
+        },
+        {
+          "id": "https://web.stanford.edu/class/cs343/resources/purify.pdf",
+          "author": null,
+          "description": "Comments",
+          "link": "https://web.stanford.edu/class/cs343/resources/purify.pdf",
+          "publishedOn": "2022-12-04T23:21:03.000Z",
+          "wordCount": 96611,
+          "title": "Memory Leaks Detection Paper Co-Authored by Netflix CEO Reed Hastings in 1992 [pdf]",
+          "imageUrl": null
+        },
+        {
+          "id": "https://tedgioia.substack.com/p/how-web-platforms-collapse-the-facebook",
+          "author": null,
+          "description": "Comments",
+          "link": "https://tedgioia.substack.com/p/how-web-platforms-collapse-the-facebook",
+          "publishedOn": "2022-12-04T23:06:00.000Z",
+          "wordCount": 8742,
+          "title": "Web Platforms Collapse: The Facebook Case Study",
+          "imageUrl": "https://substackcdn.com/image/fetch/w_1200,h_600,c_limit,f_jpg,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F8ed59d49-d05f-40be-b072-24c598769753_1003x564.jpeg"
+        },
+        {
+          "id": "https://news.artnet.com/art-world/archaeologists-graham-hancocks-ancient-apocalypse-fiction-2222060",
+          "author": null,
+          "description": "Comments",
+          "link": "https://news.artnet.com/art-world/archaeologists-graham-hancocks-ancient-apocalypse-fiction-2222060",
+          "publishedOn": "2022-12-04T22:58:19.000Z",
+          "wordCount": 3669,
+          "title": "Archaeologists Ask Netflix to Reclassify Graham Hancock’s Docuseries as Fiction",
+          "imageUrl": "https://p-news-uploads.storage.googleapis.com/2022/12/GettyImages-563611513.jpg"
+        },
+        {
+          "id": "https://gist.github.com/Gaelan/cf5ae4a1e9d8d64cb0b732cf3a38e04a",
+          "author": null,
+          "description": "Comments",
+          "link": "https://gist.github.com/Gaelan/cf5ae4a1e9d8d64cb0b732cf3a38e04a",
+          "publishedOn": "2022-12-04T22:47:24.000Z",
+          "wordCount": 1332,
+          "title": "ChatGPT passes the 2022 AP Computer Science A free response section",
+          "imageUrl": "https://github.githubassets.com/images/modules/gists/gist-og-image.png"
+        },
+        {
+          "id": "https://github.com/eoin-barr/weatherme",
+          "author": null,
+          "description": "Comments",
+          "link": "https://github.com/eoin-barr/weatherme",
+          "publishedOn": "2022-12-04T22:38:32.000Z",
+          "wordCount": 634,
+          "title": "Weather CLI Tool",
+          "imageUrl": "https://opengraph.githubassets.com/13ffa51a0691758af70d61b5a00ceca3bece8896982dc4287a9643e26ee0f75d/eoin-barr/weatherme"
+        },
+        {
+          "id": "https://blog.plover.com/2022/12/04/#crap-warning-signs-2",
+          "author": null,
+          "description": "Comments",
+          "link": "https://blog.plover.com/2022/12/04/#crap-warning-signs-2",
+          "publishedOn": "2022-12-04T20:45:56.000Z",
+          "wordCount": 1451,
+          "title": "Software horror show: SAP Concur",
+          "imageUrl": "https://pic.blog.plover.com/prog/crap-warning-signs-2/concur.png"
+        },
+        {
+          "id": "https://corecursive.com/doomed-to-fail-with-burger-becky/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://corecursive.com/doomed-to-fail-with-burger-becky/",
+          "publishedOn": "2022-12-04T19:44:04.000Z",
+          "wordCount": 9655,
+          "title": "Porting Doom to the 3D0 Console",
+          "imageUrl": "https://corecursive.com/assets/images/083/wide.png"
+        },
+        {
+          "id": "https://www.jamesgmartin.center/2022/11/administrators-have-seized-the-ivory-tower/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.jamesgmartin.center/2022/11/administrators-have-seized-the-ivory-tower/",
+          "publishedOn": "2022-12-04T19:09:43.000Z",
+          "wordCount": 3229,
+          "title": "Administrators Have Seized the Ivory Tower",
+          "imageUrl": "https://www.jamesgmartin.center/wp-content/uploads/2022/11/AdobeStock_46696567-scaled.jpeg"
+        },
+        {
+          "id": "https://oldoperatingtheatre.com/step-into-the-role-of-a-surgeon-in-our-interactive-game/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://oldoperatingtheatre.com/step-into-the-role-of-a-surgeon-in-our-interactive-game/",
+          "publishedOn": "2022-12-04T18:35:50.000Z",
+          "wordCount": 1756,
+          "title": "Interactive text game of surgery in early 1800s",
+          "imageUrl": "https://oldoperatingtheatre.com/wp-content/uploads/2022/06/Table-surgery-kit.jpg"
+        },
+        {
+          "id": "https://www.cyclingnews.com/news/pfc-bans-are-going-to-change-the-face-of-all-waterproof-garments/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.cyclingnews.com/news/pfc-bans-are-going-to-change-the-face-of-all-waterproof-garments/",
+          "publishedOn": "2022-12-04T18:03:06.000Z",
+          "wordCount": 30239,
+          "title": "PFC bans are going to change waterproof garments",
+          "imageUrl": "https://cdn.mos.cms.futurecdn.net/qBtoFJ5Twui3gAbKkxQJnW-1200-80.jpg"
+        },
+        {
+          "id": "https://invisible-characters.com/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://invisible-characters.com/",
+          "publishedOn": "2022-12-04T17:58:48.000Z",
+          "wordCount": 498,
+          "title": "Invisible Characters",
+          "imageUrl": null
+        },
+        {
+          "id": "https://www.chemistryworld.com/features/the-terahertz-gap-into-the-dead-zone/3004857.article",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.chemistryworld.com/features/the-terahertz-gap-into-the-dead-zone/3004857.article",
+          "publishedOn": "2022-12-04T17:14:50.000Z",
+          "wordCount": 13703,
+          "title": "The terahertz gap: into the dead zone (2007)",
+          "imageUrl": "https://d2cbg94ubxgsnp.cloudfront.net/Pictures/1024x536/6/1/1/127611_feature-p52-terahertz-390_tcm18-78971.jpg"
+        },
+        {
+          "id": "https://jobs.ashbyhq.com/motion/dfe19251-9d97-4e6b-b9ac-04422a697f57?utm_source=hn",
+          "author": null,
+          "description": "Comments",
+          "link": "https://jobs.ashbyhq.com/motion/dfe19251-9d97-4e6b-b9ac-04422a697f57?utm_source=hn",
+          "publishedOn": "2022-12-04T17:02:10.000Z",
+          "wordCount": 1041,
+          "title": "Motion (YC W20) Is Hiring a Senior SRE",
+          "imageUrl": "https://app.ashbyhq.com/api/images/org-theme-social/fd4042c5-a696-4b26-9058-2ac8131c2d75/fab07bab-a363-44f7-8435-32f76868d3d3.png"
+        },
+        {
+          "id": "https://en.wikibooks.org/wiki/Haskell/Zippers",
+          "author": null,
+          "description": "Comments",
+          "link": "https://en.wikibooks.org/wiki/Haskell/Zippers",
+          "publishedOn": "2022-12-04T16:45:08.000Z",
+          "wordCount": 6369,
+          "title": "Theseus and the Zipper",
+          "imageUrl": null
+        },
+        {
+          "id": "http://www.os2museum.com/wp/undocumented-8086-opcodes-part-i/",
+          "author": null,
+          "description": "Comments",
+          "link": "http://www.os2museum.com/wp/undocumented-8086-opcodes-part-i/",
+          "publishedOn": "2022-12-04T16:16:31.000Z",
+          "wordCount": 3301,
+          "title": "Undocumented 8086 Opcodes part 1",
+          "imageUrl": null
+        },
+        {
+          "id": "https://news.ycombinator.com/item?id=33854815",
+          "author": null,
+          "description": "Comments",
+          "link": "https://news.ycombinator.com/item?id=33854815",
+          "publishedOn": "2022-12-04T16:03:19.000Z",
+          "wordCount": 6459,
+          "title": "Ask HN: Reading material on how to be a better software engineer?",
+          "imageUrl": null
+        },
+        {
+          "id": "https://csclub.uwaterloo.ca/resources/tech-talks/cory-doctorow-the-war-on-general-purpose-computing/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://csclub.uwaterloo.ca/resources/tech-talks/cory-doctorow-the-war-on-general-purpose-computing/",
+          "publishedOn": "2022-12-04T14:54:57.000Z",
+          "wordCount": 546,
+          "title": "The War on General Purpose Computing (2015) [video]",
+          "imageUrl": null
+        },
+        {
+          "id": "https://github.com/wong2/chat-gpt-google-extension",
+          "author": null,
+          "description": "Comments",
+          "link": "https://github.com/wong2/chat-gpt-google-extension",
+          "publishedOn": "2022-12-04T14:01:45.000Z",
+          "wordCount": 683,
+          "title": "Show HN: Chrome extension to display ChatGPT response besides Google Search",
+          "imageUrl": "https://opengraph.githubassets.com/9782c56ca2a08eb274d175693fef9776195f430c7d87b5b0b37fdd02c2c89012/wong2/chat-gpt-google-extension"
+        },
+        {
+          "id": "https://garagehq.deuxfleurs.fr/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://garagehq.deuxfleurs.fr/",
+          "publishedOn": "2022-12-04T13:30:27.000Z",
+          "wordCount": 353,
+          "title": "Garage: An open-source distributed object storage service",
+          "imageUrl": null
+        },
+        {
+          "id": "https://en.wikipedia.org/wiki/Digital_mobile_radio",
+          "author": null,
+          "description": "Comments",
+          "link": "https://en.wikipedia.org/wiki/Digital_mobile_radio",
+          "publishedOn": "2022-12-04T13:22:48.000Z",
+          "wordCount": 2213,
+          "title": "Digital Mobile Radio",
+          "imageUrl": null
+        },
+        {
+          "id": "https://susam.net/blog/x86-quine.html",
+          "author": null,
+          "description": "Comments",
+          "link": "https://susam.net/blog/x86-quine.html",
+          "publishedOn": "2022-12-04T11:55:24.000Z",
+          "wordCount": 3458,
+          "title": "x86 Quine: These 12 Bytes of Machine Code Print Themselves (2005)",
+          "imageUrl": null
+        },
+        {
+          "id": "https://onlinelibrary.wiley.com/doi/abs/10.1111/jopy.12667",
+          "author": null,
+          "description": "Comments",
+          "link": "https://onlinelibrary.wiley.com/doi/abs/10.1111/jopy.12667",
+          "publishedOn": "2022-12-04T09:44:07.000Z",
+          "wordCount": null,
+          "title": "Cognitive ability is a powerful predictor of political tolerance",
+          "imageUrl": null
+        },
+        {
+          "id": "https://pubchem.ncbi.nlm.nih.gov/patent/US-6506148-B2",
+          "author": null,
+          "description": "Comments",
+          "link": "https://pubchem.ncbi.nlm.nih.gov/patent/US-6506148-B2",
+          "publishedOn": "2022-12-04T05:29:48.000Z",
+          "wordCount": 952,
+          "title": "Nervous system manipulation by electromagnetic fields from monitors",
+          "imageUrl": null
+        },
+        {
           "id": "https://debugger.medium.com/its-time-for-maximum-viable-product-eec9d5211156",
           "author": null,
           "description": "Comments",
@@ -169,6 +429,16 @@
           "imageUrl": null
         },
         {
+          "id": "https://www.medievalists.net/2022/11/medieval-paitings-st-albans-cathedral/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.medievalists.net/2022/11/medieval-paitings-st-albans-cathedral/",
+          "publishedOn": "2022-12-03T22:08:57.000Z",
+          "wordCount": 4714,
+          "title": "Recreating Medieval Paintings with Light at St Albans Cathedral",
+          "imageUrl": "https://www.medievalists.net/wp-content/uploads/2022/11/mnet22113001.jpg"
+        },
+        {
           "id": "https://robertheaton.com/gameboy-doctor/",
           "author": null,
           "description": "Comments",
@@ -177,6 +447,16 @@
           "wordCount": 1004,
           "title": "Gameboy Doctor: debug and fix your gameboy emulator",
           "imageUrl": "https://robertheaton.com/images/nintendo-upside-down.png"
+        },
+        {
+          "id": "https://ericchiang.github.io/post/tpm-keys/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://ericchiang.github.io/post/tpm-keys/",
+          "publishedOn": "2022-12-03T22:02:12.000Z",
+          "wordCount": 3412,
+          "title": "The Trusted Platform Module Key Hierarchy",
+          "imageUrl": null
         },
         {
           "id": "https://www.engraved.blog/building-a-virtual-machine-inside/",
@@ -369,6 +649,16 @@
           "imageUrl": "https://opengraph.githubassets.com/7ee6ca974893d1b107104a88f12e1df6092bc939cdbd6098dfe863915992b5cb/bettercap/bettercap"
         },
         {
+          "id": "https://www.synthtopia.com/content/2022/12/02/moog-dancers-prove-that-tv-was-a-lot-more-adventurous-in-the-70s/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.synthtopia.com/content/2022/12/02/moog-dancers-prove-that-tv-was-a-lot-more-adventurous-in-the-70s/",
+          "publishedOn": "2022-12-03T12:45:07.000Z",
+          "wordCount": 1925,
+          "title": "Moog dancers prove that TV was more adventurous in the 70s",
+          "imageUrl": "https://www.synthtopia.com/wp-content/uploads/2022/12/70s-moog-dancers.jpg"
+        },
+        {
           "id": "https://silverbullet.md/",
           "author": null,
           "description": "Comments",
@@ -377,6 +667,16 @@
           "wordCount": 51,
           "title": "Silver Bullet: Markdown-based extensible open source personal knowledge platform",
           "imageUrl": null
+        },
+        {
+          "id": "https://thewalrus.ca/why-the-future-is-analog/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://thewalrus.ca/why-the-future-is-analog/",
+          "publishedOn": "2022-12-03T12:19:17.000Z",
+          "wordCount": 6207,
+          "title": "The future is analog: How to create a more human world",
+          "imageUrl": "https://walrus-assets.s3.amazonaws.com/img/Sax_Analog_cg_1800.jpg"
         },
         {
           "id": "https://hedgehogreview.com/issues/hope-itself/articles/the-impotence-of-being-clever",
@@ -8357,316 +8657,6 @@
           "wordCount": 7108,
           "title": "Quantum winter is coming",
           "imageUrl": "https://lh3.googleusercontent.com/blogger_img_proxy/ANbyha1k69-ATnMRqF1LFt2oZvwKJsTWO9gTp5r9WuF4memicaxX3EwWM45aJzrYKrlmnhnwNG8gNND3pgK6HWNLaIlK3Ef-mb0sr2YXmY5adn34ZjxFQQ=w1200-h630-n-k-no-nu"
-        },
-        {
-          "id": "https://www.nytimes.com/2022/03/23/technology/stewart-brand-tech-personal-computer.html",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.nytimes.com/2022/03/23/technology/stewart-brand-tech-personal-computer.html",
-          "publishedOn": "2022-11-05T12:33:01.000Z",
-          "wordCount": null,
-          "title": "Stewart Brand says he’s still an optimist",
-          "imageUrl": null
-        },
-        {
-          "id": "https://link.springer.com/article/10.1007/s11831-022-09740-9",
-          "author": null,
-          "description": "Comments",
-          "link": "https://link.springer.com/article/10.1007/s11831-022-09740-9",
-          "publishedOn": "2022-11-05T12:31:50.000Z",
-          "wordCount": 19205,
-          "title": "Eighty Years of the Finite Element Method",
-          "imageUrl": "https://media.springernature.com/w200/springer-static/cover/journal/11831.jpg"
-        },
-        {
-          "id": "https://nautil.us/why-your-brain-isnt-into-the-future-245128/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://nautil.us/why-your-brain-isnt-into-the-future-245128/",
-          "publishedOn": "2022-11-05T11:32:37.000Z",
-          "wordCount": 4708,
-          "title": "What you can’t imagine clearly, you value less",
-          "imageUrl": "https://assets.nautil.us/sites/3/nautilus/2RDXYvWV-Davies_HERO.png?auto=compress&fm=png&ixlib=php-3.3.1"
-        },
-        {
-          "id": "http://trout.me.uk/lisp/vlist.pdf",
-          "author": null,
-          "description": "Comments",
-          "link": "http://trout.me.uk/lisp/vlist.pdf",
-          "publishedOn": "2022-11-05T10:30:34.000Z",
-          "wordCount": 12298,
-          "title": "Fast Functional Lists, Hash-Lists, Deques and Variable Length Arrays [pdf] (2002)",
-          "imageUrl": null
-        },
-        {
-          "id": "https://bodydoubling.com/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://bodydoubling.com/",
-          "publishedOn": "2022-11-05T06:31:29.000Z",
-          "wordCount": 4724,
-          "title": "Body Doubling",
-          "imageUrl": null
-        },
-        {
-          "id": "https://heatinghelp.com/dead-men-tales/the-model-k-mystery/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://heatinghelp.com/dead-men-tales/the-model-k-mystery/",
-          "publishedOn": "2022-11-05T03:31:17.000Z",
-          "wordCount": 2373,
-          "title": "The Model K Mystery (2020)",
-          "imageUrl": null
-        },
-        {
-          "id": "https://asia.nikkei.com/Business/Business-Spotlight/How-Intel-plans-to-rival-TSMC-and-Samsung-as-a-chip-supplier",
-          "author": null,
-          "description": "Comments",
-          "link": "https://asia.nikkei.com/Business/Business-Spotlight/How-Intel-plans-to-rival-TSMC-and-Samsung-as-a-chip-supplier",
-          "publishedOn": "2022-11-04T23:46:45.000Z",
-          "wordCount": 2358,
-          "title": "Intel plans to rival TSMC and Samsung as a chip supplier",
-          "imageUrl": "https://www.ft.com/__origami/service/image/v2/images/raw/https%253A%252F%252Fs3-ap-northeast-1.amazonaws.com%252Fpsh-ex-ftnikkei-3937bb4%252Fimages%252F2%252F4%252F7%252F6%252F42896742-1-eng-GB%252FGettyImages-1238849253re.jpg?width=1260&height=630&fit=cover&gravity=faces&source=nar-cms"
-        },
-        {
-          "id": "https://news.ycombinator.com/item?id=33475720",
-          "author": null,
-          "description": "Comments",
-          "link": "https://news.ycombinator.com/item?id=33475720",
-          "publishedOn": "2022-11-04T23:43:52.000Z",
-          "wordCount": 1640,
-          "title": "Ask HN: How much does the environment you're in contribute to performance?",
-          "imageUrl": null
-        },
-        {
-          "id": "https://corpgov.law.harvard.edu/2022/11/04/lawsuit-against-meta-invokes-modern-portfolio-theory-to-protect-diversified-shareholders/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://corpgov.law.harvard.edu/2022/11/04/lawsuit-against-meta-invokes-modern-portfolio-theory-to-protect-diversified-shareholders/",
-          "publishedOn": "2022-11-04T23:24:02.000Z",
-          "wordCount": 2276,
-          "title": "Lawsuit Against Meta Invokes Modern Portfolio Theory to Protect Shareholders",
-          "imageUrl": "https://corpgov.law.harvard.edu/wp-content/uploads/2021/03/new-shield-facebook.png"
-        },
-        {
-          "id": "https://www.washingtonpost.com/technology/2022/11/05/twitter-layoffs-election-impact/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.washingtonpost.com/technology/2022/11/05/twitter-layoffs-election-impact/",
-          "publishedOn": "2022-11-04T23:22:29.000Z",
-          "wordCount": 8676,
-          "title": "Twitter layoffs gutted election information teams days before midterms",
-          "imageUrl": "https://www.washingtonpost.com/wp-apps/imrs.php?src=https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/ZQ2BU7S4PII63PCAWWQTB6K644.jpg&w=1440"
-        },
-        {
-          "id": "https://darcy.is/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://darcy.is/",
-          "publishedOn": "2022-11-04T23:21:17.000Z",
-          "wordCount": 1367,
-          "title": "Darcy – federated social media platform",
-          "imageUrl": null
-        },
-        {
-          "id": "https://www.marketwatch.com/story/fed-warns-of-low-market-liquidity-in-24-trillion-treasury-market-in-latest-financial-stability-report-11667592786",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.marketwatch.com/story/fed-warns-of-low-market-liquidity-in-24-trillion-treasury-market-in-latest-financial-stability-report-11667592786",
-          "publishedOn": "2022-11-04T23:19:37.000Z",
-          "wordCount": 6220,
-          "title": "Fed warns of low market liquidity in $24T Treasury market in report",
-          "imageUrl": "https://images.mktw.net/im-659520/social"
-        },
-        {
-          "id": "https://thebaffler.com/latest/hollow-city-arn",
-          "author": null,
-          "description": "Comments",
-          "link": "https://thebaffler.com/latest/hollow-city-arn",
-          "publishedOn": "2022-11-04T23:17:02.000Z",
-          "wordCount": 2916,
-          "title": "Hollow City: Edward Hopper’s portraits of urban alienation",
-          "imageUrl": "https://thebaffler.com/wp-content/uploads/2022/11/Sheldon_Room_in_New_York_H-166.jpg"
-        },
-        {
-          "id": "https://www.loudersound.com/features/rage-against-the-machine-debut-album-story",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.loudersound.com/features/rage-against-the-machine-debut-album-story",
-          "publishedOn": "2022-11-04T22:17:33.000Z",
-          "wordCount": 14443,
-          "title": "Rage Against The Machine’s explosive debut album changed everything",
-          "imageUrl": "https://cdn.mos.cms.futurecdn.net/JcruzGhi6nYSMgXdGKub4F-1200-80.jpg"
-        },
-        {
-          "id": "https://blog.adamchalmers.com/kubernetes-problems/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://blog.adamchalmers.com/kubernetes-problems/",
-          "publishedOn": "2022-11-04T21:46:21.000Z",
-          "wordCount": 6549,
-          "title": "Solving Common Problems with Kubernetes",
-          "imageUrl": "https://blog.adamchalmers.com/birds_of_paradise_wide.jpg"
-        },
-        {
-          "id": "https://cdixon.org/2014/03/15/full-stack-startups/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://cdixon.org/2014/03/15/full-stack-startups/",
-          "publishedOn": "2022-11-04T20:49:21.000Z",
-          "wordCount": 1004,
-          "title": "Full Stack Startups (2014)",
-          "imageUrl": null
-        },
-        {
-          "id": "http://antirez.com/news/138",
-          "author": null,
-          "description": "Comments",
-          "link": "http://antirez.com/news/138",
-          "publishedOn": "2022-11-04T20:46:02.000Z",
-          "wordCount": 870,
-          "title": "In Defense of Linked Lists",
-          "imageUrl": null
-        },
-        {
-          "id": "https://www.openbsd.org/papers/eurobsdcon2022-tb-libressl.pdf",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.openbsd.org/papers/eurobsdcon2022-tb-libressl.pdf",
-          "publishedOn": "2022-11-04T20:40:33.000Z",
-          "wordCount": 3645,
-          "title": "Recent Progress in and around LibreSSL [pdf]",
-          "imageUrl": null
-        },
-        {
-          "id": "https://web.archive.org/web/20220331041830/https://aspire.eecs.berkeley.edu/2017/06/how-close-is-risc-v-to-risc-i/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://web.archive.org/web/20220331041830/https://aspire.eecs.berkeley.edu/2017/06/how-close-is-risc-v-to-risc-i/",
-          "publishedOn": "2022-11-04T20:33:53.000Z",
-          "wordCount": 615,
-          "title": "How close is RISC-V to RISC-I? (2017)",
-          "imageUrl": null
-        },
-        {
-          "id": "https://arstechnica.com/gadgets/2022/11/intel-arc-gpu-firmware-updates-appear-to-require-an-intel-cpu-at-least-for-now/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://arstechnica.com/gadgets/2022/11/intel-arc-gpu-firmware-updates-appear-to-require-an-intel-cpu-at-least-for-now/",
-          "publishedOn": "2022-11-04T20:23:38.000Z",
-          "wordCount": 1658,
-          "title": "Linux devs discover that Intel Arc GPU firmware updates need an Intel CPU",
-          "imageUrl": "https://cdn.arstechnica.net/wp-content/uploads/2022/11/intel-arc-gpu-760x380.jpg"
-        },
-        {
-          "id": "https://cbsaustin.com/news/local/up-to-30-of-online-reviews-are-fake-and-most-consumers-cant-tell-the-difference",
-          "author": null,
-          "description": "Comments",
-          "link": "https://cbsaustin.com/news/local/up-to-30-of-online-reviews-are-fake-and-most-consumers-cant-tell-the-difference",
-          "publishedOn": "2022-11-04T20:00:36.000Z",
-          "wordCount": 7848,
-          "title": "Up to 30% of online reviews are fake and consumers can't tell the difference",
-          "imageUrl": "https://cbsaustin.com/resources/media/969d858b-15bf-4c83-b0a5-d1069383b611-large16x9_GettyImages1178163403.jpg?1599162264347"
-        },
-        {
-          "id": "https://axbom.com/fediverse/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://axbom.com/fediverse/",
-          "publishedOn": "2022-11-04T19:39:52.000Z",
-          "wordCount": 1826,
-          "title": "The Many Branches of the Fediverse",
-          "imageUrl": "https://axbom.com/content/images/2022/11/fediverse-branches-axbom-12.webp"
-        },
-        {
-          "id": "https://observant-hoodie-597.notion.site/Content-Growth-Marketer-at-Lilia-cb1caf11e7f542d38cd22b01213bad3c",
-          "author": null,
-          "description": "Comments",
-          "link": "https://observant-hoodie-597.notion.site/Content-Growth-Marketer-at-Lilia-cb1caf11e7f542d38cd22b01213bad3c",
-          "publishedOn": "2022-11-04T18:45:53.000Z",
-          "wordCount": 33,
-          "title": "Lilia (egg freezing, YC W20) Is Hiring a Content/Growth Marketer",
-          "imageUrl": "https://www.notion.so/images/meta/default.png"
-        },
-        {
-          "id": "https://posit.co/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://posit.co/",
-          "publishedOn": "2022-11-04T18:44:20.000Z",
-          "wordCount": 2888,
-          "title": "RStudio is now Posit",
-          "imageUrl": null
-        },
-        {
-          "id": "https://www.gsb.stanford.edu/insights/many-companies-arent-prepared-replace-underperforming-ceos",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.gsb.stanford.edu/insights/many-companies-arent-prepared-replace-underperforming-ceos",
-          "publishedOn": "2022-11-04T18:09:45.000Z",
-          "wordCount": 5157,
-          "title": "Many companies aren’t prepared to replace underperforming CEOs",
-          "imageUrl": "https://www.gsb.stanford.edu/sites/default/files/styles/1630x_variable/public/2022-08/larcker-succession-1630.jpeg?itok=qQ8DLGbV"
-        },
-        {
-          "id": "https://www.ncsc.gov.uk/information/ncsc-scanning-information",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.ncsc.gov.uk/information/ncsc-scanning-information",
-          "publishedOn": "2022-11-04T17:03:34.000Z",
-          "wordCount": 10,
-          "title": "UK Government scans all web servers hosted in the UK for vulnerabilities",
-          "imageUrl": "https://www.ncsc.gov.uk/images/Scanning-ACD.jpg"
-        },
-        {
-          "id": "https://www.cnbc.com/2022/11/04/web-inventor-tim-berners-lee-wants-us-to-ignore-web3.html",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.cnbc.com/2022/11/04/web-inventor-tim-berners-lee-wants-us-to-ignore-web3.html",
-          "publishedOn": "2022-11-04T16:57:33.000Z",
-          "wordCount": 16969,
-          "title": "Tim Berners-Lee: ‘Web3 is not the web at all’",
-          "imageUrl": "https://image.cnbcfm.com/api/v1/image/107146251-1667568017098-gettyimages-1244482521-SAM_2546.jpeg?v=1667574481&w=1920&h=1080"
-        },
-        {
-          "id": "https://rsapkf.org/weblog/q2z/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://rsapkf.org/weblog/q2z/",
-          "publishedOn": "2022-11-04T16:22:38.000Z",
-          "wordCount": 1527,
-          "title": "Use RSS for privacy and efficiency (2021)",
-          "imageUrl": "https://rsapkf.org/favicon.png"
-        },
-        {
-          "id": "https://news.ycombinator.com/item?id=33468611",
-          "author": null,
-          "description": "Comments",
-          "link": "https://news.ycombinator.com/item?id=33468611",
-          "publishedOn": "2022-11-04T15:46:38.000Z",
-          "wordCount": 17599,
-          "title": "Launch HN: Shimmer (YC S21) – ADHD coaching for adults",
-          "imageUrl": null
-        },
-        {
-          "id": "https://www.dewanahmed.com/markdown-asciidoc-restructuredtext/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.dewanahmed.com/markdown-asciidoc-restructuredtext/",
-          "publishedOn": "2022-11-04T15:20:50.000Z",
-          "wordCount": 2687,
-          "title": "Markdown, Asciidoc, or reStructuredText – a tale of docs-as-code",
-          "imageUrl": "https://www.dewanahmed.com/assets/images/md-adoc-rst.jpg"
-        },
-        {
-          "id": "https://arxiv.org/abs/2104.04258",
-          "author": null,
-          "description": "Comments",
-          "link": "https://arxiv.org/abs/2104.04258",
-          "publishedOn": "2022-11-04T13:24:22.000Z",
-          "wordCount": 675,
-          "title": "AI Learns to Play CS:Go via Large-Scale Behavioural Cloning",
-          "imageUrl": null
         }
       ]
     }
