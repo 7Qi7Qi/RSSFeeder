@@ -80,36 +80,6 @@
           "wordCount": 273,
           "title": "图说分布式计算的8大谬误",
           "imageUrl": null
-        },
-        {
-          "id": "http://weekly.dockone.io/article/2434953",
-          "author": "frankinbj",
-          "description": "作为一名技术人员，我热衷于讨论技术。随着讨论的进行，经常会有如下的对比，例如JVM vs. Net， JAVA vs. Kotlin， Go vs. Rust，Maven vs. 不能说的那个， 等等。随之，我们会经常深陷我们所热衷的那款技术的优缺点的泥潭，讨论了几个小时也不能达成共识。\n“我想要一套Drupal”\n需不需要.env文件\n很多问题并不需要微服务来解决\n技术支持也要对问题产生疑问\n五个为什么\nhttps://en.wikipedia.org/wiki/Five_whys\n结论\n最初于2022年10月23日在Java极客上发布\nhttps://itnext.io/discuss-prob ... c8f38",
-          "link": "http://weekly.dockone.io/article/2434953",
-          "publishedOn": "2022-11-25T01:11:44.076Z",
-          "wordCount": 310,
-          "title": "先研究问题，再谈解决方案",
-          "imageUrl": null
-        },
-        {
-          "id": "http://weekly.dockone.io/article/2434951",
-          "author": "ylzhang",
-          "description": "【编者的话】每一个程序员都应该有一个架构师的目标，Yohay Nahmany在成为架构师的路上经过自己的实践经验给出了35个建议，他在文中说，他非常希望在他成为架构师时能够知道这些，所以他希望他人能够吸取自己的教训，少走一些弯路。下面文档来自他在Medium上发表的网络日志。\n\n\n\n\n介绍\n我曾在好几个初创小公司（不到 30 人）担任过软件架构师，那时我不得不快速提升自己以满足角色的需求。所以，我认为分享这段经历可能帮助像我一样有相似境遇的人。\n这里有35件事，我非常希望有人能在我担任架构色之前教会我。\n\n注意: 这篇文章有点长——如果你只阅读小标题，应该只需要几分钟。深度阅读可能需要10分钟。\n架构师的角色可以产生巨大的影响。为了最大限度地发挥影响力，请专注于您对研发团队的真正附加值，而不是只推广当前流行的框架。\n一般注意事项/评论\n\n首先软件架构师的角色没有明确的定义。你可以去挖掘信息，但事实是：你最有可能在学习、设计、编码和评审的过程中塑造这个角色。\n\n架构师负责软件开发周期的主要部分。下面的说明可以帮助你更好地掌握这个角色，它在公司/集团中的位置，以及这个角色如何影响他人。\n\n招聘和用人\n\n\n\n\n\n将大部分时间将用于招聘、入职、指导和指导。正确选择团队成员和适当的指导将帮助您通过他人塑造您的愿景。例如：明智地选择新员工。如果他们和你一样热衷于某个概念，他们将帮助你在团队成员中以及整个组织内推广它。在指导他们时，确保你的设计决策是一致的。潜在的团队矛盾会降低团队的积极性。\n\n构建您的代码库，以便团队可以从中成长。您选择的架构将影响您当前的员工、他们的技能组合、他们的工作实践以及未来的招聘需求。\n\nMono-repo 和 *Multi-repo***的选择。**如果你错过了过去几年围绕 mono-repo 的热议，将公司的整个代码库放入一个公司范围的单一存储库已经变得很…",
-          "link": "http://weekly.dockone.io/article/2434951",
-          "publishedOn": "2022-11-25T01:11:44.006Z",
-          "wordCount": 277,
-          "title": "作为软件架构师的我第一年学到的35件事",
-          "imageUrl": null
-        },
-        {
-          "id": "http://weekly.dockone.io/article/2434952",
-          "author": "w9527",
-          "description": "事件驱动架构非常强大，非常适合分布式微服务环境。 通过引入代理中介，事件驱动架构提供了更好的解耦架构、更容易的可扩展性和更高程度的弹性。\n\n请求应答模式 (client-server) vs. 事件流模式 (pub-sub)\n但与请求应答客户端-服务器类型架构相比，事件流模式的搭建更复杂。\n在Wix过去的几年里，我们逐渐的将我们不断增长的微服务集（目前为 2300 个）从请求-应答模式迁移到事件驱动架构模式。 下面介绍的就是 Wix 工程师在事件驱动架构的实验过程中遇到的 5 个坑。\n1. 写入数据库，然后触发没有原子性的事件\n例如，考虑一个简单的电子商务购物流程（我们将在本文中都使用这个示例）\n\n写入数据库并产生一个非原子动作的事件\n不幸的是，将支付完成状态写入数据库，然后向 Kafka（或其他消息代理）生成“支付完成”事件并不是原子操作。 实际可能存在仅发生其中一项操作的情况。\n原子方案1 - Greyhound 弹性生产者（resilient producer）\n有几种方法可以解决这个问题。 在 Wix，我们使用两种方式。 第一个是我们自己的息传递平台，名为 Greyhound，它允许我们确保事件最终通过弹性生产者写入 Kafka。 这种措施的一个缺点是对下游事件的处理是无序的。\n\nGreyhound生产者回退到 S3。 特定的服务将消息恢复到 Kafka\n原子方案2 - Debezium Kafka 源连接器\n第二种方法是使用 Debezium Kafka 连接器来确保数据库更新操作和 Kafka 生成操作都发生并且数据保持一致。 Debezium 连接器允许自动捕获数据库中发生的所有更改事件（CDC）（对于 MySQL，通过 binlog）并将它们生成为 Kafka 事件。\nKafka Connect 与 Debezium DB 连接器一起保证事件最终将生成到 K…",
-          "link": "http://weekly.dockone.io/article/2434952",
-          "publishedOn": "2022-11-25T01:11:43.991Z",
-          "wordCount": 460,
-          "title": "事件驱动架构避坑指南",
-          "imageUrl": null
         }
       ]
     },
@@ -118,6 +88,236 @@
       "feedUrl": "https://news.ycombinator.com/rss",
       "siteUrl": "https://news.ycombinator.com/",
       "articles": [
+        {
+          "id": "https://news.ycombinator.com/item?id=34122578",
+          "author": null,
+          "description": "Comments",
+          "link": "https://news.ycombinator.com/item?id=34122578",
+          "publishedOn": "2022-12-25T00:07:19.000Z",
+          "wordCount": 717,
+          "title": "Ask HN: Who else is working/on call over Christmas?",
+          "imageUrl": null
+        },
+        {
+          "id": "https://www.businessinsider.com/ex-meta-employees-peculiar-packages-emoji-company-2022-12",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.businessinsider.com/ex-meta-employees-peculiar-packages-emoji-company-2022-12",
+          "publishedOn": "2022-12-24T23:10:13.000Z",
+          "wordCount": 3085,
+          "title": "Employee laid off by Meta says he got a package from the company marked 'leaver'",
+          "imageUrl": "https://i.insider.com/63a477272345c00019ea9af7?width=1200&format=jpeg"
+        },
+        {
+          "id": "https://news.ycombinator.com/item?id=34122118",
+          "author": null,
+          "description": "Comments",
+          "link": "https://news.ycombinator.com/item?id=34122118",
+          "publishedOn": "2022-12-24T23:09:29.000Z",
+          "wordCount": 399,
+          "title": "Tell HN: Everyone should have a holiday dinner this year",
+          "imageUrl": null
+        },
+        {
+          "id": "https://www.nbcnews.com/news/us-news/idaho-professor-sues-tiktoker-allegations-killing-4-university-student-rcna63149",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.nbcnews.com/news/us-news/idaho-professor-sues-tiktoker-allegations-killing-4-university-student-rcna63149",
+          "publishedOn": "2022-12-24T22:39:19.000Z",
+          "wordCount": 8237,
+          "title": "Idaho professor sues TikToker over allegations in the killing of 4 students",
+          "imageUrl": "https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1200-630,f_auto,q_auto:best/rockcms/2022-11/221118-idaho-student-memorial-makeshift-flowers-ac-917p-80b640.jpg"
+        },
+        {
+          "id": "https://github.com/Droogans/unmaintainable-code",
+          "author": null,
+          "description": "Comments",
+          "link": "https://github.com/Droogans/unmaintainable-code",
+          "publishedOn": "2022-12-24T22:11:24.000Z",
+          "wordCount": 17213,
+          "title": "How to Write Unmantainable Code",
+          "imageUrl": "https://opengraph.githubassets.com/bee5dba1ab28b67c4f6f4a273b0cbdf3dfe2670f1366289f54bd374e48d1d378/Droogans/unmaintainable-code"
+        },
+        {
+          "id": "https://infosec.exchange/@chiesennegs/109570145849933257",
+          "author": null,
+          "description": "Comments",
+          "link": "https://infosec.exchange/@chiesennegs/109570145849933257",
+          "publishedOn": "2022-12-24T22:06:42.000Z",
+          "wordCount": 115,
+          "title": "Lastpass setting the delete account div to display: none",
+          "imageUrl": "https://media.infosec.exchange/infosecmedia/media_attachments/files/109/570/141/785/910/144/small/c9ff5521ec6d6e82.png"
+        },
+        {
+          "id": "https://auerstack.substack.com/p/what-chatgpt-cant-do",
+          "author": null,
+          "description": "Comments",
+          "link": "https://auerstack.substack.com/p/what-chatgpt-cant-do",
+          "publishedOn": "2022-12-24T21:46:58.000Z",
+          "wordCount": 2827,
+          "title": "What ChatGPT Can't Do",
+          "imageUrl": "https://substackcdn.com/image/fetch/w_1200,h_600,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2Fd539c725-7783-4644-aa25-b785a9bca0e7_795x1014.jpeg"
+        },
+        {
+          "id": "https://www.pagetable.com/?p=1721",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.pagetable.com/?p=1721",
+          "publishedOn": "2022-12-24T21:46:01.000Z",
+          "wordCount": 1170,
+          "title": "PostScript Cartridge for HP LaserJet",
+          "imageUrl": null
+        },
+        {
+          "id": "https://blog.getbootstrap.com/2022/12/24/bootstrap-5-3-0-alpha1/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://blog.getbootstrap.com/2022/12/24/bootstrap-5-3-0-alpha1/",
+          "publishedOn": "2022-12-24T21:24:26.000Z",
+          "wordCount": 781,
+          "title": "Bootstrap 5.3.0-Alpha1",
+          "imageUrl": "https://blog.getbootstrap.com/assets/img/bootstrap-social.png"
+        },
+        {
+          "id": "https://news.ycombinator.com/item?id=34121082",
+          "author": null,
+          "description": "Comments",
+          "link": "https://news.ycombinator.com/item?id=34121082",
+          "publishedOn": "2022-12-24T21:06:38.000Z",
+          "wordCount": 7262,
+          "title": "Merry Christmas, HN",
+          "imageUrl": null
+        },
+        {
+          "id": "https://johnhcochrane.blogspot.com/2022/12/stanford-hates-fun.html",
+          "author": null,
+          "description": "Comments",
+          "link": "https://johnhcochrane.blogspot.com/2022/12/stanford-hates-fun.html",
+          "publishedOn": "2022-12-24T19:59:05.000Z",
+          "wordCount": 6420,
+          "title": "Stanford Hates Fun",
+          "imageUrl": "https://lh3.googleusercontent.com/blogger_img_proxy/ANbyha2ZuBmkk5-h515qsZ_69mIBU6Ov5FfbEFTBZ4i2z086ITJ5g7uiiQinaizAeSLcEzQz204neL0GEX-zOc6utBWXO2eeRKmR1LuVYdiTZxZybYDgOk-Tt22gdAtH-4yBFh_TER-OyrWjnMfI=w1200-h630-p-k-no-nu"
+        },
+        {
+          "id": "https://djmag.com/news/faithless-singer-maxi-jazz-dies-aged-65",
+          "author": null,
+          "description": "Comments",
+          "link": "https://djmag.com/news/faithless-singer-maxi-jazz-dies-aged-65",
+          "publishedOn": "2022-12-24T18:54:08.000Z",
+          "wordCount": 1019,
+          "title": "Maxi Jazz has died",
+          "imageUrl": "https://djmag.com/sites/default/files/styles/social_og_scale_up_to_1200/public/2022-12/Maxi%20Jazz%20RIP.jpg?itok=P19_vjzY"
+        },
+        {
+          "id": "https://bmcgee.ie/posts/2022/12/setting-up-my-new-laptop-nix-style/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://bmcgee.ie/posts/2022/12/setting-up-my-new-laptop-nix-style/",
+          "publishedOn": "2022-12-24T18:53:16.000Z",
+          "wordCount": 1710,
+          "title": "Setting up my new laptop: Nix style",
+          "imageUrl": "https://bmcgee.ie"
+        },
+        {
+          "id": "https://www.os2museum.com/wp/win16-retro-development/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.os2museum.com/wp/win16-retro-development/",
+          "publishedOn": "2022-12-24T18:37:15.000Z",
+          "wordCount": 3623,
+          "title": "Win16 Retro Development",
+          "imageUrl": null
+        },
+        {
+          "id": "https://github.com/ethereum/pos-evolution/blob/master/pos-evolution.md",
+          "author": null,
+          "description": "Comments",
+          "link": "https://github.com/ethereum/pos-evolution/blob/master/pos-evolution.md",
+          "publishedOn": "2022-12-24T17:39:34.000Z",
+          "wordCount": 14975,
+          "title": "Evolution of the Ethereum proof-of-stake consensus protocol",
+          "imageUrl": "https://opengraph.githubassets.com/4f102e998369258794b57be83d30e236a9487e1c43026559cba8002c45956eb1/ethereum/pos-evolution"
+        },
+        {
+          "id": "https://community.secondlife.com/blogs/entry/12081-second-life-on-github/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://community.secondlife.com/blogs/entry/12081-second-life-on-github/",
+          "publishedOn": "2022-12-24T16:51:37.000Z",
+          "wordCount": 1581,
+          "title": "Second Life on GitHub",
+          "imageUrl": "https://content.invisioncic.com/Mseclife/monthly_2022_11/image2.jpg.725a20371f8f0350e6007371ae8f89da.jpg"
+        },
+        {
+          "id": "https://austinhenley.com/blog/challengingalgorithms.html",
+          "author": null,
+          "description": "Comments",
+          "link": "https://austinhenley.com/blog/challengingalgorithms.html",
+          "publishedOn": "2022-12-24T16:41:19.000Z",
+          "wordCount": 883,
+          "title": "Challenging algorithms and data structures every programmer should try",
+          "imageUrl": "https://austinhenley.com/blog/images/algorithmsbook.jpg"
+        },
+        {
+          "id": "https://www.theguardian.com/books/2022/dec/23/philip-pullman-i-had-to-grow-up-before-i-could-cope-with-middlemarch",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.theguardian.com/books/2022/dec/23/philip-pullman-i-had-to-grow-up-before-i-could-cope-with-middlemarch",
+          "publishedOn": "2022-12-24T13:13:42.000Z",
+          "wordCount": 4866,
+          "title": "‘I had to grow up before I could cope with Middlemarch’",
+          "imageUrl": "https://i.guim.co.uk/img/media/47a090e17e763e91dca764b995525b10e176ec7f/0_111_683_410/master/683.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc&enable=upscale&s=6725bc54a08a4ce601f6b444f32f3eb9"
+        },
+        {
+          "id": "https://www.teslarati.com/califonia-banning-tesla-fsd/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.teslarati.com/califonia-banning-tesla-fsd/",
+          "publishedOn": "2022-12-24T13:09:54.000Z",
+          "wordCount": 2519,
+          "title": "California passes law banning Tesla from calling software FSD",
+          "imageUrl": "https://www.teslarati.com/wp-content/uploads/2022/12/California-passes-law-banning-Tesla-from-calling-software-FSD.jpeg"
+        },
+        {
+          "id": "https://nautil.us/the-great-forgetting-253223/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://nautil.us/the-great-forgetting-253223/",
+          "publishedOn": "2022-12-24T11:55:51.000Z",
+          "wordCount": 10137,
+          "title": "The Great Forgetting",
+          "imageUrl": "https://assets.nautil.us/sites/3/nautilus/Praetorius_HERO.png?auto=compress&fm=png&ixlib=php-3.3.1"
+        },
+        {
+          "id": "https://charperbonaroo.github.io/bls/#0",
+          "author": null,
+          "description": "Comments",
+          "link": "https://charperbonaroo.github.io/bls/#0",
+          "publishedOn": "2022-12-24T10:59:06.000Z",
+          "wordCount": 33,
+          "title": "Bitmap Logic Simulator – Game",
+          "imageUrl": null
+        },
+        {
+          "id": "https://squidgeefish.com/projects/rotary-keyboard/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://squidgeefish.com/projects/rotary-keyboard/",
+          "publishedOn": "2022-12-24T10:56:32.000Z",
+          "wordCount": 1918,
+          "title": "Rotary Keyboard",
+          "imageUrl": "http://squidgeefish.com/assets/rotary-keyboard/banner.jpg"
+        },
+        {
+          "id": "https://www.hcn.org/articles/wildlife-bringing-back-californias-wild-bees",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.hcn.org/articles/wildlife-bringing-back-californias-wild-bees",
+          "publishedOn": "2022-12-24T05:52:40.000Z",
+          "wordCount": 4444,
+          "title": "Bringing back California’s wild bees",
+          "imageUrl": "https://www.hcn.org/articles/wildlife-bringing-back-californias-wild-bees/bigimage_large"
+        },
         {
           "id": "https://twitter.com/cryptopathic/status/1606416137771782151",
           "author": null,
@@ -147,6 +347,26 @@
           "wordCount": null,
           "title": "Dating of a large tool assemblage at the Cooper’s Ferry site (Idaho, USA)",
           "imageUrl": null
+        },
+        {
+          "id": "http://whatcolorisit.sumbioun.com/",
+          "author": null,
+          "description": "Comments",
+          "link": "http://whatcolorisit.sumbioun.com/",
+          "publishedOn": "2022-12-23T21:57:42.000Z",
+          "wordCount": 350,
+          "title": "What color is it?",
+          "imageUrl": "http://whatcolorisit.sumbioun.com/what-color.jpg"
+        },
+        {
+          "id": "https://www.science.org/content/article/deadly-sharp-points-found-idaho-could-be-first-american-made-tools",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.science.org/content/article/deadly-sharp-points-found-idaho-could-be-first-american-made-tools",
+          "publishedOn": "2022-12-23T21:46:37.000Z",
+          "wordCount": 3027,
+          "title": "Deadly sharp points found in Idaho could be first American-made tools",
+          "imageUrl": "https://www.science.org/do/10.1126/science.adg4404/abs/_20221223_on_stemmed_points.jpg"
         },
         {
           "id": "https://www.theguardian.com/business/2022/dec/23/chief-executive-of-ftx-sister-company-pleads-guilty-to-seven-offences",
@@ -207,6 +427,16 @@
           "wordCount": 2922,
           "title": "News for Ruby 3.2.0",
           "imageUrl": null
+        },
+        {
+          "id": "https://www.lrb.co.uk/the-paper/v45/n01/anne-enright/eyes-that-bite",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.lrb.co.uk/the-paper/v45/n01/anne-enright/eyes-that-bite",
+          "publishedOn": "2022-12-23T20:06:29.000Z",
+          "wordCount": 8920,
+          "title": "Eyes That Bite",
+          "imageUrl": "https://www.lrb.co.uk/storage/social_image/images/3/1/8/0/29050813-1-eng-GB/e780c4508f13-enright_website2.jpg"
         },
         {
           "id": "http://travelhungry.co/blog/2014/6/21/breakfast-at-backerei-frank",
@@ -357,6 +587,16 @@
           "wordCount": 11730,
           "title": "State of the Sanderson 2022",
           "imageUrl": "https://www.brandonsanderson.com/wp-content/uploads/2022/12/BS_State-of-Sanderson_BLOG-HEADER_V7-copy.png"
+        },
+        {
+          "id": "https://philip.greenspun.com/materialism/money",
+          "author": null,
+          "description": "Comments",
+          "link": "https://philip.greenspun.com/materialism/money",
+          "publishedOn": "2022-12-23T07:16:09.000Z",
+          "wordCount": 6249,
+          "title": "Money, Money, Money (and Investing) (2015)",
+          "imageUrl": null
         },
         {
           "id": "https://tylerneylon.com/a/lsh1/",
@@ -667,6 +907,36 @@
           "wordCount": 6980,
           "title": "Japan to invest on nuclear energy in major policy shift",
           "imageUrl": "https://eandt.theiet.org/media/20272/untitled-design-1.jpg?crop=0,0.27416666666666667,0,0.23364583333333328&cropmode=percentage&width=1200&height=450&rnd=133161801130000000"
+        },
+        {
+          "id": "https://www.theguardian.com/artanddesign/2017/may/11/design-museum-california-designing-freedom-tech-design",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.theguardian.com/artanddesign/2017/may/11/design-museum-california-designing-freedom-tech-design",
+          "publishedOn": "2022-12-22T13:11:30.000Z",
+          "wordCount": 5717,
+          "title": "Tripping Californians who paved the way to our touchscreen world",
+          "imageUrl": "https://i.guim.co.uk/img/media/ff05be3cc9c2cdb92a50ba1910320403fef787bc/14_43_2789_1673/master/2789.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc&enable=upscale&s=2818de6d5efb50a18eacd9055961b847"
+        },
+        {
+          "id": "https://dalton.substack.com/p/startup-childhood",
+          "author": null,
+          "description": "Comments",
+          "link": "https://dalton.substack.com/p/startup-childhood",
+          "publishedOn": "2022-12-22T13:11:24.000Z",
+          "wordCount": 2256,
+          "title": "Startup Childhood",
+          "imageUrl": "https://substackcdn.com/image/fetch/w_1200,h_600,c_limit,f_jpg,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F11960689-a421-4f2b-b0c5-3720b4fea9a0_1500x1000.webp"
+        },
+        {
+          "id": "https://www.theguardian.com/global-development/2022/dec/20/africas-biggest-photography-library-opens-in-ghana-accra-dikan-center",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.theguardian.com/global-development/2022/dec/20/africas-biggest-photography-library-opens-in-ghana-accra-dikan-center",
+          "publishedOn": "2022-12-22T11:02:26.000Z",
+          "wordCount": 4918,
+          "title": "Africa’s biggest photography library opens in Ghana",
+          "imageUrl": "https://i.guim.co.uk/img/media/bf050f7d565f2973e32b7f41f52478f8305cd66e/0_483_7229_4338/master/7229.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc&enable=upscale&s=09c5b85fd666856af8160d0b4bfb0f1f"
         },
         {
           "id": "https://www.youtube.com/watch?v=LnEWO0h5Gjo",
@@ -8437,236 +8707,6 @@
           "wordCount": 28078,
           "title": "Werner Herzog’s Wondrous Novel of Nothingness in the Jungle",
           "imageUrl": "https://media.newyorker.com/photos/62aa5bea943af07f72ddf1de/16:9/w_1280,c_limit/Piepenbring-Herzog-Novel-Crop.jpg"
-        },
-        {
-          "id": "https://hub.jhu.edu/2022/11/17/interactive-universe-map/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://hub.jhu.edu/2022/11/17/interactive-universe-map/",
-          "publishedOn": "2022-11-25T12:54:09.000Z",
-          "wordCount": 789,
-          "title": "Map of the Universe (Johns Hopkins University)",
-          "imageUrl": "https://api.hub.jhu.edu/factory/sites/default/files/styles/soft_crop_1300/public/2022-11/thumbnail_image002.png"
-        },
-        {
-          "id": "http://owl.cs.manchester.ac.uk/about/orientation/a-logics-perspective/",
-          "author": null,
-          "description": "Comments",
-          "link": "http://owl.cs.manchester.ac.uk/about/orientation/a-logics-perspective/",
-          "publishedOn": "2022-11-25T09:10:37.000Z",
-          "wordCount": 1535,
-          "title": "Owl: A Logics Perspective",
-          "imageUrl": null
-        },
-        {
-          "id": "https://utcc.utoronto.ca/~cks/space/blog/unix/UnixHistoryMostlyOldNow",
-          "author": null,
-          "description": "Comments",
-          "link": "https://utcc.utoronto.ca/~cks/space/blog/unix/UnixHistoryMostlyOldNow",
-          "publishedOn": "2022-11-25T07:54:57.000Z",
-          "wordCount": 538,
-          "title": "Unix's (technical) history is mostly old now",
-          "imageUrl": null
-        },
-        {
-          "id": "https://news.ycombinator.com/item?id=33737727",
-          "author": null,
-          "description": "Comments",
-          "link": "https://news.ycombinator.com/item?id=33737727",
-          "publishedOn": "2022-11-25T00:30:24.000Z",
-          "wordCount": 618,
-          "title": "Help : Facebook Support Is Useless",
-          "imageUrl": null
-        },
-        {
-          "id": "https://news.ycombinator.com/item?id=33737577",
-          "author": null,
-          "description": "Comments",
-          "link": "https://news.ycombinator.com/item?id=33737577",
-          "publishedOn": "2022-11-25T00:05:32.000Z",
-          "wordCount": 3136,
-          "title": "Warning – Google suspended GCP services for 'verification', lost my business",
-          "imageUrl": null
-        },
-        {
-          "id": "https://github.com/chatternet/chatternet-client-http",
-          "author": null,
-          "description": "Comments",
-          "link": "https://github.com/chatternet/chatternet-client-http",
-          "publishedOn": "2022-11-24T23:24:34.000Z",
-          "wordCount": 1290,
-          "title": "Show HN: A decentralized semantic web built atop Activity Pub",
-          "imageUrl": "https://opengraph.githubassets.com/7ee333f93ba7d62ecab0b938740de253e6ce7bce3f7734fdde4246aaf75b2ce3/chatternet/chatternet-client-http"
-        },
-        {
-          "id": "https://worldcup.cole.ws/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://worldcup.cole.ws/",
-          "publishedOn": "2022-11-24T23:10:01.000Z",
-          "wordCount": 193,
-          "title": "Show HN: FIFA Interactive Bracket (World Cup)",
-          "imageUrl": null
-        },
-        {
-          "id": "https://doodleai.darraghoriordan.com/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://doodleai.darraghoriordan.com/",
-          "publishedOn": "2022-11-24T22:01:41.000Z",
-          "wordCount": 18,
-          "title": "Show HN: AI generated puzzles from Wikipedia articles",
-          "imageUrl": "https://doodle-ai-ogimage.vercel.app/api/newog?day=19&year=2022&month=11"
-        },
-        {
-          "id": "https://kudotap.com/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://kudotap.com/",
-          "publishedOn": "2022-11-24T21:07:50.000Z",
-          "wordCount": 269,
-          "title": "Show HN: Have fun betting virtual (not real) money on predictions from HN users",
-          "imageUrl": null
-        },
-        {
-          "id": "https://www.economist.com/united-states/2022/11/24/why-its-hard-to-buy-deodorant-in-manhattan",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.economist.com/united-states/2022/11/24/why-its-hard-to-buy-deodorant-in-manhattan",
-          "publishedOn": "2022-11-24T20:50:08.000Z",
-          "wordCount": 6049,
-          "title": "Why it’s hard to buy deodorant in Manhattan",
-          "imageUrl": "https://www.economist.com/img/b/1280/720/90/media-assets/image/20221126_USP504.jpg"
-        },
-        {
-          "id": "https://github.com/StackStorm/st2",
-          "author": null,
-          "description": "Comments",
-          "link": "https://github.com/StackStorm/st2",
-          "publishedOn": "2022-11-24T20:42:30.000Z",
-          "wordCount": 1629,
-          "title": "StackStorm: Event-driven automation",
-          "imageUrl": "https://opengraph.githubassets.com/6699c2e126a08e970a9fd7435d9e8188905ce572b394ede6e16abfdbe5eff1e3/StackStorm/st2"
-        },
-        {
-          "id": "https://www.nature.com/articles/s43018-022-00418-6",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.nature.com/articles/s43018-022-00418-6",
-          "publishedOn": "2022-11-24T19:25:35.000Z",
-          "wordCount": 15793,
-          "title": "Cancer vaccines: the next immunotherapy frontier",
-          "imageUrl": "https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs43018-022-00418-6/MediaObjects/43018_2022_418_Fig1_HTML.png"
-        },
-        {
-          "id": "https://dynomight.substack.com/p/thanks-2",
-          "author": null,
-          "description": "Comments",
-          "link": "https://dynomight.substack.com/p/thanks-2",
-          "publishedOn": "2022-11-24T19:08:58.000Z",
-          "wordCount": 4479,
-          "title": "Underrated reasons to be thankful",
-          "imageUrl": "https://substackcdn.com/image/fetch/w_1200,h_600,c_limit,f_jpg,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2Fb58e7e75-c60a-497f-b669-1e8077bffde2_1440x900.jpeg"
-        },
-        {
-          "id": "https://learngenomics.dev/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://learngenomics.dev/",
-          "publishedOn": "2022-11-24T18:44:13.000Z",
-          "wordCount": 109,
-          "title": "Introduction to Genomics for Engineers",
-          "imageUrl": null
-        },
-        {
-          "id": "https://www.livinginternet.info/u/ui_modern_renamingfaq.htm",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.livinginternet.info/u/ui_modern_renamingfaq.htm",
-          "publishedOn": "2022-11-24T18:04:24.000Z",
-          "wordCount": 3089,
-          "title": "The Great Renaming 1985 – 1988 (2000)",
-          "imageUrl": null
-        },
-        {
-          "id": "https://news.ycombinator.com/item?id=33734259",
-          "author": null,
-          "description": "Comments",
-          "link": "https://news.ycombinator.com/item?id=33734259",
-          "publishedOn": "2022-11-24T17:58:39.000Z",
-          "wordCount": 966,
-          "title": "Ask HN: Books about full text search?",
-          "imageUrl": null
-        },
-        {
-          "id": "https://github.com/winkjs/wink-nlp",
-          "author": null,
-          "description": "Comments",
-          "link": "https://github.com/winkjs/wink-nlp",
-          "publishedOn": "2022-11-24T17:51:36.000Z",
-          "wordCount": 1739,
-          "title": "Show HN: WinkNLP delivers 600k tokens/second speed on browsers (MBP M1)",
-          "imageUrl": "https://repository-images.githubusercontent.com/161860407/80675000-3a6e-11eb-9268-0b6d422bcc4c"
-        },
-        {
-          "id": "https://www.thingiverse.com/thing:4687836",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.thingiverse.com/thing:4687836",
-          "publishedOn": "2022-11-24T16:12:28.000Z",
-          "wordCount": null,
-          "title": "A 3D-printed ethernet RJ45 clip to secure/repair/fix broken tab",
-          "imageUrl": null
-        },
-        {
-          "id": "https://news.ycombinator.com/item?id=33732913",
-          "author": null,
-          "description": "Comments",
-          "link": "https://news.ycombinator.com/item?id=33732913",
-          "publishedOn": "2022-11-24T16:08:19.000Z",
-          "wordCount": 5009,
-          "title": "Tell HN: Happy Thanksgiving",
-          "imageUrl": null
-        },
-        {
-          "id": "https://sanket.tech/posts/invert_binary_tree_assembly/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://sanket.tech/posts/invert_binary_tree_assembly/",
-          "publishedOn": "2022-11-24T15:05:30.000Z",
-          "wordCount": 1762,
-          "title": "Inverting a binary tree using x64 assembly",
-          "imageUrl": null
-        },
-        {
-          "id": "https://jointakahe.org/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://jointakahe.org/",
-          "publishedOn": "2022-11-24T14:39:34.000Z",
-          "wordCount": 102,
-          "title": "Takahē: An efficient ActivityPub Server for small installs with multiple domains",
-          "imageUrl": null
-        },
-        {
-          "id": "https://elm-lang.org/news/compiler-errors-for-humans",
-          "author": null,
-          "description": "Comments",
-          "link": "https://elm-lang.org/news/compiler-errors-for-humans",
-          "publishedOn": "2022-11-24T14:29:32.000Z",
-          "wordCount": 2428,
-          "title": "Compiler Errors for Humans (2015)",
-          "imageUrl": null
-        },
-        {
-          "id": "https://www.washingtonpost.com/technology/interactive/2022/amazon-shopping-ads/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.washingtonpost.com/technology/interactive/2022/amazon-shopping-ads/",
-          "publishedOn": "2022-11-24T14:00:55.000Z",
-          "wordCount": 14840,
-          "title": "Almost everything on Amazon is becoming an ad",
-          "imageUrl": "https://www.washingtonpost.com/wp-apps/imrs.php?src=https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/Z4X3RZJJGVEGLMHTMFRW65TPVY.jpg&w=1200"
         }
       ]
     }
