@@ -12,6 +12,36 @@
       "siteUrl": "http://weekly.dockone.io",
       "articles": [
         {
+          "id": "http://weekly.dockone.io/article/2434953",
+          "author": "frankinbj",
+          "description": "[作为一名技术人员，我热衷于讨论技术。随着讨论的进行，经常会有如下的对比，例如JVM vs. Net， JAVA vs. Kotlin， Go vs. Rust，Maven vs. 不能说的那个， 等等。随之，我们会经常深陷我们所热衷的那款技术的优缺点的泥潭，讨论了几个小时也不能达成共识。\n“我想要一套Drupal”\n需不需要.env文件\n很多问题并不需要微服务来解决\n技术支持也要对问题产生疑问\n五个为什么\nhttps://en.wikipedia.org/wiki/Five_whys\n结论\n最初于2022年10月23日在Java极客上发布\nhttps://itnext.io/discuss-prob ... c8f38",
+          "link": "http://weekly.dockone.io/article/2434953",
+          "publishedOn": "2022-12-27T01:04:45.638Z",
+          "wordCount": null,
+          "title": "先研究问题，再谈解决方案",
+          "imageUrl": null
+        },
+        {
+          "id": "http://weekly.dockone.io/article/2434952",
+          "author": "w9527",
+          "description": "事件驱动架构非常强大，非常适合分布式微服务环境。 通过引入代理中介，事件驱动架构提供了更好的解耦架构、更容易的可扩展性和更高程度的弹性。\n\n请求应答模式 (client-server) vs. 事件流模式 (pub-sub)\n但与请求应答客户端-服务器类型架构相比，事件流模式的搭建更复杂。\n在Wix过去的几年里，我们逐渐的将我们不断增长的微服务集（目前为 2300 个）从请求-应答模式迁移到事件驱动架构模式。 下面介绍的就是 Wix 工程师在事件驱动架构的实验过程中遇到的 5 个坑。\n1. 写入数据库，然后触发没有原子性的事件\n例如，考虑一个简单的电子商务购物流程（我们将在本文中都使用这个示例）\n\n写入数据库并产生一个非原子动作的事件\n不幸的是，将支付完成状态写入数据库，然后向 Kafka（或其他消息代理）生成“支付完成”事件并不是原子操作。 实际可能存在仅发生其中一项操作的情况。\n原子方案1 - Greyhound 弹性生产者（resilient producer）\n有几种方法可以解决这个问题。 在 Wix，我们使用两种方式。 第一个是我们自己的息传递平台，名为 Greyhound，它允许我们确保事件最终通过弹性生产者写入 Kafka。 这种措施的一个缺点是对下游事件的处理是无序的。\n\nGreyhound生产者回退到 S3。 特定的服务将消息恢复到 Kafka\n原子方案2 - Debezium Kafka 源连接器\n第二种方法是使用 Debezium Kafka 连接器来确保数据库更新操作和 Kafka 生成操作都发生并且数据保持一致。 Debezium 连接器允许自动捕获数据库中发生的所有更改事件（CDC）（对于 MySQL，通过 binlog）并将它们生成为 Kafka 事件。\nKafka Connect 与 Debezium DB 连接器一起保证事件最终将生成到 K…",
+          "link": "http://weekly.dockone.io/article/2434952",
+          "publishedOn": "2022-12-27T01:04:45.638Z",
+          "wordCount": null,
+          "title": "事件驱动架构避坑指南",
+          "imageUrl": null
+        },
+        {
+          "id": "http://weekly.dockone.io/article/2434951",
+          "author": "ylzhang",
+          "description": "【编者的话】每一个程序员都应该有一个架构师的目标，Yohay Nahmany在成为架构师的路上经过自己的实践经验给出了35个建议，他在文中说，他非常希望在他成为架构师时能够知道这些，所以他希望他人能够吸取自己的教训，少走一些弯路。下面文档来自他在Medium上发表的网络日志。\n\n\n\n\n介绍\n我曾在好几个初创小公司（不到 30 人）担任过软件架构师，那时我不得不快速提升自己以满足角色的需求。所以，我认为分享这段经历可能帮助像我一样有相似境遇的人。\n这里有35件事，我非常希望有人能在我担任架构色之前教会我。\n\n注意: 这篇文章有点长——如果你只阅读小标题，应该只需要几分钟。深度阅读可能需要10分钟。\n架构师的角色可以产生巨大的影响。为了最大限度地发挥影响力，请专注于您对研发团队的真正附加值，而不是只推广当前流行的框架。\n一般注意事项/评论\n\n首先软件架构师的角色没有明确的定义。你可以去挖掘信息，但事实是：你最有可能在学习、设计、编码和评审的过程中塑造这个角色。\n\n架构师负责软件开发周期的主要部分。下面的说明可以帮助你更好地掌握这个角色，它在公司/集团中的位置，以及这个角色如何影响他人。\n\n招聘和用人\n\n\n\n\n\n将大部分时间将用于招聘、入职、指导和指导。正确选择团队成员和适当的指导将帮助您通过他人塑造您的愿景。例如：明智地选择新员工。如果他们和你一样热衷于某个概念，他们将帮助你在团队成员中以及整个组织内推广它。在指导他们时，确保你的设计决策是一致的。潜在的团队矛盾会降低团队的积极性。\n\n构建您的代码库，以便团队可以从中成长。您选择的架构将影响您当前的员工、他们的技能组合、他们的工作实践以及未来的招聘需求。\n\nMono-repo 和 *Multi-repo***的选择。**如果你错过了过去几年围绕 mono-repo 的热议，将公司的整个代码库放入一个公司范围的单一存储库已经变得很…",
+          "link": "http://weekly.dockone.io/article/2434951",
+          "publishedOn": "2022-12-27T01:04:45.638Z",
+          "wordCount": null,
+          "title": "作为软件架构师的我第一年学到的35件事",
+          "imageUrl": null
+        },
+        {
           "id": "http://weekly.dockone.io/article/2434948",
           "author": "ylzhang",
           "description": "【编者的话】Kubernetes是银弹吗？它解决了什么问题？对于公司和个人的搭建系统，单机应用和大规模系统都一定要使用容器和Kubernetes吗？Globality的机器学习副总裁用自己的经验总结了自己认识Kubernetes的过程，他从评估、入门、成本、操作等几个方面记录了自己从对Kubernetes的认识过程，并讲述了自己的心得体会。下文是作者关于此的笔记。\n我曾认为自己是一个强烈 Kubernetes 怀疑论者。无论是做项目还是初创公司，裸机系统始终是我的首选。包括运行此博客的堆栈环境，称它为堆栈甚至可能有些夸张，其实它只是一个持续集成（CI）工具链，主机上有 Nginx 配置。但它可以处理惊人的并发负载，并且托管成本低。它每月只需 10 美元，完全可与托管成本高出两个数量级的企业博客平台并驾齐驱。\n过早的优化可能是万恶之源，但过早的规模化也是如此。我认为公司过早地设计复杂架构会导致很多问题，例如开发者需要面对复杂的系统，这样也会导致用户不稳定。而且我认为带有简单服务器的 monorepo 应该作为项目的起点。这时只需运行一个基本的 Docker 实例，并且可以最大程度上减少无尽依赖，确保你的远程配置可在本地开发机器上重现即可。一旦系统面对更高的流量，可以选择租用更强大的服务器。如果还不能解决问题，请部署一个简单的负载均衡器，路由到几个后端设备。在早期可以做到而且应该是这样。\n虽然我正是这么做的，但最近负载均衡系统后面用于几个辅助项目的一台物理服务器已满足不了我的要求——大部分时间里它是空闲的，但突发状态下则需要几十个带有 GPU 的虚拟机。这迫使我不得不采用更复杂的服务器管理解决方案。在为使用 Kubernetes 构建了几个月之后，我必须承认我一天一天就爱上了它。\n第一天：走近尝试\n我已经在裸机上有一个完整运行的后端应用程序。我真的要用不同的产品重新设计我堆栈的…",
@@ -70,16 +100,6 @@
           "wordCount": 623,
           "title": "深入理解 Redis",
           "imageUrl": null
-        },
-        {
-          "id": "http://weekly.dockone.io/article/2434949",
-          "author": "frankinbj",
-          "description": "分布式计算的谬误是由L Peter Deutsch和Sun Microsystems公司的其他人所提出的一组断言，他们描述了不熟悉分布式应用程序的程序员总是会做出的一些错误的假设。\n微服务的大规模普及迫使越来越多的工程师意识到这些错误的认识给他们的系统带来多么大的影响。\n我们经常会看到一些人在讨论系统设计的时候，忽视或者淡化这8个谬误。\n\n\n\n下面我来介绍一下这些谬误以及一些潜在的消减措施，希望大家能感兴趣。\n网络是可靠的\n\n\n\n\n为了构建一个可靠的系统，你必须理解并接受任何一种通信都可能会失败的事实。因此，我们需要为系统设计出一种方法来处理这种潜在的错误沟通。所以，最终需要用到重传，而且它可以有多种形式。\n存储再转发（store and forward）就是这样一种模型。我们不直接将数据发送到下游服务器，而是将其存储在本地或其他地方，这也提供了能从灾难场景下恢复的保障。\n有很多产品属于这种技术，如RabbitMQ，ActiveMQ以及来自云厂商的各种专有解决方案。\n网络是零延迟的\n\n\n\n\n图片的左边是在现代系统中直接访问内存的时间，右边是在世界各地往返所需的时间。\n我喜欢把延迟看作是完成任何请求的严格开销。传递的消息可以很大，也可以很小，而延迟是不变的。与带宽不同，延迟通常与光速和通信距离（或物理路径）有关。所以两个系统之间的物理距离在这里起着重要的作用。\n延迟是无处不在的。它发生在所有的通讯中。理想情况下，这种开销应该尽可能小。延迟的场景和从车上卸货非常相似，就是说，从厨房到车上的时间就是延迟。你是想一趟尽可能多地拿东西，还是想每次只拿一个东西，花几百次往返把车上的东西都卸下来？\n带宽是无限的\n\n\n\n\n假设持续无限制地增加信道上的数据大小，这显然是个很大的错误。这种情况只有在某种通讯彻底占满带宽与此同时无法扩容时才会出现。\n我第一次遇到这个问题是我不小心将主页所需的有效…",
-          "link": "http://weekly.dockone.io/article/2434949",
-          "publishedOn": "2022-11-27T01:16:35.117Z",
-          "wordCount": 273,
-          "title": "图说分布式计算的8大谬误",
-          "imageUrl": null
         }
       ]
     },
@@ -88,6 +108,286 @@
       "feedUrl": "https://news.ycombinator.com/rss",
       "siteUrl": "https://news.ycombinator.com/",
       "articles": [
+        {
+          "id": "https://www.onxmaps.com/onx-access-initiatives/corner-crossing-report",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.onxmaps.com/onx-access-initiatives/corner-crossing-report",
+          "publishedOn": "2022-12-27T00:11:58.000Z",
+          "wordCount": 4722,
+          "title": "6M Acres of Public Land in the US West Are Corner-Locked",
+          "imageUrl": "https://www.onxmaps.com/wp-content/uploads/sites/1/2022/04/Corner-locked_Featured.jpg"
+        },
+        {
+          "id": "https://observablehq.com/@mjbo/sydney-qms-panel-public-telephone-pairings",
+          "author": null,
+          "description": "Comments",
+          "link": "https://observablehq.com/@mjbo/sydney-qms-panel-public-telephone-pairings",
+          "publishedOn": "2022-12-26T23:57:37.000Z",
+          "wordCount": 1745,
+          "title": "Show HN: How many advertising panels in Sydney are near a public telephone?",
+          "imageUrl": "https://static.observableusercontent.com/thumbnail/87edbb3b0bdba52d702d742dbf078f571acd6c6eb9f84edc542c5cdc53024842.jpg"
+        },
+        {
+          "id": "https://www.rigsofrods.org/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.rigsofrods.org/",
+          "publishedOn": "2022-12-26T23:32:51.000Z",
+          "wordCount": 15,
+          "title": "Rigs of Rods: free and open source vehicle simulator that uses soft-body physics",
+          "imageUrl": "https://cdn.rigsofrods.org/data/assets/og/RoR_2021_02.png"
+        },
+        {
+          "id": "https://memex.marginalia.nu/log/69-creepy-website-similarity.gmi",
+          "author": null,
+          "description": "Comments",
+          "link": "https://memex.marginalia.nu/log/69-creepy-website-similarity.gmi",
+          "publishedOn": "2022-12-26T23:30:41.000Z",
+          "wordCount": 990,
+          "title": "Creepy Website Similarity",
+          "imageUrl": null
+        },
+        {
+          "id": "https://github.com/corkami/pics/blob/master/binary/README.md",
+          "author": null,
+          "description": "Comments",
+          "link": "https://github.com/corkami/pics/blob/master/binary/README.md",
+          "publishedOn": "2022-12-26T22:04:33.000Z",
+          "wordCount": 532,
+          "title": "Binary Posters",
+          "imageUrl": "https://opengraph.githubassets.com/90d6e6b1247ff856d6c7d184577c61da9f3e9932c864808b201b14bafe3dc75d/corkami/pics"
+        },
+        {
+          "id": "https://jasmcole.com/2022/02/10/losing-it/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://jasmcole.com/2022/02/10/losing-it/",
+          "publishedOn": "2022-12-26T21:39:53.000Z",
+          "wordCount": 3298,
+          "title": "Are You Really Losing Weight?",
+          "imageUrl": "https://jasmcole.files.wordpress.com/2022/02/theory-2-2.png"
+        },
+        {
+          "id": "https://alexsidorenko.com/blog/useeffect/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://alexsidorenko.com/blog/useeffect/",
+          "publishedOn": "2022-12-26T21:37:47.000Z",
+          "wordCount": 977,
+          "title": "A Visual Guide to React's useEffect",
+          "imageUrl": "https://alexsidorenko.com/og/useeffect.png"
+        },
+        {
+          "id": "https://www.battlefields.org/learn/articles/how-france-helped-win-american-revolution",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.battlefields.org/learn/articles/how-france-helped-win-american-revolution",
+          "publishedOn": "2022-12-26T21:34:27.000Z",
+          "wordCount": 3249,
+          "title": "The Tipping Point: How France Changed the Tides of the American Revolution",
+          "imageUrl": "https://www.battlefields.org/sites/default/files/styles/social_media/public/master-pnp-pga-01500-01591u.jpg?h=e7ec504f&itok=JU8TAMQ9"
+        },
+        {
+          "id": "https://github.com/rui314/mold/releases/tag/v1.8.0",
+          "author": null,
+          "description": "Comments",
+          "link": "https://github.com/rui314/mold/releases/tag/v1.8.0",
+          "publishedOn": "2022-12-26T21:09:11.000Z",
+          "wordCount": 1063,
+          "title": "Mold linker: targeting macOS/iOS now requires a commercial license",
+          "imageUrl": "https://opengraph.githubassets.com/5c601150ca3991d722be664c3ce68bcdadaa5364c0843cfc1eefa5d02d32cc81/rui314/mold/releases/tag/v1.8.0"
+        },
+        {
+          "id": "https://www.eseller365.com/ebay-etsy-inform-act-hidden-spending-bill/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.eseller365.com/ebay-etsy-inform-act-hidden-spending-bill/",
+          "publishedOn": "2022-12-26T20:38:19.000Z",
+          "wordCount": 5438,
+          "title": "eBay, Etsy and other marketplaces on brink of having to disclose seller details",
+          "imageUrl": "https://www.eseller365.com/wp-content/uploads/2022/12/stack-legislation-inform-act.jpg"
+        },
+        {
+          "id": "https://medium.com/@AnalyticsAtMeta/notifications-why-less-is-more-how-facebook-has-been-increasing-both-user-satisfaction-and-app-9463f7325e7d",
+          "author": null,
+          "description": "Comments",
+          "link": "https://medium.com/@AnalyticsAtMeta/notifications-why-less-is-more-how-facebook-has-been-increasing-both-user-satisfaction-and-app-9463f7325e7d",
+          "publishedOn": "2022-12-26T18:54:34.000Z",
+          "wordCount": 4333,
+          "title": "Facebook increased satisfaction and usage by sending fewer notifications",
+          "imageUrl": "https://miro.medium.com/max/960/1*VswDJMSLW4hgFz-0r0rvQg.png"
+        },
+        {
+          "id": "https://dioxuslabs.com/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://dioxuslabs.com/",
+          "publishedOn": "2022-12-26T18:16:46.000Z",
+          "wordCount": 155,
+          "title": "Dioxus: User interfaces that run anywhere",
+          "imageUrl": "https://dioxuslabs.com/static/opengraph.png"
+        },
+        {
+          "id": "https://www.cryptomuseum.com/spy/ddr2/index.htm",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.cryptomuseum.com/spy/ddr2/index.htm",
+          "publishedOn": "2022-12-26T18:02:04.000Z",
+          "wordCount": 5746,
+          "title": "DDR Type 2 – Short-wave spy transmitter",
+          "imageUrl": null
+        },
+        {
+          "id": "https://www.aneventapart.com/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.aneventapart.com/",
+          "publishedOn": "2022-12-26T17:55:58.000Z",
+          "wordCount": 335,
+          "title": "An Event Apart – Farewell",
+          "imageUrl": ""
+        },
+        {
+          "id": "https://tabledit.com/index.shtml",
+          "author": null,
+          "description": "Comments",
+          "link": "https://tabledit.com/index.shtml",
+          "publishedOn": "2022-12-26T16:54:09.000Z",
+          "wordCount": 644,
+          "title": "TablEdit – Music Tablature Editor",
+          "imageUrl": null
+        },
+        {
+          "id": "https://github.com/wanjohiryan/qwantify",
+          "author": null,
+          "description": "Comments",
+          "link": "https://github.com/wanjohiryan/qwantify",
+          "publishedOn": "2022-12-26T16:45:20.000Z",
+          "wordCount": 1190,
+          "title": "Qwantify",
+          "imageUrl": "https://opengraph.githubassets.com/933a859e6947f65362d54929b42fd61bd7eb7a696d670b9adb70ba1a384920df/wanjohiryan/qwantify"
+        },
+        {
+          "id": "https://fediscience.org/@ct_bergstrom/109571409346371116",
+          "author": null,
+          "description": "Comments",
+          "link": "https://fediscience.org/@ct_bergstrom/109571409346371116",
+          "publishedOn": "2022-12-26T16:27:11.000Z",
+          "wordCount": 116,
+          "title": "How to Befriend Crows",
+          "imageUrl": "https://fediscience.org/system/media_attachments/files/109/571/407/059/801/478/original/25ae1523bb9dba68.jpeg"
+        },
+        {
+          "id": "https://www.aljazeera.com/news/2022/12/26/inside-the-library-where-you-can-read-in-two-countries-at-once",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.aljazeera.com/news/2022/12/26/inside-the-library-where-you-can-read-in-two-countries-at-once",
+          "publishedOn": "2022-12-26T16:12:10.000Z",
+          "wordCount": 1891,
+          "title": "The US-Canada border cuts through the Haskell Free Library and Opera House",
+          "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2022/12/PXL_20221213_154814675.jpg?resize=1920%2C1440"
+        },
+        {
+          "id": "https://www.bath.ac.uk/announcements/social-media-may-prevent-users-from-reaping-creative-rewards-of-profound-boredom-new-research/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.bath.ac.uk/announcements/social-media-may-prevent-users-from-reaping-creative-rewards-of-profound-boredom-new-research/",
+          "publishedOn": "2022-12-26T15:10:52.000Z",
+          "wordCount": 853,
+          "title": "Social media may prevent users from reaping creative rewards of profound boredom",
+          "imageUrl": null
+        },
+        {
+          "id": "https://arstechnica.com/gadgets/2022/10/windows-95-went-the-extra-mile-to-ensure-compatibility-of-simcity-other-games/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://arstechnica.com/gadgets/2022/10/windows-95-went-the-extra-mile-to-ensure-compatibility-of-simcity-other-games/",
+          "publishedOn": "2022-12-26T14:53:04.000Z",
+          "wordCount": 1999,
+          "title": "Windows 95 went the extra mile to ensure compatibility of SimCity, other games",
+          "imageUrl": "https://cdn.arstechnica.net/wp-content/uploads/2022/10/8350168815_dd3c4cb302_o-760x380.jpg"
+        },
+        {
+          "id": "https://borretti.me/article/unbundling-tools-for-thought",
+          "author": null,
+          "description": "Comments",
+          "link": "https://borretti.me/article/unbundling-tools-for-thought",
+          "publishedOn": "2022-12-26T14:17:24.000Z",
+          "wordCount": 3383,
+          "title": "Unbundling Tools for Thought",
+          "imageUrl": "https://borretti.me/assets/card/unbundling-tools-for-thought.png"
+        },
+        {
+          "id": "https://hyperview.org/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://hyperview.org/",
+          "publishedOn": "2022-12-26T13:17:13.000Z",
+          "wordCount": 339,
+          "title": "Hyperview: Native mobile apps, as easy as creating a website",
+          "imageUrl": "https://hyperview.org/img/icon.png"
+        },
+        {
+          "id": "http://web.archive.org/web/20200217014004/https://www.aaxnet.com/design/novell.html",
+          "author": null,
+          "description": "Comments",
+          "link": "http://web.archive.org/web/20200217014004/https://www.aaxnet.com/design/novell.html",
+          "publishedOn": "2022-12-26T12:25:05.000Z",
+          "wordCount": 1431,
+          "title": "Novell NetWare: The King Returns from the Dead (2001)",
+          "imageUrl": null
+        },
+        {
+          "id": "https://github.com/leandromoreira/cdn-up-and-running",
+          "author": null,
+          "description": "Comments",
+          "link": "https://github.com/leandromoreira/cdn-up-and-running",
+          "publishedOn": "2022-12-26T12:17:38.000Z",
+          "wordCount": 5165,
+          "title": "Writing a Mini-CDN to Learn Nginx/Prometheus/Grafana/Lua",
+          "imageUrl": "https://opengraph.githubassets.com/625d16d769de7b6fba6e0db40f53c996e088ad53bc4c8387614ace5e390e4620/leandromoreira/cdn-up-and-running"
+        },
+        {
+          "id": "https://www.subanima.org/bees/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.subanima.org/bees/",
+          "publishedOn": "2022-12-26T11:20:12.000Z",
+          "wordCount": 3872,
+          "title": "Why do bees die when they sting you?",
+          "imageUrl": "https://www.subanima.org/content/images/2021/11/beedead.png"
+        },
+        {
+          "id": "https://en.wikipedia.org/wiki/M%C3%A9nage_problem",
+          "author": null,
+          "description": "Comments",
+          "link": "https://en.wikipedia.org/wiki/M%C3%A9nage_problem",
+          "publishedOn": "2022-12-26T07:47:58.000Z",
+          "wordCount": 2492,
+          "title": "Ménage Problem",
+          "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Wedding_Banquet_setting.jpeg/1200px-Wedding_Banquet_setting.jpeg"
+        },
+        {
+          "id": "https://twitter.com/vinciusmedeiro6/status/1607187382335324162",
+          "author": null,
+          "description": "Comments",
+          "link": "https://twitter.com/vinciusmedeiro6/status/1607187382335324162",
+          "publishedOn": "2022-12-26T07:38:31.000Z",
+          "wordCount": 470,
+          "title": "Leak of a cancelled 1996 “Duke Nukem Forever” side-scroller",
+          "imageUrl": null
+        },
+        {
+          "id": "https://www.choctawnation.com/about/history/irish-connection/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.choctawnation.com/about/history/irish-connection/",
+          "publishedOn": "2022-12-26T06:08:19.000Z",
+          "wordCount": 1497,
+          "title": "Choctaw and Irish History",
+          "imageUrl": "https://www.choctawnation.com/wp-content/uploads/2022/01/011922kindred-spirits.jpg"
+        },
         {
           "id": "http://amasci.com/amateur/holo1.html",
           "author": null,
@@ -349,6 +649,16 @@
           "imageUrl": "https://smp.uq.edu.au/"
         },
         {
+          "id": "https://decovar.dev/blog/2022/12/24/qt-on-mcu/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://decovar.dev/blog/2022/12/24/qt-on-mcu/",
+          "publishedOn": "2022-12-25T06:41:31.000Z",
+          "wordCount": 1904,
+          "title": "Qt on MCU (2018)",
+          "imageUrl": null
+        },
+        {
           "id": "https://www.sainsburywellcome.org/web/research-news/brain-circuit-converts-spatial-goals-escape-actions-discovered",
           "author": null,
           "description": "Comments",
@@ -597,6 +907,16 @@
           "wordCount": 1918,
           "title": "Rotary Keyboard",
           "imageUrl": "http://squidgeefish.com/assets/rotary-keyboard/banner.jpg"
+        },
+        {
+          "id": "https://www.vice.com/en/article/3admdv/archaeologists-discover-huge-lost-civilization-in-guatemala",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.vice.com/en/article/3admdv/archaeologists-discover-huge-lost-civilization-in-guatemala",
+          "publishedOn": "2022-12-24T08:38:51.000Z",
+          "wordCount": 4426,
+          "title": "Archaeologists Discover Lost Civilization in Guatemala",
+          "imageUrl": "https://video-images.vice.com/articles/63a212f14af82d9c42dfc974/lede/1671566301999-22.jpeg?image-resize-opts=Y3JvcD0xeHc6MC43ODkzeGg7MHh3LDB4aCZyZXNpemU9MTIwMDoqJnJlc2l6ZT0xMjAwOio"
         },
         {
           "id": "https://www.hcn.org/articles/wildlife-bringing-back-californias-wild-bees",
@@ -8607,326 +8927,6 @@
           "wordCount": 185,
           "title": "Show HN: MyNixOS – Create and share Nix and NixOS configurations",
           "imageUrl": "https://mynixos.com/sharer.png"
-        },
-        {
-          "id": "https://beringresearch.github.io/macpine/lxd_macpine/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://beringresearch.github.io/macpine/lxd_macpine/",
-          "publishedOn": "2022-11-27T12:56:04.000Z",
-          "wordCount": 644,
-          "title": "LXD containers on macOS at near-native speeds",
-          "imageUrl": null
-        },
-        {
-          "id": "https://twitter.com/armscontrolwonk/status/1593452159365918722",
-          "author": null,
-          "description": "Comments",
-          "link": "https://twitter.com/armscontrolwonk/status/1593452159365918722",
-          "publishedOn": "2022-11-27T12:22:51.000Z",
-          "wordCount": 399,
-          "title": "North Korean ICBM launch detected using GPS",
-          "imageUrl": null
-        },
-        {
-          "id": "https://naich.net/wordpress/index.php/ever-wondered-why-plumbers-are-paid-so-much/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://naich.net/wordpress/index.php/ever-wondered-why-plumbers-are-paid-so-much/",
-          "publishedOn": "2022-11-27T10:32:16.000Z",
-          "wordCount": 2203,
-          "title": "The world of pipe fittings",
-          "imageUrl": null
-        },
-        {
-          "id": "https://yogthos.net/posts/2022-11-26-nREPL-system-interaction.html",
-          "author": null,
-          "description": "Comments",
-          "link": "https://yogthos.net/posts/2022-11-26-nREPL-system-interaction.html",
-          "publishedOn": "2022-11-27T10:22:38.000Z",
-          "wordCount": 619,
-          "title": "Babashka Clojure nREPL as a system interface",
-          "imageUrl": null
-        },
-        {
-          "id": "http://visual6502.org/sim/varm/armgl.html",
-          "author": null,
-          "description": "Comments",
-          "link": "http://visual6502.org/sim/varm/armgl.html",
-          "publishedOn": "2022-11-27T07:13:06.000Z",
-          "wordCount": 201,
-          "title": "ARM1 Gate-Level Simulation",
-          "imageUrl": null
-        },
-        {
-          "id": "https://socket3.wordpress.com/2018/02/03/designing-windows-95s-user-interface/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://socket3.wordpress.com/2018/02/03/designing-windows-95s-user-interface/",
-          "publishedOn": "2022-11-27T06:08:59.000Z",
-          "wordCount": 9620,
-          "title": "Designing Windows 95’s User Interface (2018)",
-          "imageUrl": "https://socket3.files.wordpress.com/2018/02/win95uidesgn-8.gif"
-        },
-        {
-          "id": "https://knowablemagazine.org/article/living-world/2022/treasure-hunt-microbes-chile-atacama-desert",
-          "author": null,
-          "description": "Comments",
-          "link": "https://knowablemagazine.org/article/living-world/2022/treasure-hunt-microbes-chile-atacama-desert",
-          "publishedOn": "2022-11-27T04:57:25.000Z",
-          "wordCount": 8890,
-          "title": "A treasure hunt for microbes in Chile’s Atacama desert",
-          "imageUrl": "https://knowablemagazine.org/pb-assets/knowable-assets/article-assets/twitter/10.1146/knowable-082522-1-1200x630-1661527721227.jpg"
-        },
-        {
-          "id": "https://www.mdc-berlin.de/news/press/what-octopus-and-human-brains-have-common",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.mdc-berlin.de/news/press/what-octopus-and-human-brains-have-common",
-          "publishedOn": "2022-11-27T02:07:46.000Z",
-          "wordCount": 2450,
-          "title": "What octopus and human brains have in common",
-          "imageUrl": "https://www.mdc-berlin.de/system/files/styles/og_image/private/2022-11/octopus_drawing_large2.jpg?itok=68gQbuBy"
-        },
-        {
-          "id": "https://fullcontrol.xyz/#/models",
-          "author": null,
-          "description": "Comments",
-          "link": "https://fullcontrol.xyz/#/models",
-          "publishedOn": "2022-11-27T00:26:25.000Z",
-          "wordCount": 6,
-          "title": "Non conventional 3D Print challenges (GCode)",
-          "imageUrl": null
-        },
-        {
-          "id": "https://cryptoslate.com/bitcoin-worth-1-5b-withdrawn-from-coinbase-in-48-hours/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://cryptoslate.com/bitcoin-worth-1-5b-withdrawn-from-coinbase-in-48-hours/",
-          "publishedOn": "2022-11-27T00:10:52.000Z",
-          "wordCount": null,
-          "title": "Bitcoin worth $1.5B withdrawn from Coinbase in 48 hours",
-          "imageUrl": null
-        },
-        {
-          "id": "https://filippo.io/fakenews/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://filippo.io/fakenews/",
-          "publishedOn": "2022-11-26T23:12:55.000Z",
-          "wordCount": 391,
-          "title": "Fake HN titles generated by GPT-3",
-          "imageUrl": null
-        },
-        {
-          "id": "https://www.sshguard.net/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.sshguard.net/",
-          "publishedOn": "2022-11-26T22:35:17.000Z",
-          "wordCount": 334,
-          "title": "SSHGuard",
-          "imageUrl": null
-        },
-        {
-          "id": "https://www.righto.com/2022/11/a-bug-fix-in-8086-microprocessor.html",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.righto.com/2022/11/a-bug-fix-in-8086-microprocessor.html",
-          "publishedOn": "2022-11-26T22:28:40.000Z",
-          "wordCount": 5528,
-          "title": "A bug fix in the 8086 microprocessor, revealed in the die's silicon",
-          "imageUrl": "https://lh3.googleusercontent.com/blogger_img_proxy/ANbyha2LX2wEyZX3uc_IWIO4-2nx8UrVlEySCYRumS15awEMToFGlMxbkw5bWI47HyLgCcHCCXaZ5Y_VNnnVWuPkqODO4SDinXBWfrVx1Eksm4OrWTWFYLerhm8uvLC30gWQCZGJ_8pe=w1200-h630-p-k-no-nu"
-        },
-        {
-          "id": "https://github.com/google/mangle",
-          "author": null,
-          "description": "Comments",
-          "link": "https://github.com/google/mangle",
-          "publishedOn": "2022-11-26T21:14:18.000Z",
-          "wordCount": 1279,
-          "title": "Mangle, a programming language for deductive database programming",
-          "imageUrl": "https://opengraph.githubassets.com/10001939fa475a3a054639ccb49eb60a1b60af35223c6138f5b87da6b689cc51/google/mangle"
-        },
-        {
-          "id": "https://torrentfreak.com/court-orders-u-s-navy-to-pay-154400-in-software-piracy-damages-221125/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://torrentfreak.com/court-orders-u-s-navy-to-pay-154400-in-software-piracy-damages-221125/",
-          "publishedOn": "2022-11-26T20:41:39.000Z",
-          "wordCount": 2898,
-          "title": "Court Orders U.S. Navy to Pay $154,400 in Software Piracy Damages",
-          "imageUrl": null
-        },
-        {
-          "id": "https://bikerglen.com/blog/ww2-engine-cowl-flaps-indicator/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://bikerglen.com/blog/ww2-engine-cowl-flaps-indicator/",
-          "publishedOn": "2022-11-26T20:21:53.000Z",
-          "wordCount": 5388,
-          "title": "Converting a WW2-Era Engine Cowl Flaps Indicator into a USB Peripheral",
-          "imageUrl": null
-        },
-        {
-          "id": "https://daedtech.com/the-7-habits-of-highly-overrated-people/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://daedtech.com/the-7-habits-of-highly-overrated-people/",
-          "publishedOn": "2022-11-26T20:14:36.000Z",
-          "wordCount": 13441,
-          "title": "Habits of Highly Overrated People (2013)",
-          "imageUrl": null
-        },
-        {
-          "id": "https://github.com/luajit-remake/luajit-remake",
-          "author": null,
-          "description": "Comments",
-          "link": "https://github.com/luajit-remake/luajit-remake",
-          "publishedOn": "2022-11-26T20:10:34.000Z",
-          "wordCount": 1440,
-          "title": "LuaJIT Remake: An ongoing attempt to re-engineer LuaJIT from scratch",
-          "imageUrl": "https://opengraph.githubassets.com/35a26bca36929ec0683758e566c73a0061bbb49d1a0439febc86174f61146e99/luajit-remake/luajit-remake"
-        },
-        {
-          "id": "https://syntopikon.substack.com/p/an-interview-with-keith-blount",
-          "author": null,
-          "description": "Comments",
-          "link": "https://syntopikon.substack.com/p/an-interview-with-keith-blount",
-          "publishedOn": "2022-11-26T20:09:45.000Z",
-          "wordCount": 4347,
-          "title": "Interview with Keith Blount, Creator of Scrivener",
-          "imageUrl": "https://substackcdn.com/image/fetch/w_1200,h_600,c_limit,f_jpg,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2Fdcb284b7-5178-477a-a501-b302c0a20cf0_1105x960.jpeg"
-        },
-        {
-          "id": "https://www.fcc.gov/document/fcc-bans-authorizations-devices-pose-national-security-threat",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.fcc.gov/document/fcc-bans-authorizations-devices-pose-national-security-threat",
-          "publishedOn": "2022-11-26T20:01:49.000Z",
-          "wordCount": 590,
-          "title": "FCC Bans Authorizations for Devices That Pose National Security Threat",
-          "imageUrl": "https://www.fcc.gov/sites/default/files/social-media-sharing-fcc-logo.jpg"
-        },
-        {
-          "id": "https://www.math.columbia.edu/~woit/wordpress/?p=13152",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.math.columbia.edu/~woit/wordpress/?p=13152",
-          "publishedOn": "2022-11-26T19:36:54.000Z",
-          "wordCount": 6323,
-          "title": "The Mystery of Spin",
-          "imageUrl": null
-        },
-        {
-          "id": "https://news.ycombinator.com/item?id=33755651",
-          "author": null,
-          "description": "Comments",
-          "link": "https://news.ycombinator.com/item?id=33755651",
-          "publishedOn": "2022-11-26T19:16:05.000Z",
-          "wordCount": 3278,
-          "title": "Remind HN: Heroku will delete all free dbs and shut down all free dynos Monday",
-          "imageUrl": null
-        },
-        {
-          "id": "https://www.washingtonpost.com/opinions/2022/11/23/americans-alone-thanksgiving-friends/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.washingtonpost.com/opinions/2022/11/23/americans-alone-thanksgiving-friends/",
-          "publishedOn": "2022-11-26T18:31:51.000Z",
-          "wordCount": 8613,
-          "title": "Americans are choosing to be alone, but we should reverse that",
-          "imageUrl": "https://www.washingtonpost.com/wp-apps/imrs.php?src=https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/VVK3K3PFJNG2FKGFNKZFUQJ254.jpg&w=1440"
-        },
-        {
-          "id": "https://www.cisa.gov/small-business",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.cisa.gov/small-business",
-          "publishedOn": "2022-11-26T18:26:36.000Z",
-          "wordCount": 4251,
-          "title": "Cyber Guidance for Small Businesses",
-          "imageUrl": null
-        },
-        {
-          "id": "https://stylometry.net/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://stylometry.net/",
-          "publishedOn": "2022-11-26T18:03:16.000Z",
-          "wordCount": 47,
-          "title": "Show HN: Using stylometry to find HN users with alternate accounts",
-          "imageUrl": null
-        },
-        {
-          "id": "https://www.fifthestate.org/archive/360-spring-2003/a-1918-anti-war-speech-sent-eugene-v-debs-to-prison/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.fifthestate.org/archive/360-spring-2003/a-1918-anti-war-speech-sent-eugene-v-debs-to-prison/",
-          "publishedOn": "2022-11-26T17:57:30.000Z",
-          "wordCount": 5085,
-          "title": "Anti-War Speech Sent Eugene V. Debs to Prison, 1918",
-          "imageUrl": null
-        },
-        {
-          "id": "https://www.moderndescartes.com/essays/data_oriented_python/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.moderndescartes.com/essays/data_oriented_python/",
-          "publishedOn": "2022-11-26T17:45:41.000Z",
-          "wordCount": 1624,
-          "title": "Data-Oriented Programming in Python",
-          "imageUrl": null
-        },
-        {
-          "id": "https://schulzmuseum.org/tribute/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://schulzmuseum.org/tribute/",
-          "publishedOn": "2022-11-26T17:44:54.000Z",
-          "wordCount": 2873,
-          "title": "Cartoonist Tributes to Charles Schulz",
-          "imageUrl": null
-        },
-        {
-          "id": "https://themarkup.org/show-your-work/2022/04/28/how-we-built-a-meta-pixel-inspector",
-          "author": null,
-          "description": "Comments",
-          "link": "https://themarkup.org/show-your-work/2022/04/28/how-we-built-a-meta-pixel-inspector",
-          "publishedOn": "2022-11-26T15:40:23.000Z",
-          "wordCount": 4855,
-          "title": "We Built a Meta Pixel Inspector",
-          "imageUrl": "https://mrkp-static-production.themarkup.org/uploads/2022/04/pixel-hunt-methodology-distorted-reduced-1200x628.jpg"
-        },
-        {
-          "id": "https://www.science.org/doi/10.1126/sciadv.add7118",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.science.org/doi/10.1126/sciadv.add7118",
-          "publishedOn": "2022-11-26T15:37:08.000Z",
-          "wordCount": null,
-          "title": "MycelioTronics: Fungal mycelium skin for sustainable electronics",
-          "imageUrl": null
-        },
-        {
-          "id": "https://www.djfood.org/fantasy-jodorowsky-tron-visualisations-by-johnny-darrell",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.djfood.org/fantasy-jodorowsky-tron-visualisations-by-johnny-darrell",
-          "publishedOn": "2022-11-26T14:01:11.000Z",
-          "wordCount": 1025,
-          "title": "Fantasy Jodorowsky Tron visualisations",
-          "imageUrl": "http://www.djfood.org/wp-content/uploads/2022/11/Jodo-Tron-1-poster.jpg"
-        },
-        {
-          "id": "https://www.i-programmer.info/news/90-tools/15901-a-compiler-writing-playground.html",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.i-programmer.info/news/90-tools/15901-a-compiler-writing-playground.html",
-          "publishedOn": "2022-11-26T13:31:27.000Z",
-          "wordCount": 2060,
-          "title": "A Compiler Writing Playground",
-          "imageUrl": null
         }
       ]
     }
