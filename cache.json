@@ -12,6 +12,16 @@
       "siteUrl": "http://weekly.dockone.io",
       "articles": [
         {
+          "id": "http://weekly.dockone.io/article/2434949",
+          "author": "frankinbj",
+          "description": "分布式计算的谬误是由L Peter Deutsch和Sun Microsystems公司的其他人所提出的一组断言，他们描述了不熟悉分布式应用程序的程序员总是会做出的一些错误的假设。\n微服务的大规模普及迫使越来越多的工程师意识到这些错误的认识给他们的系统带来多么大的影响。\n我们经常会看到一些人在讨论系统设计的时候，忽视或者淡化这8个谬误。\n\n\n\n下面我来介绍一下这些谬误以及一些潜在的消减措施，希望大家能感兴趣。\n网络是可靠的\n\n\n\n\n为了构建一个可靠的系统，你必须理解并接受任何一种通信都可能会失败的事实。因此，我们需要为系统设计出一种方法来处理这种潜在的错误沟通。所以，最终需要用到重传，而且它可以有多种形式。\n存储再转发（store and forward）就是这样一种模型。我们不直接将数据发送到下游服务器，而是将其存储在本地或其他地方，这也提供了能从灾难场景下恢复的保障。\n有很多产品属于这种技术，如RabbitMQ，ActiveMQ以及来自云厂商的各种专有解决方案。\n网络是零延迟的\n\n\n\n\n图片的左边是在现代系统中直接访问内存的时间，右边是在世界各地往返所需的时间。\n我喜欢把延迟看作是完成任何请求的严格开销。传递的消息可以很大，也可以很小，而延迟是不变的。与带宽不同，延迟通常与光速和通信距离（或物理路径）有关。所以两个系统之间的物理距离在这里起着重要的作用。\n延迟是无处不在的。它发生在所有的通讯中。理想情况下，这种开销应该尽可能小。延迟的场景和从车上卸货非常相似，就是说，从厨房到车上的时间就是延迟。你是想一趟尽可能多地拿东西，还是想每次只拿一个东西，花几百次往返把车上的东西都卸下来？\n带宽是无限的\n\n\n\n\n假设持续无限制地增加信道上的数据大小，这显然是个很大的错误。这种情况只有在某种通讯彻底占满带宽与此同时无法扩容时才会出现。\n我第一次遇到这个问题是我不小心将主页所需的有效…",
+          "link": "http://weekly.dockone.io/article/2434949",
+          "publishedOn": "2022-12-29T01:06:11.262Z",
+          "wordCount": null,
+          "title": "图说分布式计算的8大谬误",
+          "imageUrl": null
+        },
+        {
           "id": "http://weekly.dockone.io/article/2434953",
           "author": "frankinbj",
           "description": "[作为一名技术人员，我热衷于讨论技术。随着讨论的进行，经常会有如下的对比，例如JVM vs. Net， JAVA vs. Kotlin， Go vs. Rust，Maven vs. 不能说的那个， 等等。随之，我们会经常深陷我们所热衷的那款技术的优缺点的泥潭，讨论了几个小时也不能达成共识。\n“我想要一套Drupal”\n需不需要.env文件\n很多问题并不需要微服务来解决\n技术支持也要对问题产生疑问\n五个为什么\nhttps://en.wikipedia.org/wiki/Five_whys\n结论\n最初于2022年10月23日在Java极客上发布\nhttps://itnext.io/discuss-prob ... c8f38",
@@ -90,16 +100,6 @@
           "wordCount": 351,
           "title": "12因素应用方法重新审视",
           "imageUrl": null
-        },
-        {
-          "id": "http://weekly.dockone.io/article/2434945",
-          "author": "w9527",
-          "description": "什么是 Redis？\nRedis（“REmote DIctionary Service”）是一个开源的键值对数据库服务器。\nRedis 更准确的描述是一个数据结构服务器。Redis 的这种特殊性质让它在开发人员中很受欢迎。\n\n\n\nRedis不是通过迭代或者排序方式处理数据，而是一开始就按照数据结构方式组织。早期，它的使用很像 Memcached，但随着 Redis 的改进，它在许多其他用例中变得可行，包括发布-订阅机制、流（streaming）和队列。\n\n\n\n主要来说，Redis 是一个内存数据库，用作另一个“真实”数据库（如 MySQL 或 PostgreSQL）前面的缓存，以帮助提高应用程序性能。它通过利用内存的高速访问速度，从而减轻核心应用程序数据库的负载，例如：\n不经常更改且经常被请求的数据\n任务关键性较低且经常变动的数据\n\n上述数据的示例可以包括会话或数据缓存以及仪表板的排行榜或汇总分析。\n\n\n\n但是，对于许多用例场景，Redis 都可以提供足够的保证，可以将其用作成熟的主数据库。再加上 Redis 插件及其各种高可用性（HA）设置，Redis 作为数据库对于某些场景和工作负载变得非常有用。\n另一个重要方面是 Redis 模糊了缓存和数据存储之间的界限。这里要理解的重要一点是，相比于使用 SSD 或 HDD 作为存储的传统数据库，读取和操作内存中数据的速度要快得多。\n\n\n\n最初，Redis 最常被比作 Memcached，后者当时缺乏任何非易失性持久化。\n这是当前两个缓存之间的功能细分。\n\n\n\n虽然现在拥有多种配置方式将数据持久化到磁盘，但当时首次引入持久化时，Redis 是使用快照方式，通过异步拷贝内存中的数据方式来做持久化。不幸的是，这种机制的缺点是可能会在快照之间丢失数据。\nRedis 自 2009 年成立到现在已经变的很成熟。我们将介绍它的大部分架构和拓扑…",
-          "link": "http://weekly.dockone.io/article/2434945",
-          "publishedOn": "2022-11-28T01:09:57.531Z",
-          "wordCount": 623,
-          "title": "深入理解 Redis",
-          "imageUrl": null
         }
       ]
     },
@@ -108,6 +108,296 @@
       "feedUrl": "https://news.ycombinator.com/rss",
       "siteUrl": "https://news.ycombinator.com/",
       "articles": [
+        {
+          "id": "https://www.laphamsquarterly.org/democracy/hiding-plain-sight",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.laphamsquarterly.org/democracy/hiding-plain-sight",
+          "publishedOn": "2022-12-29T00:31:16.000Z",
+          "wordCount": 5011,
+          "title": "Hiding in Plain Sight",
+          "imageUrl": "https://www.laphamsquarterly.org/sites/default/files/styles/thumbnail/public/images/essay/hidinginplainsight.jpg?itok=41lDogar"
+        },
+        {
+          "id": "https://www.economist.com/christmas-specials/2022/12/20/the-new-tech-worldview",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.economist.com/christmas-specials/2022/12/20/the-new-tech-worldview",
+          "publishedOn": "2022-12-28T23:02:04.000Z",
+          "wordCount": 13154,
+          "title": "The new tech worldview",
+          "imageUrl": "https://www.economist.com/img/b/1280/720/90/media-assets/image/20221224_XMD117.jpg"
+        },
+        {
+          "id": "https://www.chatbcg.com/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.chatbcg.com/",
+          "publishedOn": "2022-12-28T22:50:59.000Z",
+          "wordCount": 66,
+          "title": "ChatBCG: Generative AI For Slides",
+          "imageUrl": "https://i.imgur.com/zoRf1rU.png"
+        },
+        {
+          "id": "https://spindas.dreamwidth.org/4207.html",
+          "author": null,
+          "description": "Comments",
+          "link": "https://spindas.dreamwidth.org/4207.html",
+          "publishedOn": "2022-12-28T21:26:04.000Z",
+          "wordCount": 230,
+          "title": "Build your front end in React, then let ChatGPT be your Redux reducer",
+          "imageUrl": null
+        },
+        {
+          "id": "https://tedgioia.substack.com/p/what-can-we-learn-from-barnes-and",
+          "author": null,
+          "description": "Comments",
+          "link": "https://tedgioia.substack.com/p/what-can-we-learn-from-barnes-and",
+          "publishedOn": "2022-12-28T21:07:09.000Z",
+          "wordCount": 5931,
+          "title": "Barnes and Noble's surprising turnaround",
+          "imageUrl": "https://substackcdn.com/image/fetch/w_1200,h_600,c_limit,f_jpg,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2Fc0b32e6a-0ac5-454d-8f6f-3a241a948253_770x364.jpeg"
+        },
+        {
+          "id": "https://www.coindesk.com/consensus-magazine/2022/12/28/why-solana-was-decimated-by-bankman-frieds-downfall/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.coindesk.com/consensus-magazine/2022/12/28/why-solana-was-decimated-by-bankman-frieds-downfall/",
+          "publishedOn": "2022-12-28T20:59:59.000Z",
+          "wordCount": 23007,
+          "title": "Why Solana was decimated by Bankman-Fried’s downfall",
+          "imageUrl": "https://www.coindesk.com/resizer/9tdmt3M-6OWcFStwGHBWffWizbE=/1200x628/center/middle/cloudfront-us-east-1.images.arcpublishing.com/coindesk/TDVOS52CMBGZVK7CYRL5GK7NMQ.jpg"
+        },
+        {
+          "id": "https://chipsandcheese.com/2022/12/25/golden-coves-lopsided-vector-register-file/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://chipsandcheese.com/2022/12/25/golden-coves-lopsided-vector-register-file/",
+          "publishedOn": "2022-12-28T20:57:53.000Z",
+          "wordCount": 3826,
+          "title": "Golden Cove’s Lopsided Vector Register File",
+          "imageUrl": "https://i0.wp.com/chipsandcheese.com/wp-content/uploads/2021/12/alderlakedie.jpg?fit=1200%2C607&ssl=1"
+        },
+        {
+          "id": "https://www.filfre.net/2017/10/the-68000-wars-part-5-the-age-of-multimedia/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.filfre.net/2017/10/the-68000-wars-part-5-the-age-of-multimedia/",
+          "publishedOn": "2022-12-28T20:55:25.000Z",
+          "wordCount": 9857,
+          "title": "The 68k Wars: The Age of Multimedia (2017)",
+          "imageUrl": null
+        },
+        {
+          "id": "https://guzey.com/books/why-we-sleep/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://guzey.com/books/why-we-sleep/",
+          "publishedOn": "2022-12-28T20:50:43.000Z",
+          "wordCount": 13753,
+          "title": "“Why We Sleep” is riddled with scientific and factual errors (2019)",
+          "imageUrl": "https://guzey.com/files/books/why-we-sleep/why-we-sleep-preview.png?4"
+        },
+        {
+          "id": "https://aljazaribook.com/en/2019/10/15/a-goblet-which-arbitrates_en/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://aljazaribook.com/en/2019/10/15/a-goblet-which-arbitrates_en/",
+          "publishedOn": "2022-12-28T20:31:38.000Z",
+          "wordCount": 2638,
+          "title": "A goblet which arbitrates during drinking parties (2019)",
+          "imageUrl": "https://aljazaribook.com/wp-content/uploads/2019/10/Category-II-Chapter-1-mechanism_en.jpg"
+        },
+        {
+          "id": "https://lspace.swyx.io/p/reverse-prompt-eng",
+          "author": null,
+          "description": "Comments",
+          "link": "https://lspace.swyx.io/p/reverse-prompt-eng",
+          "publishedOn": "2022-12-28T20:29:02.000Z",
+          "wordCount": 8350,
+          "title": "Reverse-engineering the source prompts of Notion AI",
+          "imageUrl": "https://substackcdn.com/image/fetch/w_1200,h_600,c_limit,f_jpg,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F055a7cef-7c78-49c7-8dbd-bc3f79ac04e1_601x330.png"
+        },
+        {
+          "id": "https://paroj.github.io/gltut/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://paroj.github.io/gltut/",
+          "publishedOn": "2022-12-28T20:10:05.000Z",
+          "wordCount": 1180,
+          "title": "Learning Modern 3D Graphics Programming (2012)",
+          "imageUrl": null
+        },
+        {
+          "id": "https://mastodon.laurenweinstein.org/@lauren/109588605178700335",
+          "author": null,
+          "description": "Comments",
+          "link": "https://mastodon.laurenweinstein.org/@lauren/109588605178700335",
+          "publishedOn": "2022-12-28T19:45:57.000Z",
+          "wordCount": 115,
+          "title": "Once upon a time long ago, I was sitting alone in the UCLA ARPANET site #1",
+          "imageUrl": "https://mastodon.laurenweinstein.org/system/accounts/avatars/109/357/023/842/046/447/original/5c9aa641bf055d08.jpg"
+        },
+        {
+          "id": "https://www.smithsonianmag.com/smithsonian-institution/fourteen-discoveries-made-about-human-evolution-in-2022-180981344/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.smithsonianmag.com/smithsonian-institution/fourteen-discoveries-made-about-human-evolution-in-2022-180981344/",
+          "publishedOn": "2022-12-28T19:18:28.000Z",
+          "wordCount": 3830,
+          "title": "Discoveries made about human evolution in 2022",
+          "imageUrl": "https://th-thumbnailer.cdn-si-edu.com/gRojI9UPny0Qj_OLml-72YwKSAI=/fit-in/1600x0/filters:focal(800x602:801x603)/https%3A%2F%2Ftf-cmsv2-smithsonianmag-media.s3.amazonaws.com%2Ffiler_public%2F35%2F79%2F357909ac-8460-4e81-a523-4d33d69c84a4%2Fneanderthal_pressrelease22_tbcrop.jpg"
+        },
+        {
+          "id": "https://www.theverge.com/2022/12/28/23528003/sherlock-holmes-metropolis-to-the-lighthouse-public-domain-day-2023",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.theverge.com/2022/12/28/23528003/sherlock-holmes-metropolis-to-the-lighthouse-public-domain-day-2023",
+          "publishedOn": "2022-12-28T19:07:33.000Z",
+          "wordCount": 8830,
+          "title": "Sherlock Holmes will finally escape copyright this weekend",
+          "imageUrl": "https://cdn.vox-cdn.com/thumbor/kH5bEYpuYd8sUwxDNmmW8x6GdRM=/0x0:1559x1198/1200x628/filters:focal(710x496:711x497)/cdn.vox-cdn.com/uploads/chorus_asset/file/24319392/1559px_Portrait_of_Sherlock_Holmes_by_Sidney_Paget.jpg"
+        },
+        {
+          "id": "https://www.theverge.com/2022/12/28/23529380/waze-history-of-crashes-beta-release-traffic-crash-data",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.theverge.com/2022/12/28/23529380/waze-history-of-crashes-beta-release-traffic-crash-data",
+          "publishedOn": "2022-12-28T19:04:01.000Z",
+          "wordCount": 9189,
+          "title": "Waze tests new alerts warning drivers about roads with a ‘history of crashes’",
+          "imageUrl": "https://cdn.vox-cdn.com/thumbor/SC3ur0HICB-_d9PszNWyhYODa0k=/0x0:1354x900/1200x628/filters:focal(677x450:678x451)/cdn.vox-cdn.com/uploads/chorus_asset/file/24321462/RED_1.jpg"
+        },
+        {
+          "id": "https://www.themarginalian.org/2022/12/26/jeanne-villepreux-power-argonaut/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.themarginalian.org/2022/12/26/jeanne-villepreux-power-argonaut/",
+          "publishedOn": "2022-12-28T18:51:33.000Z",
+          "wordCount": 4081,
+          "title": "A seamstress who solved the ancient mystery of the Argonaut",
+          "imageUrl": "https://www.themarginalian.org/wp-content/uploads/2022/12/JeanneVillepreux-Power_argonaut_TheMarginalian.jpg?fit=1200%2C630&ssl=1"
+        },
+        {
+          "id": "https://www.synthtopia.com/content/2022/12/27/jean-michel-jarres-classic-oxygene-4-recreated-with-19kb-of-javascript/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.synthtopia.com/content/2022/12/27/jean-michel-jarres-classic-oxygene-4-recreated-with-19kb-of-javascript/",
+          "publishedOn": "2022-12-28T17:44:07.000Z",
+          "wordCount": 1820,
+          "title": "Jean-Michel Jarre’s ‘Oxygene 4’ Recreated with 19KB of JavaScript",
+          "imageUrl": "https://www.synthtopia.com/wp-content/uploads/2004/01/oxygene-e1485276280658.jpg"
+        },
+        {
+          "id": "https://spectrum.ieee.org/rhumatoid-arthritis",
+          "author": null,
+          "description": "Comments",
+          "link": "https://spectrum.ieee.org/rhumatoid-arthritis",
+          "publishedOn": "2022-12-28T17:18:15.000Z",
+          "wordCount": 12652,
+          "title": "A new treatment for arthritis: Vagus-nerve stimulation",
+          "imageUrl": "https://spectrum.ieee.org/media-library/a-tablet-computer-a-smartphone-a-grey-belt-with-white-stripes-a-grey-disc-and-a-small-silver-rectangle-with-a-wire-curled-be.jpg?id=32333913&width=1200&height=600&coordinates=0%2C356%2C0%2C356"
+        },
+        {
+          "id": "http://bitsavers.org/pdf/apple/lisa/development_history/articles/IBM_RC8384_Schild_-_PICTUREWORLD_A_Concept_for_Future_Office_Systems_198007.pdf",
+          "author": null,
+          "description": "Comments",
+          "link": "http://bitsavers.org/pdf/apple/lisa/development_history/articles/IBM_RC8384_Schild_-_PICTUREWORLD_A_Concept_for_Future_Office_Systems_198007.pdf",
+          "publishedOn": "2022-12-28T15:35:57.000Z",
+          "wordCount": 17447,
+          "title": "Pictureworld: A Concept for Future Office Systems (1980) [pdf]",
+          "imageUrl": null
+        },
+        {
+          "id": "https://misfra.me/2022/sqlite-automatic-indexes/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://misfra.me/2022/sqlite-automatic-indexes/",
+          "publishedOn": "2022-12-28T15:35:57.000Z",
+          "wordCount": 844,
+          "title": "SQLite's Automatic Indexes",
+          "imageUrl": null
+        },
+        {
+          "id": "https://community.twistedfields.com/t/a-closer-look-at-acorn-our-open-source-precision-farming-rover/108",
+          "author": null,
+          "description": "Comments",
+          "link": "https://community.twistedfields.com/t/a-closer-look-at-acorn-our-open-source-precision-farming-rover/108",
+          "publishedOn": "2022-12-28T15:35:36.000Z",
+          "wordCount": 1467,
+          "title": "Acorn, our open source precision farming rover",
+          "imageUrl": "https://community.twistedfields.com/uploads/default/original/1X/6fc1d04a314e1f2faa27f898e7059cd3afabb05f.jpeg"
+        },
+        {
+          "id": "https://www.stevenbuccini.com/8-hard-truths-on-getting-laid-off",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.stevenbuccini.com/8-hard-truths-on-getting-laid-off",
+          "publishedOn": "2022-12-28T15:21:29.000Z",
+          "wordCount": 2719,
+          "title": "Hard truths I learned when I got laid off from my SWE job",
+          "imageUrl": null
+        },
+        {
+          "id": "https://matt.might.net/articles/26-languages-part1/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://matt.might.net/articles/26-languages-part1/",
+          "publishedOn": "2022-12-28T14:44:12.000Z",
+          "wordCount": 1844,
+          "title": "26 Programming Languages in 25 Days",
+          "imageUrl": null
+        },
+        {
+          "id": "https://www.calculator.net/bra-size-calculator.html",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.calculator.net/bra-size-calculator.html",
+          "publishedOn": "2022-12-28T13:35:36.000Z",
+          "wordCount": 973,
+          "title": "Bra size calculator",
+          "imageUrl": null
+        },
+        {
+          "id": "https://ieeexplore.ieee.org/document/9415699",
+          "author": null,
+          "description": "Comments",
+          "link": "https://ieeexplore.ieee.org/document/9415699",
+          "publishedOn": "2022-12-28T12:30:06.000Z",
+          "wordCount": null,
+          "title": "Active ball joint mechanism with 3 DoF based on spherical gear meshings (2021)",
+          "imageUrl": null
+        },
+        {
+          "id": "https://www.getlazarus.org/guides/intro/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.getlazarus.org/guides/intro/",
+          "publishedOn": "2022-12-28T11:53:32.000Z",
+          "wordCount": 2162,
+          "title": "A guided intro to the Free Pascal language",
+          "imageUrl": null
+        },
+        {
+          "id": "https://downrightnifty.me/blog/2022/12/26/hacking-google-home.html",
+          "author": null,
+          "description": "Comments",
+          "link": "https://downrightnifty.me/blog/2022/12/26/hacking-google-home.html",
+          "publishedOn": "2022-12-28T11:19:45.000Z",
+          "wordCount": 8025,
+          "title": "Wiretapping Google smart speakers",
+          "imageUrl": null
+        },
+        {
+          "id": "https://lareviewofbooks.org/article/what-is-the-secret-of-chernivtsi-a-conversation-with-igor-pomerantsev/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://lareviewofbooks.org/article/what-is-the-secret-of-chernivtsi-a-conversation-with-igor-pomerantsev/",
+          "publishedOn": "2022-12-28T02:37:12.000Z",
+          "wordCount": 6285,
+          "title": "What Is the Secret of Chernivtsi?: A Conversation with Ihor Pomerantsev",
+          "imageUrl": "https://dev.lareviewofbooks.org/wp-content/uploads/2022/12/Black-and-White-scaled-e1671705830689.jpg"
+        },
         {
           "id": "https://mjtsai.com/blog/2022/12/27/ventura-issues/",
           "author": null,
@@ -176,6 +466,16 @@
           "publishedOn": "2022-12-27T21:56:48.000Z",
           "wordCount": 4292,
           "title": "How RISC-V Timer Interrupts Work",
+          "imageUrl": null
+        },
+        {
+          "id": "https://notepadcalculator.com/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://notepadcalculator.com/",
+          "publishedOn": "2022-12-27T21:13:15.000Z",
+          "wordCount": 26,
+          "title": "Notepad Calculator",
           "imageUrl": null
         },
         {
@@ -8697,256 +8997,6 @@
           "wordCount": 4154,
           "title": "Goodbye, data science",
           "imageUrl": "https://s0.wp.com/i/blank.jpg"
-        },
-        {
-          "id": "https://www.reuters.com/world/uk/uk-ditches-ban-legal-harmful-online-content-favour-free-speech-2022-11-28/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.reuters.com/world/uk/uk-ditches-ban-legal-harmful-online-content-favour-free-speech-2022-11-28/",
-          "publishedOn": "2022-11-29T10:14:13.000Z",
-          "wordCount": 3899,
-          "title": "UK ditches ban on 'legal but harmful' online content",
-          "imageUrl": "https://www.reuters.com/resizer/8zG9GvilPBb7uBKCAGhuQGyXDlI=/1200x628/smart/filters:quality(80)/cloudfront-us-east-2.images.arcpublishing.com/reuters/TRGQTR4UE5OLDEP7I3ZE47Q5KM.jpg"
-        },
-        {
-          "id": "https://www.masteringemacs.org/article/keyboard-shortcuts-every-command-line-hacker-should-know-about-gnu-readline",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.masteringemacs.org/article/keyboard-shortcuts-every-command-line-hacker-should-know-about-gnu-readline",
-          "publishedOn": "2022-11-29T10:00:52.000Z",
-          "wordCount": 3523,
-          "title": "Keyboard shortcuts for GNU Readline",
-          "imageUrl": "https://www.masteringemacs.org/static/uploads/article-images/aztec-gnu-monitor.jpg"
-        },
-        {
-          "id": "https://zentralwerkstatt.org/blog/ten-years-of-image-synthesis",
-          "author": null,
-          "description": "Comments",
-          "link": "https://zentralwerkstatt.org/blog/ten-years-of-image-synthesis",
-          "publishedOn": "2022-11-29T06:37:03.000Z",
-          "wordCount": 9739,
-          "title": "Ten Years of Image Synthesis",
-          "imageUrl": "http://static1.squarespace.com/static/5f2e7799bdd0a0444860df21/t/636d5f8288190c4391e9e8ec/1668112258862/DALL%C2%B7E+2022-11-10+11.47.55+-+Do+you+know+why+I+stopped+you+today%3F.png?format=1500w"
-        },
-        {
-          "id": "https://nitter.it/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://nitter.it/",
-          "publishedOn": "2022-11-29T00:49:26.000Z",
-          "wordCount": null,
-          "title": "Nitter.it: Unavailable for Legal Reasons",
-          "imageUrl": null
-        },
-        {
-          "id": "https://cyberlaw.stanford.edu/blog/2022/11/eus-top-telecom-regulator-big-telecoms-proposal-force-websites-pay-them-puts-internet",
-          "author": null,
-          "description": "Comments",
-          "link": "https://cyberlaw.stanford.edu/blog/2022/11/eus-top-telecom-regulator-big-telecoms-proposal-force-websites-pay-them-puts-internet",
-          "publishedOn": "2022-11-29T00:40:32.000Z",
-          "wordCount": 2935,
-          "title": "EU Regulator: Proposal to force websites to pay telcos puts Internet at risk",
-          "imageUrl": null
-        },
-        {
-          "id": "https://www.wsj.com/articles/elon-musk-boring-company-tunnel-traffic-11669658396",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.wsj.com/articles/elon-musk-boring-company-tunnel-traffic-11669658396",
-          "publishedOn": "2022-11-29T00:31:34.000Z",
-          "wordCount": 5504,
-          "title": "Musk’s Boring Company Ghosts Cities Across America",
-          "imageUrl": "https://images.wsj.net/im-673064/social"
-        },
-        {
-          "id": "https://www.klobuchar.senate.gov/public/index.cfm/2022/11/klobuchar-durbin-booker-urge-department-of-justice-to-investigate-potential-anticompetitive-conduct-affecting-apartment-rent-rates",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.klobuchar.senate.gov/public/index.cfm/2022/11/klobuchar-durbin-booker-urge-department-of-justice-to-investigate-potential-anticompetitive-conduct-affecting-apartment-rent-rates",
-          "publishedOn": "2022-11-28T23:37:18.000Z",
-          "wordCount": 1059,
-          "title": "US reps urge DOJ to investigate anticompetitive conduct affecting apartment rent",
-          "imageUrl": null
-        },
-        {
-          "id": "https://beta.openai.com/docs/models/overview",
-          "author": null,
-          "description": "Comments",
-          "link": "https://beta.openai.com/docs/models/overview",
-          "publishedOn": "2022-11-28T22:22:54.000Z",
-          "wordCount": 10,
-          "title": "New GPT-3 model: text-DaVinci-003",
-          "imageUrl": "https://beta.openai.com/curl.png"
-        },
-        {
-          "id": "https://www.laphamsquarterly.org/roundtable/jorge-luis-borges-reading-list",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.laphamsquarterly.org/roundtable/jorge-luis-borges-reading-list",
-          "publishedOn": "2022-11-28T22:21:29.000Z",
-          "wordCount": 3059,
-          "title": "Borges: Recommendations from a life of lectures and essays",
-          "imageUrl": "https://www.laphamsquarterly.org/sites/default/files/styles/thumbnail/public/borges_header.jpg?itok=64K76tjJ"
-        },
-        {
-          "id": "https://minimaxir.com/2022/11/stable-diffusion-negative-prompt/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://minimaxir.com/2022/11/stable-diffusion-negative-prompt/",
-          "publishedOn": "2022-11-28T22:06:44.000Z",
-          "wordCount": 1840,
-          "title": "Stable Diffusion 2.0 and the Importance of Negative Prompts for Good Results",
-          "imageUrl": "https://minimaxir.com/2022/11/stable-diffusion-negative-prompt/featured.png"
-        },
-        {
-          "id": "https://www.ycombinator.com/companies/ivy/jobs",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.ycombinator.com/companies/ivy/jobs",
-          "publishedOn": "2022-11-28T21:52:15.000Z",
-          "wordCount": 1584,
-          "title": "Ivy (YC W23) Is Hiring Engineers to Unify ML",
-          "imageUrl": "https://bookface-images.s3.amazonaws.com/logos/6c64b68ba3315050c6c3b397ac235d570d2564bf.png?1657386061"
-        },
-        {
-          "id": "https://scribe.citizen4.eu/your-friends-have-more-friends-than-you-e005796841bb",
-          "author": null,
-          "description": "Comments",
-          "link": "https://scribe.citizen4.eu/your-friends-have-more-friends-than-you-e005796841bb",
-          "publishedOn": "2022-11-28T21:37:58.000Z",
-          "wordCount": 1951,
-          "title": "A friendly introduction to the Friendship Paradox (2021)",
-          "imageUrl": null
-        },
-        {
-          "id": "https://github.blog/2022-11-28-to-infinity-and-beyond-enabling-the-future-of-githubs-rest-api-with-api-versioning/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://github.blog/2022-11-28-to-infinity-and-beyond-enabling-the-future-of-githubs-rest-api-with-api-versioning/",
-          "publishedOn": "2022-11-28T21:00:23.000Z",
-          "wordCount": 1528,
-          "title": "Enabling the Future of GitHub's REST API with API Versioning",
-          "imageUrl": "https://github.blog/wp-content/uploads/2022/03/Engineering-Product@2x-1.png"
-        },
-        {
-          "id": "https://www.nytimes.com/interactive/2022/11/27/us/set-adrift.html",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.nytimes.com/interactive/2022/11/27/us/set-adrift.html",
-          "publishedOn": "2022-11-28T20:36:08.000Z",
-          "wordCount": 7412,
-          "title": "Set Adrift",
-          "imageUrl": "https://static01.nyt.com/images/2022/11/11/us/11pacific-static-promo/11pacific-static-promo-facebookJumbo.jpg"
-        },
-        {
-          "id": "https://twitter.com/tibor/status/1597296268275240960",
-          "author": null,
-          "description": "Comments",
-          "link": "https://twitter.com/tibor/status/1597296268275240960",
-          "publishedOn": "2022-11-28T19:25:16.000Z",
-          "wordCount": 399,
-          "title": "AirDrop is now limited to 10 minutes",
-          "imageUrl": null
-        },
-        {
-          "id": "https://jasmcole.com/2022/09/25/flipping-out/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://jasmcole.com/2022/09/25/flipping-out/",
-          "publishedOn": "2022-11-28T17:47:17.000Z",
-          "wordCount": 4113,
-          "title": "How thick is a three-sided coin?",
-          "imageUrl": "https://jasmcole.files.wordpress.com/2022/09/image.png?w=1200"
-        },
-        {
-          "id": "https://www.cloudquery.io/blog/building-cloudquery",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.cloudquery.io/blog/building-cloudquery",
-          "publishedOn": "2022-11-28T17:29:35.000Z",
-          "wordCount": 2185,
-          "title": "Building a High Performance Data Integration Framework in Go",
-          "imageUrl": "https://www.cloudquery.io/og-image/Building CloudQuery: High Performance Data Integration Framework in Go"
-        },
-        {
-          "id": "https://www.newyorker.com/magazine/2022/12/05/how-hospice-became-a-for-profit-hustle",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.newyorker.com/magazine/2022/12/05/how-hospice-became-a-for-profit-hustle",
-          "publishedOn": "2022-11-28T16:17:28.000Z",
-          "wordCount": 60432,
-          "title": "How hospice became a for profit hustle",
-          "imageUrl": "https://media.newyorker.com/photos/637d33c2926717b3889b337e/16:9/w_1280,c_limit/221205_r41465.jpg"
-        },
-        {
-          "id": "https://f-droid.org/2022/11/23/why-curation-and-decentralization-is-better-than-millions-of-apps.html",
-          "author": null,
-          "description": "Comments",
-          "link": "https://f-droid.org/2022/11/23/why-curation-and-decentralization-is-better-than-millions-of-apps.html",
-          "publishedOn": "2022-11-28T16:13:10.000Z",
-          "wordCount": 1185,
-          "title": "Curation and decentralization is better than millions of apps",
-          "imageUrl": "https://f-droid.org/assets/fdroid-logo_bfHl7nsLHOUQxzdU8-rGIhn4bAgl6z7k2mA3fWoCyT4=.png"
-        },
-        {
-          "id": "https://www.realworldtech.com/forum/?threadid=209249&curpostid=209596",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.realworldtech.com/forum/?threadid=209249&curpostid=209596",
-          "publishedOn": "2022-11-28T16:08:12.000Z",
-          "wordCount": 4906,
-          "title": "AVX 512 will be the future",
-          "imageUrl": null
-        },
-        {
-          "id": "http://www.technoblogy.com/show?3UKF",
-          "author": null,
-          "description": "Comments",
-          "link": "http://www.technoblogy.com/show?3UKF",
-          "publishedOn": "2022-11-28T15:54:36.000Z",
-          "wordCount": 4118,
-          "title": "The ATtiny 2-Series",
-          "imageUrl": null
-        },
-        {
-          "id": "https://github.com/drwhut/tabletop-club",
-          "author": null,
-          "description": "Comments",
-          "link": "https://github.com/drwhut/tabletop-club",
-          "publishedOn": "2022-11-28T15:51:33.000Z",
-          "wordCount": 954,
-          "title": "Open-source tabletop board game simulator",
-          "imageUrl": "https://repository-images.githubusercontent.com/275376397/6d84ce51-f669-49ce-b8d3-5e70e316eb94"
-        },
-        {
-          "id": "https://macmenubar.com/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://macmenubar.com/",
-          "publishedOn": "2022-11-28T15:40:15.000Z",
-          "wordCount": 1019,
-          "title": "A curated directory of 700 Mac menu bar apps",
-          "imageUrl": "https://macmenubar.com/wp-content/uploads/2019/03/logo-apps.png"
-        },
-        {
-          "id": "https://p.migdal.pl/blog/2022/10/perspective-capsaicin-is-a-psychoactive-substance/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://p.migdal.pl/blog/2022/10/perspective-capsaicin-is-a-psychoactive-substance/",
-          "publishedOn": "2022-11-28T14:58:06.000Z",
-          "wordCount": 1191,
-          "title": "Capsaicin Is a Psychoactive Substance",
-          "imageUrl": "https://p.migdal.pl/assets/static/01.4250cd3.8cb61e36e91e07581585f320334df0ad.jpg"
-        },
-        {
-          "id": "https://www.neelnanda.io/blog/43-making-friends",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.neelnanda.io/blog/43-making-friends",
-          "publishedOn": "2022-11-28T14:55:32.000Z",
-          "wordCount": 13608,
-          "title": "Intentionally making close friends",
-          "imageUrl": null
         }
       ]
     }
