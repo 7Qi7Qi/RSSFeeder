@@ -12,6 +12,16 @@
       "siteUrl": "http://weekly.dockone.io",
       "articles": [
         {
+          "id": "http://weekly.dockone.io/article/2434950",
+          "author": "新牛哥",
+          "description": "【编者的话】十二因素应用方法是由 Adam Wiggins 提出的构建 SaaS 应用的方法。本文介绍这个方法的演变过程，我们今天还能学习它的地方，以及它如何改变了过去的状况。\n你经常会听说软件开发和部署将变得更美好。这一趋势的当前轮回是 Heroku。不要误会我的意思，Heroku 令人难以置信，它带来了一种编写 Web 应用和部署分布式系统的新方法。他们肯定做对了很多。即使10年之后的今天，我们仍在努力实现同样的开发便利性。\nHeroku 的联合创始人 Adam Wiggins 有一篇著名文章， 12 因素应用方法，它总结了许多有用并且我确信使得构建 Heroku 更有趣和有益的想法。\n在这篇文章中，我想回顾一下 Adam 所涵盖的 12 个因素中的每一个，它们是如何演变的，我们今天可以从它们身上学到什么，以及它们如何改变了过去的状态。\n代码库\n\n\n\n\n这个建议刚提出时，类似 GitHub 这样的东西才刚刚起步，代码版本控制也并不常见。这可能看起来很残酷，但这是事实。我记得刚开始时必须处理 Subversion 的问题。\n代码库与其应用之间的关系显著增长，包括从测试到部署的所有内容。然而，仍然存在高度争议的一点是是否需要单仓。\n如果有多个代码库，它就不是一个应用——它是一个分布式系统。分布式系统中的每个组件都是一个应用，每个组件都可以单独遵守十二因素。\n尤其是在以微服务为中心的世界中，维护多个代码库所需的所有开销都可能令人厌烦。\n依赖项\n\n\n\n\n我不确定你们中有多少人曾经在 Ansible 和 Puppet 等软件可用之前处理过依赖系统。尽管如此，操作系统和各种版本的库之间的特殊性绝对是一场噩梦。\n这个因素抓住了关键，最终在很大程度上使得依赖可以被视为一个已解决的问题。\n通过引入各种清单文件，我们的应用可以以一致和准确的方式重新构建。此外，像 Bazel 这样的构建工具…",
+          "link": "http://weekly.dockone.io/article/2434950",
+          "publishedOn": "2023-01-02T01:05:36.630Z",
+          "wordCount": null,
+          "title": "12因素应用方法重新审视",
+          "imageUrl": null
+        },
+        {
           "id": "http://weekly.dockone.io/article/2434945",
           "author": "w9527",
           "description": "什么是 Redis？\nRedis（“REmote DIctionary Service”）是一个开源的键值对数据库服务器。\nRedis 更准确的描述是一个数据结构服务器。Redis 的这种特殊性质让它在开发人员中很受欢迎。\n\n\n\nRedis不是通过迭代或者排序方式处理数据，而是一开始就按照数据结构方式组织。早期，它的使用很像 Memcached，但随着 Redis 的改进，它在许多其他用例中变得可行，包括发布-订阅机制、流（streaming）和队列。\n\n\n\n主要来说，Redis 是一个内存数据库，用作另一个“真实”数据库（如 MySQL 或 PostgreSQL）前面的缓存，以帮助提高应用程序性能。它通过利用内存的高速访问速度，从而减轻核心应用程序数据库的负载，例如：\n不经常更改且经常被请求的数据\n任务关键性较低且经常变动的数据\n\n上述数据的示例可以包括会话或数据缓存以及仪表板的排行榜或汇总分析。\n\n\n\n但是，对于许多用例场景，Redis 都可以提供足够的保证，可以将其用作成熟的主数据库。再加上 Redis 插件及其各种高可用性（HA）设置，Redis 作为数据库对于某些场景和工作负载变得非常有用。\n另一个重要方面是 Redis 模糊了缓存和数据存储之间的界限。这里要理解的重要一点是，相比于使用 SSD 或 HDD 作为存储的传统数据库，读取和操作内存中数据的速度要快得多。\n\n\n\n最初，Redis 最常被比作 Memcached，后者当时缺乏任何非易失性持久化。\n这是当前两个缓存之间的功能细分。\n\n\n\n虽然现在拥有多种配置方式将数据持久化到磁盘，但当时首次引入持久化时，Redis 是使用快照方式，通过异步拷贝内存中的数据方式来做持久化。不幸的是，这种机制的缺点是可能会在快照之间丢失数据。\nRedis 自 2009 年成立到现在已经变的很成熟。我们将介绍它的大部分架构和拓扑…",
@@ -108,6 +118,276 @@
       "feedUrl": "https://news.ycombinator.com/rss",
       "siteUrl": "https://news.ycombinator.com/",
       "articles": [
+        {
+          "id": "https://www.airdeets.com/blog/diy-arduino-based-air-sensor-pt1",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.airdeets.com/blog/diy-arduino-based-air-sensor-pt1",
+          "publishedOn": "2023-01-02T00:08:38.000Z",
+          "wordCount": 624,
+          "title": "Blog series on building an air sensor with Arduino",
+          "imageUrl": null
+        },
+        {
+          "id": "https://www.instructables.com/Orrery-Earth-Moon-and-Sun/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.instructables.com/Orrery-Earth-Moon-and-Sun/",
+          "publishedOn": "2023-01-02T00:00:37.000Z",
+          "wordCount": 15611,
+          "title": "Orrery (Earth, Moon, and Sun)",
+          "imageUrl": "https://content.instructables.com/F73/4W6W/KYR9YCEJ/F734W6WKYR9YCEJ.png?auto=webp&frame=1&width=2100"
+        },
+        {
+          "id": "https://jalammar.github.io/ai-image-generation-tools/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://jalammar.github.io/ai-image-generation-tools/",
+          "publishedOn": "2023-01-01T23:59:16.000Z",
+          "wordCount": 2170,
+          "title": "Remaking old computer graphics with AI image generation",
+          "imageUrl": null
+        },
+        {
+          "id": "https://langoguessr.com/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://langoguessr.com/",
+          "publishedOn": "2023-01-01T23:48:46.000Z",
+          "wordCount": 9,
+          "title": "Langoguessr",
+          "imageUrl": null
+        },
+        {
+          "id": "https://murdoch.is/projects/currency/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://murdoch.is/projects/currency/",
+          "publishedOn": "2023-01-01T23:34:55.000Z",
+          "wordCount": 1151,
+          "title": "Software Detection of Currency (2004)",
+          "imageUrl": null
+        },
+        {
+          "id": "https://gavinray97.github.io/blog/adding-invariant-to-cpp-design-by-contract",
+          "author": null,
+          "description": "Comments",
+          "link": "https://gavinray97.github.io/blog/adding-invariant-to-cpp-design-by-contract",
+          "publishedOn": "2023-01-01T22:02:03.000Z",
+          "wordCount": 8442,
+          "title": "Adding design-by-contract conditions to C++ via a GCC plugin",
+          "imageUrl": "https://gavinray97.github.io/static/images/design-by-contract-logo.png"
+        },
+        {
+          "id": "https://news.ycombinator.com/item?id=34211457",
+          "author": null,
+          "description": "Comments",
+          "link": "https://news.ycombinator.com/item?id=34211457",
+          "publishedOn": "2023-01-01T21:59:07.000Z",
+          "wordCount": 1470,
+          "title": "Ask HN: Are there any good open source text-to-speech tools?",
+          "imageUrl": null
+        },
+        {
+          "id": "https://apnews.com/article/technology-indiana-state-government-business-tod-rokita-3fc0f24cd0ca72cc9c4de14204abda01",
+          "author": null,
+          "description": "Comments",
+          "link": "https://apnews.com/article/technology-indiana-state-government-business-tod-rokita-3fc0f24cd0ca72cc9c4de14204abda01",
+          "publishedOn": "2023-01-01T21:21:28.000Z",
+          "wordCount": 7639,
+          "title": "Google to pay Indiana $20M to resolve privacy suit",
+          "imageUrl": "https://storage.googleapis.com/afs-prod/media/afs:Medium:751921853724/700.png"
+        },
+        {
+          "id": "https://www.jeffgeerling.com/blog/2021/modeling-my-grandpa-3d-photogrammetry",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.jeffgeerling.com/blog/2021/modeling-my-grandpa-3d-photogrammetry",
+          "publishedOn": "2023-01-01T21:06:16.000Z",
+          "wordCount": 1661,
+          "title": "Modeling my Grandpa with 3D Photogrammetry (2021)",
+          "imageUrl": null
+        },
+        {
+          "id": "https://publicdomainreview.org/essay/picturing-scent",
+          "author": null,
+          "description": "Comments",
+          "link": "https://publicdomainreview.org/essay/picturing-scent",
+          "publishedOn": "2023-01-01T21:05:42.000Z",
+          "wordCount": 11810,
+          "title": "Picturing Scent: The Tale of a Beached Whale (2021)",
+          "imageUrl": "https://the-public-domain-review.imgix.net/essays/picturing-scent/picturing-scent-featured-2.jpg"
+        },
+        {
+          "id": "https://github.com/linleyh/liberation-circuit",
+          "author": null,
+          "description": "Comments",
+          "link": "https://github.com/linleyh/liberation-circuit",
+          "publishedOn": "2023-01-01T20:41:28.000Z",
+          "wordCount": 1046,
+          "title": "Liberation Circuit – FOSS RTS/programming game",
+          "imageUrl": "https://opengraph.githubassets.com/c2d3d3beff91fb2bf5073e7669710c6e8e09195d34782a7beccc6f9fa7875cf8/linleyh/liberation-circuit"
+        },
+        {
+          "id": "https://twitter.com/LukeDashjr/status/1609613748364509184",
+          "author": null,
+          "description": "Comments",
+          "link": "https://twitter.com/LukeDashjr/status/1609613748364509184",
+          "publishedOn": "2023-01-01T20:35:51.000Z",
+          "wordCount": 470,
+          "title": "“My PGP key is compromised, and at least many of my bitcoins stolen”",
+          "imageUrl": null
+        },
+        {
+          "id": "http://elm-chan.org/fsw/ff/00index_e.html",
+          "author": null,
+          "description": "Comments",
+          "link": "http://elm-chan.org/fsw/ff/00index_e.html",
+          "publishedOn": "2023-01-01T19:48:45.000Z",
+          "wordCount": 720,
+          "title": "FatFs – Generic FAT Filesystem Module",
+          "imageUrl": null
+        },
+        {
+          "id": "https://zeptobars.com/en/read/Casio-F-91W-OKI-quartz-watch",
+          "author": null,
+          "description": "Comments",
+          "link": "https://zeptobars.com/en/read/Casio-F-91W-OKI-quartz-watch",
+          "publishedOn": "2023-01-01T19:41:11.000Z",
+          "wordCount": 261,
+          "title": "Casio-F-91W die-shot",
+          "imageUrl": null
+        },
+        {
+          "id": "https://www.bakertilly.de/en/news/detail/bundestag-beschliesst-hinweisgeberschutzgesetz-welche-neuerungen-fuer-unternehmen-nun-wichtig-sind.html",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.bakertilly.de/en/news/detail/bundestag-beschliesst-hinweisgeberschutzgesetz-welche-neuerungen-fuer-unternehmen-nun-wichtig-sind.html",
+          "publishedOn": "2023-01-01T19:00:11.000Z",
+          "wordCount": 694,
+          "title": "German Bundestag Passes Whistleblower Protection Act",
+          "imageUrl": null
+        },
+        {
+          "id": "https://www.science.org/content/article/why-536-was-worst-year-be-alive",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.science.org/content/article/why-536-was-worst-year-be-alive",
+          "publishedOn": "2023-01-01T18:44:55.000Z",
+          "wordCount": 2935,
+          "title": "Why 536 was 'the worst year to be alive' (2018)",
+          "imageUrl": "https://www.science.org/do/10.1126/science.aaw0632/abs/ca_1116NID_Dome_Tent_online_CC_cropped.jpg"
+        },
+        {
+          "id": "https://www.smithsonianmag.com/smart-news/mini-brains-grown-stem-cells-developed-eyes-can-sense-light-180978478/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.smithsonianmag.com/smart-news/mini-brains-grown-stem-cells-developed-eyes-can-sense-light-180978478/",
+          "publishedOn": "2023-01-01T18:12:27.000Z",
+          "wordCount": 1531,
+          "title": "Mini brains grown from stem cells developed eye-like features (2021)",
+          "imageUrl": "https://th-thumbnailer.cdn-si-edu.com/WPo1QYijZgwNpDFMfC96j9CZc7Y=/fit-in/1600x0/filters:focal(153x309:154x310)/https%3A%2F%2Ftf-cmsv2-smithsonianmag-media.s3.amazonaws.com%2Ffiler%2F19%2Fa4%2F19a45954-e4b5-400c-b148-52f493ec5688%2Flow-res_this_image_shows_a_brain_organoid_with_optic_cups_credit_elke_gabriel_2021_1jpg.png"
+        },
+        {
+          "id": "https://github.com/michaelengel/crosstalk",
+          "author": null,
+          "description": "Comments",
+          "link": "https://github.com/michaelengel/crosstalk",
+          "publishedOn": "2023-01-01T17:56:04.000Z",
+          "wordCount": 790,
+          "title": "Smalltalk-80 on Raspberry Pi: A bare metal implementation",
+          "imageUrl": "https://opengraph.githubassets.com/cae79b6f77f6a80e25e1f5d7eee5767ac9dfd413ff8fb35cdeb6576d0e98a870/michaelengel/crosstalk"
+        },
+        {
+          "id": "https://joemorrison.substack.com/p/how-internet-in-space-will-transform",
+          "author": null,
+          "description": "Comments",
+          "link": "https://joemorrison.substack.com/p/how-internet-in-space-will-transform",
+          "publishedOn": "2023-01-01T16:49:01.000Z",
+          "wordCount": 7572,
+          "title": "“Internet in space” will transform the satellite imagery industry",
+          "imageUrl": "https://substackcdn.com/image/fetch/w_1200,h_600,c_limit,f_jpg,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2Fe10ce776-534c-4724-ad55-266e16fc4070_2160x1620.jpeg"
+        },
+        {
+          "id": "https://til.simonwillison.net/clickhouse/github-explorer",
+          "author": null,
+          "description": "Comments",
+          "link": "https://til.simonwillison.net/clickhouse/github-explorer",
+          "publishedOn": "2023-01-01T16:45:56.000Z",
+          "wordCount": 874,
+          "title": "Querying the GitHub archive with the ClickHouse playground",
+          "imageUrl": "https://til.simonwillison.net/-/media/screenshot/clickhouse_github-explorer.md"
+        },
+        {
+          "id": "https://tynan.com/letstalk/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://tynan.com/letstalk/",
+          "publishedOn": "2023-01-01T14:19:18.000Z",
+          "wordCount": 3492,
+          "title": "Conversation Skills Essentials",
+          "imageUrl": null
+        },
+        {
+          "id": "https://www.youtube.com/watch?v=U9uZlEqUQw0",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.youtube.com/watch?v=U9uZlEqUQw0",
+          "publishedOn": "2023-01-01T14:01:47.000Z",
+          "wordCount": null,
+          "title": "Homoiconic Spreadsheets: What, How and Why [video]",
+          "imageUrl": null
+        },
+        {
+          "id": "https://news.ycombinator.com/item?id=34206219",
+          "author": null,
+          "description": "Comments",
+          "link": "https://news.ycombinator.com/item?id=34206219",
+          "publishedOn": "2023-01-01T13:50:27.000Z",
+          "wordCount": 22073,
+          "title": "Ask HN: Concepts that clicked only years after you first encountered them?",
+          "imageUrl": null
+        },
+        {
+          "id": "https://sweetcocoa.github.io/pop2piano_samples/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://sweetcocoa.github.io/pop2piano_samples/",
+          "publishedOn": "2023-01-01T13:08:16.000Z",
+          "wordCount": 312,
+          "title": "Pop2Piano: Pop audio-based piano cover generation",
+          "imageUrl": null
+        },
+        {
+          "id": "https://noahpinion.substack.com/p/the-internet-wants-to-be-fragmented",
+          "author": null,
+          "description": "Comments",
+          "link": "https://noahpinion.substack.com/p/the-internet-wants-to-be-fragmented",
+          "publishedOn": "2023-01-01T12:37:59.000Z",
+          "wordCount": 6547,
+          "title": "The internet wants to be fragmented",
+          "imageUrl": "https://substackcdn.com/image/fetch/w_1200,h_600,c_limit,f_jpg,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F6ec79951-fd6d-4552-8163-d2c069e3000b_1440x799.png"
+        },
+        {
+          "id": "https://medium.com/@erik_68861/running-advent-of-code-on-a-2-microcontroller-fa35b596cf11",
+          "author": null,
+          "description": "Comments",
+          "link": "https://medium.com/@erik_68861/running-advent-of-code-on-a-2-microcontroller-fa35b596cf11",
+          "publishedOn": "2023-01-01T07:31:39.000Z",
+          "wordCount": 6198,
+          "title": "Running Advent of Code on a $2 microcontroller",
+          "imageUrl": "https://miro.medium.com/max/800/0*v01_1vUuRXH9tX2Q.jpg"
+        },
+        {
+          "id": "https://richardg867.wordpress.com/2020/02/29/usb-c-done-cheap/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://richardg867.wordpress.com/2020/02/29/usb-c-done-cheap/",
+          "publishedOn": "2023-01-01T05:51:59.000Z",
+          "wordCount": 4885,
+          "title": "USB-C done cheap: when 2 ports become 1 (2020)",
+          "imageUrl": "https://richardg867.files.wordpress.com/2020/02/regularcard.jpg"
+        },
         {
           "id": "https://fibery.io/blog/worst-interview-questions-for-software-developers/",
           "author": null,
@@ -409,6 +689,16 @@
           "imageUrl": "https://substackcdn.com/image/fetch/w_1200,h_600,c_limit,f_jpg,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F704fe5c8-8d48-4b61-92ab-19ce409f74c2_2564x1522.png"
         },
         {
+          "id": "https://www.quantamagazine.org/how-claude-shannons-information-theory-invented-the-future-20201222/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.quantamagazine.org/how-claude-shannons-information-theory-invented-the-future-20201222/",
+          "publishedOn": "2022-12-30T23:16:23.000Z",
+          "wordCount": 6379,
+          "title": "Claude Shannon’s research laid foundations for modern communications (2020)",
+          "imageUrl": "https://d2r55xnwy6nx47.cloudfront.net/uploads/2020/12/Claude-Shannon_1200_social.jpg"
+        },
+        {
           "id": "https://github.com/punnerud/rgcosm",
           "author": null,
           "description": "Comments",
@@ -486,6 +776,16 @@
           "publishedOn": "2022-12-30T18:18:06.000Z",
           "wordCount": 12133,
           "title": "2022 Letter",
+          "imageUrl": null
+        },
+        {
+          "id": "https://pacman.holenet.info/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://pacman.holenet.info/",
+          "publishedOn": "2022-12-30T18:04:22.000Z",
+          "wordCount": 14545,
+          "title": "The Pac-Man Dossier (2009)",
           "imageUrl": null
         },
         {
@@ -8626,356 +8926,6 @@
           "publishedOn": "2022-12-03T13:56:07.000Z",
           "wordCount": 4242,
           "title": "The first Geely was a fake Mercedes-Benz E-Class based on a real Audi 100",
-          "imageUrl": null
-        },
-        {
-          "id": "http://videocortex.io/2018/Affine-Space-Types/",
-          "author": null,
-          "description": "Comments",
-          "link": "http://videocortex.io/2018/Affine-Space-Types/",
-          "publishedOn": "2022-12-03T13:03:12.000Z",
-          "wordCount": 4570,
-          "title": "Affine Space Types (2018)",
-          "imageUrl": "/images/favicons/favicon-194x194.png"
-        },
-        {
-          "id": "https://github.com/bettercap/bettercap",
-          "author": null,
-          "description": "Comments",
-          "link": "https://github.com/bettercap/bettercap",
-          "publishedOn": "2022-12-03T12:59:43.000Z",
-          "wordCount": 835,
-          "title": "Bettercap – Swiss Army Knife for 802.11, BLE, IPv4 and IPv6 networks",
-          "imageUrl": "https://opengraph.githubassets.com/7ee6ca974893d1b107104a88f12e1df6092bc939cdbd6098dfe863915992b5cb/bettercap/bettercap"
-        },
-        {
-          "id": "https://www.synthtopia.com/content/2022/12/02/moog-dancers-prove-that-tv-was-a-lot-more-adventurous-in-the-70s/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.synthtopia.com/content/2022/12/02/moog-dancers-prove-that-tv-was-a-lot-more-adventurous-in-the-70s/",
-          "publishedOn": "2022-12-03T12:45:07.000Z",
-          "wordCount": 1925,
-          "title": "Moog dancers prove that TV was more adventurous in the 70s",
-          "imageUrl": "https://www.synthtopia.com/wp-content/uploads/2022/12/70s-moog-dancers.jpg"
-        },
-        {
-          "id": "https://silverbullet.md/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://silverbullet.md/",
-          "publishedOn": "2022-12-03T12:35:18.000Z",
-          "wordCount": 51,
-          "title": "Silver Bullet: Markdown-based extensible open source personal knowledge platform",
-          "imageUrl": null
-        },
-        {
-          "id": "https://thewalrus.ca/why-the-future-is-analog/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://thewalrus.ca/why-the-future-is-analog/",
-          "publishedOn": "2022-12-03T12:19:17.000Z",
-          "wordCount": 6207,
-          "title": "The future is analog: How to create a more human world",
-          "imageUrl": "https://walrus-assets.s3.amazonaws.com/img/Sax_Analog_cg_1800.jpg"
-        },
-        {
-          "id": "https://hedgehogreview.com/issues/hope-itself/articles/the-impotence-of-being-clever",
-          "author": null,
-          "description": "Comments",
-          "link": "https://hedgehogreview.com/issues/hope-itself/articles/the-impotence-of-being-clever",
-          "publishedOn": "2022-12-03T11:21:44.000Z",
-          "wordCount": 2578,
-          "title": "The impotence of being clever",
-          "imageUrl": "https://s3.amazonaws.com/thr-prod/images/3805bf66fdc8023d80c5710cd836e860.1500.jpg"
-        },
-        {
-          "id": "https://github.com/mattkrick/trebuchet-client",
-          "author": null,
-          "description": "Comments",
-          "link": "https://github.com/mattkrick/trebuchet-client",
-          "publishedOn": "2022-12-03T10:09:35.000Z",
-          "wordCount": 1174,
-          "title": "Trebuchet-client: Communication through tough firewalls and bad mobile networks",
-          "imageUrl": "https://opengraph.githubassets.com/c9a484fca9bcbe5b5f17d68197cc7a37eecfaf20f408234268e038239a2249f1/mattkrick/trebuchet-client"
-        },
-        {
-          "id": "https://www.fastcompany.com/90817765/adobe-at-40-the-past-present-and-future-of-creativity-softwares-enduring-giant",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.fastcompany.com/90817765/adobe-at-40-the-past-present-and-future-of-creativity-softwares-enduring-giant",
-          "publishedOn": "2022-12-03T07:17:56.000Z",
-          "wordCount": null,
-          "title": "Adobe's 40th anniversary: Its origin story and beyond",
-          "imageUrl": null
-        },
-        {
-          "id": "https://www.spacex.com/starshield/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.spacex.com/starshield/",
-          "publishedOn": "2022-12-02T23:53:57.000Z",
-          "wordCount": 420,
-          "title": "SpaceX Starshield – Supporting National Security",
-          "imageUrl": null
-        },
-        {
-          "id": "https://mako.cc/copyrighteous/the-financial-times-has-been-printing-an-obvious-error-on-its-market-data-page-for-18-months-and-nobody-else-seems-to-have-noticed",
-          "author": null,
-          "description": "Comments",
-          "link": "https://mako.cc/copyrighteous/the-financial-times-has-been-printing-an-obvious-error-on-its-market-data-page-for-18-months-and-nobody-else-seems-to-have-noticed",
-          "publishedOn": "2022-12-02T23:39:59.000Z",
-          "wordCount": 1788,
-          "title": "The Financial Times has had an error on its “Market Data” page for 18 months",
-          "imageUrl": "https://mako.cc/copyrighteous/wp-content/uploads/2022/11/ft-20210505-closeup-hl.png"
-        },
-        {
-          "id": "https://simonwillison.net/2022/Dec/2/datasette-write-api/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://simonwillison.net/2022/Dec/2/datasette-write-api/",
-          "publishedOn": "2022-12-02T23:23:15.000Z",
-          "wordCount": 2256,
-          "title": "Datasette’s new JSON write API: The first alpha of Datasette 1.0",
-          "imageUrl": "https://static.simonwillison.net/static/2022/api-explorer.jpg"
-        },
-        {
-          "id": "https://puter.com/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://puter.com/",
-          "publishedOn": "2022-12-02T23:05:09.000Z",
-          "wordCount": 17201,
-          "title": "Puter",
-          "imageUrl": "https://puter.com/assets/img/screenshot.png"
-        },
-        {
-          "id": "https://itservices.wp.st-andrews.ac.uk/2019/06/06/the-clever-reason-scammers-cant-spell/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://itservices.wp.st-andrews.ac.uk/2019/06/06/the-clever-reason-scammers-cant-spell/",
-          "publishedOn": "2022-12-02T22:41:10.000Z",
-          "wordCount": 7044,
-          "title": "The clever reason scammers can’t spell (2019)",
-          "imageUrl": "https://itservices.wp.st-andrews.ac.uk/files/2019/06/phishing.png"
-        },
-        {
-          "id": "https://twitter.com/id_aa_carmack/status/1598792396191375361",
-          "author": null,
-          "description": "Comments",
-          "link": "https://twitter.com/id_aa_carmack/status/1598792396191375361",
-          "publishedOn": "2022-12-02T21:49:10.000Z",
-          "wordCount": 470,
-          "title": "Carmack on star fields in VR",
-          "imageUrl": null
-        },
-        {
-          "id": "https://gizmodo.com/tiktok-china-south-dakota-ban-bytedance-1849836201",
-          "author": null,
-          "description": "Comments",
-          "link": "https://gizmodo.com/tiktok-china-south-dakota-ban-bytedance-1849836201",
-          "publishedOn": "2022-12-02T20:48:22.000Z",
-          "wordCount": 5295,
-          "title": "South Dakota first to ban TikTok on state-owned devices",
-          "imageUrl": "https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_675,pg_1,q_80,w_1200/4eda4758e16350e3164c5c704dbe4dad.jpg"
-        },
-        {
-          "id": "https://blog.meain.io/2022/terminal-drag-and-drop/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://blog.meain.io/2022/terminal-drag-and-drop/",
-          "publishedOn": "2022-12-02T20:19:02.000Z",
-          "wordCount": 788,
-          "title": "Drag and Drop from Terminal",
-          "imageUrl": null
-        },
-        {
-          "id": "http://www.backyard-ballistics.com/",
-          "author": null,
-          "description": "Comments",
-          "link": "http://www.backyard-ballistics.com/",
-          "publishedOn": "2022-12-02T20:12:27.000Z",
-          "wordCount": 138,
-          "title": "Backyard Ballistics",
-          "imageUrl": null
-        },
-        {
-          "id": "https://arstechnica.com/tech-policy/2022/12/starlink-speeds-in-us-dropped-from-105mbps-to-53mbps-in-the-past-year/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://arstechnica.com/tech-policy/2022/12/starlink-speeds-in-us-dropped-from-105mbps-to-53mbps-in-the-past-year/",
-          "publishedOn": "2022-12-02T20:04:07.000Z",
-          "wordCount": 1711,
-          "title": "Starlink speeds in US dropped from 105Mbps to 53Mbps in the past year",
-          "imageUrl": "https://cdn.arstechnica.net/wp-content/uploads/2022/12/starlink-antenna-760x380.jpg"
-        },
-        {
-          "id": "https://mattstoller.substack.com/p/why-is-booz-allen-renting-us-back",
-          "author": null,
-          "description": "Comments",
-          "link": "https://mattstoller.substack.com/p/why-is-booz-allen-renting-us-back",
-          "publishedOn": "2022-12-02T19:46:19.000Z",
-          "wordCount": 8747,
-          "title": "Why is Booz Allen renting us back our own national parks?",
-          "imageUrl": "https://substackcdn.com/image/fetch/w_1200,h_600,c_limit,f_jpg,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F7b4f255a-c0a6-4f6f-98bd-e93cf37851fa_801x525.png"
-        },
-        {
-          "id": "https://nymag.com/intelligencer/2022/12/why-hasnt-sam-bankman-fried-been-arrested-yet.html",
-          "author": null,
-          "description": "Comments",
-          "link": "https://nymag.com/intelligencer/2022/12/why-hasnt-sam-bankman-fried-been-arrested-yet.html",
-          "publishedOn": "2022-12-02T19:07:09.000Z",
-          "wordCount": 29447,
-          "title": "Why hasn’t Sam Bankman-Fried been arrested yet?",
-          "imageUrl": "https://pyxis.nymag.com/v1/imgs/ad7/9c5/df9d6f4d776951050b0543117beff78d96-sbf-bernie-madoff.1x.rsocial.w1200.jpg"
-        },
-        {
-          "id": "https://smaller.fish/posts/snap_updates",
-          "author": null,
-          "description": "Comments",
-          "link": "https://smaller.fish/posts/snap_updates",
-          "publishedOn": "2022-12-02T18:58:25.000Z",
-          "wordCount": 2025,
-          "title": "Snap updates happen without user consent",
-          "imageUrl": null
-        },
-        {
-          "id": "https://www.fcc.gov/document/fcc-partially-grants-spacex-gen2-broadband-satellite-application",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.fcc.gov/document/fcc-partially-grants-spacex-gen2-broadband-satellite-application",
-          "publishedOn": "2022-12-02T18:13:35.000Z",
-          "wordCount": 556,
-          "title": "FCC partially grants SpaceX Gen2 broadband satellite application",
-          "imageUrl": "https://www.fcc.gov/sites/default/files/social-media-sharing-fcc-logo.jpg"
-        },
-        {
-          "id": "https://github.blog/2022-12-02-introducing-mona-sans-and-hubot-sans/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://github.blog/2022-12-02-introducing-mona-sans-and-hubot-sans/",
-          "publishedOn": "2022-12-02T17:59:56.000Z",
-          "wordCount": 1685,
-          "title": "Mona Sans and Hubot Sans",
-          "imageUrl": "https://github.blog/wp-content/uploads/2022/11/image1.jpg"
-        },
-        {
-          "id": "https://sqlfordevs.com/ebook",
-          "author": null,
-          "description": "Comments",
-          "link": "https://sqlfordevs.com/ebook",
-          "publishedOn": "2022-12-02T17:43:10.000Z",
-          "wordCount": 688,
-          "title": "Show HN: I wrote a free eBook about many lesser-known/secret database tricks",
-          "imageUrl": "https://sqlfordevs.com/build/assets/opengraph_ebook.d54f5063.png"
-        },
-        {
-          "id": "https://wasmer.io/posts/wasmer-takes-webassembly-libraries-manistream-with-wai",
-          "author": null,
-          "description": "Comments",
-          "link": "https://wasmer.io/posts/wasmer-takes-webassembly-libraries-manistream-with-wai",
-          "publishedOn": "2022-12-02T17:42:30.000Z",
-          "wordCount": 1657,
-          "title": "Wasmer takes WebAssembly libraries mainstream with WAI",
-          "imageUrl": "https://wasmer.io/images/og-image.png"
-        },
-        {
-          "id": "https://www.reuters.com/business/logistics-startup-flexport-plans-hiring-spree-double-engineers-2023-2022-11-02/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.reuters.com/business/logistics-startup-flexport-plans-hiring-spree-double-engineers-2023-2022-11-02/",
-          "publishedOn": "2022-12-02T17:00:15.000Z",
-          "wordCount": 4325,
-          "title": "Flexport (YC W14) Is Hiring Software Engineers",
-          "imageUrl": "https://www.reuters.com/resizer/PnbRZhC_S6ZWXEiQYA0w1QvHKI0=/1200x628/smart/filters:quality(80)/cloudfront-us-east-2.images.arcpublishing.com/reuters/UU5XOQCHKBMBRNKF5EFL3BHZKA.jpg"
-        },
-        {
-          "id": "https://acoup.blog/2022/12/02/collections-why-roman-egypt-was-such-a-strange-province/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://acoup.blog/2022/12/02/collections-why-roman-egypt-was-such-a-strange-province/",
-          "publishedOn": "2022-12-02T16:46:22.000Z",
-          "wordCount": 9740,
-          "title": "Roman Egypt was a strange province",
-          "imageUrl": "https://i0.wp.com/acoup.blog/wp-content/uploads/2022/12/image-2.png?fit=700%2C550&ssl=1"
-        },
-        {
-          "id": "https://pytorch.org/get-started/pytorch-2.0/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://pytorch.org/get-started/pytorch-2.0/",
-          "publishedOn": "2022-12-02T16:17:32.000Z",
-          "wordCount": 6216,
-          "title": "PyTorch 2.0",
-          "imageUrl": "https://pytorch.org/assets/images/featured-img-pytorch-2.png"
-        },
-        {
-          "id": "https://twitter.com/carnage4life/status/1598332648723976193",
-          "author": null,
-          "description": "Comments",
-          "link": "https://twitter.com/carnage4life/status/1598332648723976193",
-          "publishedOn": "2022-12-02T16:08:13.000Z",
-          "wordCount": 470,
-          "title": "People tricking ChatGPT “like watching an Asimov novel come to life”",
-          "imageUrl": null
-        },
-        {
-          "id": "https://prabros.com/chat-ui-ideas/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://prabros.com/chat-ui-ideas/",
-          "publishedOn": "2022-12-02T16:06:05.000Z",
-          "wordCount": 1337,
-          "title": "Interface Ideas for Chat Apps",
-          "imageUrl": "https://prabros.com/chat-ui-ideas/resources/website-card.png"
-        },
-        {
-          "id": "https://jam.dev/blog/how-to-move-fast-and-not-break-things/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://jam.dev/blog/how-to-move-fast-and-not-break-things/",
-          "publishedOn": "2022-12-02T14:55:00.000Z",
-          "wordCount": 1381,
-          "title": "How to move fast and not break things as a remote company",
-          "imageUrl": "https://strawberryjam.ghost.io/content/images/2022/12/Screen-Shot-2022-11-30-at-12.20.09-PM-copy-2.png"
-        },
-        {
-          "id": "https://twitter.com/samwcyo/status/1597792097175674880",
-          "author": null,
-          "description": "Comments",
-          "link": "https://twitter.com/samwcyo/status/1597792097175674880",
-          "publishedOn": "2022-12-02T14:48:57.000Z",
-          "wordCount": 470,
-          "title": "Remotely unlock/start/locate any remotely connected Honda/Nissan [resolved]",
-          "imageUrl": null
-        },
-        {
-          "id": "https://github.com/aaronjanse/dns-over-wikipedia",
-          "author": null,
-          "description": "Comments",
-          "link": "https://github.com/aaronjanse/dns-over-wikipedia",
-          "publishedOn": "2022-12-02T14:25:04.000Z",
-          "wordCount": 689,
-          "title": "DNS over Wikipedia",
-          "imageUrl": "https://opengraph.githubassets.com/5fdce74fe58c88f5e049628b779b6a8a5c22015624fc470b9dcf5c5b291696ac/aaronjanse/dns-over-wikipedia"
-        },
-        {
-          "id": "https://blog.logrocket.com/exploring-competitive-features-node-js-v18-v19/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://blog.logrocket.com/exploring-competitive-features-node-js-v18-v19/",
-          "publishedOn": "2022-12-02T14:19:02.000Z",
-          "wordCount": 11398,
-          "title": "Exploring competitive features in Node.js v18 and v19",
-          "imageUrl": "https://blog.logrocket.com/wp-content/uploads/2022/11/exploring-competitive-features-node-js-18-19.png"
-        },
-        {
-          "id": "https://eli.thegreenplace.net/2013/11/05/how-to-jit-an-introduction",
-          "author": null,
-          "description": "Comments",
-          "link": "https://eli.thegreenplace.net/2013/11/05/how-to-jit-an-introduction",
-          "publishedOn": "2022-12-02T13:34:19.000Z",
-          "wordCount": 1823,
-          "title": "How to JIT – An Introduction",
           "imageUrl": null
         }
       ]
