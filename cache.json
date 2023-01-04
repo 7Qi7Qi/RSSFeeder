@@ -90,26 +90,6 @@
           "wordCount": 239,
           "title": "这份云原生的免费资料，看得我过瘾",
           "imageUrl": null
-        },
-        {
-          "id": "http://weekly.dockone.io/article/2434954",
-          "author": "megrez",
-          "description": "Prometheus vs. OpenTelemetry指标: 共同点\n这两个系统都允许你收集和转换指标（尽管Open Telemetry作为一个转换管道要灵活得多）。然而，回顾以前的文章，我们需要记住一个重要的区别。Prometheus是一个可观测性工具（包括收集、存储和查询），它使用的指标模型是为适应自己的需要而设计的。\n另一方面，OpenTelemetry的指标组件将许多不同的数据模型转化为一个单一的框架（提供无存储或查询的集合）。这些核心差异反映了系统的复杂性：Prometheus是一个直接的模型，通常以文本形式暴露出来，而OpenTelemetry是由三种模型组成的更复杂的系列，使用二进制格式进行传输。\n这两个系统也允许通过SDK进行代码级的监控，但OpenTelemetry也专注于支持自动埋点，尽可能不会侵入应用程序。\n那么，你可以创建的指标之间有什么重叠？本质上，OpenTelemetry允许表示所有Prometheus指标类型（Counters、Gauges、Summaries和Histograms）。尽管如此，Prometheus仍然不能表示OpenTelemetry指标的某些配置，包括Delta表示法和指数Histograms（尽管这些将很快在Prometheus中被支持），以及整数数值类型。\n换句话说，Prometheus指标是OpenTelemetry指标的一个严格子集。\n主要区别\n虽然内部模型的工作方式有一些差异，但从开发者的角度来看，两者之间的实际差异更多是与生态系统有关。\nPrometheus提供指标收集、存储和查询。它通常通过一个简单的爬虫系统收集指标，从主机中提取数据。Prometheus数据库存储这些数据，然后你可以用Prometheus查询语言PromQL来查询。Prometheus数据库可以处理大量的数据，但它并不是正式意义上的长期存…",
-          "link": "http://weekly.dockone.io/article/2434954",
-          "publishedOn": "2022-12-05T01:05:47.878Z",
-          "wordCount": 866,
-          "title": "Prometheus vs. OpenTelemetry Metrics: 完全指南",
-          "imageUrl": null
-        },
-        {
-          "id": "http://weekly.dockone.io/article/2434946",
-          "author": "新牛哥",
-          "description": "【编者的话】本文是作者在 FLOPS 2022 会议上的演讲，正如标题所言，重点分享了使用Liquid Haskell语言集成验证系统来构建可靠的分布式系统的有趣的探索经历，目标是希望程序员能够机械地指定和验证分布式系统的真实、可执行实现的正确性属性，而且是使用集成到他们用于实现的相同通用、工业强度编程语言中的验证功能来做到这一点。目前来看使用Liquid Haskell能做到，但是仍然有很大的改进空间。\n今年 5 月，我在FLOPS 2022 会议上发表了开幕主题演讲（我的第一次主题演讲！） 。我谈到了我们小组在使用 Liquid Haskell 验证分布式系统的正确性方面所做的工作。\n这是我的 FLOPS 演讲稿。一些幻灯片包含在下面，我也发布了完整的幻灯片。\n早上好\n\n\n\n\n早上好，FLOPS！我是 Lindsey Kuper。我是加州大学圣克鲁兹分校的助理教授。\n非常感谢 Atsushi 和 Michael 以及整个 FLOPS 组织团队邀请我在 FLOPS 上发言，以及他们组织这次活动的工作。就个人而言，FLOPS 是我第一次有论文被拒绝的会议，那是在 2010 年我刚开始读研究生的时候。所以今天被邀请做这个演讲，我感到特别荣幸。\n这个演讲是关于我最近非常兴奋的事情，即使用现代语言集成验证工具来帮助我们构建保证按预期工作的分布式系统的潜力，这些保证不仅适用于模型，还适用于真实运行的代码。\n在本次演讲的开始部分，我将解释我所说的“分布式系统”的含义以及它们所面临的具体挑战。然后简单介绍一下 Liquid Haskell 语言集成的验证系统。最后，探险记：我将分享我和我的学生和合作者一直在这个领域开展的两个项目的一些亮点。\n那么，让我们从讨论分布式系统开始吧！\n什么是分布式系统？\n\n\n\n\n想象一些独立的机器通过网络相互传递消息进行通信。它们可能相距很近或相距很远，但我…",
-          "link": "http://weekly.dockone.io/article/2434946",
-          "publishedOn": "2022-12-04T01:07:59.705Z",
-          "wordCount": 1018,
-          "title": "我的 FLOPS 2022 主题演讲：“使用 Liquid Haskell 构建可靠分布式系统的探险记”",
-          "imageUrl": null
         }
       ]
     },
@@ -118,6 +98,246 @@
       "feedUrl": "https://news.ycombinator.com/rss",
       "siteUrl": "https://news.ycombinator.com/",
       "articles": [
+        {
+          "id": "https://news.ycombinator.com/item?id=34240298",
+          "author": null,
+          "description": "Comments",
+          "link": "https://news.ycombinator.com/item?id=34240298",
+          "publishedOn": "2023-01-04T00:42:51.000Z",
+          "wordCount": 152,
+          "title": "Tell HN: I just received my Equifax breach settlement check",
+          "imageUrl": null
+        },
+        {
+          "id": "https://news.ycombinator.com/item?id=34239910",
+          "author": null,
+          "description": "Comments",
+          "link": "https://news.ycombinator.com/item?id=34239910",
+          "publishedOn": "2023-01-03T23:59:35.000Z",
+          "wordCount": 1456,
+          "title": "Ask HN: How do you stay productive after work hours?",
+          "imageUrl": null
+        },
+        {
+          "id": "https://kguttag.com/2023/01/03/meta-quest-pro-part-1-unbelievably-bad-ar-passthrough/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://kguttag.com/2023/01/03/meta-quest-pro-part-1-unbelievably-bad-ar-passthrough/",
+          "publishedOn": "2023-01-03T23:32:27.000Z",
+          "wordCount": 7111,
+          "title": "Meta Quest Pro – Bad AR Passthrough",
+          "imageUrl": "https://kguttag.com/wp-content/uploads/2023/01/Feature-Image-MQP-Part-1-001-copy.jpg"
+        },
+        {
+          "id": "https://arstechnica.com/gadgets/2023/01/google-announces-official-android-support-for-risc-v/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://arstechnica.com/gadgets/2023/01/google-announces-official-android-support-for-risc-v/",
+          "publishedOn": "2023-01-03T22:47:11.000Z",
+          "wordCount": 1886,
+          "title": "Google wants RISC-V to be a “tier-1” Android architecture",
+          "imageUrl": "https://cdn.arstechnica.net/wp-content/uploads/2021/04/android-google-760x380.jpeg"
+        },
+        {
+          "id": "https://terrateam.io/blog/flying-away-from-aws",
+          "author": null,
+          "description": "Comments",
+          "link": "https://terrateam.io/blog/flying-away-from-aws",
+          "publishedOn": "2023-01-03T21:13:45.000Z",
+          "wordCount": 2306,
+          "title": "Migrating from AWS to Fly.io",
+          "imageUrl": "https://terrateam.io/og-image.jpg"
+        },
+        {
+          "id": "https://www.quantamagazine.org/to-build-truly-intelligent-machines-teach-them-cause-and-effect-20180515",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.quantamagazine.org/to-build-truly-intelligent-machines-teach-them-cause-and-effect-20180515",
+          "publishedOn": "2023-01-03T20:34:37.000Z",
+          "wordCount": 6880,
+          "title": "To build truly intelligent machines, teach them cause and effect (2018)",
+          "imageUrl": "https://d2r55xnwy6nx47.cloudfront.net/uploads/2018/05/Pearl_520x292.jpg"
+        },
+        {
+          "id": "https://www.macrumors.com/2023/01/03/qi2-wireless-charging-standard-gains-magsafe/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.macrumors.com/2023/01/03/qi2-wireless-charging-standard-gains-magsafe/",
+          "publishedOn": "2023-01-03T20:04:27.000Z",
+          "wordCount": 2511,
+          "title": "Next-generation Qi2 wireless charging standard embraces Apple's MagSafe",
+          "imageUrl": "https://images.macrumors.com/t/mpnQXzZGuaLA21axndmOPbm-Kgw=/2500x/article-new/2022/10/magsafe-charger-blue.jpg"
+        },
+        {
+          "id": "https://twitter.com/lanewinfield/status/1610294277434933249",
+          "author": null,
+          "description": "Comments",
+          "link": "https://twitter.com/lanewinfield/status/1610294277434933249",
+          "publishedOn": "2023-01-03T20:03:18.000Z",
+          "wordCount": 470,
+          "title": "Show HN: A device that only lets you type lol if you've truly laughed out loud",
+          "imageUrl": null
+        },
+        {
+          "id": "https://www.youtube.com/watch?v=Xm9jr0cSqZo",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.youtube.com/watch?v=Xm9jr0cSqZo",
+          "publishedOn": "2023-01-03T19:57:04.000Z",
+          "wordCount": null,
+          "title": "AT&T's predictions of the future (1993)",
+          "imageUrl": null
+        },
+        {
+          "id": "https://pypackaging-native.github.io/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://pypackaging-native.github.io/",
+          "publishedOn": "2023-01-03T19:45:06.000Z",
+          "wordCount": 701,
+          "title": "Underappreciated challenges with Python packaging",
+          "imageUrl": null
+        },
+        {
+          "id": "https://www.quantamagazine.org/long-out-of-math-an-ai-programmer-cracks-a-pure-math-problem-20230103/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.quantamagazine.org/long-out-of-math-an-ai-programmer-cracks-a-pure-math-problem-20230103/",
+          "publishedOn": "2023-01-03T19:43:21.000Z",
+          "wordCount": 7397,
+          "title": "Google researcher, long out of math, cracks devilish problem about sets",
+          "imageUrl": "https://d2r55xnwy6nx47.cloudfront.net/uploads/2022/12/ClosedUnionConjecture-byKristinaArmitage-Social.webp"
+        },
+        {
+          "id": "https://en.wikipedia.org/wiki/Tafl_games",
+          "author": null,
+          "description": "Comments",
+          "link": "https://en.wikipedia.org/wiki/Tafl_games",
+          "publishedOn": "2023-01-03T19:31:56.000Z",
+          "wordCount": 7965,
+          "title": "Hnefatafl",
+          "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7c/ZHNEFA.jpg"
+        },
+        {
+          "id": "https://www.schneier.com/blog/archives/2023/01/breaking-rsa-with-a-quantum-computer.html",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.schneier.com/blog/archives/2023/01/breaking-rsa-with-a-quantum-computer.html",
+          "publishedOn": "2023-01-03T18:15:49.000Z",
+          "wordCount": 2139,
+          "title": "Breaking RSA with a quantum computer?",
+          "imageUrl": null
+        },
+        {
+          "id": "https://www.pv-magazine.com/2023/01/02/residential-thermo-acoustic-heat-pump-produces-water-up-to-80-c/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.pv-magazine.com/2023/01/02/residential-thermo-acoustic-heat-pump-produces-water-up-to-80-c/",
+          "publishedOn": "2023-01-03T16:36:57.000Z",
+          "wordCount": 4475,
+          "title": "French startup unveils new residential thermo-acoustic heat pump",
+          "imageUrl": "https://www.pv-magazine.com/wp-content/uploads/2022/12/EQORE-EQUIUM-1200x1200.png"
+        },
+        {
+          "id": "http://mainisusuallyafunction.blogspot.com/2014/02/x86-is-turing-complete-with-no-registers.html",
+          "author": null,
+          "description": "Comments",
+          "link": "http://mainisusuallyafunction.blogspot.com/2014/02/x86-is-turing-complete-with-no-registers.html",
+          "publishedOn": "2023-01-03T16:22:38.000Z",
+          "wordCount": 35605,
+          "title": "x86 is Turing-complete with no registers (2014)",
+          "imageUrl": null
+        },
+        {
+          "id": "https://gist.github.com/yoavg/59d174608e92e845c8994ac2e234c8a9",
+          "author": null,
+          "description": "Comments",
+          "link": "https://gist.github.com/yoavg/59d174608e92e845c8994ac2e234c8a9",
+          "publishedOn": "2023-01-03T15:54:22.000Z",
+          "wordCount": 4809,
+          "title": "Some Remarks on Large Language Models",
+          "imageUrl": "https://github.githubassets.com/images/modules/gists/gist-og-image.png"
+        },
+        {
+          "id": "https://palant.info/2023/01/02/south-koreas-online-security-dead-end/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://palant.info/2023/01/02/south-koreas-online-security-dead-end/",
+          "publishedOn": "2023-01-03T14:01:45.000Z",
+          "wordCount": 1854,
+          "title": "South Korea’s online security dead end",
+          "imageUrl": "https://palant.info/2023/01/02/south-koreas-online-security-dead-end/message.png"
+        },
+        {
+          "id": "https://stackoverflow.com/questions/4703844/unexplainable-core-dump",
+          "author": null,
+          "description": "Comments",
+          "link": "https://stackoverflow.com/questions/4703844/unexplainable-core-dump",
+          "publishedOn": "2023-01-03T13:02:05.000Z",
+          "wordCount": 2963,
+          "title": "“Unexplainable” core dump (2011)",
+          "imageUrl": "https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon@2.png?v=73d79a89bded"
+        },
+        {
+          "id": "https://news.unl.edu/newsrooms/today/article/eating-viruses-can-power-growth-reproduction-of-microorganism/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://news.unl.edu/newsrooms/today/article/eating-viruses-can-power-growth-reproduction-of-microorganism/",
+          "publishedOn": "2023-01-03T12:57:07.000Z",
+          "wordCount": 1945,
+          "title": "Scientists have discovered the first virovore – an organism that eats viruses",
+          "imageUrl": "https://news.unl.edu/sites/default/files/media/Hero_277.jpg"
+        },
+        {
+          "id": "http://blogs.newardassociates.com/blog/2023/you-want-modules-not-microservices.html",
+          "author": null,
+          "description": "Comments",
+          "link": "http://blogs.newardassociates.com/blog/2023/you-want-modules-not-microservices.html",
+          "publishedOn": "2023-01-03T12:35:03.000Z",
+          "wordCount": 2460,
+          "title": "Modules, not microservices",
+          "imageUrl": null
+        },
+        {
+          "id": "https://jmvdveer.home.xs4all.nl/en.algol-68-genie.html",
+          "author": null,
+          "description": "Comments",
+          "link": "https://jmvdveer.home.xs4all.nl/en.algol-68-genie.html",
+          "publishedOn": "2023-01-03T11:25:07.000Z",
+          "wordCount": 585,
+          "title": "The Algol 68 Genie project",
+          "imageUrl": "images.algol-68-genie.png"
+        },
+        {
+          "id": "https://samcurry.net/web-hackers-vs-the-auto-industry/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://samcurry.net/web-hackers-vs-the-auto-industry/",
+          "publishedOn": "2023-01-03T11:07:11.000Z",
+          "wordCount": 6372,
+          "title": "Web hackers vs. the auto industry",
+          "imageUrl": "https://i.imgur.com/o2WUB2y.png"
+        },
+        {
+          "id": "https://pdxscholar.library.pdx.edu/cgi/viewcontent.cgi?article=1498&context=open_access_etds",
+          "author": null,
+          "description": "Comments",
+          "link": "https://pdxscholar.library.pdx.edu/cgi/viewcontent.cgi?article=1498&context=open_access_etds",
+          "publishedOn": "2023-01-03T09:10:22.000Z",
+          "wordCount": 56511,
+          "title": "A functional approach to memory-safe operating systems",
+          "imageUrl": null
+        },
+        {
+          "id": "https://news.ycombinator.com/item?id=34225669",
+          "author": null,
+          "description": "Comments",
+          "link": "https://news.ycombinator.com/item?id=34225669",
+          "publishedOn": "2023-01-03T00:15:48.000Z",
+          "wordCount": 516,
+          "title": "Ask HN: A Better Docker Compose?",
+          "imageUrl": null
+        },
         {
           "id": "https://grantisom.com/2023/01/02/mustread-books-for.html",
           "author": null,
@@ -137,6 +357,16 @@
           "wordCount": 3061,
           "title": "My YouTube earnings",
           "imageUrl": "https://brickexperimentchannel.files.wordpress.com/2022/11/revenue_analysis_ctr_vs_views.png"
+        },
+        {
+          "id": "https://ianbicking.org/blog/2023/01/infinite-ai-array.html",
+          "author": null,
+          "description": "Comments",
+          "link": "https://ianbicking.org/blog/2023/01/infinite-ai-array.html",
+          "publishedOn": "2023-01-02T22:36:46.000Z",
+          "wordCount": 1067,
+          "title": "Infinite AI Array",
+          "imageUrl": null
         },
         {
           "id": "https://gist.github.com/Spuffynism/446c7c2d498477491d8137e8f234d4a9",
@@ -209,6 +439,16 @@
           "imageUrl": "https://opengraph.githubassets.com/b8fd7881423671c9cec1f992dfc10a63dea7f90c8df7cf57eed4df64aa9c59cc/microsoft/pyright"
         },
         {
+          "id": "https://www.kryogenix.org/days/2023/01/02/what-to-do-about-hotlinking/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.kryogenix.org/days/2023/01/02/what-to-do-about-hotlinking/",
+          "publishedOn": "2023-01-02T18:49:14.000Z",
+          "wordCount": 1794,
+          "title": "Wondering what to do (if anything) about hotlinking",
+          "imageUrl": "https://www.kryogenix.org/days/2023/01/02/what-to-do-about-hotlinking/index.html.og_image.png"
+        },
+        {
           "id": "https://www.exclassics.com/espoke/espkpdf.pdf",
           "author": null,
           "description": "Comments",
@@ -267,6 +507,26 @@
           "wordCount": 8677,
           "title": "Inside the 8086 processor's instruction prefetch circuitry",
           "imageUrl": "https://lh3.googleusercontent.com/blogger_img_proxy/ANbyha3r6HdbFuSZkUwoH_foZpeiwRWnV_qEwNFnA1HMaOIazUwyLifAi0XW0f1JK_m4WPDLqSodPEc2FFbqcoTda8_MTezA4HSW81J0tmGHEt5inkDtjhcBp8rBF5GTAWWZ7agdYbCKzAA=w1200-h630-p-k-no-nu"
+        },
+        {
+          "id": "https://softwarescalability.com/editorial/real-time-object-detection-with-webrtc-and-yolo",
+          "author": null,
+          "description": "Comments",
+          "link": "https://softwarescalability.com/editorial/real-time-object-detection-with-webrtc-and-yolo",
+          "publishedOn": "2023-01-02T18:05:49.000Z",
+          "wordCount": 11114,
+          "title": "Multi-camera real-time object detection with WebRTC and YOLO",
+          "imageUrl": "https://softwarescalability.com/assets/blog/real-time-object-detection-with-webrtc-and-yolo/cover.jpg"
+        },
+        {
+          "id": "https://lethain.com/measuring-engineering-organizations/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://lethain.com/measuring-engineering-organizations/",
+          "publishedOn": "2023-01-02T17:59:53.000Z",
+          "wordCount": 3067,
+          "title": "Measuring an engineering organization",
+          "imageUrl": "https://lethain.com/static/blog/2023/EngMeasurements.png"
         },
         {
           "id": "https://news.ycombinator.com/item?id=34220710",
@@ -349,6 +609,16 @@
           "imageUrl": "https://opengraph.githubassets.com/4b3da354beec3758be51a0d63e932b44afb1395c53541d2f73cc620aee59188f/skuep/AIOC"
         },
         {
+          "id": "https://spectrum.ieee.org/interconnect-back-side-power",
+          "author": null,
+          "description": "Comments",
+          "link": "https://spectrum.ieee.org/interconnect-back-side-power",
+          "publishedOn": "2023-01-02T14:19:32.000Z",
+          "wordCount": 10461,
+          "title": "At the edges of Moore’s Law, connecting components is increasingly the game",
+          "imageUrl": "https://spectrum.ieee.org/media-library/six-short-black-pillars-with-a-tall-pillar-at-center-bridge-two-light-grey-areas.jpg?id=32417203&width=1200&height=600&coordinates=0%2C72%2C0%2C72"
+        },
+        {
           "id": "https://twitter.com/badlogicgames/status/1609652290113404928",
           "author": null,
           "description": "Comments",
@@ -386,6 +656,16 @@
           "publishedOn": "2023-01-02T06:09:23.000Z",
           "wordCount": 503,
           "title": "Show HN: Mafs – React components for interactive math",
+          "imageUrl": null
+        },
+        {
+          "id": "https://thesephist.com/posts/lua/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://thesephist.com/posts/lua/",
+          "publishedOn": "2023-01-02T02:57:13.000Z",
+          "wordCount": 3753,
+          "title": "Interesting things about the Lua interpreter (2020)",
           "imageUrl": null
         },
         {
@@ -8707,226 +8987,6 @@
           "wordCount": 1715,
           "title": "You might not need a CRDT",
           "imageUrl": "https://driftingin.space/images/og-nocrdt-fb.png"
-        },
-        {
-          "id": "https://jackiebavaro.substack.com/p/hot-take-google-has-a-company-strategy",
-          "author": null,
-          "description": "Comments",
-          "link": "https://jackiebavaro.substack.com/p/hot-take-google-has-a-company-strategy",
-          "publishedOn": "2022-12-04T23:55:17.000Z",
-          "wordCount": 4235,
-          "title": "Google has a company strategy, not a product strategy",
-          "imageUrl": "https://substackcdn.com/image/fetch/w_1200,h_600,c_limit,f_jpg,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F806b6d9d-9aff-4d27-85e1-3d49f742d37c_6000x4000.jpeg"
-        },
-        {
-          "id": "https://www.thepilot.com/news/emergency-declared-and-curfew-ordered-following-moore-power-grid-attack/article_b3b19780-7370-11ed-865d-c78d0de5d921.html",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.thepilot.com/news/emergency-declared-and-curfew-ordered-following-moore-power-grid-attack/article_b3b19780-7370-11ed-865d-c78d0de5d921.html",
-          "publishedOn": "2022-12-04T23:27:58.000Z",
-          "wordCount": 13678,
-          "title": "Emergency declared and curfew imposed following North Carolina power grid attack",
-          "imageUrl": "https://bloximages.newyork1.vip.townnews.com/thepilot.com/content/tncms/assets/v3/editorial/5/c0/5c0cce58-741c-11ed-8859-cfb375a52f6b/638d1415a26c3.image.jpg?crop=1000%2C525%2C0%2C37&resize=1000%2C525&order=crop%2Cresize"
-        },
-        {
-          "id": "https://web.stanford.edu/class/cs343/resources/purify.pdf",
-          "author": null,
-          "description": "Comments",
-          "link": "https://web.stanford.edu/class/cs343/resources/purify.pdf",
-          "publishedOn": "2022-12-04T23:21:03.000Z",
-          "wordCount": 96611,
-          "title": "Memory Leaks Detection Paper Co-Authored by Netflix CEO Reed Hastings in 1992 [pdf]",
-          "imageUrl": null
-        },
-        {
-          "id": "https://tedgioia.substack.com/p/how-web-platforms-collapse-the-facebook",
-          "author": null,
-          "description": "Comments",
-          "link": "https://tedgioia.substack.com/p/how-web-platforms-collapse-the-facebook",
-          "publishedOn": "2022-12-04T23:06:00.000Z",
-          "wordCount": 8742,
-          "title": "Web Platforms Collapse: The Facebook Case Study",
-          "imageUrl": "https://substackcdn.com/image/fetch/w_1200,h_600,c_limit,f_jpg,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F8ed59d49-d05f-40be-b072-24c598769753_1003x564.jpeg"
-        },
-        {
-          "id": "https://news.artnet.com/art-world/archaeologists-graham-hancocks-ancient-apocalypse-fiction-2222060",
-          "author": null,
-          "description": "Comments",
-          "link": "https://news.artnet.com/art-world/archaeologists-graham-hancocks-ancient-apocalypse-fiction-2222060",
-          "publishedOn": "2022-12-04T22:58:19.000Z",
-          "wordCount": 3669,
-          "title": "Archaeologists Ask Netflix to Reclassify Graham Hancock’s Docuseries as Fiction",
-          "imageUrl": "https://p-news-uploads.storage.googleapis.com/2022/12/GettyImages-563611513.jpg"
-        },
-        {
-          "id": "https://gist.github.com/Gaelan/cf5ae4a1e9d8d64cb0b732cf3a38e04a",
-          "author": null,
-          "description": "Comments",
-          "link": "https://gist.github.com/Gaelan/cf5ae4a1e9d8d64cb0b732cf3a38e04a",
-          "publishedOn": "2022-12-04T22:47:24.000Z",
-          "wordCount": 1332,
-          "title": "ChatGPT passes the 2022 AP Computer Science A free response section",
-          "imageUrl": "https://github.githubassets.com/images/modules/gists/gist-og-image.png"
-        },
-        {
-          "id": "https://github.com/eoin-barr/weatherme",
-          "author": null,
-          "description": "Comments",
-          "link": "https://github.com/eoin-barr/weatherme",
-          "publishedOn": "2022-12-04T22:38:32.000Z",
-          "wordCount": 634,
-          "title": "Weather CLI Tool",
-          "imageUrl": "https://opengraph.githubassets.com/13ffa51a0691758af70d61b5a00ceca3bece8896982dc4287a9643e26ee0f75d/eoin-barr/weatherme"
-        },
-        {
-          "id": "https://blog.plover.com/2022/12/04/#crap-warning-signs-2",
-          "author": null,
-          "description": "Comments",
-          "link": "https://blog.plover.com/2022/12/04/#crap-warning-signs-2",
-          "publishedOn": "2022-12-04T20:45:56.000Z",
-          "wordCount": 1451,
-          "title": "Software horror show: SAP Concur",
-          "imageUrl": "https://pic.blog.plover.com/prog/crap-warning-signs-2/concur.png"
-        },
-        {
-          "id": "https://corecursive.com/doomed-to-fail-with-burger-becky/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://corecursive.com/doomed-to-fail-with-burger-becky/",
-          "publishedOn": "2022-12-04T19:44:04.000Z",
-          "wordCount": 9655,
-          "title": "Porting Doom to the 3D0 Console",
-          "imageUrl": "https://corecursive.com/assets/images/083/wide.png"
-        },
-        {
-          "id": "https://www.jamesgmartin.center/2022/11/administrators-have-seized-the-ivory-tower/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.jamesgmartin.center/2022/11/administrators-have-seized-the-ivory-tower/",
-          "publishedOn": "2022-12-04T19:09:43.000Z",
-          "wordCount": 3229,
-          "title": "Administrators Have Seized the Ivory Tower",
-          "imageUrl": "https://www.jamesgmartin.center/wp-content/uploads/2022/11/AdobeStock_46696567-scaled.jpeg"
-        },
-        {
-          "id": "https://oldoperatingtheatre.com/step-into-the-role-of-a-surgeon-in-our-interactive-game/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://oldoperatingtheatre.com/step-into-the-role-of-a-surgeon-in-our-interactive-game/",
-          "publishedOn": "2022-12-04T18:35:50.000Z",
-          "wordCount": 1756,
-          "title": "Interactive text game of surgery in early 1800s",
-          "imageUrl": "https://oldoperatingtheatre.com/wp-content/uploads/2022/06/Table-surgery-kit.jpg"
-        },
-        {
-          "id": "https://www.cyclingnews.com/news/pfc-bans-are-going-to-change-the-face-of-all-waterproof-garments/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.cyclingnews.com/news/pfc-bans-are-going-to-change-the-face-of-all-waterproof-garments/",
-          "publishedOn": "2022-12-04T18:03:06.000Z",
-          "wordCount": 30239,
-          "title": "PFC bans are going to change waterproof garments",
-          "imageUrl": "https://cdn.mos.cms.futurecdn.net/qBtoFJ5Twui3gAbKkxQJnW-1200-80.jpg"
-        },
-        {
-          "id": "https://invisible-characters.com/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://invisible-characters.com/",
-          "publishedOn": "2022-12-04T17:58:48.000Z",
-          "wordCount": 498,
-          "title": "Invisible Characters",
-          "imageUrl": null
-        },
-        {
-          "id": "https://www.chemistryworld.com/features/the-terahertz-gap-into-the-dead-zone/3004857.article",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.chemistryworld.com/features/the-terahertz-gap-into-the-dead-zone/3004857.article",
-          "publishedOn": "2022-12-04T17:14:50.000Z",
-          "wordCount": 13703,
-          "title": "The terahertz gap: into the dead zone (2007)",
-          "imageUrl": "https://d2cbg94ubxgsnp.cloudfront.net/Pictures/1024x536/6/1/1/127611_feature-p52-terahertz-390_tcm18-78971.jpg"
-        },
-        {
-          "id": "https://jobs.ashbyhq.com/motion/dfe19251-9d97-4e6b-b9ac-04422a697f57?utm_source=hn",
-          "author": null,
-          "description": "Comments",
-          "link": "https://jobs.ashbyhq.com/motion/dfe19251-9d97-4e6b-b9ac-04422a697f57?utm_source=hn",
-          "publishedOn": "2022-12-04T17:02:10.000Z",
-          "wordCount": 1041,
-          "title": "Motion (YC W20) Is Hiring a Senior SRE",
-          "imageUrl": "https://app.ashbyhq.com/api/images/org-theme-social/fd4042c5-a696-4b26-9058-2ac8131c2d75/fab07bab-a363-44f7-8435-32f76868d3d3.png"
-        },
-        {
-          "id": "https://en.wikibooks.org/wiki/Haskell/Zippers",
-          "author": null,
-          "description": "Comments",
-          "link": "https://en.wikibooks.org/wiki/Haskell/Zippers",
-          "publishedOn": "2022-12-04T16:45:08.000Z",
-          "wordCount": 6369,
-          "title": "Theseus and the Zipper",
-          "imageUrl": null
-        },
-        {
-          "id": "http://www.os2museum.com/wp/undocumented-8086-opcodes-part-i/",
-          "author": null,
-          "description": "Comments",
-          "link": "http://www.os2museum.com/wp/undocumented-8086-opcodes-part-i/",
-          "publishedOn": "2022-12-04T16:16:31.000Z",
-          "wordCount": 3301,
-          "title": "Undocumented 8086 Opcodes part 1",
-          "imageUrl": null
-        },
-        {
-          "id": "https://news.ycombinator.com/item?id=33854815",
-          "author": null,
-          "description": "Comments",
-          "link": "https://news.ycombinator.com/item?id=33854815",
-          "publishedOn": "2022-12-04T16:03:19.000Z",
-          "wordCount": 6459,
-          "title": "Ask HN: Reading material on how to be a better software engineer?",
-          "imageUrl": null
-        },
-        {
-          "id": "https://csclub.uwaterloo.ca/resources/tech-talks/cory-doctorow-the-war-on-general-purpose-computing/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://csclub.uwaterloo.ca/resources/tech-talks/cory-doctorow-the-war-on-general-purpose-computing/",
-          "publishedOn": "2022-12-04T14:54:57.000Z",
-          "wordCount": 546,
-          "title": "The War on General Purpose Computing (2015) [video]",
-          "imageUrl": null
-        },
-        {
-          "id": "https://github.com/wong2/chat-gpt-google-extension",
-          "author": null,
-          "description": "Comments",
-          "link": "https://github.com/wong2/chat-gpt-google-extension",
-          "publishedOn": "2022-12-04T14:01:45.000Z",
-          "wordCount": 683,
-          "title": "Show HN: Chrome extension to display ChatGPT response besides Google Search",
-          "imageUrl": "https://opengraph.githubassets.com/9782c56ca2a08eb274d175693fef9776195f430c7d87b5b0b37fdd02c2c89012/wong2/chat-gpt-google-extension"
-        },
-        {
-          "id": "https://garagehq.deuxfleurs.fr/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://garagehq.deuxfleurs.fr/",
-          "publishedOn": "2022-12-04T13:30:27.000Z",
-          "wordCount": 353,
-          "title": "Garage: An open-source distributed object storage service",
-          "imageUrl": null
-        },
-        {
-          "id": "https://en.wikipedia.org/wiki/Digital_mobile_radio",
-          "author": null,
-          "description": "Comments",
-          "link": "https://en.wikipedia.org/wiki/Digital_mobile_radio",
-          "publishedOn": "2022-12-04T13:22:48.000Z",
-          "wordCount": 2213,
-          "title": "Digital Mobile Radio",
-          "imageUrl": null
         }
       ]
     }
