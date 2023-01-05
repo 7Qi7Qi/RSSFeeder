@@ -2,10 +2,296 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://7qi7qi.github.io/RSSFeeder/index.html</id>
     <title>osmos::feed</title>
-    <updated>2023-01-04T01:05:19.099Z</updated>
+    <updated>2023-01-05T01:08:20.768Z</updated>
     <generator>osmosfeed 1.15.1</generator>
     <link rel="alternate" href="https://7qi7qi.github.io/RSSFeeder/index.html"/>
     <link rel="self" href="https://7qi7qi.github.io/RSSFeeder/feed.atom"/>
+    <entry>
+        <title type="html"><![CDATA[Prometheus vs. OpenTelemetry Metrics: 完全指南]]></title>
+        <id>http://weekly.dockone.io/article/2434954</id>
+        <link href="http://weekly.dockone.io/article/2434954"/>
+        <updated>2023-01-05T01:08:20.711Z</updated>
+        <summary type="html"><![CDATA[Prometheus vs. OpenTelemetry指标: 共同点
+这两个系统都允许你收集和转换指标（尽管Open Telemetry作为一个转换管道要灵活得多）。然而，回顾以前的文章，我们需要记住一个重要的区别。Prometheus是一个可观测性工具（包括收集、存储和查询），它使用的指标模型是为适应自己的需要而设计的。
+另一方面，OpenTelemetry的指标组件将许多不同的数据模型转化为一个单一的框架（提供无存储或查询的集合）。这些核心差异反映了系统的复杂性：Prometheus是一个直接的模型，通常以文本形式暴露出来，而OpenTelemetry是由三种模型组成的更复杂的系列，使用二进制格式进行传输。
+这两个系统也允许通过SDK进行代码级的监控，但OpenTelemetry也专注于支持自动埋点，尽可能不会侵入应用程序。
+那么，你可以创建的指标之间有什么重叠？本质上，OpenTelemetry允许表示所有Prometheus指标类型（Counters、Gauges、Summaries和Histograms）。尽管如此，Prometheus仍然不能表示OpenTelemetry指标的某些配置，包括Delta表示法和指数Histograms（尽管这些将很快在Prometheus中被支持），以及整数数值类型。
+换句话说，Prometheus指标是OpenTelemetry指标的一个严格子集。
+主要区别
+虽然内部模型的工作方式有一些差异，但从开发者的角度来看，两者之间的实际差异更多是与生态系统有关。
+Prometheus提供指标收集、存储和查询。它通常通过一个简单的爬虫系统收集指标，从主机中提取数据。Prometheus数据库存储这些数据，然后你可以用Prometheus查询语言PromQL来查询。Prometheus数据库可以处理大量的数据，但它并不是正式意义上的长期存…]]></summary>
+        <author>
+            <name>megrez</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[我的 FLOPS 2022 主题演讲：“使用 Liquid Haskell 构建可靠分布式系统的探险记”]]></title>
+        <id>http://weekly.dockone.io/article/2434946</id>
+        <link href="http://weekly.dockone.io/article/2434946"/>
+        <updated>2023-01-05T01:08:20.711Z</updated>
+        <summary type="html"><![CDATA[【编者的话】本文是作者在 FLOPS 2022 会议上的演讲，正如标题所言，重点分享了使用Liquid Haskell语言集成验证系统来构建可靠的分布式系统的有趣的探索经历，目标是希望程序员能够机械地指定和验证分布式系统的真实、可执行实现的正确性属性，而且是使用集成到他们用于实现的相同通用、工业强度编程语言中的验证功能来做到这一点。目前来看使用Liquid Haskell能做到，但是仍然有很大的改进空间。
+今年 5 月，我在FLOPS 2022 会议上发表了开幕主题演讲（我的第一次主题演讲！） 。我谈到了我们小组在使用 Liquid Haskell 验证分布式系统的正确性方面所做的工作。
+这是我的 FLOPS 演讲稿。一些幻灯片包含在下面，我也发布了完整的幻灯片。
+早上好
+
+
+
+
+早上好，FLOPS！我是 Lindsey Kuper。我是加州大学圣克鲁兹分校的助理教授。
+非常感谢 Atsushi 和 Michael 以及整个 FLOPS 组织团队邀请我在 FLOPS 上发言，以及他们组织这次活动的工作。就个人而言，FLOPS 是我第一次有论文被拒绝的会议，那是在 2010 年我刚开始读研究生的时候。所以今天被邀请做这个演讲，我感到特别荣幸。
+这个演讲是关于我最近非常兴奋的事情，即使用现代语言集成验证工具来帮助我们构建保证按预期工作的分布式系统的潜力，这些保证不仅适用于模型，还适用于真实运行的代码。
+在本次演讲的开始部分，我将解释我所说的“分布式系统”的含义以及它们所面临的具体挑战。然后简单介绍一下 Liquid Haskell 语言集成的验证系统。最后，探险记：我将分享我和我的学生和合作者一直在这个领域开展的两个项目的一些亮点。
+那么，让我们从讨论分布式系统开始吧！
+什么是分布式系统？
+
+
+
+
+想象一些独立的机器通过网络相互传递消息进行通信。它们可能相距很近或相距很远，但我…]]></summary>
+        <author>
+            <name>新牛哥</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[FTC Cracks Down on Companies That Impose Harmful Noncompete Restrictions]]></title>
+        <id>https://www.ftc.gov/news-events/news/press-releases/2023/01/ftc-cracks-down-companies-impose-harmful-noncompete-restrictions-thousands-workers</id>
+        <link href="https://www.ftc.gov/news-events/news/press-releases/2023/01/ftc-cracks-down-companies-impose-harmful-noncompete-restrictions-thousands-workers"/>
+        <updated>2023-01-05T00:38:43.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Lex Fridman's Reading Plan in Numbers]]></title>
+        <id>https://blog.des.io/posts/lex-fridmans-reading-plan/</id>
+        <link href="https://blog.des.io/posts/lex-fridmans-reading-plan/"/>
+        <updated>2023-01-04T23:57:22.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[JPSO used facial recognition technology to arrest a man. The tech was wrong]]></title>
+        <id>https://www.nola.com/news/crime_police/jpso-used-facial-recognition-to-arrest-a-man-it-was-wrong/article_0818361a-8886-11ed-8119-93b98ecccc8d.html</id>
+        <link href="https://www.nola.com/news/crime_police/jpso-used-facial-recognition-to-arrest-a-man-it-was-wrong/article_0818361a-8886-11ed-8119-93b98ecccc8d.html"/>
+        <updated>2023-01-04T23:50:03.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[RIP SF/f author Suzy McKee Charnas (1939-2023)]]></title>
+        <id>https://locusmag.com/2023/01/suzy-mckee-charnas-1939-2023/</id>
+        <link href="https://locusmag.com/2023/01/suzy-mckee-charnas-1939-2023/"/>
+        <updated>2023-01-04T23:48:02.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Amazon to Lay Off over 17,000 Workers, More Than First Planned]]></title>
+        <id>https://www.wsj.com/articles/amazon-to-lay-off-over-17-000-workers-more-than-first-planned-11672874304</id>
+        <link href="https://www.wsj.com/articles/amazon-to-lay-off-over-17-000-workers-more-than-first-planned-11672874304"/>
+        <updated>2023-01-04T23:25:20.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[DragonFly BSD 6.4]]></title>
+        <id>https://www.dragonflybsd.org/release64/</id>
+        <link href="https://www.dragonflybsd.org/release64/"/>
+        <updated>2023-01-04T23:18:56.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Newsraft: feed reader with ncurses user interface]]></title>
+        <id>https://codeberg.org/grisha/newsraft</id>
+        <link href="https://codeberg.org/grisha/newsraft"/>
+        <updated>2023-01-04T22:44:20.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[G-3PO: A protocol droid for Ghidra, or GPT-3 for reverse-engineering]]></title>
+        <id>https://medium.com/tenable-techblog/g-3po-a-protocol-droid-for-ghidra-4b46fa72f1ff</id>
+        <link href="https://medium.com/tenable-techblog/g-3po-a-protocol-droid-for-ghidra-4b46fa72f1ff"/>
+        <updated>2023-01-04T20:20:03.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Two surprises in browser crashes]]></title>
+        <id>https://neugierig.org/software/blog/2023/01/browser-crashes.html</id>
+        <link href="https://neugierig.org/software/blog/2023/01/browser-crashes.html"/>
+        <updated>2023-01-04T19:50:31.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Emulating an emulator inside itself. Meet Blink]]></title>
+        <id>https://hiro.codes/read/emulating-an-emulator-inside-itself.-meet-blink</id>
+        <link href="https://hiro.codes/read/emulating-an-emulator-inside-itself.-meet-blink"/>
+        <updated>2023-01-04T19:42:36.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[How do you know when macOS detects and remediates malware?]]></title>
+        <id>https://eclecticlight.co/2023/01/04/how-do-you-know-when-macos-detects-and-remediates-malware/</id>
+        <link href="https://eclecticlight.co/2023/01/04/how-do-you-know-when-macos-detects-and-remediates-malware/"/>
+        <updated>2023-01-04T17:59:17.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[AutoHotKey V2 (Breaking Upgrade)]]></title>
+        <id>https://www.autohotkey.com/v2/</id>
+        <link href="https://www.autohotkey.com/v2/"/>
+        <updated>2023-01-04T17:06:29.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[On-demand learning comes at the cost of conceptual understanding]]></title>
+        <id>https://www.jernesto.com/articles/learning.html</id>
+        <link href="https://www.jernesto.com/articles/learning.html"/>
+        <updated>2023-01-04T17:02:24.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Faster MySQL with HTTP/3]]></title>
+        <id>https://planetscale.com/blog/faster-mysql-with-http3</id>
+        <link href="https://planetscale.com/blog/faster-mysql-with-http3"/>
+        <updated>2023-01-04T16:40:26.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[WAL Mode in LiteFS]]></title>
+        <id>https://fly.io/blog/wal-mode-in-litefs/</id>
+        <link href="https://fly.io/blog/wal-mode-in-litefs/"/>
+        <updated>2023-01-04T16:36:03.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[NYC officials say they can't find EV garbage trucks powerful enough to plow snow]]></title>
+        <id>https://gothamist.com/news/snow-go-for-nycs-electric-garbage-trucks-that-cant-handle-winter-weather</id>
+        <link href="https://gothamist.com/news/snow-go-for-nycs-electric-garbage-trucks-that-cant-handle-winter-weather"/>
+        <updated>2023-01-04T16:25:05.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Pushup: a new compiler for making web apps in Go]]></title>
+        <id>https://github.com/adhocteam/pushup</id>
+        <link href="https://github.com/adhocteam/pushup"/>
+        <updated>2023-01-04T15:49:34.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[All About USB-C: Resistors and Emarkers]]></title>
+        <id>https://hackaday.com/2023/01/04/all-about-usb-c-resistors-and-emarkers/</id>
+        <link href="https://hackaday.com/2023/01/04/all-about-usb-c-resistors-and-emarkers/"/>
+        <updated>2023-01-04T15:36:18.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Going full time on my SaaS after 13 years]]></title>
+        <id>https://mattmazur.com/2023/01/04/going-full-time-on-my-saas-after-13-years/</id>
+        <link href="https://mattmazur.com/2023/01/04/going-full-time-on-my-saas-after-13-years/"/>
+        <updated>2023-01-04T15:23:41.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Juan Tamariz, the godfather of close-up card magic]]></title>
+        <id>https://www.nytimes.com/2023/01/02/magazine/juan-tamariz-magic.html</id>
+        <link href="https://www.nytimes.com/2023/01/02/magazine/juan-tamariz-magic.html"/>
+        <updated>2023-01-04T14:55:08.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[‘Breakthrough’ obesity drugs that have stunned researchers]]></title>
+        <id>https://www.nature.com/articles/d41586-022-04505-7</id>
+        <link href="https://www.nature.com/articles/d41586-022-04505-7"/>
+        <updated>2023-01-04T14:52:33.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Parallel streaming in Haskell: Part 1 – Fast, efficient, and fun]]></title>
+        <id>https://www.channable.com/tech/parallel-streaming-in-haskell-part-1-fast-efficient-fun</id>
+        <link href="https://www.channable.com/tech/parallel-streaming-in-haskell-part-1-fast-efficient-fun"/>
+        <updated>2023-01-04T13:03:58.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Lincoln Cathedral]]></title>
+        <id>https://www.countrylife.co.uk/architecture/lincoln-cathedral-the-950-year-story-of-one-of-europes-very-greatest-cathedrals-251041</id>
+        <link href="https://www.countrylife.co.uk/architecture/lincoln-cathedral-the-950-year-story-of-one-of-europes-very-greatest-cathedrals-251041"/>
+        <updated>2023-01-04T06:00:18.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Fun, danger, and 70s airplane toys]]></title>
+        <id>https://whyisthisinteresting.substack.com/p/the-worlds-most-dangerous-toy-edition</id>
+        <link href="https://whyisthisinteresting.substack.com/p/the-worlds-most-dangerous-toy-edition"/>
+        <updated>2023-01-04T05:59:01.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Tell HN: I just received my Equifax breach settlement check]]></title>
         <id>https://news.ycombinator.com/item?id=34240298</id>
@@ -37,6 +323,16 @@
         </author>
     </entry>
     <entry>
+        <title type="html"><![CDATA[Inline AppleScript Documentation]]></title>
+        <id>https://indiestack.com/2023/01/inline-applescript-documentation/</id>
+        <link href="https://indiestack.com/2023/01/inline-applescript-documentation/"/>
+        <updated>2023-01-03T23:05:02.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[Google wants RISC-V to be a “tier-1” Android architecture]]></title>
         <id>https://arstechnica.com/gadgets/2023/01/google-announces-official-android-support-for-risc-v/</id>
         <link href="https://arstechnica.com/gadgets/2023/01/google-announces-official-android-support-for-risc-v/"/>
@@ -47,10 +343,40 @@
         </author>
     </entry>
     <entry>
+        <title type="html"><![CDATA[Major torrent sites are currently exposing intimate details of their operations]]></title>
+        <id>https://torrentfreak.com/major-private-torrent-sites-have-a-security-disaster-to-fix-right-now-230103/</id>
+        <link href="https://torrentfreak.com/major-private-torrent-sites-have-a-security-disaster-to-fix-right-now-230103/"/>
+        <updated>2023-01-03T22:18:37.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[An Unorthodox Scholar Uses Technology to Expose Biblical Forgeries]]></title>
+        <id>https://www.smithsonianmag.com/history/how-unorthodox-scholar-uses-technology-expose-biblical-forgeries-180981290/</id>
+        <link href="https://www.smithsonianmag.com/history/how-unorthodox-scholar-uses-technology-expose-biblical-forgeries-180981290/"/>
+        <updated>2023-01-03T22:12:22.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[Migrating from AWS to Fly.io]]></title>
         <id>https://terrateam.io/blog/flying-away-from-aws</id>
         <link href="https://terrateam.io/blog/flying-away-from-aws"/>
         <updated>2023-01-03T21:13:45.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Can self-replicating species flourish in the interior of a star? (2020) [pdf]]]></title>
+        <id>https://pdfs.semanticscholar.org/3cb2/0df9e075056030103d73f173fa29f8f92f07.pdf?_ga=2.37017120.1076752451.1672779819-279137700.1672779819</id>
+        <link href="https://pdfs.semanticscholar.org/3cb2/0df9e075056030103d73f173fa29f8f92f07.pdf?_ga=2.37017120.1076752451.1672779819-279137700.1672779819"/>
+        <updated>2023-01-03T21:04:10.000Z</updated>
         <summary type="html"><![CDATA[Comments]]></summary>
         <author>
             <name>Hacker News</name>
@@ -161,6 +487,16 @@
         <id>https://gist.github.com/yoavg/59d174608e92e845c8994ac2e234c8a9</id>
         <link href="https://gist.github.com/yoavg/59d174608e92e845c8994ac2e234c8a9"/>
         <updated>2023-01-03T15:54:22.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Small Teams]]></title>
+        <id>https://stevepulec.com/posts/small/</id>
+        <link href="https://stevepulec.com/posts/small/"/>
+        <updated>2023-01-03T14:54:49.000Z</updated>
         <summary type="html"><![CDATA[Comments]]></summary>
         <author>
             <name>Hacker News</name>
@@ -8822,326 +9158,6 @@ CI/CD内容也有重点介绍：
         <id>https://arstechnica.com/gaming/2022/12/dwarf-fortresss-graphical-upgrade-provides-a-new-way-into-a-wildly-wonky-game/</id>
         <link href="https://arstechnica.com/gaming/2022/12/dwarf-fortresss-graphical-upgrade-provides-a-new-way-into-a-wildly-wonky-game/"/>
         <updated>2022-12-06T13:15:22.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[It’s not Tourette’s but a new type of mass sociogenic illness]]></title>
-        <id>https://academic.oup.com/brain/article/145/2/476/6356504</id>
-        <link href="https://academic.oup.com/brain/article/145/2/476/6356504"/>
-        <updated>2022-12-06T11:21:58.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[The cloudy layers of modern-day programming]]></title>
-        <id>https://vickiboykis.com/2022/12/05/the-cloudy-layers-of-modern-day-programming/</id>
-        <link href="https://vickiboykis.com/2022/12/05/the-cloudy-layers-of-modern-day-programming/"/>
-        <updated>2022-12-06T10:36:54.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Ancient human relative used fire, discoveries suggest]]></title>
-        <id>https://www.washingtonpost.com/science/2022/12/05/homo-naledi-fire-evolution/</id>
-        <link href="https://www.washingtonpost.com/science/2022/12/05/homo-naledi-fire-evolution/"/>
-        <updated>2022-12-06T04:18:20.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Ancient Computers]]></title>
-        <id>https://ethw.org/Ancient_Computers</id>
-        <link href="https://ethw.org/Ancient_Computers"/>
-        <updated>2022-12-06T00:32:41.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Small Investors Who Jumped into Crypto on FTX Say, Now What?]]></title>
-        <id>https://www.nytimes.com/2022/12/05/business/cryptocurrency-investors-ftx-blockfi.html</id>
-        <link href="https://www.nytimes.com/2022/12/05/business/cryptocurrency-investors-ftx-blockfi.html"/>
-        <updated>2022-12-06T00:19:51.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Ask HN: Are Protonmail.com Addresses Snubbed?]]></title>
-        <id>https://news.ycombinator.com/item?id=33873828</id>
-        <link href="https://news.ycombinator.com/item?id=33873828"/>
-        <updated>2022-12-06T00:03:16.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Musk’s Neuralink faces federal probe, employee backlash over animal tests]]></title>
-        <id>https://www.reuters.com/technology/musks-neuralink-faces-federal-probe-employee-backlash-over-animal-tests-2022-12-05/</id>
-        <link href="https://www.reuters.com/technology/musks-neuralink-faces-federal-probe-employee-backlash-over-animal-tests-2022-12-05/"/>
-        <updated>2022-12-05T23:21:24.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Inkscape 1.2.2 Released]]></title>
-        <id>https://inkscape.org/release/inkscape-1.2.2/</id>
-        <link href="https://inkscape.org/release/inkscape-1.2.2/"/>
-        <updated>2022-12-05T23:14:04.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Musk’s Neuralink faces federal probe, employee backlash over animal tests]]></title>
-        <id>https://www.reuters.com/technology/musks-neuralink-faces-federal-probe-employee-backlash-over-animal-tests-2022-12-05/</id>
-        <link href="https://www.reuters.com/technology/musks-neuralink-faces-federal-probe-employee-backlash-over-animal-tests-2022-12-05/"/>
-        <updated>2022-12-05T22:42:50.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Let's Encrypt posts letter from executive director]]></title>
-        <id>https://letsencrypt.org/2022/12/05/ed-letter-2022.html</id>
-        <link href="https://letsencrypt.org/2022/12/05/ed-letter-2022.html"/>
-        <updated>2022-12-05T22:28:26.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[New Process Allows 3-D Printing of Microscale Metallic Parts – Www.caltech.edu]]></title>
-        <id>https://www.caltech.edu/about/news/new-process-allows-3-d-printing-of-microscale-metallic-parts</id>
-        <link href="https://www.caltech.edu/about/news/new-process-allows-3-d-printing-of-microscale-metallic-parts"/>
-        <updated>2022-12-05T22:16:06.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[A tale of two particles: Not all radioactivity is risky or harmful]]></title>
-        <id>https://worksinprogress.substack.com/p/a-tale-of-two-particles</id>
-        <link href="https://worksinprogress.substack.com/p/a-tale-of-two-particles"/>
-        <updated>2022-12-05T21:44:58.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Show HN: Help, I let ChatGPT control my computer]]></title>
-        <id>https://github.com/greshake/Alice</id>
-        <link href="https://github.com/greshake/Alice"/>
-        <updated>2022-12-05T21:17:51.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[VCs using scouts means founders get the short end of the stick]]></title>
-        <id>https://sifted.eu/articles/vc-scout-programme-problems/</id>
-        <link href="https://sifted.eu/articles/vc-scout-programme-problems/"/>
-        <updated>2022-12-05T21:00:38.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Simulate Asteroid Impacts on Earth]]></title>
-        <id>https://neal.fun/asteroid-launcher/</id>
-        <link href="https://neal.fun/asteroid-launcher/"/>
-        <updated>2022-12-05T19:30:38.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[We’re making Firefox accessible and delightful for everyone]]></title>
-        <id>https://blog.mozilla.org/en/products/firefox/firefox-news/firefox-accessibility-text-recognition-screen-readers/</id>
-        <link href="https://blog.mozilla.org/en/products/firefox/firefox-news/firefox-accessibility-text-recognition-screen-readers/"/>
-        <updated>2022-12-05T19:29:36.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Play Windows Pinball (Space Cadet) on the Web]]></title>
-        <id>https://alula.github.io/SpaceCadetPinball/</id>
-        <link href="https://alula.github.io/SpaceCadetPinball/"/>
-        <updated>2022-12-05T19:13:13.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[When McKinsey comes to town]]></title>
-        <id>https://www.lrb.co.uk/the-paper/v44/n24/laleh-khalili/in-clover</id>
-        <link href="https://www.lrb.co.uk/the-paper/v44/n24/laleh-khalili/in-clover"/>
-        <updated>2022-12-05T18:40:35.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Build List: A directory of on-demand manufacturers for your creative projects]]></title>
-        <id>https://buildlist.org/</id>
-        <link href="https://buildlist.org/"/>
-        <updated>2022-12-05T18:40:19.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Turing Machines Are Recurrent Neural Networks (1996)]]></title>
-        <id>http://users.ics.aalto.fi/tho/stes/step96/hyotyniemi1/</id>
-        <link href="http://users.ics.aalto.fi/tho/stes/step96/hyotyniemi1/"/>
-        <updated>2022-12-05T18:24:35.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Federal court requires Amazon to stop firing employees for protected activities]]></title>
-        <id>https://www.nlrb.gov/news-outreach/news-story/nlrb-region-29-wins-federal-court-order-requiring-amazon-to-cease-and</id>
-        <link href="https://www.nlrb.gov/news-outreach/news-story/nlrb-region-29-wins-federal-court-order-requiring-amazon-to-cease-and"/>
-        <updated>2022-12-05T18:03:25.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Passwordless Authentication – Access Your Bitwarden Web Vault Without a Password]]></title>
-        <id>https://bitwarden.com/blog/passwordless-authentication-access-your-bitwarden-web-vault-without-a-password/</id>
-        <link href="https://bitwarden.com/blog/passwordless-authentication-access-your-bitwarden-web-vault-without-a-password/"/>
-        <updated>2022-12-05T17:08:03.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Mac OS 9]]></title>
-        <id>https://macos9.app/</id>
-        <link href="https://macos9.app/"/>
-        <updated>2022-12-05T17:00:07.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Thunderbird for Android preview: Modern message redesign]]></title>
-        <id>https://blog.thunderbird.net/2022/12/thunderbird-for-android-preview-modern-message-redesign/</id>
-        <link href="https://blog.thunderbird.net/2022/12/thunderbird-for-android-preview-modern-message-redesign/"/>
-        <updated>2022-12-05T16:56:14.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[One does not simply destroy a nuclear weapon]]></title>
-        <id>https://educatedguesswork.org/posts/nuclear-weapon-disposal/</id>
-        <link href="https://educatedguesswork.org/posts/nuclear-weapon-disposal/"/>
-        <updated>2022-12-05T16:35:13.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Lobster and snow crab fisheries search for alternative baits]]></title>
-        <id>https://hakaimagazine.com/features/is-sausage-the-missing-link-in-the-great-bait-debate/</id>
-        <link href="https://hakaimagazine.com/features/is-sausage-the-missing-link-in-the-great-bait-debate/"/>
-        <updated>2022-12-05T16:25:35.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Djot: A light markup language by the creator of Pandoc and CommonMark]]></title>
-        <id>https://github.com/jgm/djot</id>
-        <link href="https://github.com/jgm/djot"/>
-        <updated>2022-12-05T16:24:31.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[AI Homework]]></title>
-        <id>https://stratechery.com/2022/ai-homework/</id>
-        <link href="https://stratechery.com/2022/ai-homework/"/>
-        <updated>2022-12-05T15:41:28.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Bright flash is a black hole jet pointing at Earth, astronomers say]]></title>
-        <id>https://phys.org/news/2022-11-mysteriously-bright-black-hole-jet.html</id>
-        <link href="https://phys.org/news/2022-11-mysteriously-bright-black-hole-jet.html"/>
-        <updated>2022-12-05T15:33:18.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Can Lego City Powered Up trains be automated?]]></title>
-        <id>https://bricks.stackexchange.com/questions/17587/can-lego-city-powered-up-trains-be-automated</id>
-        <link href="https://bricks.stackexchange.com/questions/17587/can-lego-city-powered-up-trains-be-automated"/>
-        <updated>2022-12-05T14:46:11.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Sci-fi illustrations by Shigeru Komatsuzaki (1915-2001)]]></title>
-        <id>https://retro-futurism.livejournal.com/418315.html</id>
-        <link href="https://retro-futurism.livejournal.com/418315.html"/>
-        <updated>2022-12-05T14:12:01.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[You might not need a CRDT]]></title>
-        <id>https://driftingin.space/posts/you-might-not-need-a-crdt</id>
-        <link href="https://driftingin.space/posts/you-might-not-need-a-crdt"/>
-        <updated>2022-12-05T13:57:46.000Z</updated>
         <summary type="html"><![CDATA[Comments]]></summary>
         <author>
             <name>Hacker News</name>
