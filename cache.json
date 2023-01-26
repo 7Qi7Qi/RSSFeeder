@@ -80,36 +80,6 @@
           "wordCount": null,
           "title": "图说分布式计算的8大谬误",
           "imageUrl": null
-        },
-        {
-          "id": "http://weekly.dockone.io/article/2434953",
-          "author": "frankinbj",
-          "description": "[作为一名技术人员，我热衷于讨论技术。随着讨论的进行，经常会有如下的对比，例如JVM vs. Net， JAVA vs. Kotlin， Go vs. Rust，Maven vs. 不能说的那个， 等等。随之，我们会经常深陷我们所热衷的那款技术的优缺点的泥潭，讨论了几个小时也不能达成共识。\n“我想要一套Drupal”\n需不需要.env文件\n很多问题并不需要微服务来解决\n技术支持也要对问题产生疑问\n五个为什么\nhttps://en.wikipedia.org/wiki/Five_whys\n结论\n最初于2022年10月23日在Java极客上发布\nhttps://itnext.io/discuss-prob ... c8f38",
-          "link": "http://weekly.dockone.io/article/2434953",
-          "publishedOn": "2022-12-27T01:04:45.638Z",
-          "wordCount": null,
-          "title": "先研究问题，再谈解决方案",
-          "imageUrl": null
-        },
-        {
-          "id": "http://weekly.dockone.io/article/2434952",
-          "author": "w9527",
-          "description": "事件驱动架构非常强大，非常适合分布式微服务环境。 通过引入代理中介，事件驱动架构提供了更好的解耦架构、更容易的可扩展性和更高程度的弹性。\n\n请求应答模式 (client-server) vs. 事件流模式 (pub-sub)\n但与请求应答客户端-服务器类型架构相比，事件流模式的搭建更复杂。\n在Wix过去的几年里，我们逐渐的将我们不断增长的微服务集（目前为 2300 个）从请求-应答模式迁移到事件驱动架构模式。 下面介绍的就是 Wix 工程师在事件驱动架构的实验过程中遇到的 5 个坑。\n1. 写入数据库，然后触发没有原子性的事件\n例如，考虑一个简单的电子商务购物流程（我们将在本文中都使用这个示例）\n\n写入数据库并产生一个非原子动作的事件\n不幸的是，将支付完成状态写入数据库，然后向 Kafka（或其他消息代理）生成“支付完成”事件并不是原子操作。 实际可能存在仅发生其中一项操作的情况。\n原子方案1 - Greyhound 弹性生产者（resilient producer）\n有几种方法可以解决这个问题。 在 Wix，我们使用两种方式。 第一个是我们自己的息传递平台，名为 Greyhound，它允许我们确保事件最终通过弹性生产者写入 Kafka。 这种措施的一个缺点是对下游事件的处理是无序的。\n\nGreyhound生产者回退到 S3。 特定的服务将消息恢复到 Kafka\n原子方案2 - Debezium Kafka 源连接器\n第二种方法是使用 Debezium Kafka 连接器来确保数据库更新操作和 Kafka 生成操作都发生并且数据保持一致。 Debezium 连接器允许自动捕获数据库中发生的所有更改事件（CDC）（对于 MySQL，通过 binlog）并将它们生成为 Kafka 事件。\nKafka Connect 与 Debezium DB 连接器一起保证事件最终将生成到 K…",
-          "link": "http://weekly.dockone.io/article/2434952",
-          "publishedOn": "2022-12-27T01:04:45.638Z",
-          "wordCount": null,
-          "title": "事件驱动架构避坑指南",
-          "imageUrl": null
-        },
-        {
-          "id": "http://weekly.dockone.io/article/2434951",
-          "author": "ylzhang",
-          "description": "【编者的话】每一个程序员都应该有一个架构师的目标，Yohay Nahmany在成为架构师的路上经过自己的实践经验给出了35个建议，他在文中说，他非常希望在他成为架构师时能够知道这些，所以他希望他人能够吸取自己的教训，少走一些弯路。下面文档来自他在Medium上发表的网络日志。\n\n\n\n\n介绍\n我曾在好几个初创小公司（不到 30 人）担任过软件架构师，那时我不得不快速提升自己以满足角色的需求。所以，我认为分享这段经历可能帮助像我一样有相似境遇的人。\n这里有35件事，我非常希望有人能在我担任架构色之前教会我。\n\n注意: 这篇文章有点长——如果你只阅读小标题，应该只需要几分钟。深度阅读可能需要10分钟。\n架构师的角色可以产生巨大的影响。为了最大限度地发挥影响力，请专注于您对研发团队的真正附加值，而不是只推广当前流行的框架。\n一般注意事项/评论\n\n首先软件架构师的角色没有明确的定义。你可以去挖掘信息，但事实是：你最有可能在学习、设计、编码和评审的过程中塑造这个角色。\n\n架构师负责软件开发周期的主要部分。下面的说明可以帮助你更好地掌握这个角色，它在公司/集团中的位置，以及这个角色如何影响他人。\n\n招聘和用人\n\n\n\n\n\n将大部分时间将用于招聘、入职、指导和指导。正确选择团队成员和适当的指导将帮助您通过他人塑造您的愿景。例如：明智地选择新员工。如果他们和你一样热衷于某个概念，他们将帮助你在团队成员中以及整个组织内推广它。在指导他们时，确保你的设计决策是一致的。潜在的团队矛盾会降低团队的积极性。\n\n构建您的代码库，以便团队可以从中成长。您选择的架构将影响您当前的员工、他们的技能组合、他们的工作实践以及未来的招聘需求。\n\nMono-repo 和 *Multi-repo***的选择。**如果你错过了过去几年围绕 mono-repo 的热议，将公司的整个代码库放入一个公司范围的单一存储库已经变得很…",
-          "link": "http://weekly.dockone.io/article/2434951",
-          "publishedOn": "2022-12-27T01:04:45.638Z",
-          "wordCount": null,
-          "title": "作为软件架构师的我第一年学到的35件事",
-          "imageUrl": null
         }
       ]
     },
@@ -118,6 +88,296 @@
       "feedUrl": "https://news.ycombinator.com/rss",
       "siteUrl": "https://news.ycombinator.com/",
       "articles": [
+        {
+          "id": "https://news.ycombinator.com/item?id=34525936",
+          "author": null,
+          "description": "Comments",
+          "link": "https://news.ycombinator.com/item?id=34525936",
+          "publishedOn": "2023-01-25T23:55:58.000Z",
+          "wordCount": 920,
+          "title": "Tell HN: Whole Yandex Git repository leaked",
+          "imageUrl": null
+        },
+        {
+          "id": "https://www.cell.com/matter/fulltext/S2590-2385(22)00693-2",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.cell.com/matter/fulltext/S2590-2385(22)00693-2",
+          "publishedOn": "2023-01-25T22:09:52.000Z",
+          "wordCount": 18224,
+          "title": "Magnetoactive liquid-solid phase transitional matter",
+          "imageUrl": "https://www.cell.com/cms/asset/91ecdee0-9054-4bc0-afa0-1c0412004be2/fx1.jpg"
+        },
+        {
+          "id": "http://leejo.github.io/2023/01/25/scanner/",
+          "author": null,
+          "description": "Comments",
+          "link": "http://leejo.github.io/2023/01/25/scanner/",
+          "publishedOn": "2023-01-25T22:00:22.000Z",
+          "wordCount": 1037,
+          "title": "I almost bought a scanner",
+          "imageUrl": null
+        },
+        {
+          "id": "https://github.com/containers/composefs",
+          "author": null,
+          "description": "Comments",
+          "link": "https://github.com/containers/composefs",
+          "publishedOn": "2023-01-25T21:50:10.000Z",
+          "wordCount": 1407,
+          "title": "Composefs: Content-Addressable Overlay Filesystem for Linux",
+          "imageUrl": "https://opengraph.githubassets.com/db092d815e30faf195a0916069fa2faad3540916a82bf563eb23e2b81fe29f2f/containers/composefs"
+        },
+        {
+          "id": "https://www.asml.com/en/news/press-releases/2023/q4-2022-financial-results",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.asml.com/en/news/press-releases/2023/q4-2022-financial-results",
+          "publishedOn": "2023-01-25T21:03:04.000Z",
+          "wordCount": 2615,
+          "title": "ASML Q4 2022 financial results",
+          "imageUrl": "https://www.asml.com/-/media/asml/images/news/press-releases/open-graph/financial.jpg?mw=1200&rev=f9fc50eddebc4875828af63cdde2687d&hash=9CFBE93F460EBE679337B7CD64011531"
+        },
+        {
+          "id": "https://www.thearchaeologist.org/blog/9000-year-old-stonehenge-like-structure-found-under-lake-michigan",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.thearchaeologist.org/blog/9000-year-old-stonehenge-like-structure-found-under-lake-michigan",
+          "publishedOn": "2023-01-25T20:52:24.000Z",
+          "wordCount": 1360,
+          "title": "9k-year-old Stonehenge-like structure found under Lake Michigan",
+          "imageUrl": "http://static1.squarespace.com/static/6047d405b02148755fb6e601/6048ced520a7e841de365d50/63cef4b0af9e37402f16f234/1674571005211/michigan-stonehenge-4-1-672x372.jpg?format=1500w"
+        },
+        {
+          "id": "https://teaandtechtime.com/designing-my-very-own-asic-with-tiny-tapeout/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://teaandtechtime.com/designing-my-very-own-asic-with-tiny-tapeout/",
+          "publishedOn": "2023-01-25T20:33:46.000Z",
+          "wordCount": 3442,
+          "title": "Designing my own ASIC with tiny tapeout",
+          "imageUrl": "https://i0.wp.com/teaandtechtime.com/wp-content/uploads/2023/01/Screenshot-from-2022-11-09-15-29-23.png?fit=1200%2C578&ssl=1"
+        },
+        {
+          "id": "https://www.dispatch.com/story/business/2023/01/25/amazon-buys-hundreds-of-acres-in-new-albany-mum-on-what-it-plans/69833373007/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.dispatch.com/story/business/2023/01/25/amazon-buys-hundreds-of-acres-in-new-albany-mum-on-what-it-plans/69833373007/",
+          "publishedOn": "2023-01-25T20:29:34.000Z",
+          "wordCount": null,
+          "title": "Amazon acquires 400 acres near new Intel development in Ohio",
+          "imageUrl": null
+        },
+        {
+          "id": "https://www.nextplatform.com/2023/01/24/building-the-perfect-memory-bandwidth-beast/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.nextplatform.com/2023/01/24/building-the-perfect-memory-bandwidth-beast/",
+          "publishedOn": "2023-01-25T19:33:42.000Z",
+          "wordCount": 5309,
+          "title": "Building the perfect memory bandwidth beast",
+          "imageUrl": "http://www.nextplatform.com/wp-content/uploads/2021/10/memory-stricks-logo-scaled.jpg"
+        },
+        {
+          "id": "https://www.usenix.org/system/files/1311_05-08_mickens.pdf",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.usenix.org/system/files/1311_05-08_mickens.pdf",
+          "publishedOn": "2023-01-25T19:16:59.000Z",
+          "wordCount": 6816,
+          "title": "The Night Watch (2013) [pdf]",
+          "imageUrl": null
+        },
+        {
+          "id": "https://www.semafor.com/article/01/25/2023/how-amazon-turned-small-businesses-into-day-traders",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.semafor.com/article/01/25/2023/how-amazon-turned-small-businesses-into-day-traders",
+          "publishedOn": "2023-01-25T18:57:23.000Z",
+          "wordCount": 2158,
+          "title": "Amazon has radically transformed small businesses in both the U.S. and China",
+          "imageUrl": "https://img.semafor.com/2a9cb74158cf5f92b2e9a2af9a58b138d12e9e41-1279x962.png?rect=0,146,1279,671&w=1200&h=630&q=85&auto=format"
+        },
+        {
+          "id": "https://open-journey.github.io/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://open-journey.github.io/",
+          "publishedOn": "2023-01-25T18:36:57.000Z",
+          "wordCount": 853,
+          "title": "OpenJourney: Midjourney, but Open Source",
+          "imageUrl": null
+        },
+        {
+          "id": "https://basta.substack.com/p/the-absolute-audacity-of-apple-podcasts",
+          "author": null,
+          "description": "Comments",
+          "link": "https://basta.substack.com/p/the-absolute-audacity-of-apple-podcasts",
+          "publishedOn": "2023-01-25T18:13:18.000Z",
+          "wordCount": 3962,
+          "title": "The audacity of Apple Podcasts",
+          "imageUrl": "https://substackcdn.com/image/fetch/w_1200,h_600,c_limit,f_jpg,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F61a1fdc3-20a0-436a-9f32-c3b6850a7485_910x472.png"
+        },
+        {
+          "id": "https://en.wikipedia.org/wiki/Kaktovik_numerals",
+          "author": null,
+          "description": "Comments",
+          "link": "https://en.wikipedia.org/wiki/Kaktovik_numerals",
+          "publishedOn": "2023-01-25T17:23:00.000Z",
+          "wordCount": 2790,
+          "title": "Kaktovik Numerals",
+          "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Kaktovik_digit_table.svg/1200px-Kaktovik_digit_table.svg.png"
+        },
+        {
+          "id": "https://www.patterns.app/blog/2023/01/18/crunchbot-sql-analyst-gpt/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.patterns.app/blog/2023/01/18/crunchbot-sql-analyst-gpt/",
+          "publishedOn": "2023-01-25T17:20:57.000Z",
+          "wordCount": 2243,
+          "title": "Replacing a SQL analyst with 26 recursive GPT prompts",
+          "imageUrl": null
+        },
+        {
+          "id": "https://www.mattkeeter.com/blog/2023-01-25-branch/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.mattkeeter.com/blog/2023-01-25-branch/",
+          "publishedOn": "2023-01-25T16:41:11.000Z",
+          "wordCount": 1779,
+          "title": "Do not taunt happy fun branch predictor",
+          "imageUrl": null
+        },
+        {
+          "id": "https://www.jetnet.com/news/jetnet-acquires-ads-b-exchange.html",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.jetnet.com/news/jetnet-acquires-ads-b-exchange.html",
+          "publishedOn": "2023-01-25T16:31:56.000Z",
+          "wordCount": 1128,
+          "title": "Jetnet Acquires ADS-B Exchange, a community-fed ADSB aggregator",
+          "imageUrl": "https://www.jetnet.com/assets/opengraph/ADSBexchangePR_FB-7748f72e.jpg"
+        },
+        {
+          "id": "https://github.com/helloSystem/hello",
+          "author": null,
+          "description": "Comments",
+          "link": "https://github.com/helloSystem/hello",
+          "publishedOn": "2023-01-25T15:56:46.000Z",
+          "wordCount": 1321,
+          "title": "HelloSystem – OS with original Mac philosophy with a modern architecture",
+          "imageUrl": "https://opengraph.githubassets.com/2eac8503e75d9d919129dca607a8a9bb69c8fc0874b7c04f82ade64f91aa9562/helloSystem/hello"
+        },
+        {
+          "id": "https://automatisch.io/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://automatisch.io/",
+          "publishedOn": "2023-01-25T15:46:48.000Z",
+          "wordCount": 1632,
+          "title": "Show HN: Automatisch – Open source workflow automation, an alternative to Zapier",
+          "imageUrl": "https://automatisch.io/android-chrome-192x192.png"
+        },
+        {
+          "id": "https://huyenchip.com/2023/01/24/what-we-look-for-in-a-candidate.html",
+          "author": null,
+          "description": "Comments",
+          "link": "https://huyenchip.com/2023/01/24/what-we-look-for-in-a-candidate.html",
+          "publishedOn": "2023-01-25T15:22:45.000Z",
+          "wordCount": 3779,
+          "title": "What we look for in a resume",
+          "imageUrl": null
+        },
+        {
+          "id": "https://preshing.com/20150316/semaphores-are-surprisingly-versatile/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://preshing.com/20150316/semaphores-are-surprisingly-versatile/",
+          "publishedOn": "2023-01-25T15:19:10.000Z",
+          "wordCount": 2583,
+          "title": "Semaphores are surprisingly versatile (2015)",
+          "imageUrl": "https://preshing.com/images/sema-box-office.png"
+        },
+        {
+          "id": "https://www.nature.com/articles/d41586-023-00186-y",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.nature.com/articles/d41586-023-00186-y",
+          "publishedOn": "2023-01-25T14:38:03.000Z",
+          "wordCount": 3408,
+          "title": "Antidepressants help bacteria resist antibiotics: study",
+          "imageUrl": "https://media.nature.com/lw1024/magazine-assets/d41586-023-00186-y/d41586-023-00186-y_23945570.jpg"
+        },
+        {
+          "id": "https://www.extremetech.com/extreme/342413-us-marines-defeat-darpa-robot-by-hiding-under-a-cardboard-box",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.extremetech.com/extreme/342413-us-marines-defeat-darpa-robot-by-hiding-under-a-cardboard-box",
+          "publishedOn": "2023-01-25T14:00:43.000Z",
+          "wordCount": null,
+          "title": "US Marines defeat DARPA robot by hiding under a cardboard box",
+          "imageUrl": null
+        },
+        {
+          "id": "https://www.commandbar.com/blog/the-art-of-the-changelog",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.commandbar.com/blog/the-art-of-the-changelog",
+          "publishedOn": "2023-01-25T13:53:52.000Z",
+          "wordCount": 52669,
+          "title": "The Subtle Art of the Changelog",
+          "imageUrl": "https://commandbar.ghost.io/content/images/2022/12/cb-blog-performative-changelog-2.0.jpg"
+        },
+        {
+          "id": "https://billywojcicki.github.io/vexillologist/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://billywojcicki.github.io/vexillologist/",
+          "publishedOn": "2023-01-25T13:37:16.000Z",
+          "wordCount": 133,
+          "title": "Show HN: A simple world flags game, my first web dev project as a beginner",
+          "imageUrl": "./imessage-preview.png"
+        },
+        {
+          "id": "https://blog.chiselstrike.com/sqlite-based-databases-on-the-postgres-protocol-yes-we-can-358e61171d65",
+          "author": null,
+          "description": "Comments",
+          "link": "https://blog.chiselstrike.com/sqlite-based-databases-on-the-postgres-protocol-yes-we-can-358e61171d65",
+          "publishedOn": "2023-01-25T12:31:50.000Z",
+          "wordCount": 2981,
+          "title": "SQLite-based databases on the Postgres protocol",
+          "imageUrl": "https://miro.medium.com/max/1200/0*UOka05V50JLaTxn1"
+        },
+        {
+          "id": "https://fabiensanglard.net/mjolnir/index.html",
+          "author": null,
+          "description": "Comments",
+          "link": "https://fabiensanglard.net/mjolnir/index.html",
+          "publishedOn": "2023-01-25T11:12:59.000Z",
+          "wordCount": 713,
+          "title": "Mjolnir",
+          "imageUrl": null
+        },
+        {
+          "id": "http://www.motorsformakers.com/",
+          "author": null,
+          "description": "Comments",
+          "link": "http://www.motorsformakers.com/",
+          "publishedOn": "2023-01-25T10:21:12.000Z",
+          "wordCount": 400,
+          "title": "Motors for Makers: A Guide to Steppers, Servos, and Other Electrical Machines (2015)",
+          "imageUrl": null
+        },
+        {
+          "id": "https://querystorm.com/csharp-in-excel/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://querystorm.com/csharp-in-excel/",
+          "publishedOn": "2023-01-25T09:39:30.000Z",
+          "wordCount": null,
+          "title": "Show HN: I've built a C# IDE, Runtime, and AppStore inside Excel",
+          "imageUrl": null
+        },
         {
           "id": "https://github.blog/2020-05-20-three-bugs-in-the-go-mysql-driver/",
           "author": null,
@@ -8697,286 +8957,6 @@
           "wordCount": 1687,
           "title": "Visually symmetric words",
           "imageUrl": null
-        },
-        {
-          "id": "https://github.com/microfeed/microfeed",
-          "author": null,
-          "description": "Comments",
-          "link": "https://github.com/microfeed/microfeed",
-          "publishedOn": "2022-12-27T11:42:00.000Z",
-          "wordCount": 2530,
-          "title": "Show HN: Self-hosted CMS on serverless Cloudflare",
-          "imageUrl": "https://repository-images.githubusercontent.com/266677657/b8b62eb5-5d1c-4950-82c9-cf7abc4c48a7"
-        },
-        {
-          "id": "https://dogapi.dog/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://dogapi.dog/",
-          "publishedOn": "2022-12-27T10:23:03.000Z",
-          "wordCount": 316,
-          "title": "Show HN: Dog API",
-          "imageUrl": "https://dogapi.dog/assets/social-b1f7d983a34ffe8d424d7272e675e139184a7285f85d1163614c61d7228a38d6.jpg"
-        },
-        {
-          "id": "https://news.ycombinator.com/item?id=34146397",
-          "author": null,
-          "description": "Comments",
-          "link": "https://news.ycombinator.com/item?id=34146397",
-          "publishedOn": "2022-12-27T08:04:56.000Z",
-          "wordCount": 2833,
-          "title": "Ask HN: Elevator Pitch for a Polymath?",
-          "imageUrl": null
-        },
-        {
-          "id": "https://partytown.builder.io/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://partytown.builder.io/",
-          "publishedOn": "2022-12-27T06:29:43.000Z",
-          "wordCount": 1081,
-          "title": "Run Third-Party Scripts from a Web Worker",
-          "imageUrl": "https://partytown.builder.io/partytown-media.png"
-        },
-        {
-          "id": "https://coreform.com/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://coreform.com/",
-          "publishedOn": "2022-12-27T06:03:28.000Z",
-          "wordCount": 332,
-          "title": "FEA Solver that doesn't need defeaturing",
-          "imageUrl": "https://coreform.com/images/coreform-logo-transparent.png"
-        },
-        {
-          "id": "https://www.onxmaps.com/onx-access-initiatives/corner-crossing-report",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.onxmaps.com/onx-access-initiatives/corner-crossing-report",
-          "publishedOn": "2022-12-27T00:11:58.000Z",
-          "wordCount": 4722,
-          "title": "6M Acres of Public Land in the US West Are Corner-Locked",
-          "imageUrl": "https://www.onxmaps.com/wp-content/uploads/sites/1/2022/04/Corner-locked_Featured.jpg"
-        },
-        {
-          "id": "https://observablehq.com/@mjbo/sydney-qms-panel-public-telephone-pairings",
-          "author": null,
-          "description": "Comments",
-          "link": "https://observablehq.com/@mjbo/sydney-qms-panel-public-telephone-pairings",
-          "publishedOn": "2022-12-26T23:57:37.000Z",
-          "wordCount": 1745,
-          "title": "Show HN: How many advertising panels in Sydney are near a public telephone?",
-          "imageUrl": "https://static.observableusercontent.com/thumbnail/87edbb3b0bdba52d702d742dbf078f571acd6c6eb9f84edc542c5cdc53024842.jpg"
-        },
-        {
-          "id": "https://www.nytimes.com/2022/12/20/science/archaeology-bible-geomagnetism.html",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.nytimes.com/2022/12/20/science/archaeology-bible-geomagnetism.html",
-          "publishedOn": "2022-12-26T23:56:38.000Z",
-          "wordCount": null,
-          "title": "Archaeologists devise a better clock for Biblical times",
-          "imageUrl": null
-        },
-        {
-          "id": "https://www.rigsofrods.org/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.rigsofrods.org/",
-          "publishedOn": "2022-12-26T23:32:51.000Z",
-          "wordCount": 15,
-          "title": "Rigs of Rods: free and open source vehicle simulator that uses soft-body physics",
-          "imageUrl": "https://cdn.rigsofrods.org/data/assets/og/RoR_2021_02.png"
-        },
-        {
-          "id": "https://memex.marginalia.nu/log/69-creepy-website-similarity.gmi",
-          "author": null,
-          "description": "Comments",
-          "link": "https://memex.marginalia.nu/log/69-creepy-website-similarity.gmi",
-          "publishedOn": "2022-12-26T23:30:41.000Z",
-          "wordCount": 990,
-          "title": "Creepy Website Similarity",
-          "imageUrl": null
-        },
-        {
-          "id": "https://github.com/corkami/pics/blob/master/binary/README.md",
-          "author": null,
-          "description": "Comments",
-          "link": "https://github.com/corkami/pics/blob/master/binary/README.md",
-          "publishedOn": "2022-12-26T22:04:33.000Z",
-          "wordCount": 532,
-          "title": "Binary Posters",
-          "imageUrl": "https://opengraph.githubassets.com/90d6e6b1247ff856d6c7d184577c61da9f3e9932c864808b201b14bafe3dc75d/corkami/pics"
-        },
-        {
-          "id": "https://jasmcole.com/2022/02/10/losing-it/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://jasmcole.com/2022/02/10/losing-it/",
-          "publishedOn": "2022-12-26T21:39:53.000Z",
-          "wordCount": 3298,
-          "title": "Are You Really Losing Weight?",
-          "imageUrl": "https://jasmcole.files.wordpress.com/2022/02/theory-2-2.png"
-        },
-        {
-          "id": "https://alexsidorenko.com/blog/useeffect/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://alexsidorenko.com/blog/useeffect/",
-          "publishedOn": "2022-12-26T21:37:47.000Z",
-          "wordCount": 977,
-          "title": "A Visual Guide to React's useEffect",
-          "imageUrl": "https://alexsidorenko.com/og/useeffect.png"
-        },
-        {
-          "id": "https://www.battlefields.org/learn/articles/how-france-helped-win-american-revolution",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.battlefields.org/learn/articles/how-france-helped-win-american-revolution",
-          "publishedOn": "2022-12-26T21:34:27.000Z",
-          "wordCount": 3249,
-          "title": "The Tipping Point: How France Changed the Tides of the American Revolution",
-          "imageUrl": "https://www.battlefields.org/sites/default/files/styles/social_media/public/master-pnp-pga-01500-01591u.jpg?h=e7ec504f&itok=JU8TAMQ9"
-        },
-        {
-          "id": "https://github.com/rui314/mold/releases/tag/v1.8.0",
-          "author": null,
-          "description": "Comments",
-          "link": "https://github.com/rui314/mold/releases/tag/v1.8.0",
-          "publishedOn": "2022-12-26T21:09:11.000Z",
-          "wordCount": 1063,
-          "title": "Mold linker: targeting macOS/iOS now requires a commercial license",
-          "imageUrl": "https://opengraph.githubassets.com/5c601150ca3991d722be664c3ce68bcdadaa5364c0843cfc1eefa5d02d32cc81/rui314/mold/releases/tag/v1.8.0"
-        },
-        {
-          "id": "https://www.eseller365.com/ebay-etsy-inform-act-hidden-spending-bill/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.eseller365.com/ebay-etsy-inform-act-hidden-spending-bill/",
-          "publishedOn": "2022-12-26T20:38:19.000Z",
-          "wordCount": 5438,
-          "title": "eBay, Etsy and other marketplaces on brink of having to disclose seller details",
-          "imageUrl": "https://www.eseller365.com/wp-content/uploads/2022/12/stack-legislation-inform-act.jpg"
-        },
-        {
-          "id": "https://medium.com/@AnalyticsAtMeta/notifications-why-less-is-more-how-facebook-has-been-increasing-both-user-satisfaction-and-app-9463f7325e7d",
-          "author": null,
-          "description": "Comments",
-          "link": "https://medium.com/@AnalyticsAtMeta/notifications-why-less-is-more-how-facebook-has-been-increasing-both-user-satisfaction-and-app-9463f7325e7d",
-          "publishedOn": "2022-12-26T18:54:34.000Z",
-          "wordCount": 4333,
-          "title": "Facebook increased satisfaction and usage by sending fewer notifications",
-          "imageUrl": "https://miro.medium.com/max/960/1*VswDJMSLW4hgFz-0r0rvQg.png"
-        },
-        {
-          "id": "https://dioxuslabs.com/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://dioxuslabs.com/",
-          "publishedOn": "2022-12-26T18:16:46.000Z",
-          "wordCount": 155,
-          "title": "Dioxus: User interfaces that run anywhere",
-          "imageUrl": "https://dioxuslabs.com/static/opengraph.png"
-        },
-        {
-          "id": "https://www.cryptomuseum.com/spy/ddr2/index.htm",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.cryptomuseum.com/spy/ddr2/index.htm",
-          "publishedOn": "2022-12-26T18:02:04.000Z",
-          "wordCount": 5746,
-          "title": "DDR Type 2 – Short-wave spy transmitter",
-          "imageUrl": null
-        },
-        {
-          "id": "https://www.aneventapart.com/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.aneventapart.com/",
-          "publishedOn": "2022-12-26T17:55:58.000Z",
-          "wordCount": 335,
-          "title": "An Event Apart – Farewell",
-          "imageUrl": ""
-        },
-        {
-          "id": "https://tabledit.com/index.shtml",
-          "author": null,
-          "description": "Comments",
-          "link": "https://tabledit.com/index.shtml",
-          "publishedOn": "2022-12-26T16:54:09.000Z",
-          "wordCount": 644,
-          "title": "TablEdit – Music Tablature Editor",
-          "imageUrl": null
-        },
-        {
-          "id": "https://github.com/wanjohiryan/qwantify",
-          "author": null,
-          "description": "Comments",
-          "link": "https://github.com/wanjohiryan/qwantify",
-          "publishedOn": "2022-12-26T16:45:20.000Z",
-          "wordCount": 1190,
-          "title": "Qwantify",
-          "imageUrl": "https://opengraph.githubassets.com/933a859e6947f65362d54929b42fd61bd7eb7a696d670b9adb70ba1a384920df/wanjohiryan/qwantify"
-        },
-        {
-          "id": "https://fediscience.org/@ct_bergstrom/109571409346371116",
-          "author": null,
-          "description": "Comments",
-          "link": "https://fediscience.org/@ct_bergstrom/109571409346371116",
-          "publishedOn": "2022-12-26T16:27:11.000Z",
-          "wordCount": 116,
-          "title": "How to Befriend Crows",
-          "imageUrl": "https://fediscience.org/system/media_attachments/files/109/571/407/059/801/478/original/25ae1523bb9dba68.jpeg"
-        },
-        {
-          "id": "https://www.aljazeera.com/news/2022/12/26/inside-the-library-where-you-can-read-in-two-countries-at-once",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.aljazeera.com/news/2022/12/26/inside-the-library-where-you-can-read-in-two-countries-at-once",
-          "publishedOn": "2022-12-26T16:12:10.000Z",
-          "wordCount": 1891,
-          "title": "The US-Canada border cuts through the Haskell Free Library and Opera House",
-          "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2022/12/PXL_20221213_154814675.jpg?resize=1920%2C1440"
-        },
-        {
-          "id": "https://www.bath.ac.uk/announcements/social-media-may-prevent-users-from-reaping-creative-rewards-of-profound-boredom-new-research/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.bath.ac.uk/announcements/social-media-may-prevent-users-from-reaping-creative-rewards-of-profound-boredom-new-research/",
-          "publishedOn": "2022-12-26T15:10:52.000Z",
-          "wordCount": 853,
-          "title": "Social media may prevent users from reaping creative rewards of profound boredom",
-          "imageUrl": null
-        },
-        {
-          "id": "https://arstechnica.com/gadgets/2022/10/windows-95-went-the-extra-mile-to-ensure-compatibility-of-simcity-other-games/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://arstechnica.com/gadgets/2022/10/windows-95-went-the-extra-mile-to-ensure-compatibility-of-simcity-other-games/",
-          "publishedOn": "2022-12-26T14:53:04.000Z",
-          "wordCount": 1999,
-          "title": "Windows 95 went the extra mile to ensure compatibility of SimCity, other games",
-          "imageUrl": "https://cdn.arstechnica.net/wp-content/uploads/2022/10/8350168815_dd3c4cb302_o-760x380.jpg"
-        },
-        {
-          "id": "https://borretti.me/article/unbundling-tools-for-thought",
-          "author": null,
-          "description": "Comments",
-          "link": "https://borretti.me/article/unbundling-tools-for-thought",
-          "publishedOn": "2022-12-26T14:17:24.000Z",
-          "wordCount": 3383,
-          "title": "Unbundling Tools for Thought",
-          "imageUrl": "https://borretti.me/assets/card/unbundling-tools-for-thought.png"
-        },
-        {
-          "id": "https://hyperview.org/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://hyperview.org/",
-          "publishedOn": "2022-12-26T13:17:13.000Z",
-          "wordCount": 339,
-          "title": "Hyperview: Native mobile apps, as easy as creating a website",
-          "imageUrl": "https://hyperview.org/img/icon.png"
         }
       ]
     }
