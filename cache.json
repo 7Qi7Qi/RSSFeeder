@@ -12,6 +12,16 @@
       "siteUrl": "http://weekly.dockone.io",
       "articles": [
         {
+          "id": "http://weekly.dockone.io/article/2434949",
+          "author": "frankinbj",
+          "description": "分布式计算的谬误是由L Peter Deutsch和Sun Microsystems公司的其他人所提出的一组断言，他们描述了不熟悉分布式应用程序的程序员总是会做出的一些错误的假设。\n微服务的大规模普及迫使越来越多的工程师意识到这些错误的认识给他们的系统带来多么大的影响。\n我们经常会看到一些人在讨论系统设计的时候，忽视或者淡化这8个谬误。\n\n\n\n下面我来介绍一下这些谬误以及一些潜在的消减措施，希望大家能感兴趣。\n网络是可靠的\n\n\n\n\n为了构建一个可靠的系统，你必须理解并接受任何一种通信都可能会失败的事实。因此，我们需要为系统设计出一种方法来处理这种潜在的错误沟通。所以，最终需要用到重传，而且它可以有多种形式。\n存储再转发（store and forward）就是这样一种模型。我们不直接将数据发送到下游服务器，而是将其存储在本地或其他地方，这也提供了能从灾难场景下恢复的保障。\n有很多产品属于这种技术，如RabbitMQ，ActiveMQ以及来自云厂商的各种专有解决方案。\n网络是零延迟的\n\n\n\n\n图片的左边是在现代系统中直接访问内存的时间，右边是在世界各地往返所需的时间。\n我喜欢把延迟看作是完成任何请求的严格开销。传递的消息可以很大，也可以很小，而延迟是不变的。与带宽不同，延迟通常与光速和通信距离（或物理路径）有关。所以两个系统之间的物理距离在这里起着重要的作用。\n延迟是无处不在的。它发生在所有的通讯中。理想情况下，这种开销应该尽可能小。延迟的场景和从车上卸货非常相似，就是说，从厨房到车上的时间就是延迟。你是想一趟尽可能多地拿东西，还是想每次只拿一个东西，花几百次往返把车上的东西都卸下来？\n带宽是无限的\n\n\n\n\n假设持续无限制地增加信道上的数据大小，这显然是个很大的错误。这种情况只有在某种通讯彻底占满带宽与此同时无法扩容时才会出现。\n我第一次遇到这个问题是我不小心将主页所需的有效…",
+          "link": "http://weekly.dockone.io/article/2434949",
+          "publishedOn": "2023-01-30T01:04:11.438Z",
+          "wordCount": null,
+          "title": "图说分布式计算的8大谬误",
+          "imageUrl": null
+        },
+        {
           "id": "http://weekly.dockone.io/article/2434953",
           "author": "frankinbj",
           "description": "[作为一名技术人员，我热衷于讨论技术。随着讨论的进行，经常会有如下的对比，例如JVM vs. Net， JAVA vs. Kotlin， Go vs. Rust，Maven vs. 不能说的那个， 等等。随之，我们会经常深陷我们所热衷的那款技术的优缺点的泥潭，讨论了几个小时也不能达成共识。\n“我想要一套Drupal”\n需不需要.env文件\n很多问题并不需要微服务来解决\n技术支持也要对问题产生疑问\n五个为什么\nhttps://en.wikipedia.org/wiki/Five_whys\n结论\n最初于2022年10月23日在Java极客上发布\nhttps://itnext.io/discuss-prob ... c8f38",
@@ -90,16 +100,6 @@
           "wordCount": null,
           "title": "12因素应用方法重新审视",
           "imageUrl": null
-        },
-        {
-          "id": "http://weekly.dockone.io/article/2434945",
-          "author": "w9527",
-          "description": "什么是 Redis？\nRedis（“REmote DIctionary Service”）是一个开源的键值对数据库服务器。\nRedis 更准确的描述是一个数据结构服务器。Redis 的这种特殊性质让它在开发人员中很受欢迎。\n\n\n\nRedis不是通过迭代或者排序方式处理数据，而是一开始就按照数据结构方式组织。早期，它的使用很像 Memcached，但随着 Redis 的改进，它在许多其他用例中变得可行，包括发布-订阅机制、流（streaming）和队列。\n\n\n\n主要来说，Redis 是一个内存数据库，用作另一个“真实”数据库（如 MySQL 或 PostgreSQL）前面的缓存，以帮助提高应用程序性能。它通过利用内存的高速访问速度，从而减轻核心应用程序数据库的负载，例如：\n不经常更改且经常被请求的数据\n任务关键性较低且经常变动的数据\n\n上述数据的示例可以包括会话或数据缓存以及仪表板的排行榜或汇总分析。\n\n\n\n但是，对于许多用例场景，Redis 都可以提供足够的保证，可以将其用作成熟的主数据库。再加上 Redis 插件及其各种高可用性（HA）设置，Redis 作为数据库对于某些场景和工作负载变得非常有用。\n另一个重要方面是 Redis 模糊了缓存和数据存储之间的界限。这里要理解的重要一点是，相比于使用 SSD 或 HDD 作为存储的传统数据库，读取和操作内存中数据的速度要快得多。\n\n\n\n最初，Redis 最常被比作 Memcached，后者当时缺乏任何非易失性持久化。\n这是当前两个缓存之间的功能细分。\n\n\n\n虽然现在拥有多种配置方式将数据持久化到磁盘，但当时首次引入持久化时，Redis 是使用快照方式，通过异步拷贝内存中的数据方式来做持久化。不幸的是，这种机制的缺点是可能会在快照之间丢失数据。\nRedis 自 2009 年成立到现在已经变的很成熟。我们将介绍它的大部分架构和拓扑…",
-          "link": "http://weekly.dockone.io/article/2434945",
-          "publishedOn": "2022-12-31T01:03:28.619Z",
-          "wordCount": null,
-          "title": "深入理解 Redis",
-          "imageUrl": null
         }
       ]
     },
@@ -108,6 +108,286 @@
       "feedUrl": "https://news.ycombinator.com/rss",
       "siteUrl": "https://news.ycombinator.com/",
       "articles": [
+        {
+          "id": "https://news.ycombinator.com/item?id=34574114",
+          "author": null,
+          "description": "Comments",
+          "link": "https://news.ycombinator.com/item?id=34574114",
+          "publishedOn": "2023-01-29T23:57:24.000Z",
+          "wordCount": 2330,
+          "title": "Ask HN: Do you feel psychological safety at your job?",
+          "imageUrl": null
+        },
+        {
+          "id": "https://www.health.harvard.edu/mens-health/ejaculation_frequency_and_prostate_cancer",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.health.harvard.edu/mens-health/ejaculation_frequency_and_prostate_cancer",
+          "publishedOn": "2023-01-29T23:20:50.000Z",
+          "wordCount": 1510,
+          "title": "Ejaculation Frequency and Prostate Cancer",
+          "imageUrl": "https://domf5oio6qrcr.cloudfront.net/medialibrary/12204/conversions/f86a066e-c12a-48c4-ab33-a86bb871b8e6-thumb.jpg"
+        },
+        {
+          "id": "https://www.mickmel.com/the-customer-is-always-right-in-matters-of-taste/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.mickmel.com/the-customer-is-always-right-in-matters-of-taste/",
+          "publishedOn": "2023-01-29T23:14:31.000Z",
+          "wordCount": 2028,
+          "title": "The customer is always right in matters of taste",
+          "imageUrl": "https://www.mickmel.com/wp-content/uploads/2021/08/maxresdefault-1.jpg"
+        },
+        {
+          "id": "https://faultlore.com/blah/swift-abi/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://faultlore.com/blah/swift-abi/",
+          "publishedOn": "2023-01-29T22:39:18.000Z",
+          "wordCount": 6232,
+          "title": "Swift Achieved Dynamic Linking Where Rust Couldn't",
+          "imageUrl": "https://gankra.github.io/blah/img/error-base.png"
+        },
+        {
+          "id": "https://news.ycombinator.com/item?id=34572912",
+          "author": null,
+          "description": "Comments",
+          "link": "https://news.ycombinator.com/item?id=34572912",
+          "publishedOn": "2023-01-29T21:24:57.000Z",
+          "wordCount": 2553,
+          "title": "Ask HN: How can I get into cyber security research?",
+          "imageUrl": null
+        },
+        {
+          "id": "http://www.rampant.org/doors/linux-doors.pdf",
+          "author": null,
+          "description": "Comments",
+          "link": "http://www.rampant.org/doors/linux-doors.pdf",
+          "publishedOn": "2023-01-29T20:41:37.000Z",
+          "wordCount": 6689,
+          "title": "An Implementation of the Solaris Doors API for Linux (1998) [pdf]",
+          "imageUrl": null
+        },
+        {
+          "id": "https://build-your-own.org/blog/20230127_byor/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://build-your-own.org/blog/20230127_byor/",
+          "publishedOn": "2023-01-29T20:18:56.000Z",
+          "wordCount": 1778,
+          "title": "The “Build Your Own Redis” Book Is Completed",
+          "imageUrl": "https://build-your-own.org/byo_logo_256.png"
+        },
+        {
+          "id": "https://www.gimp.org/news/2023/01/29/2022-annual-report/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.gimp.org/news/2023/01/29/2022-annual-report/",
+          "publishedOn": "2023-01-29T20:05:34.000Z",
+          "wordCount": 2731,
+          "title": "GIMP's 2022 Annual Report",
+          "imageUrl": "https://www.gimp.org/news/2023/01/29/2022-annual-report//GIMP-2023-january-report.jpg"
+        },
+        {
+          "id": "https://hut.pm/nanogpt.html",
+          "author": null,
+          "description": "Comments",
+          "link": "https://hut.pm/nanogpt.html",
+          "publishedOn": "2023-01-29T20:02:33.000Z",
+          "wordCount": 1499,
+          "title": "Training NanoGPT on My Journal",
+          "imageUrl": null
+        },
+        {
+          "id": "https://kernelsu.org/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://kernelsu.org/",
+          "publishedOn": "2023-01-29T19:54:55.000Z",
+          "wordCount": 91,
+          "title": "KernelSU: A kernel-based root solution for Android",
+          "imageUrl": null
+        },
+        {
+          "id": "https://www.airgradient.com/open-airgradient/instructions/diy-pro-v37/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.airgradient.com/open-airgradient/instructions/diy-pro-v37/",
+          "publishedOn": "2023-01-29T19:42:30.000Z",
+          "wordCount": 2675,
+          "title": "AirGradient Open Source Air Quality Monitor for CO2 and PM2.5 Measurements",
+          "imageUrl": null
+        },
+        {
+          "id": "https://gizmodo.com/tiktok-china-byte-dance-ban-viral-videos-privacy-1850034366",
+          "author": null,
+          "description": "Comments",
+          "link": "https://gizmodo.com/tiktok-china-byte-dance-ban-viral-videos-privacy-1850034366",
+          "publishedOn": "2023-01-29T19:19:52.000Z",
+          "wordCount": 5441,
+          "title": "Nationwide Ban on TikTok Inches Closer to Reality",
+          "imageUrl": "https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_675,pg_1,q_80,w_1200/56588556a8c47c096ba0b7070a5c3042.jpg"
+        },
+        {
+          "id": "https://www.ll.mit.edu/sites/default/files/other/doc/2022-09/TVO_Technology_Highlight_41_Toroidal_Propeller.pdf",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.ll.mit.edu/sites/default/files/other/doc/2022-09/TVO_Technology_Highlight_41_Toroidal_Propeller.pdf",
+          "publishedOn": "2023-01-29T19:12:51.000Z",
+          "wordCount": 29600,
+          "title": "Toroidal propeller allows a drone to operate more quietly [pdf]",
+          "imageUrl": null
+        },
+        {
+          "id": "https://djharper.dev/post/2023/01/29/intercepting-t.co-links-using-dns-rewrites/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://djharper.dev/post/2023/01/29/intercepting-t.co-links-using-dns-rewrites/",
+          "publishedOn": "2023-01-29T19:01:40.000Z",
+          "wordCount": 958,
+          "title": "Intercepting t.co links using DNS rewrites",
+          "imageUrl": null
+        },
+        {
+          "id": "http://mhpo.woz.com/letters/",
+          "author": null,
+          "description": "Comments",
+          "link": "http://mhpo.woz.com/letters/",
+          "publishedOn": "2023-01-29T18:37:28.000Z",
+          "wordCount": 6763,
+          "title": "Steve Wozniak's Letters",
+          "imageUrl": null
+        },
+        {
+          "id": "https://www.cnn.com/2023/01/29/health/surgeon-general-social-media/index.html",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.cnn.com/2023/01/29/health/surgeon-general-social-media/index.html",
+          "publishedOn": "2023-01-29T18:17:25.000Z",
+          "wordCount": 18492,
+          "title": "Surgeon General says 13 is ‘too early’ to join social media",
+          "imageUrl": "https://media.cnn.com/api/v1/images/stellar/prod/230129092804-surgeon-general-social-media-cnn.jpg?c=16x9&q=w_800,c_fill"
+        },
+        {
+          "id": "https://commsrisk.com/fcc-threatens-to-disconnect-twilio-for-illegal-robocalls/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://commsrisk.com/fcc-threatens-to-disconnect-twilio-for-illegal-robocalls/",
+          "publishedOn": "2023-01-29T17:02:59.000Z",
+          "wordCount": 61056,
+          "title": "FCC threatens to disconnect Twilio for illegal robocalls",
+          "imageUrl": "https://commsrisk.com/wp-content/uploads/2022/01/phone-warning-message.jpg"
+        },
+        {
+          "id": "https://www.schedium.net/2023/01/the-window-trick-of-las-vegas-hotels.html",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.schedium.net/2023/01/the-window-trick-of-las-vegas-hotels.html",
+          "publishedOn": "2023-01-29T14:52:14.000Z",
+          "wordCount": 6902,
+          "title": "The window trick of Las Vegas hotels",
+          "imageUrl": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjLMpMXY9UOL6DiCVJ8Bam3B2_kGObLKcMQv2maA1xl3-5JLMpXlBNFVQ7xkMypQviDbD7PLwe1qIqZRfGdRDj7cDREZ23R30-6N-fJp2AX9ntX8waEDVrwFX-GUQcJby6UfBSemYpS9tnYyuhzjEixec8YWurOcTs_fctc7GfTvIVCJLZCeSxkyiRVXQ/w1200-h630-p-k-no-nu/Interior_of_the_Yick_Cheong_Building_November_2016.jpg"
+        },
+        {
+          "id": "https://github.com/Vexu/bog",
+          "author": null,
+          "description": "Comments",
+          "link": "https://github.com/Vexu/bog",
+          "publishedOn": "2023-01-29T13:18:53.000Z",
+          "wordCount": 1225,
+          "title": "Bog – small, strongly typed, embeddable language",
+          "imageUrl": "https://opengraph.githubassets.com/7a574863be08b096540f2d7f9a5bb2c2bcc67bb11df02f4a566aff504fc2e6ee/Vexu/bog"
+        },
+        {
+          "id": "https://8020.net/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://8020.net/",
+          "publishedOn": "2023-01-29T12:03:43.000Z",
+          "wordCount": 5209,
+          "title": "80/20 Aluminum T-slot Building Systems – Build your Idea",
+          "imageUrl": null
+        },
+        {
+          "id": "https://radiooooo.com/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://radiooooo.com/",
+          "publishedOn": "2023-01-29T10:08:35.000Z",
+          "wordCount": 98,
+          "title": "Radiooooo, the Musical Time Machine",
+          "imageUrl": null
+        },
+        {
+          "id": "https://lilianweng.github.io/posts/2023-01-27-the-transformer-family-v2/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://lilianweng.github.io/posts/2023-01-27-the-transformer-family-v2/",
+          "publishedOn": "2023-01-29T09:07:00.000Z",
+          "wordCount": 19613,
+          "title": "The Transformer Family",
+          "imageUrl": null
+        },
+        {
+          "id": "https://borretti.me/article/roam-twenty-years-before-roam",
+          "author": null,
+          "description": "Comments",
+          "link": "https://borretti.me/article/roam-twenty-years-before-roam",
+          "publishedOn": "2023-01-29T08:56:55.000Z",
+          "wordCount": 326,
+          "title": "Roam, Twenty Years Before Roam",
+          "imageUrl": "https://borretti.me/assets/card/roam-twenty-years-before-roam.png"
+        },
+        {
+          "id": "https://www.youtube.com/watch?v=IOltGIaDPlY",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.youtube.com/watch?v=IOltGIaDPlY",
+          "publishedOn": "2023-01-29T08:36:29.000Z",
+          "wordCount": null,
+          "title": "Living alone in the wild Siberian forest",
+          "imageUrl": null
+        },
+        {
+          "id": "https://pub.towardsai.net/build-chatgpt-like-chatbots-with-customized-knowledge-for-your-websites-using-simple-programming-f393206c6626",
+          "author": null,
+          "description": "Comments",
+          "link": "https://pub.towardsai.net/build-chatgpt-like-chatbots-with-customized-knowledge-for-your-websites-using-simple-programming-f393206c6626",
+          "publishedOn": "2023-01-29T08:30:14.000Z",
+          "wordCount": 6143,
+          "title": "Build ChatGPT like chatbots on your website",
+          "imageUrl": "https://miro.medium.com/max/768/1*evsFIEVj7qXT1XIkMhnuVg.png"
+        },
+        {
+          "id": "https://www.atlasobscura.com/articles/italian-futurist-pasta",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.atlasobscura.com/articles/italian-futurist-pasta",
+          "publishedOn": "2023-01-29T05:00:10.000Z",
+          "wordCount": 6172,
+          "title": "The Sauce That Survived Italy’s War on Pasta",
+          "imageUrl": "https://img.atlasobscura.com/RVRGqF2LAZIyVcOyaGp-Se0x_wvmKyjjXieXvwL5O1g/rt:fit/w:600/q:81/sm:1/scp:1/ar:1/aHR0cHM6Ly9hdGxh/cy1kZXYuczMuYW1h/em9uYXdzLmNvbS91/cGxvYWRzL2Fzc2V0/cy8wNjIwYTA3YWIx/ZWU1NGU3MTlfaXRh/bHkgcGFzdGEgd2Fy/X3N1Z28gbWFyaW5l/dHRpIDEuanBn.jpg"
+        },
+        {
+          "id": "http://www.lispme.de/lispme/index_en.html",
+          "author": null,
+          "description": "Comments",
+          "link": "http://www.lispme.de/lispme/index_en.html",
+          "publishedOn": "2023-01-29T02:08:15.000Z",
+          "wordCount": 235,
+          "title": "LispMe – the Scheme system for PalmOS (2008)",
+          "imageUrl": null
+        },
+        {
+          "id": "https://github.com/SirMangler/dolphin/releases",
+          "author": null,
+          "description": "Comments",
+          "link": "https://github.com/SirMangler/dolphin/releases",
+          "publishedOn": "2023-01-29T01:21:08.000Z",
+          "wordCount": 1610,
+          "title": "Dolphin Emulator for Xbox UWP",
+          "imageUrl": "https://opengraph.githubassets.com/5449560e96b478e47cf9f07b41c000009e73d05add50a3415905df68e50cfbe8/SirMangler/dolphin"
+        },
         {
           "id": "https://browser.kagi.com/",
           "author": null,
@@ -157,6 +437,16 @@
           "wordCount": 1836,
           "title": "What Are 'Dark Factories,' and Do They Exist?",
           "imageUrl": "https://grainger-prod.adobecqms.net/content/dam/grainger/gus/en/public/digital-tactics/know-how/hero/SS-KH_what-is-a-dark-factory_KH-HRO.jpg"
+        },
+        {
+          "id": "https://www.nytimes.com/2023/01/28/world/australia/australia-radioactive-capsule.html",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.nytimes.com/2023/01/28/world/australia/australia-radioactive-capsule.html",
+          "publishedOn": "2023-01-28T18:57:49.000Z",
+          "wordCount": null,
+          "title": "Australians scour desert for dangerous radioactive capsule smaller than a penny",
+          "imageUrl": null
         },
         {
           "id": "https://gilslotd.com/blog/features_id_postgresql",
@@ -8687,246 +8977,6 @@
           "wordCount": 954,
           "title": "The Power of Starting Again",
           "imageUrl": "https://efresources.s3.amazonaws.com/eric.jpg"
-        },
-        {
-          "id": "https://aeon.co/essays/the-first-americans-a-story-of-wonderful-uncertain-science",
-          "author": null,
-          "description": "Comments",
-          "link": "https://aeon.co/essays/the-first-americans-a-story-of-wonderful-uncertain-science",
-          "publishedOn": "2022-12-31T12:44:10.000Z",
-          "wordCount": 13891,
-          "title": "Archaeology and genetics can’t yet agree on when humans arrived in the Americas",
-          "imageUrl": "https://omicron.aeon.co/images/6eae7c81-732c-42d3-9930-18289dfd950d/header_essay-final-image_8953e-white-sands-footprints.jpg"
-        },
-        {
-          "id": "https://www.historyhit.com/culture/dinner-for-one/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.historyhit.com/culture/dinner-for-one/",
-          "publishedOn": "2022-12-31T11:34:53.000Z",
-          "wordCount": 2801,
-          "title": "Dinner for one: A little-known British comedy famous in Germany",
-          "imageUrl": "https://www.historyhit.com/app/uploads/2022/12/Dinner-For-One-Cover-Image.jpg"
-        },
-        {
-          "id": "https://www.wsj.com/articles/wage-inequality-may-be-starting-to-reverse-11672339062",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.wsj.com/articles/wage-inequality-may-be-starting-to-reverse-11672339062",
-          "publishedOn": "2022-12-31T00:24:33.000Z",
-          "wordCount": 7276,
-          "title": "Wage inequality may be starting to reverse",
-          "imageUrl": "https://images.wsj.net/im-693692/social"
-        },
-        {
-          "id": "https://thecolumn.substack.com/p/southwest-airlines-christmas-meltdown",
-          "author": null,
-          "description": "Comments",
-          "link": "https://thecolumn.substack.com/p/southwest-airlines-christmas-meltdown",
-          "publishedOn": "2022-12-30T23:58:41.000Z",
-          "wordCount": 4498,
-          "title": "SouthwestAirlines' Meltdown Shows How Corporations Pit Consumers Against Workers",
-          "imageUrl": "https://substackcdn.com/image/fetch/w_1200,h_600,c_limit,f_jpg,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F704fe5c8-8d48-4b61-92ab-19ce409f74c2_2564x1522.png"
-        },
-        {
-          "id": "https://www.quantamagazine.org/how-claude-shannons-information-theory-invented-the-future-20201222/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.quantamagazine.org/how-claude-shannons-information-theory-invented-the-future-20201222/",
-          "publishedOn": "2022-12-30T23:16:23.000Z",
-          "wordCount": 6379,
-          "title": "Claude Shannon’s research laid foundations for modern communications (2020)",
-          "imageUrl": "https://d2r55xnwy6nx47.cloudfront.net/uploads/2020/12/Claude-Shannon_1200_social.jpg"
-        },
-        {
-          "id": "https://github.com/punnerud/rgcosm",
-          "author": null,
-          "description": "Comments",
-          "link": "https://github.com/punnerud/rgcosm",
-          "publishedOn": "2022-12-30T22:45:50.000Z",
-          "wordCount": 734,
-          "title": "RGCosm – Reverse Geocode for OpenStreetmap",
-          "imageUrl": "https://opengraph.githubassets.com/36e873b68e7a9fcf56c2862dd1c1eebfdac15eb9b6288cdd04ef7a2b8a032518/punnerud/rgcosm"
-        },
-        {
-          "id": "https://www.kqed.org/mindshift/60624/young-adults-are-struggling-with-their-mental-health-is-more-childhood-independence-the-answer",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.kqed.org/mindshift/60624/young-adults-are-struggling-with-their-mental-health-is-more-childhood-independence-the-answer",
-          "publishedOn": "2022-12-30T22:40:10.000Z",
-          "wordCount": 29830,
-          "title": "Young adults are struggling with their mental health",
-          "imageUrl": "https://ww2.kqed.org/app/uploads/sites/23/2022/12/iStock-Gabriel-Codarcea-1020x680.jpg"
-        },
-        {
-          "id": "https://github.com/WinVector/data_algebra",
-          "author": null,
-          "description": "Comments",
-          "link": "https://github.com/WinVector/data_algebra",
-          "publishedOn": "2022-12-30T21:24:53.000Z",
-          "wordCount": 3069,
-          "title": "Control Pandas, Polars, or SQL from One DSL",
-          "imageUrl": "https://opengraph.githubassets.com/773ce7489effd15bf1a7d8d5aeecdb70d81ba35c5abf06a9e12fcbbbe114e7f6/WinVector/data_algebra"
-        },
-        {
-          "id": "https://github.com/marsupialtail/quokka/blob/master/blog/why.md",
-          "author": null,
-          "description": "Comments",
-          "link": "https://github.com/marsupialtail/quokka/blob/master/blog/why.md",
-          "publishedOn": "2022-12-30T20:08:29.000Z",
-          "wordCount": 1747,
-          "title": "I wrote a SQL engine in Python",
-          "imageUrl": "https://opengraph.githubassets.com/99712049d89d2bfea96c182ff319610cc91ff93c71de6b202a79e1af559fbbc3/marsupialtail/quokka"
-        },
-        {
-          "id": "https://boards.straightdope.com/t/what-are-those-dents-in-i-90-outside-seattle/422061/30",
-          "author": null,
-          "description": "Comments",
-          "link": "https://boards.straightdope.com/t/what-are-those-dents-in-i-90-outside-seattle/422061/30",
-          "publishedOn": "2022-12-30T19:32:03.000Z",
-          "wordCount": 2209,
-          "title": "What are those dents in I-90 outside Seattle?",
-          "imageUrl": "https://global.discourse-cdn.com/straightdope/original/2X/e/e489c3b7d8fce19c4b355dd4fc3f88cc39c34b87.png"
-        },
-        {
-          "id": "https://www.rssbrain.com/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.rssbrain.com/",
-          "publishedOn": "2022-12-30T19:13:52.000Z",
-          "wordCount": 219,
-          "title": "Show HN: RSS Brain",
-          "imageUrl": null
-        },
-        {
-          "id": "https://www.germanvelasco.com/blog/phoenix-1-7-is-view-less",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.germanvelasco.com/blog/phoenix-1-7-is-view-less",
-          "publishedOn": "2022-12-30T18:52:32.000Z",
-          "wordCount": 2462,
-          "title": "Phoenix 1.7 is View-less",
-          "imageUrl": "https://www.germanvelasco.com/images/gv-photo.jpeg"
-        },
-        {
-          "id": "https://zhengdongwang.com/2022/12/28/2022-letter.html",
-          "author": null,
-          "description": "Comments",
-          "link": "https://zhengdongwang.com/2022/12/28/2022-letter.html",
-          "publishedOn": "2022-12-30T18:18:06.000Z",
-          "wordCount": 12133,
-          "title": "2022 Letter",
-          "imageUrl": null
-        },
-        {
-          "id": "https://pacman.holenet.info/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://pacman.holenet.info/",
-          "publishedOn": "2022-12-30T18:04:22.000Z",
-          "wordCount": 14545,
-          "title": "The Pac-Man Dossier (2009)",
-          "imageUrl": null
-        },
-        {
-          "id": "https://blogs.uoregon.edu/dymaxionhouse/the-dymaxion-bathroom/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://blogs.uoregon.edu/dymaxionhouse/the-dymaxion-bathroom/",
-          "publishedOn": "2022-12-30T17:42:07.000Z",
-          "wordCount": 1124,
-          "title": "The Dymaxion Bathroom",
-          "imageUrl": null
-        },
-        {
-          "id": "https://www.atlasobscura.com/articles/vostell-concrete-book-mystery",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.atlasobscura.com/articles/vostell-concrete-book-mystery",
-          "publishedOn": "2022-12-30T17:29:24.000Z",
-          "wordCount": 5871,
-          "title": "Can science solve the mystery of the concrete book?",
-          "imageUrl": "https://img.atlasobscura.com/AvtsT3FR1EeEiC6miDWHh_MjdCNzHxucHxA0qCxPbFg/rt:fit/w:600/q:81/sm:1/scp:1/ar:1/aHR0cHM6Ly9hdGxh/cy1kZXYuczMuYW1h/em9uYXdzLmNvbS91/cGxvYWRzL2Fzc2V0/cy84ZTAzZDAzM2M0/ZmZiMTE3NWZfMzMx/MzJEXzI2NV9BUFNf/Q29uY3JldGUgQm9v/ayBSZXNlYXJjaC5q/cGc.jpg"
-        },
-        {
-          "id": "https://www.modest.coffee/2022/12/how-we-got-grifted/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.modest.coffee/2022/12/how-we-got-grifted/",
-          "publishedOn": "2022-12-30T16:56:07.000Z",
-          "wordCount": 7219,
-          "title": "We got grifted by a distributor and need to move 30k bags of coffee [updated]",
-          "imageUrl": "https://149359350.v2.pressablecdn.com/wp-content/uploads/2022/12/PXL_20220627_030401680.PORTRAIT-771x1024.jpg"
-        },
-        {
-          "id": "https://lupyuen.github.io/articles/fb?1",
-          "author": null,
-          "description": "Comments",
-          "link": "https://lupyuen.github.io/articles/fb?1",
-          "publishedOn": "2022-12-30T16:50:34.000Z",
-          "wordCount": 3236,
-          "title": "NuttX RTOS for PinePhone: Framebuffer",
-          "imageUrl": "https://lupyuen.github.io/images/fb-title.jpg"
-        },
-        {
-          "id": "https://tamagui.dev/blog/version-one",
-          "author": null,
-          "description": "Comments",
-          "link": "https://tamagui.dev/blog/version-one",
-          "publishedOn": "2022-12-30T16:45:50.000Z",
-          "wordCount": 24572,
-          "title": "Tamagui 1.0 – Cross-platform React apps in less time, with better performance",
-          "imageUrl": "https://tamagui.dev/banner-one.jpg"
-        },
-        {
-          "id": "https://erthalion.info/2022/12/30/bpf-performance/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://erthalion.info/2022/12/30/bpf-performance/",
-          "publishedOn": "2022-12-30T16:23:07.000Z",
-          "wordCount": 5242,
-          "title": "Running fast and slow: experiments with BPF programs' performance",
-          "imageUrl": null
-        },
-        {
-          "id": "https://mostlypython.substack.com/p/why-im-still-using-python",
-          "author": null,
-          "description": "Comments",
-          "link": "https://mostlypython.substack.com/p/why-im-still-using-python",
-          "publishedOn": "2022-12-30T16:06:02.000Z",
-          "wordCount": 2871,
-          "title": "Why I'm still using Python",
-          "imageUrl": "https://substackcdn.com/image/fetch/w_1200,h_600,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F3f8f6ea1-2d0c-4abb-84db-054ff4c03bb1_1224x1632.jpeg"
-        },
-        {
-          "id": "https://streaming.media.ccc.de/jev22/relive/49255",
-          "author": null,
-          "description": "Comments",
-          "link": "https://streaming.media.ccc.de/jev22/relive/49255",
-          "publishedOn": "2022-12-30T14:43:03.000Z",
-          "wordCount": 54,
-          "title": "Write a Wayland Compositor [video]",
-          "imageUrl": null
-        },
-        {
-          "id": "https://strlen.com/treesheets/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://strlen.com/treesheets/",
-          "publishedOn": "2022-12-30T13:55:10.000Z",
-          "wordCount": 445,
-          "title": "TreeSheets: Open Source Free Form Data Organizer",
-          "imageUrl": null
-        },
-        {
-          "id": "https://oceanservice.noaa.gov/geodesy/international-foot.html",
-          "author": null,
-          "description": "Comments",
-          "link": "https://oceanservice.noaa.gov/geodesy/international-foot.html",
-          "publishedOn": "2022-12-30T13:43:10.000Z",
-          "wordCount": 802,
-          "title": "A Tale of Two Feet",
-          "imageUrl": "https://oceanservice.noaa.gov/geodesy/two-surveyors.jpg"
         }
       ]
     }
