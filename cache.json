@@ -12,6 +12,16 @@
       "siteUrl": "http://weekly.dockone.io",
       "articles": [
         {
+          "id": "http://weekly.dockone.io/article/2434950",
+          "author": "新牛哥",
+          "description": "【编者的话】十二因素应用方法是由 Adam Wiggins 提出的构建 SaaS 应用的方法。本文介绍这个方法的演变过程，我们今天还能学习它的地方，以及它如何改变了过去的状况。\n你经常会听说软件开发和部署将变得更美好。这一趋势的当前轮回是 Heroku。不要误会我的意思，Heroku 令人难以置信，它带来了一种编写 Web 应用和部署分布式系统的新方法。他们肯定做对了很多。即使10年之后的今天，我们仍在努力实现同样的开发便利性。\nHeroku 的联合创始人 Adam Wiggins 有一篇著名文章， 12 因素应用方法，它总结了许多有用并且我确信使得构建 Heroku 更有趣和有益的想法。\n在这篇文章中，我想回顾一下 Adam 所涵盖的 12 个因素中的每一个，它们是如何演变的，我们今天可以从它们身上学到什么，以及它们如何改变了过去的状态。\n代码库\n\n\n\n\n这个建议刚提出时，类似 GitHub 这样的东西才刚刚起步，代码版本控制也并不常见。这可能看起来很残酷，但这是事实。我记得刚开始时必须处理 Subversion 的问题。\n代码库与其应用之间的关系显著增长，包括从测试到部署的所有内容。然而，仍然存在高度争议的一点是是否需要单仓。\n如果有多个代码库，它就不是一个应用——它是一个分布式系统。分布式系统中的每个组件都是一个应用，每个组件都可以单独遵守十二因素。\n尤其是在以微服务为中心的世界中，维护多个代码库所需的所有开销都可能令人厌烦。\n依赖项\n\n\n\n\n我不确定你们中有多少人曾经在 Ansible 和 Puppet 等软件可用之前处理过依赖系统。尽管如此，操作系统和各种版本的库之间的特殊性绝对是一场噩梦。\n这个因素抓住了关键，最终在很大程度上使得依赖可以被视为一个已解决的问题。\n通过引入各种清单文件，我们的应用可以以一致和准确的方式重新构建。此外，像 Bazel 这样的构建工具…",
+          "link": "http://weekly.dockone.io/article/2434950",
+          "publishedOn": "2023-02-03T01:11:23.412Z",
+          "wordCount": null,
+          "title": "12因素应用方法重新审视",
+          "imageUrl": null
+        },
+        {
           "id": "http://weekly.dockone.io/article/2434945",
           "author": "w9527",
           "description": "什么是 Redis？\nRedis（“REmote DIctionary Service”）是一个开源的键值对数据库服务器。\nRedis 更准确的描述是一个数据结构服务器。Redis 的这种特殊性质让它在开发人员中很受欢迎。\n\n\n\nRedis不是通过迭代或者排序方式处理数据，而是一开始就按照数据结构方式组织。早期，它的使用很像 Memcached，但随着 Redis 的改进，它在许多其他用例中变得可行，包括发布-订阅机制、流（streaming）和队列。\n\n\n\n主要来说，Redis 是一个内存数据库，用作另一个“真实”数据库（如 MySQL 或 PostgreSQL）前面的缓存，以帮助提高应用程序性能。它通过利用内存的高速访问速度，从而减轻核心应用程序数据库的负载，例如：\n不经常更改且经常被请求的数据\n任务关键性较低且经常变动的数据\n\n上述数据的示例可以包括会话或数据缓存以及仪表板的排行榜或汇总分析。\n\n\n\n但是，对于许多用例场景，Redis 都可以提供足够的保证，可以将其用作成熟的主数据库。再加上 Redis 插件及其各种高可用性（HA）设置，Redis 作为数据库对于某些场景和工作负载变得非常有用。\n另一个重要方面是 Redis 模糊了缓存和数据存储之间的界限。这里要理解的重要一点是，相比于使用 SSD 或 HDD 作为存储的传统数据库，读取和操作内存中数据的速度要快得多。\n\n\n\n最初，Redis 最常被比作 Memcached，后者当时缺乏任何非易失性持久化。\n这是当前两个缓存之间的功能细分。\n\n\n\n虽然现在拥有多种配置方式将数据持久化到磁盘，但当时首次引入持久化时，Redis 是使用快照方式，通过异步拷贝内存中的数据方式来做持久化。不幸的是，这种机制的缺点是可能会在快照之间丢失数据。\nRedis 自 2009 年成立到现在已经变的很成熟。我们将介绍它的大部分架构和拓扑…",
@@ -108,6 +118,266 @@
       "feedUrl": "https://news.ycombinator.com/rss",
       "siteUrl": "https://news.ycombinator.com/",
       "articles": [
+        {
+          "id": "https://deepsource.io/jobs/listing/senior-software-engineer-frontend/4788400004/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://deepsource.io/jobs/listing/senior-software-engineer-frontend/4788400004/",
+          "publishedOn": "2023-02-03T01:00:29.000Z",
+          "wordCount": 932,
+          "title": "DeepSource (YC W20) is looking for a Senior Front-end engineer",
+          "imageUrl": "https://assets.deepsource.io/ccef04d/img/jobs-meta.6e1993f.png"
+        },
+        {
+          "id": "https://maroofy.com/?hn=v3",
+          "author": null,
+          "description": "Comments",
+          "link": "https://maroofy.com/?hn=v3",
+          "publishedOn": "2023-02-03T00:20:23.000Z",
+          "wordCount": 73,
+          "title": "Show HN: I trained an AI model on 120M+ songs from iTunes",
+          "imageUrl": null
+        },
+        {
+          "id": "https://www.konjer.xyz/microeconomics",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.konjer.xyz/microeconomics",
+          "publishedOn": "2023-02-03T00:19:15.000Z",
+          "wordCount": 248,
+          "title": "Show HN: I turned my microeconomics textbook into a chatbot with GPT-3",
+          "imageUrl": "https://i.imgur.com/crOM1mq.jpg"
+        },
+        {
+          "id": "https://www.nature.com/articles/s41560-023-01195-x",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.nature.com/articles/s41560-023-01195-x",
+          "publishedOn": "2023-02-02T23:55:58.000Z",
+          "wordCount": 4658,
+          "title": "Seawater electrolysis by adjusting the local reaction environment of a catalyst",
+          "imageUrl": "https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs41560-023-01195-x/MediaObjects/41560_2023_1195_Fig1_HTML.png"
+        },
+        {
+          "id": "https://www.ncrabbithole.com/p/jack-revelle-goldsboro-nc-broken-arrow-obituary",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.ncrabbithole.com/p/jack-revelle-goldsboro-nc-broken-arrow-obituary",
+          "publishedOn": "2023-02-02T23:51:36.000Z",
+          "wordCount": 8773,
+          "title": "An obituary for the man who saved North Carolina from Nuclear Disaster",
+          "imageUrl": "https://substackcdn.com/image/fetch/w_1200,h_600,c_limit,f_jpg,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F76b549f3-0006-46f6-9326-3f7dfb7ffc1c_300x300.jpeg"
+        },
+        {
+          "id": "https://www.science.org/content/blog-post/wonderful-progress-against-severe-lupus",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.science.org/content/blog-post/wonderful-progress-against-severe-lupus",
+          "publishedOn": "2023-02-02T22:58:57.000Z",
+          "wordCount": 2151,
+          "title": "Wonderful Progress Against Severe Lupus",
+          "imageUrl": "https://www.science.org/pb-assets/images/blogs/pipeline/default-image-1644619966880.png"
+        },
+        {
+          "id": "https://academic.oup.com/pnasnexus/advance-article/doi/10.1093/pnasnexus/pgad018/7008465",
+          "author": null,
+          "description": "Comments",
+          "link": "https://academic.oup.com/pnasnexus/advance-article/doi/10.1093/pnasnexus/pgad018/7008465",
+          "publishedOn": "2023-02-02T22:42:00.000Z",
+          "wordCount": 2409,
+          "title": "Engagement with fact-checked posts on Reddit",
+          "imageUrl": "https://academic.oup.com/data/sitebuilderassetsoriginals/live/images/nasjournals/nasjournals_ogimage.png"
+        },
+        {
+          "id": "https://www.washingtonpost.com/national-security/2023/02/02/chinese-spy-balloon-pentagon/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.washingtonpost.com/national-security/2023/02/02/chinese-spy-balloon-pentagon/",
+          "publishedOn": "2023-02-02T22:41:45.000Z",
+          "wordCount": 7551,
+          "title": "Chinese surveillance balloon spotted over U.S., Pentagon says",
+          "imageUrl": "https://www.washingtonpost.com/wp-apps/imrs.php?src=https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/K7JCQTESXQI63EHYKNTBVROZXE.jpg&w=1440"
+        },
+        {
+          "id": "https://touchhle.org/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://touchhle.org/",
+          "publishedOn": "2023-02-02T22:41:18.000Z",
+          "wordCount": 1037,
+          "title": "TouchHLE: An iOS 2.0 App Emulator",
+          "imageUrl": null
+        },
+        {
+          "id": "https://words.filippo.io/full-time-maintainer/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://words.filippo.io/full-time-maintainer/",
+          "publishedOn": "2023-02-02T21:53:05.000Z",
+          "wordCount": 2788,
+          "title": "I’m Now a Full-Time Professional Open Source Maintainer",
+          "imageUrl": "https://words.filippo.io/content/images/2023/02/photo---1--1--2.jpeg"
+        },
+        {
+          "id": "https://therevealer.org/muppet-religion/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://therevealer.org/muppet-religion/",
+          "publishedOn": "2023-02-02T21:28:48.000Z",
+          "wordCount": 3317,
+          "title": "The Muppets’ many spiritual insights",
+          "imageUrl": "https://therevealer.org/wp-content/uploads/2022/12/Muppet-Christmas-Carol-Poster.jpg"
+        },
+        {
+          "id": "https://www.chicagomag.com/chicago-magazine/january-2023/the-violin-doctor/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.chicagomag.com/chicago-magazine/january-2023/the-violin-doctor/",
+          "publishedOn": "2023-02-02T21:28:03.000Z",
+          "wordCount": 6439,
+          "title": "The Violin Doctor",
+          "imageUrl": "https://www.chicagomag.com/wp-content/uploads/2023/01/C202301-The-Violin-Doctor-topper.jpg"
+        },
+        {
+          "id": "https://www.poetryfoundation.org/harriet-books/2016/01/the-27th-letter",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.poetryfoundation.org/harriet-books/2016/01/the-27th-letter",
+          "publishedOn": "2023-02-02T21:03:53.000Z",
+          "wordCount": 2739,
+          "title": "The 27th Letter",
+          "imageUrl": "https://media.poetryfoundation.org/uploads/media/default/0001/23/d16e6f3019f13bee48a7009d842020ebc45fbd80.jpeg?w=1200&h=1200&fit=max&key=2&sig=49cf80c42ddefe8b04ad29c995566e11d2f6bf0ca9b9ab9f57c21f797822c1d7"
+        },
+        {
+          "id": "https://www.wsj.com/articles/tether-ownership-and-company-weaknesses-revealed-in-documents-11675363340",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.wsj.com/articles/tether-ownership-and-company-weaknesses-revealed-in-documents-11675363340",
+          "publishedOn": "2023-02-02T20:56:27.000Z",
+          "wordCount": 7047,
+          "title": "Tether ownership and company weaknesses revealed in documents",
+          "imageUrl": "https://images.wsj.net/im-712281/social"
+        },
+        {
+          "id": "https://maxlab.io/store/edge-ai-camera/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://maxlab.io/store/edge-ai-camera/",
+          "publishedOn": "2023-02-02T20:33:50.000Z",
+          "wordCount": 582,
+          "title": "Show HN: AI model on a $3 chip (esp32)",
+          "imageUrl": "https://maxlab.io/images/store/ai-camera/title.jpg"
+        },
+        {
+          "id": "https://lwn.net/SubscriberLink/921787/949cf79f2599f734/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://lwn.net/SubscriberLink/921787/949cf79f2599f734/",
+          "publishedOn": "2023-02-02T18:47:29.000Z",
+          "wordCount": 4543,
+          "title": "Git archive generation meets Hyrum's law",
+          "imageUrl": null
+        },
+        {
+          "id": "https://blog.littlepolygon.com/posts/missile/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://blog.littlepolygon.com/posts/missile/",
+          "publishedOn": "2023-02-02T18:14:42.000Z",
+          "wordCount": 1514,
+          "title": "Math breakdown: Anime homing missiles",
+          "imageUrl": "https://blog.littlepolygon.com/images/avatar.jpg"
+        },
+        {
+          "id": "https://groundhog-day.com/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://groundhog-day.com/",
+          "publishedOn": "2023-02-02T17:53:54.000Z",
+          "wordCount": 278,
+          "title": "Show HN: Groundhog-day.com – structured groundhog data",
+          "imageUrl": "https://groundhog-day.com/images/og-image-ghog-day-2.png"
+        },
+        {
+          "id": "https://www.sjc.edu/academic-programs/undergraduate/great-books-reading-list",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.sjc.edu/academic-programs/undergraduate/great-books-reading-list",
+          "publishedOn": "2023-02-02T17:38:50.000Z",
+          "wordCount": 5246,
+          "title": "St. John’s Reading List: A Great Books Curriculum",
+          "imageUrl": ""
+        },
+        {
+          "id": "https://foone.tumblr.com/post/705446706461949953/fun-fact-i-own-porn-i-cant-watch",
+          "author": null,
+          "description": "Comments",
+          "link": "https://foone.tumblr.com/post/705446706461949953/fun-fact-i-own-porn-i-cant-watch",
+          "publishedOn": "2023-02-02T16:37:41.000Z",
+          "wordCount": 3824,
+          "title": "Fun Fact: I own porn I can't watch",
+          "imageUrl": "https://64.media.tumblr.com/5dc718187783427e4f195891e0d9e397/27d9fb35b0977821-bf/s500x750/0c6600d8eb7edf62f365ee07871003fbb1cc7b63.jpg"
+        },
+        {
+          "id": "https://fly.io/blog/carving-the-scheduler-out-of-our-orchestrator/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://fly.io/blog/carving-the-scheduler-out-of-our-orchestrator/",
+          "publishedOn": "2023-02-02T16:30:28.000Z",
+          "wordCount": 4248,
+          "title": "Carving the scheduler out of our orchestrator",
+          "imageUrl": "https://fly.io/blog/2023-02-01/starry-containers-thumbnail.jpg"
+        },
+        {
+          "id": "https://play-cs.com/en/servers",
+          "author": null,
+          "description": "Comments",
+          "link": "https://play-cs.com/en/servers",
+          "publishedOn": "2023-02-02T16:00:15.000Z",
+          "wordCount": 2608,
+          "title": "Play Counter Strike 1.6, with full multiplayer, in the browser",
+          "imageUrl": "/img/seo/og_image1.jpg"
+        },
+        {
+          "id": "https://www.collabora.com/news-and-blog/blog/2023/02/02/exploring-rust-for-vulkan-drivers-part-1/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.collabora.com/news-and-blog/blog/2023/02/02/exploring-rust-for-vulkan-drivers-part-1/",
+          "publishedOn": "2023-02-02T15:24:21.000Z",
+          "wordCount": 3175,
+          "title": "Exploring Rust for Vulkan drivers, part 1",
+          "imageUrl": "https://www.collabora.com/assets/images/blog/Rust-Vukan_CC.jpg"
+        },
+        {
+          "id": "https://mullvad.net/nl/blog/2023/2/2/stop-the-proposal-on-mass-surveillance-of-the-eu/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://mullvad.net/nl/blog/2023/2/2/stop-the-proposal-on-mass-surveillance-of-the-eu/",
+          "publishedOn": "2023-02-02T13:46:39.000Z",
+          "wordCount": 2330,
+          "title": "Stop the proposal on mass surveillance of the EU",
+          "imageUrl": "https://mullvad.net/media/uploads/2023/02/02/letters_b.png"
+        },
+        {
+          "id": "https://gregorygundersen.com/blog/2023/02/01/estimating-square-roots/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://gregorygundersen.com/blog/2023/02/01/estimating-square-roots/",
+          "publishedOn": "2023-02-02T11:29:50.000Z",
+          "wordCount": 1051,
+          "title": "Estimating square roots in your head",
+          "imageUrl": null
+        },
+        {
+          "id": "https://davidrozado.substack.com/p/openaicms",
+          "author": null,
+          "description": "Comments",
+          "link": "https://davidrozado.substack.com/p/openaicms",
+          "publishedOn": "2023-02-02T11:08:20.000Z",
+          "wordCount": 5451,
+          "title": "The unequal treatment of demographic groups by ChatGPT/OpenAI content moderation",
+          "imageUrl": "https://substackcdn.com/image/fetch/w_1200,h_600,c_limit,f_jpg,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F18aa20f2-082d-4a57-973a-fa8e48a4b724_4147x2253.png"
+        },
         {
           "id": "https://terrytao.wordpress.com/2023/01/26/infinite-partial-sumsets-in-the-primes/",
           "author": null,
@@ -249,6 +519,16 @@
           "imageUrl": "https://same.energy/blacklogo-bg.png"
         },
         {
+          "id": "https://jacek.migdal.pl/2023/02/01/ten-years.html",
+          "author": null,
+          "description": "Comments",
+          "link": "https://jacek.migdal.pl/2023/02/01/ten-years.html",
+          "publishedOn": "2023-02-01T17:06:02.000Z",
+          "wordCount": 2136,
+          "title": "Reflections on My Decade at Sumo Logic",
+          "imageUrl": null
+        },
+        {
           "id": "https://news.ycombinator.com/item?id=34613508",
           "author": null,
           "description": "Comments",
@@ -319,6 +599,16 @@
           "imageUrl": "assets/dv-cover-executive-b.jpg"
         },
         {
+          "id": "https://benholmen.com/blog/shower-temperature-control/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://benholmen.com/blog/shower-temperature-control/",
+          "publishedOn": "2023-02-01T14:59:33.000Z",
+          "wordCount": 724,
+          "title": "A manifesto on shower temperature control",
+          "imageUrl": "https://benholmen.com/assets/images/shower-temperature-control/open-graph.jpg"
+        },
+        {
           "id": "https://www.economist.com/business/2023/01/26/the-curse-of-the-corporate-headshot",
           "author": null,
           "description": "Comments",
@@ -359,6 +649,16 @@
           "imageUrl": "https://img1.oastatic.com/img2/27732862/max/tuffi-heute-im-wuppertaler-zoo.jpg"
         },
         {
+          "id": "https://en.wikipedia.org/wiki/Goi%C3%A2nia_accident",
+          "author": null,
+          "description": "Comments",
+          "link": "https://en.wikipedia.org/wiki/Goi%C3%A2nia_accident",
+          "publishedOn": "2023-02-01T12:50:12.000Z",
+          "wordCount": 5543,
+          "title": "Goiânia Accident",
+          "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/02010019_radioactive_cesium_source_Goi%C3%A2nia_accident.jpg/1200px-02010019_radioactive_cesium_source_Goi%C3%A2nia_accident.jpg"
+        },
+        {
           "id": "https://www.nature.com/articles/s41598-021-02311-1",
           "author": null,
           "description": "Comments",
@@ -377,6 +677,16 @@
           "wordCount": 3752,
           "title": "How we plan to de-extinct the Dodo bird",
           "imageUrl": ""
+        },
+        {
+          "id": "https://nickb.dev/blog/wasm-compression-benchmarks-and-the-cost-of-missing-compression-apis/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://nickb.dev/blog/wasm-compression-benchmarks-and-the-cost-of-missing-compression-apis/",
+          "publishedOn": "2023-02-01T11:23:47.000Z",
+          "wordCount": 2281,
+          "title": "WASM compression benchmarks and the cost of missing compression APIs",
+          "imageUrl": "https://nickb.dev/blog/wasm-compression-benchmarks-and-the-cost-of-missing-compression-apis/banner.f9b8181f1e56409ccb25a3c75b9a31b6d9cf6701675222033f26939c55939a6a.jpg"
         },
         {
           "id": "https://www.xmodtwo.com/p/do-we-live-in-a-society-without-a",
@@ -8657,266 +8967,6 @@
           "wordCount": 4907,
           "title": "‘Breakthrough’ obesity drugs that have stunned researchers",
           "imageUrl": "https://media.nature.com/lw1024/magazine-assets/d41586-022-04505-7/d41586-022-04505-7_23852316.jpg"
-        },
-        {
-          "id": "https://www.channable.com/tech/parallel-streaming-in-haskell-part-1-fast-efficient-fun",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.channable.com/tech/parallel-streaming-in-haskell-part-1-fast-efficient-fun",
-          "publishedOn": "2023-01-04T13:03:58.000Z",
-          "wordCount": 18287,
-          "title": "Parallel streaming in Haskell: Part 1 – Fast, efficient, and fun",
-          "imageUrl": null
-        },
-        {
-          "id": "https://hypertextbook.com/chaos/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://hypertextbook.com/chaos/",
-          "publishedOn": "2023-01-04T12:57:11.000Z",
-          "wordCount": 899,
-          "title": "Chaos Hypertextbook",
-          "imageUrl": "https://hypertextbook.com/chaos/og-image.jpg"
-        },
-        {
-          "id": "https://www.countrylife.co.uk/architecture/lincoln-cathedral-the-950-year-story-of-one-of-europes-very-greatest-cathedrals-251041",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.countrylife.co.uk/architecture/lincoln-cathedral-the-950-year-story-of-one-of-europes-very-greatest-cathedrals-251041",
-          "publishedOn": "2023-01-04T06:00:18.000Z",
-          "wordCount": 6757,
-          "title": "Lincoln Cathedral",
-          "imageUrl": "https://keyassets.timeincuk.net/inspirewp/live/wp-content/uploads/sites/8/2023/01/GettyImages-1330769318-533x400.jpg"
-        },
-        {
-          "id": "https://whyisthisinteresting.substack.com/p/the-worlds-most-dangerous-toy-edition",
-          "author": null,
-          "description": "Comments",
-          "link": "https://whyisthisinteresting.substack.com/p/the-worlds-most-dangerous-toy-edition",
-          "publishedOn": "2023-01-04T05:59:01.000Z",
-          "wordCount": 3497,
-          "title": "Fun, danger, and 70s airplane toys",
-          "imageUrl": "https://substackcdn.com/image/fetch/w_1200,h_600,c_limit,f_jpg,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F1f3bf493-03db-4681-bb95-9377060f40ea_1600x765.png"
-        },
-        {
-          "id": "https://news.ycombinator.com/item?id=34240298",
-          "author": null,
-          "description": "Comments",
-          "link": "https://news.ycombinator.com/item?id=34240298",
-          "publishedOn": "2023-01-04T00:42:51.000Z",
-          "wordCount": 152,
-          "title": "Tell HN: I just received my Equifax breach settlement check",
-          "imageUrl": null
-        },
-        {
-          "id": "https://news.ycombinator.com/item?id=34239910",
-          "author": null,
-          "description": "Comments",
-          "link": "https://news.ycombinator.com/item?id=34239910",
-          "publishedOn": "2023-01-03T23:59:35.000Z",
-          "wordCount": 1456,
-          "title": "Ask HN: How do you stay productive after work hours?",
-          "imageUrl": null
-        },
-        {
-          "id": "https://kguttag.com/2023/01/03/meta-quest-pro-part-1-unbelievably-bad-ar-passthrough/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://kguttag.com/2023/01/03/meta-quest-pro-part-1-unbelievably-bad-ar-passthrough/",
-          "publishedOn": "2023-01-03T23:32:27.000Z",
-          "wordCount": 7111,
-          "title": "Meta Quest Pro – Bad AR Passthrough",
-          "imageUrl": "https://kguttag.com/wp-content/uploads/2023/01/Feature-Image-MQP-Part-1-001-copy.jpg"
-        },
-        {
-          "id": "https://indiestack.com/2023/01/inline-applescript-documentation/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://indiestack.com/2023/01/inline-applescript-documentation/",
-          "publishedOn": "2023-01-03T23:05:02.000Z",
-          "wordCount": 905,
-          "title": "Inline AppleScript Documentation",
-          "imageUrl": "https://indiestack.com/wp-content/uploads/2018/10/wjyc3FfR_400x400.png"
-        },
-        {
-          "id": "https://arstechnica.com/gadgets/2023/01/google-announces-official-android-support-for-risc-v/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://arstechnica.com/gadgets/2023/01/google-announces-official-android-support-for-risc-v/",
-          "publishedOn": "2023-01-03T22:47:11.000Z",
-          "wordCount": 1886,
-          "title": "Google wants RISC-V to be a “tier-1” Android architecture",
-          "imageUrl": "https://cdn.arstechnica.net/wp-content/uploads/2021/04/android-google-760x380.jpeg"
-        },
-        {
-          "id": "https://torrentfreak.com/major-private-torrent-sites-have-a-security-disaster-to-fix-right-now-230103/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://torrentfreak.com/major-private-torrent-sites-have-a-security-disaster-to-fix-right-now-230103/",
-          "publishedOn": "2023-01-03T22:18:37.000Z",
-          "wordCount": 3538,
-          "title": "Major torrent sites are currently exposing intimate details of their operations",
-          "imageUrl": null
-        },
-        {
-          "id": "https://www.smithsonianmag.com/history/how-unorthodox-scholar-uses-technology-expose-biblical-forgeries-180981290/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.smithsonianmag.com/history/how-unorthodox-scholar-uses-technology-expose-biblical-forgeries-180981290/",
-          "publishedOn": "2023-01-03T22:12:22.000Z",
-          "wordCount": 5819,
-          "title": "An Unorthodox Scholar Uses Technology to Expose Biblical Forgeries",
-          "imageUrl": "https://th-thumbnailer.cdn-si-edu.com/eIQdvXtB_D4jrLShICEoSfwkfVE=/fit-in/1600x0/filters:focal(1548x2064:1549x2065)/https%3A%2F%2Ftf-cmsv2-smithsonianmag-media.s3.amazonaws.com%2Ffiler_public%2F4a%2F47%2F4a479f84-bbc6-44de-b055-215d1ad6d710%2Fjanfeb2023_n05_deadseascrolls.jpg"
-        },
-        {
-          "id": "https://terrateam.io/blog/flying-away-from-aws",
-          "author": null,
-          "description": "Comments",
-          "link": "https://terrateam.io/blog/flying-away-from-aws",
-          "publishedOn": "2023-01-03T21:13:45.000Z",
-          "wordCount": 2306,
-          "title": "Migrating from AWS to Fly.io",
-          "imageUrl": "https://terrateam.io/og-image.jpg"
-        },
-        {
-          "id": "https://pdfs.semanticscholar.org/3cb2/0df9e075056030103d73f173fa29f8f92f07.pdf?_ga=2.37017120.1076752451.1672779819-279137700.1672779819",
-          "author": null,
-          "description": "Comments",
-          "link": "https://pdfs.semanticscholar.org/3cb2/0df9e075056030103d73f173fa29f8f92f07.pdf?_ga=2.37017120.1076752451.1672779819-279137700.1672779819",
-          "publishedOn": "2023-01-03T21:04:10.000Z",
-          "wordCount": 5207,
-          "title": "Can self-replicating species flourish in the interior of a star? (2020) [pdf]",
-          "imageUrl": null
-        },
-        {
-          "id": "https://www.quantamagazine.org/to-build-truly-intelligent-machines-teach-them-cause-and-effect-20180515",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.quantamagazine.org/to-build-truly-intelligent-machines-teach-them-cause-and-effect-20180515",
-          "publishedOn": "2023-01-03T20:34:37.000Z",
-          "wordCount": 6880,
-          "title": "To build truly intelligent machines, teach them cause and effect (2018)",
-          "imageUrl": "https://d2r55xnwy6nx47.cloudfront.net/uploads/2018/05/Pearl_520x292.jpg"
-        },
-        {
-          "id": "https://www.macrumors.com/2023/01/03/qi2-wireless-charging-standard-gains-magsafe/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.macrumors.com/2023/01/03/qi2-wireless-charging-standard-gains-magsafe/",
-          "publishedOn": "2023-01-03T20:04:27.000Z",
-          "wordCount": 2511,
-          "title": "Next-generation Qi2 wireless charging standard embraces Apple's MagSafe",
-          "imageUrl": "https://images.macrumors.com/t/mpnQXzZGuaLA21axndmOPbm-Kgw=/2500x/article-new/2022/10/magsafe-charger-blue.jpg"
-        },
-        {
-          "id": "https://twitter.com/lanewinfield/status/1610294277434933249",
-          "author": null,
-          "description": "Comments",
-          "link": "https://twitter.com/lanewinfield/status/1610294277434933249",
-          "publishedOn": "2023-01-03T20:03:18.000Z",
-          "wordCount": 470,
-          "title": "Show HN: A device that only lets you type lol if you've truly laughed out loud",
-          "imageUrl": null
-        },
-        {
-          "id": "https://www.youtube.com/watch?v=Xm9jr0cSqZo",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.youtube.com/watch?v=Xm9jr0cSqZo",
-          "publishedOn": "2023-01-03T19:57:04.000Z",
-          "wordCount": null,
-          "title": "AT&T's predictions of the future (1993)",
-          "imageUrl": null
-        },
-        {
-          "id": "https://pypackaging-native.github.io/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://pypackaging-native.github.io/",
-          "publishedOn": "2023-01-03T19:45:06.000Z",
-          "wordCount": 701,
-          "title": "Underappreciated challenges with Python packaging",
-          "imageUrl": null
-        },
-        {
-          "id": "https://www.quantamagazine.org/long-out-of-math-an-ai-programmer-cracks-a-pure-math-problem-20230103/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.quantamagazine.org/long-out-of-math-an-ai-programmer-cracks-a-pure-math-problem-20230103/",
-          "publishedOn": "2023-01-03T19:43:21.000Z",
-          "wordCount": 7397,
-          "title": "Google researcher, long out of math, cracks devilish problem about sets",
-          "imageUrl": "https://d2r55xnwy6nx47.cloudfront.net/uploads/2022/12/ClosedUnionConjecture-byKristinaArmitage-Social.webp"
-        },
-        {
-          "id": "https://en.wikipedia.org/wiki/Tafl_games",
-          "author": null,
-          "description": "Comments",
-          "link": "https://en.wikipedia.org/wiki/Tafl_games",
-          "publishedOn": "2023-01-03T19:31:56.000Z",
-          "wordCount": 7965,
-          "title": "Hnefatafl",
-          "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7c/ZHNEFA.jpg"
-        },
-        {
-          "id": "https://www.schneier.com/blog/archives/2023/01/breaking-rsa-with-a-quantum-computer.html",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.schneier.com/blog/archives/2023/01/breaking-rsa-with-a-quantum-computer.html",
-          "publishedOn": "2023-01-03T18:15:49.000Z",
-          "wordCount": 2139,
-          "title": "Breaking RSA with a quantum computer?",
-          "imageUrl": null
-        },
-        {
-          "id": "https://www.pv-magazine.com/2023/01/02/residential-thermo-acoustic-heat-pump-produces-water-up-to-80-c/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.pv-magazine.com/2023/01/02/residential-thermo-acoustic-heat-pump-produces-water-up-to-80-c/",
-          "publishedOn": "2023-01-03T16:36:57.000Z",
-          "wordCount": 4475,
-          "title": "French startup unveils new residential thermo-acoustic heat pump",
-          "imageUrl": "https://www.pv-magazine.com/wp-content/uploads/2022/12/EQORE-EQUIUM-1200x1200.png"
-        },
-        {
-          "id": "http://mainisusuallyafunction.blogspot.com/2014/02/x86-is-turing-complete-with-no-registers.html",
-          "author": null,
-          "description": "Comments",
-          "link": "http://mainisusuallyafunction.blogspot.com/2014/02/x86-is-turing-complete-with-no-registers.html",
-          "publishedOn": "2023-01-03T16:22:38.000Z",
-          "wordCount": 35605,
-          "title": "x86 is Turing-complete with no registers (2014)",
-          "imageUrl": null
-        },
-        {
-          "id": "https://gist.github.com/yoavg/59d174608e92e845c8994ac2e234c8a9",
-          "author": null,
-          "description": "Comments",
-          "link": "https://gist.github.com/yoavg/59d174608e92e845c8994ac2e234c8a9",
-          "publishedOn": "2023-01-03T15:54:22.000Z",
-          "wordCount": 4809,
-          "title": "Some Remarks on Large Language Models",
-          "imageUrl": "https://github.githubassets.com/images/modules/gists/gist-og-image.png"
-        },
-        {
-          "id": "https://stevepulec.com/posts/small/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://stevepulec.com/posts/small/",
-          "publishedOn": "2023-01-03T14:54:49.000Z",
-          "wordCount": 815,
-          "title": "Small Teams",
-          "imageUrl": null
-        },
-        {
-          "id": "https://palant.info/2023/01/02/south-koreas-online-security-dead-end/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://palant.info/2023/01/02/south-koreas-online-security-dead-end/",
-          "publishedOn": "2023-01-03T14:01:45.000Z",
-          "wordCount": 1854,
-          "title": "South Korea’s online security dead end",
-          "imageUrl": "https://palant.info/2023/01/02/south-koreas-online-security-dead-end/message.png"
         }
       ]
     }
