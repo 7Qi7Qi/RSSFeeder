@@ -2,10 +2,339 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://7qi7qi.github.io/RSSFeeder/index.html</id>
     <title>osmos::feed</title>
-    <updated>2023-03-05T01:18:57.882Z</updated>
+    <updated>2023-03-06T01:11:01.919Z</updated>
     <generator>osmosfeed 1.15.1</generator>
     <link rel="alternate" href="https://7qi7qi.github.io/RSSFeeder/index.html"/>
     <link rel="self" href="https://7qi7qi.github.io/RSSFeeder/feed.atom"/>
+    <entry>
+        <title type="html"><![CDATA[图说分布式计算的8大谬误]]></title>
+        <id>http://weekly.dockone.io/article/2434949</id>
+        <link href="http://weekly.dockone.io/article/2434949"/>
+        <updated>2023-03-06T01:11:01.865Z</updated>
+        <summary type="html"><![CDATA[分布式计算的谬误是由L Peter Deutsch和Sun Microsystems公司的其他人所提出的一组断言，他们描述了不熟悉分布式应用程序的程序员总是会做出的一些错误的假设。
+微服务的大规模普及迫使越来越多的工程师意识到这些错误的认识给他们的系统带来多么大的影响。
+我们经常会看到一些人在讨论系统设计的时候，忽视或者淡化这8个谬误。
+
+
+
+下面我来介绍一下这些谬误以及一些潜在的消减措施，希望大家能感兴趣。
+网络是可靠的
+
+
+
+
+为了构建一个可靠的系统，你必须理解并接受任何一种通信都可能会失败的事实。因此，我们需要为系统设计出一种方法来处理这种潜在的错误沟通。所以，最终需要用到重传，而且它可以有多种形式。
+存储再转发（store and forward）就是这样一种模型。我们不直接将数据发送到下游服务器，而是将其存储在本地或其他地方，这也提供了能从灾难场景下恢复的保障。
+有很多产品属于这种技术，如RabbitMQ，ActiveMQ以及来自云厂商的各种专有解决方案。
+网络是零延迟的
+
+
+
+
+图片的左边是在现代系统中直接访问内存的时间，右边是在世界各地往返所需的时间。
+我喜欢把延迟看作是完成任何请求的严格开销。传递的消息可以很大，也可以很小，而延迟是不变的。与带宽不同，延迟通常与光速和通信距离（或物理路径）有关。所以两个系统之间的物理距离在这里起着重要的作用。
+延迟是无处不在的。它发生在所有的通讯中。理想情况下，这种开销应该尽可能小。延迟的场景和从车上卸货非常相似，就是说，从厨房到车上的时间就是延迟。你是想一趟尽可能多地拿东西，还是想每次只拿一个东西，花几百次往返把车上的东西都卸下来？
+带宽是无限的
+
+
+
+
+假设持续无限制地增加信道上的数据大小，这显然是个很大的错误。这种情况只有在某种通讯彻底占满带宽与此同时无法扩容时才会出现。
+我第一次遇到这个问题是我不小心将主页所需的有效…]]></summary>
+        <author>
+            <name>frankinbj</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Non-occupational physical activity and risk of CV disease, cancer and mortality]]></title>
+        <id>https://bjsm.bmj.com/content/early/2023/01/23/bjsports-2022-105669</id>
+        <link href="https://bjsm.bmj.com/content/early/2023/01/23/bjsports-2022-105669"/>
+        <updated>2023-03-06T00:00:28.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Man has two more chances before $232M in Bitcoin is lost forever]]></title>
+        <id>https://au.finance.yahoo.com/news/man-has-two-more-chances-before-232-million-is-lost-forever-222045101.html</id>
+        <link href="https://au.finance.yahoo.com/news/man-has-two-more-chances-before-232-million-is-lost-forever-222045101.html"/>
+        <updated>2023-03-05T23:55:37.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Van Gogh, AMD’s Steam Deck APU]]></title>
+        <id>https://chipsandcheese.com/2023/03/05/van-gogh-amds-steam-deck-apu/</id>
+        <link href="https://chipsandcheese.com/2023/03/05/van-gogh-amds-steam-deck-apu/"/>
+        <updated>2023-03-05T22:55:15.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Ask HN: What is the best postmortem you&#x27;ve seen?]]></title>
+        <id>https://news.ycombinator.com/item?id=35034923</id>
+        <link href="https://news.ycombinator.com/item?id=35034923"/>
+        <updated>2023-03-05T22:37:31.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Iran says suspected schoolgirl poisonings occurred in more than 50 schools]]></title>
+        <id>https://www.pbs.org/newshour/world/iran-says-suspected-schoolgirl-poisonings-occurred-in-more-than-50-schools</id>
+        <link href="https://www.pbs.org/newshour/world/iran-says-suspected-schoolgirl-poisonings-occurred-in-more-than-50-schools"/>
+        <updated>2023-03-05T21:35:51.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Bun vs Node Benchmark - no one cares about speed as much as your CI does]]></title>
+        <id>https://grifel.dev/bun-dev-experience/</id>
+        <link href="https://grifel.dev/bun-dev-experience/"/>
+        <updated>2023-03-05T21:20:01.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[ChatGPT in Academic Writing]]></title>
+        <id>https://www.monsterwriter.app/chatgpt-in-academic-writing.html</id>
+        <link href="https://www.monsterwriter.app/chatgpt-in-academic-writing.html"/>
+        <updated>2023-03-05T20:53:25.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[On the Candlemaker&#x27;s Petition]]></title>
+        <id>https://pmarca.substack.com/p/on-the-candlemakers-petition</id>
+        <link href="https://pmarca.substack.com/p/on-the-candlemakers-petition"/>
+        <updated>2023-03-05T20:44:07.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Do no harm: can school mental health interventions cause iatrogenic harm? [pdf]]]></title>
+        <id>https://www.cambridge.org/core/services/aop-cambridge-core/content/view/9F00E6568F642ECFA559815915F77B8C/S2056469423000098a.pdf/do-no-harm-can-school-mental-health-interventions-cause-iatrogenic-harm.pdf</id>
+        <link href="https://www.cambridge.org/core/services/aop-cambridge-core/content/view/9F00E6568F642ECFA559815915F77B8C/S2056469423000098a.pdf/do-no-harm-can-school-mental-health-interventions-cause-iatrogenic-harm.pdf"/>
+        <updated>2023-03-05T20:03:00.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Show HN: A HN clone writen in Go]]></title>
+        <id>https://remoterenters.com/</id>
+        <link href="https://remoterenters.com/"/>
+        <updated>2023-03-05T20:02:00.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Lifting Discrete Logarithm Based Cryptography to Post-Quantum Cryptography]]></title>
+        <id>https://eprint.iacr.org/2023/318</id>
+        <link href="https://eprint.iacr.org/2023/318"/>
+        <updated>2023-03-05T19:18:52.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[ChatGPT broke the EU plan to regulate AI]]></title>
+        <id>https://www.politico.eu/article/eu-plan-regulate-chatgpt-openai-artificial-intelligence-act/</id>
+        <link href="https://www.politico.eu/article/eu-plan-regulate-chatgpt-openai-artificial-intelligence-act/"/>
+        <updated>2023-03-05T19:01:18.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[A Criticism of JavaScript Cryptography]]></title>
+        <id>https://blog.bren2010.io/blog/criticism-of-javascript-crypto</id>
+        <link href="https://blog.bren2010.io/blog/criticism-of-javascript-crypto"/>
+        <updated>2023-03-05T18:47:53.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Show HN: TuringJest – Pretend to be an AI and spot the real one]]></title>
+        <id>https://www.turingjest.app/</id>
+        <link href="https://www.turingjest.app/"/>
+        <updated>2023-03-05T18:47:37.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Show HN: Lander, a lunar lander style web game]]></title>
+        <id>https://ehmorris.com/lander/</id>
+        <link href="https://ehmorris.com/lander/"/>
+        <updated>2023-03-05T18:35:12.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Legacy Software Systems: How to Live with Aging Software Architecture?]]></title>
+        <id>https://stratoflow.com/legacy-software-systems/</id>
+        <link href="https://stratoflow.com/legacy-software-systems/"/>
+        <updated>2023-03-05T18:28:51.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Depression, Anxiety, and Stress Spread Through Employee Mobility (2022)]]></title>
+        <id>https://journals.sagepub.com/doi/epub/10.1177/00018392211014819</id>
+        <link href="https://journals.sagepub.com/doi/epub/10.1177/00018392211014819"/>
+        <updated>2023-03-05T18:13:34.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Activity Pub vs. Web Frameworks]]></title>
+        <id>https://danpalmer.me/2023-01-08-activitypub-vs-web-frameworks/</id>
+        <link href="https://danpalmer.me/2023-01-08-activitypub-vs-web-frameworks/"/>
+        <updated>2023-03-05T18:07:07.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[After Dark Screensavers in CSS]]></title>
+        <id>https://www.bryanbraun.com/after-dark-css/</id>
+        <link href="https://www.bryanbraun.com/after-dark-css/"/>
+        <updated>2023-03-05T17:10:55.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[How to hire engineering talent without the BS]]></title>
+        <id>https://jes.al/2023/03/how-to-hire-engineering-talent-without-the-bs/</id>
+        <link href="https://jes.al/2023/03/how-to-hire-engineering-talent-without-the-bs/"/>
+        <updated>2023-03-05T17:03:49.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Why does the all 0 public key have a known private key in SR25519 and ED25519?]]></title>
+        <id>https://substrate.stackexchange.com/questions/982/why-does-the-all-0-public-key-have-a-known-private-key-in-sr25519-and-ed25519</id>
+        <link href="https://substrate.stackexchange.com/questions/982/why-does-the-all-0-public-key-have-a-known-private-key-in-sr25519-and-ed25519"/>
+        <updated>2023-03-05T16:58:22.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Self-Host All the Things?]]></title>
+        <id>https://tedium.co/2023/03/04/self-hosted-saas-app-alternatives/</id>
+        <link href="https://tedium.co/2023/03/04/self-hosted-saas-app-alternatives/"/>
+        <updated>2023-03-05T16:35:10.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Achieving High-Performance the Functional Way (2020)]]></title>
+        <id>https://dl.acm.org/doi/pdf/10.1145/3408974</id>
+        <link href="https://dl.acm.org/doi/pdf/10.1145/3408974"/>
+        <updated>2023-03-05T16:05:25.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[The Most Cited AI Papers in 2022]]></title>
+        <id>https://www.zeta-alpha.com/post/must-read-the-100-most-cited-ai-papers-in-2022</id>
+        <link href="https://www.zeta-alpha.com/post/must-read-the-100-most-cited-ai-papers-in-2022"/>
+        <updated>2023-03-05T15:46:04.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Building a new functional programming language]]></title>
+        <id>https://www.onebigfluke.com/2023/03/a-new-functional-programming-language.html</id>
+        <link href="https://www.onebigfluke.com/2023/03/a-new-functional-programming-language.html"/>
+        <updated>2023-03-05T15:08:15.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Dropping the SAT requirement is a luxury belief]]></title>
+        <id>https://robkhenderson.substack.com/p/dropping-the-sat-requirement-is-a</id>
+        <link href="https://robkhenderson.substack.com/p/dropping-the-sat-requirement-is-a"/>
+        <updated>2023-03-05T11:10:52.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Contexto: Find the Secret Word]]></title>
+        <id>https://contexto.me/</id>
+        <link href="https://contexto.me/"/>
+        <updated>2023-03-05T07:00:32.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[3dfx: So powerful it’s kind of ridiculous]]></title>
+        <id>https://www.abortretry.fail/p/so-powerful-its-kind-of-ridiculous</id>
+        <link href="https://www.abortretry.fail/p/so-powerful-its-kind-of-ridiculous"/>
+        <updated>2023-03-05T04:13:32.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[The Open Microscopy Environment]]></title>
+        <id>https://www.openmicroscopy.org/</id>
+        <link href="https://www.openmicroscopy.org/"/>
+        <updated>2023-03-05T03:30:27.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[The Incompatibility of Open Core and Profit]]></title>
         <id>https://bytesdataaction.substack.com/p/open-core-profit</id>
@@ -521,6 +850,16 @@
         <id>https://github.com/midzer/wolf4sdl</id>
         <link href="https://github.com/midzer/wolf4sdl"/>
         <updated>2023-03-03T11:57:27.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[The (Almost) Definitive PC Sound Card Article (Pre-1990)]]></title>
+        <id>http://brassicgamer.blogspot.com/2023/03/the-almost-definitive-pc-sound-card.html</id>
+        <link href="http://brassicgamer.blogspot.com/2023/03/the-almost-definitive-pc-sound-card.html"/>
+        <updated>2023-03-03T09:01:14.000Z</updated>
         <summary type="html"><![CDATA[Comments]]></summary>
         <author>
             <name>Hacker News</name>
@@ -8693,355 +9032,6 @@ Prometheus提供指标收集、存储和查询。它通常通过一个简单的�
         <summary type="html"><![CDATA[Comments]]></summary>
         <author>
             <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[ESP32 Buyer’s Guide: Different Chips, Firmware, Sensors]]></title>
-        <id>https://eitherway.io/posts/esp32-buyers-guide/</id>
-        <link href="https://eitherway.io/posts/esp32-buyers-guide/"/>
-        <updated>2023-02-04T11:48:25.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[What time is it? A simple question with a complex answer]]></title>
-        <id>https://andrea.corbellini.name/2023/01/23/what-time-is-it/</id>
-        <link href="https://andrea.corbellini.name/2023/01/23/what-time-is-it/"/>
-        <updated>2023-02-04T11:04:45.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[FOSDEM 2023 is live now]]></title>
-        <id>https://fosdem.org/2023/schedule/streaming/</id>
-        <link href="https://fosdem.org/2023/schedule/streaming/"/>
-        <updated>2023-02-04T10:39:23.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[A Linking Adventure]]></title>
-        <id>https://nsnotes.github.io/2023/03/03/A-linking-adventure/</id>
-        <link href="https://nsnotes.github.io/2023/03/03/A-linking-adventure/"/>
-        <updated>2023-02-04T08:08:49.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Page Turners: Literature in Ancient Egypt]]></title>
-        <id>https://www.britishmuseum.org/blog/page-turners-literature-ancient-egypt</id>
-        <link href="https://www.britishmuseum.org/blog/page-turners-literature-ancient-egypt"/>
-        <updated>2023-02-04T02:19:41.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Polish communist era 8 bit computer used in banks, MK-45 outdated at arrival]]></title>
-        <id>https://www.youtube.com/watch?v=CMRAMxtS21A</id>
-        <link href="https://www.youtube.com/watch?v=CMRAMxtS21A"/>
-        <updated>2023-02-03T23:40:28.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Hustle bros are jumping on the AI bandwagon]]></title>
-        <id>https://www.theverge.com/2023/2/2/23582772/chatgpt-ai-get-rich-quick-schemes-hustlers-web</id>
-        <link href="https://www.theverge.com/2023/2/2/23582772/chatgpt-ai-get-rich-quick-schemes-hustlers-web"/>
-        <updated>2023-02-03T23:34:35.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[The KLF: Chaos, magic and the band who burned £1M]]></title>
-        <id>https://johnhiggs.com/books/the-klf/</id>
-        <link href="https://johnhiggs.com/books/the-klf/"/>
-        <updated>2023-02-03T23:28:22.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[A single line of code brought down a half-billion euro rocket launch]]></title>
-        <id>https://jam.dev/blog/famous-bugs-rocket-launch/</id>
-        <link href="https://jam.dev/blog/famous-bugs-rocket-launch/"/>
-        <updated>2023-02-03T23:00:54.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[43 Hours on the Amtrak Southwest Chief]]></title>
-        <id>https://www.0x58ed.com/blog/amtrak-southwest-chief</id>
-        <link href="https://www.0x58ed.com/blog/amtrak-southwest-chief"/>
-        <updated>2023-02-03T22:17:09.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Show HN: DocsGPT, open-source documentation assistant, fully aware of libraries]]></title>
-        <id>https://github.com/arc53/docsgpt</id>
-        <link href="https://github.com/arc53/docsgpt"/>
-        <updated>2023-02-03T21:54:55.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Is this poison ivy?]]></title>
-        <id>https://www.birdandmoon.com/poisonivy/</id>
-        <link href="https://www.birdandmoon.com/poisonivy/"/>
-        <updated>2023-02-03T21:53:49.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Critique of the mind/body problem: it's not solvable]]></title>
-        <id>https://www.jsanilac.com/mind/</id>
-        <link href="https://www.jsanilac.com/mind/"/>
-        <updated>2023-02-03T21:49:59.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Update on Samsung SSD Reliability]]></title>
-        <id>https://www.pugetsystems.com/blog/2023/02/02/update-on-samsung-ssd-reliability/</id>
-        <link href="https://www.pugetsystems.com/blog/2023/02/02/update-on-samsung-ssd-reliability/"/>
-        <updated>2023-02-03T21:44:32.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[MDMA and psilocybin are approved as medicines in Australia]]></title>
-        <id>https://www.wired.com/story/australia-psilocybin-mdma-approval/</id>
-        <link href="https://www.wired.com/story/australia-psilocybin-mdma-approval/"/>
-        <updated>2023-02-03T21:30:12.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[The strategic use of titles to avoid overtime payments]]></title>
-        <id>https://www.nber.org/papers/w30826</id>
-        <link href="https://www.nber.org/papers/w30826"/>
-        <updated>2023-02-03T20:33:06.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[ESA – Space Suit Design Competition]]></title>
-        <id>https://ideas.esa.int/servlet/hype/IMT?documentTableId=45087148846182772&amp;userAction=Browse&amp;templateName=&amp;documentId=3187b4b0a219dbb07731d5f690776a8b</id>
-        <link href="https://ideas.esa.int/servlet/hype/IMT?documentTableId=45087148846182772&amp;userAction=Browse&amp;templateName=&amp;documentId=3187b4b0a219dbb07731d5f690776a8b"/>
-        <updated>2023-02-03T19:31:20.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Universal Summarizer]]></title>
-        <id>https://labs.kagi.com/ai/sum</id>
-        <link href="https://labs.kagi.com/ai/sum"/>
-        <updated>2023-02-03T19:13:28.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Effective altruism has a sexual harassment problem, women say]]></title>
-        <id>https://time.com/6252617/effective-altruism-sexual-harassment/</id>
-        <link href="https://time.com/6252617/effective-altruism-sexual-harassment/"/>
-        <updated>2023-02-03T19:10:37.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Show HN: Glidesort, a new stable sort in Rust up to ~4x faster for random data]]></title>
-        <id>https://github.com/orlp/glidesort</id>
-        <link href="https://github.com/orlp/glidesort"/>
-        <updated>2023-02-03T19:00:45.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[The golden era of being an open startup is gone]]></title>
-        <id>https://testimonial.to/resources/the-golden-era-of-being-an-open-startup-is-gone</id>
-        <link href="https://testimonial.to/resources/the-golden-era-of-being-an-open-startup-is-gone"/>
-        <updated>2023-02-03T17:54:24.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[The Future (and the Past) of the Web Is Server Side Rendering]]></title>
-        <id>https://deno.com/blog/the-future-and-past-is-server-side-rendering</id>
-        <link href="https://deno.com/blog/the-future-and-past-is-server-side-rendering"/>
-        <updated>2023-02-03T17:30:55.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Want anonymity? Make a persona not a mystery]]></title>
-        <id>https://sive.rs/anon</id>
-        <link href="https://sive.rs/anon"/>
-        <updated>2023-02-03T17:07:39.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Agave (YC W22) is hiring a founding dev (SF)]]></title>
-        <id>https://news.ycombinator.com/item?id=34643929</id>
-        <link href="https://news.ycombinator.com/item?id=34643929"/>
-        <updated>2023-02-03T17:00:45.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Adding C-style for loops to Python for fun]]></title>
-        <id>https://sadh.life/post/cursed-for/</id>
-        <link href="https://sadh.life/post/cursed-for/"/>
-        <updated>2023-02-03T16:54:54.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Flutter Desktop Isn't There Yet]]></title>
-        <id>https://plei.one/blog/flutter-desktop-not-there-yet/</id>
-        <link href="https://plei.one/blog/flutter-desktop-not-there-yet/"/>
-        <updated>2023-02-03T16:26:16.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[How to Paint Like Hayao Miyazaki]]></title>
-        <id>https://animationobsessive.substack.com/p/how-to-paint-like-hayao-miyazaki</id>
-        <link href="https://animationobsessive.substack.com/p/how-to-paint-like-hayao-miyazaki"/>
-        <updated>2023-02-03T13:34:21.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[ChatGPT: The Slickest Con Artist of All Time]]></title>
-        <id>https://tedgioia.substack.com/p/introducing-the-slickest-con-artist</id>
-        <link href="https://tedgioia.substack.com/p/introducing-the-slickest-con-artist"/>
-        <updated>2023-02-03T13:22:13.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[12因素应用方法重新审视]]></title>
-        <id>http://weekly.dockone.io/article/2434950</id>
-        <link href="http://weekly.dockone.io/article/2434950"/>
-        <updated>2023-02-03T01:11:23.412Z</updated>
-        <summary type="html"><![CDATA[【编者的话】十二因素应用方法是由 Adam Wiggins 提出的构建 SaaS 应用的方法。本文介绍这个方法的演变过程，我们今天还能学习它的地方，以及它如何改变了过去的状况。
-你经常会听说软件开发和部署将变得更美好。这一趋势的当前轮回是 Heroku。不要误会我的意思，Heroku 令人难以置信，它带来了一种编写 Web 应用和部署分布式系统的新方法。他们肯定做对了很多。即使10年之后的今天，我们仍在努力实现同样的开发便利性。
-Heroku 的联合创始人 Adam Wiggins 有一篇著名文章， 12 因素应用方法，它总结了许多有用并且我确信使得构建 Heroku 更有趣和有益的想法。
-在这篇文章中，我想回顾一下 Adam 所涵盖的 12 个因素中的每一个，它们是如何演变的，我们今天可以从它们身上学到什么，以及它们如何改变了过去的状态。
-代码库
-
-
-
-
-这个建议刚提出时，类似 GitHub 这样的东西才刚刚起步，代码版本控制也并不常见。这可能看起来很残酷，但这是事实。我记得刚开始时必须处理 Subversion 的问题。
-代码库与其应用之间的关系显著增长，包括从测试到部署的所有内容。然而，仍然存在高度争议的一点是是否需要单仓。
-如果有多个代码库，它就不是一个应用——它是一个分布式系统。分布式系统中的每个组件都是一个应用，每个组件都可以单独遵守十二因素。
-尤其是在以微服务为中心的世界中，维护多个代码库所需的所有开销都可能令人厌烦。
-依赖项
-
-
-
-
-我不确定你们中有多少人曾经在 Ansible 和 Puppet 等软件可用之前处理过依赖系统。尽管如此，操作系统和各种版本的库之间的特殊性绝对是一场噩梦。
-这个因素抓住了关键，最终在很大程度上使得依赖可以被视为一个已解决的问题。
-通过引入各种清单文件，我们的应用可以以一致和准确的方式重新构建。此外，像 Bazel 这样的构建工具…]]></summary>
-        <author>
-            <name>新牛哥</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[深入理解 Redis]]></title>
-        <id>http://weekly.dockone.io/article/2434945</id>
-        <link href="http://weekly.dockone.io/article/2434945"/>
-        <updated>2023-02-02T01:09:14.076Z</updated>
-        <summary type="html"><![CDATA[什么是 Redis？
-Redis（“REmote DIctionary Service”）是一个开源的键值对数据库服务器。
-Redis 更准确的描述是一个数据结构服务器。Redis 的这种特殊性质让它在开发人员中很受欢迎。
-
-
-
-Redis不是通过迭代或者排序方式处理数据，而是一开始就按照数据结构方式组织。早期，它的使用很像 Memcached，但随着 Redis 的改进，它在许多其他用例中变得可行，包括发布-订阅机制、流（streaming）和队列。
-
-
-
-主要来说，Redis 是一个内存数据库，用作另一个“真实”数据库（如 MySQL 或 PostgreSQL）前面的缓存，以帮助提高应用程序性能。它通过利用内存的高速访问速度，从而减轻核心应用程序数据库的负载，例如：
-不经常更改且经常被请求的数据
-任务关键性较低且经常变动的数据
-
-上述数据的示例可以包括会话或数据缓存以及仪表板的排行榜或汇总分析。
-
-
-
-但是，对于许多用例场景，Redis 都可以提供足够的保证，可以将其用作成熟的主数据库。再加上 Redis 插件及其各种高可用性（HA）设置，Redis 作为数据库对于某些场景和工作负载变得非常有用。
-另一个重要方面是 Redis 模糊了缓存和数据存储之间的界限。这里要理解的重要一点是，相比于使用 SSD 或 HDD 作为存储的传统数据库，读取和操作内存中数据的速度要快得多。
-
-
-
-最初，Redis 最常被比作 Memcached，后者当时缺乏任何非易失性持久化。
-这是当前两个缓存之间的功能细分。
-
-
-
-虽然现在拥有多种配置方式将数据持久化到磁盘，但当时首次引入持久化时，Redis 是使用快照方式，通过异步拷贝内存中的数据方式来做持久化。不幸的是，这种机制的缺点是可能会在快照之间丢失数据。
-Redis 自 2009 年成立到现在已经变的很成熟。我们将介绍它的大部分架构和拓扑…]]></summary>
-        <author>
-            <name>w9527</name>
         </author>
     </entry>
 </feed>
