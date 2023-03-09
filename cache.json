@@ -12,6 +12,26 @@
       "siteUrl": "http://weekly.dockone.io",
       "articles": [
         {
+          "id": "http://weekly.dockone.io/article/2434950",
+          "author": "新牛哥",
+          "description": "【编者的话】十二因素应用方法是由 Adam Wiggins 提出的构建 SaaS 应用的方法。本文介绍这个方法的演变过程，我们今天还能学习它的地方，以及它如何改变了过去的状况。\n你经常会听说软件开发和部署将变得更美好。这一趋势的当前轮回是 Heroku。不要误会我的意思，Heroku 令人难以置信，它带来了一种编写 Web 应用和部署分布式系统的新方法。他们肯定做对了很多。即使10年之后的今天，我们仍在努力实现同样的开发便利性。\nHeroku 的联合创始人 Adam Wiggins 有一篇著名文章， 12 因素应用方法，它总结了许多有用并且我确信使得构建 Heroku 更有趣和有益的想法。\n在这篇文章中，我想回顾一下 Adam 所涵盖的 12 个因素中的每一个，它们是如何演变的，我们今天可以从它们身上学到什么，以及它们如何改变了过去的状态。\n代码库\n\n\n\n\n这个建议刚提出时，类似 GitHub 这样的东西才刚刚起步，代码版本控制也并不常见。这可能看起来很残酷，但这是事实。我记得刚开始时必须处理 Subversion 的问题。\n代码库与其应用之间的关系显著增长，包括从测试到部署的所有内容。然而，仍然存在高度争议的一点是是否需要单仓。\n如果有多个代码库，它就不是一个应用——它是一个分布式系统。分布式系统中的每个组件都是一个应用，每个组件都可以单独遵守十二因素。\n尤其是在以微服务为中心的世界中，维护多个代码库所需的所有开销都可能令人厌烦。\n依赖项\n\n\n\n\n我不确定你们中有多少人曾经在 Ansible 和 Puppet 等软件可用之前处理过依赖系统。尽管如此，操作系统和各种版本的库之间的特殊性绝对是一场噩梦。\n这个因素抓住了关键，最终在很大程度上使得依赖可以被视为一个已解决的问题。\n通过引入各种清单文件，我们的应用可以以一致和准确的方式重新构建。此外，像 Bazel 这样的构建工具…",
+          "link": "http://weekly.dockone.io/article/2434950",
+          "publishedOn": "2023-03-09T01:13:31.204Z",
+          "wordCount": null,
+          "title": "12因素应用方法重新审视",
+          "imageUrl": null
+        },
+        {
+          "id": "http://weekly.dockone.io/article/2434945",
+          "author": "w9527",
+          "description": "什么是 Redis？\nRedis（“REmote DIctionary Service”）是一个开源的键值对数据库服务器。\nRedis 更准确的描述是一个数据结构服务器。Redis 的这种特殊性质让它在开发人员中很受欢迎。\n\n\n\nRedis不是通过迭代或者排序方式处理数据，而是一开始就按照数据结构方式组织。早期，它的使用很像 Memcached，但随着 Redis 的改进，它在许多其他用例中变得可行，包括发布-订阅机制、流（streaming）和队列。\n\n\n\n主要来说，Redis 是一个内存数据库，用作另一个“真实”数据库（如 MySQL 或 PostgreSQL）前面的缓存，以帮助提高应用程序性能。它通过利用内存的高速访问速度，从而减轻核心应用程序数据库的负载，例如：\n不经常更改且经常被请求的数据\n任务关键性较低且经常变动的数据\n\n上述数据的示例可以包括会话或数据缓存以及仪表板的排行榜或汇总分析。\n\n\n\n但是，对于许多用例场景，Redis 都可以提供足够的保证，可以将其用作成熟的主数据库。再加上 Redis 插件及其各种高可用性（HA）设置，Redis 作为数据库对于某些场景和工作负载变得非常有用。\n另一个重要方面是 Redis 模糊了缓存和数据存储之间的界限。这里要理解的重要一点是，相比于使用 SSD 或 HDD 作为存储的传统数据库，读取和操作内存中数据的速度要快得多。\n\n\n\n最初，Redis 最常被比作 Memcached，后者当时缺乏任何非易失性持久化。\n这是当前两个缓存之间的功能细分。\n\n\n\n虽然现在拥有多种配置方式将数据持久化到磁盘，但当时首次引入持久化时，Redis 是使用快照方式，通过异步拷贝内存中的数据方式来做持久化。不幸的是，这种机制的缺点是可能会在快照之间丢失数据。\nRedis 自 2009 年成立到现在已经变的很成熟。我们将介绍它的大部分架构和拓扑…",
+          "link": "http://weekly.dockone.io/article/2434945",
+          "publishedOn": "2023-03-09T01:13:31.204Z",
+          "wordCount": null,
+          "title": "深入理解 Redis",
+          "imageUrl": null
+        },
+        {
           "id": "http://weekly.dockone.io/article/2434949",
           "author": "frankinbj",
           "description": "分布式计算的谬误是由L Peter Deutsch和Sun Microsystems公司的其他人所提出的一组断言，他们描述了不熟悉分布式应用程序的程序员总是会做出的一些错误的假设。\n微服务的大规模普及迫使越来越多的工程师意识到这些错误的认识给他们的系统带来多么大的影响。\n我们经常会看到一些人在讨论系统设计的时候，忽视或者淡化这8个谬误。\n\n\n\n下面我来介绍一下这些谬误以及一些潜在的消减措施，希望大家能感兴趣。\n网络是可靠的\n\n\n\n\n为了构建一个可靠的系统，你必须理解并接受任何一种通信都可能会失败的事实。因此，我们需要为系统设计出一种方法来处理这种潜在的错误沟通。所以，最终需要用到重传，而且它可以有多种形式。\n存储再转发（store and forward）就是这样一种模型。我们不直接将数据发送到下游服务器，而是将其存储在本地或其他地方，这也提供了能从灾难场景下恢复的保障。\n有很多产品属于这种技术，如RabbitMQ，ActiveMQ以及来自云厂商的各种专有解决方案。\n网络是零延迟的\n\n\n\n\n图片的左边是在现代系统中直接访问内存的时间，右边是在世界各地往返所需的时间。\n我喜欢把延迟看作是完成任何请求的严格开销。传递的消息可以很大，也可以很小，而延迟是不变的。与带宽不同，延迟通常与光速和通信距离（或物理路径）有关。所以两个系统之间的物理距离在这里起着重要的作用。\n延迟是无处不在的。它发生在所有的通讯中。理想情况下，这种开销应该尽可能小。延迟的场景和从车上卸货非常相似，就是说，从厨房到车上的时间就是延迟。你是想一趟尽可能多地拿东西，还是想每次只拿一个东西，花几百次往返把车上的东西都卸下来？\n带宽是无限的\n\n\n\n\n假设持续无限制地增加信道上的数据大小，这显然是个很大的错误。这种情况只有在某种通讯彻底占满带宽与此同时无法扩容时才会出现。\n我第一次遇到这个问题是我不小心将主页所需的有效…",
@@ -70,26 +90,6 @@
           "wordCount": null,
           "title": "这份云原生的免费资料，看得我过瘾",
           "imageUrl": null
-        },
-        {
-          "id": "http://weekly.dockone.io/article/2434954",
-          "author": "megrez",
-          "description": "Prometheus vs. OpenTelemetry指标: 共同点\n这两个系统都允许你收集和转换指标（尽管Open Telemetry作为一个转换管道要灵活得多）。然而，回顾以前的文章，我们需要记住一个重要的区别。Prometheus是一个可观测性工具（包括收集、存储和查询），它使用的指标模型是为适应自己的需要而设计的。\n另一方面，OpenTelemetry的指标组件将许多不同的数据模型转化为一个单一的框架（提供无存储或查询的集合）。这些核心差异反映了系统的复杂性：Prometheus是一个直接的模型，通常以文本形式暴露出来，而OpenTelemetry是由三种模型组成的更复杂的系列，使用二进制格式进行传输。\n这两个系统也允许通过SDK进行代码级的监控，但OpenTelemetry也专注于支持自动埋点，尽可能不会侵入应用程序。\n那么，你可以创建的指标之间有什么重叠？本质上，OpenTelemetry允许表示所有Prometheus指标类型（Counters、Gauges、Summaries和Histograms）。尽管如此，Prometheus仍然不能表示OpenTelemetry指标的某些配置，包括Delta表示法和指数Histograms（尽管这些将很快在Prometheus中被支持），以及整数数值类型。\n换句话说，Prometheus指标是OpenTelemetry指标的一个严格子集。\n主要区别\n虽然内部模型的工作方式有一些差异，但从开发者的角度来看，两者之间的实际差异更多是与生态系统有关。\nPrometheus提供指标收集、存储和查询。它通常通过一个简单的爬虫系统收集指标，从主机中提取数据。Prometheus数据库存储这些数据，然后你可以用Prometheus查询语言PromQL来查询。Prometheus数据库可以处理大量的数据，但它并不是正式意义上的长期存…",
-          "link": "http://weekly.dockone.io/article/2434954",
-          "publishedOn": "2023-02-05T01:13:05.375Z",
-          "wordCount": null,
-          "title": "Prometheus vs. OpenTelemetry Metrics: 完全指南",
-          "imageUrl": null
-        },
-        {
-          "id": "http://weekly.dockone.io/article/2434946",
-          "author": "新牛哥",
-          "description": "【编者的话】本文是作者在 FLOPS 2022 会议上的演讲，正如标题所言，重点分享了使用Liquid Haskell语言集成验证系统来构建可靠的分布式系统的有趣的探索经历，目标是希望程序员能够机械地指定和验证分布式系统的真实、可执行实现的正确性属性，而且是使用集成到他们用于实现的相同通用、工业强度编程语言中的验证功能来做到这一点。目前来看使用Liquid Haskell能做到，但是仍然有很大的改进空间。\n今年 5 月，我在FLOPS 2022 会议上发表了开幕主题演讲（我的第一次主题演讲！） 。我谈到了我们小组在使用 Liquid Haskell 验证分布式系统的正确性方面所做的工作。\n这是我的 FLOPS 演讲稿。一些幻灯片包含在下面，我也发布了完整的幻灯片。\n早上好\n\n\n\n\n早上好，FLOPS！我是 Lindsey Kuper。我是加州大学圣克鲁兹分校的助理教授。\n非常感谢 Atsushi 和 Michael 以及整个 FLOPS 组织团队邀请我在 FLOPS 上发言，以及他们组织这次活动的工作。就个人而言，FLOPS 是我第一次有论文被拒绝的会议，那是在 2010 年我刚开始读研究生的时候。所以今天被邀请做这个演讲，我感到特别荣幸。\n这个演讲是关于我最近非常兴奋的事情，即使用现代语言集成验证工具来帮助我们构建保证按预期工作的分布式系统的潜力，这些保证不仅适用于模型，还适用于真实运行的代码。\n在本次演讲的开始部分，我将解释我所说的“分布式系统”的含义以及它们所面临的具体挑战。然后简单介绍一下 Liquid Haskell 语言集成的验证系统。最后，探险记：我将分享我和我的学生和合作者一直在这个领域开展的两个项目的一些亮点。\n那么，让我们从讨论分布式系统开始吧！\n什么是分布式系统？\n\n\n\n\n想象一些独立的机器通过网络相互传递消息进行通信。它们可能相距很近或相距很远，但我…",
-          "link": "http://weekly.dockone.io/article/2434946",
-          "publishedOn": "2023-02-05T01:13:05.375Z",
-          "wordCount": null,
-          "title": "我的 FLOPS 2022 主题演讲：“使用 Liquid Haskell 构建可靠分布式系统的探险记”",
-          "imageUrl": null
         }
       ]
     },
@@ -98,6 +98,226 @@
       "feedUrl": "https://news.ycombinator.com/rss",
       "siteUrl": "https://news.ycombinator.com/",
       "articles": [
+        {
+          "id": "https://www.ycombinator.com/companies/8vdx/jobs/oKQSIyc-software-engineers-full-stack-front-end-back-end-developers",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.ycombinator.com/companies/8vdx/jobs/oKQSIyc-software-engineers-full-stack-front-end-back-end-developers",
+          "publishedOn": "2023-03-09T01:00:07.000Z",
+          "wordCount": 2450,
+          "title": "8vdX (YC W22) Is Hiring",
+          "imageUrl": "https://bookface-images.s3.amazonaws.com/logos/15c7c763c51994ca8c00863ab5695fb6d4e5b4d9.png?1644993250"
+        },
+        {
+          "id": "https://current.org/2015/06/a-top-audio-engineer-explains-nprs-signature-sound/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://current.org/2015/06/a-top-audio-engineer-explains-nprs-signature-sound/",
+          "publishedOn": "2023-03-09T00:10:29.000Z",
+          "wordCount": 9980,
+          "title": "Audio Engineer Explains NPR&#x27;s Signature Sound",
+          "imageUrl": "https://current.org/wp-content/uploads/2015/06/Neumann_U87_Condenser_Microphone_-_Studio_A_In_Your_Ear_Studios-771x514.jpg"
+        },
+        {
+          "id": "https://www.sfgate.com/bayarea/article/tesla-autopilot-deadly-fire-truck-crash-17827415.php",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.sfgate.com/bayarea/article/tesla-autopilot-deadly-fire-truck-crash-17827415.php",
+          "publishedOn": "2023-03-08T23:54:58.000Z",
+          "wordCount": 3093,
+          "title": "Tesla was likely on autopilot in deadly fire truck crash in Bay Area, feds say",
+          "imageUrl": "https://s.hdnux.com/photos/01/31/45/65/23485784/3/rawImage.jpg"
+        },
+        {
+          "id": "https://www.home-assistant.io/blog/2023/03/08/supervisor-security-disclosure/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.home-assistant.io/blog/2023/03/08/supervisor-security-disclosure/",
+          "publishedOn": "2023-03-08T22:58:49.000Z",
+          "wordCount": 603,
+          "title": "Disclosure: Supervisor security vulnerability",
+          "imageUrl": "https://www.home-assistant.io/images/blog/2023-03-supervisor-security-disclosure/social.png"
+        },
+        {
+          "id": "https://gdevelop.io/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://gdevelop.io/",
+          "publishedOn": "2023-03-08T20:32:39.000Z",
+          "wordCount": 4356,
+          "title": "GDevelop: An open-source, cross-platform, free, and easy game-making app",
+          "imageUrl": "https://cdn.sanity.io/images/a389kcxn/gdevelop/bb7347a19cd361ee11790de1f9e055c660cec223-2107x2160.png?h=600&w=800&fit=crop"
+        },
+        {
+          "id": "https://30fps.net/pages/twotris/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://30fps.net/pages/twotris/",
+          "publishedOn": "2023-03-08T20:25:34.000Z",
+          "wordCount": 969,
+          "title": "Full screen triangle optimization",
+          "imageUrl": null
+        },
+        {
+          "id": "https://www.hackster.io/news/andreas-eriksen-s-potatop-is-a-lisp-powered-laptop-with-a-battery-life-measured-in-years-2f5d79653f24",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.hackster.io/news/andreas-eriksen-s-potatop-is-a-lisp-powered-laptop-with-a-battery-life-measured-in-years-2f5d79653f24",
+          "publishedOn": "2023-03-08T20:21:44.000Z",
+          "wordCount": 1145,
+          "title": "Lisp-powered laptop with a battery life measured in years",
+          "imageUrl": "https://hackster.imgix.net/uploads/attachments/1567178/_60xasYnv15.blob?auto=compress%2Cformat&w=600&h=450&fit=min"
+        },
+        {
+          "id": "https://go.dev/blog/integration-test-coverage",
+          "author": null,
+          "description": "Comments",
+          "link": "https://go.dev/blog/integration-test-coverage",
+          "publishedOn": "2023-03-08T20:18:40.000Z",
+          "wordCount": 1706,
+          "title": "Code coverage for Go integration tests",
+          "imageUrl": null
+        },
+        {
+          "id": "https://genmon.github.io/braggoscope/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://genmon.github.io/braggoscope/",
+          "publishedOn": "2023-03-08T19:28:14.000Z",
+          "wordCount": 247,
+          "title": "Show HN: BBC “In Our Time”, categorised by Dewey Decimal, heavy lifting by GPT",
+          "imageUrl": null
+        },
+        {
+          "id": "https://stripe.com/pricing#pricing-details",
+          "author": null,
+          "description": "Comments",
+          "link": "https://stripe.com/pricing#pricing-details",
+          "publishedOn": "2023-03-08T19:21:18.000Z",
+          "wordCount": 3971,
+          "title": "Stripe increases prices for US businesses starting June first, 2023",
+          "imageUrl": "https://b.stripecdn.com/site-statics-srv/assets/assets/img/v3/home/social-9755e0835b1ab1538bddad515c24744b.png"
+        },
+        {
+          "id": "https://riskybiznews.substack.com/p/risky-biz-news-canadas-tax-revenue",
+          "author": null,
+          "description": "Comments",
+          "link": "https://riskybiznews.substack.com/p/risky-biz-news-canadas-tax-revenue",
+          "publishedOn": "2023-03-08T18:08:16.000Z",
+          "wordCount": 8704,
+          "title": "Canada&#x27;s tax revenue agency tries to ToS itself out of hacking liability",
+          "imageUrl": "https://substackcdn.com/image/fetch/w_1200,h_600,c_limit,f_jpg,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fec61405d-3929-477b-a217-8ee4e077b9a9_800x400.png"
+        },
+        {
+          "id": "https://github.com/dpayne/CodeGPT.nvim",
+          "author": null,
+          "description": "Comments",
+          "link": "https://github.com/dpayne/CodeGPT.nvim",
+          "publishedOn": "2023-03-08T17:15:00.000Z",
+          "wordCount": 1553,
+          "title": "Show HN: CodeGPT.nvim – ChatGPT plugin for Neovim",
+          "imageUrl": "https://opengraph.githubassets.com/04cc5b11583925b26a4667f74e4b38c35d62f2ea4368f687c780d09d7c0d8592/dpayne/CodeGPT.nvim"
+        },
+        {
+          "id": "https://without.boats/blog/the-registers-of-rust/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://without.boats/blog/the-registers-of-rust/",
+          "publishedOn": "2023-03-08T17:01:06.000Z",
+          "wordCount": 3363,
+          "title": "The Registers of Rust",
+          "imageUrl": null
+        },
+        {
+          "id": "https://vpnoverview.com/privacy/apps/most-deleted-apps-in-united-states/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://vpnoverview.com/privacy/apps/most-deleted-apps-in-united-states/",
+          "publishedOn": "2023-03-08T15:20:58.000Z",
+          "wordCount": 4080,
+          "title": "The apps that Americans search to “delete” the most",
+          "imageUrl": "https://vpnoverview.com/wp-content/uploads/App-Cleanse-Apps-People-Want-to-Delete-the-Most-Featured-Image.png"
+        },
+        {
+          "id": "https://news.ycombinator.com/item?id=35069839",
+          "author": null,
+          "description": "Comments",
+          "link": "https://news.ycombinator.com/item?id=35069839",
+          "publishedOn": "2023-03-08T15:05:52.000Z",
+          "wordCount": 2692,
+          "title": "Launch HN: UpTrain (YC W23) – Open-source performance monitoring for ML models",
+          "imageUrl": null
+        },
+        {
+          "id": "https://rachsmith.com/i-want-good-search/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://rachsmith.com/i-want-good-search/",
+          "publishedOn": "2023-03-08T15:03:53.000Z",
+          "wordCount": 469,
+          "title": "AI is making it easier to create more noise, when all I want is good search",
+          "imageUrl": "https://rachsmith.com/twitter-image-4.png"
+        },
+        {
+          "id": "https://beagleboard.org/blog/2023-03-08-beagleplay-annoucement",
+          "author": null,
+          "description": "Comments",
+          "link": "https://beagleboard.org/blog/2023-03-08-beagleplay-annoucement",
+          "publishedOn": "2023-03-08T15:01:52.000Z",
+          "wordCount": 1703,
+          "title": "BeaglePlay from BeagleBoard brings fun to building with computers",
+          "imageUrl": "https://beagleboard.org/blog/wp-content/uploads/2023/03/beagle-play-380x360-1.png"
+        },
+        {
+          "id": "https://www.politico.com/news/2023/03/07/privacy-loophole-ring-doorbell-00084979",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.politico.com/news/2023/03/07/privacy-loophole-ring-doorbell-00084979",
+          "publishedOn": "2023-03-08T14:58:32.000Z",
+          "wordCount": 2858,
+          "title": "Who owns private home security footage, and who can get access to it?",
+          "imageUrl": "https://static.politico.com/af/7e/460eacb94f81bd2f6d75de976c17/politico-ring-final.jpg"
+        },
+        {
+          "id": "https://www.bunniestudios.com/blog/?p=6712",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.bunniestudios.com/blog/?p=6712",
+          "publishedOn": "2023-03-08T13:17:27.000Z",
+          "wordCount": 5935,
+          "title": "Infra-Red, in Situ (Iris) Inspection of Silicon",
+          "imageUrl": null
+        },
+        {
+          "id": "https://www.tomshardware.com/news/intel-completes-development-of-18a-20a-nodes",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.tomshardware.com/news/intel-completes-development-of-18a-20a-nodes",
+          "publishedOn": "2023-03-08T13:01:35.000Z",
+          "wordCount": 8348,
+          "title": "Intel tapes out chips on 1.8nm and 2nm production nodes",
+          "imageUrl": "https://cdn.mos.cms.futurecdn.net/rVargrx2PRrE3QdGAf22wX-1200-80.jpg"
+        },
+        {
+          "id": "https://www.science.org/content/article/bee-butterfly-numbers-are-falling-even-undisturbed-forests",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.science.org/content/article/bee-butterfly-numbers-are-falling-even-undisturbed-forests",
+          "publishedOn": "2023-03-08T11:33:09.000Z",
+          "wordCount": 1981,
+          "title": "Bee and butterfly numbers are falling, even in undisturbed forests",
+          "imageUrl": "https://www.science.org/do/10.1126/science.adh4751/abs/_20230306_on_bee_decline.jpg"
+        },
+        {
+          "id": "https://coutant.org/1.html",
+          "author": null,
+          "description": "Comments",
+          "link": "https://coutant.org/1.html",
+          "publishedOn": "2023-03-08T09:23:59.000Z",
+          "wordCount": 23,
+          "title": "Microphones",
+          "imageUrl": null
+        },
         {
           "id": "https://getjerry.com/careers",
           "author": null,
@@ -169,6 +389,16 @@
           "imageUrl": "https://www-assets.kolide.com/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMVR5REE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--88b8da8e7c15dbe58a5249447fc7ff55349ebbe4/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFJZ0F6QT0iLCJleHAiOm51bGwsInB1ciI6InZhcmlhdGlvbiJ9fQ==--969217bb50ce90ca24826aea7c8b136ab8d21827/cover.png"
         },
         {
+          "id": "https://spectrum.ieee.org/electroceuticals-e-bandages",
+          "author": null,
+          "description": "Comments",
+          "link": "https://spectrum.ieee.org/electroceuticals-e-bandages",
+          "publishedOn": "2023-03-07T20:23:15.000Z",
+          "wordCount": 8807,
+          "title": "E-bandages lightly zap and heal wounds",
+          "imageUrl": "https://spectrum.ieee.org/media-library/close-up-of-a-small-device-consisting-of-many-metallic-strips-with-circular-object-and-a-flower-shape-inside.jpg?id=33196237&width=1200&height=600&coordinates=0%2C288%2C0%2C289"
+        },
+        {
           "id": "https://www.energy.gov/eere/articles/zero-energy-ready-homes-are-coming-neighborhood-near-you",
           "author": null,
           "description": "Comments",
@@ -227,6 +457,16 @@
           "wordCount": 6530,
           "title": "Cash management for early stage startups",
           "imageUrl": "https://substackcdn.com/image/fetch/w_1200,h_600,c_limit,f_jpg,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F79a582f2-c6d7-439f-ae51-61aaa04a2e4d_3072x2048.jpeg"
+        },
+        {
+          "id": "https://www.bloomberg.com/news/articles/2023-03-06/stripe-details-3-5-billion-tax-bill-in-latest-fundraising-round",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.bloomberg.com/news/articles/2023-03-06/stripe-details-3-5-billion-tax-bill-in-latest-fundraising-round",
+          "publishedOn": "2023-03-07T18:12:24.000Z",
+          "wordCount": 576,
+          "title": "Stripe faces $3.5B tax bill as employees&#x27; shares expire",
+          "imageUrl": null
         },
         {
           "id": "https://www.ndss-symposium.org/ndss-paper/improving-signals-sealed-sender/",
@@ -339,6 +579,36 @@
           "imageUrl": null
         },
         {
+          "id": "https://github.com/ruby/ruby/pull/7448",
+          "author": null,
+          "description": "Comments",
+          "link": "https://github.com/ruby/ruby/pull/7448",
+          "publishedOn": "2023-03-07T11:29:53.000Z",
+          "wordCount": 1771,
+          "title": "RJIT, a new JIT for Ruby",
+          "imageUrl": "https://opengraph.githubassets.com/c422306e6910ca31fc67de7fbb5cad86676e3d404be11f0e9ce32fdb2bc11b05/ruby/ruby/pull/7448"
+        },
+        {
+          "id": "https://en.wikipedia.org/wiki/Plankalk%C3%BCl",
+          "author": null,
+          "description": "Comments",
+          "link": "https://en.wikipedia.org/wiki/Plankalk%C3%BCl",
+          "publishedOn": "2023-03-07T09:34:44.000Z",
+          "wordCount": 3877,
+          "title": "Plankalkül",
+          "imageUrl": null
+        },
+        {
+          "id": "http://0x80.pl/notesen/2023-03-06-swar-find-any.html",
+          "author": null,
+          "description": "Comments",
+          "link": "http://0x80.pl/notesen/2023-03-06-swar-find-any.html",
+          "publishedOn": "2023-03-07T06:59:22.000Z",
+          "wordCount": 2779,
+          "title": "SWAR: Find any byte from set",
+          "imageUrl": null
+        },
+        {
           "id": "https://shiki.matsu.io/",
           "author": null,
           "description": "Comments",
@@ -357,6 +627,16 @@
           "wordCount": 15898,
           "title": "Google tells employees that fewer of them will get promotions to senior roles",
           "imageUrl": "https://image.cnbcfm.com/api/v1/image/107183744-1674657315783-gettyimages-1245722337-AFP_334U4DF.jpeg?v=1678144399&w=1920&h=1080"
+        },
+        {
+          "id": "https://notevenpast.org/a-taste-of-brazil-how-guarana-soda-became-a-national-icon/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://notevenpast.org/a-taste-of-brazil-how-guarana-soda-became-a-national-icon/",
+          "publishedOn": "2023-03-06T23:49:20.000Z",
+          "wordCount": 2990,
+          "title": "A Taste of Brazil: How Guaraná Soda Became a National Icon",
+          "imageUrl": "https://notevenpast.org/wp-content/uploads/2023/01/A-Taste-of-Brazil-1.png"
         },
         {
           "id": "https://www.nytimes.com/2022/03/14/well/mind/stress-anxiety-mind.html",
@@ -579,6 +859,16 @@
           "imageUrl": "https://substackcdn.com/image/youtube/w_728,c_limit/5-O4R-rvvNk"
         },
         {
+          "id": "https://vgamuseum.ru/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://vgamuseum.ru/",
+          "publishedOn": "2023-03-06T11:07:10.000Z",
+          "wordCount": 776,
+          "title": "Videocard Virtual Museum",
+          "imageUrl": "https://vgamuseum.ru/wp-content/uploads/2014/07/vgamuseum-vk.png"
+        },
+        {
           "id": "https://profitview.net/blog/simple-effective-system-alerts",
           "author": null,
           "description": "Comments",
@@ -587,6 +877,16 @@
           "wordCount": 4667,
           "title": "Show HN: Simple Log Alerts to Slack",
           "imageUrl": "https://cloud.profitview.net/assets/images/blog/sailing-ship.jpg"
+        },
+        {
+          "id": "https://en.wikipedia.org/wiki/Ralf_Brown%27s_Interrupt_List",
+          "author": null,
+          "description": "Comments",
+          "link": "https://en.wikipedia.org/wiki/Ralf_Brown%27s_Interrupt_List",
+          "publishedOn": "2023-03-06T09:34:37.000Z",
+          "wordCount": 2859,
+          "title": "Ralf Brown&#x27;s Interrupt List – a comprehensive CMOS settings, port addresses",
+          "imageUrl": null
         },
         {
           "id": "https://github.com/EionRobb/purple-teams",
@@ -8607,356 +8907,6 @@
           "wordCount": null,
           "title": "The Quest to Find Rectangles in a Square",
           "imageUrl": null
-        },
-        {
-          "id": "https://www.nippon.com/en/japan-topics/g02197/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.nippon.com/en/japan-topics/g02197/",
-          "publishedOn": "2023-02-07T13:11:25.000Z",
-          "wordCount": 1804,
-          "title": "The Black Ships Shock: A Historic Encounter That Changed Japan",
-          "imageUrl": "https://www.nippon.com/en/ncommon/contents/japan-topics/2233545/2233545.jpg"
-        },
-        {
-          "id": "https://www.mjt.me.uk/posts/digital-vernier-teardown/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.mjt.me.uk/posts/digital-vernier-teardown/",
-          "publishedOn": "2023-02-07T12:32:44.000Z",
-          "wordCount": 956,
-          "title": "How cheap digital verniers work (2017)",
-          "imageUrl": null
-        },
-        {
-          "id": "https://kumazen.com/a-guide-for-van-life-in-japan/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://kumazen.com/a-guide-for-van-life-in-japan/",
-          "publishedOn": "2023-02-07T11:15:34.000Z",
-          "wordCount": 5328,
-          "title": "Van Life in Japan",
-          "imageUrl": "http://kumazen.com/wp-content/uploads/2023/02/P1000084-scaled.jpg"
-        },
-        {
-          "id": "https://arxiv.org/abs/2211.05875",
-          "author": null,
-          "description": "Comments",
-          "link": "https://arxiv.org/abs/2211.05875",
-          "publishedOn": "2023-02-07T11:12:47.000Z",
-          "wordCount": 566,
-          "title": "Steps towards prompt-based creation of virtual worlds",
-          "imageUrl": null
-        },
-        {
-          "id": "https://github.com/Wowu/docker-rollout",
-          "author": null,
-          "description": "Comments",
-          "link": "https://github.com/Wowu/docker-rollout",
-          "publishedOn": "2023-02-07T10:23:52.000Z",
-          "wordCount": 1095,
-          "title": "Show HN: Docker rollout – Zero Downtime Deployment for Docker-compose",
-          "imageUrl": "https://opengraph.githubassets.com/8e93679e990ecdf9ad1a31241f1b7217e03073f65d66ebcd744cf4e43d40438a/Wowu/docker-rollout"
-        },
-        {
-          "id": "https://support.stripe.com/questions/pricing-updates-for-businesses-based-in-the-european-economic-area-(eea)",
-          "author": null,
-          "description": "Comments",
-          "link": "https://support.stripe.com/questions/pricing-updates-for-businesses-based-in-the-european-economic-area-(eea)",
-          "publishedOn": "2023-02-07T10:16:19.000Z",
-          "wordCount": 1218,
-          "title": "Stripe increases price for business in the European Economic Area",
-          "imageUrl": null
-        },
-        {
-          "id": "https://www.theregister.com/2023/02/07/mozilla_google_apple_webkit/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.theregister.com/2023/02/07/mozilla_google_apple_webkit/",
-          "publishedOn": "2023-02-07T10:00:33.000Z",
-          "wordCount": 1782,
-          "title": "Google and Mozilla are working on iOS browsers that aren't based on WebKit",
-          "imageUrl": "https://regmedia.co.uk/2021/09/02/shutterstock_apple_kingdom.jpg"
-        },
-        {
-          "id": "https://forward.com/culture/534139/symeon-shimin-movie-largest-painting-gina-lollobrigida-yul-brynner/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://forward.com/culture/534139/symeon-shimin-movie-largest-painting-gina-lollobrigida-yul-brynner/",
-          "publishedOn": "2023-02-07T06:28:07.000Z",
-          "wordCount": 5061,
-          "title": "It was the biggest painting in the world – how could it just disappear?",
-          "imageUrl": "https://forward.com/wp-content/uploads/2023/01/20230127145636_00005-scaled.jpg"
-        },
-        {
-          "id": "https://dsf.berkeley.edu/papers/ERL-M85-95.pdf",
-          "author": null,
-          "description": "Comments",
-          "link": "https://dsf.berkeley.edu/papers/ERL-M85-95.pdf",
-          "publishedOn": "2023-02-07T05:35:52.000Z",
-          "wordCount": 4879,
-          "title": "The Design of Postgres (1986) [pdf]",
-          "imageUrl": null
-        },
-        {
-          "id": "https://bbchallenge.org/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://bbchallenge.org/",
-          "publishedOn": "2023-02-07T05:23:53.000Z",
-          "wordCount": 24,
-          "title": "The Busy Beaver Challenge",
-          "imageUrl": null
-        },
-        {
-          "id": "https://forums.qrz.com/index.php?threads/turkey-earthquake-please-keep-28-540-clear-for-communications.850385/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://forums.qrz.com/index.php?threads/turkey-earthquake-please-keep-28-540-clear-for-communications.850385/",
-          "publishedOn": "2023-02-06T23:35:10.000Z",
-          "wordCount": 2906,
-          "title": "Turkey earthquake: please keep 28.540 clear for communications",
-          "imageUrl": "https://forums.qrz.com/styles/default/xenforo/avatars/avatar_m.png"
-        },
-        {
-          "id": "https://www.kooslooijesteijn.net/blog/you-are-making-me-buy-a-new-phone",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.kooslooijesteijn.net/blog/you-are-making-me-buy-a-new-phone",
-          "publishedOn": "2023-02-06T23:27:24.000Z",
-          "wordCount": 1902,
-          "title": "You’re making me buy a new phone",
-          "imageUrl": "https://www.kooslooijesteijn.net/generated/assets/blog/2023-02-06/featured-og-iphone-1400-ce4c2c507.jpg"
-        },
-        {
-          "id": "https://arstechnica.com/science/2023/02/us-woman-has-walked-around-with-untreated-tb-for-over-a-year-now-faces-jail/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://arstechnica.com/science/2023/02/us-woman-has-walked-around-with-untreated-tb-for-over-a-year-now-faces-jail/",
-          "publishedOn": "2023-02-06T23:21:59.000Z",
-          "wordCount": 2125,
-          "title": "US woman has walked around with untreated TB for over a year, now faces jail",
-          "imageUrl": "https://cdn.arstechnica.net/wp-content/uploads/2023/02/GettyImages-1358937217-760x380.jpeg"
-        },
-        {
-          "id": "https://eulawenforcement.com/?p=7941",
-          "author": null,
-          "description": "Comments",
-          "link": "https://eulawenforcement.com/?p=7941",
-          "publishedOn": "2023-02-06T23:12:25.000Z",
-          "wordCount": null,
-          "title": "The Dutch benefits scandal: a cautionary tale for algorithmic enforcement",
-          "imageUrl": null
-        },
-        {
-          "id": "https://flappybirdle.com/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://flappybirdle.com/",
-          "publishedOn": "2023-02-06T22:01:54.000Z",
-          "wordCount": 29,
-          "title": "Show HN: Flappy Bird and Wordle",
-          "imageUrl": "https://flappybirdle.com/bg.png"
-        },
-        {
-          "id": "https://www.beautifulpublicdata.com/the-united-states-radio-frequency-allocation-chart/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.beautifulpublicdata.com/the-united-states-radio-frequency-allocation-chart/",
-          "publishedOn": "2023-02-06T21:42:21.000Z",
-          "wordCount": 2251,
-          "title": "The United States Frequency Allocation Chart",
-          "imageUrl": "https://www.beautifulpublicdata.com/content/images/2023/02/Screenshot-2023-02-04-at-11.48.50-PM.png"
-        },
-        {
-          "id": "https://anthonyhobday.com/sideprojects/saferules/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://anthonyhobday.com/sideprojects/saferules/",
-          "publishedOn": "2023-02-06T21:36:49.000Z",
-          "wordCount": 1685,
-          "title": "Visual design rules you can safely follow",
-          "imageUrl": null
-        },
-        {
-          "id": "https://www.intofarlands.com/the-silk-roads",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.intofarlands.com/the-silk-roads",
-          "publishedOn": "2023-02-06T21:35:36.000Z",
-          "wordCount": 7046,
-          "title": "Explore the Silk Roads",
-          "imageUrl": null
-        },
-        {
-          "id": "https://laanwj.github.io/2023/02/06/regrets.html",
-          "author": null,
-          "description": "Comments",
-          "link": "https://laanwj.github.io/2023/02/06/regrets.html",
-          "publishedOn": "2023-02-06T21:33:48.000Z",
-          "wordCount": 288,
-          "title": "Of regrets",
-          "imageUrl": null
-        },
-        {
-          "id": "https://supabase.com/blog/openai-embeddings-postgres-vector",
-          "author": null,
-          "description": "Comments",
-          "link": "https://supabase.com/blog/openai-embeddings-postgres-vector",
-          "publishedOn": "2023-02-06T21:24:09.000Z",
-          "wordCount": 10994,
-          "title": "Storing OpenAI embeddings in Postgres with pgvector",
-          "imageUrl": "https://supabase.com/images/blog/embeddings/og_pgvector.png"
-        },
-        {
-          "id": "https://ryancor.medium.com/hardware-trojans-under-a-microscope-bf542acbcc29",
-          "author": null,
-          "description": "Comments",
-          "link": "https://ryancor.medium.com/hardware-trojans-under-a-microscope-bf542acbcc29",
-          "publishedOn": "2023-02-06T21:19:26.000Z",
-          "wordCount": 8607,
-          "title": "Hardware Trojans Under a Microscope",
-          "imageUrl": "https://miro.medium.com/max/1200/1*EOIO7LXNVUpDQzPWE_7dmQ.png"
-        },
-        {
-          "id": "https://observablehq.com/@asg017/making-sqlite-extensions-pip-install-able",
-          "author": null,
-          "description": "Comments",
-          "link": "https://observablehq.com/@asg017/making-sqlite-extensions-pip-install-able",
-          "publishedOn": "2023-02-06T19:50:23.000Z",
-          "wordCount": 1587,
-          "title": "Making SQLite extensions pip install-able",
-          "imageUrl": "https://static.observableusercontent.com/thumbnail/752da5162579e0416b9b2e97600b6306f00808125e12d7690a31f9b91e53d9c0.jpg"
-        },
-        {
-          "id": "https://blog.google/technology/ai/bard-google-ai-search-updates/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://blog.google/technology/ai/bard-google-ai-search-updates/",
-          "publishedOn": "2023-02-06T19:01:45.000Z",
-          "wordCount": 2144,
-          "title": "Bard and new AI features in Search",
-          "imageUrl": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/what_new_discoveries.width-1300.format-webp.webp"
-        },
-        {
-          "id": "https://arstechnica.com/gadgets/2023/02/the-samsung-galaxy-s23s-bloated-android-build-somehow-uses-60gb-of-storage/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://arstechnica.com/gadgets/2023/02/the-samsung-galaxy-s23s-bloated-android-build-somehow-uses-60gb-of-storage/",
-          "publishedOn": "2023-02-06T18:53:53.000Z",
-          "wordCount": 1700,
-          "title": "The Samsung Galaxy S23’s bloated Android build somehow uses 60GB of storage",
-          "imageUrl": "https://cdn.arstechnica.net/wp-content/uploads/2023/02/samsung-galaxy-s23-series-1-760x380.webp"
-        },
-        {
-          "id": "https://sites.nd.edu/manuscript-studies/2015/10/01/letter-i-ardly-know-er-the-unknown-language-and-letters-of-hildegard-von-bingen/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://sites.nd.edu/manuscript-studies/2015/10/01/letter-i-ardly-know-er-the-unknown-language-and-letters-of-hildegard-von-bingen/",
-          "publishedOn": "2023-02-06T18:50:01.000Z",
-          "wordCount": 4279,
-          "title": "The unknown language and letters of Hildegard von Bingen (2015)",
-          "imageUrl": null
-        },
-        {
-          "id": "https://reasonabledeviations.com/2023/02/05/gpt-for-second-brain/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://reasonabledeviations.com/2023/02/05/gpt-for-second-brain/",
-          "publishedOn": "2023-02-06T18:27:10.000Z",
-          "wordCount": 2176,
-          "title": "GPT for Second Brains",
-          "imageUrl": null
-        },
-        {
-          "id": "https://undeleted.ronsor.com/voice.ai-gpl-violations-with-a-side-of-drm/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://undeleted.ronsor.com/voice.ai-gpl-violations-with-a-side-of-drm/",
-          "publishedOn": "2023-02-06T18:15:58.000Z",
-          "wordCount": 1502,
-          "title": "Voice.ai: GPL Violations with a Side of DRM",
-          "imageUrl": "https://undeleted.ronsor.com/images/share.png"
-        },
-        {
-          "id": "https://github.blog/2023-02-06-the-technology-behind-githubs-new-code-search/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://github.blog/2023-02-06-the-technology-behind-githubs-new-code-search/",
-          "publishedOn": "2023-02-06T17:32:44.000Z",
-          "wordCount": 3930,
-          "title": "The technology behind GitHub’s new code search",
-          "imageUrl": "https://github.blog/wp-content/uploads/2023/02/code-search-header.png"
-        },
-        {
-          "id": "https://pdx.su/blog/2023-02-05-asciidoc-and-markdown/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://pdx.su/blog/2023-02-05-asciidoc-and-markdown/",
-          "publishedOn": "2023-02-06T17:12:37.000Z",
-          "wordCount": 2319,
-          "title": "I wish Asciidoc was more popular",
-          "imageUrl": null
-        },
-        {
-          "id": "https://websqrl.vercel.app/twitter",
-          "author": null,
-          "description": "Comments",
-          "link": "https://websqrl.vercel.app/twitter",
-          "publishedOn": "2023-02-06T16:54:31.000Z",
-          "wordCount": 113,
-          "title": "Show HN: SQRL – Anti-spam rules language Twitter acquired in 2018, open-sourced",
-          "imageUrl": null
-        },
-        {
-          "id": "https://unitednuclear.com/index.php?main_page=product_info&products_id=1079",
-          "author": null,
-          "description": "Comments",
-          "link": "https://unitednuclear.com/index.php?main_page=product_info&products_id=1079",
-          "publishedOn": "2023-02-06T16:42:41.000Z",
-          "wordCount": 4886,
-          "title": "Europium UltraGlow Powder – Green",
-          "imageUrl": null
-        },
-        {
-          "id": "https://www.mythtv.org/wiki/Release_Notes_-_33",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.mythtv.org/wiki/Release_Notes_-_33",
-          "publishedOn": "2023-02-06T15:56:09.000Z",
-          "wordCount": 5465,
-          "title": "MythTV 33 Released – open-source all-in-one DVR",
-          "imageUrl": null
-        },
-        {
-          "id": "https://github.com/cleverca22/not-os",
-          "author": null,
-          "description": "Comments",
-          "link": "https://github.com/cleverca22/not-os",
-          "publishedOn": "2023-02-06T15:44:57.000Z",
-          "wordCount": 959,
-          "title": "Not-OS – NixOS-based OS generator that outputs an OS with 47MB squashfs (2022)",
-          "imageUrl": "https://opengraph.githubassets.com/0b59522759389eba3f97c74e150d6f381f9a8c4ceb0c6923beea88c691f6c4c9/cleverca22/not-os"
-        },
-        {
-          "id": "https://www.smithsonianmag.com/smart-news/see-what-these-unbuilt-frank-lloyd-wright-masterpieces-would-look-like-180981532/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.smithsonianmag.com/smart-news/see-what-these-unbuilt-frank-lloyd-wright-masterpieces-would-look-like-180981532/",
-          "publishedOn": "2023-02-06T15:00:21.000Z",
-          "wordCount": 2272,
-          "title": "Unbuilt Frank Lloyd Wright Designs Brought to Life in 3-D Renderings",
-          "imageUrl": "https://th-thumbnailer.cdn-si-edu.com/bjgjHCxdMbpshdTLZ720o4ks7CQ=/fit-in/1600x0/filters:focal(3000x2000:3001x2001)/https%3A%2F%2Ftf-cmsv2-smithsonianmag-media.s3.amazonaws.com%2Ffiler_public%2Ff3%2F9d%2Ff39d20d3-f470-4cb7-85f2-e2840ab278ef%2Fgordon_strong_02.jpg"
-        },
-        {
-          "id": "https://ochagavia.nl/blog/crafting-container-images-without-dockerfiles/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://ochagavia.nl/blog/crafting-container-images-without-dockerfiles/",
-          "publishedOn": "2023-02-06T14:54:32.000Z",
-          "wordCount": 2791,
-          "title": "Crafting container images without Dockerfiles",
-          "imageUrl": "https://ochagavia.nl/images/favicon.png"
         }
       ]
     }
