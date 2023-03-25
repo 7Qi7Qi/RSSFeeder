@@ -12,6 +12,16 @@
       "siteUrl": "http://weekly.dockone.io",
       "articles": [
         {
+          "id": "http://weekly.dockone.io/article/2434947",
+          "author": "李颖杰",
+          "description": "云原生是2013年被提出来的，经过8年的发展，现在可以说是最火热的技术了，在技术领域的地位业内基本上已经形成了普遍共识。\n阿里、字节、腾讯等大厂都在业务云原生化，这起到了带头作用；而Kubernetes等技术的应用在节约成本方面也确实带来了好处，这让很多之前观望的中小型公司也投身到云原生建设中。\n大公司带头，小公司跟进；互联网公司带头，传统公司跟进的现状导致了公司对工程师的要求是必须掌握一定的云原生技术。换句话说，想找一份薪资可观的工作，或者想在面试的时候能脱颖而出，云原生技术成了必备技能。\n现在推荐你一本书——《怎么理解云原生？》，这是一本通过拆解云原生全景图来讲解云原生技术的书，希望学习本书能帮助你掌握云原生技术。  \n扫码免费领取电子书\n\n\n\n本书第一章首先将云原生全景图拆解开，对整个全景图进行综述：\n\n\n\n第二章节到第五章节，把按照应用层、运行时层、编排和管理层、应用程序定义和开发层进行了介绍，并且每一层按类别进行了拆分，非常详细的解读了云原生技术。\n比如第二章应用层的介绍如下：\n\n\n\n每一章又分为不同的类别，每个类别从是什么、解决的问题、如何解决问题和对应的工具等方面做了阐述。\n第六和七章分别介绍了贯穿4层的两列工具：可观察和分析工具与平台类工具。\n存储是重点，本书中也做了详细介绍：\n\n\n\n网络可以说是Kubernetes的重中之重，书中也有详细说明：\n\n\n\n监控是生产系统中必不可少的一环，是系统稳定运行的重要基础，作为重点，同样在本书中进行了详细的描述：\n\n\n\nCI/CD内容也有重点介绍：\n\n\n\n整本书从横纵两个方向，有条理的讲述了云原生全景图，让你了解每个类代表的内容，轻松傲游于全景图中，牢牢掌握云原生相关技术。\n扫码免费领取电子书",
+          "link": "http://weekly.dockone.io/article/2434947",
+          "publishedOn": "2023-03-25T01:02:14.652Z",
+          "wordCount": null,
+          "title": "这份云原生的免费资料，看得我过瘾",
+          "imageUrl": null
+        },
+        {
           "id": "http://weekly.dockone.io/article/2434954",
           "author": "megrez",
           "description": "Prometheus vs. OpenTelemetry指标: 共同点\n这两个系统都允许你收集和转换指标（尽管Open Telemetry作为一个转换管道要灵活得多）。然而，回顾以前的文章，我们需要记住一个重要的区别。Prometheus是一个可观测性工具（包括收集、存储和查询），它使用的指标模型是为适应自己的需要而设计的。\n另一方面，OpenTelemetry的指标组件将许多不同的数据模型转化为一个单一的框架（提供无存储或查询的集合）。这些核心差异反映了系统的复杂性：Prometheus是一个直接的模型，通常以文本形式暴露出来，而OpenTelemetry是由三种模型组成的更复杂的系列，使用二进制格式进行传输。\n这两个系统也允许通过SDK进行代码级的监控，但OpenTelemetry也专注于支持自动埋点，尽可能不会侵入应用程序。\n那么，你可以创建的指标之间有什么重叠？本质上，OpenTelemetry允许表示所有Prometheus指标类型（Counters、Gauges、Summaries和Histograms）。尽管如此，Prometheus仍然不能表示OpenTelemetry指标的某些配置，包括Delta表示法和指数Histograms（尽管这些将很快在Prometheus中被支持），以及整数数值类型。\n换句话说，Prometheus指标是OpenTelemetry指标的一个严格子集。\n主要区别\n虽然内部模型的工作方式有一些差异，但从开发者的角度来看，两者之间的实际差异更多是与生态系统有关。\nPrometheus提供指标收集、存储和查询。它通常通过一个简单的爬虫系统收集指标，从主机中提取数据。Prometheus数据库存储这些数据，然后你可以用Prometheus查询语言PromQL来查询。Prometheus数据库可以处理大量的数据，但它并不是正式意义上的长期存…",
@@ -90,16 +100,6 @@
           "wordCount": null,
           "title": "事件驱动架构避坑指南",
           "imageUrl": null
-        },
-        {
-          "id": "http://weekly.dockone.io/article/2434948",
-          "author": "ylzhang",
-          "description": "【编者的话】Kubernetes是银弹吗？它解决了什么问题？对于公司和个人的搭建系统，单机应用和大规模系统都一定要使用容器和Kubernetes吗？Globality的机器学习副总裁用自己的经验总结了自己认识Kubernetes的过程，他从评估、入门、成本、操作等几个方面记录了自己从对Kubernetes的认识过程，并讲述了自己的心得体会。下文是作者关于此的笔记。\n我曾认为自己是一个强烈 Kubernetes 怀疑论者。无论是做项目还是初创公司，裸机系统始终是我的首选。包括运行此博客的堆栈环境，称它为堆栈甚至可能有些夸张，其实它只是一个持续集成（CI）工具链，主机上有 Nginx 配置。但它可以处理惊人的并发负载，并且托管成本低。它每月只需 10 美元，完全可与托管成本高出两个数量级的企业博客平台并驾齐驱。\n过早的优化可能是万恶之源，但过早的规模化也是如此。我认为公司过早地设计复杂架构会导致很多问题，例如开发者需要面对复杂的系统，这样也会导致用户不稳定。而且我认为带有简单服务器的 monorepo 应该作为项目的起点。这时只需运行一个基本的 Docker 实例，并且可以最大程度上减少无尽依赖，确保你的远程配置可在本地开发机器上重现即可。一旦系统面对更高的流量，可以选择租用更强大的服务器。如果还不能解决问题，请部署一个简单的负载均衡器，路由到几个后端设备。在早期可以做到而且应该是这样。\n虽然我正是这么做的，但最近负载均衡系统后面用于几个辅助项目的一台物理服务器已满足不了我的要求——大部分时间里它是空闲的，但突发状态下则需要几十个带有 GPU 的虚拟机。这迫使我不得不采用更复杂的服务器管理解决方案。在为使用 Kubernetes 构建了几个月之后，我必须承认我一天一天就爱上了它。\n第一天：走近尝试\n我已经在裸机上有一个完整运行的后端应用程序。我真的要用不同的产品重新设计我堆栈的…",
-          "link": "http://weekly.dockone.io/article/2434948",
-          "publishedOn": "2023-02-22T01:07:49.693Z",
-          "wordCount": null,
-          "title": "爱上Kubernetes",
-          "imageUrl": null
         }
       ]
     },
@@ -108,6 +108,286 @@
       "feedUrl": "https://news.ycombinator.com/rss",
       "siteUrl": "https://news.ycombinator.com/",
       "articles": [
+        {
+          "id": "https://www.intel.com/content/www/us/en/newsroom/news/gordon-moore-obituary.html",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.intel.com/content/www/us/en/newsroom/news/gordon-moore-obituary.html",
+          "publishedOn": "2023-03-25T00:15:11.000Z",
+          "wordCount": 4180,
+          "title": "Gordon Moore, Intel Co-Founder, Dies at 94",
+          "imageUrl": "https://www.intel.com/content/dam/www/public/us/en/newsroom/posts/galleries/gordon-moore/gordon-moore-hero-img-12-rwd.jpg"
+        },
+        {
+          "id": "https://www.intc.com/news-events/press-releases/detail/1611/gordon-moore-intel-co-founder-dies-at-94",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.intc.com/news-events/press-releases/detail/1611/gordon-moore-intel-co-founder-dies-at-94",
+          "publishedOn": "2023-03-25T00:07:49.000Z",
+          "wordCount": 1850,
+          "title": "Gordon Moore, Intel Co-Founder, Dies at 94",
+          "imageUrl": "https://d1io3yog0oux5.cloudfront.net/_a3820538e0d80156272e256dfa50c1da/intel/db/878/6995/social_image_resized.jpg"
+        },
+        {
+          "id": "https://codingcompetitions.withgoogle.com/codejam",
+          "author": null,
+          "description": "Comments",
+          "link": "https://codingcompetitions.withgoogle.com/codejam",
+          "publishedOn": "2023-03-25T00:04:27.000Z",
+          "wordCount": 8,
+          "title": "Goodbye to Google Code Jam",
+          "imageUrl": "https://codingcompetitions.withgoogle.com/static/codejam-fb.jpg"
+        },
+        {
+          "id": "https://file770.com/judge-decides-against-internet-archive/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://file770.com/judge-decides-against-internet-archive/",
+          "publishedOn": "2023-03-24T23:31:57.000Z",
+          "wordCount": 2972,
+          "title": "Judge Decides Against Internet Archive",
+          "imageUrl": "https://file770.com/wp-content/uploads/49449274_585939788516699_8870242879499403264_n-2.jpg"
+        },
+        {
+          "id": "https://blog.getclearspace.com/we-ran-a-phone-check-at-a-ycombinator-event-in-san-francisco-heres-how-it-went-fb920a54c755",
+          "author": null,
+          "description": "Comments",
+          "link": "https://blog.getclearspace.com/we-ran-a-phone-check-at-a-ycombinator-event-in-san-francisco-heres-how-it-went-fb920a54c755",
+          "publishedOn": "2023-03-24T23:27:22.000Z",
+          "wordCount": 1889,
+          "title": "We Ran a Phone Check at a Y Combinator Event in SF. Here’s How It Went",
+          "imageUrl": "https://miro.medium.com/v2/resize:fit:1200/1*Xz7FZzK9Its8HUWm0Qh3Jw.jpeg"
+        },
+        {
+          "id": "https://twitter.com/cHHillee/status/1635790330854526981",
+          "author": null,
+          "description": "Comments",
+          "link": "https://twitter.com/cHHillee/status/1635790330854526981",
+          "publishedOn": "2023-03-24T23:26:52.000Z",
+          "wordCount": 509,
+          "title": "GPT-4 performs significantly worse on coding problems not in its training data",
+          "imageUrl": null
+        },
+        {
+          "id": "https://www.nature.com/articles/d41586-023-00800-z",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.nature.com/articles/d41586-023-00800-z",
+          "publishedOn": "2023-03-24T22:10:55.000Z",
+          "wordCount": 5456,
+          "title": "We need a new economics of water as a common good",
+          "imageUrl": "https://media.nature.com/lw1024/magazine-assets/d41586-023-00800-z/d41586-023-00800-z_24655422.jpg"
+        },
+        {
+          "id": "https://mle-online.com/projects/internet_skull/index.html",
+          "author": null,
+          "description": "Comments",
+          "link": "https://mle-online.com/projects/internet_skull/index.html",
+          "publishedOn": "2023-03-24T21:51:06.000Z",
+          "wordCount": 1591,
+          "title": "Internet of Skull",
+          "imageUrl": "ios.jpg"
+        },
+        {
+          "id": "https://www.docker.com/blog/no-longer-sunsetting-the-free-team-plan/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.docker.com/blog/no-longer-sunsetting-the-free-team-plan/",
+          "publishedOn": "2023-03-24T21:26:52.000Z",
+          "wordCount": 6147,
+          "title": "We’re no longer sunsetting the free team plan",
+          "imageUrl": "https://www.docker.com/wp-content/uploads/2023/03/docker-announcement-bullhorn-feature-1024x1024.png"
+        },
+        {
+          "id": "https://www.vice.com/en/article/mbyxw4/theres-a-subterranean-galapagos-deep-inside-the-earth",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.vice.com/en/article/mbyxw4/theres-a-subterranean-galapagos-deep-inside-the-earth",
+          "publishedOn": "2023-03-24T20:35:59.000Z",
+          "wordCount": 4437,
+          "title": "A &#x27;subterranean Galapagos&#x27; inside the Earth",
+          "imageUrl": "https://video-images.vice.com/articles/5c10089360143f0006961e77/lede/1544554657370-1DCO-eukaryote-in-biofilm.jpeg?image-resize-opts=Y3JvcD0xeHc6MC45OTkzNjU0ODIyMzM1MDI1eGg7Y2VudGVyLGNlbnRlciZyZXNpemU9MTIwMDoqJnJlc2l6ZT0xMjAwOio"
+        },
+        {
+          "id": "https://www.npr.org/2023/03/23/1165559810/npr-layoffs-cancels-podcasts-invisibilia-rough-translation",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.npr.org/2023/03/23/1165559810/npr-layoffs-cancels-podcasts-invisibilia-rough-translation",
+          "publishedOn": "2023-03-24T20:27:44.000Z",
+          "wordCount": 1788,
+          "title": "NPR cancels 4 podcasts amid major layoffs",
+          "imageUrl": "https://media.npr.org/assets/img/2023/03/23/ap504569479817_wide-8f93099dd271213cb5076a991b87ef06ad589a6b-s1400-c100.jpg"
+        },
+        {
+          "id": "https://github.com/shogundevel/shark",
+          "author": null,
+          "description": "Comments",
+          "link": "https://github.com/shogundevel/shark",
+          "publishedOn": "2023-03-24T20:14:52.000Z",
+          "wordCount": 1120,
+          "title": "Show HN: The Shark Programming Language",
+          "imageUrl": "https://opengraph.githubassets.com/6aeaa2af2fae8ea3122350aa23425f0be49b9ee03bcf21a224f3818bec9a80f6/shogundevel/shark"
+        },
+        {
+          "id": "https://www.chase.com/personal/investments/learning-and-insights/article/tmt-march-twenty-four-twenty-three",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.chase.com/personal/investments/learning-and-insights/article/tmt-march-twenty-four-twenty-three",
+          "publishedOn": "2023-03-24T20:13:30.000Z",
+          "wordCount": 2216,
+          "title": "Reasons the banking crisis isn’t a repeat of 2008",
+          "imageUrl": "https://static.chasecdn.com/content/services/structured-image/image.desktopLarge.jpg/articles/thumbnail-image-large/tmt-march-twenty-four-twenty-three-2560x1440.jpg"
+        },
+        {
+          "id": "https://pubby.games/codegen.html",
+          "author": null,
+          "description": "Comments",
+          "link": "https://pubby.games/codegen.html",
+          "publishedOn": "2023-03-24T19:18:04.000Z",
+          "wordCount": 4858,
+          "title": "Explaining my fast 6502 code generator",
+          "imageUrl": null
+        },
+        {
+          "id": "https://www.developing.dev/p/why-engineers-need-to-write",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.developing.dev/p/why-engineers-need-to-write",
+          "publishedOn": "2023-03-24T17:23:01.000Z",
+          "wordCount": 2557,
+          "title": "Engineers Need to Write",
+          "imageUrl": "https://substackcdn.com/image/fetch/w_1200,h_600,c_limit,f_jpg,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F563950db-225a-4580-8083-c68bf3de222a_1200x800.jpeg"
+        },
+        {
+          "id": "https://letsencrypt.org/2023/03/23/improving-resliiency-and-reliability-with-ari.html",
+          "author": null,
+          "description": "Comments",
+          "link": "https://letsencrypt.org/2023/03/23/improving-resliiency-and-reliability-with-ari.html",
+          "publishedOn": "2023-03-24T16:54:38.000Z",
+          "wordCount": 611,
+          "title": "Reliability via Automated Renewal Information",
+          "imageUrl": null
+        },
+        {
+          "id": "https://nautil.us/the-dwarf-planet-on-our-doorstep-289479/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://nautil.us/the-dwarf-planet-on-our-doorstep-289479/",
+          "publishedOn": "2023-03-24T16:12:49.000Z",
+          "wordCount": 7572,
+          "title": "The series of fortunate astrophysical events that gave us Ceres",
+          "imageUrl": "https://assets.nautil.us/sites/3/nautilus/gGhzgDZW-Raymond_HERO.png?auto=compress&fm=png&ixlib=php-3.3.1"
+        },
+        {
+          "id": "https://openai.com/blog/march-20-chatgpt-outage",
+          "author": null,
+          "description": "Comments",
+          "link": "https://openai.com/blog/march-20-chatgpt-outage",
+          "publishedOn": "2023-03-24T16:08:37.000Z",
+          "wordCount": 1004,
+          "title": "March 20 ChatGPT outage: Here’s what happened",
+          "imageUrl": "https://openaicom.imgix.net/e2d6b8cb-8def-4aa7-854f-58f9f5261a5c/march-20-chatgpt-outage.png?auto=compress%2Cformat&fit=min&fm=jpg&q=80&rect=%2C%2C%2C"
+        },
+        {
+          "id": "https://www.washingtonpost.com/technology/2023/03/24/tiktok-online-privacy-laws/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.washingtonpost.com/technology/2023/03/24/tiktok-online-privacy-laws/",
+          "publishedOn": "2023-03-24T15:04:47.000Z",
+          "wordCount": 9377,
+          "title": "America’s online privacy problems are much bigger than TikTok",
+          "imageUrl": "https://www.washingtonpost.com/wp-apps/imrs.php?src=https://d1i4t8bqe7zgj6.cloudfront.net/03-23-2023/t_1380f3f1896d4637b3341564c2f6cab9_name_0323_tiktokhearing_THUMB_2.jpg&w=1440"
+        },
+        {
+          "id": "https://en.wikipedia.org/wiki/Barbados_4%E2%80%932_Grenada",
+          "author": null,
+          "description": "Comments",
+          "link": "https://en.wikipedia.org/wiki/Barbados_4%E2%80%932_Grenada",
+          "publishedOn": "2023-03-24T14:56:47.000Z",
+          "wordCount": 2189,
+          "title": "Barbados 4–2 Grenada",
+          "imageUrl": null
+        },
+        {
+          "id": "https://github.com/microsoft/LoRA",
+          "author": null,
+          "description": "Comments",
+          "link": "https://github.com/microsoft/LoRA",
+          "publishedOn": "2023-03-24T12:15:25.000Z",
+          "wordCount": 2016,
+          "title": "LoRA: Low-Rank Adaptation of Large Language Models",
+          "imageUrl": "https://opengraph.githubassets.com/30a2a88556eaddd7e517d6beb611717f6fad08bfe4eef83e134cf0605cf1da38/microsoft/LoRA"
+        },
+        {
+          "id": "https://news.ycombinator.com/item?id=35287892",
+          "author": null,
+          "description": "Comments",
+          "link": "https://news.ycombinator.com/item?id=35287892",
+          "publishedOn": "2023-03-24T12:01:00.000Z",
+          "wordCount": 654,
+          "title": "Meticulous (YC S21) Is Hiring #3 Engineer to Build AI for Testing",
+          "imageUrl": null
+        },
+        {
+          "id": "https://github.com/chris-alexiuk/alpaca-lora",
+          "author": null,
+          "description": "Comments",
+          "link": "https://github.com/chris-alexiuk/alpaca-lora",
+          "publishedOn": "2023-03-24T11:41:14.000Z",
+          "wordCount": 2445,
+          "title": "Alpaca-LoRA with Docker",
+          "imageUrl": "https://opengraph.githubassets.com/cc6ab982ed0ffbd7b523897cf71b903cce94b920550725fa1f025ccf5d926c4f/chris-alexiuk/alpaca-lora"
+        },
+        {
+          "id": "https://sfbook.com/our-story.htm",
+          "author": null,
+          "description": "Comments",
+          "link": "https://sfbook.com/our-story.htm",
+          "publishedOn": "2023-03-24T10:57:15.000Z",
+          "wordCount": 1236,
+          "title": "Sfbook.com: Providing book reviews of speculative fiction since 1999",
+          "imageUrl": null
+        },
+        {
+          "id": "https://blog.adacore.com/introduction-to-vss-library",
+          "author": null,
+          "description": "Comments",
+          "link": "https://blog.adacore.com/introduction-to-vss-library",
+          "publishedOn": "2023-03-24T06:11:06.000Z",
+          "wordCount": 1353,
+          "title": "Introduction to VSS Library",
+          "imageUrl": "https://blog.adacore.com/uploads/_1200x630_crop_center-center_82_none/ada-unicode.png?mtime=1677236136"
+        },
+        {
+          "id": "https://github.blog/2023-03-23-we-updated-our-rsa-ssh-host-key/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://github.blog/2023-03-23-we-updated-our-rsa-ssh-host-key/",
+          "publishedOn": "2023-03-24T05:28:58.000Z",
+          "wordCount": 1468,
+          "title": "We updated our RSA SSH host key",
+          "imageUrl": "https://github.blog/wp-content/uploads/2021/12/github-security_orange-banner.png"
+        },
+        {
+          "id": "https://arstechnica.com/science/2023/03/the-paja-formation-an-ecosystem-of-monsters/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://arstechnica.com/science/2023/03/the-paja-formation-an-ecosystem-of-monsters/",
+          "publishedOn": "2023-03-24T04:59:14.000Z",
+          "wordCount": 1623,
+          "title": "The Paja Formation: An ecosystem of monsters",
+          "imageUrl": "https://cdn.arstechnica.net/wp-content/uploads/2023/03/image-3-760x380.jpeg"
+        },
+        {
+          "id": "https://en.wikipedia.org/wiki/Cadillac_Ranch",
+          "author": null,
+          "description": "Comments",
+          "link": "https://en.wikipedia.org/wiki/Cadillac_Ranch",
+          "publishedOn": "2023-03-24T03:40:37.000Z",
+          "wordCount": 2105,
+          "title": "Cadillac Ranch",
+          "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Cadillac_Ranch.jpg/1200px-Cadillac_Ranch.jpg"
+        },
         {
           "id": "https://hachyderm.io/@mononcqc/110073337791217700",
           "author": null,
@@ -307,6 +587,16 @@
           "wordCount": 8161,
           "title": "The FTC wants to ban tough-to-cancel subscriptions",
           "imageUrl": "https://cdn.vox-cdn.com/thumbor/stXVhCJjhZnwp_dDq6EUriv7Phk=/0x0:5162x3393/1200x628/filters:focal(2958x1006:2959x1007)/cdn.vox-cdn.com/uploads/chorus_asset/file/24529059/1232440122.jpg"
+        },
+        {
+          "id": "https://isc.sans.edu/diary/rss/29642",
+          "author": null,
+          "description": "Comments",
+          "link": "https://isc.sans.edu/diary/rss/29642",
+          "publishedOn": "2023-03-23T11:45:34.000Z",
+          "wordCount": 1347,
+          "title": "Simple Shellcode Dissection",
+          "imageUrl": "https://isc.sans.edu/diaryimages/images/isc-20230316-1.png"
         },
         {
           "id": "https://www.economist.com/special-report/2023/03/20/moviemaking-and-gamemaking-are-converging",
@@ -587,6 +877,16 @@
           "wordCount": 10403,
           "title": "Stuck with the Soul",
           "imageUrl": "https://alpha.aeon.co/images/926798ab-7f55-4e87-8a46-39431bce912f/header_essay-leon-spilliaert-961398464.jpg"
+        },
+        {
+          "id": "https://www.theguardian.com/artanddesign/2023/mar/15/mona-lisa-monstrous-grotesque-leonardo-da-vinci-national-gallery-ugly-duchess",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.theguardian.com/artanddesign/2023/mar/15/mona-lisa-monstrous-grotesque-leonardo-da-vinci-national-gallery-ugly-duchess",
+          "publishedOn": "2023-03-22T15:00:51.000Z",
+          "wordCount": 5853,
+          "title": "The grotesque side of Leonardo da Vinci",
+          "imageUrl": "https://i.guim.co.uk/img/media/dcff56bcd46bf404e9bd8411d8f0455007ea6f0c/95_456_1724_1034/master/1724.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc&enable=upscale&s=28558898b88ea610d58e3ae075144c3b"
         },
         {
           "id": "https://moonshineai.readthedocs.io/en/latest/index.html",
@@ -8267,416 +8567,6 @@
           "wordCount": 875,
           "title": "Show HN: Xc – A Markdown Defined Task Runner",
           "imageUrl": "https://repository-images.githubusercontent.com/417434485/1bdca1f2-45c9-46bd-8e00-b563958462a6"
-        },
-        {
-          "id": "https://www.independent.co.uk/news/world/americas/ozempic-mounjaro-side-effects-diabetes-weight-loss-b2288015.html",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.independent.co.uk/news/world/americas/ozempic-mounjaro-side-effects-diabetes-weight-loss-b2288015.html",
-          "publishedOn": "2023-02-23T11:41:21.000Z",
-          "wordCount": 4294,
-          "title": "Diabetes drug Mounjaro was available at $25&#x2F;month, then increased to $1k&#x2F;month",
-          "imageUrl": "https://static.independent.co.uk/2023/02/22/18/GettyImages-1245721969.jpg?quality=75&width=1200&auto=webp"
-        },
-        {
-          "id": "https://www.dota2.com/newsentry/3677788723152833273",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.dota2.com/newsentry/3677788723152833273",
-          "publishedOn": "2023-02-23T11:32:50.000Z",
-          "wordCount": 15,
-          "title": "Valve bans 40k Dota 2 accounts using honeypot patch",
-          "imageUrl": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/clans/3703047/4263c0bbe42c6f0dbc573f9748e1b69fff6d64b5.png"
-        },
-        {
-          "id": "https://codeforces.com/blog/entry/110801",
-          "author": null,
-          "description": "Comments",
-          "link": "https://codeforces.com/blog/entry/110801",
-          "publishedOn": "2023-02-23T11:30:25.000Z",
-          "wordCount": 10193,
-          "title": "Probability 101, the intuition behind martingales and solving problems with them",
-          "imageUrl": "https://codeforces.org/s/0/images/codeforces-sponsored-by-ton.png"
-        },
-        {
-          "id": "https://proton.me/blog/gluon-imap-library",
-          "author": null,
-          "description": "Comments",
-          "link": "https://proton.me/blog/gluon-imap-library",
-          "publishedOn": "2023-02-23T11:25:32.000Z",
-          "wordCount": 3887,
-          "title": "Gluon, a high-performance IMAP library",
-          "imageUrl": "https://proton.me/static/f0f5f71ec8a69afbe5567e3cb84ad053/introducing-gluon-imap-library.png"
-        },
-        {
-          "id": "https://www.n16f.net/blog/common-lisp-implementations-in-2023/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.n16f.net/blog/common-lisp-implementations-in-2023/",
-          "publishedOn": "2023-02-23T11:16:21.000Z",
-          "wordCount": 1358,
-          "title": "Common Lisp Implementations in 2023",
-          "imageUrl": null
-        },
-        {
-          "id": "https://atomicsemi.com/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://atomicsemi.com/",
-          "publishedOn": "2023-02-23T07:35:23.000Z",
-          "wordCount": 1730,
-          "title": "Sam Zeloof and Jim Keller start a new semiconductor fab",
-          "imageUrl": "https://atomicsemi.com/app/uploads/2023/02/Atomic-Header.png"
-        },
-        {
-          "id": "https://tylercipriani.com/blog/2023/01/31/coffee-science/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://tylercipriani.com/blog/2023/01/31/coffee-science/",
-          "publishedOn": "2023-02-23T07:01:13.000Z",
-          "wordCount": 1010,
-          "title": "The beginner&#x27;s guide to over­complicating coffee",
-          "imageUrl": null
-        },
-        {
-          "id": "https://99percentinvisible.org/article/biohazard-symbol-designed-to-be-memorable-but-meaningless/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://99percentinvisible.org/article/biohazard-symbol-designed-to-be-memorable-but-meaningless/",
-          "publishedOn": "2023-02-23T03:31:13.000Z",
-          "wordCount": 2861,
-          "title": "Biohazard: Iconic symbol designed to be “memorable but meaningless” (2016)",
-          "imageUrl": "https://99percentinvisible.org/app/uploads/2016/03/biohazard-blockade-728x728.jpg"
-        },
-        {
-          "id": "https://www.chemistryworld.com/features/the-toxic-tide-of-ship-breaking/4015158.article",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.chemistryworld.com/features/the-toxic-tide-of-ship-breaking/4015158.article",
-          "publishedOn": "2023-02-23T01:11:47.000Z",
-          "wordCount": 14331,
-          "title": "The toxic tide of ship breaking",
-          "imageUrl": "https://d2cbg94ubxgsnp.cloudfront.net/Pictures/1024x536/7/0/6/518706_m127m4_252352_crop.jpg"
-        },
-        {
-          "id": "https://news.ycombinator.com/item?id=34904478",
-          "author": null,
-          "description": "Comments",
-          "link": "https://news.ycombinator.com/item?id=34904478",
-          "publishedOn": "2023-02-22T23:17:35.000Z",
-          "wordCount": 656,
-          "title": "Tell HN: Oops Upwork did it again",
-          "imageUrl": null
-        },
-        {
-          "id": "https://www.scientificamerican.com/article/how-to-engineer-buildings-that-withstand-earthquakes/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.scientificamerican.com/article/how-to-engineer-buildings-that-withstand-earthquakes/",
-          "publishedOn": "2023-02-22T22:42:12.000Z",
-          "wordCount": 6026,
-          "title": "How to Engineer Buildings That Withstand Earthquakes",
-          "imageUrl": "https://static.scientificamerican.com/sciam/cache/file/18BE069B-9D0A-496C-B68E4B53C0CA5C3E.jpg"
-        },
-        {
-          "id": "https://www.processmechanics.com/2023/02/22/a-mixed-decision-from-the-us-copyright-office/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.processmechanics.com/2023/02/22/a-mixed-decision-from-the-us-copyright-office/",
-          "publishedOn": "2023-02-22T22:39:51.000Z",
-          "wordCount": 1996,
-          "title": "AI-Assisted Art – A Mixed Decision from the Copyright Office",
-          "imageUrl": null
-        },
-        {
-          "id": "https://oio.land/the-malleable-web",
-          "author": null,
-          "description": "Comments",
-          "link": "https://oio.land/the-malleable-web",
-          "publishedOn": "2023-02-22T22:36:02.000Z",
-          "wordCount": 1404,
-          "title": "A Malleable Web",
-          "imageUrl": null
-        },
-        {
-          "id": "https://tylercipriani.com/blog/2023/02/19/weather-station/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://tylercipriani.com/blog/2023/02/19/weather-station/",
-          "publishedOn": "2023-02-22T22:30:27.000Z",
-          "wordCount": 909,
-          "title": "Monitoring My Weather at Home",
-          "imageUrl": null
-        },
-        {
-          "id": "https://www.diegovera.org/projects",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.diegovera.org/projects",
-          "publishedOn": "2023-02-22T21:59:40.000Z",
-          "wordCount": 4979,
-          "title": "Physics and Mathematics Self-Study Project",
-          "imageUrl": null
-        },
-        {
-          "id": "https://newsroom.uvahealth.com/2023/02/15/multiple-sclerosis-discovery-chronic-inflammation/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://newsroom.uvahealth.com/2023/02/15/multiple-sclerosis-discovery-chronic-inflammation/",
-          "publishedOn": "2023-02-22T21:57:11.000Z",
-          "wordCount": 1169,
-          "title": "Multiple Sclerosis discovery could end disease&#x27;s chronic inflammation",
-          "imageUrl": "http://newsroom.uvahealth.com/wp-content/uploads/2023/02/GettyMS.jpg"
-        },
-        {
-          "id": "https://stayrelevant.globant.com/en/technology/process-optimization/how-to-manage-technical-debt/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://stayrelevant.globant.com/en/technology/process-optimization/how-to-manage-technical-debt/",
-          "publishedOn": "2023-02-22T21:40:10.000Z",
-          "wordCount": 5821,
-          "title": "Managing technical debt for competitive advantage",
-          "imageUrl": "https://stayrelevant.globant.com/wp-content/uploads/2023/02/kaleidico-3V8xo5Gbusk-unsplash-1024x683.jpg"
-        },
-        {
-          "id": "https://www.sevarg.net/2023/02/11/how-your-leds-are-killing-you/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.sevarg.net/2023/02/11/how-your-leds-are-killing-you/",
-          "publishedOn": "2023-02-22T20:45:24.000Z",
-          "wordCount": 8198,
-          "title": "LED Lights and Screens Are Killing You",
-          "imageUrl": "https://www.sevarg.net/images/2023-leds-are-killing-you/title2-square.JPG"
-        },
-        {
-          "id": "https://media.mbusa.com/releases/software-architects-mercedes-benz-previews-its-operating-system-mbos",
-          "author": null,
-          "description": "Comments",
-          "link": "https://media.mbusa.com/releases/software-architects-mercedes-benz-previews-its-operating-system-mbos",
-          "publishedOn": "2023-02-22T20:42:49.000Z",
-          "wordCount": 5238,
-          "title": "Mercedes-Benz previews its operating system MB.OS",
-          "imageUrl": "https://wieck-mbusa-production.s3.amazonaws.com/photos/09d12920f164cd625a53051f9ac204b49c12f8a4/thumbnail-364x204.jpg"
-        },
-        {
-          "id": "https://www.npr.org/2023/02/21/1158587253/mexico-genaro-garcia-luna-convicted-drug-cartel-bribes",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.npr.org/2023/02/21/1158587253/mexico-genaro-garcia-luna-convicted-drug-cartel-bribes",
-          "publishedOn": "2023-02-22T20:39:39.000Z",
-          "wordCount": 1090,
-          "title": "Mexico&#x27;s former public security head convicted by U.S. of taking cartel bribes",
-          "imageUrl": "https://media.npr.org/assets/img/2023/02/21/ap23052725568860_wide-0a25787baa69bbc4fe63726ed262d045ad64023c-s1400-c100.jpg"
-        },
-        {
-          "id": "https://en.wikipedia.org/wiki/Salmonella-in-eggs_controversy",
-          "author": null,
-          "description": "Comments",
-          "link": "https://en.wikipedia.org/wiki/Salmonella-in-eggs_controversy",
-          "publishedOn": "2023-02-22T20:07:06.000Z",
-          "wordCount": 1402,
-          "title": "Salmonella-in-Eggs Controversy",
-          "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/38/Edwina_currie_nightingale_house_cropped.jpg"
-        },
-        {
-          "id": "https://poste.io/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://poste.io/",
-          "publishedOn": "2023-02-22T19:57:47.000Z",
-          "wordCount": 1112,
-          "title": "Poste.io – Complete Mail Server",
-          "imageUrl": null
-        },
-        {
-          "id": "https://jonathanhaidt.substack.com/p/social-media-mental-illness-epidemic",
-          "author": null,
-          "description": "Comments",
-          "link": "https://jonathanhaidt.substack.com/p/social-media-mental-illness-epidemic",
-          "publishedOn": "2023-02-22T19:47:44.000Z",
-          "wordCount": 13163,
-          "title": "Social media is a cause, not a correlate, of mental illness in teen girls",
-          "imageUrl": "https://substackcdn.com/image/fetch/w_1200,h_600,c_limit,f_jpg,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8dec9eea-1c94-4cf0-9f48-c588b4c392f3_1600x900.png"
-        },
-        {
-          "id": "https://jotte.ai/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://jotte.ai/",
-          "publishedOn": "2023-02-22T19:41:08.000Z",
-          "wordCount": 12,
-          "title": "Show HN: Graph-based AI for longform writing",
-          "imageUrl": null
-        },
-        {
-          "id": "https://www.colorado.edu/today/2023/02/22/webb-telescope-spots-super-old-massive-galaxies-shouldnt-exist",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.colorado.edu/today/2023/02/22/webb-telescope-spots-super-old-massive-galaxies-shouldnt-exist",
-          "publishedOn": "2023-02-22T19:36:16.000Z",
-          "wordCount": 3265,
-          "title": "Webb telescope spots super old, massive galaxies",
-          "imageUrl": "https://www.colorado.edu/today/sites/default/files/styles/medium/public/article-thumbnail/jwst_artist_nasa.jpg?itok=mfNNM4nJ"
-        },
-        {
-          "id": "https://en.vietnamplus.vn/last-undersea-internet-cable-connecting-vietnam-with-the-world-breaks-down/248731.vnp",
-          "author": null,
-          "description": "Comments",
-          "link": "https://en.vietnamplus.vn/last-undersea-internet-cable-connecting-vietnam-with-the-world-breaks-down/248731.vnp",
-          "publishedOn": "2023-02-22T19:04:40.000Z",
-          "wordCount": 1197,
-          "title": "Last undersea Internet cable connecting Vietnam with the world breaks down",
-          "imageUrl": null
-        },
-        {
-          "id": "https://github.com/loxilb-io/loxilb",
-          "author": null,
-          "description": "Comments",
-          "link": "https://github.com/loxilb-io/loxilb",
-          "publishedOn": "2023-02-22T19:00:05.000Z",
-          "wordCount": 968,
-          "title": "Loxilb: eBPF based cloud-native service load-balancer",
-          "imageUrl": "https://opengraph.githubassets.com/59c8000c0feffaec3c08e11b0c627f86ce2b9a20862779cb066979895fb9b2e5/loxilb-io/loxilb"
-        },
-        {
-          "id": "https://www.bloomberg.com/news/articles/2023-02-22/apple-watch-blood-glucose-monitor-could-revolutionize-diabetes-care-aapl",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.bloomberg.com/news/articles/2023-02-22/apple-watch-blood-glucose-monitor-could-revolutionize-diabetes-care-aapl",
-          "publishedOn": "2023-02-22T17:42:32.000Z",
-          "wordCount": 576,
-          "title": "Apple Makes Major Progress on No-Prick Blood Glucose Tracking for Its Watch",
-          "imageUrl": null
-        },
-        {
-          "id": "https://news.ycombinator.com/item?id=34898253",
-          "author": null,
-          "description": "Comments",
-          "link": "https://news.ycombinator.com/item?id=34898253",
-          "publishedOn": "2023-02-22T16:40:15.000Z",
-          "wordCount": 5638,
-          "title": "Launch HN: Depot (YC W23) – Fast Docker Builds in the Cloud",
-          "imageUrl": null
-        },
-        {
-          "id": "https://nigeltao.github.io/blog/2023/cpp-coro-part-1-yield-return-prime-sieve.html",
-          "author": null,
-          "description": "Comments",
-          "link": "https://nigeltao.github.io/blog/2023/cpp-coro-part-1-yield-return-prime-sieve.html",
-          "publishedOn": "2023-02-22T16:31:13.000Z",
-          "wordCount": 2947,
-          "title": "C++ Coroutines",
-          "imageUrl": null
-        },
-        {
-          "id": "https://www.pcgamer.com/this-implant-lets-those-with-severe-paralysis-send-texts-and-use-the-internet-with-just-their-minds/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.pcgamer.com/this-implant-lets-those-with-severe-paralysis-send-texts-and-use-the-internet-with-just-their-minds/",
-          "publishedOn": "2023-02-22T16:28:07.000Z",
-          "wordCount": 8174,
-          "title": "Implant lets those with severe paralysis send texts with just their minds",
-          "imageUrl": "https://cdn.mos.cms.futurecdn.net/QB9ZQ58wibZQKamsjx9jZi-1200-80.png"
-        },
-        {
-          "id": "https://www.patterns.app/blog/2023/02/19/ask-hn-gpt-embeddings-question-answering/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.patterns.app/blog/2023/02/19/ask-hn-gpt-embeddings-question-answering/",
-          "publishedOn": "2023-02-22T16:09:31.000Z",
-          "wordCount": 1621,
-          "title": "Show HN: AskHN",
-          "imageUrl": "https://www.patterns.app/img/blog/askhn/love.png"
-        },
-        {
-          "id": "https://fly.io/blog/gossip-glomers/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://fly.io/blog/gossip-glomers/",
-          "publishedOn": "2023-02-22T16:06:39.000Z",
-          "wordCount": 1193,
-          "title": "Gossip Glomers: Fly.io Distributed Systems Challenges",
-          "imageUrl": "https://fly.io/blog/2023-02-22/gossip-glomers-thumbnail.jpg"
-        },
-        {
-          "id": "https://github.com/motion-canvas/motion-canvas",
-          "author": null,
-          "description": "Comments",
-          "link": "https://github.com/motion-canvas/motion-canvas",
-          "publishedOn": "2023-02-22T16:05:07.000Z",
-          "wordCount": 1061,
-          "title": "Motion Canvas – Visualize complex ideas programmatically",
-          "imageUrl": "https://opengraph.githubassets.com/4e4ad75f2eae0ee420ddca2a9cfc932baf63b3ee5f9c38950b58fd26db2286d6/motion-canvas/motion-canvas"
-        },
-        {
-          "id": "https://two-wrongs.com/unreasonable-effectiveness-of-conditional-probabilities.html",
-          "author": null,
-          "description": "Comments",
-          "link": "https://two-wrongs.com/unreasonable-effectiveness-of-conditional-probabilities.html",
-          "publishedOn": "2023-02-22T16:04:56.000Z",
-          "wordCount": 3742,
-          "title": "The unreasonable effectiveness of conditional probabilities",
-          "imageUrl": null
-        },
-        {
-          "id": "https://eli.lipsitz.net/posts/internet-connected-pinball/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://eli.lipsitz.net/posts/internet-connected-pinball/",
-          "publishedOn": "2023-02-22T16:03:34.000Z",
-          "wordCount": 10685,
-          "title": "Connecting a 1980s Pinball Machine to the Internet",
-          "imageUrl": null
-        },
-        {
-          "id": "https://github.com/highlight/highlight",
-          "author": null,
-          "description": "Comments",
-          "link": "https://github.com/highlight/highlight",
-          "publishedOn": "2023-02-22T16:02:26.000Z",
-          "wordCount": 1833,
-          "title": "Show HN: We’re open-sourcing our session replay tool",
-          "imageUrl": "https://repository-images.githubusercontent.com/289073337/bcdbf22d-d1e3-4c51-97d9-2cfb5594c5dc"
-        },
-        {
-          "id": "https://mattrighetti.com/2023/02/22/asciidoc-liquid-and-jekyll.html",
-          "author": null,
-          "description": "Comments",
-          "link": "https://mattrighetti.com/2023/02/22/asciidoc-liquid-and-jekyll.html",
-          "publishedOn": "2023-02-22T15:58:28.000Z",
-          "wordCount": 1927,
-          "title": "AsciiDoc, Liquid and Jekyll",
-          "imageUrl": null
-        },
-        {
-          "id": "https://eggspensive.net/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://eggspensive.net/",
-          "publishedOn": "2023-02-22T15:55:08.000Z",
-          "wordCount": 1778,
-          "title": "Eggspensive",
-          "imageUrl": "https://eggspensive.net/eggspensive.jpg"
-        },
-        {
-          "id": "https://www.newyorker.com/magazine/2023/02/27/darkness-manifesto-book-johan-eklof",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.newyorker.com/magazine/2023/02/27/darkness-manifesto-book-johan-eklof",
-          "publishedOn": "2023-02-22T14:33:29.000Z",
-          "wordCount": 31993,
-          "title": "Is artificial light poisoning the planet?",
-          "imageUrl": "https://media.newyorker.com/photos/63ed5266cb49dd0dd936c053/16:9/w_1280,c_limit/230227_r41920web-site.jpg"
-        },
-        {
-          "id": "https://www.pinecone.io/learn/splade/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.pinecone.io/learn/splade/",
-          "publishedOn": "2023-02-22T13:28:53.000Z",
-          "wordCount": 2867,
-          "title": "SPLADE for Sparse Vector Search Explained",
-          "imageUrl": "https://www.pinecone.io/images/splade-0.png"
         }
       ]
     }
