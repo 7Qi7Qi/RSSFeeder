@@ -2,10 +2,390 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://7qi7qi.github.io/RSSFeeder/index.html</id>
     <title>osmos::feed</title>
-    <updated>2023-07-02T01:22:16.596Z</updated>
+    <updated>2023-07-03T01:20:13.784Z</updated>
     <generator>osmosfeed 1.15.1</generator>
     <link rel="alternate" href="https://7qi7qi.github.io/RSSFeeder/index.html"/>
     <link rel="self" href="https://7qi7qi.github.io/RSSFeeder/feed.atom"/>
+    <entry>
+        <title type="html"><![CDATA[Implementing a C-like for loop in Python]]></title>
+        <id>https://tushar.lol/post/cursed-for/</id>
+        <link href="https://tushar.lol/post/cursed-for/"/>
+        <updated>2023-07-02T23:57:38.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Lumia WOA Project – Windows 10 or Windows 11 Desktop OS for Lumia 950/XL]]></title>
+        <id>https://woa-project.github.io/LumiaWOA/</id>
+        <link href="https://woa-project.github.io/LumiaWOA/"/>
+        <updated>2023-07-02T23:42:43.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Rings.social – Reddit-API compatible and Open Source content-voting platform]]></title>
+        <id>https://rings.social/</id>
+        <link href="https://rings.social/"/>
+        <updated>2023-07-02T23:24:57.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[酒那么难喝，为什么那么多人还喜欢喝酒？]]></title>
+        <id>https://daily.zhihu.com/story/9763334</id>
+        <link href="https://daily.zhihu.com/story/9763334"/>
+        <updated>2023-07-02T23:06:21.000Z</updated>
+        <summary type="html"><![CDATA[耗子领袖，秩序邪恶，微弱神力
+
+算是问到我的专业了。
+在酒精成瘾研究领域有一个重要的原则：「酒精成瘾」的定义必须是因为酒精的药理特性，而非酒精溶液的味道，利用酒精溶液味道建立起的成瘾行为模型是不被认可的。
+什么意思？意思就是酒这玩意上瘾不上瘾，本质上跟它好不好喝没关系！
+举个简单的例子吧，酒精成瘾的动物研究常用 C57 小鼠，它是所有小鼠品系里最喜欢喝酒的。
+但就算这么说，其实在自然情况下，它也不咋爱喝，那怎么办呢？我们一般会让耗子先从加了糖的酒（15%的乙醇）喝起，就好像很多人一开始是从米酒和甜葡萄酒开始喝的。
+因为加了糖，这个时候就算耗子表现出主动喝酒的行为，也不能算作真正的酒精成瘾，因为谁也不知道它是因为喜欢糖还是因为喜欢酒本身。
+等耗子慢慢习惯酒的味道，我们会逐渐减少糖的浓度，直到彻底不加糖，这个时候耗子如果还依然会主动去喝酒，那才是酒精成瘾。
+可能会有人质疑了，说不准耗子就是喜欢酒精本身的味道呢？这个怀疑是有一定道理的，毕竟酒精本身也是有风味和香气的。
+但是事实上，酒精成瘾后的耗子，即使给酒精了掺了奎宁（巨苦无比的一种化学物质），让酒精变得难喝后，依然会主动去喝酒；甚至会有一部分耗子宁可经受电击，也要喝酒。
+这种宁可承受痛苦也要喝酒的行为被称为强迫性饮酒，在很多酗酒人群中可以看得到。
+一个强迫性酗酒的小鼠模型，并不打算详细介绍，只是觉得花花绿绿的放在这里很好看，来自 MIT 的 kay tye 组 2019 年的 Science.
+为什么我要说这个呢？我的意思是，酒精之所以会成瘾，必然是因为它的药理特性，酒的味道可能是你喝酒的起点，但它的药理特性才是你真正不喝就难受的原因。
+说了这么多，酒精成瘾的药理机制是什么？众所周知，成瘾离不开神经递质中的头号明星——多巴胺。而人类脑影像学研究发现，很少的酒精就可以显著提高大脑的奖赏核心区域「伏隔核(NAc)」的多巴胺的水平[1]。值得注意的是，静脉注射酒精也可以达到同样的效果，并且注射酒精后多巴胺反应越强的人越喜欢喝酒。这也就是说，酒精刺激多巴胺分泌是不依赖于酒精的味道的[2]。
+酒精增加伏隔核的多巴胺水平
+所以接下来只要解释清楚了酒精进入脑子里是如何影响多巴胺，我们就能知道为什么有人会喜欢喝酒。
+酒精进入大脑后，并不是直接促进多巴胺的释放，而是通过多个途径，最终影响了中脑腹侧被盖区（VTA）的多巴胺神经元的活动。
+
+目前看来，主要有这样几条途径（对非领域内可能有点绕，我尽量讲得明白点）[3]：
+（1）首先，在 VTA 不仅有多巴胺神经元，还有一群抑制性的 GABA 能神经元上，这类神经元平时“管控”着多巴胺神经元，不让它胡乱释放多巴胺。
+在这群大管家 GABA 能神经元上，有一些 NMDA 受体，它接受来自其他区域的谷氨酸能（兴奋性）投射，对突触后膜产生的是兴奋性的作用，激活这些受体可以让 GABA 能神经元兴奋，进而抑制多巴胺的释放。
+而酒精是 NMDA 受体（上图黄色）的非竞争性拮抗剂，可以抑制掉上述反应，从而对多巴胺神经元产生一个「去抑制」的作用，所谓负负得正，多巴胺神经元没了管控，就释放更多的多巴胺。
+
+（2）除了多巴胺神经元和 GABA 神经元之外，还有一群阿片肽神经元，它会向 GABA 能神经元释放「内啡肽」，作用到 GABA 能神经元上的 「μ阿片受体」上，可以对突触后产生抑制作用。
+而酒精会促进内啡肽的释放，从而增强对 GABA 神经元的抑制，进而去抑制多巴胺神经元。
+
+可以看到，酒精主要通过抑制 GABA 神经元，来解除对多巴胺神经元的抑制来起作用的（上面看不明白的话，记住“去抑制多巴胺”就行了）[4]。
+同样的，像其他人提到的很多血清素、大麻素之类的，其实最终都是作用于多巴胺系统来起作用的，这里不逐一介绍了。
+当然，实际情况比这个要复杂得多，各种神经递质和受体在复杂的神经网络里互相影响，而且酒精对多巴胺神经元的反应并非完全一致的，只能说会促进大多数多巴胺神经元的兴奋，但也有一部分多巴胺神经元对酒精没有反应，甚至是抑制的反应[5]。
+给了酒精后的多巴胺神经元，有的兴奋有的抑制
+尽管具体到个人，酒精促进多巴胺释放所带来的奖赏 - 成瘾效应因人而异，但总的来说，酒精本身的药理作用，而不是它的味道，才是让人喜欢它，甚至喝酒上瘾的根本原因。
+随着你喝酒次数多了，你脑内的多巴胺受体也会发生相应的变化，你越来越能忍受酒精的味道，越来越喜欢喝酒。
+所以很多人尽管一开始不喜欢喝酒，只能喝甜滋滋的米酒和果酒，但慢慢也能小酌几杯，甚至彻底爱上喝酒。
+当然了，在中国，喝不喝酒很多时候跟喜不喜欢没关系。
+关于喝酒为什么会有个体差异，可以看我的这篇文章：
+为什么中国某些未成年人喝酒没人管，而美国电影未成年人绝对禁止喝酒？
+其他饮酒相关回答：
+喝酒后胆子会变大的科学原理是什么，比如大脑哪些具体部位被兴奋，那些部位被抑制，整个机制如何运作的？]]></summary>
+        <author>
+            <name>ytzong</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[既然生命是为了繁衍生存，为何大部分植物未能演化出避免被吃掉的「武器」？]]></title>
+        <id>https://daily.zhihu.com/story/9763326</id>
+        <link href="https://daily.zhihu.com/story/9763326"/>
+        <updated>2023-07-02T23:06:13.000Z</updated>
+        <summary type="html"><![CDATA[悠游黑菟
+
+你这欺负植物了，已知植物演化出了至少两三种灭世级别的“武器”大量灭绝动物来避免自己被吃掉。
+一，蓝藻（蓝细菌）的大氧化事件。虽然蓝藻是不是植物还有待商榷，但以蓝藻为引导，大批藻类植物通过俘获叶绿体获得了制造氧气的能力。在古老地球，微观上，吃藻类植物浮游动物中厌氧动物的绝大多数都被空气和水体中升高的氧气所杀死，宏观上，大量氧气抑制了温室效应，导致地球进入雪球时代，更是把最后的厌氧菌赶到了世界边缘的海底和火山热泉里苟延残喘。
+二，木质素危机。植物登陆后，动物也尾随而至大吃特吃，于是刚刚支棱起来的维管植物惨遭吞噬，在经过残酷的进化之路后，进化出了木质素，一度翻盘。。粗纤维的木质素导致素食动物完全无法消化，大量饿死灭绝。而木质素的固碳能力，也导致大量二氧化碳被固定，随着植物死亡沉入底层，成为煤炭，，故而得名石炭纪。加上植物的氧气生成，引发了地球上第二次雪球事件，石炭纪大灭绝。。直到真菌界，细菌界演化出木质素消化酶，并和节肢动物共生，（白蚁就是其代表，白蚁本身不能消化木质素。，完全靠肠道内的共生菌来分解）。
+三，硅基质革命。3000 万年前，随着恐龙灭绝，草（一种植物类型）出现了，，他们把土壤里的硅质引入自己的身体构建。这些细小而坚硬的硅质，使得吃惯了鲜嫩蕨类植物的动物痛苦不堪，，拉嗓子还在其次，硅质磨损牙齿，导致动物活着，但牙坏了，活活饿死。硅质消化困难，导致动物胃疼，营养不良。在没有天外陨石和地球大陆剧烈板块变动这类天降横祸下，先于人类的现代工业社会活生生制造了一波小灭绝。。直到动物发明了高冠齿和反刍。]]></summary>
+        <author>
+            <name>ytzong</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[宇宙中有哪些奇异的卫星？]]></title>
+        <id>https://daily.zhihu.com/story/9763336</id>
+        <link href="https://daily.zhihu.com/story/9763336"/>
+        <updated>2023-07-02T23:06:07.000Z</updated>
+        <summary type="html"><![CDATA[霍与赫
+
+我最喜欢的是土卫六（泰坦）。
+土卫六是土星最大的卫星，太阳系第二大卫星（仅次于木卫三）。
+卡西尼－惠更斯号拍摄到的真实色彩的土卫六
+最值得注意的是，土卫六是太阳系唯一一个有稠密大气层的卫星。
+大气的主要成分是氮气和甲烷等，相当良性（尽管不可呼吸，但也不会立即因中毒而致命）。表面大气压约是地球上海平面压力的 1.5 倍。这意味着，你不需要穿加压宇航服就可以在土卫六上行走，这在太阳系中是个难能可贵的条件。住宿和工作也不需要建造加压基站，只需要能够提供氧气和保温的房子。
+你可以听到那个世界的声音。你可以走到由液态甲烷和乙烷组成的碳氢化合物湖泊或海洋的岸边，聆听海浪声。
+哦，土卫六也有天气。天气预报说明天可能会下雨，橙色的天空中会降下液态甲烷和乙烷。
+土卫六大气层真彩照片
+当然，土卫六并不适合人类生存和殖民。至少有以下三个原因：
+a)极其寒冷，b)极其黑暗，c)极其遥远。
+温度低达 -180 摄氏度。土卫六上的水冰就像花岗岩。一个没有防护的人基本上会立刻被冻死。所以你的宇航服虽然不需要加压，但需要加热（当然也需要供氧）。为此，核能可能将是必不可少的，因为没有其他现成而可靠的能源可以做到这一点。
+土卫六是一个极其黑暗的地方，因为土星离太阳的距离大约是地球的 10 倍，所以与地球相比它只能获得大约 1%的阳光。再加上土卫六浓厚的大气层，这意味着那 1%中只有一小部分能到达表面。它的白天甚至没有地球上满月下的夜晚明亮。太阳能在那里显然是无用的，我们也没发现任何现成的化学能源。虽然土卫六上有大量的甲烷，但我们没有自由氧来点燃它。
+最后，土卫六离地球的距离令人生畏。如果没有新型的推进系统，我们需要 6-7 年或更长时间才能到达那里。因此如果要将土卫六作为一个需要与地球保持定期联系、进行双边贸易的殖民地来说，我不认为在当今或可预见未来的技术下是可行的是。相比之下，使用现存的宇宙设备，我们可以在几天内到达月球，几个月内到达火星。
+所以，我不相信我们在 21 世纪能有任何实现移居土卫六的机会。即便如此，我非常希望能活得足够长，以亲眼目睹人类第一次登上土卫六，证明这些都是错误的。
+这张照片是 2005 年 1 月 14 日惠更斯号探测器成功降落土卫六时发回的彩色视图（照片经过了处理添加反射光谱数据，可以更好地指示表面的实际颜色）。
+卡西尼号飞船拍摄的土星最大的卫星土卫六和第四大卫星土卫四]]></summary>
+        <author>
+            <name>ytzong</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[No title]]></title>
+        <id>https://daily.zhihu.com/story/9763339</id>
+        <link href="https://daily.zhihu.com/story/9763339"/>
+        <updated>2023-07-02T23:05:59.000Z</updated>
+        <summary type="html"><![CDATA[0]]></summary>
+        <author>
+            <name>ytzong</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[No title]]></title>
+        <id>https://daily.zhihu.com/story/9763324</id>
+        <link href="https://daily.zhihu.com/story/9763324"/>
+        <updated>2023-07-02T23:05:49.000Z</updated>
+        <summary type="html"><![CDATA[0]]></summary>
+        <author>
+            <name>ytzong</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Illegal Life Pro Tip: Want to ruin your competitors business?]]></title>
+        <id>https://oppositeinvictus.com/illegal-life-pro-tip-want-to-ruin-your-competitors-business</id>
+        <link href="https://oppositeinvictus.com/illegal-life-pro-tip-want-to-ruin-your-competitors-business"/>
+        <updated>2023-07-02T22:51:19.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[AI and the Automation of Work]]></title>
+        <id>https://www.ben-evans.com/benedictevans/2023/7/2/working-with-ai</id>
+        <link href="https://www.ben-evans.com/benedictevans/2023/7/2/working-with-ai"/>
+        <updated>2023-07-02T21:16:39.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[AMD’s EPYC 7J13: Zen 3 Customized]]></title>
+        <id>https://chipsandcheese.com/2023/06/27/amds-epyc-7j13-zen-3-customized/</id>
+        <link href="https://chipsandcheese.com/2023/06/27/amds-epyc-7j13-zen-3-customized/"/>
+        <updated>2023-07-02T20:52:37.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[WebAuthn Is Great and It Sucks]]></title>
+        <id>https://sec.okta.com/articles/2020/04/webauthn-great-and-it-sucks/</id>
+        <link href="https://sec.okta.com/articles/2020/04/webauthn-great-and-it-sucks/"/>
+        <updated>2023-07-02T20:35:08.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Forgotten tragedy of Italian war detainees]]></title>
+        <id>https://www3.nhk.or.jp/nhkworld/en/news/backstories/816/</id>
+        <link href="https://www3.nhk.or.jp/nhkworld/en/news/backstories/816/"/>
+        <updated>2023-07-02T19:26:46.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Commuters prefer origin to destination transfers]]></title>
+        <id>https://pedestrianobservations.com/2023/06/30/why-commuters-prefer-origin-to-destination-transfers/</id>
+        <link href="https://pedestrianobservations.com/2023/06/30/why-commuters-prefer-origin-to-destination-transfers/"/>
+        <updated>2023-07-02T19:07:21.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[C’s Biggest Mistake (2009)]]></title>
+        <id>https://www.digitalmars.com/articles/C-biggest-mistake.html</id>
+        <link href="https://www.digitalmars.com/articles/C-biggest-mistake.html"/>
+        <updated>2023-07-02T19:00:22.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[JavaScript Gom Jabbar]]></title>
+        <id>https://frantic.im/javascript-gom-jabbar/</id>
+        <link href="https://frantic.im/javascript-gom-jabbar/"/>
+        <updated>2023-07-02T18:12:09.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[AMD CPU Use Among Linux Gamers Approaching 70% Marketshare]]></title>
+        <id>https://www.phoronix.com/news/AMD-CPU-Linux-Gaming-67p</id>
+        <link href="https://www.phoronix.com/news/AMD-CPU-Linux-Gaming-67p"/>
+        <updated>2023-07-02T18:09:29.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[AMIGAlive – Play Amiga games online with people across the world]]></title>
+        <id>https://www.amigalive.com/</id>
+        <link href="https://www.amigalive.com/"/>
+        <updated>2023-07-02T17:50:52.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[First 'tooth regrowth' medicine moves toward clinical trials in Japan]]></title>
+        <id>https://mainichi.jp/english/articles/20230609/p2a/00m/0sc/026000c</id>
+        <link href="https://mainichi.jp/english/articles/20230609/p2a/00m/0sc/026000c"/>
+        <updated>2023-07-02T17:33:17.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[HockeyStack (YC S23) Is Hiring Founding Engineers]]></title>
+        <id>https://www.ycombinator.com/companies/hockeystack/jobs/JehKPk7-founding-backend-engineer</id>
+        <link href="https://www.ycombinator.com/companies/hockeystack/jobs/JehKPk7-founding-backend-engineer"/>
+        <updated>2023-07-02T17:00:08.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Are You Sure You Want to Use MMAP in Your Database Management System? (2022)]]></title>
+        <id>https://db.cs.cmu.edu/mmap-cidr2022/</id>
+        <link href="https://db.cs.cmu.edu/mmap-cidr2022/"/>
+        <updated>2023-07-02T16:48:00.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Designing the First Apple Macintosh: The Engineers’ Story (1984)]]></title>
+        <id>https://spectrum.ieee.org/apple-macintosh</id>
+        <link href="https://spectrum.ieee.org/apple-macintosh"/>
+        <updated>2023-07-02T16:25:47.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[What Do We Owe Our Teams?]]></title>
+        <id>https://www.mironov.com/owe/</id>
+        <link href="https://www.mironov.com/owe/"/>
+        <updated>2023-07-02T16:15:54.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Stanford A.I. Courses]]></title>
+        <id>https://ai.stanford.edu/courses/</id>
+        <link href="https://ai.stanford.edu/courses/"/>
+        <updated>2023-07-02T15:40:53.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[A toy programming language in 137 lines of Python code]]></title>
+        <id>https://blog.miguelgrinberg.com/post/building-a-toy-programming-language-in-python</id>
+        <link href="https://blog.miguelgrinberg.com/post/building-a-toy-programming-language-in-python"/>
+        <updated>2023-07-02T15:36:04.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[My Meeting with David Bohm]]></title>
+        <id>https://johnhorgan.org/cross-check/my-meeting-with-david-bohm-tormented-quantum-visionary</id>
+        <link href="https://johnhorgan.org/cross-check/my-meeting-with-david-bohm-tormented-quantum-visionary"/>
+        <updated>2023-07-02T14:52:43.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Parsing time stamps faster with SIMD instructions]]></title>
+        <id>https://lemire.me/blog/2023/07/01/parsing-time-stamps-faster-with-simd-instructions/</id>
+        <link href="https://lemire.me/blog/2023/07/01/parsing-time-stamps-faster-with-simd-instructions/"/>
+        <updated>2023-07-02T14:50:46.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Alt-F4 #65 – Factorio visualizer in Unreal Engine 5]]></title>
+        <id>https://alt-f4.blog/ALTF4-65/</id>
+        <link href="https://alt-f4.blog/ALTF4-65/"/>
+        <updated>2023-07-02T14:34:58.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[64bit computing on a budget]]></title>
+        <id>https://virtuallyfun.com/2023/07/01/64bit-computing-on-a-budget/</id>
+        <link href="https://virtuallyfun.com/2023/07/01/64bit-computing-on-a-budget/"/>
+        <updated>2023-07-02T10:54:46.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Kokuhaku: Japan’s Love Confessing Culture (2013)]]></title>
+        <id>https://www.tofugu.com/japan/kokuhaku-love-confessing-japan/</id>
+        <link href="https://www.tofugu.com/japan/kokuhaku-love-confessing-japan/"/>
+        <updated>2023-07-02T10:25:14.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Entropy: A little understood concept in physics [video]]]></title>
+        <id>https://www.youtube.com/watch?v=DxL2HoqLbyA</id>
+        <link href="https://www.youtube.com/watch?v=DxL2HoqLbyA"/>
+        <updated>2023-07-02T10:23:50.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[iAnnotate – Whatever Happened to the Web as an Annotation System?]]></title>
+        <id>https://scholarlykitchen.sspnet.org/2013/04/30/iannotate-whatever-happened-to-the-web-as-an-annotation-system/</id>
+        <link href="https://scholarlykitchen.sspnet.org/2013/04/30/iannotate-whatever-happened-to-the-web-as-an-annotation-system/"/>
+        <updated>2023-07-02T09:17:44.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[git-landmine – create local malicious Git repo]]></title>
         <id>https://github.com/jwilk/git-landmine</id>
@@ -264,6 +644,16 @@
         </author>
     </entry>
     <entry>
+        <title type="html"><![CDATA[Lev Landau's “Theoretical Minimum”]]></title>
+        <id>https://physics.stackexchange.com/questions/13861/lev-landaus-theoretical-minimum</id>
+        <link href="https://physics.stackexchange.com/questions/13861/lev-landaus-theoretical-minimum"/>
+        <updated>2023-07-01T15:19:27.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[How to Do Great Work]]></title>
         <id>http://paulgraham.com/greatwork.html</id>
         <link href="http://paulgraham.com/greatwork.html"/>
@@ -308,6 +698,16 @@
         <id>https://sqlpkg.org/</id>
         <link href="https://sqlpkg.org/"/>
         <updated>2023-07-01T13:21:06.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Mir: A lightweight JIT compiler project (2020)]]></title>
+        <id>https://developers.redhat.com/blog/2020/01/20/mir-a-lightweight-jit-compiler-project</id>
+        <link href="https://developers.redhat.com/blog/2020/01/20/mir-a-lightweight-jit-compiler-project"/>
+        <updated>2023-07-01T13:00:48.000Z</updated>
         <summary type="html"><![CDATA[Comments]]></summary>
         <author>
             <name>Hacker News</name>
@@ -1454,6 +1854,16 @@ Q:第一次进猫咖，怎么做才能显得很老练？
         <id>https://www.construct.net/en/blogs/construct-official-blog-1/introducing-constructs-new-1768</id>
         <link href="https://www.construct.net/en/blogs/construct-official-blog-1/introducing-constructs-new-1768"/>
         <updated>2023-06-28T15:12:45.000Z</updated>
+        <summary type="html"><![CDATA[Comments]]></summary>
+        <author>
+            <name>Hacker News</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[2,200 forgotten vintage computers from a barn in Massachusetts]]></title>
+        <id>https://www.vice.com/en/article/ak3k34/2200-forgotten-vintage-computers-are-being-liberated-from-a-barn-in-massachusetts</id>
+        <link href="https://www.vice.com/en/article/ak3k34/2200-forgotten-vintage-computers-are-being-liberated-from-a-barn-in-massachusetts"/>
+        <updated>2023-06-28T14:58:48.000Z</updated>
         <summary type="html"><![CDATA[Comments]]></summary>
         <author>
             <name>Hacker News</name>
@@ -12623,456 +13033,6 @@ Zhao GC，2018，ESR（Revised after Li, 2006; Metcalfe, 2013; Chen et al., 2017
         <id>https://papa.bretmulvey.com/post/124027987928/hash-functions</id>
         <link href="https://papa.bretmulvey.com/post/124027987928/hash-functions"/>
         <updated>2023-06-03T13:20:53.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[StyleDrop: Text-to-Image Generation in Any Style]]></title>
-        <id>https://styledrop.github.io/</id>
-        <link href="https://styledrop.github.io/"/>
-        <updated>2023-06-03T12:56:39.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Snopes: the rise, fall, and rebirth of an internet icon]]></title>
-        <id>https://www.fastcompany.com/90901113/inside-snopes-the-rise-fall-and-rebirth-of-an-internet-icon</id>
-        <link href="https://www.fastcompany.com/90901113/inside-snopes-the-rise-fall-and-rebirth-of-an-internet-icon"/>
-        <updated>2023-06-03T09:32:14.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Fq: Jq for Binary Formats]]></title>
-        <id>https://github.com/wader/fq</id>
-        <link href="https://github.com/wader/fq"/>
-        <updated>2023-06-03T09:13:59.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[John Reber: The Man Who Helped Save the Bay by Trying to Destroy It (2014)]]></title>
-        <id>https://www.foundsf.org/index.php?title=John_Reber:_The_Man_Who_Helped_Save_the_Bay_by_Trying_to_Destroy_It</id>
-        <link href="https://www.foundsf.org/index.php?title=John_Reber:_The_Man_Who_Helped_Save_the_Bay_by_Trying_to_Destroy_It"/>
-        <updated>2023-06-03T02:15:31.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Generally Intelligent (YC S17) Is Hiring Chief of Staff]]></title>
-        <id>https://news.ycombinator.com/item?id=36172672</id>
-        <link href="https://news.ycombinator.com/item?id=36172672"/>
-        <updated>2023-06-03T01:00:45.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Ask HN: Real-life, ridiculous security incidents?]]></title>
-        <id>https://news.ycombinator.com/item?id=36172547</id>
-        <link href="https://news.ycombinator.com/item?id=36172547"/>
-        <updated>2023-06-03T00:33:04.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Brazil develops tropical wheat and predicts self-sufficiency in 5 years]]></title>
-        <id>https://ukragroconsult.com/en/news/brazil-develops-tropical-wheat-and-predicts-self-sufficiency-in-5-years/</id>
-        <link href="https://ukragroconsult.com/en/news/brazil-develops-tropical-wheat-and-predicts-self-sufficiency-in-5-years/"/>
-        <updated>2023-06-02T23:55:12.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[中国古代兵器史的发展大概是什么流程？]]></title>
-        <id>https://daily.zhihu.com/story/9762229</id>
-        <link href="https://daily.zhihu.com/story/9762229"/>
-        <updated>2023-06-02T23:07:13.000Z</updated>
-        <summary type="html"><![CDATA[中国古代兵器进化史 中国古代兵器史的发展大概是什么流程？
-
-星球研究所，以地理的视角，专注于探索极致世界
-
-在这些神兵利器上，折射了其主人热烈的一生，也折射出中国 5000 年的荣辱兴衰。
-
-想要实现真正的和平，必须了解真实的战争。中国古代兵器的发展历程，便是了解中国古代战争的重要部分，让我们跟随兵器的脚步，探寻过往的故事。
-根据《中国历代战争年表》不完全统计，我国有文字记载的较大战争达 2000 余起，自中华文明初始，战争便如影随形。
-▼
-西汉战争场面叠鼓贮贝器上的交战场景，画面中一方似乎已经败下阵来，摄影师@马龙颖
-在无数次能够决定命运的战场上，人们尽其所能，将最雄厚的财力用于兵器，将最精良的工艺用于兵器，将最先进的科技用于兵器。
-▼
-春秋越王勾践剑历经 2500 年只有轻微锈蚀，堪称当时兵器制造的顶级水平，摄影师@吴沛捷
-5000 年荣辱兴衰，中国古代兵器历经了怎样的岁月？又见证了怎样的中国？
-01 石之战
-- 兵锋初现 -
-百万年前，赤手空拳走向原野的人类，面对生死存亡的威胁，学会用火驱赶猛兽，使用石器进行生产生活拉开了崛起的序幕。
-▼
-原始石器剥片技术示意，制图@罗梓涵 / 星球研究所
-凭借充满智慧的开拓，大约 1 万年前人类开始进入农耕时代，但更幸福的日子并没有到来，随着生产力不断提高，社会出现贫富分化，而掠夺他人的地盘和财富远比自己辛苦生产更具诱惑，激烈的冲突频频爆发，不同部落与氏族之间最终产生了战争。
-▼
-新石器时代鹳(guàn)鱼石斧图彩陶缸，上面的鹳和鱼可能为氏族图腾，旁边的石斧既是兵器又是权力的象征，摄影师@柳叶氘
-为了消灭敌人，为了保护自己，手上的工具成为厮杀的武器，本用以渔猎生产的石斧、石球、石矛、弓箭等，沾染上同类的鲜血。
-▼
-大汶口文化中箭人骨，中箭男性可能为氏族武士，图片来源@汇图网，制图@汉青 / 星球研究所
-而战争的成败，更是决定整个部落…]]></summary>
-        <author>
-            <name>ytzong</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[各个时代都有哪些占据绝对优势的「顶级掠食者」？]]></title>
-        <id>https://daily.zhihu.com/story/9762231</id>
-        <link href="https://daily.zhihu.com/story/9762231"/>
-        <updated>2023-06-02T23:07:03.000Z</updated>
-        <summary type="html"><![CDATA[中科院古脊椎所，古生物的问题，你敢问我就敢答！
-
-多图预警
-中科院古脊椎所 携手中国顶尖古生物学家 实力宠粉
-记得先关注 再好好学习~
-寒武纪：距今 5 亿 4100 万年～4 亿 8540 万年
-水生顶级猎食者：奇虾 丨 陆生顶级猎食者：无
-奇虾：它是已知最庞大的寒武纪动物。
-
-奥陶纪：距今 4 亿 8540 万年～4 亿 4380 万年
-水生顶级猎食者：震旦角石 丨 陆生顶级猎食者：无
-震旦角石：生长地质年代在距今约 4.4 亿至 5.1 亿年前的奥陶纪，是当时海洋中凶猛的食肉性动物化石。
-
-志留纪：距今 4 亿 4380 万年～4 亿 1920 万年
-水生顶级猎食者：板足鲎 丨 陆生顶级猎食者：无
-板足鲎：与桨足鲎外貌相似，体分头胸部和腹部，头部由六个体节组成，腹面有六对附肢，最后一对呈板状，用来游泳。
-
-泥盆纪：距今 4 亿 1920 万年～3 亿 5890 万年
-水生顶级猎食者：邓氏鱼 丨 陆生顶级猎食者：鱼石螈
-鱼石螈：生活方式和今天生活在热带地区的弹涂鱼十分相似。弹涂鱼虽然是鱼，但它们具有特殊的适应性，即可以在陆地上生存。
-
-石炭纪：距今 3 亿 5890 万年～2 亿 9890 万年
-水生顶级猎食者：希氏根齿鱼 丨 陆生顶级猎食者：引螈
-希氏根齿鱼
-引螈：是石炭纪、二叠纪陆地上最大的动物之一。体长 1.8 米以上，头骨很大，宽阔而比较扁平，耳缺很深，有大而具迷路构造的牙齿，脊椎和四肢骨结构粗强，结构笨重，脊椎骨异常坚硬。
-
-二叠纪：距今 2 亿 9890 万年～2 亿 5190 万年
-水生顶级猎食者：旋齿鲨 丨 陆生顶级猎食者：楔齿龙
-旋齿鲨：多年来，人们所能见到的只是它奇妙的、螺旋排列的牙齿（古生物学称之为“螺旋齿”），真正完整的骨架当前还没有发现
-楔齿龙：生活在二亿三千万年前的三叠纪，是一种凶猛的食肉爬行动物。前颌骨，上颌骨和下颌骨的前端，有巨大的匕首状牙齿，嘴能张得很大，咬合有力，可以捕食大型脊椎动物。
-
-三叠纪：距今 2 亿 5190 万年～2 亿 130 万年
-水生顶级猎食者：杯椎鱼龙 丨 陆生顶级猎食者：阿尔加维宽额螈
-杯椎鱼龙：中生代海洋里的猛龙。从外形上看，杯椎鱼龙比较原始，它的身体细长，有 10 米左右
-阿尔加维宽额螈：它是现代蝾螈的远亲，但个头要大得多，体长最大可达约 4.6 米，非常凶猛。它生活在湖泊和河流中，生活习性与现在的鳄鱼相似，主要以鱼类为食。
-
-侏罗纪：距今 2 亿 130 万年～1 亿 4500 万年
-水生顶级猎食者：上龙 丨 陆生顶级猎食者：异特龙
-上龙：一种大型掠食性动物，以鱼类、鱿鱼、以及其他海生爬行动物为食。
-异特龙：非常聪明，会围攻大型猎物，是一种庞大、凶猛的肉食性恐龙，身长 8.5 米，最大 9.7 米，体重 1.5~3 吨最重 3.6 吨。
-
-白垩纪：距今 1 亿 4500 万年～6600 万年
-水生顶级猎食者：沧龙 丨 陆生顶级猎食者：雷克斯暴龙
-沧龙：它们是群肉食性海生爬行动物，拥有巨大的头部、强壮的颚与尖锐的牙齿，外形类似具有鳍状肢的鳄鱼。
-雷克斯暴龙：又叫霸王龙，老熟人了，不多说了
-
-古近纪：距今 6600 万年～2303 万年
-水生顶级猎食者：龙王鲸 丨 陆生顶级猎食者：泰坦巨蟒
-龙王鲸：最大身长为 16～18 米，体重 8～18 吨，甚至可达 21 米，不过那个只是疑似龙王鲸。而且拥有比现代鲸更为修长的身体。
-泰坦巨蟒：平均体长可达到 12 米，体重超过 1 吨，这两个数字已经足以说明它们的可怕之处。它们的食物有 4.57 米长，半吨重的钝鼻鳄和 3.05 米的肺鱼以及当代的一些大型乌龟。泰坦蟒早在近 5800 万年前就已灭绝。
-
-新近纪：距今 2303 万年～258 万年
-水生顶级猎食者：巨齿鲨 丨 陆生顶级猎食者：恐怖鸟
-巨齿鲨：它也许是地球历史上已发现的咬合力最强的生物，最大咬合力推测为 20 吨左右，其口腔撕咬力量超过了霸王龙，可以很轻松咬碎鲸鱼的肋骨。
-恐怖鸟：生存于距今 6400 万年到 1 万年间，如今已全部灭绝。它可能起源于欧亚大陆，来到美洲后由于处于食物链顶端，没有生存竞争对手，一度进化得相当巨大。
-
-第四纪：距今 258 万年～此时此刻
-水生顶级猎食者：虎鲸 丨 陆生顶级猎食者：智人
-虎鲸：一种高度社会化的动物，有一些群体组成的家族是动物界中最稳定的家族。虎鲸的一些复杂社会行为，捕猎技巧和声音交流。它们是食肉动物，性情凶猛，善于进攻猎物，是企鹅、海豚、海豹等动物的天敌。有时它们还袭击其它鲸类，甚至大白鲨，可称得上是海上霸王。
-智人：分为早期智人和晚期智人。早期智人过去曾叫古人，生活在距今 25 万～4 万年前，晚期智人（新人）是解剖结构上的现代人。两者形态上的主要差别在于前部牙齿和面部减小，眉嵴减弱，颅高增大，到现代人则更加明显。晚期智人臂不过膝，体毛退化，有语言和劳动，有社会性和阶级性。]]></summary>
-        <author>
-            <name>ytzong</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[为什么星星看起来不模糊，尽管地球一直在动？]]></title>
-        <id>https://daily.zhihu.com/story/9762234</id>
-        <link href="https://daily.zhihu.com/story/9762234"/>
-        <updated>2023-06-02T23:06:52.000Z</updated>
-        <summary type="html"><![CDATA[七小七，脚踏实地，仰望星空。心有猛喵，细嗅鱼干。
-
-一句话回答，因为地球动的太慢了。
-地球自转一周约为 24 小时，相应的，星星们约 24 小时会在天球上转一圈，一圈 360°，每小时约为 15°。
-15°是个什么概念呢？你可以原地站好，面对着地平线的方向，把手臂水平伸直，然后比一个大大的赞，这时候你点赞的手在天球上对应的高度就约为 15°（根据个人情况稍有误差，且在地平线附近比较准确，在头顶的天球上误差较大）。
-充满暗示
-你可以实际试试看，天球上的 15°比你想象的距离可能要小很多。星星移动这么远需要整整一个小时，所以看起来不会模糊再正常不过了。
-既然说到了星星的移动，不如就拓展一些跟恒星移动相关的小知识吧。
-斗转星移
-前面说了，地球自转一圈约 24 小时，为什么是“约”呢？因为地球真正的自转周期是 23 小时 56 分 4 秒，并不是完整的 24 小时。
-那为啥一天是 24 小时整呢？因为这个 24 小时叫太阳日，指的是以太阳为参照物，太阳两次直射地球某一点的时间间隔。地球在自转的同时也在公转，每自转一圈，公转带来的角度变化约 0.986 度，地球需要再转一点点，按地球自转速度折合为 3 分 56 秒，才能使得太阳又正好对着上次的位置。把它们加起来就正好是 24 小时了。
-而地球真正的自转周期 23 小时 56 分 4 秒，因为是以遥远的几乎不动的恒星为参考物，即恒星两次来到天球上同一位置的时间间隔，因此又被叫做恒星日。
-我们平时使用的是 24 小时制的太阳日。因为恒星日与太阳日相差了差不多 4 分钟，因此在不同日期的同一时刻，恒星在天球的位置并不一样。跟昨天晚上 8 点比，今天晚上 8 点的时候，恒星在天球上向西多移动了 3 分 56 秒，也就是 0.986 度。所以我们可以发现，随着时间的推移，星星们会从东边升起，在天球上移动，直到在西方落下。年复一年，周而复始，这…]]></summary>
-        <author>
-            <name>ytzong</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[如何证明或反驳「一个红色的物体，当没有人看它的时候，它依然是红色」？]]></title>
-        <id>https://daily.zhihu.com/story/9762292</id>
-        <link href="https://daily.zhihu.com/story/9762292"/>
-        <updated>2023-06-02T23:06:21.000Z</updated>
-        <summary type="html"><![CDATA[粲老师，粒子物理学，一个小博导。
-
-这其实是一个很有意思的题目，乍一看似乎是个哲学话题，但仔细想想，背后其实藏着一个科学话题。
-这个题目中其实有一个需要被明确的定义词语，就是“红色”。
-红色
-首先，红色是什么？一般来说，我们会认为波长在大约 750~620 纳米之间的电磁波是红色光。
-可见光的电磁波波谱
-如果一个物体能够反射或者发射波长在大约 750~620 纳米之间的电磁波，那么我们一般就认为这个物体是红色的。
-这时，似乎不论是否有人去“看”，都不会改变这些电磁波的波长，也就不会改变物体是“红色”的属性。
-回答结束。谢谢大家。
-但是，请稍等… 如果我想继续深究一下类似的话题，把题目稍稍改变一下，变成：
-“如何证明或反驳「一个橙色的物体，当没有人看它的时候，它依然是橙色」？”
-橙色
-答案还一样吗？
-你可能会想，橙色就是波长在大约 620~590 纳米之间的电磁波呗，答案肯定是一样的。
-但是，如果请你仔细盯着上面这个橙色的色块，你的眼睛真的是在接受 620~590 纳米之间的电磁波吗？
-在这里，请容我插一句感慨，现在的手机摄像头真的太强大了！我用我的手机的长焦镜头，把放大倍率调到最大，然后调整好距离，拍摄我的计算机屏幕上显示出来的上面这个橙色的图片，得到的图片是下图。没错，“橙色”在计算机屏幕上显示的是：整齐的排列的红色和绿色两个颜色的色块，根本没有橙色的色块。
-上面的橙色图片在计算机显示器上显示出来的样子
-如果你像我一样恰好眼睛有近视，那么试试摘掉眼镜，在距离计算机屏幕较远的地方看上面这张红绿色块图，你会看到什么？是不是又看到了橙色的阵列？
-让我们再进一步，再稍稍改一下题目，把题目变成：
-“如何证明或反驳「一个品红色的物体，当没有人看它的时候，它依然是品红色」？”
-品红色
-答案又会是什么样的？
-同样，我们首先需要定义什么是“品红色”。如果你还是想要按照电磁波波长区间来定义“…]]></summary>
-        <author>
-            <name>ytzong</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[如何让太阳从西边升起？]]></title>
-        <id>https://daily.zhihu.com/story/9762295</id>
-        <link href="https://daily.zhihu.com/story/9762295"/>
-        <updated>2023-06-02T23:06:05.000Z</updated>
-        <summary type="html"><![CDATA[中科院物理所，没错，我就是那个物理所。
-
-三个月前，小编在问答专栏收到一位读者的提问——“如果地球自转反转会发生什么？”
-哦，我的上帝，那真是太阳打西边出来了。
-
-想象力过于丰富，只能用时间反演来模拟一下太阳从西边升起
-不愧是咱们中二所的读者，轻易地提出了我做梦都不会思考的问题。当时我只是想浅开下脑洞放进咱周五的问答专栏里，结果这条一下就被主编大大抓住了，说是个好问题，建议拓展成文。Well，那我们来想想这个《地球作为转动的非惯性系在发生旋转方向的反演时和反演后可能的物理现象》该怎么写吧。
-1 让地球自转反转
-如果咱们定义的地球自转反转是一个长期的过程，就像《流浪地球》计划第一步的刹车时代，利用一堆建在赤道附近的行星发动机“突突突”地给地球一个反向的力矩，那么我们可以估算一下大概需要什么配置的行星发动机才能在合理的时间内实现反转。
-发动机靠反喷工质获得动力，忽略难算的大气阻力（可以建个烟囱直接把反冲工质送入太空），把有效的返喷速度取为第二宇宙速度 11.2km/s，确保大部分工质喷出去后不会被地球引力拉回来。至于反转的预计时间，不妨就按原著的设定，让它用 42 年完成自转的“刹车”。那么根据简单的角动量守恒和动能定理，可以算出让地球反转需要83.65 年，共消耗
-
-能量和3.25%地球质量的工质，对应的功率高达
-
-，也就是说，它一秒消耗的能量相当于 2021 年一整年的全球发电量的 45 倍。
-感兴趣的读者可以查看下面计算过程（不感兴趣可以跳过）。
-假设地球是一个均匀球体，质量为
-
-，在地球的外薄壳处采集质量
-
-的工质，并运输到赤道，以相对速度
-
-朝东喷射，那么喷射前后系统的总角动量守恒给出
-
-略去二阶小量，化简得
-
-定义发动机的喷射质量流量为固定值
-
-，那么地球的质量随时间就会消耗成
-
-。如果地球密度不变，这样地球的半径会随之减小为
-
-，但这样一来微分方程会变得异常恶心。…]]></summary>
-        <author>
-            <name>ytzong</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Calling time on DNSSEC: The costs exceed the benefits]]></title>
-        <id>https://www.mattb.nz/w/2023/06/02/calling-time-on-dnssec/</id>
-        <link href="https://www.mattb.nz/w/2023/06/02/calling-time-on-dnssec/"/>
-        <updated>2023-06-02T22:33:24.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Supreme Court sides with Slack, putting direct listings in jeopardy]]></title>
-        <id>https://www.axios.com/2023/06/02/supreme-court-sides-with-slack-putting-direct-listings-in-jeopardy</id>
-        <link href="https://www.axios.com/2023/06/02/supreme-court-sides-with-slack-putting-direct-listings-in-jeopardy"/>
-        <updated>2023-06-02T22:23:19.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Christopher Strachey and the dawn of interactive text]]></title>
-        <id>https://if50.substack.com/p/christopher-strachey-and-the-dawn</id>
-        <link href="https://if50.substack.com/p/christopher-strachey-and-the-dawn"/>
-        <updated>2023-06-02T21:22:13.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Photography's new bag of tricks (1984)]]></title>
-        <id>https://www.nytimes.com/1984/11/04/magazine/photography-s-new-bag-of-tricks.html</id>
-        <link href="https://www.nytimes.com/1984/11/04/magazine/photography-s-new-bag-of-tricks.html"/>
-        <updated>2023-06-02T20:58:15.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Deep-brain stimulation during sleep strengthens memory: study]]></title>
-        <id>https://www.uclahealth.org/news/deep-brain-stimulation-during-sleep-strengthens-memory</id>
-        <link href="https://www.uclahealth.org/news/deep-brain-stimulation-during-sleep-strengthens-memory"/>
-        <updated>2023-06-02T20:14:59.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Brute.Fail: Watch brute force attacks fail in real time]]></title>
-        <id>https://brute.fail/</id>
-        <link href="https://brute.fail/"/>
-        <updated>2023-06-02T19:49:56.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Systems explained by Humberto Maturana (2021)]]></title>
-        <id>https://www.open.edu/openlearn/money-management/management/leadership-and-management/managing/systems-explained-humberto-maturana</id>
-        <link href="https://www.open.edu/openlearn/money-management/management/leadership-and-management/managing/systems-explained-humberto-maturana"/>
-        <updated>2023-06-02T19:16:44.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[A new attack can unmask anonymous users on any major browser (2022)]]></title>
-        <id>https://www.wired.com/story/web-deanonymization-side-channel-attack-njit/</id>
-        <link href="https://www.wired.com/story/web-deanonymization-side-channel-attack-njit/"/>
-        <updated>2023-06-02T19:16:04.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[In vitro biological system of cultured brain cells has learned to play Pong]]></title>
-        <id>https://www.nature.com/articles/s42256-023-00666-w</id>
-        <link href="https://www.nature.com/articles/s42256-023-00666-w"/>
-        <updated>2023-06-02T19:13:17.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Speed running Monkey Island]]></title>
-        <id>https://www.grumpygamer.com/speed_running_mi</id>
-        <link href="https://www.grumpygamer.com/speed_running_mi"/>
-        <updated>2023-06-02T18:37:08.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[SiFive Gives Its WorldGuard Security Model to the RISC-V Community]]></title>
-        <id>https://www.allaboutcircuits.com/news/sifive-gives-its-worldguard-security-model-to-the-risc-v-community/</id>
-        <link href="https://www.allaboutcircuits.com/news/sifive-gives-its-worldguard-security-model-to-the-risc-v-community/"/>
-        <updated>2023-06-02T18:19:46.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Effect of repeated low-level red light on myopia prevention]]></title>
-        <id>https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2804215</id>
-        <link href="https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2804215"/>
-        <updated>2023-06-02T17:52:51.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[He made linear algebra fun]]></title>
-        <id>https://news.mit.edu/2023/gilbert-strang-made-linear-algebra-fun-0531</id>
-        <link href="https://news.mit.edu/2023/gilbert-strang-made-linear-algebra-fun-0531"/>
-        <updated>2023-06-02T17:23:18.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Render a neural network into CUDA/HIP code]]></title>
-        <id>https://github.com/facebookincubator/AITemplate</id>
-        <link href="https://github.com/facebookincubator/AITemplate"/>
-        <updated>2023-06-02T17:14:23.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Kenneth Anger has died]]></title>
-        <id>https://dangerousminds.net/comments/kenneth_anger_rip_the_magus_of_american_cinema_dead_at_96</id>
-        <link href="https://dangerousminds.net/comments/kenneth_anger_rip_the_magus_of_american_cinema_dead_at_96"/>
-        <updated>2023-06-02T16:58:37.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Workers rely on medieval era tech to reconstruct the Notre Dame]]></title>
-        <id>https://www.popsci.com/technology/notre-dame-reconstruction-medieval-tools/</id>
-        <link href="https://www.popsci.com/technology/notre-dame-reconstruction-medieval-tools/"/>
-        <updated>2023-06-02T15:44:07.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[System76's coreboot open firmware manages to disable Intel ME for Raptor Lake]]></title>
-        <id>https://blog.system76.com/post/major-updates-for-system76-open-firmware-june-2023</id>
-        <link href="https://blog.system76.com/post/major-updates-for-system76-open-firmware-june-2023"/>
-        <updated>2023-06-02T15:41:43.000Z</updated>
-        <summary type="html"><![CDATA[Comments]]></summary>
-        <author>
-            <name>Hacker News</name>
-        </author>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[The Analog Thing: an open source, educational, low-cost modern analog computer]]></title>
-        <id>https://the-analog-thing.org/</id>
-        <link href="https://the-analog-thing.org/"/>
-        <updated>2023-06-02T14:25:53.000Z</updated>
         <summary type="html"><![CDATA[Comments]]></summary>
         <author>
             <name>Hacker News</name>
