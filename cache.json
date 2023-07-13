@@ -1082,61 +1082,6 @@
           "title": "瞎扯 · 如何正确地吐槽",
           "itunes": {},
           "imageUrl": null
-        },
-        {
-          "id": "https://daily.zhihu.com/story/9762512",
-          "author": "ytzong",
-          "description": "太空僧，2022年新知答主｜航天及天文优秀答主\n\n今天是 3 月 14 日，我来说一下发射宇宙探测器需要的π的精度吧。\n先说答案：在星际航天领域，π最多取到 3.141592653589793，也就是小数点后 15 位，就完完全全够用了。\n15 位真的够用么？\n目前智人用于宇宙航行的人造航天器中，飞得最远的应该就是“旅行者 1 号”了。\n它目前离地球已经有 159.258219902 个天文单位（也就是约 238.25 亿公里），那么以地球为圆心，以“旅行者 1 号”与地球的连线为半径 R 画圆，这应该算是人造物体中能达到的最大的一个圆了。\n那求它的周长，也就是 2πR，应该得到的结果是在 1497 亿公里左右，当我们取 15 位的π=3.141592653589793 并舍去 15 位之后的数字时，那么实际算出来的周长应该是略小于真实世界的周长（本文假设我们附近的宇宙可以这样测量），那差多少呢？差不多是 1 厘米左右的误差。\n1 厘米！\n也就是说，我们在丈量整个太阳系的尺寸时，π即使只取小数点后 15 位，误差也只有一只圆珠笔杆那么细。\n可观测宇宙\n有人会想，这是人造物体限制了想象力。我们的可观测宇宙半径有 460 亿光年[1]呢！那计算我们的可观测宇宙的“腰围”，需要π的精度是多少位呢？\n我们想的极端一点，如果要把误差控制在一个氢原子的直径那么小（我相信目前应该没有哪个实际工程领域能取到更小的值了），那么只需要取到小数点后面 37 位就可以了。\n实际工作中\n以上两个都属于钻牛角尖的极端例子了。在实际航天工程的运算中，用到π时也不会刻意去取那么长的数字。\n比如在让航天器入轨时，比如在设计火星着陆器的降落伞尺寸和确定着陆点时，比如卡西尼号在在土星附近为了改变拍摄角度而进行的被称为“圆周率转移”的变轨时，比如绘制地球表面地图时，比如在观测系外行星在横穿恒星“圆面“时通过恒星光度的变化来求行星大小时，比如在定位月球和火星地震源[2]时，甚至在计算火箭”油箱“要加多少燃料时，等等等等，都需要用到π，（这里我能写上一万字），一般情况下，用小数点后第 8 位就已经很精确了，再多就是浪费宝贵的计算时间了。\n\n也就是说，现在小学生都会背的 山巅一寺一壶酒尔乐苦煞吾（3.1415926535[3]）在实际航天领域就已经够用了。\n程序中的π\n以下是几个常见计算机语言中对π的定义值：\n语言命令小数位数值\nJava\nMath.PI\n15\n3.141592653589793\n\n\nC/C++\nM_PI\n20\n3.14159265358979323846\n\n\nPython\nmath.pi\n20\n3.14159265358979323846\n\n\nSwift 3.0\nDouble.PI\n>=15\n3.141592653589793…\n\n\nGo\nPi\n62\n3.141592653589793238462643383279\n50288419716939937510582097494459\n\n\n\n由于十进制数字通常需要转换为二进制存储到计算机上，在近 99%的情况下，是采用单精度浮点数和双精度浮点数的典型存储方式。单精度浮点数用 4 个字节（32 位）来存储一个浮点数（7 位十进制有效数字），双精度浮点数用 8 个字节（64 位）来存储一个浮点数（15～16 位十进制有效数字）。\n按照 IEEE 754 标准，在双精度浮点数的编码规则下，16 个数字（小数点后 15 位）的圆周率π（3.141592653589793）被编码为：\n\n但是请注意，这个双精度浮点数的真实值是 3.14159265358979311599796346854[4]。\n这也许也是本回答开头提到的小数点后 15 位的由来之一吧。\n注：据吉尼斯世界纪录，背圆周率小数点后数字最多的是日本人原口证，他于 2006 年 10 月 3 日耗时约 16 小时成功背到了小数点后 10 万位，打破了此前印度人拉杰维尔·米纳[5]花 9 小时 27 分钟背到 7 万位的纪录。\n另外，瑞士人用超级计算机花了 108 天零 9 个小时，算到了小数点后 62.8 万亿位[6]。",
-          "link": "https://daily.zhihu.com/story/9762512",
-          "publishedOn": "2023-06-12T23:06:50.000Z",
-          "wordCount": null,
-          "title": "圆周率 π 在实际工程领域最多用到了多少位？",
-          "itunes": {},
-          "imageUrl": null
-        },
-        {
-          "id": "https://daily.zhihu.com/story/9762712",
-          "author": "ytzong",
-          "description": "飞檐走壁朴小胖，见诸学\n\n比较常见的“压六露四”、“压七露三”等做法，并非固定规则，却是一种有效的手段，其目的是要至少满足“三搭头”的要求——就是上中下三块瓦中，最上层的瓦瓦头要能盖住最下层的瓦尾部。\n这种做法的好处是即便中间瓦件发生意外造成碎裂，靠上下瓦件的位置关系也能保证水不会向瓦面以下灌入。可以理解为一种容错机制。\n至于“稀瓦檐头密瓦脊”时在檐口处出现的“压五露五”做法，虽然未满足“三搭头”，但因：1.一般处于檐头或飞头挑出位置，向下渗水对室内不会造成影响；2.能够减轻檐头挑出部分所承受的荷载；3.该处椽望维护起来也比较方便。于是也成为常见做法。\n（脊部位置屋面一般更陡，瓦件难免有缓慢下滑的可能，为满足容错，需要更密瓦瓦）\n而“压五露五”以下做法，满足不了这种容错设计；至于八二分则过密，经济上和荷载上都不大合理了。\n随便画个示意图",
-          "link": "https://daily.zhihu.com/story/9762712",
-          "publishedOn": "2023-06-12T23:06:45.000Z",
-          "wordCount": null,
-          "title": "为什么古建筑中瓦片要「压六露四」，也就是每块瓦有十分之六被上一块瓦压住？",
-          "itunes": {},
-          "imageUrl": null
-        },
-        {
-          "id": "https://daily.zhihu.com/story/9762752",
-          "author": "ytzong",
-          "description": "猫盟CFCA，中国12种本土猫科动物，一种都不能少\n\n这个问题也容易回答也不容易回答。\n能打败大熊猫的动物大概很多，你可以说，亚洲象啊，逆戟鲸啊，阿根廷龙啊，原始人皮克啊……但是这不像个答案。答案还是要有点干货。\n所以我们把难度提高一些：大熊猫在它生活的自然环境下，有动物可以打赢它吗？\n有些小说和网文津津乐道地讲熊猫怎样跟豺、豹恶战，我觉得很难作为证据。我们看纪录片和小说，觉得野外宛如宝可梦对战，动物们每天都在上演惊心动魄的戏码。其实在大部分环境里，动物的互动很少能直接被目击到。\n早期的熊猫调查，没有红外相机，西南地区的山野地形又很复杂，大熊猫又是一种很“宅”的动物，一天也就移动几百米。要想观察到大熊猫与其他动物的互动，千难万难。\n2014 年 11 月 17 日，四川唐家河国家级自然保护区救助过一只三岁的亚成体大熊猫，腹部有一个很深的露出肠子的伤口。起初被怀疑是黄喉貂攻击所致，但后来发现，应该是摔下来被树杈或者尖石划破了肚子。三岁的大熊猫已经不小了，黄喉貂虽然凶残，能干掉小麂、猕猴，要对付一只三岁的熊还是太勉强。\n受伤的未成年大熊猫\n那么有没有间接的证据，能够表明大熊猫被攻击过呢？\n研究熊猫的老前辈人物胡锦矗，在他的《卧龙自然保护区华南豹的食性研究》中提到，卧龙自然保护区的豹粪便里，有捕食过很少的年幼大熊猫的证据（毛）。这是我能找到的最直接的证据。果然动物研究还是要捡屎！捡屎万岁！\n\n再说一个借助现代科技的结果。在佛坪自然保护区，使用红外相机对大熊猫育儿的洞穴进行了 5 年半的监测。大熊猫对育儿地点的选择，跟附近的物种有关。亚洲黑熊这样的大型食肉动物，甚至黄喉貂这样的小型食肉动物，对大熊猫选择巢址都是负面的影响。也就是说，熊猫会回避那些威胁到自己幼崽生存的因素。\n还有一些更间接的证据，证明大熊猫是有捕食者的。比如，它可能已经进化出了防御捕食者的特征。\n2021 年有一篇很有意思的论文，它提出大熊猫的黑白色看上去很显眼，但它其实是一种伪装。他们使用了图片分析软件 state-of-the-art，分析大熊猫在野外的照片，发现它与环境的重合度很高。大熊猫的黑色与阴影和树干重合，白色与叶面的反光和雪重合，在远距离上，黑白的大色块还可以打破它的轮廓。所以大熊猫可以跟环境融为一体。而且熊猫的伪装对人、猫科、犬科的视力都有效。\n在远距离观察，大熊猫的外表还是很隐蔽的\n如果熊猫真的具有伪装色，那么熊猫应该是经受过捕食的压力的，否则不会向这个方向进化。\n另一个旁证来源于大熊猫对捕食者气味的反应。2012 年发表的一项研究，在中国大熊猫保护研究中心雅安碧峰峡基地，给 56 只圈养熊猫闻不同动物的尿。熊猫对于捕食者（比如豹）的尿味的关注，显著高于对非捕食者（比如水鹿）的尿和对照组的关注。八只熊猫对捕食者的尿气味表现出明显的警惕，闻到之后，马上后退，10~20 秒后再小心翼翼地接近检查。而对非捕食者的尿，只是嗅一下就回去吃竹子和休息了。\n熊猫会关注捕食者的气味，但反应也不是非常恐惧，至少没有马上逃跑。这也许是因为，作为大型动物，成年熊猫并不容易被捕食。也许是因为圈养熊猫的本身就是缺乏生存经验的。\n参考：\nNokelainen O, Scott-Samuel N E, Nie Y, et al. The giant panda is cryptic[J]. Scientific Reports, 2021, 11(1): 1-10.\nLai X L, Zhou W L, Gao H L, et al. Impact of sympatric carnivores on den selection of wild giant pandas[J]. Zoological Research, 2020, 41(3): 273.\nDu, Yiping; Huang, Yan; Zhang, Hemin; Li, Desheng; Yang, Bo; Wei, Ming; Zhou, Yingmin; Liu, Yang (2012). Innate Predator Recognition in Giant Pandas. Zoological Science, 29(2), 67–70.\n胡锦矗. 卧龙自然保护区华南豹的食性研究[J]. 四川师范学院学报: 自然科学版, 1994, 15(4): 320-324.",
-          "link": "https://daily.zhihu.com/story/9762752",
-          "publishedOn": "2023-06-12T23:06:38.000Z",
-          "wordCount": null,
-          "title": "自然界中有哪些动物战斗力高于大熊猫？",
-          "itunes": {},
-          "imageUrl": null
-        },
-        {
-          "id": "https://daily.zhihu.com/story/9762758",
-          "author": "ytzong",
-          "description": "魏王煮酒，做一个言简意赅、有理有据的讲史人\n\n不能不提的苍天乃死砖\n仓天乃死砖，1976 年安徽省亳县（今亳州市）元宝坑村曹操宗族墓地出土，长 37.5 厘米，厚 7 厘米，上宽 19.2 厘米，下宽 15 厘米，砖上有作壁匠人刻划出的 26 个汉字。\n1972 年至 1989 年，考古人员在亳州城南、城西南及涡河以北抢救发掘了近二十座东汉墓葬，其中属于曹氏墓葬的有元宝坑一号墓、董园村一号墓、二号墓、菜市村一号墓、张园村一号墓、马园村汉墓群、袁牌坊村一号墓、二号墓、三号墓等。这些曹氏墓葬中，出土文字砖的有元宝坑一号墓和董园村一号墓。\n元宝坑一号墓三十二号文字砖就是“仓天乃死”砖（编号“元：32”），这块砖上的文字不是汉砖常见的吉祥语，而是造砖人在砖坯未干之前刻划的愤怒的呐喊：\n\n王复，汝使我，作此大壁，\n径冤我，人不知也，\n但抟汝属。\n仓天乃死，当搏\n这段文字大意是“我”被一个叫王复的人冤枉，受罚做苦役，被逼着要砌一堵很大的砖室墓墙壁，\n“我”含冤莫白，无处控诉，唯有徒劳地揉捏着这些泥砖，若是哪一日变天了，\n“我”就要拼死一搏。\n如果最后两字解读为“车若”，意思是“等我翻身做主人，就要车裂了你”。\n这是一股来自东汉末年民间的冲天怨气，即便是千余年后，在博物馆中读到文物上的这些字，仍能感受到作壁人的冤屈、不甘和极大的咒怨。\n“仓天乃死”，和历史上黄巾起义的口号“苍天已死”非常接近，从“乃”到“已”，一字之差，反映了民怨从暗涌到沸腾，最终老百姓揭竿而起的发展路径，其时间差也就 14 年。元宝坑一号墓其中一块砖上标记年月为“建宁三年四月四日”（元：9），即此墓修建时间在 170 年，而黄巾起义发生在东汉灵帝光和七年（184 年）\n苍天乃死砖的出现可以说是从实物上证明了东汉末年的生活残酷和民怨滔天的末日背景。从实物上进一步肯定了黄巾起义的必然和老百姓的无奈。",
-          "link": "https://daily.zhihu.com/story/9762758",
-          "publishedOn": "2023-06-12T23:06:29.000Z",
-          "wordCount": null,
-          "title": "有哪些较冷门但意义重大的考古发现？",
-          "itunes": {},
-          "imageUrl": null
-        },
-        {
-          "id": "https://daily.zhihu.com/story/9762713",
-          "author": "ytzong",
-          "description": "知乎日报\n\nQ：哪本书是对程序员最有影响且最应该读的？\n@曹斌 ：颈椎康复指南，不谢。\nQ：向日葵晚上在干嘛，跟着月亮吗？\n@death yoyo ：晚上低头嗑瓜子啦\nQ：如何回答「证明自己智商孱弱」的面试题？\n@morpheus ：啊？\nQ：如何用尽量短的语言写一个无限循环的脑洞故事？\n@吕不同 ：份子钱。\nQ： 这个世界上有什么动物长得像 P 出来的?\n@粽子 ：北长尾山雀，小肥啾，特别像会飞的团子。。。",
-          "link": "https://daily.zhihu.com/story/9762713",
-          "publishedOn": "2023-06-12T23:06:23.000Z",
-          "wordCount": null,
-          "title": "瞎扯 · 如何正确地吐槽",
-          "itunes": {},
-          "imageUrl": null
         }
       ]
     },
@@ -1253,6 +1198,276 @@
       "siteUrl": "https://news.ycombinator.com/",
       "articles": [
         {
+          "id": "https://blog.thunderbird.net/2023/07/our-fastest-most-beautiful-release-ever-thunderbird-115-supernova-is-here/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://blog.thunderbird.net/2023/07/our-fastest-most-beautiful-release-ever-thunderbird-115-supernova-is-here/",
+          "publishedOn": "2023-07-13T00:18:14.000Z",
+          "wordCount": 2018,
+          "title": "Our Fastest, Most Beautiful Release Ever: Thunderbird 115 “Supernova” Is Here",
+          "imageUrl": "https://blog.thunderbird.net/files/2023/07/Supernova-Thunderbird-feature.png"
+        },
+        {
+          "id": "https://digest.browsertech.com/archive/browsertech-digest-figma-is-a-file-editor/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://digest.browsertech.com/archive/browsertech-digest-figma-is-a-file-editor/",
+          "publishedOn": "2023-07-12T23:13:09.000Z",
+          "wordCount": 1364,
+          "title": "Figma Is a File Editor",
+          "imageUrl": "https://buttondown.imgix.net/images/f68f2d5b-82c4-4cc6-b8ca-af0608ef9aae.png"
+        },
+        {
+          "id": "https://manifund.org/projects/recreate-the-cavity-preventing-gmo-bacteria-bcs3-l1-from-precursor-",
+          "author": null,
+          "description": "Comments",
+          "link": "https://manifund.org/projects/recreate-the-cavity-preventing-gmo-bacteria-bcs3-l1-from-precursor-",
+          "publishedOn": "2023-07-12T23:09:50.000Z",
+          "wordCount": 3906,
+          "title": "Recreate the cavity-preventing GMO bacteria BCS3-L1 from precursor",
+          "imageUrl": null
+        },
+        {
+          "id": "https://xenia.jp/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://xenia.jp/",
+          "publishedOn": "2023-07-12T22:51:16.000Z",
+          "wordCount": 383,
+          "title": "Xenia: Xbox 360 Emulator",
+          "imageUrl": null
+        },
+        {
+          "id": "https://twitter.com/Altimor/status/1679235946334781440",
+          "author": null,
+          "description": "Comments",
+          "link": "https://twitter.com/Altimor/status/1679235946334781440",
+          "publishedOn": "2023-07-12T22:35:11.000Z",
+          "wordCount": null,
+          "title": "Uber Eats Canada Ran Production in a MacBook Air",
+          "imageUrl": null
+        },
+        {
+          "id": "https://makerfaire.com/bay-area/call-for-makers/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://makerfaire.com/bay-area/call-for-makers/",
+          "publishedOn": "2023-07-12T22:15:48.000Z",
+          "wordCount": 2239,
+          "title": "Maker Faire Bay Area Returns",
+          "imageUrl": "https://makerfaire.com/wp-content/uploads/2023/07/C4M-ThingsMove.png"
+        },
+        {
+          "id": "https://pcsx2.net/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://pcsx2.net/",
+          "publishedOn": "2023-07-12T21:42:34.000Z",
+          "wordCount": null,
+          "title": "PCSX2 is an open source PS2 Emulator",
+          "imageUrl": null
+        },
+        {
+          "id": "https://arstechnica.com/tech-policy/2023/07/meta-wont-say-what-happened-to-taxpayer-data-it-may-have-illegally-collected/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://arstechnica.com/tech-policy/2023/07/meta-wont-say-what-happened-to-taxpayer-data-it-may-have-illegally-collected/",
+          "publishedOn": "2023-07-12T21:07:50.000Z",
+          "wordCount": 2068,
+          "title": "Tax preparers that shared private data with Meta, Google could be fined billions",
+          "imageUrl": "https://cdn.arstechnica.net/wp-content/uploads/2023/07/GettyImages-174879501-760x380.jpg"
+        },
+        {
+          "id": "https://www.newstatesman.com/ideas/2023/07/simone-weil-great-awakening-wolfram-eilenberger",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.newstatesman.com/ideas/2023/07/simone-weil-great-awakening-wolfram-eilenberger",
+          "publishedOn": "2023-07-12T19:48:55.000Z",
+          "wordCount": 6893,
+          "title": "Simone Weil’s Great Awakening",
+          "imageUrl": "https://dl6pgk4f88hky.cloudfront.net/2023/07/12/202329-Weil-768x418.jpg?1689206708"
+        },
+        {
+          "id": "https://www.nytimes.com/2023/07/12/science/sea-otter-surfboard.html",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.nytimes.com/2023/07/12/science/sea-otter-surfboard.html",
+          "publishedOn": "2023-07-12T19:35:40.000Z",
+          "wordCount": null,
+          "title": "She Steals Surfboards by the Seashore. She’s a Sea Otter",
+          "imageUrl": null
+        },
+        {
+          "id": "https://github.com/a16z-infra/companion-app",
+          "author": null,
+          "description": "Comments",
+          "link": "https://github.com/a16z-infra/companion-app",
+          "publishedOn": "2023-07-12T18:45:59.000Z",
+          "wordCount": 3310,
+          "title": "Show HN: AI companions stack – create and host your own AI companions",
+          "imageUrl": "https://opengraph.githubassets.com/7ccbc9ba34efe159ac3ea3605f705f4d5c92abbaf7c2c1a21f3c3043167d4c35/a16z-infra/companion-app"
+        },
+        {
+          "id": "https://musescore.org/en/4.1",
+          "author": null,
+          "description": "Comments",
+          "link": "https://musescore.org/en/4.1",
+          "publishedOn": "2023-07-12T18:43:28.000Z",
+          "wordCount": 1582,
+          "title": "MuseScore 4.1 is now available",
+          "imageUrl": null
+        },
+        {
+          "id": "https://fly.io/blog/tokenized-tokens/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://fly.io/blog/tokenized-tokens/",
+          "publishedOn": "2023-07-12T18:21:38.000Z",
+          "wordCount": 1952,
+          "title": "Tokenized Tokens",
+          "imageUrl": "https://fly.io/public/images/flyctl-preview.webp"
+        },
+        {
+          "id": "https://en.wikipedia.org/wiki/Telling_the_bees",
+          "author": null,
+          "description": "Comments",
+          "link": "https://en.wikipedia.org/wiki/Telling_the_bees",
+          "publishedOn": "2023-07-12T18:21:28.000Z",
+          "wordCount": 1870,
+          "title": "Telling the Bees",
+          "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d5/The_Widow_by_Charles_Napier_Hemy.jpg"
+        },
+        {
+          "id": "https://xata.io/blog/postgres-full-text-search-engine",
+          "author": null,
+          "description": "Comments",
+          "link": "https://xata.io/blog/postgres-full-text-search-engine",
+          "publishedOn": "2023-07-12T18:05:04.000Z",
+          "wordCount": 11200,
+          "title": "Creating a search engine with PostgreSQL",
+          "imageUrl": "https://website-jwznilp20-xata.vercel.app/api/og?title=Create%20an%20advanced%20search%20engine%20with%20PostgreSQL&section=Documentation"
+        },
+        {
+          "id": "https://skio.com/careers/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://skio.com/careers/",
+          "publishedOn": "2023-07-12T17:00:24.000Z",
+          "wordCount": 2017,
+          "title": "Skio (YC S20) – Subscriptions for Shopify, ReCharge Migrations Is Hiring",
+          "imageUrl": "https://skio.com/bubblesnew2.png"
+        },
+        {
+          "id": "https://github.com/cncf/toc/commit/25b2ead46d56e3c39d48a6a87e3c558c2120d179",
+          "author": null,
+          "description": "Comments",
+          "link": "https://github.com/cncf/toc/commit/25b2ead46d56e3c39d48a6a87e3c558c2120d179",
+          "publishedOn": "2023-07-12T16:57:51.000Z",
+          "wordCount": 930,
+          "title": "Istio moved to CNCF Graduation stage",
+          "imageUrl": "https://opengraph.githubassets.com/73ee4ab971e8ed9fe26105d63871810018749a8134855a004654709898bde6bd/cncf/toc/commit/25b2ead46d56e3c39d48a6a87e3c558c2120d179"
+        },
+        {
+          "id": "https://floneum.com/blog/anouncing_floneum/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://floneum.com/blog/anouncing_floneum/",
+          "publishedOn": "2023-07-12T16:53:48.000Z",
+          "wordCount": 944,
+          "title": "Show HN: Floneum, a graph editor for local AI workflows",
+          "imageUrl": null
+        },
+        {
+          "id": "https://devdojo.com/pines",
+          "author": null,
+          "description": "Comments",
+          "link": "https://devdojo.com/pines",
+          "publishedOn": "2023-07-12T16:41:08.000Z",
+          "wordCount": null,
+          "title": "Pines – Alpine and Tailwind UI Library",
+          "imageUrl": null
+        },
+        {
+          "id": "https://blog.google/technology/ai/notebooklm-google-ai/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://blog.google/technology/ai/notebooklm-google-ai/",
+          "publishedOn": "2023-07-12T16:29:12.000Z",
+          "wordCount": 1821,
+          "title": "NotebookLM: An AI Notebook",
+          "imageUrl": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Labs_IO_social_share.width-1300.jpg"
+        },
+        {
+          "id": "https://beagleboard.org/beaglev-ahead",
+          "author": null,
+          "description": "Comments",
+          "link": "https://beagleboard.org/beaglev-ahead",
+          "publishedOn": "2023-07-12T15:09:05.000Z",
+          "wordCount": 396,
+          "title": "BeagleV-Ahead RISC-V board",
+          "imageUrl": null
+        },
+        {
+          "id": "https://fermatslibrary.com/s/computers-and-automata",
+          "author": null,
+          "description": "Comments",
+          "link": "https://fermatslibrary.com/s/computers-and-automata",
+          "publishedOn": "2023-07-12T15:00:09.000Z",
+          "wordCount": 18407,
+          "title": "Computers and Automata (1953)",
+          "imageUrl": "https://fermatslibrary.com/fl-card.png"
+        },
+        {
+          "id": "https://www.atlasobscura.com/articles/history-of-aloha-hawaiian-shirt",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.atlasobscura.com/articles/history-of-aloha-hawaiian-shirt",
+          "publishedOn": "2023-07-12T14:43:03.000Z",
+          "wordCount": 6957,
+          "title": "The aloha shirt has many possible inventors",
+          "imageUrl": "https://img.atlasobscura.com/5aaVjjf5-pB4U3mt_3_W8AjrOvztNyaY5dI7zStlQaU/rt:fit/w:600/c:1094:729:nowe:0:15/q:81/sm:1/scp:1/ar:1/aHR0cHM6Ly9hdGxh/cy1kZXYuczMuYW1h/em9uYXdzLmNvbS91/cGxvYWRzL2Fzc2V0/cy9hYTdiZTYzNi01/NWIyLTRkMDctOWU5/MC03MjA2MWRhMjIy/YzU1OTI4YzFjNmYx/OGJmYWY4MjVfRWx2/aXMucG5n.png"
+        },
+        {
+          "id": "https://www.youtube.com/watch?v=bgR3yESAEVE",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.youtube.com/watch?v=bgR3yESAEVE",
+          "publishedOn": "2023-07-12T13:35:57.000Z",
+          "wordCount": null,
+          "title": "Can Chess, with Hexagons? [video]",
+          "imageUrl": null
+        },
+        {
+          "id": "https://onthearts.com/p/istanbuls-blue-tile-paradise",
+          "author": null,
+          "description": "Comments",
+          "link": "https://onthearts.com/p/istanbuls-blue-tile-paradise",
+          "publishedOn": "2023-07-12T10:39:24.000Z",
+          "wordCount": 1592,
+          "title": "Istanbul's blue tile paradise",
+          "imageUrl": "https://substackcdn.com/image/fetch/w_1200,h_600,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F63fd56b0-926a-4cb7-93a7-585b9b44bae2_1000x690.jpeg"
+        },
+        {
+          "id": "https://paleofuture.com/blog/2023/7/6/when-blue-light-was-the-hot-new-anaesthetic",
+          "author": null,
+          "description": "Comments",
+          "link": "https://paleofuture.com/blog/2023/7/6/when-blue-light-was-the-hot-new-anaesthetic",
+          "publishedOn": "2023-07-12T02:50:35.000Z",
+          "wordCount": 1258,
+          "title": "When a Simple Blue Light Was the Hot New Anaesthetic in Dentistry",
+          "imageUrl": "http://static1.squarespace.com/static/5c647bc99b7d150fe925ea5c/5c6484c2ca70ec2871deb6fa/64a786711a94a2174f25ad7e/1688703438286/1906+technical+world+light+with+bag.png?format=1500w"
+        },
+        {
+          "id": "https://www.cbc.ca/radio/undertheinfluence/how-a-chimpanzee-brought-xerox-to-the-masses-1.6756916",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.cbc.ca/radio/undertheinfluence/how-a-chimpanzee-brought-xerox-to-the-masses-1.6756916",
+          "publishedOn": "2023-07-12T00:38:45.000Z",
+          "wordCount": 1628,
+          "title": "A chimpanzee brought Xerox to the masses",
+          "imageUrl": "https://i.cbc.ca/1.1477595.1379101124!/httpImage/image.jpg_gen/derivatives/16x9_620/hi-852-xerox-documate-scanner-9618239.jpg"
+        },
+        {
           "id": "https://tilvids.com/videos/watch/41f5284e-b79e-4c84-97e5-664a6ac5a1ee",
           "author": null,
           "description": "Comments",
@@ -1281,6 +1496,16 @@
           "wordCount": 1110,
           "title": "Breaking java.lang.String",
           "imageUrl": null
+        },
+        {
+          "id": "https://blogs.bl.uk/digitisedmanuscripts/2023/05/death-of-the-wolf.html",
+          "author": null,
+          "description": "Comments",
+          "link": "https://blogs.bl.uk/digitisedmanuscripts/2023/05/death-of-the-wolf.html",
+          "publishedOn": "2023-07-11T22:13:27.000Z",
+          "wordCount": 1441,
+          "title": "Death of the Wolf",
+          "imageUrl": "https://blogs.bl.uk/.a/6a00d8341c464853ef02b68537f972200d-pi"
         },
         {
           "id": "https://evolutionary.arweave.dev/",
@@ -1483,6 +1708,16 @@
           "imageUrl": "https://repository-images.githubusercontent.com/119160553/92072d42-3351-41a4-81e6-39433aefbaf3"
         },
         {
+          "id": "https://www.archaeology.org/issues/515-2307/features/11500-aksum-ethiopia-eritrea-kingdom",
+          "author": null,
+          "description": "Comments",
+          "link": "https://www.archaeology.org/issues/515-2307/features/11500-aksum-ethiopia-eritrea-kingdom",
+          "publishedOn": "2023-07-11T05:58:16.000Z",
+          "wordCount": 4196,
+          "title": "Africa’s Merchant Kings",
+          "imageUrl": null
+        },
+        {
           "id": "https://gpslogdrive.com/",
           "author": null,
           "description": "Comments",
@@ -1591,6 +1826,16 @@
           "wordCount": 1346,
           "title": "Self-hosted photo and video backups directly from your mobile phone",
           "imageUrl": "https://repository-images.githubusercontent.com/455229168/1ef14235-83ee-4866-80d2-094f99091393"
+        },
+        {
+          "id": "https://privacy.thenexus.today/just-blocking-threads-isnt-enough/",
+          "author": null,
+          "description": "Comments",
+          "link": "https://privacy.thenexus.today/just-blocking-threads-isnt-enough/",
+          "publishedOn": "2023-07-10T21:13:31.000Z",
+          "wordCount": 1656,
+          "title": "Blocking Threads won't be enough to protect privacy once they join the Fediverse",
+          "imageUrl": "https://privacy.thenexus.today/content/images/2023/07/Screen-Shot-2023-07-10-at-11.50.17-AM-1.png"
         },
         {
           "id": "https://github.com/mkirchner/hamt",
@@ -9540,306 +9785,6 @@
           "publishedOn": "2023-06-13T13:43:05.000Z",
           "wordCount": 5709,
           "title": "Rewriting the Ruby parser",
-          "imageUrl": null
-        },
-        {
-          "id": "https://resend.com/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://resend.com/",
-          "publishedOn": "2023-06-13T12:16:25.000Z",
-          "wordCount": 1853,
-          "title": "Launch HN: Resend (YC W23) – Email API for developers using React",
-          "imageUrl": null
-        },
-        {
-          "id": "https://johnnydecimal.com/10-19-concepts/11-core/11.01-introduction/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://johnnydecimal.com/10-19-concepts/11-core/11.01-introduction/",
-          "publishedOn": "2023-06-13T11:03:14.000Z",
-          "wordCount": 1324,
-          "title": "Johnny Decimal",
-          "imageUrl": null
-        },
-        {
-          "id": "https://scrollbars.matoseb.com/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://scrollbars.matoseb.com/",
-          "publishedOn": "2023-06-13T08:35:45.000Z",
-          "wordCount": 1210,
-          "title": "Evolution of the Scrollbar",
-          "imageUrl": "https://raw.githubusercontent.com/Matoseb/Scrollbars/master/rsrc/screenshot_01.jpg"
-        },
-        {
-          "id": "https://axleos.com/screwing-up-my-page-tables/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://axleos.com/screwing-up-my-page-tables/",
-          "publishedOn": "2023-06-13T07:48:03.000Z",
-          "wordCount": 4795,
-          "title": "Screwing up my page tables",
-          "imageUrl": "https://axleos.com/images/share.png"
-        },
-        {
-          "id": "https://apps.apple.com/us/story/id1435835881",
-          "author": null,
-          "description": "Comments",
-          "link": "https://apps.apple.com/us/story/id1435835881",
-          "publishedOn": "2023-06-13T00:23:14.000Z",
-          "wordCount": 10816,
-          "title": "BBEdit: Where Respect Is Due",
-          "imageUrl": "https://is4-ssl.mzstatic.com/image/thumb/Features114/v4/36/51/a5/3651a5b1-95bb-d45f-f67b-e92e036880a9/pr_source.png/1028x630fo.jpg"
-        },
-        {
-          "id": "https://sfstandard.com/business/westfield-gives-up-downtown-san-francisco-mall/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://sfstandard.com/business/westfield-gives-up-downtown-san-francisco-mall/",
-          "publishedOn": "2023-06-12T23:54:12.000Z",
-          "wordCount": 8180,
-          "title": "Westfield Gives Up Downtown San Francisco Mall",
-          "imageUrl": "https://sfstandard.com/wp-content/uploads/2023/05/NordstromBathroom05032023-107-1110x690.jpg"
-        },
-        {
-          "id": "https://www.pulumi.com/blog/converting-full-terraform-programs-to-pulumi/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.pulumi.com/blog/converting-full-terraform-programs-to-pulumi/",
-          "publishedOn": "2023-06-12T23:47:37.000Z",
-          "wordCount": 1524,
-          "title": "Converting Full Terraform Programs to Pulumi",
-          "imageUrl": "https://www.pulumi.com/blog/converting-full-terraform-programs-to-pulumi/meta.png"
-        },
-        {
-          "id": "https://www.shepscenter.unc.edu/programs-projects/rural-health/rural-hospital-closures/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.shepscenter.unc.edu/programs-projects/rural-health/rural-hospital-closures/",
-          "publishedOn": "2023-06-12T23:32:29.000Z",
-          "wordCount": null,
-          "title": "US Rural Hospital Closures Since 2005",
-          "imageUrl": null
-        },
-        {
-          "id": "https://github.com/mackyle/sqlite/blob/18cf47156abe94255ae1495ba2da84517dce6081/src/os.h",
-          "author": null,
-          "description": "Comments",
-          "link": "https://github.com/mackyle/sqlite/blob/18cf47156abe94255ae1495ba2da84517dce6081/src/os.h",
-          "publishedOn": "2023-06-12T23:20:28.000Z",
-          "wordCount": 1860,
-          "title": "Why sqlite3 temp files were renamed 'etilqs_*' (2006)",
-          "imageUrl": "https://opengraph.githubassets.com/4ab0f63ead09a7ed0b42a353e95c3a848bf4d53152808c6ad4fa5874aed5d134/mackyle/sqlite"
-        },
-        {
-          "id": "https://theleo.zone/posts/hashmap-in-c/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://theleo.zone/posts/hashmap-in-c/",
-          "publishedOn": "2023-06-12T22:58:55.000Z",
-          "wordCount": 2528,
-          "title": "A simple hash table in C",
-          "imageUrl": null
-        },
-        {
-          "id": "https://www.quantamagazine.org/a-new-experiment-casts-doubt-on-the-leading-theory-of-the-nucleus-20230612/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.quantamagazine.org/a-new-experiment-casts-doubt-on-the-leading-theory-of-the-nucleus-20230612/",
-          "publishedOn": "2023-06-12T22:49:35.000Z",
-          "wordCount": 5666,
-          "title": "A New Experiment Casts Doubt on the Leading Theory of the Nucleus",
-          "imageUrl": "https://d2r55xnwy6nx47.cloudfront.net/uploads/2023/06/HeliumNucleus-byKristinaArmitage-Default.webp"
-        },
-        {
-          "id": "https://ericwbailey.website/published/dont-use-custom-css-scrollbars/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://ericwbailey.website/published/dont-use-custom-css-scrollbars/",
-          "publishedOn": "2023-06-12T22:12:39.000Z",
-          "wordCount": 3324,
-          "title": "Don't use custom CSS scrollbars",
-          "imageUrl": "https://ericwbailey.website/static/favicons/social/facebook.png"
-        },
-        {
-          "id": "https://zsync.xyz/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://zsync.xyz/",
-          "publishedOn": "2023-06-12T21:21:33.000Z",
-          "wordCount": 17,
-          "title": "Show HN: Zsync, a Reddit Alternative with the Goal to Reward Quality Comments",
-          "imageUrl": null
-        },
-        {
-          "id": "https://www.techdirt.com/2023/06/08/us-patent-office-proposes-rule-to-make-it-much-harder-to-kill-bad-patents/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.techdirt.com/2023/06/08/us-patent-office-proposes-rule-to-make-it-much-harder-to-kill-bad-patents/",
-          "publishedOn": "2023-06-12T20:55:03.000Z",
-          "wordCount": 4418,
-          "title": "US Patent Office proposes rule to make it much harder to kill bad patents",
-          "imageUrl": "https://www.techdirt.com/wp-content/themes/techdirt/assets/images/td-rect-logo-white.png"
-        },
-        {
-          "id": "https://www.wired.com/story/odni-commercially-available-information-report/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.wired.com/story/odni-commercially-available-information-report/",
-          "publishedOn": "2023-06-12T20:21:08.000Z",
-          "wordCount": 21850,
-          "title": "The US government is buying troves of data about Americans",
-          "imageUrl": "https://media.wired.com/photos/64874ce9f2de86183cf5b4ae/191:100/w_1280,c_limit/stockpile_data_sec_GettyImages-1413768537.jpg"
-        },
-        {
-          "id": "https://phys.org/news/2023-06-lingering-effects-neanderthal-dna-modern.html",
-          "author": null,
-          "description": "Comments",
-          "link": "https://phys.org/news/2023-06-lingering-effects-neanderthal-dna-modern.html",
-          "publishedOn": "2023-06-12T20:09:07.000Z",
-          "wordCount": 1926,
-          "title": "Lingering effects of Neanderthal DNA found in modern humans",
-          "imageUrl": "https://scx2.b-cdn.net/gfx/news/hires/2023/lingering-effects-of-n.jpg"
-        },
-        {
-          "id": "https://flingup.com/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://flingup.com/",
-          "publishedOn": "2023-06-12T19:50:09.000Z",
-          "wordCount": null,
-          "title": "Show HN: FlingUp, a Reddit-like platform Ive been building for the last 2 years",
-          "imageUrl": null
-        },
-        {
-          "id": "https://mastodon.social/@coreyspowell/110531182569820738",
-          "author": null,
-          "description": "Comments",
-          "link": "https://mastodon.social/@coreyspowell/110531182569820738",
-          "publishedOn": "2023-06-12T19:10:10.000Z",
-          "wordCount": 119,
-          "title": "Earth's rotation, with the camera locked to the sky instead of the ground",
-          "imageUrl": "https://files.mastodon.social/media_attachments/files/110/531/170/394/593/980/small/d1bf3e6b16dabab2.png"
-        },
-        {
-          "id": "https://typex.fly.dev/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://typex.fly.dev/",
-          "publishedOn": "2023-06-12T19:02:42.000Z",
-          "wordCount": 174,
-          "title": "Elixir's “Set Theoretical Type System” prototype/demo/showcase",
-          "imageUrl": null
-        },
-        {
-          "id": "https://raphlinus.github.io/gpu/2023/06/12/shader-converter.html",
-          "author": null,
-          "description": "Comments",
-          "link": "https://raphlinus.github.io/gpu/2023/06/12/shader-converter.html",
-          "publishedOn": "2023-06-12T18:40:13.000Z",
-          "wordCount": 1117,
-          "title": "Metal shader converter and the missing device-scoped barrier",
-          "imageUrl": null
-        },
-        {
-          "id": "https://justine.lol/sorting/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://justine.lol/sorting/",
-          "publishedOn": "2023-06-12T17:30:54.000Z",
-          "wordCount": 3467,
-          "title": "Understanding DeepMind's sorting algorithm",
-          "imageUrl": "https://justine.lol/sorting/deepmind.png"
-        },
-        {
-          "id": "https://www.marginalia.nu/log/82_killing_community",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.marginalia.nu/log/82_killing_community",
-          "publishedOn": "2023-06-12T17:02:59.000Z",
-          "wordCount": 853,
-          "title": "Killing Community",
-          "imageUrl": null
-        },
-        {
-          "id": "https://www.easypost.com/careers",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.easypost.com/careers",
-          "publishedOn": "2023-06-12T17:00:43.000Z",
-          "wordCount": 651,
-          "title": "EasyPost (YC S13) Is Hiring",
-          "imageUrl": "https://assets.easypost.com/assets/images/branding/easypost-primary-icon-padded.b0fa1e47f492157e4035d63914319a94.png"
-        },
-        {
-          "id": "https://non.io/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://non.io/",
-          "publishedOn": "2023-06-12T16:54:38.000Z",
-          "wordCount": 1635,
-          "title": "Show HN: Non.io, a Reddit-like platform Ive been working on for the last 4 years",
-          "imageUrl": null
-        },
-        {
-          "id": "https://pixelfed.blog/p/2023/feature/introducing-import-from-instagram",
-          "author": null,
-          "description": "Comments",
-          "link": "https://pixelfed.blog/p/2023/feature/introducing-import-from-instagram",
-          "publishedOn": "2023-06-12T16:35:04.000Z",
-          "wordCount": 527,
-          "title": "Pixelfed Introduces Import from Instagram",
-          "imageUrl": null
-        },
-        {
-          "id": "https://buttondown.email/anmonteiro/archive/melange-hits-v10/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://buttondown.email/anmonteiro/archive/melange-hits-v10/",
-          "publishedOn": "2023-06-12T16:28:51.000Z",
-          "wordCount": 1547,
-          "title": "Melange 1.0: Compile OCaml / ReasonML to JavaScript",
-          "imageUrl": "https://buttondown.email/static/images/icons/icon-square@400.png"
-        },
-        {
-          "id": "https://news.ycombinator.com/item?id=36295460",
-          "author": null,
-          "description": "Comments",
-          "link": "https://news.ycombinator.com/item?id=36295460",
-          "publishedOn": "2023-06-12T15:46:48.000Z",
-          "wordCount": 4236,
-          "title": "Launch HN: DevCycle (YC W14) – a feature flag platform built for developers",
-          "imageUrl": null
-        },
-        {
-          "id": "https://www.neowin.net/news/edge-sends-images-you-view-online-to-microsoft-here-is-how-to-disable-that/",
-          "author": null,
-          "description": "Comments",
-          "link": "https://www.neowin.net/news/edge-sends-images-you-view-online-to-microsoft-here-is-how-to-disable-that/",
-          "publishedOn": "2023-06-12T15:40:47.000Z",
-          "wordCount": 2233,
-          "title": "Edge sends images you view online to Microsoft",
-          "imageUrl": "https://cdn.neowin.com/news/images/uploaded/2023/06/1686566370_microsoft_shaq_meme_story.jpg"
-        },
-        {
-          "id": "https://generalrobots.substack.com/p/dimension-hopper-part-1",
-          "author": null,
-          "description": "Comments",
-          "link": "https://generalrobots.substack.com/p/dimension-hopper-part-1",
-          "publishedOn": "2023-06-12T15:31:55.000Z",
-          "wordCount": 5423,
-          "title": "Show HN: Stable Diffusion powered level editor for a 2D game",
-          "imageUrl": "https://substackcdn.com/image/fetch/w_1200,h_600,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F29a40b14-329b-4222-ab1a-851f8ab1efa8_800x544.png"
-        },
-        {
-          "id": "http://thomasburette.com/blog/2014/06/25/the-power-of-keeping-a-coding-journal/",
-          "author": null,
-          "description": "Comments",
-          "link": "http://thomasburette.com/blog/2014/06/25/the-power-of-keeping-a-coding-journal/",
-          "publishedOn": "2023-06-12T14:13:09.000Z",
-          "wordCount": 943,
-          "title": "The power of keeping a coding journal (2014)",
           "imageUrl": null
         }
       ]
