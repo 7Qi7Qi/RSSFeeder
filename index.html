@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>osmos::feed</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="alternate" type="application/rss+xml" title="osmos::feed" href="feed.atom" />
+    <link href="index.css?v1.14.4" rel="stylesheet" />
+    <style>
+    :root {
+        /**
+         * Solarized Light
+         * Ethan Schoonover (modified by aramisgithub)
+         */
+        --base00: #fdf6e3;
+        --base01: #eee8d5;
+        --base02: #93a1a1;
+        --base03: #839496;
+        --base04: #657b83;
+        --base05: #586e75;
+        --base06: #073642;
+        --base07: #002b36;
+        --base08: #dc322f;
+        --base09: #cb4b16;
+        --base0A: #b58900;
+        --base0B: #859900;
+        --base0C: #2aa198;
+        --base0D: #268bd2;
+        --base0E: #6c71c4;
+        --base0F: #d33682;
+
+        /**
+        * Typograph
+        */
+        --font-size-m: 1.6rem;
+        --font-size-s: 1.4rem;
+
+        /**
+        * Components
+        */
+        --body-color: var(--base07);
+        --body-bg: var(--base01);
+
+        --source-name-color: var(--base0D);
+        --source-name-hover-color: var(--base0D);
+
+        --article-title-color: var(--base05);
+        --article-title-hover-color: var(--base0E);
+        --article-summary-hover-color: var(--base0D);
+
+        --accordion-content-rail-color: var(--base01);
+        --accordion-content-hover-rail-color: var(--base0D);
+        --accordion-title-marker-color: var(--base01);
+        --accordion-title-hover-marker-color: var(--base0E);
+
+        --card-bg: var(--base00);
+        --card-shadow: none;
+        --card-radius: 0;
+        --footer-link-hover-color: var(--base0D);
+    }
+
+    .daily-heading {
+        padding-left: 0;
+    }
+
+    .card {
+        border: 1px solid var(--base02);
+    }
+</style>
+  </head>
+
+  <body>
+    <!-- %after-body-begin.html% -->
+      <section class="daily-content js-toggle-accordions-scope">
+        <h2 class="daily-heading">
+          <button
+            class="daily-heading-toggle"
+            data-action="toggle-accordions"
+            title="Click to toggle the day, Ctrl + click to toggle all."
+          >
+            <time class="daily-heading-toggle__weekday js-offset-weekday" data-offset-date=2025-11-28 datetime="2025-11-28T00:10:38.000Z">2025-11-28</time>
+            <time class="daily-heading-toggle__date js-offset-date" data-offset-date=2025-11-28 datetime="2025-11-28T00:10:38.000Z"></time>
+          </button>
+        </h2>
+        <ul class="sources card">
+            <li class="card__section">
+              <section class="js-toggle-accordions-scope">
+                <h3 class="source-heading">
+                  <button
+                    class="source-heading__name"
+                    data-action="toggle-accordions"
+                    title="Click to toggle the source, Ctrl + click to toggle all."
+                  >Hacker News</button>
+                  <a class="source-heading__link" href="https://news.ycombinator.com/">Open</a>
+                </h3>
+                <section class="articles-per-source">
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://www.bbc.com/culture/article/20241205-how-charles-m-schulz-created-charlie-brown-and-snoopy"
+                        open
+                      >
+                        <summary class="article-expander__title">How Charles M Schulz created Charlie Brown and Snoopy (2024)</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://www.bbc.com/culture/article/20241205-how-charles-m-schulz-created-charlie-brown-and-snoopy">
+                          <div class="article-summary-box-inner media-object">
+                              <img src="https://ychef.files.bbci.co.uk/624x351/p0k93fpf.jpg" loading="lazy" class="media-object__media article-image" />
+                            <span class="media-object__text">
+                              <span>Comments</span>
+                                &ensp;<span class="article-reading-time">(&hairsp;27
+                                  min&hairsp;)</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                </section>
+              </section>
+            </li>
+        </ul>
+      </section>
+      <section class="daily-content js-toggle-accordions-scope">
+        <h2 class="daily-heading">
+          <button
+            class="daily-heading-toggle"
+            data-action="toggle-accordions"
+            title="Click to toggle the day, Ctrl + click to toggle all."
+          >
+            <time class="daily-heading-toggle__weekday js-offset-weekday" data-offset-date=2025-11-27 datetime="2025-11-27T23:57:57.000Z">2025-11-27</time>
+            <time class="daily-heading-toggle__date js-offset-date" data-offset-date=2025-11-27 datetime="2025-11-27T23:57:57.000Z"></time>
+          </button>
+        </h2>
+        <ul class="sources card">
+            <li class="card__section">
+              <section class="js-toggle-accordions-scope">
+                <h3 class="source-heading">
+                  <button
+                    class="source-heading__name"
+                    data-action="toggle-accordions"
+                    title="Click to toggle the source, Ctrl + click to toggle all."
+                  >Hacker News</button>
+                  <a class="source-heading__link" href="https://news.ycombinator.com/">Open</a>
+                </h3>
+                <section class="articles-per-source">
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://medicalxpress.com/news/2025-11-bird-flu-viruses-resistant-fever.html"
+                        open
+                      >
+                        <summary class="article-expander__title">Bird flu viruses are resistant to fever, making them a major threat to humans</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://medicalxpress.com/news/2025-11-bird-flu-viruses-resistant-fever.html">
+                          <div class="article-summary-box-inner media-object">
+                              <img src="https://scx2.b-cdn.net/gfx/news/hires/2023/chicken-farm-1.jpg" loading="lazy" class="media-object__media article-image" />
+                            <span class="media-object__text">
+                              <span>Comments</span>
+                                &ensp;<span class="article-reading-time">(&hairsp;12
+                                  min&hairsp;)</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://vsora.com/products/jotunn-8/"
+                        open
+                      >
+                        <summary class="article-expander__title">Vsora Jotunn-8 5nm European inference chip</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://vsora.com/products/jotunn-8/">
+                          <div class="article-summary-box-inner media-object">
+                              <img src="https://vsora.com/wp-content/uploads/2025/04/Vsora_Jotunn8-1-1024x648.png" loading="lazy" class="media-object__media article-image" />
+                            <span class="media-object__text">
+                              <span>Comments</span>
+                                &ensp;<span class="article-reading-time">(&hairsp;9
+                                  min&hairsp;)</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://www.energy-storage.news/250mwh-sand-battery-to-start-construction-in-finland-for-both-heating-and-ancillary-services/"
+                        open
+                      >
+                        <summary class="article-expander__title">250MWh &#x27;Sand Battery&#x27; to start construction in Finland</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://www.energy-storage.news/250mwh-sand-battery-to-start-construction-in-finland-for-both-heating-and-ancillary-services/">
+                          <div class="article-summary-box-inner media-object">
+                              <img src="https://www.energy-storage.news/wp-content/uploads/2025/11/Screenshot-2025-11-26-110954.jpg" loading="lazy" class="media-object__media article-image" />
+                            <span class="media-object__text">
+                              <span>Comments</span>
+                                &ensp;<span class="article-reading-time">(&hairsp;10
+                                  min&hairsp;)</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://tigerbeetle.com/blog/2022-11-23-a-friendly-abstraction-over-iouring-and-kqueue/"
+                        open
+                      >
+                        <summary class="article-expander__title">A Programmer-Friendly I/O Abstraction Over io_uring and kqueue</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://tigerbeetle.com/blog/2022-11-23-a-friendly-abstraction-over-iouring-and-kqueue/">
+                          <div class="article-summary-box-inner media-object">
+                              <img src="https://tigerbeetle.com/blog/2022-11-23-a-friendly-abstraction-over-iouring-and-kqueue/banner.webp" loading="lazy" class="media-object__media article-image" />
+                            <span class="media-object__text">
+                              <span>Comments</span>
+                                &ensp;<span class="article-reading-time">(&hairsp;8
+                                  min&hairsp;)</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://dynomight.net/thanks-5/"
+                        open
+                      >
+                        <summary class="article-expander__title">Underrated reasons to be thankful V</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://dynomight.net/thanks-5/">
+                          <div class="article-summary-box-inner media-object">
+                              <img src="https://dynomight.net/img/valley.jpg" loading="lazy" class="media-object__media article-image" />
+                            <span class="media-object__text">
+                              <span>Comments</span>
+                                &ensp;<span class="article-reading-time">(&hairsp;6
+                                  min&hairsp;)</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://ramones.dev/posts/linkedin-is-loud/"
+                        open
+                      >
+                        <summary class="article-expander__title">LinkedIn is loud, and corporate is hell</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://ramones.dev/posts/linkedin-is-loud/">
+                          <div class="article-summary-box-inner media-object">
+                            <span class="media-object__text">
+                              <span>Comments</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://github.com/deepseek-ai/DeepSeek-Math-V2/blob/main/DeepSeekMath_V2.pdf"
+                        open
+                      >
+                        <summary class="article-expander__title">DeepSeekMath-V2: Towards Self-Verifiable Mathematical Reasoning [pdf]</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://github.com/deepseek-ai/DeepSeek-Math-V2/blob/main/DeepSeekMath_V2.pdf">
+                          <div class="article-summary-box-inner media-object">
+                              <img src="https://opengraph.githubassets.com/ccdca498ed5497982015eb1f53cc99eaa73d59fc281d99f418ead40fce03e9bb/deepseek-ai/DeepSeek-Math-V2" loading="lazy" class="media-object__media article-image" />
+                            <span class="media-object__text">
+                              <span>Comments</span>
+                                &ensp;<span class="article-reading-time">(&hairsp;1
+                                  min&hairsp;)</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://www.historynet.com/vandersarl-bleriot/"
+                        open
+                      >
+                        <summary class="article-expander__title">The VanDersarl Blériot: a 1911 airplane homebuilt by teenage brothers (2017)</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://www.historynet.com/vandersarl-bleriot/">
+                          <div class="article-summary-box-inner media-object">
+                              <img src="https://www.historynet.com/wp-content/uploads/2017/03/Vandersall-1200_480.jpg" loading="lazy" class="media-object__media article-image" />
+                            <span class="media-object__text">
+                              <span>Comments</span>
+                                &ensp;<span class="article-reading-time">(&hairsp;10
+                                  min&hairsp;)</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://www.qualcomm.com/developer/blog/2025/10/same-day-snapdragon-8-elite-gen-5-upstream-linux-support"
+                        open
+                      >
+                        <summary class="article-expander__title">Same-day upstream Linux support for Snapdragon 8 Elite Gen 5</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://www.qualcomm.com/developer/blog/2025/10/same-day-snapdragon-8-elite-gen-5-upstream-linux-support">
+                          <div class="article-summary-box-inner media-object">
+                              <img src="https://s7d1.scene7.com/is/image/dmqualcommprod/Kaanpali-hero" loading="lazy" class="media-object__media article-image" />
+                            <span class="media-object__text">
+                              <span>Comments</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://github.com/chr15m/runprompt"
+                        open
+                      >
+                        <summary class="article-expander__title">Show HN: Runprompt – run .prompt files from the command line</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://github.com/chr15m/runprompt">
+                          <div class="article-summary-box-inner media-object">
+                              <img src="https://opengraph.githubassets.com/80379dda634e14f207267b8ce366a173984ddf302ca3ec70d5c1e0630f96ab68/chr15m/runprompt" loading="lazy" class="media-object__media article-image" />
+                            <span class="media-object__text">
+                              <span>Comments</span>
+                                &ensp;<span class="article-reading-time">(&hairsp;9
+                                  min&hairsp;)</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://www.uncoveralpha.com/p/the-chip-made-for-the-ai-inference"
+                        open
+                      >
+                        <summary class="article-expander__title">TPUs vs. GPUs and why Google is positioned to win AI race in the long term</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://www.uncoveralpha.com/p/the-chip-made-for-the-ai-inference">
+                          <div class="article-summary-box-inner media-object">
+                              <img src="https://substackcdn.com/image/fetch/$s_!H_F9!,w_1200,h_600,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fff173524-b98d-4a2b-9f77-7a130ad395a7_1024x1024.png" loading="lazy" class="media-object__media article-image" />
+                            <span class="media-object__text">
+                              <span>Comments</span>
+                                &ensp;<span class="article-reading-time">(&hairsp;25
+                                  min&hairsp;)</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://shujisado.org/2025/11/27/gpl-propagates-to-ai-models-trained-on-gpl-code/"
+                        open
+                      >
+                        <summary class="article-expander__title">The current state of the theory that GPL propagates to AI models</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://shujisado.org/2025/11/27/gpl-propagates-to-ai-models-trained-on-gpl-code/">
+                          <div class="article-summary-box-inner media-object">
+                              <img src="https://shujisado.org/wp-content/uploads/2025/11/chatgpt-image-2025e5b9b411e69c8827e697a5-21_13_41.png" loading="lazy" class="media-object__media article-image" />
+                            <span class="media-object__text">
+                              <span>Comments</span>
+                                &ensp;<span class="article-reading-time">(&hairsp;38
+                                  min&hairsp;)</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://www.rykap.com/2020/09/23/distance-fields/"
+                        open
+                      >
+                        <summary class="article-expander__title">Ray Marching Soft Shadows in 2D (2020)</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://www.rykap.com/2020/09/23/distance-fields/">
+                          <div class="article-summary-box-inner media-object">
+                              <img src="http://rykap.com/images/voronoi.png" loading="lazy" class="media-object__media article-image" />
+                            <span class="media-object__text">
+                              <span>Comments</span>
+                                &ensp;<span class="article-reading-time">(&hairsp;6
+                                  min&hairsp;)</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://mixpanel.com/blog/sms-security-incident/"
+                        open
+                      >
+                        <summary class="article-expander__title">Mixpanel Security Breach</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://mixpanel.com/blog/sms-security-incident/">
+                          <div class="article-summary-box-inner media-object">
+                              <img src="https://thesignalprod.wpenginepowered.com/wp-content/uploads/2024/10/Thumbnail-Twitter@2x-768x432.png" loading="lazy" class="media-object__media article-image" />
+                            <span class="media-object__text">
+                              <span>Comments</span>
+                                &ensp;<span class="article-reading-time">(&hairsp;5
+                                  min&hairsp;)</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://reverser.dev/linux-kernel-explorer"
+                        open
+                      >
+                        <summary class="article-expander__title">Linux Kernel Explorer</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://reverser.dev/linux-kernel-explorer">
+                          <div class="article-summary-box-inner media-object">
+                              <img src="https://reverser.dev/og-image.png" loading="lazy" class="media-object__media article-image" />
+                            <span class="media-object__text">
+                              <span>Comments</span>
+                                &ensp;<span class="article-reading-time">(&hairsp;1
+                                  min&hairsp;)</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://news.ycombinator.com/item?id&#x3D;46065955"
+                        open
+                      >
+                        <summary class="article-expander__title">Tell HN: Happy Thanksgiving</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://news.ycombinator.com/item?id&#x3D;46065955">
+                          <div class="article-summary-box-inner media-object">
+                            <span class="media-object__text">
+                              <span>Comments</span>
+                                &ensp;<span class="article-reading-time">(&hairsp;15
+                                  min&hairsp;)</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://www.bbc.com/news/articles/c231dv9zpz3o"
+                        open
+                      >
+                        <summary class="article-expander__title">Music eases surgery and speeds recovery, study finds</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://www.bbc.com/news/articles/c231dv9zpz3o">
+                          <div class="article-summary-box-inner media-object">
+                              <img src="https://ichef.bbci.co.uk/news/1024/branded_news/2db4/live/98981940-c8a1-11f0-8c06-f5d460985095.jpg" loading="lazy" class="media-object__media article-image" />
+                            <span class="media-object__text">
+                              <span>Comments</span>
+                                &ensp;<span class="article-reading-time">(&hairsp;22
+                                  min&hairsp;)</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://nickbenton.name/coqasm.pdf"
+                        open
+                      >
+                        <summary class="article-expander__title">Coq: The World&#x27;s Best Macro Assembler? (2013) [pdf]</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://nickbenton.name/coqasm.pdf">
+                          <div class="article-summary-box-inner media-object">
+                            <span class="media-object__text">
+                              <span>Comments</span>
+                                &ensp;<span class="article-reading-time">(&hairsp;32
+                                  min&hairsp;)</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://blog.briancmoses.com/2025/11/diy-nas-2026-edition.html"
+                        open
+                      >
+                        <summary class="article-expander__title">DIY NAS: 2026 Edition</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://blog.briancmoses.com/2025/11/diy-nas-2026-edition.html">
+                          <div class="article-summary-box-inner media-object">
+                              <img src="https://blog.briancmoses.com/images/2026/diynas/diynas2026_830.png" loading="lazy" class="media-object__media article-image" />
+                            <span class="media-object__text">
+                              <span>Comments</span>
+                                &ensp;<span class="article-reading-time">(&hairsp;18
+                                  min&hairsp;)</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://github.com/penpot/penpot"
+                        open
+                      >
+                        <summary class="article-expander__title">Penpot: The Open-Source Figma</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://github.com/penpot/penpot">
+                          <div class="article-summary-box-inner media-object">
+                              <img src="https://repository-images.githubusercontent.com/48769241/1e3fb75a-13e6-4d77-a658-e70e17fb1c6f" loading="lazy" class="media-object__media article-image" />
+                            <span class="media-object__text">
+                              <span>Comments</span>
+                                &ensp;<span class="article-reading-time">(&hairsp;13
+                                  min&hairsp;)</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                </section>
+              </section>
+            </li>
+        </ul>
+      </section>
+      <section class="daily-content js-toggle-accordions-scope">
+        <h2 class="daily-heading">
+          <button
+            class="daily-heading-toggle"
+            data-action="toggle-accordions"
+            title="Click to toggle the day, Ctrl + click to toggle all."
+          >
+            <time class="daily-heading-toggle__weekday js-offset-weekday" data-offset-date=2025-11-26 datetime="2025-11-26T22:00:48.000Z">2025-11-26</time>
+            <time class="daily-heading-toggle__date js-offset-date" data-offset-date=2025-11-26 datetime="2025-11-26T22:00:48.000Z"></time>
+          </button>
+        </h2>
+        <ul class="sources card">
+            <li class="card__section">
+              <section class="js-toggle-accordions-scope">
+                <h3 class="source-heading">
+                  <button
+                    class="source-heading__name"
+                    data-action="toggle-accordions"
+                    title="Click to toggle the source, Ctrl + click to toggle all."
+                  >Hacker News</button>
+                  <a class="source-heading__link" href="https://news.ycombinator.com/">Open</a>
+                </h3>
+                <section class="articles-per-source">
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://brooker.co.za/blog/2025/11/18/consistency.html"
+                        open
+                      >
+                        <summary class="article-expander__title">Why Strong Consistency?</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://brooker.co.za/blog/2025/11/18/consistency.html">
+                          <div class="article-summary-box-inner media-object">
+                            <span class="media-object__text">
+                              <span>Comments</span>
+                                &ensp;<span class="article-reading-time">(&hairsp;5
+                                  min&hairsp;)</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://scienceclock.com/inspired-by-spider-man-scientists-recreate-web-slinging-technology/"
+                        open
+                      >
+                        <summary class="article-expander__title">Inspired by Spider-Man, scientists recreate web-slinging technology</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://scienceclock.com/inspired-by-spider-man-scientists-recreate-web-slinging-technology/">
+                          <div class="article-summary-box-inner media-object">
+                              <img src="https://scienceclock.com/wp-content/uploads/2025/11/krzc5ckud4.jpg" loading="lazy" class="media-object__media article-image" />
+                            <span class="media-object__text">
+                              <span>Comments</span>
+                                &ensp;<span class="article-reading-time">(&hairsp;16
+                                  min&hairsp;)</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://another.rodeo/feedback/"
+                        open
+                      >
+                        <summary class="article-expander__title">Feedback doesn&#x27;t scale</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://another.rodeo/feedback/">
+                          <div class="article-summary-box-inner media-object">
+                              <img src="https://another.rodeo/img/writing/crowd.jpeg" loading="lazy" class="media-object__media article-image" />
+                            <span class="media-object__text">
+                              <span>Comments</span>
+                                &ensp;<span class="article-reading-time">(&hairsp;5
+                                  min&hairsp;)</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://computer.rip/2025-11-11-dot-us.html"
+                        open
+                      >
+                        <summary class="article-expander__title">Memories of .us</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://computer.rip/2025-11-11-dot-us.html">
+                          <div class="article-summary-box-inner media-object">
+                              <img src="https://computer.rip/static/social-icon.png" loading="lazy" class="media-object__media article-image" />
+                            <span class="media-object__text">
+                              <span>Comments</span>
+                                &ensp;<span class="article-reading-time">(&hairsp;13
+                                  min&hairsp;)</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                </section>
+              </section>
+            </li>
+        </ul>
+      </section>
+      <section class="daily-content js-toggle-accordions-scope">
+        <h2 class="daily-heading">
+          <button
+            class="daily-heading-toggle"
+            data-action="toggle-accordions"
+            title="Click to toggle the day, Ctrl + click to toggle all."
+          >
+            <time class="daily-heading-toggle__weekday js-offset-weekday" data-offset-date=2025-11-24 datetime="2025-11-24T16:26:22.000Z">2025-11-24</time>
+            <time class="daily-heading-toggle__date js-offset-date" data-offset-date=2025-11-24 datetime="2025-11-24T16:26:22.000Z"></time>
+          </button>
+        </h2>
+        <ul class="sources card">
+            <li class="card__section">
+              <section class="js-toggle-accordions-scope">
+                <h3 class="source-heading">
+                  <button
+                    class="source-heading__name"
+                    data-action="toggle-accordions"
+                    title="Click to toggle the source, Ctrl + click to toggle all."
+                  >Hacker News</button>
+                  <a class="source-heading__link" href="https://news.ycombinator.com/">Open</a>
+                </h3>
+                <section class="articles-per-source">
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://retrogamecoders.com/maxduino-review/"
+                        open
+                      >
+                        <summary class="article-expander__title">Maxduino Review: Tape Cassette Emulator for Multiple Retro Computers</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://retrogamecoders.com/maxduino-review/">
+                          <div class="article-summary-box-inner media-object">
+                              <img src="https://retrogamecoders.com/wp-content/uploads/2025/11/MAXduino.jpg" loading="lazy" class="media-object__media article-image" />
+                            <span class="media-object__text">
+                              <span>Comments</span>
+                                &ensp;<span class="article-reading-time">(&hairsp;13
+                                  min&hairsp;)</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://fabiensanglard.net/quake_indicators/index.html"
+                        open
+                      >
+                        <summary class="article-expander__title">Quake Engine Indicators</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://fabiensanglard.net/quake_indicators/index.html">
+                          <div class="article-summary-box-inner media-object">
+                            <span class="media-object__text">
+                              <span>Comments</span>
+                                &ensp;<span class="article-reading-time">(&hairsp;3
+                                  min&hairsp;)</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                </section>
+              </section>
+            </li>
+        </ul>
+      </section>
+      <section class="daily-content js-toggle-accordions-scope">
+        <h2 class="daily-heading">
+          <button
+            class="daily-heading-toggle"
+            data-action="toggle-accordions"
+            title="Click to toggle the day, Ctrl + click to toggle all."
+          >
+            <time class="daily-heading-toggle__weekday js-offset-weekday" data-offset-date=2025-11-23 datetime="2025-11-23T15:33:22.000Z">2025-11-23</time>
+            <time class="daily-heading-toggle__date js-offset-date" data-offset-date=2025-11-23 datetime="2025-11-23T15:33:22.000Z"></time>
+          </button>
+        </h2>
+        <ul class="sources card">
+            <li class="card__section">
+              <section class="js-toggle-accordions-scope">
+                <h3 class="source-heading">
+                  <button
+                    class="source-heading__name"
+                    data-action="toggle-accordions"
+                    title="Click to toggle the source, Ctrl + click to toggle all."
+                  >Hacker News</button>
+                  <a class="source-heading__link" href="https://news.ycombinator.com/">Open</a>
+                </h3>
+                <section class="articles-per-source">
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://danijelavrzan.com/posts/2025/11/indie-dev/"
+                        open
+                      >
+                        <summary class="article-expander__title">Indie, Alone, and Figuring It Out</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://danijelavrzan.com/posts/2025/11/indie-dev/">
+                          <div class="article-summary-box-inner media-object">
+                              <img src="https://danijelavrzan.com/_astro/indie-dev.4eK6rkG_.png" loading="lazy" class="media-object__media article-image" />
+                            <span class="media-object__text">
+                              <span>Comments</span>
+                                &ensp;<span class="article-reading-time">(&hairsp;7
+                                  min&hairsp;)</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                </section>
+              </section>
+            </li>
+        </ul>
+      </section>
+      <section class="daily-content js-toggle-accordions-scope">
+        <h2 class="daily-heading">
+          <button
+            class="daily-heading-toggle"
+            data-action="toggle-accordions"
+            title="Click to toggle the day, Ctrl + click to toggle all."
+          >
+            <time class="daily-heading-toggle__weekday js-offset-weekday" data-offset-date=2025-11-22 datetime="2025-11-22T23:08:50.000Z">2025-11-22</time>
+            <time class="daily-heading-toggle__date js-offset-date" data-offset-date=2025-11-22 datetime="2025-11-22T23:08:50.000Z"></time>
+          </button>
+        </h2>
+        <ul class="sources card">
+            <li class="card__section">
+              <section class="js-toggle-accordions-scope">
+                <h3 class="source-heading">
+                  <button
+                    class="source-heading__name"
+                    data-action="toggle-accordions"
+                    title="Click to toggle the source, Ctrl + click to toggle all."
+                  >Hacker News</button>
+                  <a class="source-heading__link" href="https://news.ycombinator.com/">Open</a>
+                </h3>
+                <section class="articles-per-source">
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://www.amiga-shop.net/en/Amiga-Hardware/Amiga-graphic-cards/ZZ9000-multifunction-card-for-Zorro-Amigas::1011.html"
+                        open
+                      >
+                        <summary class="article-expander__title">ZZ9000 multifunction card for Zorro Amigas</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://www.amiga-shop.net/en/Amiga-Hardware/Amiga-graphic-cards/ZZ9000-multifunction-card-for-Zorro-Amigas::1011.html">
+                          <div class="article-summary-box-inner media-object">
+                            <span class="media-object__text">
+                              <span>Comments</span>
+                                &ensp;<span class="article-reading-time">(&hairsp;5
+                                  min&hairsp;)</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                    <article>
+                      <details
+                        class="article-expander"
+                        data-action="toggle-native-accordion"
+                        data-accordion-key="https://phys.org/news/2025-11-physicists-antihydrogen-breakthrough-cern-technique.html"
+                        open
+                      >
+                        <summary class="article-expander__title">Physicists drive antihydrogen breakthrough at CERN</summary>
+                        <a class="article-summary-link article-summary-box-outer" href="https://phys.org/news/2025-11-physicists-antihydrogen-breakthrough-cern-technique.html">
+                          <div class="article-summary-box-inner media-object">
+                              <img src="https://scx2.b-cdn.net/gfx/news/2025/physicists-drive-antih.jpg" loading="lazy" class="media-object__media article-image" />
+                            <span class="media-object__text">
+                              <span>Comments</span>
+                                &ensp;<span class="article-reading-time">(&hairsp;10
+                                  min&hairsp;)</span>
+                            </span>
+                          </div>
+                        </a>
+                      </details>
+                    </article>
+                </section>
+              </section>
+            </li>
+        </ul>
+      </section>
+
+    <footer>
+      <a class="footer-link" href="https://github.com/7Qi7Qi/RSSFeeder/actions/runs/19751402378">
+        <time id="build-timestamp" datetime="2025-11-28T01:22:10.366Z">2025-11-28T01:22:10.366Z</time>
+      </a>
+      <a class="footer-link" href="https://github.com/osmoscraft/osmosfeed">osmosfeed 1.15.1</a>
+    </footer>
+    <script src="index.js?v1.14.4"></script>
+    <!-- %before-body-end.html% -->
+  </body>
+
+</html>
